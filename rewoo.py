@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.tools.tavily_search import TavilySearchResults
 from tools import weather_forcast_24h
 from langgraph.graph import StateGraph, END
+from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
 import colorlog
 
 # 配置日志记录器
@@ -33,11 +34,8 @@ logger.setLevel(logging.DEBUG)
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
-os.environ["TAVILY_API_KEY"] = "tvly-Ra41Yp"
-# YUsQkp4qyy16BB27gSSbPOIeRF"
-os.environ["OPENAI_API_KEY"] = "sk-UYmhf41IuMzY5coDDDAt"
-# T3BlbkFJOkZq14YomG4POS45lfta"
-os.environ["QWEN_API_KEY"] = ""
+os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 class ReWOO(TypedDict):
     task: str
