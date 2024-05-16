@@ -1,0 +1,35 @@
+{
+    "tools": [
+      {
+        "name":"GetTime",
+        "input":"",
+        "description":"Worker that returns the current time."
+      },
+      {
+        "name": "WeatherSearch",
+        "input": "location string",
+        "description": "Worker that searches weather information. Useful when you need to find weather information."
+      },
+      {
+        "name": "HotelSearch",
+        "input": "location string and date string",
+        "description": "Worker that searches hotel information. Useful when finding hotel's price, location and other information."
+      },
+      {
+        "name": "ExchangeRateSearch",
+        "input": "currency code",
+        "description": "Worker that searches realtime exchange rates for you."
+      },
+      {
+        "name": "Google",
+        "input": "search query",
+        "description": "Worker that searches results from Google. Useful when you need to find short answers about a specific topic."
+      },
+      {
+        "name": "LLM",
+        "input": "instruction",
+        "description": "A pretrained LLM like yourself. Useful when you need to act with general language model."
+      }
+    ]
+  }
+  
