@@ -33,10 +33,11 @@ logger.setLevel(logging.DEBUG)
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
-os.environ["TAVILY_API_KEY"] = "tvly-Ra41YpYUsQkp"
-# 4qyy16BB27gSSbPOIeRF"
-os.environ["OPENAI_API_KEY"] = "sk-UYmhf41IuMzY5coDDDAtT3Blbk"
-# FJOkZq14YomG4POS45lfta"
+os.environ["TAVILY_API_KEY"] = "tvly-Ra41Yp"
+# YUsQkp4qyy16BB27gSSbPOIeRF"
+os.environ["OPENAI_API_KEY"] = "sk-UYmhf41IuMzY5coDDDAt"
+# T3BlbkFJOkZq14YomG4POS45lfta"
+os.environ["QWEN_API_KEY"] = ""
 
 class ReWOO(TypedDict):
     task: str
@@ -46,7 +47,10 @@ class ReWOO(TypedDict):
     result: str
 
 # 初始化模型
-model = ChatOpenAI(temperature=0.9, model="gpt-3.5-turbo")
+# TODO：后续要替换为自己的本地模型
+model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+
+# 把对应的工具import进来
 search = TavilySearchResults()
 weather_search = weather_forcast_24h
 
@@ -54,6 +58,8 @@ weather_search = weather_forcast_24h
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
+
+# planner其实就是一个agent，是模型+prompt
 planner = prompt_template | model
 
 def get_plan(state: ReWOO):
@@ -125,8 +131,10 @@ def _route(state):
     """确定任务执行的下一步。"""
     _step = _get_current_task(state)
     if _step is None:
+        # 如果所有的工具调用步骤都执行完了，就去执行solve，得到最终结果
         return "solve"
     else:
+        # 如果工具调用步骤还没执行完，继续执行
         return "tool"
 
 def rewoo_as_func(task: str):
@@ -144,18 +152,25 @@ def rewoo_as_func(task: str):
     graph.set_entry_point("plan")
     app = graph.compile()
 
-    i = 0
+    i = 1
 
     response = ""
     for s in app.stream({"task": TASK}):
-        i += 1
-        logger.info(f"这是第{i}次循环")
-        response = response + str(s) + "\n"
+        logger.info(f"这是第{i}个流程")
+        # response = response + str(s) + "\n"
         logger.info(s)
+        if("plan" in s):
+            j = 1
+            response = "**API执行计划如下：**\n\n"
+            for step in s['plan']['steps']:
+                response = response + f"第{j}步：{step[0]}\n\n"
+                j += 1
+            logger.info(s['plan']['steps'])
+        i += 1
 
     logger.info(s['solve']['result'])
 
-    response = response + "最终结果为：" + s['solve']['result'] + "\n"
+    response = response + "\n\n**最终结果**：\n\n" + s['solve']['result'] + "\n"
 
     return response
 

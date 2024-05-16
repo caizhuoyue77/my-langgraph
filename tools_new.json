@@ -1,0 +1,164 @@
+{
+    "tools":[
+        {
+          "name": "CurrentWeather",
+          "input": "city",
+          "description": "获取某个城市的当前天气信息"
+        },
+        {
+          "name": "DailyWeatherForecast",
+          "input": "city",
+          "description": "获取某个城市未来几天的天气预报"
+        },
+        {
+          "name": "HourlyWeatherForecast",
+          "input": "city",
+          "description": "获取某个城市逐小时的天气预报"
+        },
+        {
+          "name": "MinuteByMinutePrecipitation",
+          "input": "location",
+          "description": "提供某个地区每分钟的降水信息"
+        },
+        {
+          "name": "WeatherDisasterWarning",
+          "input": "location",
+          "description": "提供天气相关的灾害预警信息"
+        },
+        {
+          "name": "WeatherWarningCityList",
+          "input": "none",
+          "description": "列出所有当前有天气预警的城市"
+        },
+        {
+          "name": "WeatherIndexForecast1D",
+          "input": "city",
+          "description": "提供某个城市未来一天的天气指数预报"
+        },
+        {
+          "name": "WeatherIndexForecast3D",
+          "input": "city",
+          "description": "提供某个城市未来三天的天气指数预报"
+        },
+        {
+          "name": "CurrentAirQualityIndex",
+          "input": "city",
+          "description": "获取某个城市的当前空气质量指数"
+        },
+        {
+          "name": "DailyAirQualityForecast",
+          "input": "city",
+          "description": "获取某个城市未来几天的空气质量预报"
+        },
+        {
+          "name": "WeatherHistory",
+          "input": "city, date",
+          "description": "查询某个城市的历史天气数据"
+        },
+        {
+          "name": "HourlySolarRadiationForecast24H",
+          "input": "city",
+          "description": "提供未来24小时的逐小时太阳辐射预报"
+        },
+        {
+          "name": "HourlySolarRadiationForecast72H",
+          "input": "city",
+          "description": "提供未来72小时的逐小时太阳辐射预报"
+        },
+        {
+          "name": "CityLookup",
+          "input": "city name or other info",
+          "description": "通过城市名称或其他信息搜索城市"
+        },
+        {
+          "name": "TopCityLookup",
+          "input": "none",
+          "description": "获取当前最热门的城市列表"
+        },
+        {
+          "name": "POISearch",
+          "input": "city or region",
+          "description": "搜索某个城市或地区的旅游景点"
+        },
+        {
+          "name": "POIAreaSearch",
+          "input": "area",
+          "description": "在指定范围内搜索旅行景点"
+        },
+        {
+          "name": "SunriseSunset",
+          "input": "city",
+          "description": "获取某个城市的日出和日落时间"
+        },
+        {
+          "name": "GetExchangeRates",
+          "input": "currency pairs",
+          "description": "获取不同货币之间的汇率信息"
+        },
+        {
+          "name": "LocationtoLatLon",
+          "input": "location name",
+          "description": "通过地点名称搜索其经纬度信息"
+        },
+        {
+          "name": "SearchHotels",
+          "input": "search criteria",
+          "description": "搜索符合条件的酒店列表"
+        },
+        {
+          "name": "SearchHotelDestination",
+          "input": "destination",
+          "description": "搜索某个目的地的酒店"
+        },
+        {
+          "name": "GetHotelDetails",
+          "input": "hotel ID",
+          "description": "获取指定酒店的详细信息"
+        },
+        {
+          "name": "GetHotelRoomAvailability",
+          "input": "hotel ID, dates",
+          "description": "获取酒店的房间空房情况"
+        },
+        {
+          "name": "GetHotelDescriptionAndInfo",
+          "input": "hotel ID",
+          "description": "获取酒店的描述信息和其他详细资料"
+        },
+        {
+          "name": "GetHotelReviewScores",
+          "input": "hotel ID",
+          "description": "获取酒店的评分和用户评论"
+        },
+        {
+          "name": "SearchFlights",
+          "input": "search criteria",
+          "description": "搜索符合条件的航班信息"
+        },
+        {
+          "name": "SearchFlightLocation",
+          "input": "location info",
+          "description": "搜索航班的目的地和出发地相关信息"
+        },
+        {
+          "name": "GetMinFlightPrice",
+          "input": "search criteria",
+          "description": "搜索某个时间段内最低价的航班信息"
+        },
+        {
+          "name": "SearchAttractionLocation",
+          "input": "location",
+          "description": "搜索某个地点的旅行景点"
+        },
+        {
+          "name": "SearchAttractions",
+          "input": "city or region",
+          "description": "搜索某个城市或地区的所有旅行景点"
+        },
+        {
+          "name": "GetAttractionDetails",
+          "input": "attraction ID",
+          "description": "获取某个旅行景点的详细信息"
+        }
+      ]      
+}
