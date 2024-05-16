@@ -1,10 +1,16 @@
 from openai import OpenAI
 import streamlit as st
 
+
+def check_yes():
+    st.session_state.messages.append({"role": "assistant", "content": "点击按钮"})
+
 with st.sidebar:
     qwen_api_key = st.text_input("Qwen API Key", key="qwen_api_key", type="password")
     openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
     mode = st.selectbox("Mode", ["ReWOO", "ReACT","LLMCompiler","Manual"])
+    check_yes = st.button("执行编排流程", on_click=check_yes, disabled=True, use_container_width=True)
+
 
 st.title("蔡卓悦的API编排demo")
 st.caption("🚀 通过ReWOO方式一次生成全部的API编排计划，然后依次执行")
@@ -35,11 +41,6 @@ if prompt := st.chat_input():
         msg = response.json()["response"]
     else:
         msg = "API调用失败"
-
-    # 调用OpenAI的API
-    # response = client.chat.completions.create(model="gpt-3.5-turbo", messages=st.session_state.messages)
-    # msg = response.choices[0].message.content
-    # msg = "woof"
     
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
