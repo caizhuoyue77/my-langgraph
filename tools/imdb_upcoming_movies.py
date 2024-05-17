@@ -31,7 +31,7 @@ async def fetch_upcoming_movies_iter(region: str) -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fetch_upcoming_movies(region: str = "US") -> dict:
+def upcoming_movies(region: str = "US") -> dict:
     """
     A synchronous wrapper function to fetch a list of upcoming movies for a specified region from IMDb.
 
@@ -44,5 +44,5 @@ def fetch_upcoming_movies(region: str = "US") -> dict:
     return asyncio.run(fetch_upcoming_movies_iter(region))
 
 if __name__ == "__main__":
-    upcoming_movies_data = fetch_upcoming_movies()
+    upcoming_movies_data = upcoming_movies()
     print("Upcoming Movies:", upcoming_movies_data)

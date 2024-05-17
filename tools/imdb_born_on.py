@@ -33,7 +33,7 @@ async def fetch_born_on_iter(month: str, day: str) -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fetch_born_on(month: str, day: str) -> dict:
+def born_on(month: str, day: str) -> dict:
     """
     A synchronous wrapper function to fetch a list of celebrities born on a specified date from IMDb.
 
@@ -47,5 +47,5 @@ def fetch_born_on(month: str, day: str) -> dict:
     return asyncio.run(fetch_born_on_iter(month, day))
 
 if __name__ == "__main__":
-    born_on_data = fetch_born_on("01", "01")
+    born_on_data = born_on("01", "01")
     print("Celebrities Born On 01-01:", born_on_data)

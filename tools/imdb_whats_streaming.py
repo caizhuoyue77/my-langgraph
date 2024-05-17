@@ -31,7 +31,7 @@ async def fetch_whats_streaming_iter(country: str) -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fetch_whats_streaming(country: str = "US") -> dict:
+def whats_streaming(country: str = "US") -> dict:
     """
     A synchronous wrapper function to fetch information on what's currently streaming in a specified country from IMDb.
 

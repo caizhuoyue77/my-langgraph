@@ -7,6 +7,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, END
 from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
+from call_tools import use_actual_tool
 import colorlog
 
 # 配置日志记录器
@@ -73,28 +74,6 @@ def _get_current_task(state: ReWOO):
     else:
         return len(state["results"]) + 1
 
-# TODO: 修改得更加智能一点，能够读取文件夹里的所有工具，然后
-def use_actual_tool(tool: str, tool_input: dict):
-    # 把对应的工具import进来
-    from langchain_community.tools.tavily_search import TavilySearchResults
-    from tools import weather_forcast_24h
-    search = TavilySearchResults()
-    weather_search = weather_forcast_24h
-
-
-    if tool == "Google":
-        result = search.invoke(tool_input)
-    elif tool == "LLM":
-        result = model.invoke(tool_input)
-    elif tool == "WeatherSearch":
-        result = weather_search(tool_input)
-    elif tool == "HotelSearch":
-        result = "长沙的酒店有：1.桔子水晶 2.如家 3.锦江之星"
-    elif tool == "GetTime":
-        result = "2024-05-20"
-    else:
-        raise ValueError(f"Unknown tool: {tool}")
-    return result
 
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""

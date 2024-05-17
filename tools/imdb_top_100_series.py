@@ -27,7 +27,7 @@ async def fetch_imdb_top_100_series_iter() -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fetch_imdb_top_100_series() -> dict:
+def top_100_series() -> dict:
     """
     A synchronous wrapper function to fetch the IMDb top 100 series.
 
@@ -37,5 +37,5 @@ def fetch_imdb_top_100_series() -> dict:
     return asyncio.run(fetch_imdb_top_100_series_iter())
 
 if __name__ == "__main__":
-    series_data = fetch_imdb_top_100_series()
+    series_data = top_100_series()
     print("IMDb Top 100 Series:", series_data)

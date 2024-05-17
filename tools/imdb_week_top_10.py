@@ -56,7 +56,7 @@ async def fetch_week_top_10_iter() -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fetch_week_top_10() -> dict:
+def week_top_10() -> dict:
     """
     A synchronous wrapper function to fetch the week's top 10 movies and shows from IMDb.
 
@@ -66,5 +66,5 @@ def fetch_week_top_10() -> dict:
     return asyncio.run(fetch_week_top_10_iter())
 
 if __name__ == "__main__":
-    week_top_10_data = fetch_week_top_10()
+    week_top_10_data = week_top_10()
     print("Week's Top 10:", week_top_10_data)

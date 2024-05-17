@@ -1,35 +1,149 @@
 {
-    "tools": [
-      {
-        "name":"GetTime",
-        "input":"",
-        "description":"Worker that returns the current time."
-      },
-      {
-        "name": "WeatherSearch",
-        "input": "location string",
-        "description": "Worker that searches weather information. Useful when you need to find weather information."
-      },
-      {
-        "name": "HotelSearch",
-        "input": "location string and date string",
-        "description": "Worker that searches hotel information. Useful when finding hotel's price, location and other information."
-      },
-      {
-        "name": "ExchangeRateSearch",
-        "input": "currency code",
-        "description": "Worker that searches realtime exchange rates for you."
-      },
-      {
-        "name": "Google",
-        "input": "search query",
-        "description": "Worker that searches results from Google. Useful when you need to find short answers about a specific topic."
-      },
-      {
-        "name": "LLM",
-        "input": "instruction",
-        "description": "A pretrained LLM like yourself. Useful when you need to act with general language model."
-      }
-    ]
-  }
-  
+  "tools": [
+    {
+      "name": "TavilySearchResults",
+      "input": "search query",
+      "description": "Worker that searches results from Tavily. Useful for general search queries."
+    },
+    {
+      "name": "GetCurrentTime",
+      "input": "",
+      "description": "Worker that returns the current time."
+    },
+    {
+      "name": "GetCurrency",
+      "input": "currency code",
+      "description": "Worker that retrieves currency information."
+    },
+    {
+      "name": "GetExchangeRates",
+      "input": "currency codes",
+      "description": "Worker that retrieves exchange rates between currencies."
+    },
+    {
+      "name": "GetLanguages",
+      "input": "",
+      "description": "Worker that lists available languages."
+    },
+    {
+      "name": "LocationToLatLon",
+      "input": "location name",
+      "description": "Worker that converts a location name to latitude and longitude."
+    },
+    {
+      "name": "SearchAttractionLocations",
+      "input": "location name",
+      "description": "Worker that searches for attraction locations."
+    },
+    {
+      "name": "SearchAttractions",
+      "input": "attraction name",
+      "description": "Worker that searches for attractions."
+    },
+    {
+      "name": "SearchFlightLocation",
+      "input": "location name",
+      "description": "Worker that searches for flight locations."
+    },
+    {
+      "name": "SearchFlightsMinPrice",
+      "input": "flight details",
+      "description": "Worker that searches for the minimum price of flights."
+    },
+    {
+      "name": "SearchFlights",
+      "input": "flight details",
+      "description": "Worker that searches for flights."
+    },
+    {
+      "name": "SearchHotelDestination",
+      "input": "destination details",
+      "description": "Worker that searches for hotel destinations."
+    },
+    {
+      "name": "SearchHotels",
+      "input": "hotel details",
+      "description": "Worker that searches for hotels."
+    },
+    {
+      "name": "SearchLocation",
+      "input": "location name",
+      "description": "Worker that searches for a location."
+    },
+    {
+      "name": "SunriseSunset",
+      "input": "location name",
+      "description": "Worker that retrieves sunrise and sunset times for a location."
+    },
+    {
+      "name": "WaterLevel",
+      "input": "location name",
+      "description": "Worker that retrieves water level information for a location."
+    },
+    {
+      "name": "WeatherForecast3D",
+      "input": "location name",
+      "description": "Worker that retrieves a 3-day weather forecast for a location."
+    },
+    {
+      "name": "WeatherForecast7D",
+      "input": "location name",
+      "description": "Worker that retrieves a 7-day weather forecast for a location."
+    },
+    {
+      "name": "WeatherForecast24H",
+      "input": "location name",
+      "description": "Worker that retrieves a 24-hour weather forecast for a location."
+    },
+    {
+      "name": "WeatherIndex1D",
+      "input": "location name",
+      "description": "Worker that retrieves a 1-day weather index for a location."
+    },
+    {
+      "name": "WeatherRainMinute",
+      "input": "location name",
+      "description": "Worker that retrieves minute-by-minute rain information for a location."
+    },
+    {
+      "name": "BornOn",
+      "input": "date",
+      "description": "Worker that retrieves information about people born on a specific date from IMDb."
+    },
+    {
+      "name": "FanFavorite",
+      "input": "",
+      "description": "Worker that retrieves fan favorite movies or series from IMDb."
+    },
+    {
+      "name": "SearchIMDb",
+      "input": "search query",
+      "description": "Worker that searches for information on IMDb."
+    },
+    {
+      "name": "Top100Movies",
+      "input": "",
+      "description": "Worker that retrieves the top 100 movies from IMDb."
+    },
+    {
+      "name": "Top100Series",
+      "input": "",
+      "description": "Worker that retrieves the top 100 series from IMDb."
+    },
+    {
+      "name": "UpcomingMovies",
+      "input": "",
+      "description": "Worker that retrieves upcoming movies from IMDb."
+    },
+    {
+      "name": "WeekTop10",
+      "input": "",
+      "description": "Worker that retrieves the top 10 movies or series of the week from IMDb."
+    },
+    {
+      "name": "WhatsStreaming",
+      "input": "",
+      "description": "Worker that retrieves information about what's streaming on IMDb."
+    }
+  ]
+}
