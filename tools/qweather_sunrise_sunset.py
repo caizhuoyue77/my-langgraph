@@ -3,13 +3,13 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from server.agent.tools.helper import get_location_id, get_date
+# # from server.agent.tools.helper import get_location_id, get_date
 
 async def sunrise_sunset_iter(input: str):
     base_url = "https://devapi.qweather.com/v7/astronomy/sun"
 
-    location = get_location_id(input)
-    date = get_date(input)
+    location = "101010100"
+    date = "20240525"
     
     params = {
         "location": location,

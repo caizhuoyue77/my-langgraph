@@ -1,34 +1,43 @@
-
 # 把对应的工具import进来
-from langchain_community.tools.tavily_search import TavilySearchResults
-from tools.get_current_time import get_current_time
-from tools.bookings_get_currency import get_currency
-from tools.bookings_get_exchange_rates import get_exchange_rates
-from tools.bookings_get_languages import get_languages
-from tools.bookings_location_to_lat_lon import location_to_lat_lon
-from tools.bookings_search_attraction_locations import search_attraction_locations
-from tools.bookings_search_attractions import search_attractions
-from tools.bookings_search_flight_location import search_flight_location
-from tools.bookings_search_flights_min_price import search_flights_min_price
-from tools.bookings_search_flights import search_flights
-from tools.bookings_search_hotel_destination import search_hotel_destination
-from tools.bookings_search_hotels import search_hotels
-from tools.qweather_search_location import search_location
-from tools.qweather_sunrise_sunset import sunrise_sunset
-from tools.qweather_water_level import water_level
-from tools.qweather_weather_forcast_3d import weather_forcast_3d
-from tools.qweather_weather_forcast_7d import weather_forcast_7d
-from tools.qweather_weather_forcast_24h import weather_forcast_24h
-from tools.qweather_weather_index_1d import weather_index_1d
-from tools.qweather_weather_rain_minute import weather_rain_minute
-from tools.imdb_born_on import born_on
-from tools.imdb_fan_favorite import fan_favorite
-from tools.imdb_search_imdb import search_imdb
-from tools.imdb_top_100_movies import top_100_movies
-from tools.imdb_top_100_series import top_100_series
-from tools.imdb_upcoming_movies import upcoming_movies
-from tools.imdb_week_top_10 import week_top_10
-from tools.imdb_whats_streaming import whats_streaming
+from langchain_community.tavily_search import TavilySearchResults
+
+import sys
+import os
+
+# 获取当前文件的目录
+current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# 将tools目录添加到sys.path中
+tools_dir = os.path.join(current_dir, 'tools')
+sys.path.append(tools_dir)
+
+from get_current_time import get_current_time
+from bookings_get_currency import get_currency
+from bookings_get_exchange_rates import get_exchange_rates
+from bookings_get_languages import get_languages
+from bookings_location_to_lat_lon import location_to_lat_lon
+from bookings_search_attraction_locations import search_attraction_locations
+from bookings_search_attractions import search_attractions
+from bookings_search_flight_location import search_flight_location
+from bookings_search_flights_min_price import search_flights_min_price
+from bookings_search_flights import search_flights
+from bookings_search_hotel_destination import search_hotel_destination
+from bookings_search_hotels import search_hotels
+from qweather_search_location import search_location
+from qweather_sunrise_sunset import sunrise_sunset
+from qweather_weather_forcast_3d import weather_forcast_3d
+from qweather_weather_forcast_7d import weather_forcast_7d
+from qweather_weather_forcast_24h import weather_forcast_24h
+from qweather_weather_index_1d import weather_index_1d
+from qweather_weather_rain_minute import weather_rain_minute
+from imdb_born_on import born_on
+from imdb_fan_favorites import fan_favorites
+from imdb_search_imdb import search_imdb
+from imdb_top_100_movies import top_100_movies
+from imdb_top_100_series import top_100_series
+from imdb_upcoming_movies import upcoming_movies
+from imdb_week_top_10 import week_top_10
+from imdb_whats_streaming import whats_streaming
 
 def use_actual_tool(tool: str, tool_input: dict):
     search = TavilySearchResults()

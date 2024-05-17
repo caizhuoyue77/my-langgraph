@@ -154,7 +154,6 @@ def rewoo_as_func(task: str):
 
     return response
 
-
 if __name__ == "__main__":
     # 定义任务执行的状态图
     graph = StateGraph(ReWOO)

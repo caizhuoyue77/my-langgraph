@@ -3,13 +3,13 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from server.agent.tools.helper import get_location_id
+# # from server.agent.tools.helper import get_location_id
 
 
 async def weather_index_1d_iter(input: str):
     base_url = "https://devapi.qweather.com/v7/indices/1d"
 
-    location = get_location_id(input)
+    location = "101010100"
     
     params = {
         "location": location,

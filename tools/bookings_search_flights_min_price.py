@@ -23,7 +23,7 @@ async def search_min_price_iter(from_id: str, to_id: str, depart_date: str, curr
             else:
                 return {"error": f"Failed to fetch minimum flight price, status code: {response.status}"}
 
-def search_min_price(query: str):
+def search_flights_min_price(query: str):
     from_id = "BOM.AIRPORT"
     to_id = "DEL.AIRPORT"
     depart_date = "2024-10-01"  # Replace this with the actual departure date

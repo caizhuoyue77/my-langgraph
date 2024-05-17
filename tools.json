@@ -76,11 +76,6 @@
       "description": "Worker that retrieves sunrise and sunset times for a location."
     },
     {
-      "name": "WaterLevel",
-      "input": "location name",
-      "description": "Worker that retrieves water level information for a location."
-    },
-    {
       "name": "WeatherForecast3D",
       "input": "location name",
       "description": "Worker that retrieves a 3-day weather forecast for a location."
@@ -111,7 +106,7 @@
       "description": "Worker that retrieves information about people born on a specific date from IMDb."
     },
     {
-      "name": "FanFavorite",
+      "name": "FanFavorites",
       "input": "",
       "description": "Worker that retrieves fan favorite movies or series from IMDb."
     },

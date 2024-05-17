@@ -3,7 +3,7 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from server.agent.tools.helper import get_location_id, get_lon_lat
+# from server.agent.tools.helper import get_location_id, get_lon_lat
 
 async def weather_rain_minute_parse(response):
     return response["summary"]
