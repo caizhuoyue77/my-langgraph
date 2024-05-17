@@ -1,6 +1,16 @@
 {
     "tools":[
         {
+          "name": "Google",
+          "input": "search query",
+          "description": "Worker that searches results from Google. Useful when you need to find short answers about a specific topic."
+        },
+        {
+          "name": "LLM",
+          "input": "instruction",
+          "description": "A pretrained LLM like yourself. Useful when you need to act with general language model."
+        },
+        {
           "name": "CurrentWeather",
           "input": "city",
           "description": "获取某个城市的当前天气信息"

@@ -5,8 +5,6 @@ from typing import TypedDict, List
 from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_community.tools.tavily_search import TavilySearchResults
-from tools import weather_forcast_24h
 from langgraph.graph import StateGraph, END
 from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
 import colorlog
@@ -48,10 +46,6 @@ class ReWOO(TypedDict):
 # TODO：后续要替换为自己的本地模型
 model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
 
-# 把对应的工具import进来
-search = TavilySearchResults()
-weather_search = weather_forcast_24h
-
 # 正则表达式
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 
@@ -79,6 +73,28 @@ def _get_current_task(state: ReWOO):
     else:
         return len(state["results"]) + 1
 
+# TODO: 修改得更加智能一点，能够读取文件夹里的所有工具，然后
+def use_actual_tool(tool: str, tool_input: dict):
+    # 把对应的工具import进来
+    from langchain_community.tools.tavily_search import TavilySearchResults
+    from tools import weather_forcast_24h
+    search = TavilySearchResults()
+    weather_search = weather_forcast_24h
+
+
+    if tool == "Google":
+        result = search.invoke(tool_input)
+    elif tool == "LLM":
+        result = model.invoke(tool_input)
+    elif tool == "WeatherSearch":
+        result = weather_search(tool_input)
+    elif tool == "HotelSearch":
+        result = "长沙的酒店有：1.桔子水晶 2.如家 3.锦江之星"
+    elif tool == "GetTime":
+        result = "2024-05-20"
+    else:
+        raise ValueError(f"Unknown tool: {tool}")
+    return result
 
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
@@ -94,20 +110,7 @@ def tool_execution(state: ReWOO):
     # 写一个函数专门来选择并执行工具
     # execute_tool(tool, tool_input)
 
-    if tool == "Google":
-        result = search.invoke(tool_input)
-    elif tool == "LLM":
-        result = model.invoke(tool_input)
-        logger.error(f"Executing LLM tool with input {tool_input}")
-    elif tool == "WeatherSearch":
-        result = weather_search(tool_input)
-        logger.error(f"Executing WeatherSearch tool with input {tool_input}")
-    elif tool == "HotelSearch":
-        result = "长沙的酒店有：1.桔子水晶 2.如家 3.锦江之星"
-    elif tool == "GetTime":
-        return "2024-05-20"
-    else:
-        raise ValueError(f"Unknown tool: {tool}")
+    result = use_actual_tool(tool, tool_input)
 
     _results[step_name] = str(result)
     return {"results": _results}
