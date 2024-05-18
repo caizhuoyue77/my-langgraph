@@ -53,6 +53,10 @@ def use_actual_tool(tool: str, tool_input: dict):
     if tool == "Google":
         result = search.invoke(tool_input)
     # 天气API
+    # TODO:待添加，实时天气查询
+    # elif tool == "CurrentWeather":
+        # result = current_weather(tool_input)
+    # 24小时内的天气预报
     elif tool == "WeatherSearch":
         result = weather_forcast_24h(tool_input)
     elif tool == "SunriseSunset":
