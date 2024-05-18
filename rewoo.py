@@ -49,6 +49,7 @@ class ReWOO(TypedDict):
 # 初始化模型
 # TODO：后续要替换为自己的本地模型
 # model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+# 使用Qwen的模型
 model = Tongyi()
 
 # 正则表达式
@@ -68,6 +69,8 @@ def get_plan(state: ReWOO):
 
     logger.error(f"Qwen模型的回复：{result}")
 
+    # 如果是用OpenAI，这里的result都得改为result.content（一共有4个地方）
+    # 如果是用Qwen，这里就保持result就好
     matches = re.findall(regex_pattern, result)
     logger.critical("计划步骤:")
     for step in matches:
