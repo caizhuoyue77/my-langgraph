@@ -13,6 +13,12 @@
 [ ] 5. 添加可视化的部分
 [ ] 6. 添加可交互式编排的部分
 
+## 模型改成Qwen的几个注意事项
+
+1. 现在的Qwen是通过`from langchain_community.llms import Tongyi`里面的Tongyi来实现的，然后`model = Tongyi()`;后面得改成通过API调用跑在我们服务器本地的Qwen模型
+2. Tongyi返回的result格式和OpenAI不一样，要把所有代码里面的result.content改为result
+
+
 ## 当务之急：
 1. 弄出图谱
 2. 设计一个需要调用多个API的case（旅行线路）
