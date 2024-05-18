@@ -33,8 +33,6 @@ class QwenLLM(LLM):
         # if stop is not None:
         #     raise ValueError("stop kwargs are not permitted.")
 
-        # return "Hello from QwenLLM!"
-    
         messages = []
         messages.append({'role': 'user', 'content': prompt})
 

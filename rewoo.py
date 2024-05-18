@@ -5,8 +5,9 @@ from typing import TypedDict, List
 from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_community.llms import Tongyi
 from langgraph.graph import StateGraph, END
-from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
+from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY, DASHSCOPE_API_KEY
 from call_tools import use_actual_tool
 from qwen_model import QwenLLM
 import colorlog
@@ -36,6 +37,7 @@ logger.setLevel(logging.DEBUG)
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.environ["DASHSCOPE_API_KEY"] = DASHSCOPE_API_KEY
 
 class ReWOO(TypedDict):
     task: str
@@ -47,7 +49,7 @@ class ReWOO(TypedDict):
 # 初始化模型
 # TODO：后续要替换为自己的本地模型
 # model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
-model = QwenLLM(temperature=0.1, model = "qwen")
+model = Tongyi()
 
 # 正则表达式
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
@@ -61,15 +63,16 @@ def get_plan(state: ReWOO):
     """生成任务计划。"""
     task = state["task"]
 
-    breakpoint()
     # 改为qwen的话，会在这个部分出问题
     result = planner.invoke({"task": task, "tool_list": TOOL_LIST})
 
-    matches = re.findall(regex_pattern, result.content)
+    logger.error(f"Qwen模型的回复：{result}")
+
+    matches = re.findall(regex_pattern, result)
     logger.critical("计划步骤:")
     for step in matches:
         logger.critical(f"Plan: {step[0]}, {step[1]} = {step[2]}[{step[3]}]")
-    return {"steps": matches, "plan_string": result.content}
+    return {"steps": matches, "plan_string": result}
 
 def _get_current_task(state: ReWOO):
     """确定当前任务步骤。"""
@@ -113,7 +116,7 @@ def solve(state: ReWOO):
     prompt = SOLVE_PROMPT.format(plan=plan, task=state["task"])
     result = model.invoke(prompt)
 
-    return {"result": result.content}
+    return {"result": result}
 
 def _route(state):
     """确定任务执行的下一步。"""
@@ -164,21 +167,4 @@ def rewoo_as_func(task: str):
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
-    graph = StateGraph(ReWOO)
-    graph.add_node("plan", get_plan)
-    graph.add_node("tool", tool_execution)
-    graph.add_node("solve", solve)
-    # 添加边把他们串起来
-    graph.add_edge("plan", "tool")
-    graph.add_edge("solve", END)
-    graph.add_conditional_edges("tool", _route)
-    graph.set_entry_point("plan")
-    app = graph.compile()
-
-    i = 0
-    for s in app.stream({"task": TASK}):
-        i += 1
-        logger.info(f"这是第{i}次循环")
-        logger.info(s)
-
-    logger.info(s['solve']['result'])
+    rewoo_as_func("我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?")
