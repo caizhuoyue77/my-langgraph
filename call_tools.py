@@ -1,5 +1,9 @@
 # 把对应的工具import进来
-from langchain_community.tavily_search import TavilySearchResults
+import os
+from langchain_openai import ChatOpenAI
+from langchain_core.prompts import ChatPromptTemplate
+from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
+from langchain_community.tools.tavily_search import TavilySearchResults
 
 import sys
 import os
@@ -39,12 +43,16 @@ from imdb_upcoming_movies import upcoming_movies
 from imdb_week_top_10 import week_top_10
 from imdb_whats_streaming import whats_streaming
 
+os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+
 def use_actual_tool(tool: str, tool_input: dict):
     search = TavilySearchResults()
 
     # 通用API
     if tool == "Google":
-        result = search.invoke(tool_input)
+        # result = search.invoke(tool_input)
+        result = "Gen v is a good movie, published in 2025."
     # 天气API
     elif tool == "WeatherSearch":
         result = weather_forcast_24h(tool_input)
@@ -58,8 +66,6 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = weather_index_1d(tool_input)
     elif tool == "WeatherRainMinute":
         result = weather_rain_minute(tool_input)
-    elif tool == "WaterLevel":
-        result = water_level(tool_input)
     elif tool == "SearchLocation":
         result = search_location(tool_input)
     # 酒店API
@@ -90,8 +96,8 @@ def use_actual_tool(tool: str, tool_input: dict):
     # IMDb 电影/电视剧API
     elif tool == "BornOn":
         result = born_on(tool_input)
-    elif tool == "FanFavorite":
-        result = fan_favorite(tool_input)
+    elif tool == "FanFavorites":
+        result = fan_favorites(tool_input)
     elif tool == "SearchIMDb":
         result = search_imdb(tool_input)
     elif tool == "Top100Movies":

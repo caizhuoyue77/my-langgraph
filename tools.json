@@ -1,7 +1,7 @@
 {
   "tools": [
     {
-      "name": "TavilySearchResults",
+      "name": "Google",
       "input": "search query",
       "description": "Worker that searches results from Tavily. Useful for general search queries."
     },

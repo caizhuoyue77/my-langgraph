@@ -86,9 +86,7 @@ def tool_execution(state: ReWOO):
     
     logger.info(f"Executing step {_step}: {step_name} using {tool} with input {tool_input}")
     
-    # 写一个函数专门来选择并执行工具
-    # execute_tool(tool, tool_input)
-
+    # 专门来选择并执行工具
     result = use_actual_tool(tool, tool_input)
 
     _results[step_name] = str(result)
@@ -135,7 +133,7 @@ def rewoo_as_func(task: str):
     i = 1
 
     response = ""
-    for s in app.stream({"task": TASK}):
+    for s in app.stream({"task": task}):
         logger.info(f"这是第{i}个流程")
         # response = response + str(s) + "\n"
         logger.info(s)

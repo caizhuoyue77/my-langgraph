@@ -3,6 +3,7 @@ from utils import get_tool_list_str
 
 TOOL_LIST = get_tool_list_str()
 
+# 可以在这里指定
 TASK = "我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?"
 
 PROMPT_TEMPLATE = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \
