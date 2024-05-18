@@ -66,6 +66,7 @@ planner = prompt_template | model
 
 def get_plan(state: ReWOO):
     """生成任务计划。"""
+    
     task = state["task"]
 
     # 改为qwen的话，会在这个部分出问题
@@ -98,6 +99,9 @@ def _get_current_task(state: ReWOO):
 
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
+
+    return {"results":"最近最受欢迎的电影是间谍过家家"}
+
     _step = _get_current_task(state)
     _, step_name, tool, tool_input = state["steps"][_step - 1]
     _results = state["results"] or {}
@@ -148,7 +152,7 @@ def rewoo_as_func(task: str):
 
     state.update(plan)
 
-    response = "**API执行计划如下：**"
+    response = "**API执行计划如下：**\n\n"
     for idx,step in enumerate(state['steps'],1):
         response += f"第{idx}步： {step[0]}\n\n"
     
@@ -170,19 +174,28 @@ def execute_plan(state: ReWOO):
     app = graph.compile()
 
     response = ""
+# 
+    # return "**执行结果**\n\n假设这个是执行结果～～～"
 
-    for s in app.stream(state):
-        logger.info(f"这是第{i}个流程")
-        logger.info(s)
-        response += str(s)+'\n'
-    
-    response += "最终结果:" + s['solve']['result']
+    try:
+        i = 1
+        
+        for s in app.stream(state):
+            logger.info(f"Step {i}: {s}")
+            logger.info(s)
+            response += str(s) + '\n'
+            i += 1
+
+        response += "最终结果:" + s['solve']['result']
+
+    except KeyError as e:
+        logger.error(f"KeyError encountered: {e}")
+        response += "处理过程中遇到键错误。\n"
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        response += "处理过程中遇到意外错误。\n"
 
     return response
-
-        
-
-
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
