@@ -47,13 +47,17 @@ class ReWOO(TypedDict):
     result: str
 
 # 初始化模型
-# TODO：后续要替换为自己的本地模型
+# 使用OpenAI模型
 # model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
 # 使用Qwen的模型
 model = Tongyi()
+# TODO：后续要替换为自己的本地Qwen模型
 
 # 正则表达式
+# 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
+# 新的表达式，可以比较好的识别出steps，但也许会有其他问题，先这样
+regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
@@ -73,8 +77,13 @@ def get_plan(state: ReWOO):
     # 如果是用Qwen，这里就保持result就好
     matches = re.findall(regex_pattern, result)
     logger.critical("计划步骤:")
-    for step in matches:
-        logger.critical(f"Plan: {step[0]}, {step[1]} = {step[2]}[{step[3]}]")
+    
+    # for step in matches:
+    #     logger.critical(f"Plan: {step[0]}, {step[1]} = {step[2]}[{step[3]}]")
+    #     logger.critical(f"step:{step}")
+    
+    logger.debug(f"steps:{matches}")
+
     return {"steps": matches, "plan_string": result}
 
 def _get_current_task(state: ReWOO):
@@ -106,9 +115,6 @@ def tool_execution(state: ReWOO):
 
 def solve(state: ReWOO):
     """根据收集的证据生成最终解决方案。"""
-
-    logger.error("在调用solve函数啦！！！！")
-
     plan = ""
     for _plan, step_name, tool, tool_input in state["steps"]:
         _results = state["results"] or {}
@@ -151,7 +157,6 @@ def rewoo_as_func(task: str):
     response = ""
     for s in app.stream({"task": task}):
         logger.info(f"这是第{i}个流程")
-        # response = response + str(s) + "\n"
         logger.info(s)
         if("plan" in s):
             j = 1
@@ -160,6 +165,8 @@ def rewoo_as_func(task: str):
                 response = response + f"第{j}步：{step[0]}\n\n"
                 j += 1
             logger.info(s['plan']['steps'])
+        if(i == 1):
+            return response
         i += 1
 
     logger.info(s['solve']['result'])
