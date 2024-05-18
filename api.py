@@ -13,6 +13,7 @@ async def chat_endpoint(request: Request):
     data = await request.json()
     query = data.get("message")
     if query:
+        # response = "在搞什么？"
         response = rewoo_as_func(query)
         return {"response": response}
     return {"response": "No query provided"}

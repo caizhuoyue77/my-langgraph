@@ -94,6 +94,9 @@ def tool_execution(state: ReWOO):
 
 def solve(state: ReWOO):
     """根据收集的证据生成最终解决方案。"""
+
+    logger.error("在调用solve函数啦！！！！")
+
     plan = ""
     for _plan, step_name, tool, tool_input in state["steps"]:
         _results = state["results"] or {}
@@ -103,6 +106,7 @@ def solve(state: ReWOO):
         plan += f"Plan: {_plan}\n{step_name} = {tool}[{tool_input}]\n"
     prompt = SOLVE_PROMPT.format(plan=plan, task=state["task"])
     result = model.invoke(prompt)
+
     return {"result": result.content}
 
 def _route(state):
@@ -149,7 +153,7 @@ def rewoo_as_func(task: str):
     logger.info(s['solve']['result'])
 
     response = response + "\n\n**最终结果**：\n\n" + s['solve']['result'] + "\n"
-
+    
     return response
 
 if __name__ == "__main__":

@@ -49,10 +49,10 @@ if prompt := st.chat_input():
 
     if response.status_code == 200:
         msg = response.json()["response"]
-        st.session_state["button_clicked"] = False
-        st.experimental_rerun()
+        # st.session_state["button_clicked"] = False
+        # st.experimental_rerun()
     else:
         msg = "API调用失败"
-    
+
     st.session_state.messages.append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)

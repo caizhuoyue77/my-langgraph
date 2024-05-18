@@ -51,8 +51,7 @@ def use_actual_tool(tool: str, tool_input: dict):
 
     # 通用API
     if tool == "Google":
-        # result = search.invoke(tool_input)
-        result = "Gen v is a good movie, published in 2025."
+        result = search.invoke(tool_input)
     # 天气API
     elif tool == "WeatherSearch":
         result = weather_forcast_24h(tool_input)
