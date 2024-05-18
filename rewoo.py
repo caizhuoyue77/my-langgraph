@@ -57,7 +57,7 @@ model = Tongyi()
 # 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 # 新的表达式，可以比较好的识别出steps，但也许会有其他问题，先这样
-regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
+# regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
@@ -144,8 +144,6 @@ def _route(state):
 def rewoo_as_func(task: str):
     logger.info(f"Task:{task}")
 
-    i = 1
-
     state = {"task": task, "results": None}
 
     plan = get_plan(state)
@@ -163,34 +161,29 @@ def execute_plan(state: ReWOO):
     logger.info("经过同意后，执行计划")
 
     graph = StateGraph(ReWOO)
-    graph.add_node("plan", get_plan)
+    # graph.add_node("plan", get_plan)
     graph.add_node("tool", tool_execution)
     graph.add_node("solve", solve)
-    graph.add_edge("plan", "tool")
+    # graph.add_edge("plan", "tool")
+    graph.add_edge("tool", "solve")
     graph.add_edge("solve", END)
-
-    graph.add_conditional_edges("tool", _route)
+    # graph.add_conditional_edges("tool", _route)
     graph.set_entry_point("tool")
     app = graph.compile()
 
     response = ""
-# 
-    # return "**执行结果**\n\n假设这个是执行结果～～～"
 
     try:
         i = 1
+
+        logger.error(state)
         
         for s in app.stream(state):
-            logger.info(f"Step {i}: {s}")
-            logger.info(s)
             response += str(s) + '\n'
             i += 1
 
         response += "最终结果:" + s['solve']['result']
 
-    except KeyError as e:
-        logger.error(f"KeyError encountered: {e}")
-        response += "处理过程中遇到键错误。\n"
     except Exception as e:
         logger.error(f"An unexpected error occurred: {e}")
         response += "处理过程中遇到意外错误。\n"

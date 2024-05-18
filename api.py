@@ -16,7 +16,7 @@ async def chat_endpoint(request: Request):
     if query:
         response,state = rewoo_as_func(query)
         state_str = json.dumps(state, ensure_ascii=False)
-        return {"response": response, "state": state_str}
+        return {"response": response+"\n\n"+state_str, "state": state_str}
     return {"response": "No query provided"}
 
 @app.post("/continue")
