@@ -165,6 +165,7 @@ def rewoo_as_func(task: str):
                 response = response + f"第{j}步：{step[0]}\n\n"
                 j += 1
             logger.info(s['plan']['steps'])
+        # 有个问题，就是steps里面的步骤数组和plan_string里面的步骤不一样，steps里面有时候会少步骤
         if(i == 1):
             return response
         i += 1
@@ -174,6 +175,36 @@ def rewoo_as_func(task: str):
     response = response + "\n\n**最终结果**：\n\n" + s['solve']['result'] + "\n"
 
     return response
+
+
+def execute_plan(state: ReWOO):
+    logger.info("经过同意后，执行计划")
+
+    graph = StateGraph(ReWOO)
+    graph.add_node("plan", get_plan)
+    graph.add_node("tool", tool_execution)
+    graph.add_node("solve", solve)
+    graph.add_edge("plan", "tool")
+    graph.add_edge("solve", END)
+
+    graph.add_conditional_edges("tool", _route)
+    graph.set_entry_point("tool")
+    app = graph.compile()
+
+    response = ""
+
+    for s in app.stream(state):
+        logger.info(f"这是第{i}个流程")
+        logger.info(s)
+        response += str(s)+'\n'
+    
+    response += "最终结果:" + s['solve']['result']
+
+    return response
+
+        
+
+
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
