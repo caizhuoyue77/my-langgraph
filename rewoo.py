@@ -8,6 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langgraph.graph import StateGraph, END
 from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
 from call_tools import use_actual_tool
+from qwen_model import QwenLLM
 import colorlog
 
 # 配置日志记录器
@@ -45,7 +46,8 @@ class ReWOO(TypedDict):
 
 # 初始化模型
 # TODO：后续要替换为自己的本地模型
-model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+# model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+model = QwenLLM(temperature=0.1, model = "qwen")
 
 # 正则表达式
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
@@ -58,7 +60,11 @@ planner = prompt_template | model
 def get_plan(state: ReWOO):
     """生成任务计划。"""
     task = state["task"]
+
+    breakpoint()
+    # 改为qwen的话，会在这个部分出问题
     result = planner.invoke({"task": task, "tool_list": TOOL_LIST})
+
     matches = re.findall(regex_pattern, result.content)
     logger.critical("计划步骤:")
     for step in matches:
@@ -153,7 +159,7 @@ def rewoo_as_func(task: str):
     logger.info(s['solve']['result'])
 
     response = response + "\n\n**最终结果**：\n\n" + s['solve']['result'] + "\n"
-    
+
     return response
 
 if __name__ == "__main__":

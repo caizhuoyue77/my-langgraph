@@ -16,7 +16,7 @@ class HotelSearchInput(BaseModel):
     currency_code: str = Field(description="Currency code for pricing")
 
 async def search_hotels_iter(input: HotelSearchInput):
-    return "上海的酒店有:1.希尔顿酒店 2000元 2.全季酒店 400元 3.汉庭酒店 200元"
+    return "新加坡的酒店有:1.希尔顿酒店 2000元 2.全季酒店 400元 3.汉庭酒店 200元"
 
     url = "https://booking-com15.p.rapidapi.com/api/v1/hotels/searchHotels"
     headers = {

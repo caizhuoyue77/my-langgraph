@@ -36,7 +36,7 @@ def search_flights(quert: str):
     adults = 1
     children = "0,17"
     currency_code = "CNY"
-    return asyncio.run(get_flights_iter(from_id, to_id, depart_date, page_no, adults, children, currency_code))
+    return asyncio.run(search_flights_iter(from_id, to_id, depart_date, page_no, adults, children, currency_code))
 
 class FlightSearchInput(BaseModel):
     from_id: str = Field(description="Airport code for the departure location")
