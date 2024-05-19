@@ -63,7 +63,7 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = "未来24小时长沙的天气预报是晴天，最高温度27摄氏度，最低温度18摄氏度。"
         # result = weather_forcast_24h(tool_input)
     elif tool == "SunriseSunset":
-        result = "今天在长沙的日出时间是6:05 AM，日落时间是6:45 PM。"
+        result = "今天在长沙的日出时间是5:05 AM，日落时间是6:45 PM。"
         # result = sunrise_sunset(tool_input)
     elif tool == "WeatherForecast3D":
         result = "未来三天长沙的天气预报是晴天为主，温度范围在17到28摄氏度之间。"
