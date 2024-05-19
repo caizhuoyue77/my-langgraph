@@ -42,11 +42,14 @@ from imdb_top_100_series import top_100_series
 from imdb_upcoming_movies import upcoming_movies
 from imdb_week_top_10 import week_top_10
 from imdb_whats_streaming import whats_streaming
+from logger import *
 
 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 def use_actual_tool(tool: str, tool_input: dict):
+    logger.info(f"调用工具：{tool}")
+    logger.info(f"工具输入：{tool_input}")
     search = TavilySearchResults()
 
     # 通用API
@@ -58,6 +61,7 @@ def use_actual_tool(tool: str, tool_input: dict):
         # result = current_weather(tool_input)
     # 24小时内的天气预报
     elif tool == "WeatherSearch":
+        return "长沙现在的天气是晴天，温度是25摄氏度，湿度是50%。"
         result = weather_forcast_24h(tool_input)
     elif tool == "SunriseSunset":
         result = sunrise_sunset(tool_input)

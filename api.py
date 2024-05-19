@@ -10,7 +10,7 @@ def read_root():
     return {"Hello": "World"}
 
 # TODO: 要改为get_plan之类的
-@app.post("/chat")
+@app.post("/get_plan")
 async def chat_endpoint(request: Request):
     data = await request.json()
     query = data.get("message")
@@ -24,7 +24,7 @@ async def chat_endpoint(request: Request):
         return response
     return {"response": "No query provided", "rewoo_state": None}
 
-@app.post("/continue")
+@app.post("/execute_plan")
 async def execute_endpoint(request: Request):
     data = await request.json()
     # data是request里面传递过来的内容

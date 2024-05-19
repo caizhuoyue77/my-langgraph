@@ -14,7 +14,7 @@ if "rewoo_state" not in st.session_state:
 
 def check_yes():
     # 用户确认后继续执行计划
-    url_continue = "http://localhost:8000/continue"
+    url_continue = "http://localhost:8000/execute_plan"
     state_str = st.session_state["rewoo_state"]
 
     if state_str:
@@ -63,8 +63,8 @@ if prompt := st.chat_input():
     st.session_state["messages"].append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    # 调用 /chat 端点生成计划
-    url_chat = "http://localhost:8000/chat"
+    # 调用 /get_plan 端点生成计划
+    url_chat = "http://localhost:8000/get_plan"
     payload = {"message": prompt}
     response = requests.post(url_chat, json=payload)
 

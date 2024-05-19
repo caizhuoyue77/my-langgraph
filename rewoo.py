@@ -80,7 +80,6 @@ def _get_current_task(state: ReWOO):
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
 
-
     _step = _get_current_task(state)
     _, step_name, tool, tool_input = state["steps"][_step - 1]
     _results = state["results"] or {}
@@ -91,8 +90,8 @@ def tool_execution(state: ReWOO):
     logger.info(f"Executing step {_step}: {step_name} using {tool} with input {tool_input}")
     
     # 专门来选择并执行工具
-    # result = use_actual_tool(tool, tool_input)
-    result = "genv是2024年上映的一部美国超级英雄电视剧"
+    result = use_actual_tool(tool, tool_input)
+    # result = "genv是2024年上映的一部美国超级英雄电视剧"
 
     _results[step_name] = str(result)
     return {"results": _results}
