@@ -19,18 +19,18 @@ async def chat_endpoint(request: Request):
         """
         包含response和plan_json两个字段
         response:自然语言的步骤
-        plan_json:一个json对象，对应get_plan的返回值
+        rewoo_state:一个json对象，对应一个ReWOO的对象
         """
         return response
-    return {"response": "No query provided", "plan_json": None}
+    return {"response": "No query provided", "rewoo_state": None}
 
 @app.post("/continue")
 async def execute_endpoint(request: Request):
     data = await request.json()
     # data是request里面传递过来的内容
-    plan = data.get("plan_json")
+    state = data.get("rewoo_state")
     # 把在之前获取的plan传递给执行计划的函数
-    if plan:
-        response = execute_plan()
+    if state:
+        response = execute_plan(state)
         return response
     return {"response": "No plan provided"}

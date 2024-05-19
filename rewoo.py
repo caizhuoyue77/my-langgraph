@@ -120,9 +120,10 @@ def _route(state):
         return "tool"
 
 def rewoo_as_func(task: str):
+    rewoo_state = ReWOO(task=task)
     plan = get_plan(ReWOO(task="帮我查询北京的天气"))
-
-    logger.debug(plan["steps"])
+    rewoo_state["plan_string"] = plan["plan_string"]
+    rewoo_state["steps"] = plan["steps"]
 
     response = "**API编排步骤：**\n"
     
@@ -132,16 +133,18 @@ def rewoo_as_func(task: str):
     # 同时要记得把这个plan存储起来，后续要用
 
     logger.debug("##############")
-    logger.debug({"response": response, "plan_json": plan["steps"]})
+    logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
-    return {"response": response, "plan_json": plan}
+    return {"response": response, "rewoo_state": rewoo_state}
 
 def get_ready_plan():
     plan = get_plan(ReWOO(task="帮我查询北京的天气"))
     return plan
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
+
+    return {"response":"from execute_plan"+state["plan_string"]}
 
     return {"response":"北京天气很好"}
 

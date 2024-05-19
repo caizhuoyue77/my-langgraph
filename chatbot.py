@@ -9,16 +9,16 @@ if "button_clicked" not in st.session_state:
     st.session_state["button_clicked"] = False
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "How can I help you?"}]
-if "state" not in st.session_state:
-    st.session_state["state"] = None
+if "rewoo_state" not in st.session_state:
+    st.session_state["rewoo_state"] = None
 
 def check_yes():
     # 用户确认后继续执行计划
     url_continue = "http://localhost:8000/continue"
-    state_str = st.session_state["state"]
+    state_str = st.session_state["rewoo_state"]
 
     if state_str:
-        response = requests.post(url_continue, json={"plan_json": st.session_state["plan_json"]})
+        response = requests.post(url_continue, json={"rewoo_state":st.session_state["rewoo_state"]})
         if response.status_code == 200:
             try:
                 response_json = response.json()
@@ -34,7 +34,7 @@ def check_yes():
         else:
             msg = "继续执行时API调用失败"
         st.session_state["messages"].append({"role": "assistant", "content": msg})
-        st.session_state["state"] = None  # 重置状态
+        st.session_state["rewoo_state"] = None  # 重置状态
         st.session_state["button_clicked"] = False
         st.rerun()
 
@@ -72,8 +72,8 @@ if prompt := st.chat_input():
         data = response.json()
         msg = data["response"]
         print(f"msg:{data}")
-        st.session_state["state"] = "1"
-        st.session_state["plan_json"] = data["plan_json"]
+        # 直接存储一个rewoo对象
+        st.session_state["rewoo_state"] = data["rewoo_state"]
     else:
         msg = "生成计划时API调用失败"
 
@@ -81,7 +81,7 @@ if prompt := st.chat_input():
     st.chat_message("assistant").write(msg)
 
 # 如果有未执行的计划，显示确认按钮
-if st.session_state["state"]:
+if st.session_state["rewoo_state"]:
     if st.button("确认执行计划", on_click=check_yes):
         st.session_state["button_clicked"] = True
 
