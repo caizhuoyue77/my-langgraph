@@ -138,10 +138,12 @@ def rewoo_as_func(task: str):
     return {"response": response, "plan_json": plan}
 
 def get_ready_plan():
-    plan = rewoo_as_func("现在几点？")["plan_json"]
+    plan = get_plan(ReWOO(task="帮我查询北京的天气"))
     return plan
 
-def execute_plan(state: ReWOO):
+def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
+
+    return {"response":"北京天气很好"}
 
     graph = StateGraph(ReWOO)
 
@@ -150,16 +152,15 @@ def execute_plan(state: ReWOO):
 
     graph.add_node("plan", get_ready_plan)
 
-    
     # 直接使用规划好的计划，执行各种tools
     graph.add_node("tool", tool_execution)
     # 最后执行solve，得到最终结果
     graph.add_node("solve", solve)
-    # graph.add_edge("plan", "tool")
+    graph.add_edge("plan", "tool")
     graph.add_edge("tool", "solve")
     graph.add_edge("solve", END)
     # graph.add_conditional_edges("tool", _route)
-    graph.set_entry_point("tool")
+    graph.set_entry_point("plan")
     app = graph.compile()
 
     response = ""

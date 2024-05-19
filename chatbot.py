@@ -2,6 +2,7 @@ from openai import OpenAI
 import streamlit as st
 import requests
 import json
+from logger import *
 
 # 初始化session state
 if "button_clicked" not in st.session_state:
@@ -17,9 +18,19 @@ def check_yes():
     state_str = st.session_state["state"]
 
     if state_str:
-        response = requests.post(url_continue, json={"state": state_str})
+        response = requests.post(url_continue, json={"plan_json": st.session_state["plan_json"]})
         if response.status_code == 200:
-            msg = response.json()["response"]
+            try:
+                response_json = response.json()
+                logger.info(f"Full response JSON: {response_json}")
+                if "response" in response_json:
+                    msg = response_json["response"]
+                else:
+                    logger.error("Key 'response' not found in the response JSON")
+                    msg = "Unexpected response format"
+            except ValueError as e:
+                logger.error(f"JSON decoding failed: {e}")
+                msg = "Invalid JSON response"
         else:
             msg = "继续执行时API调用失败"
         st.session_state["messages"].append({"role": "assistant", "content": msg})
@@ -61,7 +72,8 @@ if prompt := st.chat_input():
         data = response.json()
         msg = data["response"]
         print(f"msg:{data}")
-        st.session_state["state"] = data["state"]
+        st.session_state["state"] = "1"
+        st.session_state["plan_json"] = data["plan_json"]
     else:
         msg = "生成计划时API调用失败"
 
