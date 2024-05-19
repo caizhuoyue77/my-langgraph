@@ -1,6 +1,5 @@
 import os
 import re
-import logging
 from typing import TypedDict, List
 from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT
 from langchain_openai import ChatOpenAI
@@ -10,28 +9,7 @@ from langgraph.graph import StateGraph, END
 from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY, DASHSCOPE_API_KEY
 from call_tools import use_actual_tool
 from qwen_model import QwenLLM
-import colorlog
-
-# 配置日志记录器
-handler = colorlog.StreamHandler()
-handler.setFormatter(colorlog.ColoredFormatter(
-    "%(log_color)s%(asctime)s - %(levelname)s - %(message)s",
-    datefmt=None,
-    reset=True,
-    log_colors={
-        'DEBUG': 'reset',
-        'INFO': 'cyan',
-        'WARNING': 'bold_yellow',
-        'ERROR': 'bold_red',
-        'CRITICAL': 'bold_red',
-    },
-    secondary_log_colors={},
-    style='%'
-))
-
-logger = colorlog.getLogger()
-logger.addHandler(handler)
-logger.setLevel(logging.DEBUG)
+from logger import *
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
@@ -138,51 +116,38 @@ def _route(state):
         return "tool"
 
 def rewoo_as_func(task: str):
-    logger.info(f"Task:{task}")
+    plan = get_plan(ReWOO(task="帮我查询北京的天气"))
 
-    # 定义任务执行的状态图
-    graph = StateGraph(ReWOO)
-    graph.add_node("plan", get_plan)
-    graph.add_node("tool", tool_execution)
-    graph.add_node("solve", solve)
-    # 添加边把他们串起来
-    graph.add_edge("plan", "tool")
-    graph.add_edge("solve", END)
-    graph.add_conditional_edges("tool", _route)
-    graph.set_entry_point("plan")
-    app = graph.compile()
+    logger.debug(plan["steps"])
 
-    i = 1
+    response = "**API编排步骤：**\n"
+    
+    for idx, step in enumerate(plan["steps"], 1):
+        response += f"* 第{idx}步: {step[0]}\n\n"
 
-    response = ""
-    for s in app.stream({"task": task}):
-        logger.info(f"这是第{i}个流程")
-        logger.info(s)
-        if("plan" in s):
-            j = 1
-            response = "**API执行计划如下：**\n\n"
-            for step in s['plan']['steps']:
-                response = response + f"第{j}步：{step[0]}\n\n"
-                j += 1
-            logger.info(s['plan']['steps'])
-        # 有个问题，就是steps里面的步骤数组和plan_string里面的步骤不一样，steps里面有时候会少步骤
-        if(i == 1):
-            return response
-        i += 1
+    # 同时要记得把这个plan存储起来，后续要用
 
-    logger.info(s['solve']['result'])
+    logger.debug("##############")
+    logger.debug({"response": response, "plan_json": plan["steps"]})
+    logger.debug("##############")
 
-    response = response + "\n\n**最终结果**：\n\n" + s['solve']['result'] + "\n"
+    return {"response": response, "plan_json": plan}
 
-    return response
-
+def get_ready_plan():
+    plan = rewoo_as_func("现在几点？")["plan_json"]
+    return plan
 
 def execute_plan(state: ReWOO):
-    logger.info("经过同意后，执行计划")
 
     graph = StateGraph(ReWOO)
-    graph.add_node("plan", get_plan)
+
+    # 理论上来讲，不需要重新执行获取计划的步骤了吧
+    # get_plan可以替换为一个新的函数，这个函数直接使用规划好的计划
+
+    graph.add_node("plan", get_ready_plan)
+    # 直接使用规划好的计划，执行各种tools
     graph.add_node("tool", tool_execution)
+    # 最后执行solve，得到最终结果
     graph.add_node("solve", solve)
     graph.add_edge("plan", "tool")
     graph.add_edge("solve", END)
@@ -194,11 +159,10 @@ def execute_plan(state: ReWOO):
     response = ""
 
     for s in app.stream(state):
-        logger.info(f"这是第{i}个流程")
-        logger.info(s)
-        response += str(s)+'\n'
+        response += "1"
+        # response += str(s)+'\n'
     
-    response += "最终结果:" + s['solve']['result']
+    response += "API调用结果:" + s['solve']['result']
 
     return response
 
