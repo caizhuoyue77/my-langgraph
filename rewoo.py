@@ -1,7 +1,7 @@
 import os
 import re
 from typing import TypedDict, List
-from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT
+from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT, MODEL
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.llms import Tongyi
@@ -26,11 +26,12 @@ class ReWOO(TypedDict):
     result: str
 
 # 初始化模型
-# 使用OpenAI模型
-model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
-# 使用Qwen的模型
-# model = Tongyi()
 # TODO：后续要替换为自己的本地Qwen模型
+if MODEL == "qwen":
+    model = Tongyi()
+else:
+    model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+
 
 # 正则表达式
 # 这是原本的表达式，但是容易识别不出steps
@@ -51,20 +52,20 @@ def get_plan(state: ReWOO):
     # 改为qwen的话，会在这个部分出问题
     result = planner.invoke({"task": task, "tool_list": TOOL_LIST})
 
-    logger.error(f"Qwen模型的回复：{result.content}")
-
     # 如果是用OpenAI，这里的result都得改为result.content（一共有4个地方）
     # 如果是用Qwen，这里就保持result就好
-    matches = re.findall(regex_pattern, result.content)
+    if MODEL == "qwen":
+        logger.error(f"Qwen模型的回复：{result}")
+    else:
+        result = result.content
+        logger.error(f"Qwen模型的回复：{result}")
+
+    matches = re.findall(regex_pattern, result)
     logger.critical("计划步骤:")
-    
-    # for step in matches:
-    #     logger.critical(f"Plan: {step[0]}, {step[1]} = {step[2]}[{step[3]}]")
-    #     logger.critical(f"step:{step}")
     
     logger.debug(f"steps:{matches}")
 
-    return {"steps": matches, "plan_string": result.content}
+    return {"steps": matches, "plan_string": result}
 
 def _get_current_task(state: ReWOO):
     """确定当前任务步骤。"""
@@ -107,8 +108,10 @@ def solve(state: ReWOO):
         plan += f"Plan: {_plan}\n{step_name} = {tool}[{tool_input}]\n"
     prompt = SOLVE_PROMPT.format(plan=plan, task=state["task"])
     result = model.invoke(prompt)
+    if MODEL != "qwen":
+        result = result.content
 
-    return {"result": result.content}
+    return {"result": result}
 
 def _route(state):
     """确定任务执行的下一步。"""
@@ -167,7 +170,6 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     graph.add_conditional_edges("tool", _route)
     graph.set_entry_point("plan")
     app = graph.compile()
-
 
 
     i = 1
