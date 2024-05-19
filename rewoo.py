@@ -10,6 +10,7 @@ from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY, DASHSCOPE_API_KEY
 from call_tools import use_actual_tool
 from qwen_model import QwenLLM
 from logger import *
+from cache import *
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
@@ -120,8 +121,13 @@ def _route(state):
         return "tool"
 
 def rewoo_as_func(task: str):
+
+    if search(task) is not None:
+        return search(task)
+
     rewoo_state = ReWOO(task=task)
-    plan = get_plan(ReWOO(task="帮我查询北京的天气"))
+    # plan = get_plan(ReWOO(task="帮我查询北京的天气"))
+    plan = get_plan(ReWOO(task=task))
     rewoo_state["plan_string"] = plan["plan_string"]
     rewoo_state["steps"] = plan["steps"]
 
@@ -136,6 +142,8 @@ def rewoo_as_func(task: str):
     logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
+    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state})
+
     return {"response": response, "rewoo_state": rewoo_state}
 
 def get_ready_plan():
@@ -144,17 +152,16 @@ def get_ready_plan():
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 
-    return {"response":"from execute_plan"+state["plan_string"]}
+    # return {"response":"from execute_plan"+state["plan_string"]}
 
-    return {"response":"北京天气很好"}
+    # return {"response":"北京天气很好"}
 
     graph = StateGraph(ReWOO)
 
     # 理论上来讲，不需要重新执行获取计划的步骤了吧
     # get_plan可以替换为一个新的函数，这个函数直接使用规划好的计划
 
-    graph.add_node("plan", get_ready_plan)
-
+    graph.add_node("plan", get_plan)
     # 直接使用规划好的计划，执行各种tools
     graph.add_node("tool", tool_execution)
     # 最后执行solve，得到最终结果
@@ -162,13 +169,16 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     graph.add_edge("plan", "tool")
     graph.add_edge("tool", "solve")
     graph.add_edge("solve", END)
-    # graph.add_conditional_edges("tool", _route)
+    graph.add_conditional_edges("tool", _route)
     graph.set_entry_point("plan")
     app = graph.compile()
 
     response = ""
 
+    i = 1
     for s in app.stream(state):
+        logger.debug(f"Step {i}: {s}")
+
         response += "1"
         # response += str(s)+'\n'
     
