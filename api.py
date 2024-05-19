@@ -19,7 +19,7 @@ async def chat_endpoint(request: Request):
         return response
     return {"response": "No query provided", "plan_json": None}
 
-@app.post("/execute")
+@app.post("/continue")
 async def execute_endpoint(request: Request):
     data = await request.json()
     plan = data.get("plan")

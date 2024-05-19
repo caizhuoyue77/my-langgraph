@@ -35,7 +35,7 @@ model = Tongyi()
 # 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 # 新的表达式，可以比较好的识别出steps，但也许会有其他问题，先这样
-regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
+# regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
@@ -44,6 +44,7 @@ planner = prompt_template | model
 
 def get_plan(state: ReWOO):
     """生成任务计划。"""
+    
     task = state["task"]
 
     # 改为qwen的话，会在这个部分出问题
@@ -76,6 +77,9 @@ def _get_current_task(state: ReWOO):
 
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
+
+    return {"results":"最近最受欢迎的电影是间谍过家家"}
+
     _step = _get_current_task(state)
     _, step_name, tool, tool_input = state["steps"][_step - 1]
     _results = state["results"] or {}
@@ -145,14 +149,16 @@ def execute_plan(state: ReWOO):
     # get_plan可以替换为一个新的函数，这个函数直接使用规划好的计划
 
     graph.add_node("plan", get_ready_plan)
+
+    
     # 直接使用规划好的计划，执行各种tools
     graph.add_node("tool", tool_execution)
     # 最后执行solve，得到最终结果
     graph.add_node("solve", solve)
-    graph.add_edge("plan", "tool")
+    # graph.add_edge("plan", "tool")
+    graph.add_edge("tool", "solve")
     graph.add_edge("solve", END)
-
-    graph.add_conditional_edges("tool", _route)
+    # graph.add_conditional_edges("tool", _route)
     graph.set_entry_point("tool")
     app = graph.compile()
 
@@ -165,10 +171,6 @@ def execute_plan(state: ReWOO):
     response += "API调用结果:" + s['solve']['result']
 
     return response
-
-        
-
-
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
