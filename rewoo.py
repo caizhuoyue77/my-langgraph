@@ -27,9 +27,9 @@ class ReWOO(TypedDict):
 
 # 初始化模型
 # 使用OpenAI模型
-# model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
+model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
 # 使用Qwen的模型
-model = Tongyi()
+# model = Tongyi()
 # TODO：后续要替换为自己的本地Qwen模型
 
 # 正则表达式
@@ -51,11 +51,11 @@ def get_plan(state: ReWOO):
     # 改为qwen的话，会在这个部分出问题
     result = planner.invoke({"task": task, "tool_list": TOOL_LIST})
 
-    logger.error(f"Qwen模型的回复：{result}")
+    logger.error(f"Qwen模型的回复：{result.content}")
 
     # 如果是用OpenAI，这里的result都得改为result.content（一共有4个地方）
     # 如果是用Qwen，这里就保持result就好
-    matches = re.findall(regex_pattern, result)
+    matches = re.findall(regex_pattern, result.content)
     logger.critical("计划步骤:")
     
     # for step in matches:
@@ -64,7 +64,7 @@ def get_plan(state: ReWOO):
     
     logger.debug(f"steps:{matches}")
 
-    return {"steps": matches, "plan_string": result}
+    return {"steps": matches, "plan_string": result.content}
 
 def _get_current_task(state: ReWOO):
     """确定当前任务步骤。"""
@@ -79,7 +79,6 @@ def _get_current_task(state: ReWOO):
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
 
-    return {"results":"最近最受欢迎的电影是间谍过家家"}
 
     _step = _get_current_task(state)
     _, step_name, tool, tool_input = state["steps"][_step - 1]
@@ -91,7 +90,8 @@ def tool_execution(state: ReWOO):
     logger.info(f"Executing step {_step}: {step_name} using {tool} with input {tool_input}")
     
     # 专门来选择并执行工具
-    result = use_actual_tool(tool, tool_input)
+    # result = use_actual_tool(tool, tool_input)
+    result = "genv是2024年上映的一部美国超级英雄电视剧"
 
     _results[step_name] = str(result)
     return {"results": _results}
@@ -108,7 +108,7 @@ def solve(state: ReWOO):
     prompt = SOLVE_PROMPT.format(plan=plan, task=state["task"])
     result = model.invoke(prompt)
 
-    return {"result": result}
+    return {"result": result.content}
 
 def _route(state):
     """确定任务执行的下一步。"""
@@ -121,7 +121,7 @@ def _route(state):
         return "tool"
 
 def rewoo_as_func(task: str):
-
+    # cache有关的内容
     if search(task) is not None:
         return search(task)
 
@@ -151,11 +151,6 @@ def get_ready_plan():
     return plan
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
-
-    # return {"response":"from execute_plan"+state["plan_string"]}
-
-    # return {"response":"北京天气很好"}
-
     graph = StateGraph(ReWOO)
 
     # 理论上来讲，不需要重新执行获取计划的步骤了吧
@@ -173,18 +168,17 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     graph.set_entry_point("plan")
     app = graph.compile()
 
-    response = ""
+
 
     i = 1
     for s in app.stream(state):
         logger.debug(f"Step {i}: {s}")
 
-        response += "1"
         # response += str(s)+'\n'
     
-    response += "API调用结果:" + s['solve']['result']
+    response = f"**API调用结果:**\n\n{s['solve']['result']}"
 
-    return response
+    return {"response": response}
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
