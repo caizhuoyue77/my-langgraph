@@ -8,9 +8,16 @@ import re
 async def sunrise_sunset_iter(input: str):
     base_url = "https://devapi.qweather.com/v7/astronomy/sun"
 
+    # 写死了查询北京的信息
     location = "101010100"
-    date = "20240525"
-    
+
+    from datetime import datetime
+
+    # 写死了查询当天的信息
+    today = datetime.today()
+    # 按照指定格式转换日期
+    date = today.strftime("%Y%m%d")
+
     params = {
         "location": location,
         "date": date,

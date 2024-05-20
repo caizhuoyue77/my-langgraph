@@ -8,3 +8,14 @@ def get_tool_list_str():
             for i, tool in enumerate(tool_list["tools"])
         ])
         return tool_list_str
+    
+def load_tools_from_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        tools_data = json.load(file)
+    return tools_data
+
+# 提取所有 type 为某个值的工具
+def get_tools_by_type(tool_type):
+    tools_data = load_tools_from_file("tools.json")
+    tools = tools_data["tools"]
+    return [tool["name"] for tool in tools if tool["type"] == tool_type]

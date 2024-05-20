@@ -11,6 +11,7 @@ from call_tools import use_actual_tool
 from qwen_model import QwenLLM
 from logger import *
 from cache import *
+from utils import *
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
@@ -146,7 +147,7 @@ def rewoo_as_func(task: str):
 
     add_to_cache(task, {"response": response, "rewoo_state": rewoo_state})
 
-    return {"response": response, "rewoo_state": rewoo_state}
+    return {"response": response, "rewoo_state": rewoo_state, "api_recommendations": get_tools_by_type("general")}
 
 def get_ready_plan():
     plan = get_plan(ReWOO(task="帮我查询北京的天气"))

@@ -25,9 +25,27 @@
       "type": "general"
     },
     {
+      "name": "GetLanguages",
+      "input": "",
+      "description": "Worker that lists available languages.",
+      "type": "general"
+    },
+    {
       "name": "LocationToLatLon",
       "input": "location name",
       "description": "Worker that converts a location name to latitude and longitude.",
+      "type": "travel"
+    },
+    {
+      "name": "SearchAttractionLocations",
+      "input": "location name",
+      "description": "Worker that searches for attraction locations.",
+      "type": "travel"
+    },
+    {
+      "name": "SearchAttractions",
+      "input": "attraction name",
+      "description": "Worker that searches for attractions.",
       "type": "travel"
     },
     {
@@ -91,6 +109,12 @@
       "type": "weather"
     },
     {
+      "name": "BornOn",
+      "input": "date",
+      "description": "Worker that retrieves information about people born on a specific date from IMDb.",
+      "type": "entertainment"
+    },
+    {
       "name": "FanFavorites",
       "input": "",
       "description": "Worker that retrieves fan favorite movies or series from IMDb.",
@@ -100,6 +124,18 @@
       "name": "SearchIMDB",
       "input": "search query",
       "description": "Worker that searches for information on IMDb.",
+      "type": "entertainment"
+    },
+    {
+      "name": "Top100Movies",
+      "input": "",
+      "description": "Worker that retrieves the top 100 movies from IMDb.",
+      "type": "entertainment"
+    },
+    {
+      "name": "Top100Series",
+      "input": "",
+      "description": "Worker that retrieves the top 100 series from IMDb.",
       "type": "entertainment"
     },
     {

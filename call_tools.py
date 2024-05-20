@@ -28,9 +28,9 @@ from bookings_search_hotel_destination import search_hotel_destination
 from bookings_search_hotels import search_hotels
 from qweather_search_location import search_location
 from qweather_sunrise_sunset import sunrise_sunset
-from qweather_weather_forcast_3d import weather_forcast_3d
-from qweather_weather_forcast_7d import weather_forcast_7d
-from qweather_weather_forcast_24h import weather_forcast_24h
+from qweather_weather_forecast_3d import weather_forecast_3d
+from qweather_weather_forecast_7d import weather_forecast_7d
+from qweather_weather_forecast_24h import weather_forecast_24h
 from qweather_weather_index_1d import weather_index_1d
 from qweather_weather_rain_minute import weather_rain_minute
 from imdb_born_on import born_on
@@ -59,21 +59,18 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = "长沙现在的天气是晴天，温度是25摄氏度，湿度是50%。"
         # result = current_weather(tool_input)
     # 24小时内的天气预报
-    elif tool == "WeatherSearch":
-        result = "未来24小时长沙的天气预报是晴天，最高温度27摄氏度，最低温度18摄氏度。"
-        # result = weather_forcast_24h(tool_input)
+    elif tool == "WeatherForecast24H":
+        result = weather_forecast_24h(tool_input)
     elif tool == "SunriseSunset":
-        result = "今天在长沙的日出时间是5:05 AM，日落时间是6:45 PM。"
-        # result = sunrise_sunset(tool_input)
+        result = sunrise_sunset(tool_input)
     elif tool == "WeatherForecast3D":
         result = "未来三天长沙的天气预报是晴天为主，温度范围在17到28摄氏度之间。"
-        # result = weather_forcast_3d(tool_input)
+        # result = weather_forecast_3d(tool_input)
     elif tool == "WeatherForecast7D":
         result = "未来七天长沙的天气预报是晴天和多云交替，最高温度30摄氏度，最低温度15摄氏度。"
-        # result = weather_forcast_7d(tool_input)
+        # result = weather_forecast_7d(tool_input)
     elif tool == "WeatherIndex1D":
-        result = "长沙今天的天气指数：空气质量良好，适合外出。"
-        # result = weather_index_1d(tool_input)
+        result = weather_index_1d(tool_input)
     elif tool == "WeatherRainMinute":
         result = "未来60分钟内长沙无降雨。"
         # result = weather_rain_minute(tool_input)
@@ -104,21 +101,21 @@ def use_actual_tool(tool: str, tool_input: dict):
     elif tool == "GetExchangeRates":
         result = "当前美元兑人民币的汇率为1:6.5。"
         # result = get_exchange_rates(tool_input)
-    elif tool == "GetLanguages":
-        result = "长沙的主要语言是中文。"
+    # elif tool == "GetLanguages":
+        # result = "长沙的主要语言是中文。"
         # result = get_languages(tool_input)
     elif tool == "LocationToLatLon":
-        result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
-        # result = location_to_lat_lon(tool_input)
-    elif tool == "SearchAttractionLocations":
-        result = "长沙的景点位置搜索结果：橘子洲、岳麓山、天心阁等。"
+        # result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
+        result = location_to_lat_lon("changsha")
+    # elif tool == "SearchAttractionLocations":
+        # result = "长沙的景点位置搜索结果：橘子洲、岳麓山、天心阁等。"
         # result = search_attraction_locations(tool_input)
-    elif tool == "SearchAttractions":
-        result = "长沙的景点搜索结果：橘子洲、岳麓山、天心阁等，共有30个景点。"
+    # elif tool == "SearchAttractions":
+        # result = "长沙的景点搜索结果：橘子洲、岳麓山、天心阁等，共有30个景点。"
         # result = search_attractions(tool_input)
     # IMDb 电影/电视剧API
-    elif tool == "BornOn":
-        result = "您查询的生日为5月19日，出生在这一天的名人有：演员张艺谋。"
+    # elif tool == "BornOn":
+        # result = "您查询的生日为5月19日，出生在这一天的名人有：演员张艺谋。"
         # result = born_on(tool_input)
     elif tool == "FanFavorites":
         result = "当前的IMDB粉丝喜爱榜单包括《复仇者联盟》、《权力的游戏》等。"
@@ -136,8 +133,8 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = "即将上映的电影包括《黑寡妇》、《速度与激情9》等。"
         # result = upcoming_movies(tool_input)
     elif tool == "WeekTop10":
-        result = "本周IMDB排行榜前10名包括《复仇者联盟》、《权力的游戏》等。"
-        # result = week_top_10(tool_input)
+        # result = "本周IMDB排行榜前10名包括《复仇者联盟》、《权力的游戏》等。"
+        result = week_top_10()
     elif tool == "WhatsStreaming":
         result = "当前热门的流媒体内容包括《曼达洛人》、《巫师》等。"
         # result = whats_streaming(tool_input)
