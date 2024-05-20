@@ -63,7 +63,7 @@ if prompt := st.chat_input():
     st.session_state["messages"].append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
 
-    # 调用 /get_plan 端点生成计划
+    # 调用 /chat 端点生成计划
     url_chat = "http://localhost:8000/get_plan"
     payload = {"message": prompt}
     response = requests.post(url_chat, json=payload)
@@ -73,6 +73,7 @@ if prompt := st.chat_input():
         msg = data["response"]
         print(f"msg:{data}")
         # 直接存储一个rewoo对象
+        print(f"卧槽这是API返回:{data}")
         st.session_state["rewoo_state"] = data["rewoo_state"]
     else:
         msg = "生成计划时API调用失败"
