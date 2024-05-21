@@ -91,9 +91,9 @@ async def chat_endpoint(request: Request):
 
     return {"response": "No query provided", "memory": None}
 
-# @app.post("/record_memory")
-# async def record_memory_endpoint(request: Request):
-#     data = await request.json()
-#     messages = data.get("messages")
+@app.post("/record_memory")
+async def record_memory_endpoint(request: Request):
+    data = await request.json()
+    messages = data.get("messages")
 
-#     return {"response": await record_memory(messages)}
+    return {"response": await record_memory(messages)}

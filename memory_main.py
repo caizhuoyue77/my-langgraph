@@ -10,7 +10,7 @@ from config_api_keys import OPENAI_API_KEY, DASHSCOPE_API_KEY
 from logger import *
 # from bge import bge_best_keys
 # from bge_reranker import bge_reranker_best_keys
-from bge_lsl import bge_best_keys
+# from bge_lsl import bge_best_keys
 import json
 
 # 设置环境变量

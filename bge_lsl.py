@@ -11,7 +11,6 @@ def get_similarity_score(query:str, key:str):
     score = BGEEmbedding.cosine_similarity(q_embeddings, p_embeddings)
     return score
 
-
 def bge_best_keys(query:str, memory:dict, threshold: float = 0.4):
     filtered_memory = {}
 
