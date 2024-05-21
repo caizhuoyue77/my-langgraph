@@ -49,8 +49,9 @@ async def store_memory(input_data: DialogueInput):
         print(answer)
         
         parse_to_json(answer, json_memory_file_name)
+        # 返回所有的memory
 
-        return {"message": "Memory stored successfully"}
+        return {"response": "Memory stored successfully", "memory": answer}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

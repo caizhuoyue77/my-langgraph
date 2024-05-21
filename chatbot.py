@@ -44,6 +44,8 @@ if prompt := st.chat_input(placeholder="请输入您的问题..."):
     else:
         msg = "生成计划时 API 调用失败"
 
+    
+
     # st.session_state["messages"].append({"role": "assistant", "content": msg})
     # st.chat_message("assistant").write(msg)
 
@@ -55,8 +57,9 @@ if prompt := st.chat_input(placeholder="请输入您的问题..."):
     #     # 去存储记忆
         logger.critical("存储记忆")
         
-        url_chat = "http://localhost:8000/record_memory"
-        payload = {"messages": str(messages[-6:])}
+        url_chat = "http://localhost:8010/store-memory/"
+
+        payload = {"messages": str(messages[-6:]), "user_name": "用户", "bot_name": "Default Bot"}
         response = requests.post(url_chat, json=payload)
         if response.status_code == 200:
             data = response.json()
