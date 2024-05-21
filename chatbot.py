@@ -44,19 +44,15 @@ if prompt := st.chat_input(placeholder="请输入您的问题..."):
     else:
         msg = "生成计划时 API 调用失败"
 
-    # st.session_state["messages"].append({"role": "assistant", "content": msg})
-    # st.chat_message("assistant").write(msg)
 
     messages = st.session_state["messages"]
-
-    # logger.critical(len(messages))
 
     if(len(messages) % 5 ==0 ): # 每6轮对话抽取一次记忆内容
     #     # 去存储记忆
         logger.critical("存储记忆")
         
-        url_chat = "http://localhost:8000/record_memory"
-        payload = {"messages": str(messages[-6:])}
+        url_chat = "http://localhost:8010/store_memory/"
+        payload = {"messages": str(messages[-5:]),"user_name":"用户","bot_name":"默认bot"}
         response = requests.post(url_chat, json=payload)
         if response.status_code == 200:
             data = response.json()

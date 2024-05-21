@@ -46,6 +46,16 @@ def get_memory(user_id: str):
     }
     memory = {}
 
+    import requests
+    url_chat = "http://localhost:8010/store_memory/"
+    response = requests.get(url_chat)
+    if response.status_code == 200:
+        data = response.json()
+        memory = data
+        logger.error(new_msg)
+    else:
+        new_msg = "存储记忆时 API 调用失败"
+
     return memory
 
 async def get_relavant_memory(query:str, user_id: str):
@@ -59,11 +69,6 @@ def filter_memory(query:str, memory: dict,
 
     # 通过RAG，只获取直接有关的
     return memory
-
-    if mode == "bge":
-        return bge_best_keys(query, memory, threshold)
-    else:
-        return bge_reranker_best_keys(query, memory, top_k)
 
 async def extract_memory(messages: str):
     # 从用户输入中提取信息
