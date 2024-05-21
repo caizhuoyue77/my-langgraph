@@ -87,14 +87,15 @@ async def record_memory(messages: str):
 async def get_character_response(input: str):
     """生成任务计划。"""
 
-    url = "http://localhost:8000/retrieve-memory/"
-    import requests
-    # 从API获取用户的memory
-    response = requests.get(url)
-    if response.status_code == 200:
-        memory = response.json()
-    else:
-        memory = {}
+    # url = "http://localhost:8000/retrieve-memory/"
+    # import requests
+    # # 从API获取用户的memory
+    # response = requests.get(url)
+    # if response.status_code == 200:
+    #     memory = response.json()
+    # else:
+    #     memory = {}
+    memory = get_memory("1")
 
     # 改为qwen的话，会在这个部分出问题
     msg = character.invoke({"input": input, "memory": memory})

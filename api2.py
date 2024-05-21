@@ -12,7 +12,6 @@ from fastapi import FastAPI, Request
 from memory_main import get_character_response, record_memory
 from logger import *
 
-
 app = FastAPI()
 
 # 设置GPU设备
@@ -31,16 +30,15 @@ with open(prompt_file_path, 'r', encoding='utf-8') as prompt_file:
 
 json_memory_file_name = '/nvme/chenweishu/code/memory_api/memory.json'
 
-class DialogueInput(BaseModel):
-    messages: str
-    user_name: str = Field(default="用户")
-    bot_name: str = Field(default="Default Bot")
-
 # 存储记忆的 API
 @app.post("/store-memory")
-async def store_memory(input_data: DialogueInput):
+async def store_memory(request: Request):
     try:
-        prompt = build_memory_prompt_cws(input_data.user_name, input_data.bot_name, input_data.messages, prompt_template)
+        data = await request.json()
+        user_name = data.get("user_name")
+        bot_name = data.get("bot_name")
+        messages = data.get("messages")
+        prompt = build_memory_prompt_cws(user_name, bot_name, messages, prompt_template)
         messages = [{"role": "user", "content": prompt}]
         text = tokenizer.apply_chat_template(messages, tokenize=False, add_generation_prompt=True)
         model_inputs = tokenizer([text], return_tensors="pt").to(device)
@@ -56,7 +54,6 @@ async def store_memory(input_data: DialogueInput):
         
         parse_to_json(answer, json_memory_file_name)
         # 返回所有的memory
-
         return {"response": "Memory stored successfully", "memory": answer}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

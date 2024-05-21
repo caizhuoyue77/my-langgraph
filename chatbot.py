@@ -44,8 +44,6 @@ if prompt := st.chat_input(placeholder="请输入您的问题..."):
     else:
         msg = "生成计划时 API 调用失败"
 
-
-
     # st.session_state["messages"].append({"role": "assistant", "content": msg})
     # st.chat_message("assistant").write(msg)
 
