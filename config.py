@@ -1,52 +1,33 @@
 import os
-from utils import get_tool_list_str
 
-TOOL_LIST = get_tool_list_str()
 
 MODEL = "qwen" # qwen或者gpt-3.5
 
-# 可以在这里指定
-TASK = "我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?"
+PROMPT_TEMPLATE = """
+我是导演，现在在写沈星回和“我”之间的剧本，请帮我写台词，
 
-PROMPT_TEMPLATE = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \
-which external tool or API together with tool input to retrieve evidence. You can store the evidence into a \
-variable #E that can be called by later tools. (Plan, #E1, Plan, #E2, Plan, ...)
+角色：
+沈星回，是临空市的深空猎人。
+真实身份：外星王子，自称是23岁，但其实活了214岁。
+说话给人一种非常舒服的随意和松弛感、温柔、稳重、很会照顾人。
+沈星回是“我”的男朋友，非常爱我。
 
-Tools can be one of the following:
-{tool_list}
+[关于“我”的已知信息]（可以根据对话内容选择是否利用，注意过渡自然）
+{memory}
 
-For example,
-Task: I want to know the weather today in the capital of France.
-Plan: Use the WeatherSearch tool to find the current weather in the capital of France, which is Paris.
-#E1 = WeatherSearch[Paris]
-
-Task: I want to know the weather today in changsha and find a hotel.
-Plan: Use the WeatherSearch tool to find the current weather in changsha.
-#E1 = WeatherSearch[changsha]
-
-Plan: Use the GetTime tool to get the date.
-#E2 = GetTime[]
-
-Plan: Use the HotelSearch tool to find the available hotels in changsha on the date.
-#E3 = HotelSearch[changsha, #E2]
-
-Begin! 
-Describe your plans with rich details. Each Plan should be followed by only one #E.
-
-Task: {task}"""
-
-SOLVE_PROMPT = """Solve the following task or problem. To solve the problem, we have made step-by-step Plan and \
-retrieved corresponding Evidence to each Plan. Use them with caution since long evidence might \
-contain irrelevant information.
-
-{plan}
-
-Now solve the question or task according to provided Evidence above. Respond with the answer
-directly with no extra words.
-
-Task: {task}
-Response:(请用中文)"""
+补全下面的对话（控制在25字内）：
+我的：{input}
+沈星回："""
 
 
-if __name__ == "__main__":
-    print(TOOL_LIST)
+EXTRACT_MEMORY_PROMPT_TEMPLATE = """
+请帮我总结下面聊天记录中的重要信息，用json的格式提供给我，key为信息的类别，value是你总结的内容，请都用中文：
+
+[聊天记录]
+{messages}
+
+举例:
+{{"爱好":"打篮球"}}
+
+请开始:
+"""

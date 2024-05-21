@@ -1,6 +1,6 @@
 from typing import Union
 from fastapi import FastAPI, Request
-from rewoo import rewoo_as_func, execute_plan
+from memory_main import get_character_response, record_memory
 from logger import *
 
 app = FastAPI()
@@ -9,29 +9,27 @@ app = FastAPI()
 def read_root():
     return {"Hello": "World"}
 
-# TODO: 要改为get_plan之类的
-@app.post("/get_plan")
+@app.post("/chat_with_memory")
 async def chat_endpoint(request: Request):
     data = await request.json()
     query = data.get("message")
-    if query:
-        response = rewoo_as_func(query)
-        """
-        包含response和plan_json两个字段
-        response:自然语言的步骤
-        rewoo_state:一个json对象，对应一个ReWOO的对象，表示编排得到的结果
-        api_recommendations:一个json对象，对应一个数组，里面是表示API的json objects
-        """
-        return response
-    return {"response": "No query provided", "rewoo_state": None, "api_recommendations": None}
 
-@app.post("/execute_plan")
-async def execute_endpoint(request: Request):
-    data = await request.json()
-    # data是request里面传递过来的内容
-    state = data.get("rewoo_state")
-    # 把在之前获取的plan传递给执行计划的函数
-    if state:
-        response = execute_plan(state)
+    if query:
+        response = await get_character_response(query)
+        # memory = await record_memory(query)
+        """
+        response:对话模型的回复
+        memory:一个json对象，对应有关的memory内容
+        all_memory:一个json对象，对应目前该用户的所有memory内容
+        """
+        # return {"response": "111", "memory": memory}
         return response
-    return {"response": "No plan provided"}
+
+    return {"response": "No query provided", "memory": None}
+
+@app.post("/record_memory")
+async def record_memory_endpoint(request: Request):
+    data = await request.json()
+    messages = data.get("messages")
+
+    return {"response": await record_memory(messages)}
