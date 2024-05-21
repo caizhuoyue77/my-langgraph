@@ -3,7 +3,7 @@ import requests
 from pydantic import BaseModel, Field
 
 class FanFavoritesInput(BaseModel):
-    country: str = Field(default="US", description="国家代码，用于获取该国家的粉丝最喜爱的影视作品。")
+    country: str = Field(default="CHN", description="国家代码，用于获取该国家的粉丝最喜爱的影视作品。")
 
 async def fan_favorites_iter(country: str) -> dict:
     """
@@ -31,7 +31,7 @@ async def fan_favorites_iter(country: str) -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def fan_favorites(country: str = "US") -> dict:
+def fan_favorites(country: str = "CHN") -> dict:
     """
     A synchronous wrapper function to fetch fan favorites from IMDb for a specified country.
 
@@ -41,7 +41,7 @@ def fan_favorites(country: str = "US") -> dict:
     Returns:
         dict: The result from the asynchronous fetch function, containing either the fan favorites or an error message.
     """
-    country="US"
+    country="CHN"
     return asyncio.run(fan_favorites_iter(country))
 
 if __name__ == "__main__":

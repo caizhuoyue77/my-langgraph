@@ -118,11 +118,11 @@ def use_actual_tool(tool: str, tool_input: dict):
         # result = "您查询的生日为5月19日，出生在这一天的名人有：演员张艺谋。"
         # result = born_on(tool_input)
     elif tool == "FanFavorites":
-        result = "当前的IMDB粉丝喜爱榜单包括《复仇者联盟》、《权力的游戏》等。"
-        # result = fan_favorites(tool_input)
+        # result = "当前的IMDB粉丝喜爱榜单包括《复仇者联盟》、《权力的游戏》等。"
+        result = fan_favorites()
     elif tool == "SearchIMDB":
         result = "您查询的电影《复仇者联盟》在IMDB上的评分为8.4。"
-        # result = search_imdb(tool_input)
+        # result = search_imdb("")
     elif tool == "Top100Movies":
         result = "当前的IMDB电影前100名包括《肖申克的救赎》、《教父》等。"
         # result = top_100_movies(tool_input)
@@ -130,18 +130,15 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = "当前的IMDB电视剧前100名包括《权力的游戏》、《绝命毒师》等。"
         # result = top_100_series(tool_input)
     elif tool == "UpcomingMovies":
-        result = "即将上映的电影包括《黑寡妇》、《速度与激情9》等。"
-        # result = upcoming_movies(tool_input)
+        result = upcoming_movies()
+        # 似乎API返回的response太长
     elif tool == "WeekTop10":
-        # result = "本周IMDB排行榜前10名包括《复仇者联盟》、《权力的游戏》等。"
         result = week_top_10()
     elif tool == "WhatsStreaming":
-        result = "当前热门的流媒体内容包括《曼达洛人》、《巫师》等。"
-        # result = whats_streaming(tool_input)
+        result = whats_streaming()
     # 自己编写的API
     elif tool == "GetCurrentTime":
-        result = "当前时间是2024年5月19日14:30。"
-        # result = get_current_time()
+        result = get_current_time()
     else:
         raise ValueError(f"Unknown tool: {tool}")
 

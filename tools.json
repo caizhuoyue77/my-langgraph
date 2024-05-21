@@ -104,7 +104,7 @@
     },
     {
       "name": "UpcomingMovies",
-      "input": "",
+      "input": "Region code. For example: US",
       "description": "Worker that retrieves upcoming movies from IMDb.",
       "type": "entertainment"
     },
