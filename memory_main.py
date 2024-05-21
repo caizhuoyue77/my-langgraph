@@ -8,13 +8,16 @@ from langchain_community.llms import Tongyi
 from langgraph.graph import StateGraph, END
 from config_api_keys import OPENAI_API_KEY, DASHSCOPE_API_KEY
 from logger import *
-from bge import bge_best_keys
-from bge_reranker import bge_reranker_best_keys
+# from bge import bge_best_keys
+# from bge_reranker import bge_reranker_best_keys
+from bge_lsl import bge_best_keys
+import json
 
 # 设置环境变量
 os.environ["LANGCHAIN_PROJECT"] = "ReWOO"
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 os.environ["DASHSCOPE_API_KEY"] = DASHSCOPE_API_KEY
+
 
 # 初始化模型
 # TODO：后续要替换为自己的本地Qwen模型
@@ -44,7 +47,14 @@ def get_memory(user_id: str):
         "喜欢的动物":"猫咪，特别是布偶猫",
         "喜欢的颜色":"蓝色",
     }
-    memory = {}
+
+    json_memory_file_name = '/nvme/chenweishu/code/memory_api/memory.json'
+
+    try:
+        with open(json_memory_file_name, 'r') as file:
+            memory = json.load(file)
+    except FileNotFoundError:
+        logger.error("Memory data not found")
 
     return memory
 
@@ -77,7 +87,7 @@ async def record_memory(messages: str):
 async def get_character_response(input: str):
     """生成任务计划。"""
 
-    url = "http://localhost:8010/retrieve-memory/"
+    url = "http://localhost:8000/retrieve-memory/"
     import requests
     # 从API获取用户的memory
     response = requests.get(url)
