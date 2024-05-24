@@ -8,6 +8,11 @@ MODEL = "qwen" # qwen或者gpt-3.5
 # 可以在这里指定
 TASK = "我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?"
 
+TYPE_LIST = ["general","travel","weather","entertainment"]
+
+PROMPT_TEMPLATE_2 = """对于任务{task},请你判断任务的类别，在以下几种中进行选择：
+{type_list}\n请直接输出类别的名称，不需要输出任何其他内容。注意，如果你想选择多个类别，请用逗号分隔不同类别。"""
+
 PROMPT_TEMPLATE = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \
 which external tool or API together with tool input to retrieve evidence. You can store the evidence into a \
 variable #E that can be called by later tools. (Plan, #E1, Plan, #E2, Plan, ...)

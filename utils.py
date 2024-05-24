@@ -14,6 +14,16 @@ def load_tools_from_file(file_path):
         tools_data = json.load(file)
     return tools_data
 
+def get_tools_by_types(tool_types:list):
+    print(tool_types)
+    tools_list = []
+    for type in tool_types:
+        tools = get_tools_by_type(type)
+        print(tools)
+        tools_list.extend(tools)
+    print(tools_list)
+    return tools_list
+
 # 提取所有 type 为某个值的工具
 def get_tools_by_type(tool_type):
     tools_data = load_tools_from_file("tools.json")
