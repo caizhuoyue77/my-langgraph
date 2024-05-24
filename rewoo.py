@@ -58,10 +58,25 @@ def get_type(task:str):
         if type in result:
             return type
     return "general"
+
+def get_types(task:str):
+
+    result = planner_type.invoke({"task": task, "type_list": ",".join(TYPE_LIST)})
+
+    logger.info(f"获取到的类型是：{result}")
+
+    # result = result.split(',')
+    type_list = []
+
+    for type in TYPE_LIST:
+        if type in result:
+            type_list.append(type)
+        
+    logger.debug(f"获取到的类型是：{type_list}")
+    return type_list
     
 def get_plan(state: ReWOO):
     """生成任务计划。"""
-    
     task = state["task"]
 
     # 改为qwen的话，会在这个部分出问题
@@ -148,7 +163,8 @@ def rewoo_as_func(task: str):
     rewoo_state["plan_string"] = plan["plan_string"]
     rewoo_state["steps"] = plan["steps"]
 
-    type = get_type(task)
+    types= get_types(task)
+    recommended_apis = get_tools_by_types(types)
 
     response = f"**推荐的API种类:**\n\n{type}\n\n**API编排步骤：**\n"
     
@@ -161,9 +177,9 @@ def rewoo_as_func(task: str):
     logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
-    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state})
+    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state, "type": types, "recommended_apis": recommended_apis})
 
-    return {"response": response, "rewoo_state": rewoo_state, "api_recommendations": get_tools_by_type("general")}
+    return {"response": response, "rewoo_state": rewoo_state, "types":types, "api_recommendations": get_tools_by_type(type)}
 
 def get_ready_plan():
     plan = get_plan(ReWOO(task="帮我查询北京的天气"))
@@ -201,5 +217,6 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 if __name__ == "__main__":
     # 定义任务执行的状态图
     task = "我想搜一下最近的电影"
-    # rewoo_as_func("我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?")
-    print("选择的类别是", get_type(task))
+    response = rewoo_as_func("我想知道长沙的天气，还想查一下长沙的一些酒店??")
+    print(response)
+    # print("选择的类别是", get_type(task))

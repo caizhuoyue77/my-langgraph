@@ -11,7 +11,7 @@ TASK = "我想知道长沙的天气，以及我等下要去长沙玩，能不能
 TYPE_LIST = ["general","travel","weather","entertainment"]
 
 PROMPT_TEMPLATE_2 = """对于任务{task},请你判断任务的类别，在以下几种中进行选择：
-{type_list}.请直接输出类别的名称，不需要输出任何其他内容"""
+{type_list}\n请直接输出类别的名称，不需要输出任何其他内容。注意，如果你想选择多个类别，请用逗号分隔不同类别。"""
 
 PROMPT_TEMPLATE = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \
 which external tool or API together with tool input to retrieve evidence. You can store the evidence into a \
