@@ -1,7 +1,7 @@
 import os
 import re
 from typing import TypedDict, List
-from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT, MODEL
+from config import TOOL_LIST, TASK, PROMPT_TEMPLATE, SOLVE_PROMPT, MODEL, PROMPT_TEMPLATE_2, TYPE_LIST
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.llms import Tongyi
@@ -33,7 +33,6 @@ if MODEL == "qwen":
 else:
     model = ChatOpenAI(temperature=0.1, model="gpt-3.5-turbo")
 
-
 # 正则表达式
 # 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
@@ -42,9 +41,24 @@ regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
+prompt_template_2 = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE_2)])
+
 # planner其实就是一个agent，是模型+prompt
 planner = prompt_template | model
 
+planner_type = prompt_template_2 | model
+
+def get_type(task:str):
+    result = planner_type.invoke({"task": task, "type_list": ",".join(TYPE_LIST)})
+
+    if MODEL != "qwen":
+        result = result.content
+    
+    for type in TYPE_LIST:
+        if type in result:
+            return type
+    return "general"
+    
 def get_plan(state: ReWOO):
     """生成任务计划。"""
     
@@ -134,7 +148,9 @@ def rewoo_as_func(task: str):
     rewoo_state["plan_string"] = plan["plan_string"]
     rewoo_state["steps"] = plan["steps"]
 
-    response = "**API编排步骤：**\n"
+    type = get_type(task)
+
+    response = f"**推荐的API种类:**\n\n{type}\n\n**API编排步骤：**\n"
     
     for idx, step in enumerate(plan["steps"], 1):
         response += f"* 第{idx}步: {step[0]}\n\n"
@@ -184,4 +200,6 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
-    rewoo_as_func("我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?")
+    task = "我想搜一下最近的电影"
+    # rewoo_as_func("我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?")
+    print("选择的类别是", get_type(task))
