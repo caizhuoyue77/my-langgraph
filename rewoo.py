@@ -188,15 +188,16 @@ def rewoo_as_func(task: str):
     return api_response
 
 def get_ready_plan(state: ReWOO):
-    plan = get_plan(ReWOO(task="帮我查询北京的天气"))
-    return plan
+    if "steps" in state and "plan_string" in state:
+        return {"steps": state["steps"], "plan_string": state["plan_string"]}
+
+    return get_plan(state)
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     graph = StateGraph(ReWOO)
 
     # 理论上来讲，不需要重新执行获取计划的步骤了吧
     # get_plan可以替换为一个新的函数，这个函数直接使用规划好的计划
-    # TODO：这里要改为直接使用规划好的计划
     graph.add_node("plan", get_ready_plan)
     # 直接使用规划好的计划，执行各种tools
     graph.add_node("tool", tool_execution)
