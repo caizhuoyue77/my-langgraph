@@ -8,7 +8,7 @@
     },
     {
       "name": "GetCurrentTime",
-      "input": "",
+      "input": "query",
       "description": "Worker that returns the current time.",
       "type": "general"
     },
@@ -92,7 +92,7 @@
     },
     {
       "name": "FanFavorites",
-      "input": "",
+      "input": "query",
       "description": "Worker that retrieves fan favorite movies or series from IMDb.",
       "type": "entertainment"
     },
@@ -104,19 +104,19 @@
     },
     {
       "name": "UpcomingMovies",
-      "input": "",
+      "input": "query",
       "description": "Worker that retrieves upcoming movies from IMDb.",
       "type": "entertainment"
     },
     {
       "name": "WeekTop10",
-      "input": "",
+      "input": "query",
       "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
       "type": "entertainment"
     },
     {
       "name": "WhatsStreaming",
-      "input": "",
+      "input": "query",
       "description": "Worker that retrieves information about what's streaming on IMDb.",
       "type": "entertainment"
     }
