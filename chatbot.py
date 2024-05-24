@@ -16,6 +16,8 @@ if "edit_step" not in st.session_state:
     st.session_state["edit_step"] = None
 if "edit_content" not in st.session_state:
     st.session_state["edit_content"] = None
+if "add_step" not in st.session_state:
+    st.session_state["add_step"] = False
 
 def check_yes():
     # 用户确认后继续执行计划
@@ -60,6 +62,9 @@ with st.sidebar:
                 st.session_state['edit_content'] = step
                 st.experimental_rerun()
 
+        if st.sidebar.button("添加步骤"):
+            st.session_state['add_step'] = True
+
     # 固定位置的编辑/修改区域
     if st.session_state['edit_step'] is not None:
         st.sidebar.title("编辑步骤")
@@ -80,9 +85,7 @@ with st.sidebar:
         
         if st.sidebar.button("保存修改"):
             # 更新选中的步骤
-            # st.session_state['rewoo_state']['steps'][st.session_state['edit_step']] = (step[0], step[1], new_tool, new_parameter)
-
-            st.session_state['rewoo_state']['steps'] = [ st.session_state['rewoo_state']['steps'][0] ]
+            st.session_state['rewoo_state']['steps'][st.session_state['edit_step']] = (step[0], step[1], new_tool, new_parameter)
             
             st.session_state['messages'].append({"role": "assistant", "content": "修改成功"})
 
@@ -97,6 +100,35 @@ with st.sidebar:
             # 清除编辑状态
             st.session_state['edit_step'] = None
             st.session_state['edit_content'] = None
+
+    if st.session_state['add_step']:
+        st.sidebar.title("添加步骤")
+
+        if st.session_state["api_recommendations"]:
+            tool_options = st.session_state["api_recommendations"]
+        else:
+            tool_options = []  # 默认工具选项，如果没有api_recommendations
+        
+        new_step_name = st.sidebar.text_input("步骤名称")
+        new_tool = st.sidebar.selectbox("工具", tool_options)
+        new_parameter = st.sidebar.text_input("参数")
+        insert_position = st.sidebar.number_input("插入位置", min_value=1, max_value=len(steps) + 1, value=len(steps) + 1)
+
+        if st.sidebar.button("保存步骤"):
+            new_step = (new_step_name, "", new_tool, new_parameter)
+            st.session_state['rewoo_state']['steps'].insert(insert_position - 1, new_step)
+            
+            st.session_state['messages'].append({"role": "assistant", "content": "步骤添加成功"})
+
+            # 清除添加状态
+            st.session_state['add_step'] = False
+            
+            # 重新运行脚本
+            st.experimental_rerun()
+        
+        if st.sidebar.button("取消添加"):
+            # 清除添加状态
+            st.session_state['add_step'] = False
 
 st.title("API 编排 Demo")
 st.caption("🚀 通过 ReWOO 方式一次生成全部的 API 编排计划，然后依次执行")
