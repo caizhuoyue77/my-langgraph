@@ -164,7 +164,7 @@ def rewoo_as_func(task: str):
     rewoo_state["steps"] = plan["steps"]
 
     types= get_types(task)
-    recommended_apis = get_tools_by_types(types)
+    api_recommendations = get_tools_by_types(types)
 
     response = f"**推荐的API种类:**\n\n{type}\n\n**API编排步骤：**\n"
     
@@ -177,7 +177,7 @@ def rewoo_as_func(task: str):
     logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
-    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state, "type": types, "recommended_apis": recommended_apis})
+    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state, "type": types, "api_recommendations": api_recommendations})
 
     return {"response": response, "rewoo_state": rewoo_state, "types":types, "api_recommendations": get_tools_by_type(type)}
 
