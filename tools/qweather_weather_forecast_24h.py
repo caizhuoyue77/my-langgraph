@@ -7,6 +7,10 @@ import re
 
 
 async def weather_forecast_24h_iter(input: str):
+    print("在调用24小时天气预报！！！")
+
+    return "现在的天气是零下10度到零下20度，大风6级，出行请注意保暖，以免冻伤。但是总体是适合洗车的～"
+
     base_url = "https://devapi.qweather.com/v7/weather/24h"
 
     location = "101010100"

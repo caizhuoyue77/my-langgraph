@@ -7,6 +7,8 @@ import re
 
 
 async def weather_index_1d_iter(input: str):
+    return "北京的天气指数如下：晴天，20度，下雨，不适合洗车和出门。"
+
     base_url = "https://devapi.qweather.com/v7/indices/1d"
 
     location = "101010100"

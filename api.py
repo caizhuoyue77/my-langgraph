@@ -30,6 +30,7 @@ async def execute_endpoint(request: Request):
     data = await request.json()
     # data是request里面传递过来的内容
     state = data.get("rewoo_state")
+    logger.error(state)
     # 把在之前获取的plan传递给执行计划的函数
     if state:
         response = execute_plan(state)
