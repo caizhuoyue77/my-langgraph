@@ -38,9 +38,8 @@ else:
 # 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
 
-# 这个是新的表达式，能够对应API输入为空的情况
+# 这个是新的表达式，能够对应API输入为空的情况，也不容易出现漏steps这种情况
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*(?:\[(.*?)\])?"
-
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
@@ -146,14 +145,15 @@ def rewoo_as_func(task: str):
             response += "。\n\n"
 
     # 同时要记得把这个plan存储起来，后续要用
-
     logger.debug("##############")
     logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
-    add_to_cache(task, {"response": response, "rewoo_state": rewoo_state})
+    api_response = {"response": response, "rewoo_state": rewoo_state, "api_recommendations": get_tools_by_type(type)}
 
-    return {"response": response, "rewoo_state": rewoo_state, "api_recommendations": get_tools_by_type("general")}
+    add_to_cache(task, api_response)
+
+    return api_response
 
 def get_ready_plan():
     plan = get_plan(ReWOO(task="帮我查询北京的天气"))
