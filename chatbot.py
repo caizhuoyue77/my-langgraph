@@ -20,6 +20,7 @@ if "edit_content" not in st.session_state:
 def check_yes():
     # 用户确认后继续执行计划
     url_continue = "http://localhost:8000/execute_plan"
+
     state_str = st.session_state["rewoo_state"]
 
     if state_str:
@@ -62,6 +63,7 @@ with st.sidebar:
     # 固定位置的编辑/修改区域
     if st.session_state['edit_step'] is not None:
         st.sidebar.title("编辑步骤")
+
         step = st.session_state['edit_content']
         if st.session_state["api_recommendations"]:
             tool_options = st.session_state["api_recommendations"]
@@ -78,11 +80,12 @@ with st.sidebar:
         
         if st.sidebar.button("保存修改"):
             # 更新选中的步骤
-            st.session_state['rewoo_state']['steps'][st.session_state['edit_step']] = (step[0], step[1], new_tool, new_parameter)
+            # st.session_state['rewoo_state']['steps'][st.session_state['edit_step']] = (step[0], step[1], new_tool, new_parameter)
+
+            st.session_state['rewoo_state']['steps'] = [ st.session_state['rewoo_state']['steps'][0] ]
             
-            logger.info(f"Updated rewoo_state: {st.session_state['rewoo_state']}")
-            st.session_state["messages"].append({"role": "user", "content": "修改了步骤，其中工具为：" + new_tool + "，参数为：" + new_parameter})
-            
+            st.session_state['messages'].append({"role": "assistant", "content": "修改成功"})
+
             # 清除编辑状态
             st.session_state['edit_step'] = None
             st.session_state['edit_content'] = None
@@ -116,7 +119,7 @@ if prompt := st.chat_input(placeholder="请输入您的问题..."):
         data = response.json()
         msg = data["response"]
         print(f"msg: {data}")
-        # 直接存储一个 rewoo 对象
+        # 直接存储一个新的 rewoo 对象
         st.session_state["rewoo_state"] = data["rewoo_state"]
         if "api_recommendations" in data:
             st.session_state["api_recommendations"] = data["api_recommendations"]

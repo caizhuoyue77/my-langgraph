@@ -23,11 +23,11 @@ Tools can be one of the following:
 For example,
 Task: I want to know the weather today in the capital of France.
 Plan: Use the WeatherSearch tool to find the current weather in the capital of France, which is Paris.
-#E1 = WeatherSearch[Paris]
+#E1 = WeatherForecast24H[Paris]
 
 Task: I want to know the weather today in changsha and find a hotel.
 Plan: Use the WeatherSearch tool to find the current weather in changsha.
-#E1 = WeatherSearch[changsha]
+#E1 = WeatherForecast24H[changsha]
 
 Plan: Use the GetTime tool to get the date.
 #E2 = GetTime[]
