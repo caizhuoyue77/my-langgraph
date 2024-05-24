@@ -43,22 +43,30 @@ def check_yes():
 
 # 侧边栏设置
 with st.sidebar:
-    # qwen_api_key = st.text_input("Qwen API Key", key="qwen_api_key", type="password")
-    # openai_api_key = st.text_input("OpenAI API Key", key="chatbot_api_key", type="password")
-    
-    # 编排模式：
-    # 1.Auto：直接以 ReWOO 的形式执行
-    # 2.Validation：以 ReWOO 方式生成 API 编排计划，通过人工确认后再执行
-    # 3.Manual：人工编排整个 API 流程
-    
-    # mode = st.selectbox("Mode", ["Auto", "Validation", "Manual"])
-
     st.sidebar.title("API 计划信息")
-    if st.session_state["api_recommendations"]:
-        st.sidebar.json(st.session_state['rewoo_state']['steps'])
-        # st.sidebar.json(st.session_state["api_recommendations"])
-    else:
-        st.sidebar.write("暂无计划信息")
+    if st.session_state["rewoo_state"]:
+        steps = st.session_state['rewoo_state']['steps']
+        for i, step in enumerate(steps):
+            st.sidebar.write(f"步骤 {i + 1}: {step[0]}")
+            if st.sidebar.button(f"删除步骤 {i + 1}", key=f"delete_{i}"):
+                del st.session_state['rewoo_state']['steps'][i]
+                st.rerun()
+            if st.sidebar.button(f"修改步骤 {i + 1}", key=f"edit_{i}"):
+                st.session_state['edit_step'] = i
+                st.session_state['edit_content'] = step
+                st.experimental_rerun()
+
+if 'edit_step' in st.session_state:
+    st.title("编辑步骤")
+    step = st.session_state['edit_content']
+    new_description = st.text_input("步骤描述", value=step[0])
+    new_tool = st.text_input("工具", value=step[2])
+    new_parameter = st.text_input("参数", value=step[3])
+    if st.button("保存修改"):
+        st.session_state['rewoo_state']['steps'][st.session_state['edit_step']] = (new_description, step[1], new_tool, new_parameter)
+        del st.session_state['edit_step']
+        del st.session_state['edit_content']
+        st.rerun()
 
 st.title("API 编排 Demo")
 st.caption("🚀 通过 ReWOO 方式一次生成全部的 API 编排计划，然后依次执行")
