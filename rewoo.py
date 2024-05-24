@@ -210,12 +210,9 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     graph.set_entry_point("plan")
     app = graph.compile()
 
-
     i = 1
     for s in app.stream(state):
         logger.debug(f"Step {i}: {s}")
-
-        # response += str(s)+'\n'
     
     response = f"**API调用结果:**\n\n{s['solve']['result']}"
 

@@ -140,6 +140,7 @@ def use_actual_tool(tool: str, tool_input: dict):
     elif tool == "GetCurrentTime":
         result = get_current_time()
     else:
-        raise ValueError(f"Unknown tool: {tool}")
+        result = ""
+        # raise ValueError(f"Unknown tool: {tool}")
 
     return result

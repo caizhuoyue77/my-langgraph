@@ -36,6 +36,7 @@ Plan: Use the HotelSearch tool to find the available hotels in changsha on the d
 #E3 = HotelSearch[changsha, #E2]
 
 Begin! 
+Caution: You can only use the tools listed above. Do not use any other tools or APIs. 
 Describe your plans with rich details. Each Plan should be followed by only one #E.
 
 Task: {task}"""
