@@ -55,7 +55,8 @@ with st.sidebar:
 
     st.sidebar.title("API 计划信息")
     if st.session_state["api_recommendations"]:
-        st.sidebar.json(st.session_state["api_recommendations"])
+        st.sidebar.json(st.session_state['rewoo_state']['steps'])
+        # st.sidebar.json(st.session_state["api_recommendations"])
     else:
         st.sidebar.write("暂无计划信息")
 
