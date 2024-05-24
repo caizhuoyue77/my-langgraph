@@ -5,11 +5,11 @@ import requests
 import re
 from datetime import datetime
 
-async def get_current_time_iter(query:str):
+async def get_current_time_iter():
     return datetime.now().strftime('现在的时间是：%Y年%m月%d日 %H点%M分%S秒')
    
-def get_current_time(query:str):
-    return asyncio.run(get_current_time_iter(query))
+def get_current_time():
+    return asyncio.run(get_current_time_iter())
 
 class TimeInput(BaseModel):
     query:str = Field(description="用户的query")

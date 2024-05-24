@@ -3,7 +3,78 @@ import requests
 from pydantic import BaseModel, Field
 
 class UpcomingMoviesInput(BaseModel):
-    region: str = Field(default="US", description="The region for which to fetch upcoming movies.")
+    region: str = Field(default="CHN", description="The region for which to fetch upcoming movies.")
+
+
+import json
+from datetime import datetime
+
+
+def filter_movies(nested_json_data):
+    # 将嵌套JSON字符串解析为Python对象
+    data = nested_json_data
+    # data = json.loads(nested_json_data)
+
+    # 检查数据结构是否正确
+    if not data.get("message"):
+        return json.dumps([], indent=4)
+    
+    # 处理电影信息并只保留所需的信息
+    filtered_movies = []
+
+    for group in data["message"]:
+        for entry in group.get("entries", []):
+            if len(filtered_movies) >= 20:
+                break
+            filtered_movie = {
+                "title": entry.get("titleText"),
+                "releaseDate": entry.get("releaseDate"),
+                "genres": entry.get("genres"),
+                "principalCredits": [credit.get("text") for credit in entry.get("principalCredits", [])]
+            }
+            filtered_movies.append(filtered_movie)
+
+        if len(filtered_movies) >= 20:
+            break
+
+    # 格式化日期并返回处理后的信息
+    for movie in filtered_movies:
+        if movie["releaseDate"]:
+            movie["releaseDate"] = datetime.strptime(movie["releaseDate"], "%a, %d %b %Y %H:%M:%S %Z").strftime("%Y-%m-%d")
+    
+    return json.dumps(filtered_movies,ensure_ascii = False, indent=4)
+
+# def filter_movies(json_data):
+#     # 将JSON字符串解析为Python对象
+
+#     print(json_data)
+
+#     with open("1.json", "w") as f:
+#         f.write(json.dumps(json_data, ensure_ascii = False, indent=4))
+
+
+#     breakpoint()
+
+#     movies = json.loads(json_data)
+
+#     # 处理电影信息并只保留所需的信息
+#     filtered_movies = []
+
+#     for movie in movies:
+#         filtered_movie = {
+#             "title": movie.get("titleText"),
+#             "releaseDate": movie.get("releaseDate"),
+#             "genres": movie.get("genres"),
+#             "principalCredits": [credit.get("text") for credit in movie.get("principalCredits", [])]
+#         }
+#         filtered_movies.append(filtered_movie)
+
+#     # 格式化日期并返回处理后的信息
+#     for movie in filtered_movies:
+#         movie["releaseDate"] = datetime.strptime(movie["releaseDate"], "%a, %d %b %Y %H:%M:%S %Z").strftime("%Y-%m-%d")
+    
+#     return json.dumps(filtered_movies, ensure_ascii = False, indent=4)
+
 
 async def fetch_upcoming_movies_iter(region: str) -> dict:
     """
@@ -25,13 +96,13 @@ async def fetch_upcoming_movies_iter(region: str) -> dict:
     try:
         response = requests.get(url, headers=headers, params=querystring)
         if response.status_code == 200:
-            return response.json()
+            return filter_movies(response.json())
         else:
             return {"error": f"Failed to fetch upcoming movies for region {region}, status code: {response.status_code}"}
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def upcoming_movies(region: str = "US") -> dict:
+def upcoming_movies(region: str = "CHN") -> dict:
     """
     A synchronous wrapper function to fetch a list of upcoming movies for a specified region from IMDb.
 

@@ -3,7 +3,7 @@ import requests
 from pydantic import BaseModel, Field
 
 class WhatsStreamingInput(BaseModel):
-    country: str = Field(default="US", description="国家代码，用于查询该国的流媒体内容。")
+    country: str = Field(default="CHN", description="国家代码，用于查询该国的流媒体内容。")
 
 async def fetch_whats_streaming_iter(country: str) -> dict:
     """
@@ -31,7 +31,7 @@ async def fetch_whats_streaming_iter(country: str) -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def whats_streaming(country: str = "US") -> dict:
+def whats_streaming(country: str = "CHN") -> dict:
     """
     A synchronous wrapper function to fetch information on what's currently streaming in a specified country from IMDb.
 
@@ -41,7 +41,7 @@ def whats_streaming(country: str = "US") -> dict:
     Returns:
         dict: The result from the asynchronous fetch function, containing either the streaming information or an error message.
     """
-    country = "US"
+    country = "CHN"
     return asyncio.run(fetch_whats_streaming_iter(country))
 
 if __name__ == "__main__":

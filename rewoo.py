@@ -37,8 +37,10 @@ else:
 # 正则表达式
 # 这是原本的表达式，但是容易识别不出steps
 regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*\[([^\]]+)\]"
-# 新的表达式，可以比较好的识别出steps，但也许会有其他问题，先这样
-# regex_pattern = r"Plan:\s*(.*?)\s*#E\d+\s*=\s*([\w\[\]]+)"
+
+# 这个是新的表达式，能够对应API输入为空的情况
+regex_pattern = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*(?:\[(.*?)\])?"
+
 
 prompt_template = ChatPromptTemplate.from_messages([("user", PROMPT_TEMPLATE)])
 
@@ -137,7 +139,11 @@ def rewoo_as_func(task: str):
     response = "**API编排步骤：**\n"
     
     for idx, step in enumerate(plan["steps"], 1):
-        response += f"* 第{idx}步: {step[0]}\n\n"
+        response += f"* 第{idx}步: \n思路：{step[0]}\t调用工具[{step[2]}]"
+        if len(step[3]):
+            response += f",工具的输入参数为:{step[3]}。\n\n"
+        else:
+            response += "。\n\n"
 
     # 同时要记得把这个plan存储起来，后续要用
 
