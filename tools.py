@@ -35,9 +35,7 @@ async def weather_forecast_24h_iter(input: str):
 def weather_forecast_24h(location: str):
     return asyncio.run(weather_forecast_24h_iter(location))
 
-class WeatherInput(BaseModel):
-    location: str = Field(description="地点的ID，类似101010100的格式,如果不知道就要调用位置查询API")
-    # date: str = Field(description="日期，yyyymmdd格式，比如20240425")
+
 
 if __name__ == "__main__":
     result = weather_forecast_24h("101040100")

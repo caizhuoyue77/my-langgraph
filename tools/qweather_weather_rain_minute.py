@@ -3,16 +3,21 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-# from server.agent.tools.helper import get_location_id, get_lon_lat
+from qweather_search_location import *
+
 
 async def weather_rain_minute_parse(response):
     return response["summary"]
 
 async def weather_rain_minute_iter(input: str):
-    base_url = "https://devapi.qweather.com/v7/minutely/5m"
+    try:
+        lon = search_location("input")['location'][0]['lon']
+        lat = search_location("input")['location'][0]['lat']
+        lonlat = lon + ',' + lat
+    except:
+        lonlat = "120.75086,30.76265"
 
-    # 这个需要经纬度坐标，不能用location id了
-    lonlat = get_lon_lat(input)
+    base_url = "https://devapi.qweather.com/v7/minutely/5m"
     
     params = {
         "location": lonlat,
@@ -38,5 +43,5 @@ class RainInput(BaseModel):
     location: str = Field(description="经纬度格式，经度在前，纬度在后。例如:116.41,39.92。")
 
 if __name__ == "__main__":
-    result = weather_rain_minute("101040100")
+    result = weather_rain_minute("jiaxing")
     print("答案:",result)

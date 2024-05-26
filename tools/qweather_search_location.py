@@ -31,4 +31,4 @@ class LocationInput(BaseModel):
 
 
 if __name__ == "__main__":
-    print(search_location("jiaxing"))
+    print(search_location("jiaxing")['location'][0])

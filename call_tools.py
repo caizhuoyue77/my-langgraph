@@ -82,37 +82,26 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = "您查询的酒店目的地为长沙，共有120家酒店供您选择。"
         # result = search_hotel_destination(tool_input)
     elif tool == "SearchHotels":
-        result = "长沙的酒店搜索结果：共有120家酒店，价格范围从200到1000元每晚。"
-        # result = search_hotels(tool_input)
+        result = search_hotels(tool_input)
     # 机票API
     elif tool == "SearchFlightLocation":
-        result = "您查询的航班目的地为长沙，共有15个航班供您选择。"
-        # result = search_flight_location(tool_input)
+        result = search_flight_location(tool_input)
     elif tool == "SearchFlightsMinPrice":
         result = "从北京到长沙的最低机票价格为500元。"
         # result = search_flights_min_price(tool_input)
     elif tool == "SearchFlights":
-        result = "从北京到长沙的航班搜索结果：共有15个航班，价格范围从500到1500元。"
-        # result = search_flights(tool_input)
+        result = search_flights(tool_input)
     # 货币/语言API
     elif tool == "GetCurrency":
-        result = "当前的货币为人民币（CNY）。"
-        # result = get_currency(tool_input)
+        result = get_currency(tool_input)
     elif tool == "GetExchangeRates":
-        result = "当前美元兑人民币的汇率为1:6.5。"
-        # result = get_exchange_rates(tool_input)
+        result = get_exchange_rates(tool_input)
     # elif tool == "GetLanguages":
         # result = "长沙的主要语言是中文。"
         # result = get_languages(tool_input)
     elif tool == "LocationToLatLon":
         # result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
         result = location_to_lat_lon("changsha")
-    # elif tool == "SearchAttractionLocations":
-        # result = "长沙的景点位置搜索结果：橘子洲、岳麓山、天心阁等。"
-        # result = search_attraction_locations(tool_input)
-    # elif tool == "SearchAttractions":
-        # result = "长沙的景点搜索结果：橘子洲、岳麓山、天心阁等，共有30个景点。"
-        # result = search_attractions(tool_input)
     # IMDb 电影/电视剧API
     # elif tool == "BornOn":
         # result = "您查询的生日为5月19日，出生在这一天的名人有：演员张艺谋。"
@@ -131,7 +120,6 @@ def use_actual_tool(tool: str, tool_input: dict):
         # result = top_100_series(tool_input)
     elif tool == "UpcomingMovies":
         result = upcoming_movies()
-        # 似乎API返回的response太长
     elif tool == "WeekTop10":
         result = week_top_10()
     elif tool == "WhatsStreaming":

@@ -51,7 +51,7 @@
     {
       "name": "SearchHotelDestination",
       "input": "destination details",
-      "description": "Worker that searches for hotel destinations.",
+      "description": "Worker that searches for hotel destination_ids, not the hotel information, but you must call this first to call the HotelSearch.",
       "type": "travel"
     },
     {
@@ -68,13 +68,13 @@
     },
     {
       "name": "SunriseSunset",
-      "input": "location name, examples: 1.beijing 2.shanghai",
+      "input": "location name and time, for example: beijing,20240527",
       "description": "Worker that retrieves sunrise and sunset times for a location.",
       "type": "weather"
     },
     {
       "name": "WeatherForecast24H",
-      "input": "location name",
+      "input": "location name, like beijing or shanghai.(english)",
       "description": "Worker that retrieves a 24-hour weather forecast for a location.",
       "type": "weather"
     },

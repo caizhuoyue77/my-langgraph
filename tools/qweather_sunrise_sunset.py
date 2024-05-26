@@ -3,13 +3,16 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-# # from server.agent.tools.helper import get_location_id, get_date
+from qweather_search_location import *
+
 
 async def sunrise_sunset_iter(input: str):
-    base_url = "https://devapi.qweather.com/v7/astronomy/sun"
+    try:
+        location = search_location("input")['location'][0]['id']
+    except:
+        location = '101010100'
 
-    # 写死了查询北京的信息
-    location = "101010100"
+    base_url = "https://devapi.qweather.com/v7/astronomy/sun"
 
     from datetime import datetime
 
@@ -38,10 +41,6 @@ async def sunrise_sunset_iter(input: str):
 
 def sunrise_sunset(location: str):
     return asyncio.run(sunrise_sunset_iter(location))
-
-class WeatherInput(BaseModel):
-    location: str = Field(description="地点的ID，类似101010100的格式,如果不知道就要调用位置查询API")
-    # date: str = Field(description="日期，yyyymmdd格式，比如20240425")
 
 if __name__ == "__main__":
     result = sunrise_sunset("101040100")

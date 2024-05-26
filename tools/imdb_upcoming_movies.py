@@ -44,37 +44,6 @@ def filter_movies(nested_json_data):
     
     return json.dumps(filtered_movies,ensure_ascii = False, indent=4)
 
-# def filter_movies(json_data):
-#     # 将JSON字符串解析为Python对象
-
-#     print(json_data)
-
-#     with open("1.json", "w") as f:
-#         f.write(json.dumps(json_data, ensure_ascii = False, indent=4))
-
-
-#     breakpoint()
-
-#     movies = json.loads(json_data)
-
-#     # 处理电影信息并只保留所需的信息
-#     filtered_movies = []
-
-#     for movie in movies:
-#         filtered_movie = {
-#             "title": movie.get("titleText"),
-#             "releaseDate": movie.get("releaseDate"),
-#             "genres": movie.get("genres"),
-#             "principalCredits": [credit.get("text") for credit in movie.get("principalCredits", [])]
-#         }
-#         filtered_movies.append(filtered_movie)
-
-#     # 格式化日期并返回处理后的信息
-#     for movie in filtered_movies:
-#         movie["releaseDate"] = datetime.strptime(movie["releaseDate"], "%a, %d %b %Y %H:%M:%S %Z").strftime("%Y-%m-%d")
-    
-#     return json.dumps(filtered_movies, ensure_ascii = False, indent=4)
-
 
 async def fetch_upcoming_movies_iter(region: str) -> dict:
     """

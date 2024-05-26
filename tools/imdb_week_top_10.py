@@ -3,33 +3,17 @@ import requests
 from pydantic import BaseModel, Field
 from datetime import datetime
 
-# Function to convert timestamp to readable date
-def convert_timestamp(timestamp):
-    return datetime.fromtimestamp(timestamp / 1000).strftime('%Y-%m-%d %H:%M:%S')
 
-def process_response(response):
-    if response['status']:
-        movies = []
-        for item in response['data']:
-            if item['titleType']['text'] == 'Movie':
-                movie_info = {
-                    'id': item['id'],
-                    'title': item['originalTitleText']['text'],
-                    'type': item['titleType']['text'],
-                    'rating': item['ratingsSummary']['aggregateRating'],
-                    'release_date': f"{item['releaseDate']['year']}-{item['releaseDate']['month']:02d}-{item['releaseDate']['day']:02d}",
-                    'current_rank': item['chartMeterRanking']['currentRank']
-                }
-                movies.append(movie_info)
-        return {
-            'message': response['message'],
-            'timestamp': convert_timestamp(response['timestamp']),
-            'movies': movies
-        }
-    else:
-        return {
-            'message': 'Failed to retrieve data'
-        }
+def process_week_top10_data(week_top10_data):
+    data = []
+    for item in week_top10_data['data']:
+        new_item = {}
+        new_item['title'] = item['titleText']['text']
+        new_item['rating'] = item['ratingsSummary']['aggregateRating']
+        new_item['releaseDate'] = item['releaseDate']
+        data.append(new_item)
+        
+    return {"week_top_10":data}
 
 class WeekTop10Input(BaseModel):
     description: str = Field(default="Fetches the top 10 movies and shows for the week.", description="描述这个API请求的功能。")
@@ -50,7 +34,7 @@ async def fetch_week_top_10_iter() -> dict:
     try:
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
-            return process_response(response.json())
+            return process_week_top10_data(response.json())
         else:
             return {"error": f"Failed to fetch week's top 10, status code: {response.status_code}"}
     except requests.RequestException as e:

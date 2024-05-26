@@ -19,13 +19,12 @@ async def search_flight_location_iter(query: str):
                 return {"error": f"Failed to fetch flight locations, status code: {response.status}"}
 
 def search_flight_location(query: str):
-    query = "shanghai"
     return asyncio.run(search_flight_location_iter(query))
 
 class FlightLocationSearchInput(BaseModel):
     query: str = Field(default_factory=str, description="The search query string")
 
 if __name__ == "__main__":
-    query_string = "new"
+    query_string = "hongkong"
     result = search_flight_location(query_string)
     print("Answer:", result)

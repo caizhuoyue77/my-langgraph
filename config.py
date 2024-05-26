@@ -43,7 +43,7 @@ Task: {task}"""
 
 SOLVE_PROMPT = """Solve the following task or problem. To solve the problem, we have made step-by-step Plan and \
 retrieved corresponding Evidence to each Plan. Use them with caution since long evidence might \
-contain irrelevant information.
+contain irrelevant information. Use bullet points to list the key points of the evidence whenever possible. \
 
 {plan}
 
