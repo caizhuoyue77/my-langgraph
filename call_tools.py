@@ -1,5 +1,5 @@
-# 把对应的工具import进来
 import os
+import asyncio
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from config_api_keys import TAVILY_API_KEY, OPENAI_API_KEY
@@ -46,84 +46,65 @@ from logger import *
 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
-def use_actual_tool(tool: str, tool_input: dict):
+async def use_actual_tool(tool: str, tool_input: dict):
     logger.info(f"调用工具：{tool}")
     logger.info(f"工具输入：{tool_input}")
     search = TavilySearchResults()
 
     # 通用API
     if tool == "Google":
-        result = search.invoke(tool_input)
+        result = await search.invoke(tool_input)
     # 天气API
     elif tool == "CurrentWeather":
         result = "长沙现在的天气是晴天，温度是25摄氏度，湿度是50%。"
-        # result = current_weather(tool_input)
-    # 24小时内的天气预报
     elif tool == "WeatherForecast24H":
-        result = weather_forecast_24h(tool_input)
+        result = await weather_forecast_24h(tool_input)
     elif tool == "SunriseSunset":
-        result = sunrise_sunset(tool_input)
+        result = await sunrise_sunset(tool_input)
     elif tool == "WeatherForecast3D":
         result = "未来三天长沙的天气预报是晴天为主，温度范围在17到28摄氏度之间。"
-        # result = weather_forecast_3d(tool_input)
     elif tool == "WeatherForecast7D":
         result = "未来七天长沙的天气预报是晴天和多云交替，最高温度30摄氏度，最低温度15摄氏度。"
-        # result = weather_forecast_7d(tool_input)
     elif tool == "WeatherIndex1D":
-        result = weather_index_1d(tool_input)
+        result = await weather_index_1d(tool_input)
     elif tool == "WeatherRainMinute":
         result = "未来60分钟内长沙无降雨。"
-        # result = weather_rain_minute(tool_input)
     elif tool == "SearchLocation":
         result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
-        # result = search_location(tool_input)
     # 酒店API
     elif tool == "SearchHotelDestination":
         result = "您查询的酒店目的地为长沙，共有120家酒店供您选择。"
-        # result = search_hotel_destination(tool_input)
     elif tool == "SearchHotels":
-        result = search_hotels(tool_input)
+        result = await search_hotels(tool_input)
     # 机票API
     elif tool == "SearchFlightLocation":
-        result = search_flight_location(tool_input)
+        result = await search_flight_location(tool_input)
     elif tool == "SearchFlightsMinPrice":
         result = "从北京到长沙的最低机票价格为500元。"
-        # result = search_flights_min_price(tool_input)
     elif tool == "SearchFlights":
-        result = search_flights(tool_input)
+        result = await search_flights(tool_input)
     # 货币/语言API
     elif tool == "GetCurrency":
-        result = get_currency(tool_input)
+        result = await get_currency(tool_input)
     elif tool == "GetExchangeRates":
-        result = get_exchange_rates(tool_input)
-    # elif tool == "GetLanguages":
-        # result = "长沙的主要语言是中文。"
-        # result = get_languages(tool_input)
+        result = await get_exchange_rates(tool_input)
     elif tool == "LocationToLatLon":
-        # result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
-        result = location_to_lat_lon("changsha")
+        result = await location_to_lat_lon("changsha")
     # IMDb 电影/电视剧API
-    # elif tool == "BornOn":
-        # result = "您查询的生日为5月19日，出生在这一天的名人有：演员张艺谋。"
-        # result = born_on(tool_input)
     elif tool == "FanFavorites":
-        # result = "当前的IMDB粉丝喜爱榜单包括《复仇者联盟》、《权力的游戏》等。"
-        result = fan_favorites()
+        result = await fan_favorites()
     elif tool == "SearchIMDB":
         result = "您查询的电影《复仇者联盟》在IMDB上的评分为8.4。"
-        # result = search_imdb("")
     elif tool == "Top100Movies":
         result = "当前的IMDB电影前100名包括《肖申克的救赎》、《教父》等。"
-        # result = top_100_movies(tool_input)
     elif tool == "Top100Series":
         result = "当前的IMDB电视剧前100名包括《权力的游戏》、《绝命毒师》等。"
-        # result = top_100_series(tool_input)
     elif tool == "UpcomingMovies":
-        result = upcoming_movies()
+        result = await upcoming_movies()
     elif tool == "WeekTop10":
-        result = week_top_10()
+        result = await week_top_10()
     elif tool == "WhatsStreaming":
-        result = whats_streaming()
+        result = await whats_streaming()
     # 自己编写的API
     elif tool == "GetCurrentTime":
         result = get_current_time()
