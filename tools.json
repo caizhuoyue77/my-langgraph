@@ -32,13 +32,13 @@
     },
     {
       "name": "SearchFlightLocation",
-      "input": "location name",
+      "input": "location name, in english",
       "description": "Worker that searches for flight locations.",
       "type": "travel"
     },
     {
       "name": "SearchFlightsMinPrice",
-      "input": "flight details",
+      "input": "from_id, to_id and departure date. You may need to call the searchflightlocation to get the two ids. departure_date should be like: 2024-05-01",
       "description": "Worker that searches for the minimum price of flights.",
       "type": "travel"
     },

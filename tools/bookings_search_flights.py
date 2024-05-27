@@ -7,17 +7,15 @@ def process_flight_data(response):
     flight_info = []
     # print(response)
     
-    for offer in response['data']['flightOffers']:
+    for offer in response['data']['flightOffers'][:2]:
         segments = []
         for segment in offer['segments']:
             for leg in segment['legs']:
                 segment_info = {
                     "departure_airport": leg['departureAirport']['name'],
                     "departure_city": leg['departureAirport']['cityName'],
-                    "departure_country": leg['departureAirport']['countryName'],
                     "arrival_airport": leg['arrivalAirport']['name'],
                     "arrival_city": leg['arrivalAirport']['cityName'],
-                    "arrival_country": leg['arrivalAirport']['countryName'],
                     "departure_time": leg['departureTime'],
                     "arrival_time": leg['arrivalTime'],
                     "cabin_class": leg['cabinClass'],
