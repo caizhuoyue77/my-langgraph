@@ -3,14 +3,10 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from qweather_search_location import *
-
+from tool_utils import *
 
 async def weather_forecast_24h_iter(input: str):
-    try:
-        location = search_location("input")['location'][0]['id']
-    except:
-        location = '101010100'
+    location = get_location_id(input)
 
     base_url = "https://devapi.qweather.com/v7/weather/24h"
     
@@ -25,7 +21,7 @@ async def weather_forecast_24h_iter(input: str):
 
         # 检查响应状态码
         if response.status_code == 200:
-            return response.json()  # 返回解析后的JSON数据
+            return response.json()['hourly'][0]  # 返回解析后的JSON数据
         else:
             return {"error": f"Failed to fetch weather information, status code: {response.status_code}"}
     except requests.RequestException as e:

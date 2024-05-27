@@ -3,6 +3,7 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
+from tool_utils import *
 from qweather_search_location import *
 
 async def weather_rain_minute_parse(response):
@@ -10,8 +11,8 @@ async def weather_rain_minute_parse(response):
 
 async def weather_rain_minute_iter(input: str):
     try:
-        lon = search_location("input")['location'][0]['lon']
-        lat = search_location("input")['location'][0]['lat']
+        lon = search_location(input)['lon']
+        lat = search_location(input)['lat']
         lonlat = lon + ',' + lat
     except:
         lonlat = "120.75086,30.76265"

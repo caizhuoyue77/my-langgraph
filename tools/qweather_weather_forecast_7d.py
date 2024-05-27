@@ -3,13 +3,9 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from qweather_search_location import *
-
+from tool_utils import *
 async def weather_forecast_7d_iter(input: str):
-    try:
-        location = search_location("input")['location'][0]['id']
-    except:
-        location = '101010100'
+    location = get_location_id(input)
 
     base_url = "https://devapi.qweather.com/v7/weather/7d"
     

@@ -28,11 +28,32 @@ Plan: Use the SearchHotelDestination tool to find the destination ID of shanghai
 Plan: Use the dest_id from #E1 and the dates to call SearchHotels to find the available hotels.
 #E2 = SearchHotels[#E1, 2024-06-01, 2024-06-03, 1]
 
-Begin! 
-Caution: You can only use the tools listed above. Do not use any other tools or APIs. 
-Describe your plans with rich details. Each Plan should be followed by only one #E.
+Task: 你能告诉我上海最近1天的天气吗?
+Plan: Use the SearchLocation tool to find the location ID of shanghai.
+#E1 = SearchLocation[shanghai]
 
-Task: {task}"""
+Plan: Use the location id from #E1 to call WeatherForecast24H to get the weather forecast.
+#E2 = WeatherForecast24H[#E1]
+
+Task: 帮我搜索一下上海飞长沙的机票，出发时间是2024年12月1日。
+Plan: Use the SearchFlightLocation tool to find the airport ID of shanghai.
+#E1 = SearchFlightLocation[shanghai]
+
+Plan: Use the SearchFlightLocation tool to find the airport ID of changsha.
+#E2 = SearchFlightLocation[changsha]
+
+Plan: Use the airport ids from #E1 and #E2 and the date to call SearchFlights to find the available flights.
+#E3 = SearchFlights[#E1, #E2, 2024-12-01]
+
+Begin! 
+Caution: 
+1.You can only use the tools listed above. Do not use any other tools or APIs. 
+2.Describe your plans with rich details.
+3.Each Plan should be followed by only one #E.
+4.Parameters should be in English.
+
+Task: {task}
+Response: """
 
 SOLVE_PROMPT = """Solve the following task or problem. To solve the problem, we have made step-by-step Plan and \
 retrieved corresponding Evidence to each Plan. Use them with caution since long evidence might \
@@ -40,8 +61,7 @@ contain irrelevant information. Use bullet points to list the key points of the 
 
 {plan}
 
-Now solve the question or task according to provided Evidence above. Respond with the answer
-directly with no extra words.
+Now solve the question or task according to provided Evidence above. Respond with the answer and reasons.
 
 Task: {task}
 Response:"""

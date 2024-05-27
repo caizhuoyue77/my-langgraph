@@ -61,12 +61,6 @@
       "type": "travel"
     },
     {
-      "name": "SearchLocation",
-      "input": "location name",
-      "description": "Worker that searches for a location.",
-      "type": "travel"
-    },
-    {
       "name": "SunriseSunset",
       "input": "location name and time, for example: beijing,20240527",
       "description": "Worker that retrieves sunrise and sunset times for a location.",
@@ -74,7 +68,7 @@
     },
     {
       "name": "WeatherForecast24H",
-      "input": "location name, like beijing or shanghai.(english)",
+      "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
       "description": "Worker that retrieves a 24-hour weather forecast for a location.",
       "type": "weather"
     },
@@ -88,6 +82,12 @@
       "name": "WeatherRainMinute",
       "input": "location name",
       "description": "Worker that retrieves minute-by-minute rain information for a location.",
+      "type": "weather"
+    },
+    {
+      "name": "SearchLocation",
+      "input": "location name, like shanghai or jiaxing",
+      "description": "Worker that searches for a location.",
       "type": "weather"
     },
     {

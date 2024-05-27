@@ -3,20 +3,17 @@ import asyncio
 from pydantic import BaseModel, Field
 import requests
 import re
-from qweather_search_location import *
-
+from tool_utils import *
 
 async def weather_index_1d_iter(input: str):
-    try:
-        location = search_location("input")['location'][0]['id']
-    except:
-        location = '101010100'
-
+    location = get_location_id(input)
+    
     base_url = "https://devapi.qweather.com/v7/indices/1d"
     
     params = {
         "location": location,
-        "key":"7fa7d0d9ef374dc78c32fd8f5cb444b7"
+        "key":"7fa7d0d9ef374dc78c32fd8f5cb444b7",
+        "type":"1,2,3,5,6,8,9,11,14"
     }
 
     # 发送GET请求
@@ -34,8 +31,6 @@ async def weather_index_1d_iter(input: str):
 def weather_index_1d(location: str):
     return asyncio.run(weather_index_1d_iter(location))
 
-
-
 if __name__ == "__main__":
-    result = weather_index_1d("101040100")
+    result = weather_index_1d("jiaxing")
     print("答案:",result)
