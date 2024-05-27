@@ -56,7 +56,7 @@
     },
     {
       "name": "SearchHotels",
-      "input": "hotel details",
+      "input": "location, checkin date, checkout date, and number of guests. For example: beijing,20240527,20240528,2",
       "description": "Worker that searches for hotels.",
       "type": "travel"
     },

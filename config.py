@@ -21,19 +21,12 @@ Tools can be one of the following:
 {tool_list}
 
 For example,
-Task: I want to know the weather today in the capital of France.
-Plan: Use the WeatherSearch tool to find the current weather in the capital of France, which is Paris.
-#E1 = WeatherForecast24H[Paris]
+Task: I will stay in shanghai from 2024-06-01 to 2024-06-03. I want to find some hotels.
+Plan: Use the SearchHotelDestination tool to find the destination ID of shanghai.
+#E1 = SearchHotelDestination[shanghai]
 
-Task: I want to know the weather today in changsha and find a hotel.
-Plan: Use the WeatherSearch tool to find the current weather in changsha.
-#E1 = WeatherForecast24H[changsha]
-
-Plan: Use the GetTime tool to get the date.
-#E2 = GetTime[]
-
-Plan: Use the HotelSearch tool to find the available hotels in changsha on the date.
-#E3 = HotelSearch[changsha, #E2]
+Plan: Use the dest_id from #E1 and the dates to call SearchHotels to find the available hotels.
+#E2 = SearchHotels[#E1, 2024-06-01, 2024-06-03, 1]
 
 Begin! 
 Caution: You can only use the tools listed above. Do not use any other tools or APIs. 
@@ -51,7 +44,7 @@ Now solve the question or task according to provided Evidence above. Respond wit
 directly with no extra words.
 
 Task: {task}
-Response:(请用中文)"""
+Response:"""
 
 
 if __name__ == "__main__":
