@@ -119,6 +119,18 @@
       "input": "query",
       "description": "Worker that retrieves information about what's streaming on IMDb.",
       "type": "entertainment"
+    },
+    {
+      "name":"Top100Movies",
+      "input":"query",
+      "description":"Worker that retrieves the top 100 movies from IMDb.",
+      "type":"entertainment"
+    },
+    {
+      "name":"Top100Series",
+      "input":"query",
+      "description":"Worker that retrieves the top 100 series from IMDb.",
+      "type":"entertainment"
     }
   ]
 }
