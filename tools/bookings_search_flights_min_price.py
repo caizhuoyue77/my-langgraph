@@ -30,16 +30,10 @@ def search_flights_min_price(query: str):
     currency_code = "CNY"
     return asyncio.run(search_min_price_iter(from_id, to_id, depart_date, currency_code))
 
-class MinPriceInput(BaseModel):
-    from_id: str = Field(description="Airport code for the departure location")
-    to_id: str = Field(description="Airport code for the destination location")
-    depart_date: str = Field(description="Departure date")
-    currency_code: str = Field(description="Currency code")
-
 if __name__ == "__main__":
     from_id = "BOM.AIRPORT"
     to_id = "DEL.AIRPORT"
     depart_date = "2024-10-01"  # Replace this with the actual departure date
     currency_code = "CNY"
-    result = fetch_min_price(from_id, to_id, depart_date, currency_code)
+    result = search_flights_min_price("")
     print("Answer:", result)

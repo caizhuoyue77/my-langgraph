@@ -74,7 +74,6 @@ def search_hotels(query: str):
         arrival_date="2024-06-20",
         departure_date="2024-06-25",
         adults=1,
-        children_age="0,17",
         room_qty=1,
         page_number=1,
         languagecode="zh-cn",

@@ -5,6 +5,18 @@ from pydantic import BaseModel, Field
 class SearchIMDBInput(BaseModel):
     query: str = Field(description="用于搜索IMDB数据库的查询字符串。")
 
+def process_search_imdb(search_results):
+    search_results_list = []
+    for result in search_results['data'][:5]:
+        result_info = {
+            'qid': result['qid'],
+            'title': result['title'],
+            'year': result['year'],
+            'stars': result['stars'],
+        }
+        search_results_list.append(result_info)
+    return search_results_list
+
 async def search_imdb_iter(query: str) -> dict:
     """
     Asynchronously searches IMDb using a specified query string via the RapidAPI service.
@@ -25,7 +37,7 @@ async def search_imdb_iter(query: str) -> dict:
     try:
         response = requests.get(url, headers=headers, params=querystring)
         if response.status_code == 200:
-            return response.json()
+            return process_search_imdb(response.json())
         else:
             return {"error": f"Failed to search IMDb, status code: {response.status_code}"}
     except requests.RequestException as e:
@@ -44,6 +56,6 @@ def search_imdb(query: str) -> dict:
     return asyncio.run(search_imdb_iter(query))
 
 if __name__ == "__main__":
-    search_query = "titanic"  # Replace '<REQUIRED>' with your actual search query
+    search_query = "zootopia"  # Replace '<REQUIRED>' with your actual search query
     imdb_search_results = search_imdb(search_query)
     print("Search Results:", imdb_search_results)

@@ -5,6 +5,21 @@ from pydantic import BaseModel, Field
 class FanFavoritesInput(BaseModel):
     country: str = Field(default="CHN", description="国家代码，用于获取该国家的粉丝最喜爱的影视作品。")
 
+def process_fan_favorites(fan_favorites_data):
+    fan_favorites_list = []
+
+    for result in fan_favorites_data['data']['list'][:9]:
+        # print(result)
+        result_info = {
+            'title': result['originalTitleText']['text'],
+            'year': result['releaseDate'],
+            'ratings': result['ratingsSummary']['aggregateRating'],
+            'plot': result['plot']['plotText']['plainText']
+        }
+        fan_favorites_list.append(result_info)
+
+    return fan_favorites_list
+
 async def fan_favorites_iter(country: str) -> dict:
     """
     Asynchronously fetches fan favorites from IMDb for a specified country via the RapidAPI service.
@@ -25,7 +40,7 @@ async def fan_favorites_iter(country: str) -> dict:
     try:
         response = requests.get(url, headers=headers, params=querystring)
         if response.status_code == 200:
-            return response.json()
+            return process_fan_favorites(response.json())
         else:
             return {"error": f"Failed to fetch fan favorites, status code: {response.status_code}"}
     except requests.RequestException as e:

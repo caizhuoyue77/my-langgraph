@@ -19,8 +19,6 @@ from bookings_get_currency import get_currency
 from bookings_get_exchange_rates import get_exchange_rates
 from bookings_get_languages import get_languages
 from bookings_location_to_lat_lon import location_to_lat_lon
-from bookings_search_attraction_locations import search_attraction_locations
-from bookings_search_attractions import search_attractions
 from bookings_search_flight_location import search_flight_location
 from bookings_search_flights_min_price import search_flights_min_price
 from bookings_search_flights import search_flights
@@ -62,18 +60,18 @@ async def use_actual_tool(tool: str, tool_input: dict):
     elif tool == "SunriseSunset":
         result = await sunrise_sunset(tool_input)
     elif tool == "WeatherForecast3D":
-        result = "未来三天长沙的天气预报是晴天为主，温度范围在17到28摄氏度之间。"
+        result = await weather_forecast_3d(tool_input)
     elif tool == "WeatherForecast7D":
-        result = "未来七天长沙的天气预报是晴天和多云交替，最高温度30摄氏度，最低温度15摄氏度。"
+        result = await weather_forecast_7d(tool_input)
     elif tool == "WeatherIndex1D":
         result = await weather_index_1d(tool_input)
     elif tool == "WeatherRainMinute":
-        result = "未来60分钟内长沙无降雨。"
+        result = await weather_rain_minute(tool_input)
     elif tool == "SearchLocation":
         result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
     # 酒店API
     elif tool == "SearchHotelDestination":
-        result = "您查询的酒店目的地为长沙，共有120家酒店供您选择。"
+        result = await search_hotel_destination(tool_input)
     elif tool == "SearchHotels":
         result = await search_hotels(tool_input)
     # 机票API
@@ -94,11 +92,11 @@ async def use_actual_tool(tool: str, tool_input: dict):
     elif tool == "FanFavorites":
         result = await fan_favorites()
     elif tool == "SearchIMDB":
-        result = "您查询的电影《复仇者联盟》在IMDB上的评分为8.4。"
+        result = await search_imdb(tool_input)
     elif tool == "Top100Movies":
-        result = "当前的IMDB电影前100名包括《肖申克的救赎》、《教父》等。"
+        result = await top_100_movies()
     elif tool == "Top100Series":
-        result = "当前的IMDB电视剧前100名包括《权力的游戏》、《绝命毒师》等。"
+        result = await top_100_series()
     elif tool == "UpcomingMovies":
         result = await upcoming_movies()
     elif tool == "WeekTop10":

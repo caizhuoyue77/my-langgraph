@@ -21,13 +21,25 @@ async def fetch_imdb_top_100_series_iter() -> dict:
     try:
         response = requests.get(url, headers=headers)
         if response.status_code == 200:
-            return response.json()
+            return process_top_20_series(response.json())
         else:
             return {"error": f"Failed to fetch IMDb top 100 series, status code: {response.status_code}"}
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def top_100_series() -> dict:
+def process_top_20_series(series_data):
+    top_20_series = []
+    for serie in series_data[:10]:
+        serie_info = {
+            'rank': serie['rank'],
+            'title': serie['title'],
+            'description': serie['description'],
+            'year': serie['year']
+        }
+        top_20_series.append(serie_info)
+    return top_20_series
+
+def top_100_series(query:str) -> dict:
     """
     A synchronous wrapper function to fetch the IMDb top 100 series.
 
@@ -37,5 +49,5 @@ def top_100_series() -> dict:
     return asyncio.run(fetch_imdb_top_100_series_iter())
 
 if __name__ == "__main__":
-    series_data = top_100_series()
+    series_data = top_100_series("")
     print("IMDb Top 100 Series:", series_data)

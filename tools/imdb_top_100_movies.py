@@ -9,7 +9,7 @@ class IMDbTop100Input(BaseModel):
 
 def process_top_20_movies(movies_data):
     top_20_movies = []
-    for movie in movies_data[:20]:  # Only process the top 20 movies
+    for movie in movies_data[:10]:  # Only process the top 20 movies
         movie_info = {
             'rank': movie['rank'],
             'title': movie['title'],
@@ -51,12 +51,6 @@ def top_100_movies(query: str) -> dict:
     return asyncio.run(fetch_imdb_top_100_movies_iter())
 
 if __name__ == "__main__":
-    movies_data = top_100_movies()
-    # processed_data = process_response(movies_data)
+    movies_data = top_100_movies("")
+    print(movies_data)
 
-    # Write the processed data to a JSON file
-    with open('movies_data.json', 'w') as file:
-        json.dump(movies_data, file, indent=4)
-
-    # Optional: Output the result to verify
-    # print(json.dumps(movies_data, indent=4))
