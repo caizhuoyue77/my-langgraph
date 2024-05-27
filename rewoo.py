@@ -107,7 +107,6 @@ def _get_current_task(state: ReWOO):
     else:
         return len(state["results"]) + 1
 
-
 def tool_execution(state: ReWOO):
     """执行计划中的工具。"""
 
@@ -122,6 +121,8 @@ def tool_execution(state: ReWOO):
     
     # 专门来选择并执行工具
     result = use_actual_tool(tool, tool_input)
+
+    logger.critical(f"工具执行结果呀：{result}")
     # result = "genv是2024年上映的一部美国超级英雄电视剧"
 
     _results[step_name] = str(result)

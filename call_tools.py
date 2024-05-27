@@ -109,5 +109,5 @@ async def use_actual_tool(tool: str, tool_input: dict):
     else:
         result = ""
         # raise ValueError(f"Unknown tool: {tool}")
-
+    logger.critical("这是调用的结果呀:" + result)
     return result
