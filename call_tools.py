@@ -44,70 +44,68 @@ from logger import *
 os.environ["TAVILY_API_KEY"] = TAVILY_API_KEY
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
-async def use_actual_tool(tool: str, tool_input: dict):
+def use_actual_tool(tool: str, tool_input: dict):
     logger.info(f"调用工具：{tool}")
     logger.info(f"工具输入：{tool_input}")
     search = TavilySearchResults()
 
     # 通用API
     if tool == "Google":
-        result = await search.invoke(tool_input)
+        result = search.invoke(tool_input)
     # 天气API
-    elif tool == "CurrentWeather":
-        result = "长沙现在的天气是晴天，温度是25摄氏度，湿度是50%。"
     elif tool == "WeatherForecast24H":
-        result = await weather_forecast_24h(tool_input)
+        result = weather_forecast_24h(tool_input)
     elif tool == "SunriseSunset":
-        result = await sunrise_sunset(tool_input)
+        result = sunrise_sunset(tool_input)
     elif tool == "WeatherForecast3D":
-        result = await weather_forecast_3d(tool_input)
+        result = weather_forecast_3d(tool_input)
     elif tool == "WeatherForecast7D":
-        result = await weather_forecast_7d(tool_input)
+        result = weather_forecast_7d(tool_input)
     elif tool == "WeatherIndex1D":
-        result = await weather_index_1d(tool_input)
+        result = weather_index_1d(tool_input)
     elif tool == "WeatherRainMinute":
-        result = await weather_rain_minute(tool_input)
+        result = weather_rain_minute(tool_input)
     elif tool == "SearchLocation":
         result = "长沙的地理位置是纬度28.2282， 经度112.9388。"
     # 酒店API
     elif tool == "SearchHotelDestination":
-        result = await search_hotel_destination(tool_input)
+        result =  search_hotel_destination(tool_input)
     elif tool == "SearchHotels":
-        result = await search_hotels(tool_input)
+        result =  search_hotels(tool_input)
     # 机票API
     elif tool == "SearchFlightLocation":
-        result = await search_flight_location(tool_input)
+        result =  search_flight_location(tool_input)
     elif tool == "SearchFlightsMinPrice":
         result = "从北京到长沙的最低机票价格为500元。"
     elif tool == "SearchFlights":
-        result = await search_flights(tool_input)
+        result =  search_flights(tool_input)
     # 货币/语言API
     elif tool == "GetCurrency":
-        result = await get_currency(tool_input)
+        result =  get_currency(tool_input)
     elif tool == "GetExchangeRates":
-        result = await get_exchange_rates(tool_input)
+        result =  get_exchange_rates(tool_input)
     elif tool == "LocationToLatLon":
-        result = await location_to_lat_lon("changsha")
+        result =  location_to_lat_lon("changsha")
     # IMDb 电影/电视剧API
     elif tool == "FanFavorites":
-        result = await fan_favorites()
+        result =  fan_favorites()
     elif tool == "SearchIMDB":
-        result = await search_imdb(tool_input)
+        result =  search_imdb(tool_input)
     elif tool == "Top100Movies":
-        result = await top_100_movies()
+        result =  top_100_movies()
     elif tool == "Top100Series":
-        result = await top_100_series()
+        result =  top_100_series()
     elif tool == "UpcomingMovies":
-        result = await upcoming_movies()
+        result =  upcoming_movies()
     elif tool == "WeekTop10":
-        result = await week_top_10()
+        result =  week_top_10()
     elif tool == "WhatsStreaming":
-        result = await whats_streaming()
+        result =  whats_streaming()
     # 自己编写的API
     elif tool == "GetCurrentTime":
         result = get_current_time()
     else:
         result = ""
         # raise ValueError(f"Unknown tool: {tool}")
-    logger.critical("这是调用的结果呀:" + result)
+    logger.critical("这是调用的结果呀:" + str(result))
     return result

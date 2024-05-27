@@ -5,7 +5,6 @@ import requests
 import re
 from qweather_search_location import *
 
-
 async def weather_rain_minute_parse(response):
     return response["summary"]
 

@@ -6,7 +6,6 @@ import json
 class IMDbTop100Input(BaseModel):
     query: str = Field(description="用于请求IMDb前100部电影的查询字符串。")
 
-
 def process_top_20_movies(movies_data):
     top_20_movies = []
     for movie in movies_data[:10]:  # Only process the top 20 movies

@@ -1,10 +1,8 @@
-import json
-import asyncio
+import requests
 from pydantic import BaseModel, Field
-import aiohttp
-from bookings_search_hotel_destination import *
+from bookings_search_hotel_destination import search_hotel_destination
 
-async def process_hotel_data(hotel_data):
+def process_hotel_data(hotel_data):
     hotels = []
     for hotel in hotel_data['data']['hotels']:
         item = {
@@ -28,25 +26,8 @@ class HotelSearchInput(BaseModel):
     currency_code: str = Field(description="Currency code for pricing")
     query: str = Field(description="Search query for the hotel")
 
-async def search_hotel_destination_iter(destination: str):
-    base_url = "https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination"
-    params = {"query": destination}
-    headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
-        "X-RapidAPI-Host": "booking-com15.p.rapidapi.com"
-    }
-    async with aiohttp.ClientSession() as session:
-        try:
-            async with session.get(base_url, headers=headers, params=params) as response:
-                if response.status == 200:
-                    return await response.json()
-                else:
-                    return {"error": f"Failed to fetch hotel destination information, status code: {response.status}"}
-        except aiohttp.ClientError as e:
-            return {"error": f"Request failed: {str(e)}"}
-
-async def search_hotels_iter(input: HotelSearchInput):
-    dest_data = await search_hotel_destination_iter(input.query)
+def search_hotels_iter(input: HotelSearchInput):
+    dest_data = search_hotel_destination(input.query)
     if 'data' in dest_data and len(dest_data['data']) > 0:
         input.dest_id = dest_data['data'][0]['dest_id']
     else:
@@ -59,13 +40,15 @@ async def search_hotels_iter(input: HotelSearchInput):
     }
     params = input.dict()
 
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url, headers=headers, params=params) as response:
-            if response.status == 200:
-                data = await response.json()
-                return await process_hotel_data(data)
-            else:
-                return {"error": f"Failed to search hotels, status code: {response.status}"}
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        if response.status_code == 200:
+            data = response.json()
+            return process_hotel_data(data)
+        else:
+            return {"error": f"Failed to search hotels, status code: {response.status_code}"}
+    except requests.RequestException as e:
+        return {"error": f"Request failed: {str(e)}"}
 
 def search_hotels(query: str):
     hotel_input = HotelSearchInput(
@@ -74,18 +57,14 @@ def search_hotels(query: str):
         arrival_date="2024-06-20",
         departure_date="2024-06-25",
         adults=1,
+        children_age="",  # Provide an empty string if no children are present
         room_qty=1,
         page_number=1,
         languagecode="zh-cn",
         currency_code="CNY",
         query=query
     )
-    loop = asyncio.get_event_loop()
-    if loop.is_running():
-        task = loop.create_task(search_hotels_iter(hotel_input))
-        result = loop.run_until_complete(task)
-    else:
-        result = asyncio.run(search_hotels_iter(hotel_input))
+    result = search_hotels_iter(hotel_input)
     return result
 
 if __name__ == "__main__":
