@@ -38,11 +38,11 @@
 
 [x] 7. cache不包括可选的api(api_recommendation)，最好把这个也处理一下
 
-[ ] 8. 需要与用户进行动态交互/编排的部分
+[x] 8. 需要与用户进行动态交互/编排的部分
 
 [ ] 9.添加高德地图/淘宝的API（比较好demo的）
 
-[ ] 10. 动态配参数（多参数配起来应该会比较复杂）
+[ ] 10. 动态配参数，希望真的能配参数（多参数配起来应该会比较复杂）
 
 [ ] 11. 添加图谱可视化的部分，展示在页面上
 
@@ -58,13 +58,20 @@
 效果演示：能够自主地调用Google搜索API并得到结果
 ![调用google search的API](assets/images/24-05-19-google搜索结果.png)
 
-2.
+2024年5月27日
+
+1. 修改了天气API，先根据query（如shanghai）自己在API函数里搜location，然后再调用查询API。后面要改为显式查询location的代码。
+2. 添加了imdb的后处理函数，可以直接返回imdb的（简短）结果，基本都能调用成功，而且不需要参数。
+3. TODO：机票、酒店的API能够动态配参数成功，可能要修改prompt和中间的处理函数。
+4. TODO：把配参数的地方每个参数拆开，或者用json编辑框（参考postman）的形式让用户配参数。
+5. TODO：能够从0开始用户自己构建一个流程然后执行，如何配参数，如何处理API之间的关系。
+6. TODO：修改API的返回格式为有status，有data，这样的格式。
+7. TODO：写一个统一的测试文档，能够测试tools.json里的tools是否和文件夹里的tools匹配，然后测试所有的API是否能够调用成功。
 
 ## 模型改成Qwen的几个注意事项
 
 1. 现在的Qwen是通过`from langchain_community.llms import Tongyi`里面的Tongyi来实现的，然后`model = Tongyi()`;后面得改成通过API调用跑在我们服务器本地的Qwen模型
 2. Tongyi返回的result格式和OpenAI不一样，要把所有代码里面的result.content改为result
-
 
 ## 当务之急：
 1. 弄出图谱
