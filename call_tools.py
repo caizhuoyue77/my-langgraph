@@ -14,7 +14,7 @@ current_dir = os.path.dirname(os.path.abspath(__file__))
 tools_dir = os.path.join(current_dir, 'tools')
 sys.path.append(tools_dir)
 
-from get_current_time import get_current_time
+from calc_datetime import calc_datetime, get_current_date, get_current_time
 from bookings_get_currency import get_currency
 from bookings_get_exchange_rates import get_exchange_rates
 from bookings_get_languages import get_languages
@@ -104,6 +104,10 @@ def use_actual_tool(tool: str, tool_input: dict):
     # 自己编写的API
     elif tool == "GetCurrentTime":
         result = get_current_time()
+    elif tool == "GetCurrentDate":
+        result = get_current_date()
+    elif tool == "CalcDatetime":
+        result = calc_datetime(tool_input)
     else:
         result = ""
         # raise ValueError(f"Unknown tool: {tool}")

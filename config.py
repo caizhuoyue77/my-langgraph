@@ -61,7 +61,8 @@ contain irrelevant information. Use bullet points to list the key points of the 
 
 {plan}
 
-Now solve the question or task according to provided Evidence above. Respond with the answer and reasons.
+Now solve the question or task according to provided Evidence above. 
+Respond with the answer and detailed explaination.(But be consice and clear)
 
 Task: {task}
 Response:"""

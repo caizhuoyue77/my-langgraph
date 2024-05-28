@@ -13,6 +13,18 @@
       "type": "general"
     },
     {
+      "name": "GetCurrentDate",
+      "input": "query",
+      "description": "Worker that returns the current date.",
+      "type": "general"
+    },
+    {
+      "name": "CalcDatetime",
+      "input": "date and day. For example: 2024-05-01, 1. Will return 2024-05-02.",
+      "description": "Worker that will calculate the date for you.",
+      "type": "general"
+    },
+    {
       "name": "GetCurrency",
       "input": "currency code",
       "description": "Worker that retrieves currency information.",
@@ -33,7 +45,7 @@
     {
       "name": "SearchFlightLocation",
       "input": "location name, in english",
-      "description": "Worker that searches for flight locations.",
+      "description": "Worker that searches for flight locations in a certain city. One city at a time.",
       "type": "travel"
     },
     {
@@ -44,7 +56,7 @@
     },
     {
       "name": "SearchFlights",
-      "input": "flight details",
+      "input": "depart_airport_id, arrive_airport_id, depart date. For example: SHA.AIRPORT, PEK.AIRPORT, 2024-05-01. In order to get the depart and arrive airport id, you need to call the SearchFlightLocation twice.",
       "description": "Worker that searches for flights.",
       "type": "travel"
     },
@@ -70,6 +82,18 @@
       "name": "WeatherForecast24H",
       "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
       "description": "Worker that retrieves a 24-hour weather forecast for a location.",
+      "type": "weather"
+    },
+    {
+      "name": "WeatherForecast3D",
+      "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
+      "description": "Worker that retrieves a 3-day weather forecast for a location.",
+      "type": "weather"
+    },
+    {
+      "name": "WeatherForecast7D",
+      "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
+      "description": "Worker that retrieves a 7-day weather forecast for a location.",
       "type": "weather"
     },
     {

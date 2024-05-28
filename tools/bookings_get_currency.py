@@ -21,5 +21,5 @@ def get_currency(query:str):
     return asyncio.run(get_currency_iter())
 
 if __name__ == "__main__":
-    result = fetch_currency("")
+    result = get_currency("")
     print("Answer:", result)
