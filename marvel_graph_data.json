@@ -89,7 +89,8 @@
         {
             "source": "Captain_Marvel",
             "label": "friend_of",
-            "target": "Spiderman"
+            "target": "Spiderman",
+            "type": "CURVE_SMOOTH"
         },
         {
             "source": "Hulk",

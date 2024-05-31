@@ -5,9 +5,10 @@ import json
 config_builder = ConfigBuilder()
 config = config_builder.build()
 
-config = Config(width=500, 
-                height=500, 
+config = Config(width=200, 
+                height=400, 
                 directed=True,
+                physics=True,
                 nodeHighlightBehavior=True, 
                 highlightColor="#F7A7A6",
                 collapsible=True,
@@ -16,7 +17,7 @@ config = Config(width=500,
                 ) 
 
 # 读取JSON文件
-with open('graph_data.json') as f:
+with open('marvel_graph_data.json') as f:
     data = json.load(f)
 
 # 从JSON文件中获取节点和边

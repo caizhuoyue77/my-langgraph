@@ -1,0 +1,188 @@
+{
+    "nodes": [
+      {
+        "id": "Google",
+        "label": "Google",
+        "size": 25,
+        "description": "Worker that searches results from Tavily. Useful for general search queries.",
+        "type": "general"
+      },
+      {
+        "id": "GetCurrentTime",
+        "label": "GetCurrentTime",
+        "size": 25,
+        "description": "Worker that returns the current time.",
+        "type": "general"
+      },
+      {
+        "id": "GetCurrentDate",
+        "label": "GetCurrentDate",
+        "size": 25,
+        "description": "Worker that returns the current date.",
+        "type": "general"
+      },
+      {
+        "id": "CalcDatetime",
+        "label": "CalcDatetime",
+        "size": 25,
+        "description": "Worker that will calculate the date for you.",
+        "type": "general"
+      },
+      {
+        "id": "GetCurrency",
+        "label": "GetCurrency",
+        "size": 25,
+        "description": "Worker that retrieves currency information.",
+        "type": "general"
+      },
+      {
+        "id": "GetExchangeRates",
+        "label": "GetExchangeRates",
+        "size": 25,
+        "description": "Worker that retrieves exchange rates between currencies.",
+        "type": "general"
+      },
+      {
+        "id": "LocationToLatLon",
+        "label": "LocationToLatLon",
+        "size": 25,
+        "description": "Worker that converts a location name to latitude and longitude.",
+        "type": "travel"
+      },
+      {
+        "id": "SearchFlightLocation",
+        "label": "SearchFlightLocation",
+        "size": 25,
+        "description": "Worker that searches for flight locations in a certain city. One city at a time.",
+        "type": "travel"
+      },
+      {
+        "id": "SearchFlightsMinPrice",
+        "label": "SearchFlightsMinPrice",
+        "size": 25,
+        "description": "Worker that searches for the minimum price of flights.",
+        "type": "travel"
+      },
+      {
+        "id": "SearchFlights",
+        "label": "SearchFlights",
+        "size": 25,
+        "description": "Worker that searches for flights.",
+        "type": "travel"
+      },
+      {
+        "id": "SearchHotelDestination",
+        "label": "SearchHotelDestination",
+        "size": 25,
+        "description": "Worker that searches for hotel destination_ids, not the hotel information, but you must call this first to call the HotelSearch.",
+        "type": "travel"
+      },
+      {
+        "id": "SearchHotels",
+        "label": "SearchHotels",
+        "size": 25,
+        "description": "Worker that searches for hotels.",
+        "type": "travel"
+      },
+      {
+        "id": "SunriseSunset",
+        "label": "SunriseSunset",
+        "size": 25,
+        "description": "Worker that retrieves sunrise and sunset times for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "WeatherForecast24H",
+        "label": "WeatherForecast24H",
+        "size": 25,
+        "description": "Worker that retrieves a 24-hour weather forecast for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "WeatherForecast3D",
+        "label": "WeatherForecast3D",
+        "size": 25,
+        "description": "Worker that retrieves a 3-day weather forecast for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "WeatherForecast7D",
+        "label": "WeatherForecast7D",
+        "size": 25,
+        "description": "Worker that retrieves a 7-day weather forecast for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "WeatherIndex1D",
+        "label": "WeatherIndex1D",
+        "size": 25,
+        "description": "Worker that retrieves a 1-day weather index for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "WeatherRainMinute",
+        "label": "WeatherRainMinute",
+        "size": 25,
+        "description": "Worker that retrieves minute-by-minute rain information for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "SearchLocation",
+        "label": "SearchLocation",
+        "size": 25,
+        "description": "Worker that searches for a location.",
+        "type": "weather"
+      },
+      {
+        "id": "FanFavorites",
+        "label": "FanFavorites",
+        "size": 25,
+        "description": "Worker that retrieves fan favorite movies or series from IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "SearchIMDB",
+        "label": "SearchIMDB",
+        "size": 25,
+        "description": "Worker that searches for information on IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "UpcomingMovies",
+        "label": "UpcomingMovies",
+        "size": 25,
+        "description": "Worker that retrieves upcoming movies from IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "WeekTop10",
+        "label": "WeekTop10",
+        "size": 25,
+        "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "WhatsStreaming",
+        "label": "WhatsStreaming",
+        "size": 25,
+        "description": "Worker that retrieves information about what's streaming on IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "Top100Movies",
+        "label": "Top100Movies",
+        "size": 25,
+        "description": "Worker that retrieves the top 100 movies from IMDb.",
+        "type": "entertainment"
+      },
+      {
+        "id": "Top100Series",
+        "label": "Top100Series",
+        "size": 25,
+        "description": "Worker that retrieves the top 100 series from IMDb.",
+        "type": "entertainment"
+      }
+    ],
+    "edges": []
+  }
+  
