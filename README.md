@@ -2,8 +2,8 @@
 
 ## 启动方式：
 1. conda activate langgraph
-2. fastapi dev rewoo.py（把后端开起来
-   1. 也可以用uvicorn api:rewoo --reload --host 0.0.0.0 --port 8000
+2. fastapi dev api.py（把后端开起来
+   1. 也可以用uvicorn api:app --reload --host 0.0.0.0 --port 8000
 3. streamlit run chatbot.py（把前端开起来）
 
 ## 简单介绍
