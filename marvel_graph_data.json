@@ -3,84 +3,84 @@
         {
             "id": "Spiderman",
             "label": "Peter Parker",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png"
         },
         {
             "id": "Captain_Marvel",
             "label": "Carol Danvers",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png"
         },
         {
             "id": "Hulk",
             "label": "Bruce Banner",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_hulk.png"
         },
         {
             "id": "Thor",
             "label": "Thor Odinson",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_thor.png"
         },
         {
             "id": "Loki",
             "label": "Loki Laufeyson",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_loki.png"
         },
         {
             "id": "Wonder_Woman",
             "label": "Diana Prince",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_wonderwoman.png"
         },
         {
             "id": "Iron_Man",
             "label": "Tony Stark",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_ironman.png"
         },
         {
             "id": "Captain_America",
             "label": "Steve Rogers",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainamerica.png"
         },
         {
             "id": "Winter_Soldier",
             "label": "Bucky Barnes",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_wintersoldier.png"
         },
         {
             "id": "Black_Widow",
             "label": "Natasha Romanoff",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_blackwidow.png"
         },
         {
             "id": "Hawkeye",
             "label": "Clint Barton",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_hawkeye.png"
         },
         {
             "id": "Doctor_Strange",
             "label": "Stephen Strange",
-            "size": 25,
+            "size": 10,
             "shape": "circularImage",
             "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_doctorstrange.png"
         }
