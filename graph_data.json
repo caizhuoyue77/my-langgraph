@@ -1,0 +1,155 @@
+{
+    "nodes": [
+        {
+            "id": "Spiderman",
+            "label": "Peter Parker",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png"
+        },
+        {
+            "id": "Captain_Marvel",
+            "label": "Carol Danvers",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png"
+        },
+        {
+            "id": "Hulk",
+            "label": "Bruce Banner",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_hulk.png"
+        },
+        {
+            "id": "Thor",
+            "label": "Thor Odinson",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_thor.png"
+        },
+        {
+            "id": "Loki",
+            "label": "Loki Laufeyson",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_loki.png"
+        },
+        {
+            "id": "Wonder_Woman",
+            "label": "Diana Prince",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_wonderwoman.png"
+        },
+        {
+            "id": "Iron_Man",
+            "label": "Tony Stark",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_ironman.png"
+        },
+        {
+            "id": "Captain_America",
+            "label": "Steve Rogers",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainamerica.png"
+        },
+        {
+            "id": "Winter_Soldier",
+            "label": "Bucky Barnes",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_wintersoldier.png"
+        },
+        {
+            "id": "Black_Widow",
+            "label": "Natasha Romanoff",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_blackwidow.png"
+        },
+        {
+            "id": "Hawkeye",
+            "label": "Clint Barton",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_hawkeye.png"
+        },
+        {
+            "id": "Doctor_Strange",
+            "label": "Stephen Strange",
+            "size": 25,
+            "shape": "circularImage",
+            "image": "http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_doctorstrange.png"
+        }
+    ],
+    "edges": [
+        {
+            "source": "Captain_Marvel",
+            "label": "friend_of",
+            "target": "Spiderman"
+        },
+        {
+            "source": "Hulk",
+            "label": "ally_of",
+            "target": "Thor"
+        },
+        {
+            "source": "Thor",
+            "label": "brother_of",
+            "target": "Loki"
+        },
+        {
+            "source": "Wonder_Woman",
+            "label": "ally_of",
+            "target": "Spiderman"
+        },
+        {
+            "source": "Thor",
+            "label": "friend_of",
+            "target": "Spiderman"
+        },
+        {
+            "source": "Loki",
+            "label": "enemy_of",
+            "target": "Thor"
+        },
+        {
+            "source": "Iron_Man",
+            "label": "friend_of",
+            "target": "Captain_America"
+        },
+        {
+            "source": "Winter_Soldier",
+            "label": "friend_of",
+            "target": "Captain_America"
+        },
+        {
+            "source": "Black_Widow",
+            "label": "friend_of",
+            "target": "Hawkeye"
+        },
+        {
+            "source": "Doctor_Strange",
+            "label": "mentor_of",
+            "target": "Spiderman"
+        },
+        {
+            "source": "Iron_Man",
+            "label": "mentor_of",
+            "target": "Spiderman"
+        },
+        {
+            "source": "Hawkeye",
+            "label": "ally_of",
+            "target": "Black_Widow"
+        },
+        {
+            "source": "Captain_America",
+            "label": "friend_of",
+            "target": "Hulk"
+        }
+    ]
+}

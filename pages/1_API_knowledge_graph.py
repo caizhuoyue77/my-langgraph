@@ -1,34 +1,40 @@
-import streamlit
-from streamlit_agraph import agraph, Node, Edge, Config
+import streamlit as st
+from streamlit_agraph import agraph, Node, Edge, Config, ConfigBuilder
+import json
 
-nodes = []
-edges = []
-nodes.append( Node(id="Spiderman", 
-                   label="Peter Parker", 
-                   size=25, 
-                   shape="circularImage",
-                   image="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_spiderman.png") 
-            ) # includes **kwargs
-nodes.append( Node(id="Captain_Marvel", 
-                   size=25,
-                   shape="circularImage",
-                   image="http://marvel-force-chart.surge.sh/marvel_force_chart_img/top_captainmarvel.png") 
-            )
-edges.append( Edge(source="Captain_Marvel", 
-                   label="friend_of", 
-                   target="Spiderman", 
-                   # **kwargs
-                   ) 
-            ) 
+config_builder = ConfigBuilder()
+config = config_builder.build()
 
-config = Config(width=750,
-                height=950,
-                directed=True, 
-                physics=True, 
-                hierarchical=False,
-                # **kwargs
-                )
+config = Config(width=500, 
+                height=500, 
+                directed=True,
+                nodeHighlightBehavior=True, 
+                highlightColor="#F7A7A6",
+                collapsible=True,
+                node={'labelProperty':'label'},
+                link={'labelProperty': 'label', 'renderLabel': True}
+                ) 
 
-return_value = agraph(nodes=nodes, 
-                      edges=edges, 
-                      config=config)
+# 读取JSON文件
+with open('graph_data.json') as f:
+    data = json.load(f)
+
+# 从JSON文件中获取节点和边
+nodes = [Node(**node) for node in data['nodes']]
+edges = [Edge(**edge) for edge in data['edges']]
+
+# 配置
+config = Config(
+    width=750,
+    height=950,
+    directed=True,
+    physics=True,
+    hierarchical=False,
+)
+
+# 创建图形
+return_value = agraph(
+    nodes=nodes,
+    edges=edges,
+    config=config
+)
