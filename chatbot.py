@@ -52,93 +52,100 @@ def reset_edit_state():
     st.session_state['edit_content'] = None
     st.session_state['add_step'] = False
 
-st.title("API 编排 Demo")
-st.caption("🚀 通过 ReWOO 方式一次生成全部的 API 编排计划，然后依次执行")
 
-# 显示对话记录
-for msg in st.session_state.messages:
-    st.chat_message(msg["role"]).write(msg["content"])
+# 创建列布局
+col = st.columns((7, 3), gap='small')
 
-# 用户输入处理
-if prompt := st.chat_input(placeholder="请输入您的问题..."):
-    st.session_state["messages"].append({"role": "user", "content": prompt})
-    st.chat_message("user").write(prompt)
+with col[0]:
+    st.markdown('### Total Population')
 
-    # 调用 /chat 端点生成计划
-    url_chat = "http://localhost:8000/get_plan"
-    payload = {"message": prompt}
-    response = requests.post(url_chat, json=payload)
+    st.title("API 编排 Demo")
+    st.caption("🚀 通过 ReWOO 方式一次生成全部的 API 编排计划，然后依次执行")
 
-    if response.status_code == 200:
-        data = response.json()
-        msg = data["response"]
-        print(f"msg: {data}")
-        # 直接存储一个新的 rewoo 对象
-        st.session_state["rewoo_state"] = data["rewoo_state"]
-        if "api_recommendations" in data:
-            st.session_state["api_recommendations"] = data["api_recommendations"]
-    else:
-        msg = "生成计划时 API 调用失败"
+    # 显示对话记录
+    for msg in st.session_state.messages:
+        st.chat_message(msg["role"]).write(msg["content"])
 
-    st.session_state["messages"].append({"role": "assistant", "content": msg})
-    st.chat_message("assistant").write(msg)
-    st.experimental_rerun()
+    # 用户输入处理
+    if prompt := st.chat_input(placeholder="请输入您的问题..."):
+        st.session_state["messages"].append({"role": "user", "content": prompt})
+        st.chat_message("user").write(prompt)
 
-# 显示和管理步骤
-if st.session_state["rewoo_state"]:
-    st.header("API 计划信息")
-    steps = st.session_state['rewoo_state']['steps']
+        # 调用 /chat 端点生成计划
+        url_chat = "http://localhost:8000/get_plan"
+        payload = {"message": prompt}
+        response = requests.post(url_chat, json=payload)
 
-    for i, step in enumerate(steps):
-        with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-            # st.write(f"当前步骤内容: {step}")
+        if response.status_code == 200:
+            data = response.json()
+            msg = data["response"]
+            print(f"msg: {data}")
+            # 直接存储一个新的 rewoo 对象
+            st.session_state["rewoo_state"] = data["rewoo_state"]
+            if "api_recommendations" in data:
+                st.session_state["api_recommendations"] = data["api_recommendations"]
+        else:
+            msg = "生成计划时 API 调用失败"
+
+        st.session_state["messages"].append({"role": "assistant", "content": msg})
+        st.chat_message("assistant").write(msg)
+        st.experimental_rerun()
+
+    # 显示和管理步骤
+    if st.session_state["rewoo_state"]:
+        st.header("API 计划信息")
+        steps = st.session_state['rewoo_state']['steps']
+
+        for i, step in enumerate(steps):
+            with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
+                # st.write(f"当前步骤内容: {step}")
+                if st.session_state["api_recommendations"]:
+                    tool_options = st.session_state["api_recommendations"]
+                else:
+                    tool_options = []  # 默认工具选项，如果没有api_recommendations
+
+                new_step_name = st.text_input("步骤名称", value=step[0], key=f"step_name_{i}")
+                new_tool = st.selectbox("工具", tool_options, index=tool_options.index(step[2]) if step[2] in tool_options else 0, key=f"tool_{i}")
+                new_parameter = st.text_input("参数", value=step[3], key=f"parameter_{i}")
+
+                col1, col2 = st.columns(2)
+                with col1:
+                    if st.button("保存修改", key=f"save_{i}"):
+                        new_step = (new_step_name, step[1], new_tool, new_parameter)
+                        st.session_state['rewoo_state']['steps'][i] = new_step
+                        st.session_state['messages'].append({"role": "assistant", "content": "修改成功"})
+                        st.experimental_rerun()
+                with col2:
+                    if st.button("删除步骤", key=f"delete_{i}"):
+                        del st.session_state['rewoo_state']['steps'][i]
+                        st.experimental_rerun()
+
+        if st.button("添加步骤"):
+            st.session_state['add_step'] = True
+
+        if st.session_state['add_step']:
+            st.header("添加步骤")
+
             if st.session_state["api_recommendations"]:
                 tool_options = st.session_state["api_recommendations"]
             else:
                 tool_options = []  # 默认工具选项，如果没有api_recommendations
+            
+            new_step_name = st.text_input("步骤名称", key="new_step_name")
+            new_tool = st.selectbox("工具", tool_options, key="new_tool")
+            new_parameter = st.text_input("参数", key="new_parameter")
+            insert_position = st.number_input("插入位置", min_value=1, max_value=len(steps) + 1, value=len(steps) + 1, key="insert_position")
 
-            new_step_name = st.text_input("步骤名称", value=step[0], key=f"step_name_{i}")
-            new_tool = st.selectbox("工具", tool_options, index=tool_options.index(step[2]) if step[2] in tool_options else 0, key=f"tool_{i}")
-            new_parameter = st.text_input("参数", value=step[3], key=f"parameter_{i}")
+            if st.button("保存步骤"):
+                new_step = (new_step_name, "", new_tool, new_parameter)
+                st.session_state['rewoo_state']['steps'].insert(insert_position - 1, new_step)
+                st.session_state['messages'].append({"role": "assistant", "content": "步骤添加成功"})
 
-            col1, col2 = st.columns(2)
-            with col1:
-                if st.button("保存修改", key=f"save_{i}"):
-                    new_step = (new_step_name, step[1], new_tool, new_parameter)
-                    st.session_state['rewoo_state']['steps'][i] = new_step
-                    st.session_state['messages'].append({"role": "assistant", "content": "修改成功"})
-                    st.experimental_rerun()
-            with col2:
-                if st.button("删除步骤", key=f"delete_{i}"):
-                    del st.session_state['rewoo_state']['steps'][i]
-                    st.experimental_rerun()
-
-    if st.button("添加步骤"):
-        st.session_state['add_step'] = True
-
-    if st.session_state['add_step']:
-        st.header("添加步骤")
-
-        if st.session_state["api_recommendations"]:
-            tool_options = st.session_state["api_recommendations"]
-        else:
-            tool_options = []  # 默认工具选项，如果没有api_recommendations
-        
-        new_step_name = st.text_input("步骤名称", key="new_step_name")
-        new_tool = st.selectbox("工具", tool_options, key="new_tool")
-        new_parameter = st.text_input("参数", key="new_parameter")
-        insert_position = st.number_input("插入位置", min_value=1, max_value=len(steps) + 1, value=len(steps) + 1, key="insert_position")
-
-        if st.button("保存步骤"):
-            new_step = (new_step_name, "", new_tool, new_parameter)
-            st.session_state['rewoo_state']['steps'].insert(insert_position - 1, new_step)
-            st.session_state['messages'].append({"role": "assistant", "content": "步骤添加成功"})
-
-            reset_edit_state()
-            st.experimental_rerun()
-        
-        if st.button("取消"):
-            reset_edit_state()
+                reset_edit_state()
+                st.experimental_rerun()
+            
+            if st.button("取消"):
+                reset_edit_state()
 
 # 如果有未执行的计划，显示确认按钮
 if st.session_state["rewoo_state"]:
@@ -148,3 +155,53 @@ if st.session_state["rewoo_state"]:
 # 检查是否点击了确认按钮
 if st.session_state["button_clicked"]:
     check_yes()
+
+with col[1]:
+    from streamlit_agraph import agraph, Node, Edge, Config
+    import json
+
+    # 设置自定义CSS来更改左列的背景颜色
+    st.markdown(
+        """
+        <style>
+        .left-col {
+            background-color: pink;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # 创建两列布局
+
+    # 配置图表
+    config = Config(
+        width=450,  # 调整宽度以适应右侧列
+        height=800,
+        directed=True,
+        physics=True,
+        nodeHighlightBehavior=True,
+        highlightColor="#F7A7A6",
+        collapsible=True,
+        node={'labelProperty': 'label'},
+        link={'labelProperty': 'label', 'renderLabel': True}
+    )
+
+    # 读取JSON文件
+    with open('marvel_graph_data.json') as f:
+        data = json.load(f)
+
+    # 从JSON文件中获取节点和边
+    nodes = [Node(**node) for node in data['nodes']]
+    edges = [Edge(**edge) for edge in data['edges']]
+
+    # 在右侧列中显示图谱
+
+    return_value = agraph(
+        nodes=nodes,
+        edges=edges,
+        config=config
+    )
+
