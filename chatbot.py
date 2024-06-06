@@ -6,23 +6,28 @@ from logger import *
 # 初始化 session state
 if "button_clicked" not in st.session_state:
     st.session_state["button_clicked"] = False
+
 if "messages" not in st.session_state:
     st.session_state["messages"] = [{"role": "assistant", "content": "请输入您的需求，我将会调用API为您解决～"}]
+
 if "rewoo_state" not in st.session_state:
     st.session_state["rewoo_state"] = None
+
 if "api_recommendations" not in st.session_state:
     st.session_state["api_recommendations"] = None
+
 if "edit_step" not in st.session_state:
     st.session_state["edit_step"] = None
+
 if "edit_content" not in st.session_state:
     st.session_state["edit_content"] = None
+
 if "add_step" not in st.session_state:
     st.session_state["add_step"] = False
 
 def check_yes():
-    # 用户确认后继续执行计划
+    """用户确认后继续执行计划"""
     url_continue = "http://localhost:8000/execute_plan"
-
     state_str = st.session_state["rewoo_state"]
 
     if state_str:
@@ -31,16 +36,13 @@ def check_yes():
             try:
                 response_json = response.json()
                 logger.info(f"Full response JSON: {response_json}")
-                if "response" in response_json:
-                    msg = response_json["response"]
-                else:
-                    logger.error("Key 'response' not found in the response JSON")
-                    msg = "Unexpected response format"
+                msg = response_json.get("response", "Unexpected response format")
             except ValueError as e:
                 logger.error(f"JSON decoding failed: {e}")
                 msg = "Invalid JSON response"
         else:
             msg = "继续执行时 API 调用失败"
+
         st.session_state["messages"].append({"role": "assistant", "content": msg})
         st.session_state["rewoo_state"] = None  # 重置状态
         st.session_state["button_clicked"] = False
@@ -48,17 +50,15 @@ def check_yes():
         st.experimental_rerun()
 
 def reset_edit_state():
+    """重置编辑状态"""
     st.session_state['edit_step'] = None
     st.session_state['edit_content'] = None
     st.session_state['add_step'] = False
-
 
 # 创建列布局
 col = st.columns((7, 3), gap='small')
 
 with col[0]:
-    st.markdown('### Total Population')
-
     st.title("API 编排 Demo")
     st.caption("🚀 通过 ReWOO 方式一次生成全部的 API 编排计划，然后依次执行")
 
@@ -80,10 +80,8 @@ with col[0]:
             data = response.json()
             msg = data["response"]
             print(f"msg: {data}")
-            # 直接存储一个新的 rewoo 对象
             st.session_state["rewoo_state"] = data["rewoo_state"]
-            if "api_recommendations" in data:
-                st.session_state["api_recommendations"] = data["api_recommendations"]
+            st.session_state["api_recommendations"] = data.get("api_recommendations", [])
         else:
             msg = "生成计划时 API 调用失败"
 
@@ -98,11 +96,7 @@ with col[0]:
 
         for i, step in enumerate(steps):
             with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-                # st.write(f"当前步骤内容: {step}")
-                if st.session_state["api_recommendations"]:
-                    tool_options = st.session_state["api_recommendations"]
-                else:
-                    tool_options = []  # 默认工具选项，如果没有api_recommendations
+                tool_options = st.session_state.get("api_recommendations", [])
 
                 new_step_name = st.text_input("步骤名称", value=step[0], key=f"step_name_{i}")
                 new_tool = st.selectbox("工具", tool_options, index=tool_options.index(step[2]) if step[2] in tool_options else 0, key=f"tool_{i}")
@@ -126,11 +120,8 @@ with col[0]:
         if st.session_state['add_step']:
             st.header("添加步骤")
 
-            if st.session_state["api_recommendations"]:
-                tool_options = st.session_state["api_recommendations"]
-            else:
-                tool_options = []  # 默认工具选项，如果没有api_recommendations
-            
+            tool_options = st.session_state.get("api_recommendations", [])
+
             new_step_name = st.text_input("步骤名称", key="new_step_name")
             new_tool = st.selectbox("工具", tool_options, key="new_tool")
             new_parameter = st.text_input("参数", key="new_parameter")
@@ -158,7 +149,6 @@ if st.session_state["button_clicked"]:
 
 with col[1]:
     from streamlit_agraph import agraph, Node, Edge, Config
-    import json
 
     # 设置自定义CSS来更改左列的背景颜色
     st.markdown(
@@ -174,11 +164,9 @@ with col[1]:
         unsafe_allow_html=True
     )
 
-    # 创建两列布局
-
     # 配置图表
     config = Config(
-        width=450,  # 调整宽度以适应右侧列
+        width=450,
         height=800,
         directed=True,
         physics=True,
@@ -190,18 +178,22 @@ with col[1]:
     )
 
     # 读取JSON文件
-    with open('marvel_graph_data.json') as f:
+    with open('tools_kg.json') as f:
         data = json.load(f)
 
     # 从JSON文件中获取节点和边
-    nodes = [Node(**node) for node in data['nodes']]
+
+    for node in 
+
+    nodes = [Node(**node) for node in data['tools']]
     edges = [Edge(**edge) for edge in data['edges']]
 
-    # 在右侧列中显示图谱
+    print(edges)
+    print(nodes)
 
+    # 在右侧列中显示图谱
     return_value = agraph(
         nodes=nodes,
         edges=edges,
         config=config
     )
-
