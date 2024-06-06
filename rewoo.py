@@ -194,7 +194,8 @@ def get_ready_plan(state: ReWOO):
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 
     state["steps"] =  [
-        ['', '', 'FanFavorites', '111'],
+        ['', '', 'SearchWeather', '111'],
+        ['', '', 'FanFavorites', '#E1'],
         ['Use the Top100Movies tool to retrieve a list of top 100 movies from IMDb.', '#E1', 'Top100Movies', 'movies'],
         ['ssss','#E2','Top100Movies','#E1'],
     ]
@@ -222,7 +223,7 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
             list_of_steps[j-1] = step
     
             for step_ in list_of_steps:
-                if("changed" not in step_):
+                if("changed" not in step_ and len(step_[1]) > 0):
                     step_[-1] = step_[-1].replace(old_step,new_step)
                 
             # logger.info("这是原来就有的步骤")
@@ -230,7 +231,7 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
             step.append("changed")
             step[1] = f'#E{j}'
             list_of_steps[j-1] = step
-            
+
             logger.info("这是新加入的步骤")
     
     logger.critical(list_of_steps)    
