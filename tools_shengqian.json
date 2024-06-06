@@ -1,0 +1,28 @@
+{
+  "tools": [
+    {
+      "id": "search_imdb",
+      "name": "SearchIMDB",
+      "label": "SearchIMDB",
+      "input": "search query",
+      "description": "Worker that searches for information on IMDb.",
+      "type": "entertainment"
+    },
+    {
+      "id": "upcoming_movies",
+      "name": "UpcomingMovies",
+      "label": "UpcomingMovies",
+      "input": "Region code. For example: US",
+      "description": "Worker that retrieves upcoming movies from IMDb.",
+      "type": "entertainment"
+    },
+    {
+      "id": "week_top_10",
+      "name": "WeekTop10",
+      "label": "WeekTop10",
+      "input": "query",
+      "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+      "type": "entertainment"
+    }
+  ]
+}

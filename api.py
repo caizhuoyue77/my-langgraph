@@ -20,10 +20,9 @@ async def chat_endpoint(request: Request):
         包含response和plan_json两个字段
         response:自然语言的步骤
         rewoo_state:一个json对象，对应一个ReWOO的对象，表示编排得到的结果
-        api_recommendations:一个json对象，对应一个数组，里面是表示API的json objects
         """
         return response
-    return {"response": "No query provided", "rewoo_state": None, "api_recommendations": None}
+    return {"response": "No query provided", "rewoo_state": None}
 
 @app.post("/execute_plan")
 async def execute_endpoint(request: Request):

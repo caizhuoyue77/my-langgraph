@@ -17,7 +17,7 @@ def write_cache(data):
     with open(CACHE_FILE, 'w') as f:
         json.dump(data, f, ensure_ascii=False)
 
-def search(query):
+def search_cache(query):
     cache = read_cache()
     if query in cache:
         logger.debug("Cache命中")

@@ -24,6 +24,7 @@ class ReWOO(TypedDict):
     steps: List
     results: dict
     result: str
+    api_recommendations: list
 
 # 初始化模型
 # TODO：后续要替换为自己的本地Qwen模型
@@ -155,8 +156,10 @@ def _route(state):
 
 def rewoo_as_func(task: str):
     # cache有关的内容
-    if search(task) is not None:
-        return search(task)
+    from_cache = search_cache(task)
+    if from_cache is not None:
+        rewoo_state = search_cache(task)
+        return {"response":"", "rewoo_state": rewoo_state, "api_recommendation":[]}
 
     rewoo_state = ReWOO(task=task)
     # plan = get_plan(ReWOO(task="帮我查询北京的天气"))
@@ -165,7 +168,7 @@ def rewoo_as_func(task: str):
     rewoo_state["steps"] = plan["steps"]
 
     types= get_types(task)
-    api_recommendations = get_tools_by_types(types)
+    rewoo_state["api_recommendations"] = get_tools_by_types(types)
 
     response = "\n\n**API编排步骤：**\n"
     
@@ -181,9 +184,7 @@ def rewoo_as_func(task: str):
     logger.debug({"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state})
     logger.debug("##############")
 
-    api_response = {"response": response, "rewoo_state": rewoo_state, "api_recommendations": api_recommendations}
-
-    add_to_cache(task, api_response)
+    api_response = {"response": response, "rewoo_state": rewoo_state}
 
     return api_response
 
@@ -193,12 +194,14 @@ def get_ready_plan(state: ReWOO):
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 
-    state["steps"] =  [
-        ['', '', 'SearchWeather', '111'],
-        ['', '', 'FanFavorites', '#E1'],
-        ['Use the Top100Movies tool to retrieve a list of top 100 movies from IMDb.', '#E1', 'Top100Movies', 'movies'],
-        ['ssss','#E2','Top100Movies','#E1'],
-    ]
+    # state["steps"] =  [
+    #     ['', '', 'SearchWeather', '111'],
+    #     ['', '', 'FanFavorites', '#E1'],
+    #     ['Use the Top100Movies tool to retrieve a list of top 100 movies from IMDb.', '#E1', 'Top100Movies', 'movies'],
+    #     ['ssss','#E2','Top100Movies','#E1'],
+    # ]
+
+    add_to_cache(state['task'], state)
 
     # 首先计算出有几个步骤
     length = len(state['steps'])
@@ -235,8 +238,6 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
             logger.info("这是新加入的步骤")
     
     logger.critical(list_of_steps)    
-    
-    return
 
     graph = StateGraph(ReWOO)
 

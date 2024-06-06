@@ -1,7 +1,7 @@
 import json
 
 def get_tool_list_str():
-    with open("tools.json", "r") as f:
+    with open("tools_shengqian.json", "r") as f:
         tool_list = json.load(f)
         tool_list_str = "\n".join([
             f"({i+1}) {tool['name']}[{tool['input']}]: {tool['description']}"
@@ -26,6 +26,6 @@ def get_tools_by_types(tool_types:list):
 
 # 提取所有 type 为某个值的工具
 def get_tools_by_type(tool_type):
-    tools_data = load_tools_from_file("tools.json")
+    tools_data = load_tools_from_file("tools_shengqian.json")
     tools = tools_data["tools"]
     return [tool["name"] for tool in tools if tool["type"] == tool_type]
