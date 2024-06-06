@@ -183,7 +183,7 @@ with col[1]:
 
     # 从JSON文件中获取节点和边
 
-    for node in 
+
 
     nodes = [Node(**node) for node in data['tools']]
     edges = [Edge(**edge) for edge in data['edges']]

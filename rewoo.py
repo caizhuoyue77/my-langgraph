@@ -191,9 +191,52 @@ def get_ready_plan(state: ReWOO):
     if "steps" in state and "plan_string" in state:
         return {"steps": state["steps"], "plan_string": state["plan_string"]}
 
-    return get_plan(state)
-
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
+
+    state["steps"] =  [
+        ['', '', 'FanFavorites', '111'],
+        ['Use the Top100Movies tool to retrieve a list of top 100 movies from IMDb.', '#E1', 'Top100Movies', 'movies'],
+        ['ssss','#E2','Top100Movies','#E1'],
+    ]
+
+    # 首先计算出有几个步骤
+    length = len(state['steps'])
+    logger.info(f"计划的步骤数目是：{length}")
+
+    list_of_steps = [list(t) for t in state['steps']]
+
+    # 然后计算出哪几个有'#E1'这样的（表示原本的内容）
+    j = 0
+    change_dict = {}
+
+    for step in list_of_steps:
+        j+=1
+        logger.info("看过来～看过来～")
+        logger.info(step)
+        if(len(step[1])!=0):
+            change_dict[step[1]]=f'E{j}'
+            old_step = step[1]
+            new_step = f'#E{j}'
+            step[1] = new_step
+            step.append("changed")
+            list_of_steps[j-1] = step
+    
+            for step_ in list_of_steps:
+                if("changed" not in step_):
+                    step_[-1] = step_[-1].replace(old_step,new_step)
+                
+            # logger.info("这是原来就有的步骤")
+        else:
+            step.append("changed")
+            step[1] = f'#E{j}'
+            list_of_steps[j-1] = step
+            
+            logger.info("这是新加入的步骤")
+    
+    logger.critical(list_of_steps)    
+    
+    return
+
     graph = StateGraph(ReWOO)
 
     # 理论上来讲，不需要重新执行获取计划的步骤了吧
@@ -220,7 +263,8 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
 
 if __name__ == "__main__":
     # 定义任务执行的状态图
-    task = "我想搜一下最近的电影"
-    response = rewoo_as_func("我想知道长沙的天气，还想查一下长沙的一些酒店??")
-    print(response)
+    # task = "我想搜一下最近的电影"
+    # response = rewoo_as_func("我想知道长沙的天气，还想查一下长沙的一些酒店??")
+    # print(response)
     # print("选择的类别是", get_type(task))
+    execute_plan()

@@ -31,7 +31,10 @@ async def execute_endpoint(request: Request):
     # data是request里面传递过来的内容
     state = data.get("rewoo_state")
     logger.error(f"即将执行的计划:{state}")
-    logger.error(state)
+    for step in state['steps']:
+        logger.error(step)
+
+    # logger.error(state)
     # 把在之前获取的plan传递给执行计划的函数
     if state:
         response = execute_plan(state)
