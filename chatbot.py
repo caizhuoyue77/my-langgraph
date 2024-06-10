@@ -1,7 +1,11 @@
 import streamlit as st
 import requests
 import json
-from logger import *
+import logging
+
+# 初始化日志记录
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # 初始化 session state
 default_values = {
@@ -23,17 +27,18 @@ def check_yes():
     state_str = st.session_state["rewoo_state"]
 
     if state_str:
-        response = requests.post(url_continue, json={"rewoo_state": state_str})
-        if response.status_code == 200:
-            try:
-                response_json = response.json()
-                logger.info(f"Full response JSON: {response_json}")
-                msg = response_json.get("response", "Unexpected response format")
-            except ValueError as e:
-                logger.error(f"JSON decoding failed: {e}")
-                msg = "Invalid JSON response"
-        else:
+        try:
+            response = requests.post(url_continue, json={"rewoo_state": state_str})
+            response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+            response_json = response.json()
+            logger.info(f"Full response JSON: {response_json}")
+            msg = response_json.get("response", "Unexpected response format")
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Request failed: {e}")
             msg = "继续执行时 API 调用失败"
+        except ValueError as e:
+            logger.error(f"JSON decoding failed: {e}")
+            msg = "Invalid JSON response"
 
         st.session_state["messages"].append({"role": "assistant", "content": msg})
         st.session_state["rewoo_state"] = None
@@ -47,6 +52,32 @@ def reset_edit_state():
     st.session_state["edit_content"] = None
     st.session_state["add_step"] = False
 
+# 处理用户输入
+prompt = st.chat_input(placeholder="请输入您的问题...")
+
+if prompt:
+    st.session_state["messages"].append({"role": "user", "content": prompt})
+    st.chat_message("user").write(prompt)
+
+    # 调用 /chat 端点生成计划
+    url_chat = "http://localhost:8000/get_plan"
+    payload = {"message": prompt}
+    try:
+        response = requests.post(url_chat, json=payload)
+        response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+        data = response.json()
+        msg = data["response"]
+        logger.info(f"msg: {data}")
+        st.session_state["rewoo_state"] = data["rewoo_state"]
+        st.session_state["api_recommendations"] = data["rewoo_state"].get("api_recommendations", [])
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Request failed: {e}")
+        msg = "生成计划时 API 调用失败"
+
+    st.session_state["messages"].append({"role": "assistant", "content": msg})
+    st.chat_message("assistant").write(msg)
+    st.experimental_rerun()
+
 # 创建列布局
 col = st.columns((7, 3), gap='small')
 
@@ -57,29 +88,6 @@ with col[0]:
     # 显示对话记录
     for msg in st.session_state["messages"]:
         st.chat_message(msg["role"]).write(msg["content"])
-
-    # 处理用户输入
-    if prompt := st.chat_input(placeholder="请输入您的问题..."):
-        st.session_state["messages"].append({"role": "user", "content": prompt})
-        st.chat_message("user").write(prompt)
-
-        # 调用 /chat 端点生成计划
-        url_chat = "http://localhost:8000/get_plan"
-        payload = {"message": prompt}
-        response = requests.post(url_chat, json=payload)
-
-        if response.status_code == 200:
-            data = response.json()
-            msg = data["response"]
-            print(f"msg: {data}")
-            st.session_state["rewoo_state"] = data["rewoo_state"]
-            st.session_state["api_recommendations"] = data["rewoo_state"].get("api_recommendations", [])
-        else:
-            msg = "生成计划时 API 调用失败"
-
-        st.session_state["messages"].append({"role": "assistant", "content": msg})
-        st.chat_message("assistant").write(msg)
-        st.experimental_rerun()
 
     # 显示和管理步骤
     if st.session_state["rewoo_state"]:
@@ -177,8 +185,8 @@ with col[1]:
     nodes = [Node(**node) for node in data["tools"]]
     edges = [Edge(**edge) for edge in data["edges"]]
 
-    print(edges)
-    print(nodes)
+    logger.info(f"Nodes: {nodes}")
+    logger.info(f"Edges: {edges}")
 
     # 在右侧列中显示图谱
     return_value = agraph(

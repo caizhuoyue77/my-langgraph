@@ -168,7 +168,8 @@ def rewoo_as_func(task: str):
     rewoo_state["steps"] = plan["steps"]
 
     types= get_types(task)
-    rewoo_state["api_recommendations"] = get_tools_by_types(types)
+    rewoo_state["api_recommendations"] = [tool["name"] for tool in get_tools_by_types(types)["tools"]]
+    
 
     response = "\n\n**API编排步骤：**\n"
     
