@@ -24,5 +24,12 @@
       "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
       "type": "entertainment"
     }
+  ],
+  "edges":[
+    {
+      "source":"week_top_10",
+      "label":"啦啦啦",
+      "target":"upcoming_movies"
+    }
   ]
 }

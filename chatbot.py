@@ -1,11 +1,14 @@
 import streamlit as st
 import requests
-import json
 import logging
+from streamlit_agraph import agraph, Node, Edge, Config
 
 # 初始化日志记录
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# 设置页面配置
+st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 # 初始化 session state
 default_values = {
@@ -15,7 +18,11 @@ default_values = {
     "api_recommendations": None,
     "edit_step": None,
     "edit_content": None,
-    "add_step": False
+    "add_step": False,
+    "nodes": [],
+    "edges": [],
+    "show_graph": True,
+    "node_size": 10
 }
 for key, value in default_values.items():
     if key not in st.session_state:
@@ -52,6 +59,14 @@ def reset_edit_state():
     st.session_state["edit_content"] = None
     st.session_state["add_step"] = False
 
+def update_graph():
+    """更新图节点和边"""
+    data = st.session_state.get("api_recommendations", [])
+    if data:
+        node_size = st.session_state["node_size"]
+        st.session_state["nodes"] = [Node(**node, size=node_size) for node in data]
+        st.session_state["edges"] = []  # 根据需要添加边数据
+
 # 处理用户输入
 prompt = st.chat_input(placeholder="请输入您的问题...")
 
@@ -70,13 +85,22 @@ if prompt:
         logger.info(f"msg: {data}")
         st.session_state["rewoo_state"] = data["rewoo_state"]
         st.session_state["api_recommendations"] = data["rewoo_state"].get("api_recommendations", [])
+        logger.critical(f"这就是你要看的api_recommendations：{st.session_state['api_recommendations']}")
+
+        update_graph()  # 更新图数据
+        st.experimental_rerun()  # 强制页面刷新
+
     except requests.exceptions.RequestException as e:
         logger.error(f"Request failed: {e}")
         msg = "生成计划时 API 调用失败"
 
     st.session_state["messages"].append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
-    st.experimental_rerun()
+
+# 侧边栏设置
+st.sidebar.header("图谱设置")
+st.session_state["show_graph"] = st.sidebar.checkbox("显示API图谱", value=True)
+st.session_state["node_size"] = st.sidebar.slider("API节点大小", min_value=5, max_value=50, value=10)
 
 # 创建列布局
 col = st.columns((7, 3), gap='small')
@@ -96,7 +120,7 @@ with col[0]:
 
         for i, step in enumerate(steps):
             with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-                tool_options = st.session_state.get("api_recommendations", [])
+                tool_options = [tool["name"] for tool in st.session_state.get("api_recommendations",[])]
 
                 new_step_name = st.text_input("步骤名称", value=step[0], key=f"step_name_{i}")
                 new_tool = st.selectbox("工具", tool_options, index=tool_options.index(step[2]) if step[2] in tool_options else 0, key=f"tool_{i}")
@@ -148,8 +172,6 @@ if st.session_state["button_clicked"]:
     check_yes()
 
 with col[1]:
-    from streamlit_agraph import agraph, Node, Edge, Config
-
     # 自定义CSS来更改左列的背景颜色
     st.markdown(
         """
@@ -164,33 +186,30 @@ with col[1]:
         unsafe_allow_html=True
     )
 
-    # 配置图表
-    config = Config(
-        width=450,
-        height=800,
-        directed=True,
-        physics=True,
-        nodeHighlightBehavior=True,
-        highlightColor="#F7A7A6",
-        collapsible=True,
-        node={"labelProperty": "label"},
-        link={"labelProperty": "label", "renderLabel": True}
-    )
+    if st.session_state["show_graph"]:
+        # 配置图表
+        config = Config(
+            width=450,
+            height=800,
+            directed=True,
+            physics=True,
+            nodeHighlightBehavior=True,
+            highlightColor="#F7A7A6",
+            collapsible=True,
+            node={"labelProperty": "label"},
+            link={"labelProperty": "label", "renderLabel": True}
+        )
 
-    # 读取JSON文件
-    with open('tools_kg.json') as f:
-        data = json.load(f)
+        nodes = st.session_state.get("nodes", [])
+        edges = st.session_state.get("edges", [])
 
-    # 从JSON文件中获取节点和边
-    nodes = [Node(**node) for node in data["tools"]]
-    edges = [Edge(**edge) for edge in data["edges"]]
+        logger.info(f"Nodes: {nodes}")
+        logger.info(f"Edges: {edges}")
 
-    logger.info(f"Nodes: {nodes}")
-    logger.info(f"Edges: {edges}")
-
-    # 在右侧列中显示图谱
-    return_value = agraph(
-        nodes=nodes,
-        edges=edges,
-        config=config
-    )
+        if nodes:
+            # 在右侧列中显示图谱
+            return_value = agraph(
+                nodes=nodes,
+                edges=edges,
+                config=config
+            )
