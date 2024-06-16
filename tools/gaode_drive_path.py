@@ -1,21 +1,14 @@
 import json
 import asyncio
-from pydantic import BaseModel, Field
 import requests
 
-class DrivePathInput(BaseModel):
-    origin: str = Field(description="出发点，经纬度格式，如 '117.500244,40.417801'")
-    destination: str = Field(description="目的地，经纬度格式，如 '117.500244,40.417801'")
-    key: str = Field(description="用户在高德地图官网申请的 Web服务API 类型KEY")
-    strategy: int = Field(default=0, description="驾车选择策略，详见文档")
-
-async def gaode_drive_path_iter(input: DrivePathInput):
+async def gaode_drive_path_iter(origin: str, destination: str, key: str, strategy: int = 0):
     base_url = "https://restapi.amap.com/v3/direction/driving"
     params = {
-        "origin": input.origin,
-        "destination": input.destination,
-        "key": input.key,
-        "strategy": input.strategy,
+        "origin": origin,
+        "destination": destination,
+        "key": key,
+        "strategy": strategy,
         "output": "JSON"
     }
 
@@ -28,14 +21,12 @@ async def gaode_drive_path_iter(input: DrivePathInput):
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def gaode_drive_path(input: DrivePathInput):
-    return asyncio.run(gaode_drive_path_iter(input))
+def gaode_drive_path(origin: str, destination: str, key: str, strategy: int = 0):
+    return asyncio.run(gaode_drive_path_iter(origin, destination, key, strategy))
 
 if __name__ == "__main__":
-    input_data = DrivePathInput(
-        origin="116.481028,39.989643",
-        destination="116.465302,40.004717",
-        key="your_api_key_here"
-    )
-    result = gaode_drive_path(input_data)
+    origin = "116.481028,39.989643"
+    destination = "116.465302,40.004717"
+    key = "8bf32c47badfa147e52467c46b442de9"
+    result = gaode_drive_path(origin, destination, key)
     print("答案:", json.dumps(result, ensure_ascii=False, indent=4))

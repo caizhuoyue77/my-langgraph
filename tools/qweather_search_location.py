@@ -1,5 +1,6 @@
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 
 def search_location(location: str):
     base_url = "https://geoapi.qweather.com/v2/city/lookup"

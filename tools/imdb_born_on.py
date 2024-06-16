@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 
 class BornOnInput(BaseModel):
     month: str = Field(description="查询的月份，格式为两位数字（例如：'01'）。")
@@ -20,7 +21,7 @@ async def fetch_born_on_iter(month: str, day: str) -> dict:
     url = "https://imdb188.p.rapidapi.com/api/v1/getBornOn"
     querystring = {"month": month, "day": day}
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb188.p.rapidapi.com"
     }
 

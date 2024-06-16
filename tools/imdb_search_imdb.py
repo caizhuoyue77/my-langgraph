@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 
 class SearchIMDBInput(BaseModel):
     query: str = Field(description="用于搜索IMDB数据库的查询字符串。")
@@ -30,7 +31,7 @@ async def search_imdb_iter(query: str) -> dict:
     url = "https://imdb188.p.rapidapi.com/api/v1/searchIMDB"
     querystring = {"query": query}
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb188.p.rapidapi.com"
     }
 

@@ -26,10 +26,20 @@ def get_tools_by_types(tool_types):
         print(tools)
         tools_list.extend(tools)
     print(tools_list)
+    
+    # 获取相关的边
+    tools_data = load_tools_from_file("tools_shengqian.json")
+    related_edges = get_related_edges(tools_list, tools_data["edges"])
+    
     return {
         "tools": tools_list,
-        "edges": []
+        "edges": related_edges
     }
+
+def get_related_edges(tools_list, edges):
+    tool_ids = [tool["id"] for tool in tools_list]
+    related_edges = [edge for edge in edges if edge["source"] in tool_ids or edge["target"] in tool_ids]
+    return related_edges
 
 if __name__ == '__main__':
     # Example usage of get_tools_by_types with a single type 'entertainment'

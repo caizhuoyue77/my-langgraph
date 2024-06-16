@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 
 class FanFavoritesInput(BaseModel):
     country: str = Field(default="CHN", description="国家代码，用于获取该国家的粉丝最喜爱的影视作品。")
@@ -33,7 +34,7 @@ async def fan_favorites_iter(country: str) -> dict:
     url = "https://imdb188.p.rapidapi.com/api/v1/getFanFavorites"
     querystring = {"country": country}
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb188.p.rapidapi.com"
     }
 

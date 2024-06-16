@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 from datetime import datetime
 
 
@@ -27,7 +28,7 @@ async def fetch_week_top_10_iter() -> dict:
     """
     url = "https://imdb188.p.rapidapi.com/api/v1/getWeekTop10"
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb188.p.rapidapi.com"
     }
 

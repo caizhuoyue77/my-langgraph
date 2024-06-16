@@ -1,12 +1,13 @@
 import json
 import asyncio
 from pydantic import BaseModel, Field
+from api_key_config import *
 import aiohttp
 
 async def location_to_lat_lon_iter(query: str):
     url = "https://booking-com15.p.rapidapi.com/api/v1/meta/locationToLatLong"
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "booking-com15.p.rapidapi.com"
     }
     params = {"query": query}

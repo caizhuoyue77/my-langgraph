@@ -1,5 +1,6 @@
 import asyncio
 from pydantic import BaseModel, Field
+from api_key_config import *
 import aiohttp
 
 async def extract_airport_ids(response):
@@ -14,7 +15,7 @@ async def extract_airport_ids(response):
 async def search_flight_location_iter(query: str):
     url = "https://booking-com15.p.rapidapi.com/api/v1/flights/searchDestination"
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "booking-com15.p.rapidapi.com"
     }
     params = {"query": query}

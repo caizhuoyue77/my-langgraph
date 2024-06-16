@@ -61,11 +61,19 @@ def reset_edit_state():
 
 def update_graph():
     """更新图节点和边"""
+    # return 
+
     data = st.session_state.get("api_recommendations", [])
     if data:
         node_size = st.session_state["node_size"]
-        st.session_state["nodes"] = [Node(**node, size=node_size) for node in data]
-        st.session_state["edges"] = []  # 根据需要添加边数据
+        st.session_state["nodes"] = [Node(**node, size=node_size) for node in data["nodes"]]
+        # 根本就没有返回edge的信息似乎 我难过了
+
+        print("This is 你要的 data 啊！")
+
+        print(data)
+
+        st.session_state["edges"] = [Edge(**edge) for edge in data["edges"]]
 
 # 处理用户输入
 prompt = st.chat_input(placeholder="请输入您的问题...")
@@ -120,7 +128,7 @@ with col[0]:
 
         for i, step in enumerate(steps):
             with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-                tool_options = [tool["name"] for tool in st.session_state.get("api_recommendations",[])]
+                tool_options = [tool["name"] for tool in st.session_state.get("api_recommendations",[])["nodes"]]
 
                 new_step_name = st.text_input("步骤名称", value=step[0], key=f"step_name_{i}")
                 new_tool = st.selectbox("工具", tool_options, index=tool_options.index(step[2]) if step[2] in tool_options else 0, key=f"tool_{i}")

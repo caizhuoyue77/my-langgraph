@@ -1,35 +1,200 @@
 {
   "tools": [
     {
-      "id": "search_imdb",
-      "name": "SearchIMDB",
-      "label": "SearchIMDB",
-      "input": "search query",
-      "description": "Worker that searches for information on IMDb.",
-      "type": "entertainment"
+      "id": "amazon_best_sellers",
+      "name": "AmazonBestSellers",
+      "label": "AmazonBestSellers",
+      "input": "category_id",
+      "description": "Worker that retrieves the best sellers on Amazon by category.",
+      "type": "shopping"
     },
     {
-      "id": "upcoming_movies",
-      "name": "UpcomingMovies",
-      "label": "UpcomingMovies",
-      "input": "Region code. For example: US",
-      "description": "Worker that retrieves upcoming movies from IMDb.",
-      "type": "entertainment"
+      "id": "amazon_product_by_category",
+      "name": "AmazonProductByCategory",
+      "label": "AmazonProductByCategory",
+      "input": "category_id",
+      "description": "Worker that retrieves Amazon products by category.",
+      "type": "shopping"
     },
     {
-      "id": "week_top_10",
-      "name": "WeekTop10",
-      "label": "WeekTop10",
-      "input": "query",
-      "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
-      "type": "entertainment"
+      "id": "amazon_product_details",
+      "name": "AmazonProductDetails",
+      "label": "AmazonProductDetails",
+      "input": "product asin code",
+      "description": "Worker that retrieves Amazon product details.",
+      "type": "shopping"
+    },
+    {
+      "id": "amazon_product_reviews",
+      "name": "AmazonProductReviews",
+      "label": "AmazonProductReviews",
+      "input": "product asin code",
+      "description": "Worker that retrieves Amazon product reviews. If you don't have the product asin code, you should call amazon_product_search to get the product asin.",
+      "type": "shopping"
+    },
+    {
+      "id": "amazon_product_search",
+      "name": "AmazonProductSearch",
+      "label": "AmazonProductSearch",
+      "input": "query string, for example: kindle",
+      "description": "Worker that searches for Amazon products.",
+      "type": "shopping"
+    },
+    {
+      "id": "google_news_business",
+      "name": "GoogleNewsBusiness",
+      "label": "GoogleNewsBusiness",
+      "input": "language",
+      "description": "Worker that retrieves the latest business news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_entertainment",
+      "name": "GoogleNewsEntertainment",
+      "label": "GoogleNewsEntertainment",
+      "input": "language",
+      "description": "Worker that retrieves the latest entertainment news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_latest",
+      "name": "GoogleNewsLatest",
+      "label": "GoogleNewsLatest",
+      "input": "language",
+      "description": "Worker that retrieves the latest news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_science",
+      "name": "GoogleNewsScience",
+      "label": "GoogleNewsScience",
+      "input": "language",
+      "description": "Worker that retrieves the latest science news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_search",
+      "name": "GoogleNewsSearch",
+      "label": "GoogleNewsSearch",
+      "input": "keyword, language",
+      "description": "Worker that searches for news articles on Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_sport",
+      "name": "GoogleNewsSport",
+      "label": "GoogleNewsSport",
+      "input": "language",
+      "description": "Worker that retrieves the latest sports news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_suggest",
+      "name": "GoogleNewsSuggest",
+      "label": "GoogleNewsSuggest",
+      "input": "keyword, language",
+      "description": "Worker that suggests news keywords to search on Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_technology",
+      "name": "GoogleNewsTechnology",
+      "label": "GoogleNewsTechnology",
+      "input": "language",
+      "description": "Worker that retrieves the latest technology news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "google_news_world",
+      "name": "GoogleNewsWorld",
+      "label": "GoogleNewsWorld",
+      "input": "language",
+      "description": "Worker that retrieves the latest world news from Google News.",
+      "type": "news"
+    },
+    {
+      "id": "filter_by_area",
+      "name": "FilterByArea",
+      "label": "FilterByArea",
+      "input": "area",
+      "description": "Worker that filters meals by area.",
+      "type": "food"
+    },
+    {
+      "id": "filter_by_category",
+      "name": "FilterByCategory",
+      "label": "FilterByCategory",
+      "input": "category",
+      "description": "Worker that filters meals by category.",
+      "type": "food"
+    },
+    {
+      "id": "filter_by_main_ingredient",
+      "name": "FilterByMainIngredient",
+      "label": "FilterByMainIngredient",
+      "input": "ingredient",
+      "description": "Worker that filters meals by main ingredient.",
+      "type": "food"
+    },
+    {
+      "id": "filter_by_multi_ingredient",
+      "name": "FilterByMultiIngredient",
+      "label": "FilterByMultiIngredient",
+      "input": "ingredients",
+      "description": "Worker that filters meals by multiple ingredients.",
+      "type": "food"
     }
   ],
-  "edges":[
+  "edges": [
     {
-      "source":"week_top_10",
-      "label":"啦啦啦",
-      "target":"upcoming_movies"
+      "source": "search_flights",
+      "label": "parameter_dependency",
+      "target": "search_flight_location"
+    },
+    {
+      "source": "search_flights_min_price",
+      "label": "parameter_dependency",
+      "target": "search_flight_location"
+    },
+    {
+      "source": "weather_forecast_24h",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
+      "source": "weather_forecast_3d",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
+      "source": "weather_forecast_7d",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
+      "source": "sunrise_sunset",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
+      "source": "amazon_product_details",
+      "label": "parameter_dependency",
+      "target": "amazon_product_search"
+    },
+    {
+      "source": "amazon_product_reviews",
+      "label": "parameter_dependency",
+      "target": "amazon_product_search"
+    },
+    {
+      "source": "amazon_best_sellers",
+      "label": "parameter_dependency",
+      "target": "amazon_product_search"
+    },
+    {
+      "source": "amazon_product_by_category",
+      "label": "parameter_dependency",
+      "target": "amazon_product_search"
     }
   ]
 }

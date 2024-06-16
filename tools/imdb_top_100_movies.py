@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 import json
 
 class IMDbTop100Input(BaseModel):
@@ -27,7 +28,7 @@ async def fetch_imdb_top_100_movies_iter() -> dict:
     """
     url = "https://imdb-top-100-movies.p.rapidapi.com/"
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb-top-100-movies.p.rapidapi.com"
     }
 

@@ -1,6 +1,7 @@
 import asyncio
 import requests
 from pydantic import BaseModel, Field
+from api_key_config import *
 import json
 
 def process_whats_streaming(data):
@@ -47,7 +48,7 @@ async def fetch_whats_streaming_iter(country: str) -> dict:
     url = "https://imdb188.p.rapidapi.com/api/v1/getWhatsStreaming"
     querystring = {"country": country}
     headers = {
-        "X-RapidAPI-Key": "e873f2422cmsh92c1c839d99aee8p1dfd77jsne5cf72c01848",
+        "X-RapidAPI-Key": api_keys[0],
         "X-RapidAPI-Host": "imdb188.p.rapidapi.com"
     }
 
