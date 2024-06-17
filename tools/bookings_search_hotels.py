@@ -1,4 +1,5 @@
 import requests
+from api_key_config import *
 from bookings_search_hotel_destination import search_hotel_destination
 
 def process_hotel_data(hotel_data):

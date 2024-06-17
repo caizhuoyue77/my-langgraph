@@ -10,11 +10,14 @@ class AmazonProductDetailsInput(BaseModel):
 def process_product_details_results(product_details_results):
     important_fields = ['product_title', 'product_price', 'product_star_rating', 'product_url', 'product_description']
     parsed_data = {
-        'status': product_details_results['status'],
-        'request_id': product_details_results['request_id'],
-        'data': {key: product_details_results['data'][key] for key in important_fields}
+        'status': product_details_results.get('status', 'N/A'),
+        'request_id': product_details_results.get('request_id', 'N/A'),
+        'data': {}
     }
 
+    for key in important_fields:
+        parsed_data['data'][key] = product_details_results['data'].get(key, 'N/A')
+    
     # Truncate the product description if it's too long
     if len(parsed_data['data']['product_description']) > 100:
         parsed_data['data']['product_description'] = parsed_data['data']['product_description'][:100] + '...'

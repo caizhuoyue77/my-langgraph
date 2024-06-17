@@ -41,7 +41,7 @@ async def fetch_imdb_top_100_movies_iter() -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def top_100_movies(query: str) -> dict:
+def top_100_movies(query: str = "") -> dict:
     """
     A synchronous wrapper function to fetch the IMDb top 100 movies.
 

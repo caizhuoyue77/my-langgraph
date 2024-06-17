@@ -41,7 +41,7 @@ async def fetch_week_top_10_iter() -> dict:
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def week_top_10() -> dict:
+def week_top_10(query : str = "") -> dict:
     """
     A synchronous wrapper function to fetch the week's top 10 movies and shows from IMDb.
 

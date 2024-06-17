@@ -47,6 +47,7 @@ from amazon_product_by_category import amazon_product_by_category
 from amazon_product_details import amazon_product_details
 from amazon_product_reviews import amazon_product_reviews
 from amazon_product_search import amazon_product_search
+from amazon_product_asins import amazon_product_asins
 from google_news_business import google_news_business
 from google_news_entertainment import google_news_entertainment
 from google_news_latest import google_news_latest
@@ -115,9 +116,9 @@ def use_actual_tool(tool: str, tool_input: dict):
     elif tool == "SearchIMDB":
         result = search_imdb(tool_input)
     elif tool == "Top100Movies":
-        result = top_100_movies()
+        result = top_100_movies(tool_input)
     elif tool == "Top100Series":
-        result = top_100_series()
+        result = top_100_series(tool_input)
     elif tool == "UpcomingMovies":
         result = upcoming_movies()
     elif tool == "WeekTop10":
@@ -141,9 +142,13 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = amazon_product_details(tool_input)
     elif tool == "AmazonProductReviews":
         # 要输入产品asin
+        print("这是调用的输入参数")
+        print(tool_input)
         result = amazon_product_reviews(tool_input)
     elif tool == "AmazonProductSearch":
         result = amazon_product_search(tool_input)
+    elif tool == "AmazonProductAsins":
+        result = amazon_product_asins(tool_input)
     # elif tool == "GoogleNewsBusiness":
     #     result = google_news_business(tool_input)
     # elif tool == "GoogleNewsEntertainment":

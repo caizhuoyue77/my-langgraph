@@ -10,28 +10,22 @@ class AmazonProductSearchInput(BaseModel):
     sort_by: str = Field(default="RELEVANCE", description="搜索结果的排序方式。")
     product_condition: str = Field(default="ALL", description="产品的状态。")
 
+def extract_asin_from_url(url):
+    return url.split("/")[-1]
+
 def process_search_results(search_results):
-    important_fields = ['product_title', 'product_price', 'product_url']
-    parsed_data = {
-        'status': search_results['status'],
-        'request_id': search_results['request_id'],
-        'data': {
-            'total_products': search_results['data']['total_products'],
-            'country': search_results['data']['country'],
-            'domain': search_results['data']['domain'],
-            'products': []
-        }
-    }
+    asins = []
 
     for product in search_results['data']['products'][:5]:
-        parsed_product = {key: product[key] for key in important_fields}
-        parsed_data['data']['products'].append(parsed_product)
+        asin = extract_asin_from_url(product['product_url'])
+        asins.append(asin)
     
-    return parsed_data
+    # return {'asins': asins}
+    return asins[0] if asins else "B09TMN58KL"
 
-async def amazon_product_search_iter(query: str, page: int, country: str, sort_by: str, product_condition: str) -> dict:
+async def amazon_product_asins_iter(query: str, page: int, country: str, sort_by: str, product_condition: str) -> dict:
     """
-    Asynchronously searches Amazon using specified parameters via the RapidAPI service.
+    Asynchronously searches Amazon and returns a list of product ASINs using specified parameters via the RapidAPI service.
     
     Args:
         query (str): The search query string.
@@ -41,7 +35,7 @@ async def amazon_product_search_iter(query: str, page: int, country: str, sort_b
         product_condition (str): The condition of the products.
 
     Returns:
-        dict: A dictionary containing either the response JSON data or an error message.
+        dict: A dictionary containing a list of product ASINs or an error message.
     """
     url = "https://real-time-amazon-data.p.rapidapi.com/search"
     querystring = {
@@ -65,9 +59,9 @@ async def amazon_product_search_iter(query: str, page: int, country: str, sort_b
     except requests.RequestException as e:
         return {"error": f"Request failed: {str(e)}"}
 
-def amazon_product_search(query: str, page: int = 1, country: str = "US", sort_by: str = "RELEVANCE", product_condition: str = "ALL") -> dict:
+def amazon_product_asins(query: str, page: int = 1, country: str = "US", sort_by: str = "RELEVANCE", product_condition: str = "ALL") -> dict:
     """
-    A synchronous wrapper function to search Amazon.
+    A synchronous wrapper function to search Amazon and return a list of product ASINs.
 
     Args:
         query (str): The search query string.
@@ -77,12 +71,11 @@ def amazon_product_search(query: str, page: int = 1, country: str = "US", sort_b
         product_condition (str): The condition of the products.
 
     Returns:
-        dict: The result from the asynchronous search function, containing either the search results or an error message.
+        dict: The result from the asynchronous search function, containing a list of product ASINs or an error message.
     """
-    
-    return asyncio.run(amazon_product_search_iter(query, page, country, sort_by, product_condition))
+    return asyncio.run(amazon_product_asins_iter(query, page, country, sort_by, product_condition))
 
 if __name__ == "__main__":
     search_query = "kindle"  # Replace 'Phone' with your actual search query
-    amazon_search_results = amazon_product_search(search_query, page=1, country="US", sort_by="RELEVANCE", product_condition="ALL")
-    print("Search Results:", amazon_search_results)
+    product_asins = amazon_product_asins(search_query, page=1, country="US", sort_by="RELEVANCE", product_condition="ALL")
+    print("Product ASINs:", product_asins)

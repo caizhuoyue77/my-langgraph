@@ -101,12 +101,5 @@ if __name__ == "__main__":
     product_asin = "B09TMN58KL"  # Replace with your actual ASIN
     amazon_reviews_results = amazon_product_reviews(
         asin=product_asin,
-        country="US",
-        sort_by="TOP_REVIEWS",
-        star_rating="ALL",
-        verified_purchases_only=False,
-        images_or_videos_only=False,
-        current_format_only=False,
-        page=1
     )
     print("Product Reviews Results:", amazon_reviews_results)

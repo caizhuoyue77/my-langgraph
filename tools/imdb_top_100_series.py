@@ -40,7 +40,7 @@ def process_top_20_series(series_data):
         top_20_series.append(serie_info)
     return top_20_series
 
-def top_100_series(query:str) -> dict:
+def top_100_series(query:str = "") -> dict:
     """
     A synchronous wrapper function to fetch the IMDb top 100 series.
 
