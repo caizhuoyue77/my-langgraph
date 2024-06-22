@@ -385,6 +385,80 @@
       "type": "food"
     }
   ],
+  "semantic_nodes": [
+    {
+      "id": "currency",
+      "name": "Currency",
+      "type": "entity",
+      "description": "An entity representing a currency."
+    },
+    {
+      "id": "location",
+      "name": "Location",
+      "type": "entity",
+      "description": "An entity representing a geographical location."
+    },
+    {
+      "id": "flight",
+      "name": "Flight",
+      "type": "entity",
+      "description": "An entity representing a flight."
+    },
+    {
+      "id": "hotel",
+      "name": "Hotel",
+      "type": "entity",
+      "description": "An entity representing a hotel."
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "type": "entity",
+      "description": "An entity representing weather information."
+    },
+    {
+      "id": "product",
+      "name": "Product",
+      "type": "entity",
+      "description": "An entity representing a product."
+    },
+    {
+      "id": "news",
+      "name": "News",
+      "type": "entity",
+      "description": "An entity representing news information."
+    },
+    {
+      "id": "profile",
+      "name": "Profile",
+      "type": "entity",
+      "description": "An entity representing a LinkedIn profile."
+    },
+    {
+      "id": "job",
+      "name": "Job",
+      "type": "entity",
+      "description": "An entity representing a job listing."
+    },
+    {
+      "id": "general",
+      "name": "General",
+      "type": "category",
+      "description": "General tools and entities."
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "type": "category",
+      "description": "Tools and entities related to travel."
+    },
+    {
+      "id": "weather",
+      "name": "Weather",
+      "type": "category",
+      "description": "Tools and entities related to weather."
+    }
+  ],
   "edges": [
     {
       "source": "search_flights",
@@ -435,6 +509,161 @@
       "source": "amazon_product_by_category",
       "label": "parameter_dependency",
       "target": "amazon_product_asins"
+    },
+    {
+      "source": "get_currency",
+      "label": "related_to",
+      "target": "currency"
+    },
+    {
+      "source": "get_exchange_rates",
+      "label": "related_to",
+      "target": "currency"
+    },
+    {
+      "source": "location_to_lat_lon",
+      "label": "related_to",
+      "target": "location"
+    },
+    {
+      "source": "search_flight_location",
+      "label": "related_to",
+      "target": "location"
+    },
+    {
+      "source": "search_flights_min_price",
+      "label": "related_to",
+      "target": "flight"
+    },
+    {
+      "source": "search_flights",
+      "label": "related_to",
+      "target": "flight"
+    },
+    {
+      "source": "search_hotel_destination",
+      "label": "related_to",
+      "target": "hotel"
+    },
+    {
+      "source": "search_hotels",
+      "label": "related_to",
+      "target": "hotel"
+    },
+    {
+      "source": "weather_forecast_24h",
+      "label": "related_to",
+      "target": "weather"
+    },
+    {
+      "source": "weather_forecast_3d",
+      "label": "related_to",
+      "target": "weather"
+    },
+    {
+      "source": "weather_forecast_7d",
+      "label": "related_to",
+      "target": "weather"
+    },
+    {
+      "source": "weather_index_1d",
+      "label": "related_to",
+      "target": "weather"
+    },
+    {
+      "source": "weather_rain_minute",
+      "label": "related_to",
+      "target": "weather"
+    },
+    {
+      "source": "search_location",
+      "label": "related_to",
+      "target": "location"
+    },
+    {
+      "source": "amazon_best_sellers",
+      "label": "related_to",
+      "target": "product"
+    },
+    {
+      "source": "amazon_product_by_category",
+      "label": "related_to",
+      "target": "product"
+    },
+    {
+      "source": "amazon_product_details",
+      "label": "related_to",
+      "target": "product"
+    },
+    {
+      "source": "amazon_product_reviews",
+      "label": "related_to",
+      "target": "product"
+    },
+    {
+      "source": "amazon_product_search",
+      "label": "related_to",
+      "target": "product"
+    },
+    {
+      "source": "google_news_business",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_entertainment",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_latest",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_science",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_search",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_sport",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_suggest",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_technology",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "google_news_world",
+      "label": "related_to",
+      "target": "news"
+    },
+    {
+      "source": "linkedin_get_company_by_url",
+      "label": "related_to",
+      "target": "profile"
+    },
+    {
+      "source": "linkedin_get_personal_profile",
+      "label": "related_to",
+      "target": "profile"
+    },
+    {
+      "source": "linkedin_search_jobs",
+      "label": "related_to",
+      "target": "job"
     }
   ]
 }

@@ -3,14 +3,24 @@ from utils import get_tool_list_str
 
 TOOL_LIST = get_tool_list_str()
 
-MODEL = "qwen" # qwen或者gpt-3.5
+MODEL = "qwen"  # qwen或者gpt-3.5
 
 # 可以在这里指定
 TASK = "我想知道长沙的天气，以及我等下要去长沙玩，能不能帮我查一下酒店?"
 
-TYPE_LIST = ["general","travel","weather","entertainment","news","food","shopping"]
+TYPE_LIST = [
+    "general",
+    "travel",
+    "weather",
+    "entertainment",
+    "news",
+    "food",
+    "shopping",
+]
 
-PROMPT_TEMPLATE_2 = """对于任务{task},请你判断任务的类别，在以下几种中进行选择：
+REWRITE_TASK_PROMPT_TEMPLATE = """对于自然语言的任务:{task}，请你提取出其中需要完成的任务，比如把：明天长沙的天气如何？在帮我查查酒店呗。 提取为：1.搜索明天长沙的天气 2.搜索长沙的酒店 请直接输出任务，不需要解释。"""
+
+FIND_TASK_TYPE_PROMPT_TEMPLATE = """对于任务{task},请你判断任务的类别，在以下几种中进行选择：
 {type_list}\n请直接输出类别的名称，不需要输出任何其他内容。注意，如果你想选择多个类别，请用逗号分隔不同类别。"""
 
 PROMPT_TEMPLATE = """For the following task, make plans that can solve the problem step by step. For each plan, indicate \

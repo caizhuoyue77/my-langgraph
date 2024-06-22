@@ -5,9 +5,11 @@ from logger import *
 
 app = FastAPI()
 
+
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
 
 # TODO: 要改为get_plan之类的
 @app.post("/get_plan")
@@ -24,13 +26,14 @@ async def chat_endpoint(request: Request):
         return response
     return {"response": "No query provided", "rewoo_state": None}
 
+
 @app.post("/execute_plan")
 async def execute_endpoint(request: Request):
     data = await request.json()
     # data是request里面传递过来的内容
     state = data.get("rewoo_state")
     logger.error(f"即将执行的计划:{state}")
-    for step in state['steps']:
+    for step in state["steps"]:
         logger.error(step)
 
     # logger.error(state)
