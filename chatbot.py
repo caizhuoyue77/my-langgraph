@@ -25,6 +25,7 @@ default_values = {
     "edges": [],
     "show_graph": True,
     "node_size": 10,
+    "developer_mode": False,
 }
 for key, value in default_values.items():
     if key not in st.session_state:
@@ -54,6 +55,7 @@ def check_yes():
         st.session_state["rewoo_state"] = None
         st.session_state["button_clicked"] = False
         st.session_state["api_recommendations"] = None
+        st.session_state["api_kg"] = None
         st.experimental_rerun()
 
 
@@ -66,20 +68,12 @@ def reset_edit_state():
 
 def update_graph():
     """更新图节点和边"""
-    # return
-
-    data = st.session_state.get("api_recommendations", [])
+    data = st.session_state.get("api_kg", [])
     if data:
         node_size = st.session_state["node_size"]
         st.session_state["nodes"] = [
             Node(**node, size=node_size) for node in data["nodes"]
         ]
-        # 根本就没有返回edge的信息似乎 我难过了
-
-        print("This is 你要的 data 啊！")
-
-        print(data)
-
         st.session_state["edges"] = [Edge(**edge) for edge in data["edges"]]
 
 
@@ -103,9 +97,7 @@ if prompt:
         st.session_state["api_recommendations"] = data["rewoo_state"].get(
             "api_recommendations", []
         )
-        logger.critical(
-            f"这就是你要看的api_recommendations：{st.session_state['api_recommendations']}"
-        )
+        st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
 
         update_graph()  # 更新图数据
         st.experimental_rerun()  # 强制页面刷新
@@ -123,6 +115,9 @@ st.session_state["show_graph"] = st.sidebar.checkbox("显示API图谱", value=Tr
 st.session_state["node_size"] = st.sidebar.slider(
     "API节点大小", min_value=5, max_value=50, value=10
 )
+
+# 侧边栏开发者模式切换按钮
+st.session_state["developer_mode"] = st.sidebar.checkbox("开发者模式", value=False)
 
 # 创建列布局
 col = st.columns((7, 3), gap="small")

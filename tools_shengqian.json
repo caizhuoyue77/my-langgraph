@@ -385,76 +385,70 @@
       "type": "food"
     }
   ],
-  "semantic_nodes": [
+  "sementic_nodes": [
     {
       "id": "currency",
-      "name": "Currency",
+      "label": "Currency",
       "type": "entity",
       "description": "An entity representing a currency."
     },
     {
       "id": "location",
-      "name": "Location",
+      "label": "Location",
       "type": "entity",
       "description": "An entity representing a geographical location."
     },
     {
       "id": "flight",
-      "name": "Flight",
+      "label": "Flight",
       "type": "entity",
       "description": "An entity representing a flight."
     },
     {
       "id": "hotel",
-      "name": "Hotel",
+      "label": "Hotel",
       "type": "entity",
       "description": "An entity representing a hotel."
     },
     {
-      "id": "weather",
-      "name": "Weather",
-      "type": "entity",
-      "description": "An entity representing weather information."
-    },
-    {
       "id": "product",
-      "name": "Product",
+      "label": "Product",
       "type": "entity",
       "description": "An entity representing a product."
     },
     {
       "id": "news",
-      "name": "News",
+      "label": "News",
       "type": "entity",
       "description": "An entity representing news information."
     },
     {
       "id": "profile",
-      "name": "Profile",
+      "label": "Profile",
       "type": "entity",
       "description": "An entity representing a LinkedIn profile."
     },
     {
       "id": "job",
-      "name": "Job",
+      "label": "Job",
       "type": "entity",
       "description": "An entity representing a job listing."
     },
     {
       "id": "general",
-      "name": "General",
+      "label": "General",
       "type": "category",
       "description": "General tools and entities."
     },
     {
       "id": "travel",
-      "name": "Travel",
+      "label": "Travel",
       "type": "category",
       "description": "Tools and entities related to travel."
     },
     {
       "id": "weather",
-      "name": "Weather",
+      "label": "Weather",
       "type": "category",
       "description": "Tools and entities related to weather."
     }

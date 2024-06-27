@@ -36,6 +36,7 @@ class ReWOO(TypedDict):
     results: dict
     result: str
     api_recommendations: list
+    api_kg: dict
 
 
 # 初始化模型
@@ -205,6 +206,17 @@ def rewoo_as_func(task: str):
         "nodes": nodes,
         "edges": edges,
     }
+
+    nodes = nodes
+
+    # 没法把语义节点和这个节点合并
+    print(get_related_nodes(nodes, get_sementic_nodes(), get_all_edges()))
+    # 有一些没用的sementic_nodes可以删掉
+
+    logger.error(nodes)
+    # print(nodes)
+
+    rewoo_state["api_kg"] = {"nodes": nodes, "edges": get_all_edges()}
 
     response = "\n\n**API编排步骤：**\n"
 

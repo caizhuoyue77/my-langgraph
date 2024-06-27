@@ -4,8 +4,6 @@
       "id": "google_search",
       "name": "Google",
       "label": "Google",
-      
-      
       "input": "search query",
       "description": "Worker that searches results from Tavily. Useful for general search queries.",
       "type": "general"
@@ -14,8 +12,6 @@
       "id": "get_current_time",
       "name": "GetCurrentTime",
       "label": "GetCurrentTime",
-      
-      
       "input": "query",
       "description": "Worker that returns the current time.",
       "type": "general"
@@ -24,8 +20,6 @@
       "id": "get_current_date",
       "name": "GetCurrentDate",
       "label": "GetCurrentDate",
-      
-      
       "input": "query",
       "description": "Worker that returns the current date.",
       "type": "general"
@@ -34,8 +28,6 @@
       "id": "calc_datetime",
       "name": "CalcDatetime",
       "label": "CalcDatetime",
-      
-      
       "input": "date and day. For example: 2024-05-01, 1. Will return 2024-05-02.",
       "description": "Worker that will calculate the date for you.",
       "type": "general"
@@ -44,8 +36,6 @@
       "id": "get_currency",
       "name": "GetCurrency",
       "label": "GetCurrency",
-      
-      
       "input": "currency code",
       "description": "Worker that retrieves currency information.",
       "type": "general"
@@ -54,8 +44,6 @@
       "id": "get_exchange_rates",
       "name": "GetExchangeRates",
       "label": "GetExchangeRates",
-      
-      
       "input": "currency codes",
       "description": "Worker that retrieves exchange rates between currencies.",
       "type": "general"
@@ -64,8 +52,6 @@
       "id": "location_to_lat_lon",
       "name": "LocationToLatLon",
       "label": "LocationToLatLon",
-      
-      
       "input": "location name",
       "description": "Worker that converts a location name to latitude and longitude.",
       "type": "travel"
@@ -74,8 +60,6 @@
       "id": "search_flight_location",
       "name": "SearchFlightLocation",
       "label": "SearchFlightLocation",
-      
-      
       "input": "location name, in english",
       "description": "Worker that searches for flight locations in a certain city. One city at a time.",
       "type": "travel"
@@ -84,8 +68,6 @@
       "id": "search_flights_min_price",
       "name": "SearchFlightsMinPrice",
       "label": "SearchFlightsMinPrice",
-      
-      
       "input": "from_id, to_id and departure date. You may need to call the searchflightlocation to get the two ids. departure_date should be like: 2024-05-01",
       "description": "Worker that searches for the minimum price of flights.",
       "type": "travel"
@@ -94,8 +76,6 @@
       "id": "search_flights",
       "name": "SearchFlights",
       "label": "SearchFlights",
-      
-      
       "input": "depart_airport_id, arrive_airport_id, depart date. For example: SHA.AIRPORT, PEK.AIRPORT, 2024-05-01. In order to get the depart and arrive airport id, you need to call the SearchFlightLocation twice.",
       "description": "Worker that searches for flights.",
       "type": "travel"
@@ -104,8 +84,6 @@
       "id": "search_hotel_destination",
       "name": "SearchHotelDestination",
       "label": "SearchHotelDestination",
-      
-      
       "input": "destination details",
       "description": "Worker that searches for hotel destination_ids, not the hotel information, but you must call this first to call the HotelSearch.",
       "type": "travel"
@@ -114,8 +92,6 @@
       "id": "search_hotels",
       "name": "SearchHotels",
       "label": "SearchHotels",
-      
-      
       "input": "location, checkin date, checkout date, and number of guests. For example: beijing,20240527,20240528,2",
       "description": "Worker that searches for hotels.",
       "type": "travel"
@@ -124,8 +100,6 @@
       "id": "sunrise_sunset",
       "name": "SunriseSunset",
       "label": "SunriseSunset",
-      
-      
       "input": "location name and time, for example: beijing,20240527",
       "description": "Worker that retrieves sunrise and sunset times for a location.",
       "type": "weather"
@@ -134,8 +108,6 @@
       "id": "weather_forecast_24h",
       "name": "WeatherForecast24H",
       "label": "WeatherForecast24H",
-      
-      
       "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
       "description": "Worker that retrieves a 24-hour weather forecast for a location.",
       "type": "weather"
@@ -144,8 +116,6 @@
       "id": "weather_forecast_3d",
       "name": "WeatherForecast3D",
       "label": "WeatherForecast3D",
-      
-      
       "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
       "description": "Worker that retrieves a 3-day weather forecast for a location.",
       "type": "weather"
@@ -154,8 +124,6 @@
       "id": "weather_forecast_7d",
       "name": "WeatherForecast7D",
       "label": "WeatherForecast7D",
-      
-      
       "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
       "description": "Worker that retrieves a 7-day weather forecast for a location.",
       "type": "weather"
@@ -164,8 +132,6 @@
       "id": "weather_index_1d",
       "name": "WeatherIndex1D",
       "label": "WeatherIndex1D",
-      
-      
       "input": "location name",
       "description": "Worker that retrieves a 1-day weather index for a location.",
       "type": "weather"
@@ -174,8 +140,6 @@
       "id": "weather_rain_minute",
       "name": "WeatherRainMinute",
       "label": "WeatherRainMinute",
-      
-      
       "input": "location name",
       "description": "Worker that retrieves minute-by-minute rain information for a location.",
       "type": "weather"
@@ -184,8 +148,6 @@
       "id": "search_location",
       "name": "SearchLocation",
       "label": "SearchLocation",
-      
-      
       "input": "location name, like shanghai or jiaxing",
       "description": "Worker that searches for a location.",
       "type": "weather"
@@ -194,8 +156,6 @@
       "id": "fan_favorites",
       "name": "FanFavorites",
       "label": "FanFavorites",
-      
-      
       "input": "query",
       "description": "Worker that retrieves fan favorite movies or series from IMDb.",
       "type": "entertainment"
@@ -204,8 +164,6 @@
       "id": "search_imdb",
       "name": "SearchIMDB",
       "label": "SearchIMDB",
-      
-      
       "input": "search query",
       "description": "Worker that searches for information on IMDb.",
       "type": "entertainment"
@@ -214,8 +172,6 @@
       "id": "upcoming_movies",
       "name": "UpcomingMovies",
       "label": "UpcomingMovies",
-      
-      
       "input": "Region code. For example: US",
       "description": "Worker that retrieves upcoming movies from IMDb.",
       "type": "entertainment"
@@ -224,8 +180,6 @@
       "id": "week_top_10",
       "name": "WeekTop10",
       "label": "WeekTop10",
-      
-      
       "input": "query",
       "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
       "type": "entertainment"
@@ -234,8 +188,6 @@
       "id": "whats_streaming",
       "name": "WhatsStreaming",
       "label": "WhatsStreaming",
-      
-      
       "input": "query",
       "description": "Worker that retrieves information about what's streaming on IMDb.",
       "type": "entertainment"
@@ -244,8 +196,6 @@
       "id": "top_100_movies",
       "name": "Top100Movies",
       "label": "Top100Movies",
-      
-      
       "input": "query",
       "description": "Worker that retrieves the top 100 movies from IMDb.",
       "type": "entertainment"
@@ -254,7 +204,6 @@
       "id": "top_100_series",
       "name": "Top100Series",
       "label": "Top100Series",
-      
       "input": "query",
       "description": "Worker that retrieves the top 100 series from IMDb.",
       "type": "entertainment"
