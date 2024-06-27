@@ -85,29 +85,37 @@ if prompt:
     st.chat_message("user").write(prompt)
 
     # 调用 /chat 端点生成计划
-    url_chat = "http://localhost:8000/get_plan"
-    payload = {"message": prompt}
-    try:
-        response = requests.post(url_chat, json=payload)
-        response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
-        data = response.json()
-        msg = data["response"]
-        logger.info(f"msg: {data}")
-        st.session_state["rewoo_state"] = data["rewoo_state"]
-        st.session_state["api_recommendations"] = data["rewoo_state"].get(
-            "api_recommendations", []
-        )
-        st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
+    # 如果不是开发者模式，而是傻瓜模式
+    if st.session_state["developer_mode"] == False:
+        url_chat = ""
+        # 调用不一样的api 直接得到结果
+        msg = "哈哈～傻瓜模式启动～"
+    else:
+        url_chat = "http://localhost:8000/get_plan"
+        payload = {"message": prompt}
+        try:
+            response = requests.post(url_chat, json=payload)
+            response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+            data = response.json()
+            msg = data["response"]
+            logger.info(f"msg: {data}")
+            st.session_state["rewoo_state"] = data["rewoo_state"]
+            st.session_state["api_recommendations"] = data["rewoo_state"].get(
+                "api_recommendations", []
+            )
+            st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
 
-        update_graph()  # 更新图数据
-        st.experimental_rerun()  # 强制页面刷新
+            update_graph()  # 更新图数据
+        except requests.exceptions.RequestException as e:
+            msg = f"生成计划时 API 调用失败: {str(e)}"
+            logger.error(msg)
 
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Request failed: {e}")
-        msg = "生成计划时 API 调用失败"
-
+    # 向用户展示消息
     st.session_state["messages"].append({"role": "assistant", "content": msg})
     st.chat_message("assistant").write(msg)
+    st.experimental_rerun()
+
+# 你可能需要这里调用一次st.experimental_rerun()，如果确实需要刷新整个应用的话
 
 # 侧边栏设置
 st.sidebar.header("图谱设置")
