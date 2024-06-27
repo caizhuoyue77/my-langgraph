@@ -140,7 +140,7 @@ with col[0]:
         st.chat_message(msg["role"]).write(msg["content"])
 
     # 显示和管理步骤
-    if st.session_state["rewoo_state"]:
+    if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
         st.header("API 计划信息")
         st.write("【改写后的任务】" + st.session_state["rewoo_state"]["task"])
         steps = st.session_state["rewoo_state"]["steps"]
@@ -214,7 +214,7 @@ with col[0]:
                 reset_edit_state()
 
 # 如果有未执行的计划，显示确认按钮
-if st.session_state["rewoo_state"]:
+if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
     if st.button("确认执行计划", on_click=check_yes):
         st.session_state["button_clicked"] = True
 

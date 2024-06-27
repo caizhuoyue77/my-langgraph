@@ -83,7 +83,7 @@ def rewrite_task(task: str):
 def get_plan(state: ReWOO):
     """生成任务计划。"""
     task = state["task"]
-    types = get_types(state["task"])
+    types = get_types(task)
 
     tools = get_tools_by_types(types)["tools"]
     result = planner.invoke(
@@ -99,7 +99,7 @@ def get_plan(state: ReWOO):
     matches = re.findall(REGEX_PATTERN, result)
     logger.critical("计划步骤:")
     logger.debug(f"steps:{matches}")
-    return {"steps": matches, "plan_string": result}
+    return {"steps": matches, "plan_string": result}, types
 
 
 def _get_current_task(state: ReWOO):
@@ -172,11 +172,11 @@ def rewoo_as_func(task: str, developer_mode=True):
     logger.debug("新任务:%s", task)
 
     rewoo_state = ReWOO(task=task)
-    plan = get_plan(rewoo_state)
+
+    plan, types = get_plan(rewoo_state)
     rewoo_state["plan_string"] = plan["plan_string"]
     rewoo_state["steps"] = plan["steps"]
 
-    types = get_types(task)
     nodes, edges = (
         get_tools_by_types(types)["tools"],
         get_tools_by_types(types)["edges"],

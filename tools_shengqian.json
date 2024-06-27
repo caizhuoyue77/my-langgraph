@@ -475,6 +475,16 @@
       "target": "search_location"
     },
     {
+      "source": "weather_index_1d",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
+      "source": "weather_rain_minute",
+      "label": "parameter_dependency",
+      "target": "search_location"
+    },
+    {
       "source": "weather_forecast_7d",
       "label": "parameter_dependency",
       "target": "search_location"
