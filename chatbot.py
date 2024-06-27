@@ -95,7 +95,10 @@ if prompt:
         response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
         data = response.json()
         # msg = data["response"]
-        msg = data["rewoo_state"]["final_results"]
+        if developer_mode == False:
+            msg = data["rewoo_state"]["final_results"]
+        else:
+            msg = data["response"]
         logger.info(f"msg: {data}")
         st.session_state["rewoo_state"] = data["rewoo_state"]
         st.session_state["api_recommendations"] = data["rewoo_state"].get(

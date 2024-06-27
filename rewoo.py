@@ -200,10 +200,8 @@ def rewoo_as_func(task: str, developer_mode=True):
     )
     logger.debug("##############")
 
-    if developer_mode is False:
-        rewoo_state["final_results"] = "北京今天的天气是小雨"
-    else:
-        rewoo_state["final_results"] = "还没执行呢"
+    if developer_mode == False:
+        rewoo_state["final_results"] = execute_plan(rewoo_state)["response"]
 
     api_response = {"response": response, "rewoo_state": rewoo_state}
     return api_response
