@@ -37,6 +37,7 @@ class ReWOO(TypedDict):
     result: str
     api_recommendations: list
     api_kg: dict
+    final_results: str
 
 
 # 初始化模型
@@ -156,7 +157,7 @@ def _route(state):
         return "tool"
 
 
-def rewoo_as_func(task: str):
+def rewoo_as_func(task: str, developer_mode=True):
     """rewoo的编排内容"""
     from_cache = search_cache(task)
     if from_cache is not None:
@@ -198,6 +199,12 @@ def rewoo_as_func(task: str):
         {"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state}
     )
     logger.debug("##############")
+
+    if developer_mode is False:
+        rewoo_state["final_results"] = "北京今天的天气是小雨"
+    else:
+        rewoo_state["final_results"] = "还没执行呢"
+
     api_response = {"response": response, "rewoo_state": rewoo_state}
     return api_response
 

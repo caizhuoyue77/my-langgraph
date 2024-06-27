@@ -83,40 +83,30 @@ prompt = st.chat_input(placeholder="请输入您的问题...")
 if prompt:
     st.session_state["messages"].append({"role": "user", "content": prompt})
     st.chat_message("user").write(prompt)
+    developer_mode = st.session_state["developer_mode"]
 
     # 调用 /chat 端点生成计划
     # 如果不是开发者模式，而是傻瓜模式
-    if st.session_state["developer_mode"] == False:
-        url_chat = "http://localhost:8000/just_execute"
-        payload = {"message": prompt}
-        try:
-            response = requests.post(url_chat, json=payload)
-            response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
-            data = response.json()
-            msg = data["response"]
-        # 调用不一样的api 直接得到结果
-        except requests.exceptions.RequestException as e:
-            msg = f"执行傻瓜模式时 API 调用失败: {str(e)}"
-            logger.error(msg)
-    else:
-        url_chat = "http://localhost:8000/get_plan"
-        payload = {"message": prompt}
-        try:
-            response = requests.post(url_chat, json=payload)
-            response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
-            data = response.json()
-            msg = data["response"]
-            logger.info(f"msg: {data}")
-            st.session_state["rewoo_state"] = data["rewoo_state"]
-            st.session_state["api_recommendations"] = data["rewoo_state"].get(
-                "api_recommendations", []
-            )
-            st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
 
-            update_graph()  # 更新图数据
-        except requests.exceptions.RequestException as e:
-            msg = f"生成计划时 API 调用失败: {str(e)}"
-            logger.error(msg)
+    url_chat = "http://localhost:8000/get_plan"
+    payload = {"message": prompt, "developer_mode": developer_mode}
+    try:
+        response = requests.post(url_chat, json=payload)
+        response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+        data = response.json()
+        # msg = data["response"]
+        msg = data["rewoo_state"]["final_results"]
+        logger.info(f"msg: {data}")
+        st.session_state["rewoo_state"] = data["rewoo_state"]
+        st.session_state["api_recommendations"] = data["rewoo_state"].get(
+            "api_recommendations", []
+        )
+        st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
+
+        update_graph()  # 更新图数据
+    except requests.exceptions.RequestException as e:
+        msg = f"生成计划时 API 调用失败: {str(e)}"
+        logger.error(msg)
 
     # 向用户展示消息
     st.session_state["messages"].append({"role": "assistant", "content": msg})
