@@ -8,7 +8,6 @@ from tool_utils import *
 
 
 async def weather_forecast_3d_iter(input: str):
-    print("恭喜你！成功执行到了这里！")
 
     location = get_location_id(input)
 
