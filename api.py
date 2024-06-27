@@ -42,3 +42,22 @@ async def execute_endpoint(request: Request):
         response = execute_plan(state)
         return response
     return {"response": "No plan provided"}
+
+
+@app.post("/just_execute")
+async def just_execute_endpoint(request: Request):
+    data = await request.json()
+    query = data.get("message")
+    if query:
+        # response = rewoo_as_func(query)
+        """
+        包含response和plan_json两个字段
+        response:自然语言的步骤
+        rewoo_state:一个json对象，对应一个ReWOO的对象，表示编排得到的结果
+        """
+        return {
+            "response": "傻瓜模式API执行",
+            "execution_results": "傻瓜模式API执行结果",
+        }
+
+    return {"response": "No query provided", "execution_results": None}

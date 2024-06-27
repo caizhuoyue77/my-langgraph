@@ -87,9 +87,17 @@ if prompt:
     # 调用 /chat 端点生成计划
     # 如果不是开发者模式，而是傻瓜模式
     if st.session_state["developer_mode"] == False:
-        url_chat = ""
+        url_chat = "http://localhost:8000/just_execute"
+        payload = {"message": prompt}
+        try:
+            response = requests.post(url_chat, json=payload)
+            response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+            data = response.json()
+            msg = data["response"]
         # 调用不一样的api 直接得到结果
-        msg = "哈哈～傻瓜模式启动～"
+        except requests.exceptions.RequestException as e:
+            msg = f"执行傻瓜模式时 API 调用失败: {str(e)}"
+            logger.error(msg)
     else:
         url_chat = "http://localhost:8000/get_plan"
         payload = {"message": prompt}
