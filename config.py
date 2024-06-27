@@ -61,6 +61,7 @@ Caution:
 2.Describe your plans with rich details.
 3.Each Plan should be followed by only one #E.
 4.Parameters should be in English.
+5.Use the minimal number of APIs. Do not use uneccessary APIs.
 
 Task: {task}
 Response: """

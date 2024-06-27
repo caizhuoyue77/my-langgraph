@@ -83,7 +83,8 @@ def rewrite_task(task: str):
 def get_plan(state: ReWOO):
     """生成任务计划。"""
     task = state["task"]
-    types = ["entertainment"]
+    types = get_types(state["task"])
+
     tools = get_tools_by_types(types)["tools"]
     result = planner.invoke(
         {"task": task, "tool_list": get_tool_list_str_from_json_list(tools)}
@@ -123,7 +124,9 @@ def tool_execution(state: ReWOO):
     logger.info(
         f"Executing step {_step}: {step_name} using {tool} with input {tool_input}"
     )
-
+    logger.critical("cinema")
+    logger.critical(tool)
+    logger.critical(tool_input)
     result = use_actual_tool(tool, tool_input)
     logger.critical(f"工具执行结果呀：{result}")
 
@@ -182,6 +185,7 @@ def rewoo_as_func(task: str, developer_mode=True):
     rewoo_state["api_recommendations"] = {"nodes": nodes, "edges": edges}
 
     print(get_related_nodes(nodes, get_sementic_nodes(), get_all_edges()))
+
     logger.error(nodes)
 
     rewoo_state["api_kg"] = {"nodes": nodes, "edges": get_all_edges()}
@@ -198,7 +202,6 @@ def rewoo_as_func(task: str, developer_mode=True):
     logger.debug(
         {"response": response, "plan_json": plan["steps"], "rewoo_state": rewoo_state}
     )
-    logger.debug("##############")
 
     if developer_mode == False:
         rewoo_state["final_results"] = execute_plan(rewoo_state)["response"]
@@ -227,23 +230,25 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
         j += 1
         logger.info("看过来～看过来～")
         logger.info(step)
-        if len(step[1]) != 0:
-            change_dict[step[1]] = f"E{j}"
-            old_step = step[1]
-            new_step = f"#E{j}"
-            step[1] = new_step
-            step.append("changed")
-            list_of_steps[j - 1] = step
 
-            for step_ in list_of_steps:
-                if "changed" not in step_ and len(step_[1]) > 0:
-                    step_[-1] = step_[-1].replace(old_step, new_step)
-        else:
-            step.append("changed")
-            step[1] = f"#E{j}"
-            list_of_steps[j - 1] = step
-            logger.info("这是新加入的步骤")
+        # if len(step[1]) != 0:
+        #     change_dict[step[1]] = f"E{j}"
+        #     old_step = step[1]
+        #     new_step = f"#E{j}"
+        #     step[1] = new_step
+        #     step.append("changed")
+        #     list_of_steps[j - 1] = step
 
+        #     for step_ in list_of_steps:
+        #         if "changed" not in step_ and len(step_[1]) > 0:
+        #             step_[-1] = step_[-1].replace(old_step, new_step)
+        # else:
+        #     step.append("changed")
+        #     step[1] = f"#E{j}"
+        #     list_of_steps[j - 1] = step
+        #     logger.info("这是新加入的步骤")
+
+    logger.critical("list of steps")
     logger.critical(list_of_steps)
 
     graph = StateGraph(ReWOO)
