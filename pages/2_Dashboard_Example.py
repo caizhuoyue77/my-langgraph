@@ -12,7 +12,7 @@ def read_cache(filename):
     return data
 
 
-def create_graph(color, title, steps):
+def create_graph(color, steps):
     # Create a directed graph
     G = nx.DiGraph()
 
@@ -30,9 +30,6 @@ def create_graph(color, title, steps):
     # Generate network graph
     nt = Network("300px", "300px", heading="", bgcolor=color, font_color="white")
     nt.from_nx(G)
-
-    # Remove all buttons
-    nt.show_buttons(filter_=None)
 
     # Use a temporary file to store and read HTML
     with tempfile.NamedTemporaryFile(delete=True, suffix=".html") as tmpfile:
@@ -64,11 +61,7 @@ def create_graph(color, title, steps):
     }}
     </style>
     """
-    # Add title and subtitle to the bottom of the graph
-    title_html = f'<div class="title">{title}</div>'
-    subtitle_html = f'<div class="subtitle">{title}</div>'
-
-    return css + source_code + title_html + subtitle_html
+    return css + source_code
 
 
 def main():
@@ -88,25 +81,55 @@ def main():
     # Read cache.json
     data = read_cache("cache.json")
 
-    # Dynamically create colored boxes with links
-    for key, value in data.items():
-        steps = value.get("steps", [])
-        # Skip tasks with only one step
-        if len(steps) < 2:
-            continue
+    # Display graphs in rows of four
+    num_cols = 4
+    keys = list(data.keys())
+    num_keys = len(keys)
+    num_rows = num_keys // num_cols
 
-        cols = st.columns(4)
-        for idx in range(4):
+    for row in range(num_rows):
+        cols = st.columns(num_cols)
+        for col in range(num_cols):
+            key = keys[row * num_cols + col]
+            value = data[key]
+            steps = value.get("steps", [])
+            color = random.choice(list(colors.values()))
+            graph_html = create_graph(color, steps)
+            link_html = f"""
+            <a href="https://www.google.com" target="_blank" style="text-decoration: none;">
+                <div style="height: 300px;">
+                    {graph_html}
+                    <div class="title">{key}</div>
+                    <div class="subtitle">{key}</div>
+                </div>
+            </a>
+            """
+            with cols[col]:
+                st.components.v1.html(
+                    link_html, height=360
+                )  # Ensure container is large enough for graph and border
+
+    # If there are remaining keys that don't fill a complete row
+    remaining_keys = num_keys % num_cols
+    if remaining_keys > 0:
+        cols = st.columns(remaining_keys)
+        start_idx = num_rows * num_cols
+        for idx in range(remaining_keys):
+            key = keys[start_idx + idx]
+            value = data[key]
+            steps = value.get("steps", [])
+            color = random.choice(list(colors.values()))
+            graph_html = create_graph(color, steps)
+            link_html = f"""
+            <a href="https://www.google.com" target="_blank" style="text-decoration: none;">
+                <div style="height: 300px;">
+                    {graph_html}
+                    <div class="title">{key}</div>
+                    <div class="subtitle">{key}</div>
+                </div>
+            </a>
+            """
             with cols[idx]:
-                color = random.choice(list(colors.values()))
-                graph_html = create_graph(color, key, steps)
-                link_html = f"""
-                <a href="https://www.google.com" target="_blank" style="text-decoration: none;">
-                    <div style="height: 300px;">
-                        {graph_html}
-                    </div>
-                </a>
-                """
                 st.components.v1.html(
                     link_html, height=360
                 )  # Ensure container is large enough for graph and border
