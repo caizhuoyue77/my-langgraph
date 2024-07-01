@@ -30,7 +30,9 @@ def create_graph(color, title, steps):
     # Generate network graph
     nt = Network("300px", "300px", heading="", bgcolor=color, font_color="white")
     nt.from_nx(G)
-    nt.show_buttons(filter_=["physics"])
+
+    # Remove all buttons
+    nt.show_buttons(filter_=None)
 
     # Use a temporary file to store and read HTML
     with tempfile.NamedTemporaryFile(delete=True, suffix=".html") as tmpfile:
@@ -54,12 +56,19 @@ def create_graph(color, title, steps):
         font-weight: bold;
         margin-top: 10px;
     }}
+    .subtitle {{
+        text-align: center;
+        margin-top: 5px;
+        font-size: 14px;
+        color: #666666;
+    }}
     </style>
     """
-    # Add title to the bottom of the graph
+    # Add title and subtitle to the bottom of the graph
     title_html = f'<div class="title">{title}</div>'
+    subtitle_html = f'<div class="subtitle">{title}</div>'
 
-    return css + source_code + title_html
+    return css + source_code + title_html + subtitle_html
 
 
 def main():
