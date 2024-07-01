@@ -3,32 +3,42 @@ import random
 import networkx as nx
 from pyvis.network import Network
 import tempfile
+import json
 
 
-def create_graph(color):
-    # 创建图
-    G = nx.Graph()
-    nodes = ["Node 1", "Node 2", "Node 3"]
-    edges = [("Node 1", "Node 2"), ("Node 2", "Node 3"), ("Node 3", "Node 1")]
+def read_cache(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        data = json.load(f)
+    return data
 
-    for node in nodes:
-        G.add_node(node)
 
-    for edge in edges:
-        G.add_edge(*edge)
+def create_graph(color, title, steps):
+    # Create a directed graph
+    G = nx.DiGraph()
 
-    # 生成网络图
+    # Add nodes for each step
+    for idx, step in enumerate(steps):
+        node_label = step[2]  # Use the third value in the step as node label
+        G.add_node(node_label)
+
+    # Add edges between steps
+    for i in range(len(steps) - 1):
+        source_label = steps[i][2]  # Node label from current step
+        target_label = steps[i + 1][2]  # Node label from next step
+        G.add_edge(source_label, target_label)
+
+    # Generate network graph
     nt = Network("300px", "300px", heading="", bgcolor=color, font_color="white")
     nt.from_nx(G)
     nt.show_buttons(filter_=["physics"])
 
-    # 使用临时文件来存储并读取HTML
+    # Use a temporary file to store and read HTML
     with tempfile.NamedTemporaryFile(delete=True, suffix=".html") as tmpfile:
         nt.save_graph(tmpfile.name)
         with open(tmpfile.name, "r", encoding="utf-8") as HtmlFile:
             source_code = HtmlFile.read()
 
-    # 将CSS直接嵌入HTML以确保样式生效
+    # Embed CSS directly into HTML to ensure styles are applied
     css = f"""
     <style>
     .network {{
@@ -38,9 +48,18 @@ def create_graph(color):
         border-radius: 10px;
         overflow: hidden;
     }}
+    .title {{
+        text-align: center;
+        font-size: 16px;
+        font-weight: bold;
+        margin-top: 10px;
+    }}
     </style>
     """
-    return css + source_code
+    # Add title to the bottom of the graph
+    title_html = f'<div class="title">{title}</div>'
+
+    return css + source_code + title_html
 
 
 def main():
@@ -57,13 +76,21 @@ def main():
         "soft-teal": "#accddc",
     }
 
-    # 动态创建带链接的方框
-    for _ in range(2):  # 仅创建两行方框以避免重复生成太多图谱
+    # Read cache.json
+    data = read_cache("cache.json")
+
+    # Dynamically create colored boxes with links
+    for key, value in data.items():
+        steps = value.get("steps", [])
+        # Skip tasks with only one step
+        if len(steps) < 2:
+            continue
+
         cols = st.columns(4)
         for idx in range(4):
             with cols[idx]:
                 color = random.choice(list(colors.values()))
-                graph_html = create_graph(color)
+                graph_html = create_graph(color, key, steps)
                 link_html = f"""
                 <a href="https://www.google.com" target="_blank" style="text-decoration: none;">
                     <div style="height: 300px;">
@@ -72,8 +99,8 @@ def main():
                 </a>
                 """
                 st.components.v1.html(
-                    link_html, height=330
-                )  # 确保容器足够容纳图谱和边框
+                    link_html, height=360
+                )  # Ensure container is large enough for graph and border
 
 
 if __name__ == "__main__":
