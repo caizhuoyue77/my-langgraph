@@ -103,8 +103,9 @@ def main():
                 value = filtered_data[key]
                 steps = value.get("steps", [])
                 graph_html = create_graph(steps)
+                # Construct link with dynamic Streamlit URL and passing title parameter
                 link_html = f"""
-                <a href="https://www.google.com" target="_blank">
+                <a href="http://localhost:8501/?title={key}" target="_blank">
                     <div style="height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                         {graph_html}
                         <div class="title">{key}</div>
