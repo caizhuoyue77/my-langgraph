@@ -26,6 +26,7 @@ default_values = {
     "show_graph": True,
     "node_size": 10,
     "developer_mode": False,
+    "title": "默认标题",  # 新增title参数
 }
 for key, value in default_values.items():
     if key not in st.session_state:
@@ -116,7 +117,46 @@ if prompt:
     st.chat_message("assistant").write(msg)
     st.experimental_rerun()
 
-# 你可能需要这里调用一次st.experimental_rerun()，如果确实需要刷新整个应用的话
+# 监听title参数的变化
+params = st.experimental_get_query_params()
+if "title" in params and params["title"] != st.session_state.get("title", "默认标题"):
+    st.session_state["title"] = params["title"]
+    title = st.session_state["title"]
+    st.title(params["title"])
+
+    url_chat_2 = "http://localhost:8000/get_plan"
+    developer_mode_2 = False
+
+    payload_2 = {"message": title, "developer_mode": developer_mode_2}
+    try:
+        response = requests.post(url_chat_2, json=payload_2)
+        response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
+        data = response.json()
+        msg = data["response"]
+
+        if developer_mode_2 == True:
+            msg = data["rewoo_state"]["final_results"]
+        else:
+            msg = data["response"]
+        st.session_state["rewoo_state"] = data["rewoo_state"]
+        st.session_state["api_recommendations"] = data["rewoo_state"].get(
+            "api_recommendations", []
+        )
+        st.session_state["api_kg"] = data["rewoo_state"].get("api_kg")
+
+        # update_graph()  # 更新图数据
+    except requests.exceptions.RequestException as e:
+        msg = f"生成计划时 API 调用失败: {str(e)}"
+        logger.error(msg)
+
+    # 向用户展示消息
+    st.session_state["messages"].append({"role": "assistant", "content": msg})
+    st.chat_message("assistant").write(msg)
+    # st.experimental_rerun()
+
+    # 可以在这里添加其他需要随标题变化而更新的逻辑
+    # update_graph()
+
 
 # 侧边栏设置
 st.sidebar.header("图谱设置")
@@ -147,10 +187,18 @@ with col[0]:
 
         for i, step in enumerate(steps):
             with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-                tool_options = [
-                    tool["name"]
-                    for tool in st.session_state.get("api_recommendations", [])["nodes"]
-                ]
+                if "api_recommendations" in st.session_state:
+                    api_recommendations = st.session_state["api_recommendations"]
+                    if api_recommendations and "nodes" in api_recommendations:
+                        tool_options = [
+                            tool["name"]
+                            for tool in api_recommendations["nodes"]
+                            if "name" in tool
+                        ]
+                    else:
+                        tool_options = []
+                else:
+                    tool_options = []
 
                 new_step_name = st.text_input(
                     "步骤名称", value=step[0], key=f"step_name_{i}"

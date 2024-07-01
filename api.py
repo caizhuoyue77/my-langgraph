@@ -15,10 +15,14 @@ def read_root():
 @app.post("/get_plan")
 async def chat_endpoint(request: Request):
     data = await request.json()
+    print("!!!!\n!!!!\n!!!!\n!!!!!\n")
     query = data.get("message")
     developer_mode = data.get("developer_mode")
+    print(f"query: {query}")
+    print(f"developer_mode: {developer_mode}")
     if query:
         response = rewoo_as_func(query, developer_mode)
+
         """
         包含response和plan_json两个字段
         response:自然语言的步骤
