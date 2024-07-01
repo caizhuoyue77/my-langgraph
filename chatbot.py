@@ -120,14 +120,10 @@ if prompt:
 # 监听title参数的变化
 params = st.experimental_get_query_params()
 if "title" in params and params["title"] != st.session_state.get("title", "默认标题"):
-    st.session_state["title"] = params["title"]
-    title = st.session_state["title"]
-    st.title(params["title"])
-
     url_chat_2 = "http://localhost:8000/get_plan"
     developer_mode_2 = False
 
-    payload_2 = {"message": title, "developer_mode": developer_mode_2}
+    payload_2 = {"message": params["title"], "developer_mode": developer_mode_2}
     try:
         response = requests.post(url_chat_2, json=payload_2)
         response.raise_for_status()  # 如果状态码不是200，抛出HTTPError异常
