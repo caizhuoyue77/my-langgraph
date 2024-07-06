@@ -1,33 +1,29 @@
 import streamlit as st
 import pandas as pd
 import json
+from st_aggrid import AgGrid, GridOptionsBuilder
 
 
-def read_api_info(filename):
+def read_tools(filename):
     with open(filename, "r", encoding="utf-8") as f:
         data = json.load(f)
-    return data
+    return data["tools"]
 
 
-def format_api_info(api_info):
+def format_tools(tools_info):
     formatted_data = []
-    for api in api_info:
-        endpoint = api["endpoint"]
-        api_key = "***" + api["api_key"][-3:]
-        added_time = api["added_time"]
-        status = "可用" if api["status"] == "active" else "不可用"
-        for param in api["params"]:
-            formatted_data.append(
-                {
-                    "Endpoint": endpoint,
-                    "参数名": param["name"],
-                    "参数类型": param["type"],
-                    "示例参数": str(param["example"]),  # 确保示例参数为字符串类型
-                    "API Key": api_key,
-                    "添加时间": added_time,
-                    "状态": status,
-                }
-            )
+    for tool in tools_info:
+        formatted_data.append(
+            {
+                "ID": tool["id"],
+                "名称": tool["name"],
+                "标签": tool["label"],
+                "输入": tool["input"],
+                "描述": tool["description"],
+                "类型": tool["type"],
+                "幂等性": tool["idempotency"],
+            }
+        )
     return formatted_data
 
 
@@ -39,17 +35,29 @@ def add_logo():
 def main():
     add_logo()
 
-    st.title("API 信息展示")
+    st.title("工具信息展示")
 
-    # 读取 API 信息
-    api_info = read_api_info("api_info.json")
-    formatted_data = format_api_info(api_info)
+    # 读取工具信息
+    tools_info = read_tools("tools.json")
+    formatted_data = format_tools(tools_info)
 
     # 转换为 DataFrame
     df = pd.DataFrame(formatted_data)
 
-    # 显示表格
-    st.table(df)
+    # 使用 AgGrid 显示表格
+    gb = GridOptionsBuilder.from_dataframe(df)
+    gb.configure_pagination(paginationPageSize=15)  # 每页显示15个
+    gb.configure_side_bar()  # 添加侧边栏
+    grid_options = gb.build()
+
+    AgGrid(
+        df,
+        gridOptions=grid_options,
+        enable_enterprise_modules=True,
+        theme="alpine",  # 其他主题： 'balham', 'material'
+        height=600,
+        fit_columns_on_grid_load=True,
+    )
 
 
 if __name__ == "__main__":

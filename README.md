@@ -2,7 +2,7 @@
 
 ## 启动方式：
 1. conda activate langgraph
-2. fastAPI dev API.py（把后端开起来
+2. fastapi dev api.py（把后端开起来
    1. 也可以用uvicorn API:app --reload --host 0.0.0.0 --port 8000
 3. streamlit run chatbot.py（把前端开起来）
 
@@ -14,10 +14,11 @@
 ## 706待办
 1. ~~【重要】跑通开发者模式和傻瓜模式~~
 2. ~~【重要】跑通从cache面板=》调用API的流程~~
-3. 重构：修改API的存储方式（API.json）的存储方式
-4. 功能：在API显示页面显示tools.json的内容
+3. 功能：在API显示页面显示tools.json的内容
+4. 重构：修改API的存储方式（API.json）的存储方式
 5. 重构：修改API的管理方式（调用方式），不要一个API一个python文件了
    1. 需要有一个统一的入口函数（所有调用API的代码都经过）
+      1. 存在问题：后处理函数不一样 解决方案：先不修改已有的API，但是对于新添加的API，暂时不进行后处理，或者是简单截断。
 6. 功能：实现动态添加、测试API，然后把API的信息存储到tools.json里面
 7. 笨功能：把每个API的参数都写到tools.json里面
 
