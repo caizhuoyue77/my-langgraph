@@ -82,11 +82,7 @@ def rewrite_task(task: str):
 
 def get_plan(state: ReWOO):
     """生成任务计划。"""
-
     task = state["task"]
-    print("你爷爷个腿")
-    print(task)
-
     cached_state = search_cache(task)
     if cached_state:
         return {

@@ -162,8 +162,9 @@ st.session_state["node_size"] = st.sidebar.slider(
 )
 
 # 侧边栏开发者模式切换按钮
-st.session_state["developer_mode"] = st.sidebar.checkbox("开发者模式", value=False)
-
+st.session_state["developer_mode"] = st.sidebar.checkbox(
+    "开发者模式", value=st.session_state["developer_mode"]
+)
 # 创建列布局
 col = st.columns((7, 3), gap="small")
 

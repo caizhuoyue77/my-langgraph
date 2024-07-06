@@ -1377,65 +1377,22 @@
             ]
         ],
         "api_recommendations": {
-            "nodes": [
-                {
-                    "id": "sunrise_sunset",
-                    "name": "SunriseSunset",
-                    "label": "SunriseSunset",
-                    "input": "location name and time, for example: beijing,20240527",
-                    "description": "Worker that retrieves sunrise and sunset times for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "weather_forecast_24h",
-                    "name": "WeatherForecast24H",
-                    "label": "WeatherForecast24H",
-                    "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
-                    "description": "Worker that retrieves a 24-hour weather forecast for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "weather_forecast_3d",
-                    "name": "WeatherForecast3D",
-                    "label": "WeatherForecast3D",
-                    "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
-                    "description": "Worker that retrieves a 3-day weather forecast for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "weather_forecast_7d",
-                    "name": "WeatherForecast7D",
-                    "label": "WeatherForecast7D",
-                    "input": "location id, like 101010100. You might need to call SearchLocation to get this id for a certain location.",
-                    "description": "Worker that retrieves a 7-day weather forecast for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "weather_index_1d",
-                    "name": "WeatherIndex1D",
-                    "label": "WeatherIndex1D",
-                    "input": "location name",
-                    "description": "Worker that retrieves a 1-day weather index for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "weather_rain_minute",
-                    "name": "WeatherRainMinute",
-                    "label": "WeatherRainMinute",
-                    "input": "location name",
-                    "description": "Worker that retrieves minute-by-minute rain information for a location.",
-                    "type": "weather"
-                },
-                {
-                    "id": "search_location",
-                    "name": "SearchLocation",
-                    "label": "SearchLocation",
-                    "input": "location name, like shanghai or jiaxing",
-                    "description": "Worker that searches for a location.",
-                    "type": "weather"
-                }
-            ],
+            "nodes": [],
+            "edges": []
+        },
+        "api_kg": {
+            "nodes": [],
             "edges": [
+                {
+                    "source": "search_flights",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
                 {
                     "source": "weather_forecast_24h",
                     "label": "parameter_dependency",
@@ -1443,6 +1400,16 @@
                 },
                 {
                     "source": "weather_forecast_3d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_rain_minute",
                     "label": "parameter_dependency",
                     "target": "search_location"
                 },
@@ -1455,9 +1422,185 @@
                     "source": "sunrise_sunset",
                     "label": "parameter_dependency",
                     "target": "search_location"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "get_currency",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "get_exchange_rates",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "location_to_lat_lon",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flight_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_flights",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_hotel_destination",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "search_hotels",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "weather_forecast_24h",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_3d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_7d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_rain_minute",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "search_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_search",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "google_news_business",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_entertainment",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_latest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_science",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_search",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_sport",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_suggest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_technology",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_world",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "linkedin_get_company_by_url",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_get_personal_profile",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_search_jobs",
+                    "label": "related_to",
+                    "target": "job"
                 }
             ]
-        }
+        },
+        "final_results": "长沙的日出时间是2024年7月6日的05:38，日落时间是同一天的19:30。"
     },
     "帮我搜索北京最近3天的天气。": {
         "task": "帮我搜索北京最近3天的天气。",
@@ -9108,6 +9251,708 @@
                 }
             ]
         },
-        "final_results": "今天长沙的日出时间是04:53，日落时间是19:47。"
+        "final_results": "长沙的日出时间是04:53，日落时间是19:47。这是根据2024年7月6日的数据得出的。"
+    },
+    "帮我查找正在热播的电影": {
+        "task": "帮我查找正在热播的电影",
+        "plan_string": "Plan: Use the WeekTop10 tool to retrieve the top 10 movies of the week.\n#E1 = WeekTop10[movies]",
+        "steps": [
+            [
+                "Use the WeekTop10 tool to retrieve the top 10 movies of the week.",
+                "#E1",
+                "WeekTop10",
+                "movies"
+            ]
+        ],
+        "api_recommendations": {
+            "nodes": [
+                {
+                    "id": "fan_favorites",
+                    "name": "FanFavorites",
+                    "label": "FanFavorites",
+                    "input": "query",
+                    "description": "Worker that retrieves fan favorite movies or series from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "search_imdb",
+                    "name": "SearchIMDB",
+                    "label": "SearchIMDB",
+                    "input": "search query",
+                    "description": "Worker that searches for information on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "upcoming_movies",
+                    "name": "UpcomingMovies",
+                    "label": "UpcomingMovies",
+                    "input": "Region code. For example: US",
+                    "description": "Worker that retrieves upcoming movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "week_top_10",
+                    "name": "WeekTop10",
+                    "label": "WeekTop10",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "whats_streaming",
+                    "name": "WhatsStreaming",
+                    "label": "WhatsStreaming",
+                    "input": "query",
+                    "description": "Worker that retrieves information about what's streaming on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_movies",
+                    "name": "Top100Movies",
+                    "label": "Top100Movies",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_series",
+                    "name": "Top100Series",
+                    "label": "Top100Series",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 series from IMDb.",
+                    "type": "entertainment"
+                }
+            ],
+            "edges": []
+        },
+        "api_kg": {
+            "nodes": [
+                {
+                    "id": "fan_favorites",
+                    "name": "FanFavorites",
+                    "label": "FanFavorites",
+                    "input": "query",
+                    "description": "Worker that retrieves fan favorite movies or series from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "search_imdb",
+                    "name": "SearchIMDB",
+                    "label": "SearchIMDB",
+                    "input": "search query",
+                    "description": "Worker that searches for information on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "upcoming_movies",
+                    "name": "UpcomingMovies",
+                    "label": "UpcomingMovies",
+                    "input": "Region code. For example: US",
+                    "description": "Worker that retrieves upcoming movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "week_top_10",
+                    "name": "WeekTop10",
+                    "label": "WeekTop10",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "whats_streaming",
+                    "name": "WhatsStreaming",
+                    "label": "WhatsStreaming",
+                    "input": "query",
+                    "description": "Worker that retrieves information about what's streaming on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_movies",
+                    "name": "Top100Movies",
+                    "label": "Top100Movies",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_series",
+                    "name": "Top100Series",
+                    "label": "Top100Series",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 series from IMDb.",
+                    "type": "entertainment"
+                }
+            ],
+            "edges": [
+                {
+                    "source": "search_flights",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
+                {
+                    "source": "weather_forecast_24h",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_forecast_3d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_rain_minute",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_forecast_7d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "sunrise_sunset",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "get_currency",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "get_exchange_rates",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "location_to_lat_lon",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flight_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_flights",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_hotel_destination",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "search_hotels",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "weather_forecast_24h",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_3d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_7d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_rain_minute",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "search_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_search",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "google_news_business",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_entertainment",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_latest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_science",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_search",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_sport",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_suggest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_technology",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_world",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "linkedin_get_company_by_url",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_get_personal_profile",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_search_jobs",
+                    "label": "related_to",
+                    "target": "job"
+                }
+            ]
+        },
+        "final_results": "以下是本周排名前10的电影：\n\n1. **The Boys** - 评分：8.7，于2019年7月26日在美国上映，网络平台播出。\n2. **House of the Dragon** - 评分：8.4，于2022年8月21日在美国首播。\n3. **The Bear** - 评分：8.6，于2022年6月23日在美国上线，网络平台播出。\n4. **Inside Out 2** - 评分：7.9，计划于2024年6月14日在美国上映。\n5. **The Acolyte** - 评分：3.5，预计2024年6月4日在美国通过网络平台播出。\n6. **Bridgerton** - 评分：7.4，于2020年12月25日在美国首播，网络平台播出。\n7. **Furiosa: A Mad Max Saga** - 评分：7.7，计划于2024年5月24日上映。\n8. **Nosferatu** - 评分未提供，预计2024年12月25日在美国上映。\n9. **Presumed Innocent** - 评分：7.6，于2024年6月12日在美国以网络形式播出。\n10. **A Quiet Place: Day One** - 评分：6.8，预计2024年6月28日上映。\n\n请注意，部分电影如《Inside Out 2》、《The Acolyte》、《Furiosa: A Mad Max Saga》、《Nosferatu》、《Presumed Innocent》和《A Quiet Place: Day One》尚未上映。"
+    },
+    "帮我在imdb搜一下uphoria": {
+        "task": "帮我在imdb搜一下uphoria",
+        "plan_string": "Plan: Use the SearchIMDB tool to search for the term \"uphoria\" on IMDb.\n#E1 = SearchIMDB[uphoria]",
+        "steps": [
+            [
+                "Use the SearchIMDB tool to search for the term \"uphoria\" on IMDb.",
+                "#E1",
+                "SearchIMDB",
+                "uphoria"
+            ]
+        ],
+        "api_recommendations": {
+            "nodes": [
+                {
+                    "id": "fan_favorites",
+                    "name": "FanFavorites",
+                    "label": "FanFavorites",
+                    "input": "query",
+                    "description": "Worker that retrieves fan favorite movies or series from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "search_imdb",
+                    "name": "SearchIMDB",
+                    "label": "SearchIMDB",
+                    "input": "search query",
+                    "description": "Worker that searches for information on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "upcoming_movies",
+                    "name": "UpcomingMovies",
+                    "label": "UpcomingMovies",
+                    "input": "Region code. For example: US",
+                    "description": "Worker that retrieves upcoming movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "week_top_10",
+                    "name": "WeekTop10",
+                    "label": "WeekTop10",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "whats_streaming",
+                    "name": "WhatsStreaming",
+                    "label": "WhatsStreaming",
+                    "input": "query",
+                    "description": "Worker that retrieves information about what's streaming on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_movies",
+                    "name": "Top100Movies",
+                    "label": "Top100Movies",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_series",
+                    "name": "Top100Series",
+                    "label": "Top100Series",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 series from IMDb.",
+                    "type": "entertainment"
+                }
+            ],
+            "edges": []
+        },
+        "api_kg": {
+            "nodes": [
+                {
+                    "id": "fan_favorites",
+                    "name": "FanFavorites",
+                    "label": "FanFavorites",
+                    "input": "query",
+                    "description": "Worker that retrieves fan favorite movies or series from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "search_imdb",
+                    "name": "SearchIMDB",
+                    "label": "SearchIMDB",
+                    "input": "search query",
+                    "description": "Worker that searches for information on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "upcoming_movies",
+                    "name": "UpcomingMovies",
+                    "label": "UpcomingMovies",
+                    "input": "Region code. For example: US",
+                    "description": "Worker that retrieves upcoming movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "week_top_10",
+                    "name": "WeekTop10",
+                    "label": "WeekTop10",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 10 movies or series of the week from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "whats_streaming",
+                    "name": "WhatsStreaming",
+                    "label": "WhatsStreaming",
+                    "input": "query",
+                    "description": "Worker that retrieves information about what's streaming on IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_movies",
+                    "name": "Top100Movies",
+                    "label": "Top100Movies",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 movies from IMDb.",
+                    "type": "entertainment"
+                },
+                {
+                    "id": "top_100_series",
+                    "name": "Top100Series",
+                    "label": "Top100Series",
+                    "input": "query",
+                    "description": "Worker that retrieves the top 100 series from IMDb.",
+                    "type": "entertainment"
+                }
+            ],
+            "edges": [
+                {
+                    "source": "search_flights",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "parameter_dependency",
+                    "target": "search_flight_location"
+                },
+                {
+                    "source": "weather_forecast_24h",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_forecast_3d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_rain_minute",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "weather_forecast_7d",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "sunrise_sunset",
+                    "label": "parameter_dependency",
+                    "target": "search_location"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "parameter_dependency",
+                    "target": "amazon_product_asins"
+                },
+                {
+                    "source": "get_currency",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "get_exchange_rates",
+                    "label": "related_to",
+                    "target": "currency"
+                },
+                {
+                    "source": "location_to_lat_lon",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flight_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "search_flights_min_price",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_flights",
+                    "label": "related_to",
+                    "target": "flight"
+                },
+                {
+                    "source": "search_hotel_destination",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "search_hotels",
+                    "label": "related_to",
+                    "target": "hotel"
+                },
+                {
+                    "source": "weather_forecast_24h",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_3d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_forecast_7d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_index_1d",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "weather_rain_minute",
+                    "label": "related_to",
+                    "target": "weather"
+                },
+                {
+                    "source": "search_location",
+                    "label": "related_to",
+                    "target": "location"
+                },
+                {
+                    "source": "amazon_best_sellers",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_by_category",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_details",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_reviews",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "amazon_product_search",
+                    "label": "related_to",
+                    "target": "product"
+                },
+                {
+                    "source": "google_news_business",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_entertainment",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_latest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_science",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_search",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_sport",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_suggest",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_technology",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "google_news_world",
+                    "label": "related_to",
+                    "target": "news"
+                },
+                {
+                    "source": "linkedin_get_company_by_url",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_get_personal_profile",
+                    "label": "related_to",
+                    "target": "profile"
+                },
+                {
+                    "source": "linkedin_search_jobs",
+                    "label": "related_to",
+                    "target": "job"
+                }
+            ]
+        },
+        "final_results": "\"Euphoria\" is a title associated with multiple entries on IMDb. Here are some details about each:\n\n- **TV Series (2019)**: Starring Zendaya and Hunter Schafer, this is a more recent TV series.\n\n- **Movie (2017)**: This film features Alicia Vikander and Eva Green in the lead roles.\n\n- **TV Series (2012)**: An earlier TV series with Roni Dalumi and Dekel Adin as stars.\n\n- **Movie (2022)**: A movie from 2022 starring Giancarlo Esposito and Asa Ali.\n\n- **Movie (2018)**: Yet another film, released in 2018, starring Riccardo Scamarcio and Valerio Mastandrea.\n\nPlease specify which one you're interested in for more information."
     }
 }
