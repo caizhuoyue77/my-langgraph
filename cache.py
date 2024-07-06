@@ -7,7 +7,7 @@ CACHE_FILE = "cache.json"
 
 def read_cache():
     if os.path.exists(CACHE_FILE):
-        with open(CACHE_FILE, "r") as f:
+        with open(CACHE_FILE, "r", encoding="utf-8") as f:
             try:
                 return json.load(f)
             except json.JSONDecodeError:
@@ -16,20 +16,18 @@ def read_cache():
 
 
 def write_cache(data):
-    with open(CACHE_FILE, "w") as f:
-        json.dump(data, f, ensure_ascii=False)
+    with open(CACHE_FILE, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=4)
 
 
-def convert_key_to_tuple(key):
-    # Convert key to tuple if it's not already hashable
-    if isinstance(key, list):
-        return tuple(key)
-    return key
+def convert_key_to_str(key):
+    # 将键转换为字符串，确保兼容性
+    return str(key)
 
 
 def search_cache(query):
     cache = read_cache()
-    key = convert_key_to_tuple(query)
+    key = convert_key_to_str(query)
     if key in cache:
         logger.debug("Cache命中")
         return cache[key]
@@ -39,6 +37,6 @@ def search_cache(query):
 
 def add_to_cache(query, result):
     cache = read_cache()
-    key = convert_key_to_tuple(query)
+    key = convert_key_to_str(query)
     cache[key] = result
     write_cache(cache)

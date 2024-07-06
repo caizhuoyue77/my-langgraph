@@ -130,7 +130,7 @@ if "title" in params and params["title"] != st.session_state.get("title", "é»˜è®
         data = response.json()
         msg = data["response"]
 
-        if developer_mode_2 == True:
+        if not developer_mode_2:
             msg = data["rewoo_state"]["final_results"]
         else:
             msg = data["response"]

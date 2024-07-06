@@ -82,7 +82,18 @@ def rewrite_task(task: str):
 
 def get_plan(state: ReWOO):
     """生成任务计划。"""
+
     task = state["task"]
+    print("你爷爷个腿")
+    print(task)
+
+    cached_state = search_cache(task)
+    if cached_state:
+        return {
+            "steps": cached_state["steps"],
+            "plan_string": cached_state["plan_string"],
+        }, []
+
     types = get_types(task)
 
     tools = get_tools_by_types(types)["tools"]
@@ -162,14 +173,9 @@ def _route(state):
 
 def rewoo_as_func(task: str, developer_mode=True):
     """rewoo的编排内容"""
-    from_cache = search_cache(task)
-    if from_cache is not None:
-        rewoo_state = search_cache(task)
-        return {"response": "", "rewoo_state": rewoo_state, "api_recommendation": []}
-
     logger.debug("原任务:%s", task)
-    task = rewrite_task(task)
-    logger.debug("新任务:%s", task)
+    # task = rewrite_task(task)
+    # logger.debug("新任务:%s", task)
 
     rewoo_state = ReWOO(task=task)
 
@@ -204,6 +210,9 @@ def rewoo_as_func(task: str, developer_mode=True):
     )
 
     if developer_mode == False:
+        # rewoo_state["final_results"] = str(rewoo_state)
+        # execute_plan(rewoo_state)
+        # rewoo_state["final_results"] = str(rewoo_state)
         rewoo_state["final_results"] = execute_plan(rewoo_state)["response"]
 
     api_response = {"response": response, "rewoo_state": rewoo_state}
@@ -218,7 +227,7 @@ def get_ready_plan(state: ReWOO):
 
 def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     """执行编排好的计划"""
-    add_to_cache(state["task"], state)
+
     length = len(state["steps"])
     logger.info(f"计划的步骤数目是：{length}")
 
@@ -266,6 +275,13 @@ def execute_plan(state: ReWOO = ReWOO(task="帮我查询北京的天气")):
     for s in app.stream(state):
         logger.debug(f"Step {i}: {s}")
 
+    state["final_results"] = str(s["solve"]["result"])
+    try:
+        add_to_cache(state["task"], state)
+    except Exception as e:
+        logger.error(f"添加到缓存失败：{e}")
+
+    # response = str(state["task"])
     response = f"**API调用结果:**\n\n{s['solve']['result']}"
     return {"response": response}
 
