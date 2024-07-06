@@ -6,8 +6,13 @@
    1. 也可以用uvicorn api:app --reload --host 0.0.0.0 --port 8000
 3. streamlit run chatbot.py（把前端开起来）
 
-## 701待办
-1. 
+## 706待办
+1. 【重要】跑通开发者模式和傻瓜模式
+2. 【重要】跑通从cache面板=》调用api的流程
+3. 重构：修改api的存储方式（api.json）的存储方式
+4. 功能：在api显示页面显示api.json的内容
+5. 重构：修改api的管理方式（调用方式），不要一个api一个python文件了。
+6. 功能：实现动态添加、测试api，然后把api的信息存储到api.json里面
 
 ## 周进展
 1. ~~添加一个rewriter，改写每次的请求，变为更加正式的分点任务。~~

@@ -1,0 +1,33 @@
+[
+    {
+        "endpoint": "https://api.example.com/data",
+        "params": [
+            {
+                "name": "param1",
+                "type": "string",
+                "example": "example1"
+            },
+            {
+                "name": "param2",
+                "type": "int",
+                "example": 123
+            }
+        ],
+        "api_key": "your_api_key_1",
+        "added_time": "2023-07-01T12:00:00Z",
+        "status": "active"
+    },
+    {
+        "endpoint": "https://api.example.com/info",
+        "params": [
+            {
+                "name": "query",
+                "type": "string",
+                "example": "search_term"
+            }
+        ],
+        "api_key": "your_api_key_2",
+        "added_time": "2023-07-02T14:30:00Z",
+        "status": "inactive"
+    }
+]
