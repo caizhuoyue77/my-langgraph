@@ -122,7 +122,7 @@ params = st.experimental_get_query_params()
 if "title" in params and params["title"] != st.session_state.get("title", "默认标题"):
     st.session_state["title"] = params["title"]
     title = st.session_state["title"]
-    st.title(params["title"])
+    # st.title(params["title"])
 
     url_chat_2 = "http://localhost:8000/get_plan"
     developer_mode_2 = False
