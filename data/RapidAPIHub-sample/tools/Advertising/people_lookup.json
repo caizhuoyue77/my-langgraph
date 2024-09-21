@@ -1,0 +1,39 @@
+{
+    "product_id": "api_e25f4b6c-1a33-400e-86e5-358473794dc2",
+    "tool_description": "People Lookup API helps you search for and find phone, email, linkedin and more information for people in the USA",
+    "home_url": "https://rapidapi.com/pguardiario/api/people-lookup1/",
+    "name": "People Lookup",
+    "title": "People Lookup",
+    "pricing": "FREEMIUM",
+    "tool_name": "People Lookup",
+    "score": null,
+    "host": "people-lookup1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "lookup",
+            "url": "https://people-lookup1.p.rapidapi.com/lookup",
+            "description": "Lookup people by name and US state (optional)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Warren Buffett"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "State",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "NE"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://people-lookup1.p.rapidapi.com/lookup\"\nquerystring = {\"name\": \"Warren Buffett\", \"State\": \"NE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"people-lookup1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://people-lookup1.p.rapidapi.com/lookup\"\nquerystring = {\"name\": \"Warren Buffett\", \"State\": \"NE\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"people-lookup1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "people_lookup"
+}

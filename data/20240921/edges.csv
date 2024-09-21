@@ -1,0 +1,207 @@
+source,target,relationship
+myPlayvv,API,provides
+API,music,related to
+L-yrics API,Main endpoint,provides
+Main endpoint,song,requires
+Main endpoint,artist,requires
+Main endpoint,querystring,uses
+Main endpoint,headers,uses
+Main endpoint,response,creates
+SpeechNoted API,Get Voices,provides
+Get Voices,Voice,has
+Billboard API,Bolivia Songs,provides
+Billboard API,Slovakia Songs,provides
+Rojmusic,weather,provides
+melodyn,weather,查询天气的API与weather节点之间的关系
+Get songs with ALL metadata and stats (play counts),weather,related
+Get Top 50 indie songs,weather,related
+Search indie songs by filters,weather,related
+Billboard-API,New Zealand Songs,provides
+Billboard-API,BILLBOARD JAPAN HOT 100,provides
+Billboard-API,weather,provides
+getAllQuotes,weather,provides
+getStationByCountry,weather,provides
+online-music,music,provides
+music,song,includes
+music,retro-music,includes
+song,lyrics,comprises
+retro-music,Russian-music,related to
+Russian-music,chanson,shares elements with
+online-music,online-platform,accesses content through
+Steam Market and Store,Retrieve Buy/Sell informations by ID,provides
+Steam Market and Store,Get latest activity by ID,provides
+Steam Market and Store,Get Price History By ID,provides
+Search Coming Soon Games,weather,provides
+Search On Sale Games,weather,provides
+Search,ESports,relates_to
+TournamentPlaceholderImage,ESports,relates_to
+API,Protocol,uses
+Protocol,Plugin.proto,implemented in
+API,weather,related to
+API,GET,uses method
+requests,GET,dependency
+API,X-RapidAPI-Key,uses
+API,X-RapidAPI-Host,uses
+COD API 2.0,API,provides
+COD API 2.0,Leaderboard,provides
+Season Skill Rating MW 2 Ranked,Endpoint,accesses
+Season Skill Rating MW 2 Ranked,Parameter,requires
+Season Skill Rating MW 2 Ranked,Parameter,optional
+Season Skill Rating MW 2 Ranked,Request,sends
+Season Skill Rating MW 2 Ranked,Response,receives
+Season Skill Rating MW 2 Ranked,URL,has
+WordleAPI,/documentation,has
+WordleAPI,/documentation/environment,has
+/documentation,Security,related to
+/documentation,RapiApiMatch,related to
+/documentation,RapiApiSecurity,related to
+/documentation,Match,related to
+/documentation,HealthCheck,related to
+/documentation,Documentation,related to
+chess puzzles,advanced,provides
+chess puzzles,range,provides
+Tournaments,weather,provides information on scheduled tournaments
+Challenges,gaming,provides information on seasonal and weekly challenges
+Esports,sports,provides information on Esports events
+CricketLiveApi,match,provides
+match,CricketLiveApi,belongs to
+Football Highlight,Elhighlights,API connection
+Football Highlight,Ok.RU Emb Link,API connection
+Football Highlight,Youtube Emb Link,API connection
+Get Movie Reviews By Id,Get Movie By ID,related_to
+Get Movie Images By ID,Get Movie By ID,related_to
+Get Movie ID By Title,Get Movie By Title,related_to
+Get Movie Reviews By Id,weather,related_to
+Get Movie Images By ID,weather,related_to
+Get Movie ID By Title,weather,related_to
+filmarks,weather,provides weather information related to popular titles
+Get All Memes,Programming Memes Reddit,API used by tool
+Programming Memes Reddit,Get All Memes,Tool utilizing API
+Get All Memes,weather,Could be used to share weather-related memes
+weather,Get All Memes,Weather-related memes might be present
+Get Character by ID,Throne of Glass Characters,provides
+Get all characters,Throne of Glass Characters,provides
+New Girl API,Get extra character details,provides
+New Girl API,Get show facts & rotten tomato scores,provides
+New Girl API,Get character by id,provides
+New Girl API,Get recurring characters,provides
+PoetryDB,title,provides
+PoetryDB,/title/{title},provides
+PoetryDB,linecount,provides
+PoetryDB,author,provides
+User by email,weather,related to
+Video,Tiktok Video Downloader,provides
+Weather,Video,related to
+Statistics,latest-outcome,provides
+Statistics,history,provides
+Statistics,weather,related to
+Workout Planner,API,provides
+API,Parameters,uses
+CO2RE Discord,Discord App,uses
+CO2RE Discord,API,utilizes
+API,HTTP GET request,sends request using
+API,RapidAPI,accesses via
+API,JSON,formats response as
+Python Requests Library,API,is used by
+Cancer Rates by USA State API,State,has data about
+Get by filter,Cancer Rates by USA State API,accesses
+Get by state,Cancer Rates by USA State API,accesses
+planetaryoverview,weather,provides planetary information related to weather
+horoscope,planetaryoverview,horoscope information may be influenced by planetary positions
+Appointment System API,Get Appointments,provides
+Appointment System API,Appointment Time List,provides
+Pregnancy Weight Recommendation API,Pregnancy Calculator API,provides
+Fertility Window API,Pregnancy Calculator API,provides
+Ind Nutrient API,View Food Item by Id,provides detailed information about specific food items
+Ind Nutrient API,View All Food Items,provides a comprehensive list of all available food items
+ExerciseDB,List of bodyparts,provides
+ExerciseDB,List of target muscles,provides
+ExerciseDB,List of equipment,provides
+List of target muscles,List of bodyparts,contains
+List of equipment,List of bodyparts,contains
+weather,ExerciseDB,integrates with
+Suggestic,Create User,provides
+Suggestic,Remove a Meal Plan,provides
+Movie and TV shows Quotes API,GET quotes by actor,provides
+Movie and TV shows Quotes API,GET a random quote,provides
+Movie and TV shows Quotes API,GET quote by movie or TV show name,provides
+GET quote by movie or TV show name,weather,related to
+Search Torrents,Torrents,provides
+Torrents,Movies,contains
+Abir82 Bollywood Recommendations,Fetch Movies,provides
+Fetch Movies,Genre,based on
+Fetch Movies,Year,based on
+API,weather,provides weather data
+Movies Tv Shows Database,TV Series,provides
+TV Series,Get TV Series By Year,provides
+TV Series,Get TV Schedule By Country,provides
+TV Series,"GET TV Series Episodes by Series ID, Season Number",provides
+Playphrase.me,Get Video,provides
+Get Video,Weather,related to
+searchInventory,weather,provides
+get user,weather,related to
+underscore test,weather,查询天气
+rapid API,weather,提供天气查询 API
+versions-paid,weather,provides
+versions-paid,v1,has version
+ads,RapidAPI,integration
+RapidAPI,requests,HTTP requests
+Facebook Ad,Facebook Ad Copy,related_to
+Facebook Ad,weather,related_to
+App downloader,Revdl,provides
+search,Revdl,provides
+coupons,all,provides
+coupons,getallcoupon,provides
+Abstract IP geolocation API,Geolocation from an IP Address,provides
+Fetch Async Content,Google Ads,provides content related to Google Ads
+Peak Conditions,search mountain peak by name,provides
+search mountain peak by name,get daily report by mountain id,related to
+search mountain peak by name,get extended report by mountain id,related to
+GetWeatherForecast,OpenWeatherMap,sources data from
+GetWeatherForecast,Temperature,provides information on
+GetWeatherForecast,Humidity,provides information on
+GetWeatherForecast,WindSpeed,provides information on
+GetWeatherForecast,Precipitation,provides information on
+GetWeatherForecast,ShortTermForecast,provides
+GetWeatherForecast,LongTermForecast,provides
+GetWeatherForecast,HourlyUpdates,provides
+GetWeatherForecast,TravelSector,beneficial for
+GetWeatherForecast,AgricultureSector,beneficial for
+GetWeatherForecast,EventPlanningSector,beneficial for
+Visual Crossing Weather,Weather forecast data,provides
+Visual Crossing Weather,Historical weather record,provides
+air quality,weather,related to
+Plant Hardiness Zone API,USDA Plant Hardiness Zone,provides
+Plant Hardiness Zone API,ZIP code,uses
+API,endpoint,provides
+MagicMirror,API,utilizes
+Search Jobs,Weather,related_to
+Search Jobs,Remote Jobs,related_to
+JobSearch API,Job Search,provides
+Job Search,SearchQuery,requires
+Job Search,PageSize,optional
+Job Search,PageNumber,optional
+Job Search,response,returns
+AI Resume Generator,Generate Document: Cover Letter,generate
+AI Resume Generator,Generate Document: Resume,generate
+TravelPD,B2B Travel portal development with API integration,offers
+B2B Travel portal development with API integration,RapidAPI,API integration
+B2B Travel portal development with API integration,requests,HTTP request
+Search Cars Same DropOff,Rental Cars,related_to
+Rental Availability,Vacation Rentals,related_to
+World cities by homicide rate API,Get by filter,provides
+World cities by homicide rate API,Get by homicide rate,provides
+Get_Ticket_Information,Manage_Booking,provides
+Get_Ticket_Information,Flights,related to
+Turkey Public Holidays,API,provides
+Flight Booking API,Travel Agents,utilizes
+Flight Booking API,Tour Operators,utilizes
+Flight Booking API,Travel Companies,utilizes
+PNR Status,weather,provides
+Live Train Running Status,weather,provides
+Hotel Details,Hotel,provides
+Hotel Info,Hotel,provides
+Regions Search,Hotel,provides
+Travel Blog API,Weather API,provides access to
+Travel Blog API,Hotels API,enables searching of
+Biggest Cities API,weather,provides

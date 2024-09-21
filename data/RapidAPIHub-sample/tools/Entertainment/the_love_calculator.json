@@ -1,0 +1,46 @@
+{
+    "product_id": "api_8ef2fa4f-9a17-4c15-b0b9-699fbbbb18c9",
+    "tool_description": "A fun api that shows the compatibility of your crush!",
+    "home_url": "https://rapidapi.com/marchingtonoliver/api/the-love-calculator/",
+    "name": "The Love Calculator",
+    "title": "The Love Calculator",
+    "pricing": "FREE",
+    "tool_name": "The Love Calculator",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 546,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "the-love-calculator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Match",
+            "url": "https://the-love-calculator.p.rapidapi.com/love-calculator",
+            "description": "The main endpoint to get your match percentage.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "fname",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "oliver m"
+                },
+                {
+                    "name": "sname",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "chloe p"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://the-love-calculator.p.rapidapi.com/love-calculator\"\nquerystring = {\"fname\": \"oliver m\", \"sname\": \"chloe p\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"the-love-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://the-love-calculator.p.rapidapi.com/love-calculator\"\nquerystring = {\"fname\": \"oliver m\", \"sname\": \"chloe p\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"the-love-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "the_love_calculator"
+}

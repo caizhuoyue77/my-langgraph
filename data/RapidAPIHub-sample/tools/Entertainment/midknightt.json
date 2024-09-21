@@ -1,0 +1,31 @@
+{
+    "product_id": "api_d3521cbe-18f4-4e5c-bb4a-0f66f4114abc",
+    "tool_description": "Personal Use Key",
+    "home_url": "https://rapidapi.com/Midknightt/api/midknightt/",
+    "name": "Midknightt",
+    "title": "Midknightt",
+    "pricing": "FREE",
+    "tool_name": "Midknightt",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 82,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "midknightt.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Midknightt",
+            "url": "https://midknightt.p.rapidapi.com/",
+            "description": "Receives data",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://midknightt.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midknightt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://midknightt.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"midknightt.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "midknightt"
+}

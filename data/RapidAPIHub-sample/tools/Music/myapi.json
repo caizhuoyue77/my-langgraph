@@ -1,0 +1,25 @@
+{
+    "product_id": "api_6a08e7b1-0d79-42d4-9dcf-b34722cf2ae2",
+    "tool_description": "testing api",
+    "home_url": "https://rapidapi.com/channvuthy.plan.b/api/myapi32/",
+    "name": "MyAPI",
+    "title": "MyAPI",
+    "pricing": "FREE",
+    "tool_name": "MyAPI",
+    "score": null,
+    "host": "myapi32.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "apitest",
+            "url": "https://myapi32.p.rapidapi.comtest",
+            "description": "aaaaaaaaaaaaaaaa",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://myapi32.p.rapidapi.comtest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"myapi32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://myapi32.p.rapidapi.comtest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"myapi32.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "myapi"
+}

@@ -1,0 +1,33 @@
+{
+    "product_id": "api_17df87d4-05f1-4b19-9001-2de8b3da2336",
+    "tool_description": "Scraping various programming subbreddits everyday to deliver best programming memes out there.",
+    "home_url": "https://rapidapi.com/60vibhavsurve/api/programming-memes-reddit/",
+    "name": "Programming Memes Reddit",
+    "title": "Programming Memes Reddit",
+    "pricing": "FREE",
+    "tool_name": "Programming Memes Reddit",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 127271,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "programming-memes-reddit.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get All Memes",
+            "url": "https://programming-memes-reddit.p.rapidapi.com/",
+            "description": "Gets all memes",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://programming-memes-reddit.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"programming-memes-reddit.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://programming-memes-reddit.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"programming-memes-reddit.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "programming_memes_reddit"
+}

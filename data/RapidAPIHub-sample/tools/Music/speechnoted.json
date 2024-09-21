@@ -1,0 +1,25 @@
+{
+    "product_id": "api_4dc7b514-c5cc-4d5c-8860-1f942f67137a",
+    "tool_description": "SpeechNoted API - Text to Speech",
+    "home_url": "https://rapidapi.com/SpeechNoted/api/speechnoted/",
+    "name": "SpeechNoted",
+    "title": "SpeechNoted",
+    "pricing": "FREEMIUM",
+    "tool_name": "SpeechNoted",
+    "score": null,
+    "host": "speechnoted.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Voices",
+            "url": "https://speechnoted.p.rapidapi.com/?action=getvoices",
+            "description": "Get available voice",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://speechnoted.p.rapidapi.com/?action=getvoices\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"speechnoted.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://speechnoted.p.rapidapi.com/?action=getvoices\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"speechnoted.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "speechnoted"
+}

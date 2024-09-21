@@ -1,0 +1,550 @@
+{
+    "product_id": "api_677339e0-c7b1-4eff-9ff9-90a6c78e374d",
+    "tool_description": "This is my test API",
+    "home_url": "https://rapidapi.com/ansakoy-xXUtaiVxf/api/testing-options/",
+    "name": "Testing options",
+    "title": "Testing options",
+    "pricing": "FREE",
+    "tool_name": "Testing options",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 845,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.3,
+        "__typename": "Score"
+    },
+    "host": "testing-options.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "opera_list",
+            "url": "https://testing-options.p.rapidapi.com/opera/",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "genre__name_hy__in",
+                    "type": "STRING",
+                    "description": "Multiple values may be separated by commas.",
+                    "default": ""
+                },
+                {
+                    "name": "genre__name_ru__in",
+                    "type": "STRING",
+                    "description": "Multiple values may be separated by commas.",
+                    "default": ""
+                },
+                {
+                    "name": "genre__name_en__in",
+                    "type": "STRING",
+                    "description": "Multiple values may be separated by commas.",
+                    "default": ""
+                },
+                {
+                    "name": "year__in",
+                    "type": "STRING",
+                    "description": "Multiple values may be separated by commas.",
+                    "default": ""
+                },
+                {
+                    "name": "published_at__gt",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "catalogue_id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "genre__name_en",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "published_at",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "published_at__gte",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "genre__name_hy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "catalogue_id__in",
+                    "type": "STRING",
+                    "description": "Multiple values may be separated by commas.",
+                    "default": ""
+                },
+                {
+                    "name": "genre__name_ru",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://testing-options.p.rapidapi.com/opera/\"\nquerystring = {\"genre__name_hy__in\": \"\", \"genre__name_ru__in\": \"\", \"genre__name_en__in\": \"\", \"year__in\": \"\", \"published_at__gt\": \"\", \"catalogue_id\": \"\", \"genre__name_en\": \"\", \"published_at\": \"\", \"published_at__gte\": \"\", \"genre__name_hy\": \"\", \"year\": \"\", \"catalogue_id__in\": \"\", \"genre__name_ru\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing-options.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://testing-options.p.rapidapi.com/opera/\"\nquerystring = {\"genre__name_hy__in\": \"\", \"genre__name_ru__in\": \"\", \"genre__name_en__in\": \"\", \"year__in\": \"\", \"published_at__gt\": \"\", \"catalogue_id\": \"\", \"genre__name_en\": \"\", \"published_at\": \"\", \"published_at__gte\": \"\", \"genre__name_hy\": \"\", \"year\": \"\", \"catalogue_id__in\": \"\", \"genre__name_ru\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing-options.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "required": [
+                        "genre",
+                        "libretto_by",
+                        "lyrics_by",
+                        "performances",
+                        "catalogue_id",
+                        "title_ru"
+                    ],
+                    "type": "object",
+                    "properties": {
+                        "genre": {
+                            "required": [
+                                "name_ru",
+                                "name_hy",
+                                "name_en"
+                            ],
+                            "type": "object",
+                            "properties": {
+                                "name_ru": {
+                                    "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0436\u0430\u043d\u0440\u0430 \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                    "type": "string",
+                                    "maxLength": 250,
+                                    "minLength": 1
+                                },
+                                "name_hy": {
+                                    "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0436\u0430\u043d\u0440\u0430 \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                    "type": "string",
+                                    "maxLength": 250,
+                                    "minLength": 1
+                                },
+                                "name_en": {
+                                    "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0436\u0430\u043d\u0440\u0430 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                    "type": "string",
+                                    "maxLength": 250,
+                                    "minLength": 1
+                                }
+                            }
+                        },
+                        "libretto_by": {
+                            "type": "array",
+                            "items": {
+                                "required": [
+                                    "name_ru"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name_ru": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                        "type": "string",
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    },
+                                    "name_hy": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    },
+                                    "name_en": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    }
+                                }
+                            }
+                        },
+                        "lyrics_by": {
+                            "type": "array",
+                            "items": {
+                                "required": [
+                                    "name_ru"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "name_ru": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                        "type": "string",
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    },
+                                    "name_hy": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    },
+                                    "name_en": {
+                                        "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 250,
+                                        "minLength": 1
+                                    }
+                                }
+                            }
+                        },
+                        "performances": {
+                            "type": "array",
+                            "items": {
+                                "required": [
+                                    "conductor",
+                                    "band",
+                                    "performers"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "conductor": {
+                                        "required": [
+                                            "name_ru"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "name_ru": {
+                                                "title": "\u0418\u043c\u044f \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                                "type": "string",
+                                                "maxLength": 250,
+                                                "minLength": 1
+                                            },
+                                            "name_hy": {
+                                                "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 250,
+                                                "minLength": 1
+                                            },
+                                            "name_en": {
+                                                "title": "\u0418\u043c\u044f \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 250,
+                                                "minLength": 1
+                                            }
+                                        }
+                                    },
+                                    "band": {
+                                        "type": "object",
+                                        "properties": {
+                                            "url": {
+                                                "title": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0430\u0439\u0442 \u043e\u0440\u043a\u0435\u0441\u0442\u0440\u0430",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 1000
+                                            },
+                                            "name_ru": {
+                                                "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043a\u043e\u043b\u043b\u0435\u043a\u0442\u0438\u0432\u0430 \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 100,
+                                                "minLength": 1
+                                            },
+                                            "name_hy": {
+                                                "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043a\u043e\u043b\u043b\u0435\u043a\u0442\u0438\u0432\u0430 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 100,
+                                                "minLength": 1
+                                            },
+                                            "name_en": {
+                                                "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0438\u0442\u0435\u043b\u044c\u0441\u043a\u043e\u0433\u043e \u043a\u043e\u043b\u043b\u0435\u043a\u0442\u0438\u0432\u0430 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                                "type": [
+                                                    "string",
+                                                    "null"
+                                                ],
+                                                "maxLength": 100,
+                                                "minLength": 1
+                                            }
+                                        }
+                                    },
+                                    "performers": {
+                                        "type": "array",
+                                        "items": {
+                                            "required": [
+                                                "performer",
+                                                "role_ru",
+                                                "role_en"
+                                            ],
+                                            "type": "object",
+                                            "properties": {
+                                                "performer": {
+                                                    "required": [
+                                                        "name_ru"
+                                                    ],
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "name_ru": {
+                                                            "description": "**Omitted**"
+                                                        },
+                                                        "name_hy": {
+                                                            "description": "**Omitted**"
+                                                        },
+                                                        "name_en": {
+                                                            "description": "**Omitted**"
+                                                        }
+                                                    }
+                                                },
+                                                "role_ru": {
+                                                    "title": "\u0420\u043e\u043b\u044c \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                                    "type": "string",
+                                                    "maxLength": 250,
+                                                    "minLength": 1
+                                                },
+                                                "role_hy": {
+                                                    "title": "\u0420\u043e\u043b\u044c \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                                    "type": "string",
+                                                    "maxLength": 250
+                                                },
+                                                "role_en": {
+                                                    "title": "\u0420\u043e\u043b\u044c \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                                    "type": "string",
+                                                    "maxLength": 250,
+                                                    "minLength": 1
+                                                },
+                                                "performance": {
+                                                    "title": "\u0418\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435",
+                                                    "type": [
+                                                        "integer",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "is_main": {
+                                        "title": "\u041f\u0440\u0438\u0437\u043d\u0430\u043a \u0442\u043e\u0433\u043e, \u0447\u0442\u043e \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0432\u044b\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u0441\u043f\u0438\u0441\u043a\u0435 \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0430",
+                                        "type": "boolean"
+                                    },
+                                    "is_full": {
+                                        "title": "\u041f\u0440\u0438\u0437\u043d\u0430\u043a \u0442\u043e\u0433\u043e, \u0447\u0442\u043e \u044d\u0442\u043e \u043f\u043e\u043b\u043d\u0430\u044f \u0437\u0430\u043f\u0438\u0441\u044c \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f",
+                                        "type": "boolean"
+                                    },
+                                    "is_demo": {
+                                        "title": "\u041f\u0440\u0438\u0437\u043d\u0430\u043a \u0442\u043e\u0433\u043e, \u0447\u0442\u043e \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0432\u044b\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0432 \u043f\u043b\u0435\u0439\u043b\u0438\u0441\u0442\u0435 \u043d\u0430 \u0433\u043b\u0430\u0432\u043d\u043e\u0439",
+                                        "type": "boolean"
+                                    },
+                                    "part_number": {
+                                        "title": "\u041f\u043e\u0440\u044f\u0434\u043a\u043e\u0432\u044b\u0439 \u043d\u043e\u043c\u0435\u0440 \u0447\u0430\u0441\u0442\u0438",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ],
+                                        "maximum": 2147483647,
+                                        "minimum": -2147483648
+                                    },
+                                    "name_ru": {
+                                        "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 500
+                                    },
+                                    "name_hy": {
+                                        "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 500
+                                    },
+                                    "name_en": {
+                                        "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 500
+                                    },
+                                    "youtube_code": {
+                                        "title": "\u041a\u043e\u0434 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f \u043d\u0430 YouTube",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "maxLength": 100
+                                    },
+                                    "local_audio_file": {
+                                        "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0444\u0430\u0439\u043b\u0430 \u0441 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435\u043c \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "format": "uri"
+                                    },
+                                    "perform_date": {
+                                        "title": "\u0414\u0430\u0442\u0430 \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f",
+                                        "type": [
+                                            "string",
+                                            "null"
+                                        ],
+                                        "format": "date"
+                                    },
+                                    "publish_date": {
+                                        "title": "\u0414\u0430\u0442\u0430 \u0438 \u0432\u0440\u0435\u043c\u044f \u0434\u043e\u0431\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f",
+                                        "type": "string",
+                                        "format": "date-time"
+                                    },
+                                    "machine_performer": {
+                                        "title": "\u0410\u0432\u0442\u043e\u0440 \u0446\u0438\u0444\u0440\u043e\u0432\u043e\u0433\u043e \u043e\u0437\u0432\u0443\u0447\u0438\u0432\u0430\u043d\u0438\u044f",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ]
+                                    },
+                                    "opus": {
+                                        "title": "\u0421\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u0435",
+                                        "type": [
+                                            "integer",
+                                            "null"
+                                        ]
+                                    }
+                                }
+                            }
+                        },
+                        "catalogue_id": {
+                            "title": "\u041d\u043e\u043c\u0435\u0440 \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f \u0432 \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0435",
+                            "type": "string",
+                            "maxLength": 10,
+                            "minLength": 1
+                        },
+                        "published_at": {
+                            "title": "\u0414\u0430\u0442\u0430 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0437\u0430\u043f\u0438\u0441\u0438 \u0432 \u0431\u0430\u0437\u0435",
+                            "type": "string",
+                            "format": "date-time"
+                        },
+                        "title_ru": {
+                            "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                            "type": "string",
+                            "maxLength": 700,
+                            "minLength": 1
+                        },
+                        "title_hy": {
+                            "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 700
+                        },
+                        "title_en": {
+                            "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 700
+                        },
+                        "comment_ru": {
+                            "title": "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u0435 \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 1000
+                        },
+                        "comment_hy": {
+                            "title": "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u0435 \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 1000
+                        },
+                        "comment_en": {
+                            "title": "\u041f\u0440\u0438\u043c\u0435\u0447\u0430\u043d\u0438\u0435 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 1000
+                        },
+                        "description_ru": {
+                            "title": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043f\u043e-\u0440\u0443\u0441\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 10000
+                        },
+                        "description_hy": {
+                            "title": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043f\u043e-\u0430\u0440\u043c\u044f\u043d\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 10000
+                        },
+                        "description_en": {
+                            "title": "\u041e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 \u043f\u043e-\u0430\u043d\u0433\u043b\u0438\u0439\u0441\u043a\u0438",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 10000
+                        },
+                        "year": {
+                            "title": "\u0413\u043e\u0434 \u0441\u043e\u0437\u0434\u0430\u043d\u0438\u044f \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u044f",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "maxLength": 4,
+                            "minLength": 1
+                        },
+                        "date_created": {
+                            "title": "\u0414\u0430\u0442\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u044b \u043d\u0430\u0434 \u0441\u043e\u0447\u0438\u043d\u0435\u043d\u0438\u0435\u043c",
+                            "type": [
+                                "string",
+                                "null"
+                            ],
+                            "format": "date"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "testing_options"
+}

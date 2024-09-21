@@ -1,0 +1,27 @@
+{
+    "product_id": "api_69416f3b-5432-4aec-b36a-8f893764652c",
+    "tool_description": "Sound Share",
+    "home_url": "https://rapidapi.com/audiocloud-audiocloud-default/api/audiocloud/",
+    "name": "AudioCloud",
+    "title": "AudioCloud",
+    "pricing": "FREE",
+    "tool_name": "AudioCloud",
+    "score": null,
+    "host": "audiocloud.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "AudioCloud",
+            "url": "https://audiocloud.p.rapidapi.com/",
+            "description": "Sound",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://audiocloud.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"audiocloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://audiocloud.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"audiocloud.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        }
+    ],
+    "standardized_name": "audiocloud"
+}

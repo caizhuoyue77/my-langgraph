@@ -1,0 +1,53 @@
+{
+    "product_id": "api_59c4bfef-cff6-4998-be29-f47dce6fc598",
+    "tool_description": "Generate catchy captions for social media",
+    "home_url": "https://rapidapi.com/apis-world-apis-world-default/api/social-media-caption/",
+    "name": "Social media caption",
+    "title": "Social media caption",
+    "pricing": "FREEMIUM",
+    "tool_name": "Social media caption",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1017,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "social-media-caption.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Social Media Caption",
+            "url": "https://social-media-caption.p.rapidapi.com/social-caption",
+            "description": "Generate catchy captions for social media",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple"
+                },
+                {
+                    "name": "description",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services."
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://social-media-caption.p.rapidapi.com/social-caption\"\nquerystring = {\"name\": \"Apple\", \"description\": \"Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"social-media-caption.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://social-media-caption.p.rapidapi.com/social-caption\"\nquerystring = {\"name\": \"Apple\", \"description\": \"Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"social-media-caption.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                " Apple is innovating the way we connect through technology.",
+                " We created the world's most innovative products. We also create the future.",
+                " iPhone X is here. #apple",
+                " Apple is where you belong.",
+                " Apple designs and builds the most innovative devices in the world.",
+                " Welcome to the future.",
+                " Bringing technology into your life.",
+                " It's been said that Apple is all about innovation."
+            ]
+        }
+    ],
+    "standardized_name": "social_media_caption"
+}

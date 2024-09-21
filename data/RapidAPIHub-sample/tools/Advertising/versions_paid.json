@@ -1,0 +1,31 @@
+{
+    "product_id": "api_de3dce8a-678e-436c-a880-7304a3bdbfa8",
+    "tool_description": "versions-paid",
+    "home_url": "https://rapidapi.com/michael--1O36NJeg/api/versions-paid/",
+    "name": "versions-paid",
+    "title": "versions-paid",
+    "pricing": "FREEMIUM",
+    "tool_name": "versions-paid",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1144,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.2,
+        "__typename": "Score"
+    },
+    "host": "versions-paid.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "v1",
+            "url": "https://versions-paid.p.rapidapi.com/v1",
+            "description": "v1",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://versions-paid.p.rapidapi.com/v1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"versions-paid.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://versions-paid.p.rapidapi.com/v1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"versions-paid.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "versions_paid"
+}

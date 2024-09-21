@@ -1,0 +1,31 @@
+{
+    "product_id": "api_e96170fb-9a1b-4cad-bdfe-f444fc5c03c1",
+    "tool_description": "top 10 Songs",
+    "home_url": "https://rapidapi.com/isha.malhotra241/api/getsongs/",
+    "name": "getSongs",
+    "title": "getSongs",
+    "pricing": "FREE",
+    "tool_name": "getSongs",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 377,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "getsongs.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get top Songs",
+            "url": "https://getsongs.p.rapidapi.com/getTopSongs",
+            "description": "tujhe dekha toh as of now",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://getsongs.p.rapidapi.com/getTopSongs\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"getsongs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://getsongs.p.rapidapi.com/getTopSongs\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"getsongs.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "getsongs"
+}

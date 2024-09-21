@@ -1,0 +1,39 @@
+{
+    "product_id": "api_134cab9f-7a66-410c-9017-70313f58759e",
+    "tool_description": "ssssssssssssssssss",
+    "home_url": "https://rapidapi.com/haynaasian-1SvzmR-joxP/api/ssssss/",
+    "name": "ssssss",
+    "title": "ssssss",
+    "pricing": "FREE",
+    "tool_name": "ssssss",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 249,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "ssssss.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "s",
+            "url": "https://ssssss.p.rapidapi.com/",
+            "description": "sssssssss",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ssssss.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ssssss.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ssssss.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ssssss.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "code": 404,
+                        "message": "Domain not found",
+                        "detail": "loz.com/?"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "ssssss"
+}

@@ -1,0 +1,106 @@
+{
+    "product_id": "api_73d0709f-5d11-4169-ad10-a7890218e4a5",
+    "tool_description": "Search Games, Editions, Demos on Epic Store",
+    "home_url": "https://rapidapi.com/1yesari1/api/epic-store-games/",
+    "name": "Epic Store Games",
+    "title": "Epic Store Games",
+    "pricing": "FREEMIUM",
+    "tool_name": "Epic Store Games",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 1048,
+        "avgSuccessRate": 97,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "epic-store-games.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Coming Soon Games",
+            "url": "https://epic-store-games.p.rapidapi.com/comingSoon",
+            "description": "Search Coming Soon Games",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "searchWords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Assasin"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "categories",
+                    "type": "ENUM",
+                    "description": "Default: **Games**",
+                    "default": ""
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Default: **us** --- *For the price*",
+                    "default": "us"
+                },
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "Default: **us** --- *For the language*",
+                    "default": "us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://epic-store-games.p.rapidapi.com/comingSoon\"\nquerystring = {\"searchWords\": \"Assasin\", \"categories\": \"\", \"country\": \"us\", \"locale\": \"us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-store-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://epic-store-games.p.rapidapi.com/comingSoon\"\nquerystring = {\"searchWords\": \"Assasin\", \"categories\": \"\", \"country\": \"us\", \"locale\": \"us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-store-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error-index": "1",
+                "status": "No games found",
+                "searchValue": "Assasin"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search On Sale Games",
+            "url": "https://epic-store-games.p.rapidapi.com/onSale",
+            "description": "Search On Sale Games",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "searchWords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Mount"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "Default: **us** --- *For the language*",
+                    "default": "us"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "Default: **us** --- *For the price*",
+                    "default": "us"
+                },
+                {
+                    "name": "categories",
+                    "type": "ENUM",
+                    "description": "Default: **Games**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://epic-store-games.p.rapidapi.com/onSale\"\nquerystring = {\"locale\": \"us\", \"country\": \"us\", \"searchWords\": \"Mount\", \"categories\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-store-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://epic-store-games.p.rapidapi.com/onSale\"\nquerystring = {\"locale\": \"us\", \"country\": \"us\", \"searchWords\": \"Mount\", \"categories\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-store-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error-index": "1",
+                "status": "No games found",
+                "searchValue": "Mount"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "epic_store_games"
+}

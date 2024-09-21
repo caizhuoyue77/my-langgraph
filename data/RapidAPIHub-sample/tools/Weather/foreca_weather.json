@@ -1,0 +1,1565 @@
+{
+    "product_id": "api_d19de4ad-dd2b-4885-b4ed-fed53ecd33c9",
+    "tool_description": "Everything you need to build a weather app",
+    "home_url": "https://rapidapi.com/foreca-ltd-foreca-ltd-default/api/foreca-weather/",
+    "name": "Foreca Weather",
+    "title": "Foreca Weather",
+    "pricing": "FREE",
+    "tool_name": "Foreca Weather",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 152,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "foreca-weather.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Nowcast",
+            "url": "https://foreca-weather.p.rapidapi.com/forecast/15minutely/102643743",
+            "description": "3-hour forecast in 15-minute time steps.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "dataset",
+                    "type": "STRING",
+                    "description": "Variable set",
+                    "default": "full"
+                },
+                {
+                    "name": "windunit",
+                    "type": "STRING",
+                    "description": "Wind speed unit in response.",
+                    "default": "MS"
+                },
+                {
+                    "name": "tz",
+                    "type": "STRING",
+                    "description": "Time zone in response (IANA time zone database names)",
+                    "default": "Europe/London"
+                },
+                {
+                    "name": "tempunit",
+                    "type": "STRING",
+                    "description": "Temperature unit in response",
+                    "default": "C"
+                },
+                {
+                    "name": "alt",
+                    "type": "NUMBER",
+                    "description": "Altitude (meters)",
+                    "default": "0"
+                },
+                {
+                    "name": "periods",
+                    "type": "NUMBER",
+                    "description": "Number of time steps (default 8, maximum 12)",
+                    "default": "8"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/15minutely/102643743\"\nquerystring = {\"dataset\": \"full\", \"windunit\": \"MS\", \"tz\": \"Europe/London\", \"tempunit\": \"C\", \"alt\": \"0\", \"periods\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/15minutely/{location}\"\nquerystring = {\"dataset\": \"full\", \"windunit\": \"MS\", \"tz\": \"Europe/London\", \"tempunit\": \"C\", \"alt\": \"0\", \"periods\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "forecast": [
+                    {
+                        "time": "2023-06-16T20:30+01:00",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 22,
+                        "feelsLikeTemp": 22,
+                        "relHumidity": 56,
+                        "dewPoint": 13,
+                        "windDir": 92,
+                        "windSpeed": 4,
+                        "windGust": 7,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 55,
+                        "thunderProb": 0,
+                        "uvIndex": 1,
+                        "pressure": 1017.71,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T20:45+01:00",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 21,
+                        "feelsLikeTemp": 21,
+                        "relHumidity": 58,
+                        "dewPoint": 13,
+                        "windDir": 91,
+                        "windSpeed": 4,
+                        "windGust": 7,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 62,
+                        "thunderProb": 0,
+                        "uvIndex": 1,
+                        "pressure": 1017.77,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T21:00+01:00",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 21,
+                        "feelsLikeTemp": 21,
+                        "relHumidity": 60,
+                        "dewPoint": 13,
+                        "windDir": 91,
+                        "windSpeed": 4,
+                        "windGust": 7,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 61,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.82,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T21:15+01:00",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 21,
+                        "feelsLikeTemp": 21,
+                        "relHumidity": 62,
+                        "dewPoint": 13,
+                        "windDir": 91,
+                        "windSpeed": 4,
+                        "windGust": 8,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 63,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.88,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T21:30+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 20,
+                        "feelsLikeTemp": 20,
+                        "relHumidity": 64,
+                        "dewPoint": 13,
+                        "windDir": 91,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 65,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.94,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T21:45+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 20,
+                        "feelsLikeTemp": 20,
+                        "relHumidity": 65,
+                        "dewPoint": 13,
+                        "windDir": 92,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 66,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1018,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T22:00+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 20,
+                        "feelsLikeTemp": 20,
+                        "relHumidity": 67,
+                        "dewPoint": 13,
+                        "windDir": 92,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 64,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1018.06,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T22:15+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 19,
+                        "feelsLikeTemp": 19,
+                        "relHumidity": 69,
+                        "dewPoint": 14,
+                        "windDir": 91,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "snowRate": 0,
+                        "precipRate": 0,
+                        "cloudiness": 62,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1018.04,
+                        "precipType": "rain"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forecast": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "time": {
+                                    "type": "string"
+                                },
+                                "symbol": {
+                                    "type": "string"
+                                },
+                                "symbolPhrase": {
+                                    "type": "string"
+                                },
+                                "temperature": {
+                                    "type": "integer"
+                                },
+                                "feelsLikeTemp": {
+                                    "type": "integer"
+                                },
+                                "relHumidity": {
+                                    "type": "integer"
+                                },
+                                "dewPoint": {
+                                    "type": "integer"
+                                },
+                                "windDir": {
+                                    "type": "integer"
+                                },
+                                "windSpeed": {
+                                    "type": "integer"
+                                },
+                                "windGust": {
+                                    "type": "integer"
+                                },
+                                "windDirString": {
+                                    "type": "string"
+                                },
+                                "precipProb": {
+                                    "type": "integer"
+                                },
+                                "precipRate": {
+                                    "type": "integer"
+                                },
+                                "cloudiness": {
+                                    "type": "integer"
+                                },
+                                "thunderProb": {
+                                    "type": "integer"
+                                },
+                                "uvIndex": {
+                                    "type": "integer"
+                                },
+                                "pressure": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Three-hourly",
+            "url": "https://foreca-weather.p.rapidapi.com/forecast/3hourly/102643743",
+            "description": "A longer three-hourly forecast up to 14 days.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "history",
+                    "type": "BOOLEAN",
+                    "description": "Whether to include 24 hours of past data.",
+                    "default": "0"
+                },
+                {
+                    "name": "tz",
+                    "type": "STRING",
+                    "description": "Time zone in response (IANA time zone database names)",
+                    "default": "Europe/London"
+                },
+                {
+                    "name": "dataset",
+                    "type": "STRING",
+                    "description": "Variable set",
+                    "default": "full"
+                },
+                {
+                    "name": "tempunit",
+                    "type": "STRING",
+                    "description": "Temperature unit in response",
+                    "default": "C"
+                },
+                {
+                    "name": "alt",
+                    "type": "NUMBER",
+                    "description": "Altitude (meters)",
+                    "default": "0"
+                },
+                {
+                    "name": "periods",
+                    "type": "NUMBER",
+                    "description": "Number of time steps (default 8, maximum 12)",
+                    "default": "8"
+                },
+                {
+                    "name": "windunit",
+                    "type": "STRING",
+                    "description": "Wind speed unit in response.",
+                    "default": "MS"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/3hourly/102643743\"\nquerystring = {\"history\": \"0\", \"tz\": \"Europe/London\", \"dataset\": \"full\", \"tempunit\": \"C\", \"alt\": \"0\", \"periods\": \"8\", \"windunit\": \"MS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/3hourly/{location}\"\nquerystring = {\"history\": \"0\", \"tz\": \"Europe/London\", \"dataset\": \"full\", \"tempunit\": \"C\", \"alt\": \"0\", \"periods\": \"8\", \"windunit\": \"MS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "forecast": [
+                    {
+                        "time": "2023-06-16T19:00+01:00",
+                        "symbol": "d000",
+                        "symbolPhrase": "clear",
+                        "temperature": 25,
+                        "feelsLikeTemp": 25,
+                        "windSpeed": 3,
+                        "windGust": 6,
+                        "relHumidity": 39,
+                        "dewPoint": 9,
+                        "windDir": 76,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 14,
+                        "thunderProb": 0,
+                        "uvIndex": 1,
+                        "pressure": 1017.36,
+                        "visibility": 10000,
+                        "solarRadiation": 290,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T22:00+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 20,
+                        "feelsLikeTemp": 20,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "relHumidity": 69,
+                        "dewPoint": 13,
+                        "windDir": 92,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 64,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1018.06,
+                        "visibility": 20000,
+                        "solarRadiation": 1,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T01:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 17,
+                        "feelsLikeTemp": 17,
+                        "windSpeed": 2,
+                        "windGust": 5,
+                        "relHumidity": 83,
+                        "dewPoint": 14,
+                        "windDir": 77,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 75,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.87,
+                        "visibility": 30239,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T04:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 15,
+                        "feelsLikeTemp": 15,
+                        "windSpeed": 2,
+                        "windGust": 3,
+                        "relHumidity": 87,
+                        "dewPoint": 12,
+                        "windDir": 74,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 78,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1016.55,
+                        "visibility": 29852,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T07:00+01:00",
+                        "symbol": "d300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 15,
+                        "feelsLikeTemp": 15,
+                        "windSpeed": 2,
+                        "windGust": 5,
+                        "relHumidity": 77,
+                        "dewPoint": 11,
+                        "windDir": 74,
+                        "windDirString": "E",
+                        "precipProb": 3,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 91,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1016.11,
+                        "visibility": 33422,
+                        "solarRadiation": 123,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T10:00+01:00",
+                        "symbol": "d300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 17,
+                        "feelsLikeTemp": 17,
+                        "windSpeed": 2,
+                        "windGust": 5,
+                        "relHumidity": 69,
+                        "dewPoint": 10,
+                        "windDir": 80,
+                        "windDirString": "E",
+                        "precipProb": 43,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 74,
+                        "thunderProb": 0,
+                        "uvIndex": 2,
+                        "pressure": 1016.15,
+                        "visibility": 37555,
+                        "solarRadiation": 491,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T13:00+01:00",
+                        "symbol": "d320",
+                        "symbolPhrase": "showers",
+                        "temperature": 22,
+                        "feelsLikeTemp": 22,
+                        "windSpeed": 1,
+                        "windGust": 7,
+                        "relHumidity": 61,
+                        "dewPoint": 11,
+                        "windDir": 68,
+                        "windDirString": "E",
+                        "precipProb": 22,
+                        "precipAccum": 0.4,
+                        "snowAccum": 0,
+                        "cloudiness": 88,
+                        "thunderProb": 0,
+                        "uvIndex": 5,
+                        "pressure": 1015.42,
+                        "visibility": 39841,
+                        "solarRadiation": 581,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T16:00+01:00",
+                        "symbol": "d300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 24,
+                        "feelsLikeTemp": 24,
+                        "windSpeed": 1,
+                        "windGust": 7,
+                        "relHumidity": 56,
+                        "dewPoint": 11,
+                        "windDir": 99,
+                        "windDirString": "E",
+                        "precipProb": 14,
+                        "precipAccum": 0.02,
+                        "snowAccum": 0,
+                        "cloudiness": 76,
+                        "thunderProb": 0,
+                        "uvIndex": 4,
+                        "pressure": 1014.17,
+                        "visibility": 40114,
+                        "solarRadiation": 573,
+                        "precipType": "rain"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Daily",
+            "url": "https://foreca-weather.p.rapidapi.com/forecast/daily/102643743",
+            "description": "Daily forecast.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "alt",
+                    "type": "NUMBER",
+                    "description": "Altitude (meters)",
+                    "default": "0"
+                },
+                {
+                    "name": "dataset",
+                    "type": "STRING",
+                    "description": "Variable set",
+                    "default": "full"
+                },
+                {
+                    "name": "tempunit",
+                    "type": "STRING",
+                    "description": "Temperature unit in response",
+                    "default": "C"
+                },
+                {
+                    "name": "windunit",
+                    "type": "STRING",
+                    "description": "Wind speed unit in response.",
+                    "default": "MS"
+                },
+                {
+                    "name": "periods",
+                    "type": "NUMBER",
+                    "description": "Number of time steps (default 8, maximum 12)",
+                    "default": "8"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/daily/102643743\"\nquerystring = {\"alt\": \"0\", \"dataset\": \"full\", \"tempunit\": \"C\", \"windunit\": \"MS\", \"periods\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/daily/{location}\"\nquerystring = {\"alt\": \"0\", \"dataset\": \"full\", \"tempunit\": \"C\", \"windunit\": \"MS\", \"periods\": \"8\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "forecast": [
+                    {
+                        "date": "2023-06-16",
+                        "symbol": "d000",
+                        "symbolPhrase": "clear",
+                        "maxTemp": 26,
+                        "minTemp": 14,
+                        "maxFeelsLikeTemp": 27,
+                        "minFeelsLikeTemp": 14,
+                        "maxRelHumidity": 98,
+                        "minRelHumidity": 28,
+                        "maxDewPoint": 14,
+                        "minDewPoint": 9,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 3,
+                        "windDir": 58,
+                        "maxWindGust": 8,
+                        "precipProb": 2,
+                        "cloudiness": 3,
+                        "sunrise": "04:42:34",
+                        "sunset": "21:19:44",
+                        "sunriseEpoch": 1686886954,
+                        "sunsetEpoch": 1686946784,
+                        "moonrise": "03:09:49",
+                        "moonset": "20:10:28",
+                        "moonPhase": 341,
+                        "uvIndex": 6,
+                        "minVisibility": 10000,
+                        "pressure": 1019.4,
+                        "confidence": "g",
+                        "solarRadiationSum": 8040
+                    },
+                    {
+                        "date": "2023-06-17",
+                        "symbol": "d310",
+                        "symbolPhrase": "light rain",
+                        "maxTemp": 24,
+                        "minTemp": 13,
+                        "maxFeelsLikeTemp": 24,
+                        "minFeelsLikeTemp": 13,
+                        "maxRelHumidity": 92,
+                        "minRelHumidity": 37,
+                        "maxDewPoint": 14,
+                        "minDewPoint": 9,
+                        "precipAccum": 0.42,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 2,
+                        "windDir": 80,
+                        "maxWindGust": 7,
+                        "precipProb": 43,
+                        "cloudiness": 84,
+                        "sunrise": "04:42:32",
+                        "sunset": "21:20:10",
+                        "sunriseEpoch": 1686973352,
+                        "sunsetEpoch": 1687033210,
+                        "moonrise": "03:38:00",
+                        "moonset": "21:22:24",
+                        "moonPhase": 352,
+                        "uvIndex": 5,
+                        "minVisibility": 28119,
+                        "pressure": 1015.21,
+                        "confidence": "y",
+                        "solarRadiationSum": 5884
+                    },
+                    {
+                        "date": "2023-06-18",
+                        "symbol": "d440",
+                        "symbolPhrase": "thunderstorms",
+                        "maxTemp": 24,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 25,
+                        "minFeelsLikeTemp": 14,
+                        "maxRelHumidity": 99,
+                        "minRelHumidity": 54,
+                        "maxDewPoint": 21,
+                        "minDewPoint": 14,
+                        "precipAccum": 9.01,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 3,
+                        "windDir": 146,
+                        "maxWindGust": 7,
+                        "precipProb": 66,
+                        "cloudiness": 94,
+                        "sunrise": "04:42:33",
+                        "sunset": "21:20:34",
+                        "sunriseEpoch": 1687059753,
+                        "sunsetEpoch": 1687119634,
+                        "moonrise": "04:15:54",
+                        "moonset": "22:22:09",
+                        "moonPhase": 4,
+                        "uvIndex": 4,
+                        "minVisibility": 4704,
+                        "pressure": 1009.95,
+                        "confidence": "y",
+                        "solarRadiationSum": 3842
+                    },
+                    {
+                        "date": "2023-06-19",
+                        "symbol": "d220",
+                        "symbolPhrase": "showers",
+                        "maxTemp": 25,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 25,
+                        "minFeelsLikeTemp": 14,
+                        "maxRelHumidity": 97,
+                        "minRelHumidity": 42,
+                        "maxDewPoint": 16,
+                        "minDewPoint": 12,
+                        "precipAccum": 1.12,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 7,
+                        "windDir": 212,
+                        "maxWindGust": 11,
+                        "precipProb": 69,
+                        "cloudiness": 37,
+                        "sunrise": "04:42:37",
+                        "sunset": "21:20:54",
+                        "sunriseEpoch": 1687146157,
+                        "sunsetEpoch": 1687206054,
+                        "moonrise": "05:06:55",
+                        "moonset": "23:08:47",
+                        "moonPhase": 15,
+                        "uvIndex": 6,
+                        "minVisibility": 7209,
+                        "pressure": 1010,
+                        "confidence": "y",
+                        "solarRadiationSum": 7306
+                    },
+                    {
+                        "date": "2023-06-20",
+                        "symbol": "d320",
+                        "symbolPhrase": "showers",
+                        "maxTemp": 24,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 22,
+                        "minFeelsLikeTemp": 15,
+                        "maxRelHumidity": 95,
+                        "minRelHumidity": 50,
+                        "maxDewPoint": 16,
+                        "minDewPoint": 11,
+                        "precipAccum": 0.67,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 3,
+                        "windDir": 71,
+                        "maxWindGust": 6,
+                        "precipProb": 69,
+                        "cloudiness": 77,
+                        "sunrise": "04:42:44",
+                        "sunset": "21:21:12",
+                        "sunriseEpoch": 1687232564,
+                        "sunsetEpoch": 1687292472,
+                        "moonrise": "06:08:48",
+                        "moonset": "23:42:40",
+                        "moonPhase": 26,
+                        "uvIndex": 5,
+                        "minVisibility": 5987,
+                        "pressure": 1011.09,
+                        "confidence": "o",
+                        "solarRadiationSum": 4445
+                    },
+                    {
+                        "date": "2023-06-21",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "maxTemp": 25,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 25,
+                        "minFeelsLikeTemp": 15,
+                        "maxRelHumidity": 96,
+                        "minRelHumidity": 36,
+                        "maxDewPoint": 16,
+                        "minDewPoint": 11,
+                        "precipAccum": 0.13,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 5,
+                        "windDir": 232,
+                        "maxWindGust": 10,
+                        "precipProb": 58,
+                        "cloudiness": 34,
+                        "sunrise": "04:42:54",
+                        "sunset": "21:21:26",
+                        "sunriseEpoch": 1687318974,
+                        "sunsetEpoch": 1687378886,
+                        "moonrise": "07:18:40",
+                        "moonset": null,
+                        "moonPhase": 38,
+                        "uvIndex": 6,
+                        "minVisibility": 19658,
+                        "pressure": 1014.95,
+                        "confidence": "y",
+                        "solarRadiationSum": 6892
+                    },
+                    {
+                        "date": "2023-06-22",
+                        "symbol": "d300",
+                        "symbolPhrase": "cloudy",
+                        "maxTemp": 24,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 26,
+                        "minFeelsLikeTemp": 15,
+                        "maxRelHumidity": 96,
+                        "minRelHumidity": 40,
+                        "maxDewPoint": 16,
+                        "minDewPoint": 11,
+                        "precipAccum": 0.24,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 3,
+                        "windDir": 42,
+                        "maxWindGust": 8,
+                        "precipProb": 53,
+                        "cloudiness": 87,
+                        "sunrise": "04:43:08",
+                        "sunset": "21:21:37",
+                        "sunriseEpoch": 1687405388,
+                        "sunsetEpoch": 1687465297,
+                        "moonrise": "08:30:37",
+                        "moonset": "00:06:38",
+                        "moonPhase": 48,
+                        "uvIndex": 5,
+                        "minVisibility": 30160,
+                        "pressure": 1018.17,
+                        "confidence": "o",
+                        "solarRadiationSum": 5285
+                    },
+                    {
+                        "date": "2023-06-23",
+                        "symbol": "d300",
+                        "symbolPhrase": "cloudy",
+                        "maxTemp": 26,
+                        "minTemp": 15,
+                        "maxFeelsLikeTemp": 26,
+                        "minFeelsLikeTemp": 16,
+                        "maxRelHumidity": 95,
+                        "minRelHumidity": 42,
+                        "maxDewPoint": 15,
+                        "minDewPoint": 12,
+                        "precipAccum": 0.01,
+                        "snowAccum": 0,
+                        "maxWindSpeed": 3,
+                        "windDir": 186,
+                        "maxWindGust": 8,
+                        "precipProb": 46,
+                        "cloudiness": 68,
+                        "sunrise": "04:43:24",
+                        "sunset": "21:21:46",
+                        "sunriseEpoch": 1687491804,
+                        "sunsetEpoch": 1687551706,
+                        "moonrise": "09:43:23",
+                        "moonset": "00:24:35",
+                        "moonPhase": 59,
+                        "uvIndex": 6,
+                        "minVisibility": 27763,
+                        "pressure": 1025.18,
+                        "confidence": "o",
+                        "solarRadiationSum": 6701
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forecast": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Location info",
+            "url": "https://foreca-weather.p.rapidapi.com/location/101275339",
+            "description": "Metadata for location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "101275339"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/location/101275339\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/location/{location}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 101275339,
+                "name": "Mumbai",
+                "country": "India",
+                "timezone": "Asia/Kolkata",
+                "language": "en",
+                "adminArea": "Maharashtra",
+                "adminArea2": null,
+                "adminArea3": null,
+                "lon": 72.8826,
+                "lat": 19.0728
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Current",
+            "url": "https://foreca-weather.p.rapidapi.com/current/102643743",
+            "description": "Current weather estimate for location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "windunit",
+                    "type": "STRING",
+                    "description": "Wind speed unit in response.",
+                    "default": "MS"
+                },
+                {
+                    "name": "alt",
+                    "type": "NUMBER",
+                    "description": "Altitude (meters)",
+                    "default": "0"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Language (ISO 639-1 codes). Options: de, en, es, fr, it, pl, ru, fi, sv, nl, ko, pt, th, tr, zh, zh_TW (Chinese in Taiwan), zh_CN (Chinese in China). (default en)",
+                    "default": "en"
+                },
+                {
+                    "name": "tz",
+                    "type": "STRING",
+                    "description": "Time zone in response (IANA time zone database names)",
+                    "default": "Europe/London"
+                },
+                {
+                    "name": "tempunit",
+                    "type": "STRING",
+                    "description": "Temperature unit in response",
+                    "default": "C"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/current/102643743\"\nquerystring = {\"windunit\": \"MS\", \"alt\": \"0\", \"lang\": \"en\", \"tz\": \"Europe/London\", \"tempunit\": \"C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/current/{location}\"\nquerystring = {\"windunit\": \"MS\", \"alt\": \"0\", \"lang\": \"en\", \"tz\": \"Europe/London\", \"tempunit\": \"C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "current": {
+                    "time": "2023-06-16T20:27+01:00",
+                    "symbol": "d200",
+                    "symbolPhrase": "partly cloudy",
+                    "temperature": 22,
+                    "feelsLikeTemp": 22,
+                    "relHumidity": 56,
+                    "dewPoint": 13,
+                    "windSpeed": 5,
+                    "windDir": 92,
+                    "windDirString": "E",
+                    "windGust": 7,
+                    "precipProb": 2,
+                    "precipRate": 0,
+                    "cloudiness": 53,
+                    "thunderProb": 0,
+                    "uvIndex": 1,
+                    "pressure": 1017.7,
+                    "visibility": 10000
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "current": {
+                        "type": "object",
+                        "properties": {
+                            "time": {
+                                "type": "string"
+                            },
+                            "symbol": {
+                                "type": "string"
+                            },
+                            "symbolPhrase": {
+                                "type": "string"
+                            },
+                            "temperature": {
+                                "type": "integer"
+                            },
+                            "feelsLikeTemp": {
+                                "type": "integer"
+                            },
+                            "relHumidity": {
+                                "type": "integer"
+                            },
+                            "dewPoint": {
+                                "type": "integer"
+                            },
+                            "windSpeed": {
+                                "type": "integer"
+                            },
+                            "windDirString": {
+                                "type": "string"
+                            },
+                            "windGust": {
+                                "type": "integer"
+                            },
+                            "precipProb": {
+                                "type": "integer"
+                            },
+                            "precipRate": {
+                                "type": "integer"
+                            },
+                            "cloudiness": {
+                                "type": "integer"
+                            },
+                            "thunderProb": {
+                                "type": "integer"
+                            },
+                            "uvIndex": {
+                                "type": "integer"
+                            },
+                            "pressure": {
+                                "type": "number"
+                            },
+                            "visibility": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Latest observations",
+            "url": "https://foreca-weather.p.rapidapi.com/observation/latest/102643743",
+            "description": "Observations from nearby representative weather stations.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/observation/latest/102643743\"\nquerystring = {\"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/observation/latest/{location}\"\nquerystring = {\"lang\": \"en\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "observations": [
+                    {
+                        "station": "London City Airport",
+                        "distance": "13 km E",
+                        "time": "2023-06-16T19:50:00+01:00",
+                        "temperature": 21,
+                        "feelsLikeTemp": 21,
+                        "symbol": "d000",
+                        "windDirString": "E",
+                        "windDir": 100,
+                        "windSpeed": 7,
+                        "windGust": 0,
+                        "pressure": 1018,
+                        "relHumidity": 56,
+                        "visibility": 9999
+                    },
+                    {
+                        "station": "Northolt",
+                        "distance": "21 km W",
+                        "time": "2023-06-16T20:00:00+01:00",
+                        "temperature": 25,
+                        "feelsLikeTemp": 25,
+                        "symbol": "d000",
+                        "windDirString": "E",
+                        "windDir": 100,
+                        "windSpeed": 5,
+                        "windGust": 9,
+                        "pressure": 1017,
+                        "relHumidity": 36,
+                        "visibility": 30000
+                    },
+                    {
+                        "station": "London / Heathrow Airport",
+                        "distance": "23 km W",
+                        "time": "2023-06-16T20:00:00+01:00",
+                        "temperature": 25,
+                        "feelsLikeTemp": 25,
+                        "symbol": "d400",
+                        "windDirString": "E",
+                        "windDir": 90,
+                        "windSpeed": 3,
+                        "windGust": 7,
+                        "pressure": 1016.9,
+                        "relHumidity": 38,
+                        "visibility": 40000
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "observations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "station": {
+                                    "type": "string"
+                                },
+                                "distance": {
+                                    "type": "string"
+                                },
+                                "time": {
+                                    "type": "string"
+                                },
+                                "temperature": {
+                                    "type": "integer"
+                                },
+                                "feelsLikeTemp": {
+                                    "type": "integer"
+                                },
+                                "symbol": {
+                                    "type": "string"
+                                },
+                                "windDirString": {
+                                    "type": "string"
+                                },
+                                "windDir": {
+                                    "type": "integer"
+                                },
+                                "windSpeed": {
+                                    "type": "integer"
+                                },
+                                "windGust": {
+                                    "type": "null"
+                                },
+                                "pressure": {
+                                    "type": "integer"
+                                },
+                                "relHumidity": {
+                                    "type": "integer"
+                                },
+                                "visibility": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Location search",
+            "url": "https://foreca-weather.p.rapidapi.com/location/search/mumbai",
+            "description": "Search for locations by name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "string",
+                    "description": "",
+                    "default": "mumbai"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "in"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/location/search/mumbai\"\nquerystring = {\"lang\": \"en\", \"country\": \"in\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/location/search/{query}\"\nquerystring = {\"lang\": \"en\", \"country\": \"in\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "locations": [
+                    {
+                        "id": 101275339,
+                        "name": "Mumbai",
+                        "country": "India",
+                        "timezone": "Asia/Kolkata",
+                        "language": "en",
+                        "adminArea": "Maharashtra",
+                        "adminArea2": null,
+                        "adminArea3": null,
+                        "lon": 72.8826,
+                        "lat": 19.0728
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "locations": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "country": {
+                                    "type": "string"
+                                },
+                                "timezone": {
+                                    "type": "string"
+                                },
+                                "adminArea": {
+                                    "type": "string"
+                                },
+                                "lon": {
+                                    "type": "number"
+                                },
+                                "lat": {
+                                    "type": "number"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Hourly",
+            "url": "https://foreca-weather.p.rapidapi.com/forecast/hourly/102643743",
+            "description": "Hourly forecast.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "location",
+                    "type": "string",
+                    "description": "",
+                    "default": "102643743"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "alt",
+                    "type": "NUMBER",
+                    "description": "Altitude (meters)",
+                    "default": "0"
+                },
+                {
+                    "name": "history",
+                    "type": "BOOLEAN",
+                    "description": "Whether to include 24 hours of past data.",
+                    "default": "0"
+                },
+                {
+                    "name": "dataset",
+                    "type": "STRING",
+                    "description": "Variable set",
+                    "default": "full"
+                },
+                {
+                    "name": "tz",
+                    "type": "STRING",
+                    "description": "Time zone in response (IANA time zone database names)",
+                    "default": "Europe/London"
+                },
+                {
+                    "name": "periods",
+                    "type": "NUMBER",
+                    "description": "Number of time steps (default 8, maximum 12)",
+                    "default": "8"
+                },
+                {
+                    "name": "windunit",
+                    "type": "STRING",
+                    "description": "Wind speed unit in response.",
+                    "default": "MS"
+                },
+                {
+                    "name": "tempunit",
+                    "type": "STRING",
+                    "description": "Temperature unit in response",
+                    "default": "C"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/hourly/102643743\"\nquerystring = {\"alt\": \"0\", \"history\": \"0\", \"dataset\": \"full\", \"tz\": \"Europe/London\", \"periods\": \"8\", \"windunit\": \"MS\", \"tempunit\": \"C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://foreca-weather.p.rapidapi.com/forecast/hourly/{location}\"\nquerystring = {\"alt\": \"0\", \"history\": \"0\", \"dataset\": \"full\", \"tz\": \"Europe/London\", \"periods\": \"8\", \"windunit\": \"MS\", \"tempunit\": \"C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"foreca-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "forecast": [
+                    {
+                        "time": "2023-06-16T20:00+01:00",
+                        "symbol": "d100",
+                        "symbolPhrase": "mostly clear",
+                        "temperature": 23,
+                        "feelsLikeTemp": 23,
+                        "windSpeed": 5,
+                        "windGust": 7,
+                        "relHumidity": 55,
+                        "dewPoint": 12,
+                        "windDir": 93,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 32,
+                        "thunderProb": 0,
+                        "uvIndex": 1,
+                        "pressure": 1017.59,
+                        "visibility": 10000,
+                        "solarRadiation": 168,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T21:00+01:00",
+                        "symbol": "d200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 21,
+                        "feelsLikeTemp": 21,
+                        "windSpeed": 4,
+                        "windGust": 7,
+                        "relHumidity": 63,
+                        "dewPoint": 13,
+                        "windDir": 91,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 61,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.82,
+                        "visibility": 13223,
+                        "solarRadiation": 52,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T22:00+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 20,
+                        "feelsLikeTemp": 20,
+                        "windSpeed": 3,
+                        "windGust": 8,
+                        "relHumidity": 69,
+                        "dewPoint": 13,
+                        "windDir": 92,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 64,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1018.06,
+                        "visibility": 20000,
+                        "solarRadiation": 1,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-16T23:00+01:00",
+                        "symbol": "n200",
+                        "symbolPhrase": "partly cloudy",
+                        "temperature": 19,
+                        "feelsLikeTemp": 19,
+                        "windSpeed": 2,
+                        "windGust": 7,
+                        "relHumidity": 76,
+                        "dewPoint": 14,
+                        "windDir": 85,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 62,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.99,
+                        "visibility": 20000,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T00:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 18,
+                        "feelsLikeTemp": 18,
+                        "windSpeed": 2,
+                        "windGust": 6,
+                        "relHumidity": 80,
+                        "dewPoint": 14,
+                        "windDir": 80,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 72,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.93,
+                        "visibility": 20000,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T01:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 17,
+                        "feelsLikeTemp": 17,
+                        "windSpeed": 2,
+                        "windGust": 5,
+                        "relHumidity": 83,
+                        "dewPoint": 14,
+                        "windDir": 77,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 75,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.87,
+                        "visibility": 30239,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T02:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 16,
+                        "feelsLikeTemp": 16,
+                        "windSpeed": 2,
+                        "windGust": 4,
+                        "relHumidity": 84,
+                        "dewPoint": 13,
+                        "windDir": 68,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 75,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1017.43,
+                        "visibility": 30342,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    },
+                    {
+                        "time": "2023-06-17T03:00+01:00",
+                        "symbol": "n300",
+                        "symbolPhrase": "cloudy",
+                        "temperature": 15,
+                        "feelsLikeTemp": 15,
+                        "windSpeed": 2,
+                        "windGust": 4,
+                        "relHumidity": 86,
+                        "dewPoint": 12,
+                        "windDir": 69,
+                        "windDirString": "E",
+                        "precipProb": 2,
+                        "precipAccum": 0,
+                        "snowAccum": 0,
+                        "cloudiness": 74,
+                        "thunderProb": 0,
+                        "uvIndex": 0,
+                        "pressure": 1016.99,
+                        "visibility": 30008,
+                        "solarRadiation": 0,
+                        "precipType": "rain"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forecast": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "time": {
+                                    "type": "string"
+                                },
+                                "symbol": {
+                                    "type": "string"
+                                },
+                                "symbolPhrase": {
+                                    "type": "string"
+                                },
+                                "temperature": {
+                                    "type": "integer"
+                                },
+                                "feelsLikeTemp": {
+                                    "type": "integer"
+                                },
+                                "relHumidity": {
+                                    "type": "integer"
+                                },
+                                "dewPoint": {
+                                    "type": "integer"
+                                },
+                                "windDir": {
+                                    "type": "integer"
+                                },
+                                "windSpeed": {
+                                    "type": "integer"
+                                },
+                                "windGust": {
+                                    "type": "integer"
+                                },
+                                "windDirString": {
+                                    "type": "string"
+                                },
+                                "precipProb": {
+                                    "type": "integer"
+                                },
+                                "precipAccum": {
+                                    "type": "integer"
+                                },
+                                "cloudiness": {
+                                    "type": "integer"
+                                },
+                                "thunderProb": {
+                                    "type": "integer"
+                                },
+                                "uvIndex": {
+                                    "type": "integer"
+                                },
+                                "pressure": {
+                                    "type": "number"
+                                },
+                                "visibility": {
+                                    "type": "integer"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "foreca_weather"
+}

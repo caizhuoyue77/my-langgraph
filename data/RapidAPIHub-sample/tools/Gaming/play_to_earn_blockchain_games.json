@@ -1,0 +1,47 @@
+{
+    "product_id": "api_361ac2c1-c870-4b14-933b-b8da4eb7a81d",
+    "tool_description": "Get hot play to earn blockchain games! Filter by popular blockchains",
+    "home_url": "https://rapidapi.com/emir12/api/play-to-earn-blockchain-games/",
+    "name": "Play to Earn Blockchain Games",
+    "title": "Play to Earn Blockchain Games",
+    "pricing": "FREEMIUM",
+    "tool_name": "Play to Earn Blockchain Games",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 298,
+        "avgSuccessRate": 56,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "play-to-earn-blockchain-games.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Summary",
+            "url": "https://play-to-earn-blockchain-games.p.rapidapi.com/project/summary-market",
+            "description": "Get games market data summary",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://play-to-earn-blockchain-games.p.rapidapi.com/project/summary-market\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"play-to-earn-blockchain-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://play-to-earn-blockchain-games.p.rapidapi.com/project/summary-market\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"play-to-earn-blockchain-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "payload": {
+                    "marketCap": 5053998266.040001,
+                    "marketCapChangePercent": 0,
+                    "tradingVolume24h": 405076629,
+                    "tradingVolume24hChangePercent": 0,
+                    "topGameCode": null,
+                    "topGameName": null,
+                    "topGameMarketCap": 0,
+                    "topGameMarketCapChangePercent": 0,
+                    "topGameMarketCapDominance": 0,
+                    "totalGame": 2231
+                },
+                "code": 200,
+                "locale": null,
+                "message": null
+            }
+        }
+    ],
+    "standardized_name": "play_to_earn_blockchain_games"
+}

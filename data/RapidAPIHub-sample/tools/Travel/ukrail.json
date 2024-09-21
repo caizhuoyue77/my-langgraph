@@ -1,0 +1,201 @@
+{
+    "product_id": "api_29a0760c-29e4-4505-819d-32f252d4bc3a",
+    "tool_description": "UKRail is an API for UK train times. Sourced from National Rail Enquiries live departure boards SOAP web service (OpenLDBWS) \n\nTheir webservice can be, to put it mildly, tricky to work with so UKRail aims to make things a little easier!\n\nSuited for small businesses who may want to leverage rail data on a website or phone app.\n\nAdditionally, it is Ideal for train enthusiasts who may want to use data from the live departure boards for one of their projects - model railways (including mimic pane...",
+    "home_url": "https://rapidapi.com/touchtree/api/ukrail/",
+    "name": "UKRail",
+    "title": "UKRail",
+    "pricing": "FREE",
+    "tool_name": "UKRail",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 214,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "ukrail.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/GetUKRail",
+            "url": "https://ukrail.p.rapidapi.com/GetUKRail",
+            "description": "Query the API to get rail data.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "CMD",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "GetDepartureBoard"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "NumberQueries",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                },
+                {
+                    "name": "CRS",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "KGX"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ukrail.p.rapidapi.com/GetUKRail\"\nquerystring = {\"NumberQueries\": \"5\", \"CMD\": \"GetDepartureBoard\", \"CRS\": \"KGX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ukrail.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ukrail.p.rapidapi.com/GetUKRail\"\nquerystring = {\"NumberQueries\": \"5\", \"CMD\": \"GetDepartureBoard\", \"CRS\": \"KGX\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ukrail.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Version": "1.2.0",
+                "Result": "Success",
+                "Station_CRS": "KGX",
+                "Station_Name": "London Kings Cross",
+                "Command": "GetDepartureBoard",
+                "Number_Queries": "5",
+                "Last_Updated": "2023-06-16T19:29:00.9076956+01:00",
+                "Results": {
+                    "GetStationBoardResult": {
+                        "generatedAt": "2023-06-16T19:29:00.9076956+01:00",
+                        "locationName": "London Kings Cross",
+                        "crs": "KGX",
+                        "platformAvailable": true,
+                        "trainServices": {
+                            "service": [
+                                {
+                                    "std": "19:27",
+                                    "etd": "On time",
+                                    "operator": "Grand Central",
+                                    "operatorCode": "GC",
+                                    "serviceType": "train",
+                                    "serviceID": "4454726KNGX____",
+                                    "rsid": "GC806000",
+                                    "origin": {
+                                        "location": [
+                                            {
+                                                "locationName": "London Kings Cross",
+                                                "crs": "KGX"
+                                            }
+                                        ]
+                                    },
+                                    "destination": {
+                                        "location": [
+                                            {
+                                                "locationName": "Sunderland",
+                                                "crs": "SUN"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "std": "19:30",
+                                    "etd": "19:32",
+                                    "platform": "5",
+                                    "operator": "London North Eastern Railway",
+                                    "operatorCode": "GR",
+                                    "serviceType": "train",
+                                    "serviceID": "4458827KNGX____",
+                                    "rsid": "GR668000",
+                                    "origin": {
+                                        "location": [
+                                            {
+                                                "locationName": "London Kings Cross",
+                                                "crs": "KGX"
+                                            }
+                                        ]
+                                    },
+                                    "destination": {
+                                        "location": [
+                                            {
+                                                "locationName": "Edinburgh",
+                                                "crs": "EDB"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "std": "19:33",
+                                    "etd": "On time",
+                                    "platform": "8",
+                                    "operator": "London North Eastern Railway",
+                                    "operatorCode": "GR",
+                                    "serviceType": "train",
+                                    "serviceID": "4443637KNGX____",
+                                    "origin": {
+                                        "location": [
+                                            {
+                                                "locationName": "London Kings Cross",
+                                                "crs": "KGX"
+                                            }
+                                        ]
+                                    },
+                                    "destination": {
+                                        "location": [
+                                            {
+                                                "locationName": "Leeds",
+                                                "crs": "LDS"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "std": "19:39",
+                                    "etd": "On time",
+                                    "platform": "9",
+                                    "operator": "Great Northern",
+                                    "operatorCode": "GN",
+                                    "serviceType": "train",
+                                    "length": 8,
+                                    "serviceID": "4441781KNGX____",
+                                    "rsid": "GN149200",
+                                    "origin": {
+                                        "location": [
+                                            {
+                                                "locationName": "London Kings Cross",
+                                                "crs": "KGX"
+                                            }
+                                        ]
+                                    },
+                                    "destination": {
+                                        "location": [
+                                            {
+                                                "locationName": "Kings Lynn",
+                                                "crs": "KLN"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "std": "19:48",
+                                    "etd": "On time",
+                                    "operator": "Grand Central",
+                                    "operatorCode": "GC",
+                                    "serviceType": "train",
+                                    "serviceID": "4449123KNGX____",
+                                    "rsid": "GC704000",
+                                    "origin": {
+                                        "location": [
+                                            {
+                                                "locationName": "London Kings Cross",
+                                                "crs": "KGX"
+                                            }
+                                        ]
+                                    },
+                                    "destination": {
+                                        "location": [
+                                            {
+                                                "locationName": "Bradford Interchange",
+                                                "crs": "BDI"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ukrail"
+}

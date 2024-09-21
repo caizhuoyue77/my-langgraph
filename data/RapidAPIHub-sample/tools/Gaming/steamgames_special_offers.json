@@ -1,0 +1,85 @@
+{
+    "product_id": "api_f96234fe-ca7c-4508-8167-6871c4e4e446",
+    "tool_description": "Get Steam Games List and Data that are on Special Discounted Offers. \nContact me at: vuesdata@gmail.com or visit https://www.vuesdata.com for building custom spiders or custom requests.",
+    "home_url": "https://rapidapi.com/vuesdata/api/steamgames-special-offers/",
+    "name": "SteamGames Special offers",
+    "title": "SteamGames Special offers",
+    "pricing": "FREEMIUM",
+    "tool_name": "SteamGames Special offers",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 833,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "steamgames-special-offers.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GamesList",
+            "url": "https://steamgames-special-offers.p.rapidapi.com/games_list/",
+            "description": "This Endpoint will List all the Games which are on Special Discount Offers.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                },
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "count",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://steamgames-special-offers.p.rapidapi.com/games_list/\"\nquerystring = {\"region\": \"US\", \"start\": \"0\", \"count\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"steamgames-special-offers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://steamgames-special-offers.p.rapidapi.com/games_list/\"\nquerystring = {\"region\": \"US\", \"start\": \"0\", \"count\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"steamgames-special-offers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "games_list": [
+                    1551360,
+                    1091500,
+                    1817070,
+                    1817190,
+                    271590,
+                    548430,
+                    381210,
+                    2379390,
+                    962130,
+                    359550
+                ],
+                "possible_has_more": true,
+                "total_games": 5289
+            }
+        },
+        {
+            "name": "GamesData",
+            "url": "https://steamgames-special-offers.p.rapidapi.com/games_data/",
+            "description": "This endpoint will give you the Games Data if you provide the APP_ID.\nYou can use the GamesList endpoint to get the list of APP_IDs and Feed it to this Endpoint to get the Games Data. Sample Details are given below:\n`{\n    \"discount\": \"-40%\",\n    \"original_price\": \"$49.99\",\n    \"price\": \"$29.99\",\n    \"title\": \"God of War\",\n    \"url\": \"https://store.steampowered.com/app/1593500/\"\n}`",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "app_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1581770"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://steamgames-special-offers.p.rapidapi.com/games_data/\"\nquerystring = {\"app_id\": \"1581770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"steamgames-special-offers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://steamgames-special-offers.p.rapidapi.com/games_data/\"\nquerystring = {\"app_id\": \"1581770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"steamgames-special-offers.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "steamgames_special_offers"
+}

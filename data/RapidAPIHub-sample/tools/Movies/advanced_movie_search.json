@@ -1,0 +1,651 @@
+{
+    "product_id": "api_34d9da68-22ba-4ad6-bb58-0b0f125ccdcd",
+    "tool_description": "Search for movies via advanced queries like genre, name, etc. And get all their details",
+    "home_url": "https://rapidapi.com/jakash1997/api/advanced-movie-search/",
+    "name": "Advanced Movie Search",
+    "title": "Advanced Movie Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Advanced Movie Search",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 415,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "advanced-movie-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Genre List",
+            "url": "https://advanced-movie-search.p.rapidapi.com/genre/movie/list",
+            "description": "Get list of all available genres",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/genre/movie/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/genre/movie/list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "genres": [
+                    {
+                        "id": 28,
+                        "name": "Action"
+                    },
+                    {
+                        "id": 12,
+                        "name": "Adventure"
+                    },
+                    {
+                        "id": 16,
+                        "name": "Animation"
+                    },
+                    {
+                        "id": 35,
+                        "name": "Comedy"
+                    },
+                    {
+                        "id": 80,
+                        "name": "Crime"
+                    },
+                    {
+                        "id": 99,
+                        "name": "Documentary"
+                    },
+                    {
+                        "id": 18,
+                        "name": "Drama"
+                    },
+                    {
+                        "id": 10751,
+                        "name": "Family"
+                    },
+                    {
+                        "id": 14,
+                        "name": "Fantasy"
+                    },
+                    {
+                        "id": 36,
+                        "name": "History"
+                    },
+                    {
+                        "id": 27,
+                        "name": "Horror"
+                    },
+                    {
+                        "id": 10402,
+                        "name": "Music"
+                    },
+                    {
+                        "id": 9648,
+                        "name": "Mystery"
+                    },
+                    {
+                        "id": 10749,
+                        "name": "Romance"
+                    },
+                    {
+                        "id": 878,
+                        "name": "Science Fiction"
+                    },
+                    {
+                        "id": 10770,
+                        "name": "TV Movie"
+                    },
+                    {
+                        "id": 53,
+                        "name": "Thriller"
+                    },
+                    {
+                        "id": 10752,
+                        "name": "War"
+                    },
+                    {
+                        "id": 37,
+                        "name": "Western"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search by Genre",
+            "url": "https://advanced-movie-search.p.rapidapi.com/discover/movie",
+            "description": "Discover movies by Genre",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "with_genres",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "80"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/discover/movie\"\nquerystring = {\"with_genres\": \"80\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/discover/movie\"\nquerystring = {\"with_genres\": \"80\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "page": 1,
+                "results": [
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/2e7fc8eNwLXZ5Uvehvl3xj8wVyv.jpg",
+                        "genre_ids": [
+                            28,
+                            80,
+                            53
+                        ],
+                        "id": 385687,
+                        "original_language": "en",
+                        "original_title": "Fast X",
+                        "overview": "Over many missions and against impossible odds, Dom Toretto and his family have outsmarted, out-nerved and outdriven every foe in their path. Now, they confront the most lethal opponent they've ever faced: A terrifying threat emerging from the shadows of the past who's fueled by blood revenge, and who is determined to shatter this family and destroy everything\u2014and everyone\u2014that Dom loves, forever.",
+                        "popularity": 11557.896,
+                        "poster_path": "https://image.tmdb.org/t/p/original/fiVW06jE7z9YnO4trhaMEdclSiC.jpg",
+                        "release_date": "2023-05-17",
+                        "title": "Fast X",
+                        "video": false,
+                        "vote_average": 7.4,
+                        "vote_count": 1540
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/1inZm0xxXrpRfN0LxwE2TXzyLN6.jpg",
+                        "genre_ids": [
+                            28,
+                            53,
+                            80
+                        ],
+                        "id": 603692,
+                        "original_language": "en",
+                        "original_title": "John Wick: Chapter 4",
+                        "overview": "With the price on his head ever increasing, John Wick uncovers a path to defeating The High Table. But before he can earn his freedom, Wick must face off against a new enemy with powerful alliances across the globe and forces that turn old friends into foes.",
+                        "popularity": 3046.463,
+                        "poster_path": "https://image.tmdb.org/t/p/original/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+                        "release_date": "2023-03-22",
+                        "title": "John Wick: Chapter 4",
+                        "video": false,
+                        "vote_average": 7.9,
+                        "vote_count": 2990
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/r2tDSD6kcHflPzsGepl8aTPTWxy.jpg",
+                        "genre_ids": [
+                            28,
+                            35,
+                            80
+                        ],
+                        "id": 879444,
+                        "original_language": "en",
+                        "original_title": "Accident Man: Hitman's Holiday",
+                        "overview": "The Accident Man is back, and this time he must best the top assassins in the world to protect the ungrateful son of a mafia boss, save the life of his only friend and rekindle his relationship with his maniacal father figure.",
+                        "popularity": 819.322,
+                        "poster_path": "https://image.tmdb.org/t/p/original/npW9nfL7F3ZVpaCpabqo98KTLw6.jpg",
+                        "release_date": "2022-10-14",
+                        "title": "Accident Man: Hitman's Holiday",
+                        "video": false,
+                        "vote_average": 6.7,
+                        "vote_count": 80
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/T5xXoFqyc9jNXZIbH4Sw0jwWjw.jpg",
+                        "genre_ids": [
+                            28,
+                            80,
+                            53,
+                            9648
+                        ],
+                        "id": 605886,
+                        "original_language": "en",
+                        "original_title": "To Catch a Killer",
+                        "overview": "Baltimore. New Year's Eve. A talented but troubled police officer is recruited by the FBI's chief investigator to help profile and track down a mass murderer.",
+                        "popularity": 657.471,
+                        "poster_path": "https://image.tmdb.org/t/p/original/mFp3l4lZg1NSEsyxKrdi0rNK8r1.jpg",
+                        "release_date": "2023-04-06",
+                        "title": "To Catch a Killer",
+                        "video": false,
+                        "vote_average": 6.9,
+                        "vote_count": 263
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/9yqRiqGoNFcZlSrVS9Ezvt0wJbm.jpg",
+                        "genre_ids": [
+                            28,
+                            80
+                        ],
+                        "id": 1074178,
+                        "original_language": "zh",
+                        "original_title": "\u8ffd\u9f99\u756a\u5916\u7bc7\u4e4b\u9f99\u4e89\u864e\u6597",
+                        "overview": "Legendary heroes, lame-rich rises, dragons fight tigers, wealth and danger",
+                        "popularity": 546.492,
+                        "poster_path": "https://image.tmdb.org/t/p/original/clAzJXKTRXOfmLovb8vyJsixB1H.jpg",
+                        "release_date": "2023-01-14",
+                        "title": "Extras For Chasing The Dragon",
+                        "video": false,
+                        "vote_average": 3,
+                        "vote_count": 4
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/rOKBBs0Hn4yu60wDF7xZUH7CVgh.jpg",
+                        "genre_ids": [
+                            28,
+                            80,
+                            53
+                        ],
+                        "id": 1105803,
+                        "original_language": "en",
+                        "original_title": "Snag",
+                        "overview": "An Australian lone wolf's quiet existence is shattered when he learns that the woman he once loved and thought was dead is alive and held captive by ruthless gangsters. Now, to take on this dangerous criminal organization, he must seek out allies and storm into a world of violence to rescue the love of his life in this gritty, modern day violent fairytale.",
+                        "popularity": 462.771,
+                        "poster_path": "https://image.tmdb.org/t/p/original/nhj4Q39qMSk6X5Ly9j9Yqyjrg5A.jpg",
+                        "release_date": "2023-04-28",
+                        "title": "Snag",
+                        "video": false,
+                        "vote_average": 5.8,
+                        "vote_count": 33
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/ahjfjrRiWVK8ErZBd5o4AVs6mp.jpg",
+                        "genre_ids": [
+                            28,
+                            53,
+                            80
+                        ],
+                        "id": 1070777,
+                        "original_language": "en",
+                        "original_title": "One Day as a Lion",
+                        "overview": "Jackie Powers will stop at nothing to prevent his son from following him into a life of crime. With his mob employer in pursuit, a chance encounter at a roadside diner charts a new path.",
+                        "popularity": 491.345,
+                        "poster_path": "https://image.tmdb.org/t/p/original/cxSKca4dNlk7O7PMiEYT203vlIw.jpg",
+                        "release_date": "2023-04-04",
+                        "title": "One Day as a Lion",
+                        "video": false,
+                        "vote_average": 5.8,
+                        "vote_count": 23
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/zPEDfWece7gg1I0904KFFVUq5mg.jpg",
+                        "genre_ids": [
+                            53,
+                            28,
+                            80
+                        ],
+                        "id": 1102776,
+                        "original_language": "fr",
+                        "original_title": "AKA",
+                        "overview": "A steely special ops agent finds his morality put to the test when he infiltrates a crime syndicate and unexpectedly bonds with the boss' young son.",
+                        "popularity": 243.298,
+                        "poster_path": "https://image.tmdb.org/t/p/original/3BSxAjiporlwQTWzaHZ9Yrl5C9D.jpg",
+                        "release_date": "2023-04-28",
+                        "title": "AKA",
+                        "video": false,
+                        "vote_average": 7.1,
+                        "vote_count": 364
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/3ZRSDh5GootTeo2gAdOyUDosCmm.jpg",
+                        "genre_ids": [
+                            35,
+                            80
+                        ],
+                        "id": 638974,
+                        "original_language": "en",
+                        "original_title": "Murder Mystery 2",
+                        "overview": "After starting their own detective agency, Nick and Audrey Spitz land a career-making case when their billionaire pal is kidnapped from his wedding.",
+                        "popularity": 290.277,
+                        "poster_path": "https://image.tmdb.org/t/p/original/s1VzVhXlqsevi8zeCMG9A16nEUf.jpg",
+                        "release_date": "2023-03-28",
+                        "title": "Murder Mystery 2",
+                        "video": false,
+                        "vote_average": 6.6,
+                        "vote_count": 1144
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/8K9UjencUfDVS4nKFmSk4URSoeU.jpg",
+                        "genre_ids": [
+                            53,
+                            35,
+                            80
+                        ],
+                        "id": 804150,
+                        "original_language": "en",
+                        "original_title": "Cocaine Bear",
+                        "overview": "Inspired by a true story, an oddball group of cops, criminals, tourists and teens converge in a Georgia forest where a 500-pound black bear goes on a murderous rampage after unintentionally ingesting cocaine.",
+                        "popularity": 257.498,
+                        "poster_path": "https://image.tmdb.org/t/p/original/gOnmaxHo0412UVr1QM5Nekv1xPi.jpg",
+                        "release_date": "2023-02-22",
+                        "title": "Cocaine Bear",
+                        "video": false,
+                        "vote_average": 6.3,
+                        "vote_count": 1169
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/gGZxCy9keK0D6TxbmS8GJj85Ut4.jpg",
+                        "genre_ids": [
+                            80,
+                            35
+                        ],
+                        "id": 809787,
+                        "original_language": "en",
+                        "original_title": "Mafia Mamma",
+                        "overview": "A suburban American woman inherits her grandfather\u2019s Mafia empire and, guided by the Firm\u2019s trusted consigliere, defies everyone\u2019s expectations, including her own, as the new head of the family business.",
+                        "popularity": 204.764,
+                        "poster_path": "https://image.tmdb.org/t/p/original/zi0Lrmtvhrz52VXUjwEKlXItF9q.jpg",
+                        "release_date": "2023-04-13",
+                        "title": "Mafia Mamma",
+                        "video": false,
+                        "vote_average": 6.7,
+                        "vote_count": 61
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/b0PlSFdDwbyK0cf5RxwDpaOJQvQ.jpg",
+                        "genre_ids": [
+                            80,
+                            9648,
+                            53
+                        ],
+                        "id": 414906,
+                        "original_language": "en",
+                        "original_title": "The Batman",
+                        "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family while facing a serial killer known as the Riddler.",
+                        "popularity": 165.257,
+                        "poster_path": "https://image.tmdb.org/t/p/original/74xTEgt7R36Fpooo50r9T25onhq.jpg",
+                        "release_date": "2022-03-01",
+                        "title": "The Batman",
+                        "video": false,
+                        "vote_average": 7.7,
+                        "vote_count": 8072
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/r17jFHAemzcWPPtoO0UxjIX0xas.jpg",
+                        "genre_ids": [
+                            28,
+                            53,
+                            80
+                        ],
+                        "id": 324552,
+                        "original_language": "en",
+                        "original_title": "John Wick: Chapter 2",
+                        "overview": "John Wick is forced out of retirement by a former associate looking to seize control of a shadowy international assassins\u2019 guild. Bound by a blood oath to aid him, Wick travels to Rome and does battle against some of the world\u2019s most dangerous killers.",
+                        "popularity": 129.534,
+                        "poster_path": "https://image.tmdb.org/t/p/original/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg",
+                        "release_date": "2017-02-08",
+                        "title": "John Wick: Chapter 2",
+                        "video": false,
+                        "vote_average": 7.3,
+                        "vote_count": 11654
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/vVpEOvdxVBP2aV166j5Xlvb5Cdc.jpg",
+                        "genre_ids": [
+                            28,
+                            53,
+                            80
+                        ],
+                        "id": 458156,
+                        "original_language": "en",
+                        "original_title": "John Wick: Chapter 3 - Parabellum",
+                        "overview": "Super-assassin John Wick returns with a $14 million price tag on his head and an army of bounty-hunting killers on his trail. After killing a member of the shadowy international assassin\u2019s guild, the High Table, John Wick is excommunicado, but the world\u2019s most ruthless hit men and women await his every turn.",
+                        "popularity": 125.582,
+                        "poster_path": "https://image.tmdb.org/t/p/original/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg",
+                        "release_date": "2019-05-15",
+                        "title": "John Wick: Chapter 3 - Parabellum",
+                        "video": false,
+                        "vote_average": 7.4,
+                        "vote_count": 9354
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/Aqldsq65Nj1KAkQD2MzkZsAk5N5.jpg",
+                        "genre_ids": [
+                            28,
+                            80,
+                            18,
+                            53
+                        ],
+                        "id": 846433,
+                        "original_language": "en",
+                        "original_title": "The Enforcer",
+                        "overview": "A noir thriller set in Miami, the film follows an enforcer who discovers his femme fatale boss has branched out into cyber sex trafficking, putting a young runaway he\u2019s befriended at risk. He sacrifices everything to save the young girl from the deadly organization he\u2019s spent his life building.",
+                        "popularity": 115.879,
+                        "poster_path": "https://image.tmdb.org/t/p/original/pXC8JJbfnRWtbD8i2yKFqqWEO4X.jpg",
+                        "release_date": "2022-09-22",
+                        "title": "The Enforcer",
+                        "video": false,
+                        "vote_average": 7.3,
+                        "vote_count": 311
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/a4I481szRmycyreQTLrRe4f4YJe.jpg",
+                        "genre_ids": [
+                            80
+                        ],
+                        "id": 842544,
+                        "original_language": "en",
+                        "original_title": "Transfusion",
+                        "overview": "Ryan Logan, a former Special Forces operative, is battling to cope with life after the loss of his wife.  He is thrusted into the criminal underworld to keep his only son from being taken from him.",
+                        "popularity": 124.242,
+                        "poster_path": "https://image.tmdb.org/t/p/original/bxh5xCCW9Ynfg6EZJWUkc1zqTnr.jpg",
+                        "release_date": "2023-01-05",
+                        "title": "Transfusion",
+                        "video": false,
+                        "vote_average": 6.2,
+                        "vote_count": 177
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/kmzppWh7ljL6K9fXW72bPN3gKwu.jpg",
+                        "genre_ids": [
+                            28,
+                            35,
+                            14,
+                            80
+                        ],
+                        "id": 1013860,
+                        "original_language": "en",
+                        "original_title": "R.I.P.D. 2: Rise of the Damned",
+                        "overview": "When Sheriff Roy Pulsipher finds himself in the afterlife, he joins a special police force and returns to Earth to save humanity from the undead.",
+                        "popularity": 123.859,
+                        "poster_path": "https://image.tmdb.org/t/p/original/g4yJTzMtOBUTAR2Qnmj8TYIcFVq.jpg",
+                        "release_date": "2022-11-15",
+                        "title": "R.I.P.D. 2: Rise of the Damned",
+                        "video": false,
+                        "vote_average": 6.5,
+                        "vote_count": 485
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/rPSJAElGxOTko1zK6uIlYnTMFxN.jpg",
+                        "genre_ids": [
+                            80
+                        ],
+                        "id": 1104040,
+                        "original_language": "en",
+                        "original_title": "Gangs of Lagos",
+                        "overview": "A group of friends who each have to navigate their own destiny, growing up on the bustling streets and neighborhood of Isale Eko, Lagos.",
+                        "popularity": 105.771,
+                        "poster_path": "https://image.tmdb.org/t/p/original/nGwFsB6EXUCr21wzPgtP5juZPSv.jpg",
+                        "release_date": "2023-04-07",
+                        "title": "Gangs of Lagos",
+                        "video": false,
+                        "vote_average": 6.3,
+                        "vote_count": 41
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/xXHZeb1yhJvnSHPzZDqee0zfMb6.jpg",
+                        "genre_ids": [
+                            28,
+                            12,
+                            80
+                        ],
+                        "id": 385128,
+                        "original_language": "en",
+                        "original_title": "F9",
+                        "overview": "Dominic Toretto and his crew battle the most skilled assassin and high-performance driver they've ever encountered: his forsaken brother.",
+                        "popularity": 124.008,
+                        "poster_path": "https://image.tmdb.org/t/p/original/bOFaAXmWWXC3Rbv4u4uM9ZSzRXP.jpg",
+                        "release_date": "2021-05-19",
+                        "title": "F9",
+                        "video": false,
+                        "vote_average": 7.2,
+                        "vote_count": 6435
+                    },
+                    {
+                        "adult": false,
+                        "backdrop_path": "https://image.tmdb.org/t/p/original/tYcmm8XtzRdcT6kliCbHuWwLCwB.jpg",
+                        "genre_ids": [
+                            28,
+                            80,
+                            53
+                        ],
+                        "id": 849869,
+                        "original_language": "ko",
+                        "original_title": "\uae38\ubcf5\uc21c",
+                        "overview": "At work, she's a renowned assassin. At home, she's a single mom to a teenage daughter. Killing? That's easy. It's parenting that's the hard part.",
+                        "popularity": 99.787,
+                        "poster_path": "https://image.tmdb.org/t/p/original/taYgn3RRpCGlTGdaGQvnSIOzXFy.jpg",
+                        "release_date": "2023-02-17",
+                        "title": "Kill Boksoon",
+                        "video": false,
+                        "vote_average": 7,
+                        "vote_count": 273
+                    }
+                ],
+                "total_pages": 1445,
+                "total_results": 28896
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search by Name",
+            "url": "https://advanced-movie-search.p.rapidapi.com/search/movie",
+            "description": "Search a movie by query string",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "kong"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/search/movie\"\nquerystring = {\"query\": \"kong\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/search/movie\"\nquerystring = {\"query\": \"kong\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Detailed Response",
+            "url": "https://advanced-movie-search.p.rapidapi.com/movies/getdetails",
+            "description": "Get detailed response for a movie ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movie_id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "399566"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/movies/getdetails\"\nquerystring = {\"movie_id\": \"399566\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://advanced-movie-search.p.rapidapi.com/movies/getdetails\"\nquerystring = {\"movie_id\": \"399566\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"advanced-movie-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "adult": false,
+                "backdrop_path": "https://image.tmdb.org/t/p/original/inJjDhCjfhh3RtrJWBmmDqeuSYC.jpg",
+                "belongs_to_collection": {
+                    "id": 535313,
+                    "name": "Godzilla Collection",
+                    "poster_path": "https://image.tmdb.org/t/p/original/inNN466SKHNjbGmpfhfsaPQNleS.jpg",
+                    "backdrop_path": "https://image.tmdb.org/t/p/original/oboBn4VYB79uDxnyIri0Nt3U3N2.jpg"
+                },
+                "budget": 200000000,
+                "genres": [
+                    {
+                        "id": 28,
+                        "name": "Action"
+                    },
+                    {
+                        "id": 14,
+                        "name": "Fantasy"
+                    },
+                    {
+                        "id": 878,
+                        "name": "Science Fiction"
+                    }
+                ],
+                "homepage": "https://www.warnerbros.com/movies/godzilla-vs-kong",
+                "id": 399566,
+                "imdb_id": "tt5034838",
+                "original_language": "en",
+                "original_title": "Godzilla vs. Kong",
+                "overview": "In a time when monsters walk the Earth, humanity\u2019s fight for its future sets Godzilla and Kong on a collision course that will see the two most powerful forces of nature on the planet collide in a spectacular battle for the ages.",
+                "popularity": 84.541,
+                "poster_path": "https://image.tmdb.org/t/p/original/pgqgaUx1cJb5oZQQ5v0tNARCeBp.jpg",
+                "production_companies": [
+                    {
+                        "id": 923,
+                        "logo_path": "https://image.tmdb.org/t/p/original/5UQsZrfbfG2dYJbx8DxfoTr2Bvu.png",
+                        "name": "Legendary Pictures",
+                        "origin_country": "US"
+                    }
+                ],
+                "production_countries": [
+                    {
+                        "iso_3166_1": "US",
+                        "name": "United States of America"
+                    }
+                ],
+                "release_date": "2021-03-24",
+                "revenue": 470116094,
+                "runtime": 114,
+                "spoken_languages": [
+                    {
+                        "english_name": "English",
+                        "iso_639_1": "en",
+                        "name": "English"
+                    }
+                ],
+                "status": "Released",
+                "tagline": "One Will Fall",
+                "title": "Godzilla vs. Kong",
+                "video": false,
+                "vote_average": 7.678,
+                "vote_count": 8884
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "advanced_movie_search"
+}

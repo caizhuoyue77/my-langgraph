@@ -1,0 +1,1261 @@
+{
+    "product_id": "api_5913502c-7e1c-462e-98f9-22aa09e0ebfa",
+    "tool_description": "Tripadvisor API helps to query realtime  Hotels search, Flights prices, Restaurants, Attracting locations, etc to create a travelling site.",
+    "home_url": "https://rapidapi.com/DataCrawler/api/tripadvisor16/",
+    "name": "Tripadvisor",
+    "title": "Tripadvisor",
+    "pricing": "FREEMIUM",
+    "tool_name": "Tripadvisor",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1449,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "tripadvisor16.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Cars Same DropOff",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsSameDropOff",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "order",
+                    "type": "ENUM",
+                    "description": "Order by parameter\n\n",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "PickUp Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpLocationType",
+                    "type": "STRING",
+                    "description": "**pickUpLocationType** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpTime",
+                    "type": "TIME (24-hour HH:MM)",
+                    "description": "PickUp Time\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "dropOffTime",
+                    "type": "TIME (24-hour HH:MM)",
+                    "description": "DropOff Time\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "dropOffDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "DropOff Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpPlaceId",
+                    "type": "STRING",
+                    "description": "**placeId** for the **location** from where you want to **pick up** the car. **pickUpPlaceId** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "driverAge",
+                    "type": "ENUM",
+                    "description": "Age of the Driver",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpAirportCode",
+                    "type": "STRING",
+                    "description": "Pass in the **airportCode** as **pickUpAirportCode** if the searched **place type** is **AIRPORT**.",
+                    "default": ""
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsSameDropOff\"\nquerystring = {\"order\": \"\", \"pickUpDate\": \"\", \"pickUpLocationType\": \"\", \"pickUpTime\": \"\", \"dropOffTime\": \"\", \"dropOffDate\": \"\", \"pickUpPlaceId\": \"\", \"driverAge\": \"\", \"pickUpAirportCode\": \"\", \"currencyCode\": \"USD\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsSameDropOff\"\nquerystring = {\"order\": \"\", \"pickUpDate\": \"\", \"pickUpLocationType\": \"\", \"pickUpTime\": \"\", \"dropOffTime\": \"\", \"dropOffDate\": \"\", \"pickUpPlaceId\": \"\", \"driverAge\": \"\", \"pickUpAirportCode\": \"\", \"currencyCode\": \"USD\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Rental Availability",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalAvailability",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rentalId",
+                    "type": "STRING",
+                    "description": "Get **rentalId** from **Rental Search** API in **Vacation Rentals** collection.",
+                    "default": "VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalAvailability\"\nquerystring = {\"rentalId\": \"VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalAvailability\"\nquerystring = {\"rentalId\": \"VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Cars Different DropOff",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsDifferentDropOff",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dropOffPlaceId",
+                    "type": "STRING",
+                    "description": "**placeId** for the **location** from where you want to **drop off** the car. **dropOffPlaceId** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "order",
+                    "type": "ENUM",
+                    "description": "Order by parameter",
+                    "default": ""
+                },
+                {
+                    "name": "dropOffLocationType",
+                    "type": "STRING",
+                    "description": "**dropOffLocationType** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "dropOffTime",
+                    "type": "TIME (24-hour HH:MM)",
+                    "description": "DropOff Time\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpLocationType",
+                    "type": "STRING",
+                    "description": "**pickUpLocationType** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "dropOffDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "DropOff Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "PickUp Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpPlaceId",
+                    "type": "STRING",
+                    "description": "**placeId** for the **location** from where you want to **pick up** the car. **pickUpPlaceId** can be retrieved from **Search Rental Cars Location** API from the **Rental Cars** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "pickUpTime",
+                    "type": "TIME (24-hour HH:MM)",
+                    "description": "PickUp Time\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "pickUpAirportCode",
+                    "type": "STRING",
+                    "description": "Pass in the **airportCode** as **pickUpAirportCode** if the searched **place type** is **AIRPORT**.",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "dropOffAirportCode",
+                    "type": "STRING",
+                    "description": "Pass in the **airportCode** as **dropOffAirportCode** if the searched **place type** is **AIRPORT**.",
+                    "default": ""
+                },
+                {
+                    "name": "driverAge",
+                    "type": "ENUM",
+                    "description": "Age of the Driver",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsDifferentDropOff\"\nquerystring = {\"dropOffPlaceId\": \"\", \"pickUpAirportCode\": \"\", \"page\": \"1\", \"order\": \"\", \"dropOffLocationType\": \"\", \"dropOffTime\": \"\", \"currencyCode\": \"USD\", \"pickUpLocationType\": \"\", \"dropOffDate\": \"\", \"pickUpDate\": \"\", \"pickUpPlaceId\": \"\", \"pickUpTime\": \"\", \"dropOffAirportCode\": \"\", \"driverAge\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cars/searchCarsDifferentDropOff\"\nquerystring = {\"dropOffPlaceId\": \"\", \"pickUpAirportCode\": \"\", \"page\": \"1\", \"order\": \"\", \"dropOffLocationType\": \"\", \"dropOffTime\": \"\", \"currencyCode\": \"USD\", \"pickUpLocationType\": \"\", \"dropOffDate\": \"\", \"pickUpDate\": \"\", \"pickUpPlaceId\": \"\", \"pickUpTime\": \"\", \"dropOffAirportCode\": \"\", \"driverAge\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Hotels Filter",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelsFilter",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "checkOut",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "CheckOut Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "checkIn",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "geoId",
+                    "type": "STRING",
+                    "description": "Pass in the **geoId** of the location retrieved from the **Search Location** API from the **Hotels** collection.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelsFilter\"\nquerystring = {\"checkOut\": \"\", \"checkIn\": \"\", \"geoId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelsFilter\"\nquerystring = {\"checkOut\": \"\", \"checkIn\": \"\", \"geoId\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Hotels",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "checkIn",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "geoId",
+                    "type": "STRING",
+                    "description": "Pass in the **geoId** of the location retrieved from the **Search Location** API from the **Hotels** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "checkOut",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkout Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adults",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "rooms",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "deals",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "class",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "neighborhood",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "distFrom",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "distFromMaxDistance",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "priceMax",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "priceMin",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "pageNumber",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                },
+                {
+                    "name": "childrenAges",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "brand",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "rating",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "amenity",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "healthSafety",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "style",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels\"\nquerystring = {\"checkIn\": \"\", \"adults\": \"\", \"sort\": \"\", \"rooms\": \"\", \"deals\": \"\", \"type\": \"\", \"class\": \"\", \"neighborhood\": \"\", \"distFrom\": \"\", \"distFromMaxDistance\": \"\", \"priceMax\": \"\", \"priceMin\": \"\", \"pageNumber\": \"1\", \"geoId\": \"\", \"checkOut\": \"\", \"childrenAges\": \"\", \"brand\": \"\", \"rating\": \"\", \"amenity\": \"\", \"healthSafety\": \"\", \"style\": \"\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotels\"\nquerystring = {\"checkIn\": \"\", \"adults\": \"\", \"sort\": \"\", \"rooms\": \"\", \"deals\": \"\", \"type\": \"\", \"class\": \"\", \"neighborhood\": \"\", \"distFrom\": \"\", \"distFromMaxDistance\": \"\", \"priceMax\": \"\", \"priceMin\": \"\", \"pageNumber\": \"1\", \"geoId\": \"\", \"checkOut\": \"\", \"childrenAges\": \"\", \"brand\": \"\", \"rating\": \"\", \"amenity\": \"\", \"healthSafety\": \"\", \"style\": \"\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of the location where the **Hotel** is situated.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation\"\nquerystring = {\"query\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchLocation\"\nquerystring = {\"query\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Hotel Details",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelDetails",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "Pass in the hotel id as **id**, which can be retrieved from **Search Hotels** API from **Hotels** collection.",
+                    "default": ""
+                },
+                {
+                    "name": "checkIn",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "checkOut",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "CheckOut Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "adults",
+                    "type": "NUMBER",
+                    "description": "Number of adult guests (with age 18 and over)",
+                    "default": ""
+                },
+                {
+                    "name": "rooms",
+                    "type": "NUMBER",
+                    "description": "Number of rooms required.",
+                    "default": ""
+                },
+                {
+                    "name": "childrenAges",
+                    "type": "ARRAY",
+                    "description": "Number of children (with age between 0 and 17)\nExample:\nIf 1st child's age is 11 months and 2nd child's age is 10 years, then the parameter should be passed as [0,10]",
+                    "default": ""
+                },
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelDetails\"\nquerystring = {\"id\": \"\", \"checkIn\": \"\", \"checkOut\": \"\", \"adults\": \"\", \"rooms\": \"\", \"childrenAges\": \"\", \"currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/getHotelDetails\"\nquerystring = {\"id\": \"\", \"checkIn\": \"\", \"checkOut\": \"\", \"adults\": \"\", \"rooms\": \"\", \"childrenAges\": \"\", \"currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Hotels By Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotelsByLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "latitude",
+                    "type": "STRING",
+                    "description": "Pass in the **geoId** of the location retrieved from the **Search Location** API from the **Hotels** collection.",
+                    "default": "40.730610"
+                },
+                {
+                    "name": "checkIn",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "checkOut",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkout Date\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "longitude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-73.935242"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "pageNumber",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "rooms",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "childrenAges",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "adults",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "type",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "amenity",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "healthSafety",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "deals",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "rating",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "style",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "class",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "distFromMaxDistance",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "distFrom",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "priceMin",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "priceMax",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "brand",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "neighborhood",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotelsByLocation\"\nquerystring = {\"latitude\": \"40.730610\", \"checkIn\": \"\", \"checkOut\": \"\", \"pageNumber\": \"1\", \"currencyCode\": \"USD\", \"rooms\": \"\", \"childrenAges\": \"\", \"adults\": \"\", \"type\": \"\", \"amenity\": \"\", \"healthSafety\": \"\", \"deals\": \"\", \"rating\": \"\", \"style\": \"\", \"class\": \"\", \"distFromMaxDistance\": \"\", \"distFrom\": \"\", \"priceMin\": \"\", \"priceMax\": \"\", \"brand\": \"\", \"neighborhood\": \"\", \"sort\": \"\", \"longitude\": \"-73.935242\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/hotels/searchHotelsByLocation\"\nquerystring = {\"latitude\": \"40.730610\", \"checkIn\": \"\", \"checkOut\": \"\", \"pageNumber\": \"1\", \"currencyCode\": \"USD\", \"rooms\": \"\", \"childrenAges\": \"\", \"adults\": \"\", \"type\": \"\", \"amenity\": \"\", \"healthSafety\": \"\", \"deals\": \"\", \"rating\": \"\", \"style\": \"\", \"class\": \"\", \"distFromMaxDistance\": \"\", \"distFrom\": \"\", \"priceMin\": \"\", \"priceMax\": \"\", \"brand\": \"\", \"neighborhood\": \"\", \"sort\": \"\", \"longitude\": \"-73.935242\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Rental Reviews",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalReviews",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rentalId",
+                    "type": "STRING",
+                    "description": "Get **rentalId** from **Rental Search** API in **Vacation Rentals** collection.",
+                    "default": "VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalReviews\"\nquerystring = {\"page\": \"\", \"rentalId\": \"VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalReviews\"\nquerystring = {\"page\": \"\", \"rentalId\": \"VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Rental Rates",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalRates",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rentalId",
+                    "type": "STRING",
+                    "description": "Get **rentalId** from **Rental Search** API in **Vacation Rentals** collection.",
+                    "default": "VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York"
+                },
+                {
+                    "name": "startDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: YYYY-MM-DD",
+                    "default": ""
+                },
+                {
+                    "name": "adults",
+                    "type": "NUMBER",
+                    "description": "The number of guests.",
+                    "default": "1"
+                },
+                {
+                    "name": "endDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkout Date\nFormat: YYYY-MM-DD",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalRates\"\nquerystring = {\"currencyCode\": \"USD\", \"rentalId\": \"VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York\", \"startDate\": \"\", \"adults\": \"1\", \"endDate\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalRates\"\nquerystring = {\"currencyCode\": \"USD\", \"rentalId\": \"VacationRentalReview-g60827-d25286145-Gorgeous_2_bedroom_haven_in_East_New_York-Brooklyn_New_York\", \"startDate\": \"\", \"adults\": \"1\", \"endDate\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Filters",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/flights/getFilters",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "destinationAirportCode",
+                    "type": "STRING",
+                    "description": "Destination **airportCode**. The **airportCode** can be extracted from the **Search Airport** API in the **Flights** collection.",
+                    "default": "DEL"
+                },
+                {
+                    "name": "sourceAirportCode",
+                    "type": "STRING",
+                    "description": "Source **airportCode**. The **airportCode** can be extracted from the **Search Airport** API in the **Flights** collection.\n",
+                    "default": "BOM"
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "**Departure** or **Travel date**.\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "classOfService",
+                    "type": "ENUM",
+                    "description": "Traveller cabin class.",
+                    "default": ""
+                },
+                {
+                    "name": "itineraryType",
+                    "type": "ENUM",
+                    "description": "Pass **itineraryType** as **ONE_WAY** for **one way** and **ROUND_TRIP** for **return flight**.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "returnDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "**Return date**.\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/getFilters\"\nquerystring = {\"destinationAirportCode\": \"DEL\", \"sourceAirportCode\": \"BOM\", \"date\": \"\", \"returnDate\": \"\", \"classOfService\": \"\", \"itineraryType\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/getFilters\"\nquerystring = {\"destinationAirportCode\": \"DEL\", \"sourceAirportCode\": \"BOM\", \"date\": \"\", \"returnDate\": \"\", \"classOfService\": \"\", \"itineraryType\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Restaurants",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "locationId",
+                    "type": "STRING",
+                    "description": "**locationId** of the place got from **Search Restaurant Location** in **Restaurants collection**.\n",
+                    "default": "304554"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants\"\nquerystring = {\"page\": \"\", \"locationId\": \"304554\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchRestaurants\"\nquerystring = {\"page\": \"\", \"locationId\": \"304554\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Flights",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "numAdults",
+                    "type": "NUMBER",
+                    "description": "Number of Adults (Ages between 18-64 years)\nDefault Value: 1",
+                    "default": "1"
+                },
+                {
+                    "name": "sortOrder",
+                    "type": "ENUM",
+                    "description": "Sort by parameter",
+                    "default": ""
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "**Departure** or **Travel date**.\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "numSeniors",
+                    "type": "NUMBER",
+                    "description": "Number of Seniors (with age 65 and over)\nDefault Value: 1",
+                    "default": "0"
+                },
+                {
+                    "name": "sourceAirportCode",
+                    "type": "STRING",
+                    "description": "Source **airportCode**. The **airportCode** can be extracted from the **Search Airport** API in the **Flights** collection.\n",
+                    "default": "BOM"
+                },
+                {
+                    "name": "destinationAirportCode",
+                    "type": "STRING",
+                    "description": "Destination **airportCode**. The **airportCode** can be extracted from the **Search Airport** API in the **Flights** collection.",
+                    "default": "DEL"
+                },
+                {
+                    "name": "classOfService",
+                    "type": "ENUM",
+                    "description": "Traveller cabin class.",
+                    "default": ""
+                },
+                {
+                    "name": "itineraryType",
+                    "type": "ENUM",
+                    "description": "Pass **itineraryType** as **ONE_WAY** for **one way** and **ROUND_TRIP** for **return flight**.",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "pageNumber",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "returnDate",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "**Return date**.\nFormat: **YYYY-MM-DD**",
+                    "default": ""
+                },
+                {
+                    "name": "childAges",
+                    "type": "ARRAY",
+                    "description": "Pass Children age in the form of Array (Ages between 2-12 years)\nEg: [2, 10]",
+                    "default": ""
+                },
+                {
+                    "name": "searchHash",
+                    "type": "STRING",
+                    "description": "Pass **searchHash** from the previous API call to get a complete response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "searchId",
+                    "type": "STRING",
+                    "description": "Pass **searchId** from the previous API call to get a complete response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "nearby",
+                    "type": "ENUM",
+                    "description": "Include nearby airports",
+                    "default": ""
+                },
+                {
+                    "name": "pageLoadUid",
+                    "type": "STRING",
+                    "description": "Pass **pageLoadUid** from the previous API call to get a complete response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "nonstop",
+                    "type": "ENUM",
+                    "description": "Prefer nonstop",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights\"\nquerystring = {\"numAdults\": \"1\", \"sortOrder\": \"\", \"date\": \"\", \"numSeniors\": \"0\", \"sourceAirportCode\": \"BOM\", \"destinationAirportCode\": \"DEL\", \"pageNumber\": \"1\", \"returnDate\": \"\", \"classOfService\": \"\", \"childAges\": \"\", \"searchHash\": \"\", \"searchId\": \"\", \"nearby\": \"\", \"pageLoadUid\": \"\", \"itineraryType\": \"\", \"currencyCode\": \"USD\", \"nonstop\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlights\"\nquerystring = {\"numAdults\": \"1\", \"sortOrder\": \"\", \"date\": \"\", \"numSeniors\": \"0\", \"sourceAirportCode\": \"BOM\", \"destinationAirportCode\": \"DEL\", \"pageNumber\": \"1\", \"returnDate\": \"\", \"classOfService\": \"\", \"childAges\": \"\", \"searchHash\": \"\", \"searchId\": \"\", \"nearby\": \"\", \"pageLoadUid\": \"\", \"itineraryType\": \"\", \"currencyCode\": \"USD\", \"nonstop\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Rental Cars Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of the location where you want to Rent the Car.",
+                    "default": "new"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation\"\nquerystring = {\"query\": \"new\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation\"\nquerystring = {\"query\": \"new\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Rental Details",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalDetails",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rentalId",
+                    "type": "STRING",
+                    "description": "Get **rentalId** from **Rental Search** API in **Vacation Rentals** collection.",
+                    "default": "VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalDetails\"\nquerystring = {\"rentalId\": \"VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalDetails\"\nquerystring = {\"rentalId\": \"VacationRentalReview-g60763-d2235027-Garden_apartment_in_a_harlem_townhouse-New_York_City_New_York\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Flights MultiCity",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlightsMultiCity",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sortOrder",
+                    "type": "ENUM",
+                    "description": "Sort by parameter",
+                    "default": ""
+                },
+                {
+                    "name": "classOfService",
+                    "type": "ENUM",
+                    "description": "Traveller cabin class.",
+                    "default": ""
+                },
+                {
+                    "name": "legs",
+                    "type": "OBJECT",
+                    "description": "The legs must contain the origin, destination and date in object format and must be passed in an array.\nEXAMPLE:\n[\n{'sourceAirportCode':'BOS','destinationAirportCode':'LON','date':'2022-12-18'},{'sourceAirportCode':'LON','destinationAirportCode':'BOS','date':'2022-12-26'},\n\u2026\n]\n**Note**: If there are multiple stops, there should be more leg objects on the board.",
+                    "default": "[{\"sourceAirportCode\":\"BOS\",\"destinationAirportCode\":\"LON\",\"date\":\"2023-10-18\"},{\"sourceAirportCode\":\"LON\",\"destinationAirportCode\":\"BOS\",\"date\":\"2023-10-26\"}]"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "pageLoadUid",
+                    "type": "STRING",
+                    "description": "Pass **pageLoadUid** from the previous API call to get a complete response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "searchId",
+                    "type": "STRING",
+                    "description": "Pass **searchId** from the previous API call to get a complete response.\n",
+                    "default": ""
+                },
+                {
+                    "name": "searchHash",
+                    "type": "STRING",
+                    "description": "Pass **searchHash** from the previous API call to get a complete response.\n",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlightsMultiCity\"\nquerystring = {\"sortOrder\": \"\", \"classOfService\": \"\", \"legs\": \"[{\\\"sourceAirportCode\\\":\\\"BOS\\\",\\\"destinationAirportCode\\\":\\\"LON\\\",\\\"date\\\":\\\"2023-10-18\\\"},{\\\"sourceAirportCode\\\":\\\"LON\\\",\\\"destinationAirportCode\\\":\\\"BOS\\\",\\\"date\\\":\\\"2023-10-26\\\"}]\", \"pageLoadUid\": \"\", \"currencyCode\": \"USD\", \"searchId\": \"\", \"searchHash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchFlightsMultiCity\"\nquerystring = {\"sortOrder\": \"\", \"classOfService\": \"\", \"legs\": \"[{\\\"sourceAirportCode\\\":\\\"BOS\\\",\\\"destinationAirportCode\\\":\\\"LON\\\",\\\"date\\\":\\\"2023-10-18\\\"},{\\\"sourceAirportCode\\\":\\\"LON\\\",\\\"destinationAirportCode\\\":\\\"BOS\\\",\\\"date\\\":\\\"2023-10-26\\\"}]\", \"pageLoadUid\": \"\", \"currencyCode\": \"USD\", \"searchId\": \"\", \"searchHash\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Currency",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/getCurrency",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/getCurrency\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/getCurrency\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Test API",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/test",
+            "description": "This API is to test if server is up and running",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/test\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/test\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Rental Search",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalSearch",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "arrival",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkin Date\nFormat: YYYY-MM-DD",
+                    "default": ""
+                },
+                {
+                    "name": "sortOrder",
+                    "type": "ENUM",
+                    "description": "Sort by parameter",
+                    "default": ""
+                },
+                {
+                    "name": "geoId",
+                    "type": "STRING",
+                    "description": "Get geoId of the place from Rental Search API from the Vacation Rentals collection.",
+                    "default": ""
+                },
+                {
+                    "name": "departure",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "Checkout Date\nFormat: YYYY-MM-DD",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                },
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalSearch\"\nquerystring = {\"arrival\": \"\", \"sortOrder\": \"\", \"geoId\": \"\", \"page\": \"1\", \"currencyCode\": \"USD\", \"departure\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/rentalSearch\"\nquerystring = {\"arrival\": \"\", \"sortOrder\": \"\", \"geoId\": \"\", \"page\": \"1\", \"currencyCode\": \"USD\", \"departure\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Cruises Details",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesDetails",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seoName",
+                    "type": "STRING",
+                    "description": "**seoName** can be retrieved from **Search Cruises** API and **Get Cruises Quick Links** API from the **Cruises collection**.",
+                    "default": "MSC Magnifica"
+                },
+                {
+                    "name": "shipId",
+                    "type": "STRING",
+                    "description": "**shipId** can be retrieved from **Search Cruises** API and **Get Cruises Quick Links** API from the **Cruises collection**.",
+                    "default": "15691635"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesDetails\"\nquerystring = {\"seoName\": \"MSC Magnifica\", \"shipId\": \"15691635\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesDetails\"\nquerystring = {\"seoName\": \"MSC Magnifica\", \"shipId\": \"15691635\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Cruises",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cruises/searchCruises",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "order",
+                    "type": "ENUM",
+                    "description": "Order by parameter",
+                    "default": ""
+                },
+                {
+                    "name": "destinationId",
+                    "type": "STRING",
+                    "description": "**destinationId** can be retrieved from **Get Cruises Location** API from the **Cruises collection**.",
+                    "default": "153339"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                },
+                {
+                    "name": "departureDate",
+                    "type": "STRING",
+                    "description": "Departure Date\nFormat: **YYYY-MM**",
+                    "default": ""
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Page number. The default page number is 1.",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/searchCruises\"\nquerystring = {\"currencyCode\": \"USD\", \"order\": \"\", \"departureDate\": \"\", \"page\": \"1\", \"destinationId\": \"153339\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/searchCruises\"\nquerystring = {\"currencyCode\": \"USD\", \"order\": \"\", \"departureDate\": \"\", \"page\": \"1\", \"destinationId\": \"153339\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Cruises Quick Links",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesQuickLinks",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesQuickLinks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getCruisesQuickLinks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Cruises Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getLocation\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/cruises/getLocation\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Vacation Rental Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of the location where you want to search for **Vacation Rentals**.",
+                    "default": "new"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation\"\nquerystring = {\"query\": \"new\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/rentals/searchLocation\"\nquerystring = {\"query\": \"new\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Restaurant Details",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "restaurantsId",
+                    "type": "STRING",
+                    "description": "Get id from **search restaurant** API",
+                    "default": "Restaurant_Review-g304554-d8010527-Reviews-Saptami-Mumbai_Maharashtra"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currencyCode",
+                    "type": "STRING",
+                    "description": "**currencyCode** can be retrieved from **Get Currency** API from **Configs** collection.",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails\"\nquerystring = {\"restaurantsId\": \"Restaurant_Review-g304554-d8010527-Reviews-Saptami-Mumbai_Maharashtra\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/getRestaurantDetails\"\nquerystring = {\"restaurantsId\": \"Restaurant_Review-g304554-d8010527-Reviews-Saptami-Mumbai_Maharashtra\", \"currencyCode\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Restaurant Location",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of the location where the **Restaurant** is situated.",
+                    "default": "mumbai"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation\"\nquerystring = {\"query\": \"mumbai\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/restaurant/searchLocation\"\nquerystring = {\"query\": \"mumbai\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search Airport",
+            "url": "https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchAirport",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of the location where the **Airport** is situated.",
+                    "default": "london"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchAirport\"\nquerystring = {\"query\": \"london\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tripadvisor16.p.rapidapi.com/api/v1/flights/searchAirport\"\nquerystring = {\"query\": \"london\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tripadvisor16.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "tripadvisor"
+}

@@ -1,0 +1,2340 @@
+{
+    "product_id": "api_5ec2886e-20d1-49b1-979c-1accb1351135",
+    "tool_description": "This API helps to query rooms, price, facilities, policities, etc information from many hotels around the world to create a travelling site/application, such as : hotels.com",
+    "home_url": "https://rapidapi.com/apidojo/api/hotels4/",
+    "name": "Hotels",
+    "title": "Hotels",
+    "pricing": "FREEMIUM",
+    "tool_name": "Hotels",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2055,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "hotels4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "reviews/list (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/reviews/list",
+            "description": "Get all reviews of specific property",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "The value of id field that received from .../properties/list endpoint",
+                    "default": "1178275040"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "loc",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "For paging purpose",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/reviews/list\"\nquerystring = {\"id\": \"1178275040\", \"loc\": \"en_US\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/reviews/list\"\nquerystring = {\"id\": \"1178275040\", \"loc\": \"en_US\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "reviews/v2/list (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/reviews/v2/list",
+            "description": "Get all reviews of specific property",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotelId",
+                    "type": "STRING",
+                    "description": "The value of id field that received from \u2026/properties/list endpoint",
+                    "default": "1053457920"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "reviewOrder",
+                    "type": "STRING",
+                    "description": "One of the following : rating&#95;highest&#95;first|rating&#95;lowest&#95;first|date&#95;newest&#95;first",
+                    "default": "date_newest_first"
+                },
+                {
+                    "name": "paginationURL",
+                    "type": "STRING",
+                    "description": "The value of nextURL field returned right in this endpoint, used to load next page.",
+                    "default": ""
+                },
+                {
+                    "name": "tripTypeFilter",
+                    "type": "STRING",
+                    "description": "One of the following : all|romance|family|with-friends|other",
+                    "default": "all"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/reviews/v2/list\"\nquerystring = {\"hotelId\": \"1053457920\", \"reviewOrder\": \"date_newest_first\", \"paginationURL\": \"\", \"tripTypeFilter\": \"all\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/reviews/v2/list\"\nquerystring = {\"hotelId\": \"1053457920\", \"reviewOrder\": \"date_newest_first\", \"paginationURL\": \"\", \"tripTypeFilter\": \"all\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "properties/get-details (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/properties/get-details",
+            "description": "Get all available information of a property",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "The value of id field that returned in properties/list endpoint",
+                    "default": "424023"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "children6",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the sixth room",
+                    "default": ""
+                },
+                {
+                    "name": "children1",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the first room. Ex : 5,11",
+                    "default": ""
+                },
+                {
+                    "name": "adults3",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the third room",
+                    "default": ""
+                },
+                {
+                    "name": "adults4",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the fourth room",
+                    "default": ""
+                },
+                {
+                    "name": "adults6",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the sixth room",
+                    "default": ""
+                },
+                {
+                    "name": "children3",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the third room",
+                    "default": ""
+                },
+                {
+                    "name": "adults2",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the second room",
+                    "default": ""
+                },
+                {
+                    "name": "adults7",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the seventh room",
+                    "default": ""
+                },
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                },
+                {
+                    "name": "children7",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the seventh room",
+                    "default": ""
+                },
+                {
+                    "name": "children4",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the fourth room",
+                    "default": ""
+                },
+                {
+                    "name": "children8",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the eighth room",
+                    "default": ""
+                },
+                {
+                    "name": "children5",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the fifth room",
+                    "default": ""
+                },
+                {
+                    "name": "children2",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the second room",
+                    "default": ""
+                },
+                {
+                    "name": "adults8",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the eighth room",
+                    "default": ""
+                },
+                {
+                    "name": "adults5",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the fifth room",
+                    "default": ""
+                },
+                {
+                    "name": "adults1",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the first room",
+                    "default": "1"
+                },
+                {
+                    "name": "checkOut",
+                    "type": "STRING",
+                    "description": "The check-out date at hotel",
+                    "default": "2020-01-15"
+                },
+                {
+                    "name": "checkIn",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2020-01-08"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/get-details\"\nquerystring = {\"children6\": \"\", \"children1\": \"\", \"adults3\": \"\", \"adults4\": \"\", \"adults6\": \"\", \"children3\": \"\", \"adults2\": \"\", \"adults7\": \"\", \"currency\": \"USD\", \"locale\": \"en_US\", \"children7\": \"\", \"children4\": \"\", \"children8\": \"\", \"children5\": \"\", \"children2\": \"\", \"adults8\": \"\", \"adults5\": \"\", \"adults1\": \"1\", \"checkOut\": \"2020-01-15\", \"id\": \"424023\", \"checkIn\": \"2020-01-08\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/get-details\"\nquerystring = {\"children6\": \"\", \"children1\": \"\", \"adults3\": \"\", \"adults4\": \"\", \"adults6\": \"\", \"children3\": \"\", \"adults2\": \"\", \"adults7\": \"\", \"currency\": \"USD\", \"locale\": \"en_US\", \"children7\": \"\", \"children4\": \"\", \"children8\": \"\", \"children5\": \"\", \"children2\": \"\", \"adults8\": \"\", \"adults5\": \"\", \"adults1\": \"1\", \"checkOut\": \"2020-01-15\", \"id\": \"424023\", \"checkIn\": \"2020-01-08\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "body": {
+                                "type": "object",
+                                "properties": {
+                                    "pdpHeader": {
+                                        "type": "object",
+                                        "properties": {
+                                            "hotelId": {
+                                                "type": "string"
+                                            },
+                                            "destinationId": {
+                                                "type": "string"
+                                            },
+                                            "pointOfSaleId": {
+                                                "type": "string"
+                                            },
+                                            "currencyCode": {
+                                                "type": "string"
+                                            },
+                                            "occupancyKey": {
+                                                "type": "string"
+                                            },
+                                            "hotelLocation": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "coordinates": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "latitude": {
+                                                                "type": "number"
+                                                            },
+                                                            "longitude": {
+                                                                "type": "number"
+                                                            }
+                                                        }
+                                                    },
+                                                    "resolvedLocation": {
+                                                        "type": "string"
+                                                    },
+                                                    "locationName": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "overview": {
+                                        "type": "object",
+                                        "properties": {
+                                            "overviewSections": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "hotelWelcomeRewards": {
+                                        "type": "object",
+                                        "properties": {
+                                            "applies": {
+                                                "type": "boolean"
+                                            },
+                                            "info": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "propertyDescription": {
+                                        "type": "object",
+                                        "properties": {
+                                            "clientToken": {
+                                                "type": "string"
+                                            },
+                                            "address": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "countryName": {
+                                                        "type": "string"
+                                                    },
+                                                    "cityName": {
+                                                        "type": "string"
+                                                    },
+                                                    "postalCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "provinceName": {
+                                                        "type": "string"
+                                                    },
+                                                    "addressLine1": {
+                                                        "type": "string"
+                                                    },
+                                                    "countryCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "pattern": {
+                                                        "type": "string"
+                                                    },
+                                                    "fullAddress": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "priceMatchEnabled": {
+                                                "type": "boolean"
+                                            },
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "starRatingTitle": {
+                                                "type": "string"
+                                            },
+                                            "starRating": {
+                                                "type": "integer"
+                                            },
+                                            "featuredPrice": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "pricingTooltip": {
+                                                        "type": "string"
+                                                    },
+                                                    "currentPrice": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "formatted": {
+                                                                "type": "string"
+                                                            },
+                                                            "plain": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    },
+                                                    "oldPrice": {
+                                                        "type": "string"
+                                                    },
+                                                    "priceInfo": {
+                                                        "type": "string"
+                                                    },
+                                                    "taxInclusiveFormatting": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "offer": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "label": {
+                                                                "type": "string"
+                                                            },
+                                                            "text": {
+                                                                "type": "string"
+                                                            },
+                                                            "promoType": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "bookNowButton": {
+                                                        "type": "boolean"
+                                                    }
+                                                }
+                                            },
+                                            "mapWidget": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "staticMapUrl": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "roomTypeNames": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "tagline": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "freebies": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "guestReviews": {
+                                        "type": "object",
+                                        "properties": {
+                                            "brands": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "scale": {
+                                                        "type": "integer"
+                                                    },
+                                                    "formattedScale": {
+                                                        "type": "string"
+                                                    },
+                                                    "rating": {
+                                                        "type": "number"
+                                                    },
+                                                    "formattedRating": {
+                                                        "type": "string"
+                                                    },
+                                                    "lowRating": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "badgeText": {
+                                                        "type": "string"
+                                                    },
+                                                    "total": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            },
+                                            "trustYouReviews": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "categoryName": {
+                                                            "type": "string"
+                                                        },
+                                                        "percentage": {
+                                                            "type": "string"
+                                                        },
+                                                        "text": {
+                                                            "type": "string"
+                                                        },
+                                                        "sentiment": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "tripAdvisor": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "rating": {
+                                                        "type": "number"
+                                                    },
+                                                    "total": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "atAGlance": {
+                                        "type": "object",
+                                        "properties": {
+                                            "keyFacts": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "hotelSize": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "arrivingLeaving": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "specialCheckInInstructions": {
+                                                        "type": "array"
+                                                    },
+                                                    "requiredAtCheckIn": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "travellingOrInternet": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "travelling": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "children": {
+                                                                "type": "array"
+                                                            },
+                                                            "pets": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "extraPeople": {
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    },
+                                                    "internet": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "transportAndOther": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "transport": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "transfers": {
+                                                                "type": "array"
+                                                            },
+                                                            "parking": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            },
+                                                            "offsiteTransfer": {
+                                                                "type": "array"
+                                                            }
+                                                        }
+                                                    },
+                                                    "otherInformation": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "string"
+                                                        }
+                                                    },
+                                                    "otherInclusions": {
+                                                        "type": "array"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "amenities": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "heading": {
+                                                    "type": "string"
+                                                },
+                                                "listItems": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "heading": {
+                                                                "type": "string"
+                                                            },
+                                                            "listItems": {
+                                                                "type": "array",
+                                                                "items": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "smallPrint": {
+                                        "type": "object",
+                                        "properties": {
+                                            "alternativeNames": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "mandatoryFees": {
+                                                "type": "array"
+                                            },
+                                            "optionalExtras": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "policies": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "mandatoryTaxesOrFees": {
+                                                "type": "boolean"
+                                            },
+                                            "display": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    },
+                                    "roomsAndRates": {
+                                        "type": "object",
+                                        "properties": {
+                                            "bookingUrl": {
+                                                "type": "string"
+                                            },
+                                            "rooms": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "name": {
+                                                            "type": "string"
+                                                        },
+                                                        "images": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "caption": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "thumbnailUrl": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "fullSizeUrl": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "bedChoices": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "mainOptions": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    }
+                                                                },
+                                                                "extraBedTypes": {
+                                                                    "type": "array",
+                                                                    "items": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "maxOccupancy": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "children": {
+                                                                    "type": "integer"
+                                                                },
+                                                                "total": {
+                                                                    "type": "integer"
+                                                                },
+                                                                "messageChildren": {
+                                                                    "type": "string"
+                                                                },
+                                                                "messageTotal": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        },
+                                                        "additionalInfo": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "description": {
+                                                                    "type": "string"
+                                                                },
+                                                                "details": {
+                                                                    "type": "object",
+                                                                    "properties": {
+                                                                        "amenities": {
+                                                                            "type": "array",
+                                                                            "items": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        },
+                                                        "ratePlans": {
+                                                            "type": "array",
+                                                            "items": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "occupancy": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "maxAdults": {
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "maxChildren": {
+                                                                                "type": "integer"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "cancellation": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "title": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "free": {
+                                                                                "type": "boolean"
+                                                                            },
+                                                                            "info": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "additionalInfo": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "cancellationDate": {
+                                                                                "type": "string"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "cancellations": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "object",
+                                                                            "properties": {
+                                                                                "title": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "free": {
+                                                                                    "type": "boolean"
+                                                                                },
+                                                                                "info": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "additionalInfo": {
+                                                                                    "type": "string"
+                                                                                },
+                                                                                "period": {
+                                                                                    "type": "string"
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "features": {
+                                                                        "type": "array",
+                                                                        "items": {
+                                                                            "type": "object"
+                                                                        }
+                                                                    },
+                                                                    "welcomeRewards": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "info": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "collect": {
+                                                                                "type": "boolean"
+                                                                            },
+                                                                            "redeem": {
+                                                                                "type": "boolean"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "offers": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "offer": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "text": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "promoType": {
+                                                                                        "type": "string"
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "valueAdds": {
+                                                                                "type": "array"
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "price": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "current": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "unformattedCurrent": {
+                                                                                "type": "integer"
+                                                                            },
+                                                                            "old": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "info": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "nightlyPriceBreakdown": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "additionalColumns": {
+                                                                                        "type": "array",
+                                                                                        "items": {
+                                                                                            "type": "object",
+                                                                                            "properties": {
+                                                                                                "heading": {
+                                                                                                    "type": "string"
+                                                                                                },
+                                                                                                "value": {
+                                                                                                    "type": "string"
+                                                                                                },
+                                                                                                "oldValue": {
+                                                                                                    "type": "string"
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "nightlyPrices": {
+                                                                                        "type": "array"
+                                                                                    }
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                    },
+                                                                    "payment": {
+                                                                        "type": "object",
+                                                                        "properties": {
+                                                                            "paymentMessage": {
+                                                                                "type": "string"
+                                                                            },
+                                                                            "book": {
+                                                                                "type": "object",
+                                                                                "properties": {
+                                                                                    "caption": {
+                                                                                        "type": "string"
+                                                                                    },
+                                                                                    "bookingParamsMixedRatePlan": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "init": {
+                                                                                                "type": "boolean"
+                                                                                            },
+                                                                                            "bookingApiVersion": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "numberOfRoomType": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "orderItems": {
+                                                                                                "type": "array",
+                                                                                                "items": {
+                                                                                                    "type": "object",
+                                                                                                    "properties": {
+                                                                                                        "rateCode": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "roomTypeCode": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "businessModel": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "ratePlanConfiguration": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "arrivalDate": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "departureDate": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "destinationId": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "hotelCityId": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "hotelId": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "sequenceNumber": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "tripId": {
+                                                                                                            "type": "string"
+                                                                                                        },
+                                                                                                        "tspid": {
+                                                                                                            "type": "integer"
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "propertyDetailsDisplayRate": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "currency": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "minPrice": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "marketingChannelCode": {
+                                                                                                "type": "string"
+                                                                                            },
+                                                                                            "interstitial": {
+                                                                                                "type": "string"
+                                                                                            }
+                                                                                        }
+                                                                                    },
+                                                                                    "paymentPreference": {
+                                                                                        "type": "object",
+                                                                                        "properties": {
+                                                                                            "options": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "payNow": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "displayedPrice": {
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                    "displayedPrice": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "priceInfo": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "approximated": {
+                                                                                                                        "type": "boolean"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "payInCurrency": {
+                                                                                                                "type": "boolean"
+                                                                                                            },
+                                                                                                            "welcomeRewards": {
+                                                                                                                "type": "string"
+                                                                                                            },
+                                                                                                            "giftCard": {
+                                                                                                                "type": "string"
+                                                                                                            },
+                                                                                                            "overrideBookingParams": {
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                    "businessModel": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "displayedCurrentPrice": {
+                                                                                                                        "type": "string"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    },
+                                                                                                    "payLater": {
+                                                                                                        "type": "object",
+                                                                                                        "properties": {
+                                                                                                            "displayedPrice": {
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                    "displayedPrice": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "priceInfo": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "approximated": {
+                                                                                                                        "type": "boolean"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            },
+                                                                                                            "welcomeRewards": {
+                                                                                                                "type": "string"
+                                                                                                            },
+                                                                                                            "overrideBookingParams": {
+                                                                                                                "type": "object",
+                                                                                                                "properties": {
+                                                                                                                    "businessModel": {
+                                                                                                                        "type": "string"
+                                                                                                                    },
+                                                                                                                    "displayedCurrentPrice": {
+                                                                                                                        "type": "string"
+                                                                                                                    }
+                                                                                                                }
+                                                                                                            }
+                                                                                                        }
+                                                                                                    }
+                                                                                                }
+                                                                                            },
+                                                                                            "roomTracking": {
+                                                                                                "type": "object",
+                                                                                                "properties": {
+                                                                                                    "prop49": {
+                                                                                                        "type": "string"
+                                                                                                    },
+                                                                                                    "prop71": {
+                                                                                                        "type": "string"
+                                                                                                    },
+                                                                                                    "prop75": {
+                                                                                                        "type": "string"
+                                                                                                    }
+                                                                                                }
+                                                                                            }
+                                                                                        }
+                                                                                    }
+                                                                                }
+                                                                            },
+                                                                            "noCCRequired": {
+                                                                                "type": "boolean"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "ratePlanWithOffersExists": {
+                                                "type": "boolean"
+                                            },
+                                            "priceColumnHeading": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "specialFeatures": {
+                                        "type": "object",
+                                        "properties": {
+                                            "sections": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object",
+                                                    "properties": {
+                                                        "heading": {
+                                                            "type": "string"
+                                                        },
+                                                        "freeText": {
+                                                            "type": "string"
+                                                        },
+                                                        "listItems": {
+                                                            "type": "array"
+                                                        },
+                                                        "subsections": {
+                                                            "type": "array"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "miscellaneous": {
+                                        "type": "object",
+                                        "properties": {
+                                            "pimmsAttributes": {
+                                                "type": "string"
+                                            },
+                                            "showLegalInfoForStrikethroughPrices": {
+                                                "type": "boolean"
+                                            }
+                                        }
+                                    },
+                                    "pageInfo": {
+                                        "type": "object",
+                                        "properties": {
+                                            "pageType": {
+                                                "type": "string"
+                                            },
+                                            "errors": {
+                                                "type": "array"
+                                            },
+                                            "errorKeys": {
+                                                "type": "array"
+                                            }
+                                        }
+                                    },
+                                    "trustYouReviewsCredit": {
+                                        "type": "boolean"
+                                    },
+                                    "hotelBadge": {
+                                        "type": "object",
+                                        "properties": {
+                                            "type": {
+                                                "type": "string"
+                                            },
+                                            "label": {
+                                                "type": "string"
+                                            },
+                                            "tooltipTitle": {
+                                                "type": "string"
+                                            },
+                                            "tooltipText": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "common": {
+                                "type": "object",
+                                "properties": {
+                                    "pointOfSale": {
+                                        "type": "object",
+                                        "properties": {
+                                            "numberSeparators": {
+                                                "type": "string"
+                                            },
+                                            "brandName": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "tracking": {
+                                        "type": "object",
+                                        "properties": {
+                                            "omniture": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "s.prop34": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar69": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.currencyCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar16": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.products": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar29": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar40": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar95": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar41": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar31": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar4": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar43": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar32": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar34": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar13": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.server": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop28": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop27": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop5": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar80": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop48": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop36": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar93": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "pageViewBeaconUrl": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "transportation": {
+                        "type": "object",
+                        "properties": {
+                            "transportLocations": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "category": {
+                                            "type": "string"
+                                        },
+                                        "locations": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "name": {
+                                                        "type": "string"
+                                                    },
+                                                    "distance": {
+                                                        "type": "string"
+                                                    },
+                                                    "distanceInTime": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "neighborhood": {
+                        "type": "object",
+                        "properties": {
+                            "neighborhoodName": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "properties/list (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/properties/list",
+            "description": "List properties with options and filters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "checkOut",
+                    "type": "STRING",
+                    "description": "The check-out date at hotel, formated as yyyy-MM-dd",
+                    "default": ""
+                },
+                {
+                    "name": "destinationId",
+                    "type": "NUMBER",
+                    "description": "The value of destinationId returned in locations/search endpoint",
+                    "default": "1506246"
+                },
+                {
+                    "name": "pageNumber",
+                    "type": "NUMBER",
+                    "description": "The page number in which data is display",
+                    "default": "1"
+                },
+                {
+                    "name": "checkIn",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel, formated as yyyy-MM-dd",
+                    "default": ""
+                },
+                {
+                    "name": "adults1",
+                    "type": "NUMBER",
+                    "description": "The number of adults in first room",
+                    "default": "1"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "NUMBER",
+                    "description": "Total items returned in every requests (max 25)",
+                    "default": "25"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "accommodationIds",
+                    "type": "STRING",
+                    "description": "Check for suitable value (separated by comma to specify multiple values) in accommodationType field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "guestRatingMin",
+                    "type": "NUMBER",
+                    "description": "Check for suitable min rating in filters/guestRating/range/min field returned right in this endpoint. Please use integer value.",
+                    "default": ""
+                },
+                {
+                    "name": "children4",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the fourth room",
+                    "default": ""
+                },
+                {
+                    "name": "children8",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the eighth room",
+                    "default": ""
+                },
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code, get all supported language code from .../get-meta-data endpoint",
+                    "default": "en_US"
+                },
+                {
+                    "name": "priceMin",
+                    "type": "NUMBER",
+                    "description": "Check for suitable min price in filters/price/range/min field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "priceMax",
+                    "type": "NUMBER",
+                    "description": "Check for suitable max price in filters/price/range/max field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "adults8",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the eighth room",
+                    "default": ""
+                },
+                {
+                    "name": "adults6",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the sixth room",
+                    "default": ""
+                },
+                {
+                    "name": "adults4",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the fourth room",
+                    "default": ""
+                },
+                {
+                    "name": "starRatings",
+                    "type": "STRING",
+                    "description": "Check for suitable value (separated by comma to specify multiple values) in starRating returned right in this endpoint. Ex : 2,3",
+                    "default": ""
+                },
+                {
+                    "name": "sortOrder",
+                    "type": "STRING",
+                    "description": "One of the following is allowed BEST&#95;SELLER|STAR&#95;RATING&#95;HIGHEST&#95;FIRST|STAR&#95;RATING&#95;LOWEST&#95;FIRST|DISTANCE&#95;FROM&#95;LANDMARK|GUEST&#95;RATING|PRICE&#95;HIGHEST&#95;FIRST|PRICE",
+                    "default": "PRICE"
+                },
+                {
+                    "name": "children2",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the second room",
+                    "default": ""
+                },
+                {
+                    "name": "adults2",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the second room",
+                    "default": ""
+                },
+                {
+                    "name": "adults3",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the third room",
+                    "default": ""
+                },
+                {
+                    "name": "adults5",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the fifth room",
+                    "default": ""
+                },
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "amenityIds",
+                    "type": "STRING",
+                    "description": "Check for suitable value (separated by comma to specify multiple values) in facilities field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "children6",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the sixth room",
+                    "default": ""
+                },
+                {
+                    "name": "children5",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the fifth room",
+                    "default": ""
+                },
+                {
+                    "name": "children1",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the first room. Ex : 5,11",
+                    "default": ""
+                },
+                {
+                    "name": "children3",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the third room",
+                    "default": ""
+                },
+                {
+                    "name": "children7",
+                    "type": "STRING",
+                    "description": "The age of every children separated by comma in the seventh room",
+                    "default": ""
+                },
+                {
+                    "name": "landmarkIds",
+                    "type": "STRING",
+                    "description": "Check for suitable value (separated by comma to specify multiple values) in landmarks field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "themeIds",
+                    "type": "STRING",
+                    "description": "Check for suitable value (separated by comma to specify multiple values) in themesAndTypes field returned right in this endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "adults7",
+                    "type": "NUMBER",
+                    "description": "The number of adults in the seventh room",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/list\"\nquerystring = {\"accommodationIds\": \"\", \"guestRatingMin\": \"\", \"children4\": \"\", \"children8\": \"\", \"locale\": \"en_US\", \"priceMin\": \"\", \"priceMax\": \"\", \"adults8\": \"\", \"checkOut\": \"\", \"adults6\": \"\", \"destinationId\": \"1506246\", \"pageNumber\": \"1\", \"adults4\": \"\", \"checkIn\": \"\", \"starRatings\": \"\", \"sortOrder\": \"PRICE\", \"children2\": \"\", \"adults2\": \"\", \"adults3\": \"\", \"adults5\": \"\", \"currency\": \"USD\", \"amenityIds\": \"\", \"children6\": \"\", \"children5\": \"\", \"children1\": \"\", \"adults1\": \"1\", \"pageSize\": \"25\", \"children3\": \"\", \"children7\": \"\", \"landmarkIds\": \"\", \"themeIds\": \"\", \"adults7\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/list\"\nquerystring = {\"accommodationIds\": \"\", \"guestRatingMin\": \"\", \"children4\": \"\", \"children8\": \"\", \"locale\": \"en_US\", \"priceMin\": \"\", \"priceMax\": \"\", \"adults8\": \"\", \"checkOut\": \"\", \"adults6\": \"\", \"destinationId\": \"1506246\", \"pageNumber\": \"1\", \"adults4\": \"\", \"checkIn\": \"\", \"starRatings\": \"\", \"sortOrder\": \"PRICE\", \"children2\": \"\", \"adults2\": \"\", \"adults3\": \"\", \"adults5\": \"\", \"currency\": \"USD\", \"amenityIds\": \"\", \"children6\": \"\", \"children5\": \"\", \"children1\": \"\", \"adults1\": \"1\", \"pageSize\": \"25\", \"children3\": \"\", \"children7\": \"\", \"landmarkIds\": \"\", \"themeIds\": \"\", \"adults7\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "result": {
+                        "type": "string"
+                    },
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "body": {
+                                "type": "object",
+                                "properties": {
+                                    "header": {
+                                        "type": "string"
+                                    },
+                                    "query": {
+                                        "type": "object",
+                                        "properties": {
+                                            "destination": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "id": {
+                                                        "type": "string"
+                                                    },
+                                                    "value": {
+                                                        "type": "string"
+                                                    },
+                                                    "resolvedLocation": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "searchResults": {
+                                        "type": "object",
+                                        "properties": {
+                                            "totalCount": {
+                                                "type": "integer"
+                                            },
+                                            "results": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "pagination": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "currentPage": {
+                                                        "type": "integer"
+                                                    },
+                                                    "pageGroup": {
+                                                        "type": "string"
+                                                    },
+                                                    "nextPageNumber": {
+                                                        "type": "integer"
+                                                    },
+                                                    "nextPageGroup": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "sortResults": {
+                                        "type": "object",
+                                        "properties": {
+                                            "options": {
+                                                "type": "array",
+                                                "items": {
+                                                    "type": "object"
+                                                }
+                                            },
+                                            "distanceOptionLandmarkId": {
+                                                "type": "integer"
+                                            }
+                                        }
+                                    },
+                                    "filters": {
+                                        "type": "object",
+                                        "properties": {
+                                            "applied": {
+                                                "type": "boolean"
+                                            },
+                                            "name": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "item": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "value": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    },
+                                                    "autosuggest": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "additionalUrlParams": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "resolved-location": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "q-destination": {
+                                                                        "type": "string"
+                                                                    },
+                                                                    "destination-id": {
+                                                                        "type": "string"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "starRating": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "guestRating": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "range": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "min": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "defaultValue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "max": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "defaultValue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "landmarks": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "selectedOrder": {
+                                                        "type": "array"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    },
+                                                    "distance": {
+                                                        "type": "array"
+                                                    }
+                                                }
+                                            },
+                                            "neighbourhood": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "accommodationType": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "facilities": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "accessibility": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "themesAndTypes": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "applied": {
+                                                        "type": "boolean"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object"
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "price": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "range": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "min": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "defaultValue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "max": {
+                                                                "type": "object",
+                                                                "properties": {
+                                                                    "defaultValue": {
+                                                                        "type": "integer"
+                                                                    }
+                                                                }
+                                                            },
+                                                            "increments": {
+                                                                "type": "integer"
+                                                            }
+                                                        }
+                                                    },
+                                                    "multiplier": {
+                                                        "type": "integer"
+                                                    }
+                                                }
+                                            },
+                                            "paymentPreference": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            },
+                                            "welcomeRewards": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "label": {
+                                                        "type": "string"
+                                                    },
+                                                    "items": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "object",
+                                                            "properties": {
+                                                                "label": {
+                                                                    "type": "string"
+                                                                },
+                                                                "value": {
+                                                                    "type": "string"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "pointOfSale": {
+                                        "type": "object",
+                                        "properties": {
+                                            "currency": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "code": {
+                                                        "type": "string"
+                                                    },
+                                                    "symbol": {
+                                                        "type": "string"
+                                                    },
+                                                    "separators": {
+                                                        "type": "string"
+                                                    },
+                                                    "format": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "miscellaneous": {
+                                        "type": "object",
+                                        "properties": {
+                                            "pageViewBeaconUrl": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "pageInfo": {
+                                        "type": "object",
+                                        "properties": {
+                                            "pageType": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "common": {
+                                "type": "object",
+                                "properties": {
+                                    "pointOfSale": {
+                                        "type": "object",
+                                        "properties": {
+                                            "numberSeparators": {
+                                                "type": "string"
+                                            },
+                                            "brandName": {
+                                                "type": "string"
+                                            }
+                                        }
+                                    },
+                                    "tracking": {
+                                        "type": "object",
+                                        "properties": {
+                                            "omniture": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "s.products": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar40": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar41": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar42": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar4": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar43": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar3": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar2": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar7": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.server": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar6": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar5": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar9": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop22": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop21": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop20": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.currencyCode": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop9": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop8": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar95": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop7": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar10": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar13": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop19": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop18": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop5": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop15": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop3": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop14": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar93": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop2": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop33": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop32": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop74": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar16": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar63": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar22": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar23": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar24": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop29": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop27": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar69": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar29": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar105": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar31": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar32": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar33": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.eVar34": {
+                                                        "type": "string"
+                                                    },
+                                                    "s.prop36": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "get-meta-data (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/get-meta-data",
+            "description": "Get locale meta data",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/get-meta-data\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/get-meta-data\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "locations/v2/search (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/locations/v2/search",
+            "description": "Search for related locations and suggestions",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of countries, cities, districts, places, etc...",
+                    "default": "new york"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                },
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/v2/search\"\nquerystring = {\"query\": \"new york\", \"locale\": \"en_US\", \"currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/v2/search\"\nquerystring = {\"query\": \"new york\", \"locale\": \"en_US\", \"currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "term": {
+                        "type": "string"
+                    },
+                    "moresuggestions": {
+                        "type": "integer"
+                    },
+                    "autoSuggestInstance": {
+                        "type": "null"
+                    },
+                    "trackingID": {
+                        "type": "string"
+                    },
+                    "misspellingfallback": {
+                        "type": "boolean"
+                    },
+                    "suggestions": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "group": {
+                                    "type": "string"
+                                },
+                                "entities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "properties/get-hotel-photos (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/properties/get-hotel-photos",
+            "description": "Get all available photos of property",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "The value of id field that received from .../properties/list endpoint",
+                    "default": "1178275040"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/get-hotel-photos\"\nquerystring = {\"id\": \"1178275040\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/get-hotel-photos\"\nquerystring = {\"id\": \"1178275040\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "properties/v2/resolve-url",
+            "url": "https://hotels4.p.rapidapi.com/properties/v2/resolve-url",
+            "description": "Hotels system is being merged with Expedia. This endpoint helps to convert the old hotel ID (embedded in the shared link, Ex : \"ho133528\" in hotels.com/ho133528/) to the new one (423818).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The id (started with ho...) extracted from the shared link. Ex : 'ho546370' from https://www.hoteles.com/ho546370",
+                    "default": "ho546370"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "siteid",
+                    "type": "NUMBER",
+                    "description": "The value of siteId field returned in \u2026/v2/get-meta-data endpoint",
+                    "default": "300000001"
+                },
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                },
+                {
+                    "name": "langid",
+                    "type": "NUMBER",
+                    "description": "The value of languageIdentifier field returned in \u2026/v2/get-meta-data endpoint",
+                    "default": "1033"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/v2/resolve-url\"\nquerystring = {\"id\": \"ho546370\", \"siteid\": \"300000001\", \"locale\": \"en_US\", \"langid\": \"1033\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/properties/v2/resolve-url\"\nquerystring = {\"id\": \"ho546370\", \"siteid\": \"300000001\", \"locale\": \"en_US\", \"langid\": \"1033\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "v2/get-meta-data",
+            "url": "https://hotels4.p.rapidapi.com/v2/get-meta-data",
+            "description": "Get locale meta data",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/v2/get-meta-data\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/v2/get-meta-data\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "locations/search (Deprecated)",
+            "url": "https://hotels4.p.rapidapi.com/locations/search",
+            "description": "Search for related locations and suggestions",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Name of countries, cities, districts, places, etc...",
+                    "default": "new york"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/search\"\nquerystring = {\"query\": \"new york\", \"locale\": \"en_US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/search\"\nquerystring = {\"query\": \"new york\", \"locale\": \"en_US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "term": {
+                        "type": "string"
+                    },
+                    "moresuggestions": {
+                        "type": "integer"
+                    },
+                    "autoSuggestInstance": {
+                        "type": "null"
+                    },
+                    "trackingID": {
+                        "type": "string"
+                    },
+                    "misspellingfallback": {
+                        "type": "boolean"
+                    },
+                    "suggestions": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "group": {
+                                    "type": "string"
+                                },
+                                "entities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "locations/v3/search",
+            "url": "https://hotels4.p.rapidapi.com/locations/v3/search",
+            "description": "Search for related locations and suggestions",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Name of countries, cities, districts, places, etc...",
+                    "default": "new york"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "langid",
+                    "type": "NUMBER",
+                    "description": "The value of languageIdentifier field returned in .../v2/get-meta-data endpoint",
+                    "default": "1033"
+                },
+                {
+                    "name": "siteid",
+                    "type": "NUMBER",
+                    "description": "The value of siteId field returned in .../v2/get-meta-data endpoint",
+                    "default": "300000001"
+                },
+                {
+                    "name": "locale",
+                    "type": "STRING",
+                    "description": "The language code",
+                    "default": "en_US"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/v3/search\"\nquerystring = {\"langid\": \"1033\", \"siteid\": \"300000001\", \"locale\": \"en_US\", \"q\": \"new york\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hotels4.p.rapidapi.com/locations/v3/search\"\nquerystring = {\"langid\": \"1033\", \"siteid\": \"300000001\", \"locale\": \"en_US\", \"q\": \"new york\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hotels4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "term": {
+                        "type": "string"
+                    },
+                    "moresuggestions": {
+                        "type": "integer"
+                    },
+                    "autoSuggestInstance": {
+                        "type": "null"
+                    },
+                    "trackingID": {
+                        "type": "string"
+                    },
+                    "misspellingfallback": {
+                        "type": "boolean"
+                    },
+                    "suggestions": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "group": {
+                                    "type": "string"
+                                },
+                                "entities": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "object"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "hotels"
+}

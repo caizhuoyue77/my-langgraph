@@ -1,0 +1,512 @@
+{
+    "product_id": "api_21ff79d7-8414-4182-8673-ae065f3165f1",
+    "tool_description": "Get the complete data of 14k Novels, 1k animes and 1k mangas.\nwe updated our data daily\n",
+    "home_url": "https://rapidapi.com/hefesto-technologies-hefesto-technologies-default/api/anime-manga-and-novels-api/",
+    "name": "Anime, manga and Novels Api",
+    "title": "Anime, manga and Novels Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "Anime, manga and Novels Api",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 1654,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "anime-manga-and-novels-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Novel By Id",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/novels/3",
+            "description": "Get Novel By Id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "3"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/novels/3\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/novels/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "novelId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "locale": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "alternativeNames": {
+                        "type": "string"
+                    },
+                    "related": {
+                        "type": "null"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Manga By Id",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/manga/3674",
+            "description": "Get Manga Information by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "3674"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/manga/3674\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/manga/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "mangaId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "background": {
+                        "type": "string"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "locale": {
+                        "type": "string"
+                    },
+                    "volumes": {
+                        "type": "integer"
+                    },
+                    "chapters": {
+                        "type": "integer"
+                    },
+                    "published": {
+                        "type": "string"
+                    },
+                    "demographic": {
+                        "type": "string"
+                    },
+                    "related": {
+                        "type": "object",
+                        "properties": {
+                            "adaptation": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "alternativeNames": {
+                        "type": "object",
+                        "properties": {
+                            "synonyms": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "japanese": {
+                                "type": "string"
+                            },
+                            "english": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Get Anime By Id",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/anime/19",
+            "description": "Get Anime By Id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "19"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/anime/19\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/anime/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "animeId": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "slug": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "background": {
+                        "type": "null"
+                    },
+                    "image": {
+                        "type": "string"
+                    },
+                    "status": {
+                        "type": "string"
+                    },
+                    "locale": {
+                        "type": "string"
+                    },
+                    "episodes": {
+                        "type": "string"
+                    },
+                    "aired": {
+                        "type": "string"
+                    },
+                    "premiered": {
+                        "type": "string"
+                    },
+                    "broadcast": {
+                        "type": "string"
+                    },
+                    "licensors": {
+                        "type": "null"
+                    },
+                    "studios": {
+                        "type": "string"
+                    },
+                    "demographic": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "string"
+                    },
+                    "rating": {
+                        "type": "string"
+                    },
+                    "related": {
+                        "type": "object",
+                        "properties": {
+                            "alternativeVersion": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "parentStory": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            },
+                            "prequel": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "alternativeNames": {
+                        "type": "object",
+                        "properties": {
+                            "japanese": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Anime",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/anime",
+            "description": "Get a list of all anime",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/anime\"\nquerystring = {\"page\": \"1\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/anime\"\nquerystring = {\"page\": \"1\", \"pageSize\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "totalItems": {
+                                "type": "integer"
+                            },
+                            "itemCount": {
+                                "type": "integer"
+                            },
+                            "itemsPerPage": {
+                                "type": "integer"
+                            },
+                            "totalPages": {
+                                "type": "integer"
+                            },
+                            "currentPage": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Manga",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/manga",
+            "description": "get manga information",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "pageSize",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "2"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/manga\"\nquerystring = {\"page\": \"1\", \"pageSize\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/manga\"\nquerystring = {\"page\": \"1\", \"pageSize\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "animeId": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "background": {
+                                    "type": "null"
+                                },
+                                "image": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "locale": {
+                                    "type": "string"
+                                },
+                                "episodes": {
+                                    "type": "string"
+                                },
+                                "aired": {
+                                    "type": "string"
+                                },
+                                "premiered": {
+                                    "type": "string"
+                                },
+                                "broadcast": {
+                                    "type": "string"
+                                },
+                                "licensors": {
+                                    "type": "null"
+                                },
+                                "studios": {
+                                    "type": "string"
+                                },
+                                "demographic": {
+                                    "type": "string"
+                                },
+                                "duration": {
+                                    "type": "string"
+                                },
+                                "rating": {
+                                    "type": "string"
+                                },
+                                "related": {
+                                    "type": "object"
+                                },
+                                "alternativeNames": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "totalItems": {
+                                "type": "integer"
+                            },
+                            "itemCount": {
+                                "type": "integer"
+                            },
+                            "itemsPerPage": {
+                                "type": "integer"
+                            },
+                            "totalPages": {
+                                "type": "integer"
+                            },
+                            "currentPage": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Novels",
+            "url": "https://anime-manga-and-novels-api.p.rapidapi.com/novels",
+            "description": "Get novels information",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "pageSize",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2"
+                },
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/novels\"\nquerystring = {\"pageSize\": \"2\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://anime-manga-and-novels-api.p.rapidapi.com/novels\"\nquerystring = {\"pageSize\": \"2\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"anime-manga-and-novels-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "novelId": {
+                                    "type": "integer"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "slug": {
+                                    "type": "string"
+                                },
+                                "description": {
+                                    "type": "string"
+                                },
+                                "status": {
+                                    "type": "string"
+                                },
+                                "related": {
+                                    "type": "null"
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "totalItems": {
+                                "type": "integer"
+                            },
+                            "itemCount": {
+                                "type": "integer"
+                            },
+                            "itemsPerPage": {
+                                "type": "integer"
+                            },
+                            "totalPages": {
+                                "type": "integer"
+                            },
+                            "currentPage": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "anime_manga_and_novels_api"
+}

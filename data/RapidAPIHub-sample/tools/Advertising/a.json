@@ -1,0 +1,31 @@
+{
+    "product_id": "api_fa281ee2-8784-4064-9da4-ab68f7fa96e6",
+    "tool_description": "a",
+    "home_url": "https://rapidapi.com/hungdn/api/a396/",
+    "name": "a",
+    "title": "a",
+    "pricing": "FREE",
+    "tool_name": "a",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 102,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.7,
+        "__typename": "Score"
+    },
+    "host": "a396.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "api",
+            "url": "https://a396.p.rapidapi.com/cgi-bin/secure/api.cgi",
+            "description": "a",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://a396.p.rapidapi.com/cgi-bin/secure/api.cgi\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"a396.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://a396.p.rapidapi.com/cgi-bin/secure/api.cgi\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"a396.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "a"
+}

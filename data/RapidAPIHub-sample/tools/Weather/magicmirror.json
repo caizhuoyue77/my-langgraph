@@ -1,0 +1,31 @@
+{
+    "product_id": "api_b73e5ebe-db1a-4d89-aa1c-33092321063a",
+    "tool_description": "MagicMirror",
+    "home_url": "https://rapidapi.com/manishsankari/api/magicmirror10/",
+    "name": "MagicMirror",
+    "title": "MagicMirror",
+    "pricing": "FREE",
+    "tool_name": "MagicMirror",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 48,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.3,
+        "__typename": "Score"
+    },
+    "host": "magicmirror10.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "endpoint",
+            "url": "https://magicmirror10.p.rapidapi.com/",
+            "description": "add endpoint",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://magicmirror10.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magicmirror10.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://magicmirror10.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"magicmirror10.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "magicmirror"
+}

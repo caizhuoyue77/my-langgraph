@@ -1,0 +1,1031 @@
+{
+    "product_id": "api_24a67518-f6b4-446c-b13e-3b6883b622af",
+    "tool_description": "This API helps query for Famous Movies and TV shows quotes.",
+    "home_url": "https://rapidapi.com/rur209-fl23Nrvhxii/api/movie-and-tv-shows-quotes/",
+    "name": "Movie and TV shows Quotes",
+    "title": "Movie and TV shows Quotes",
+    "pricing": "FREEMIUM",
+    "tool_name": "Movie and TV shows Quotes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 951,
+        "avgSuccessRate": 81,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "movie-and-tv-shows-quotes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET quotes by actor",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/actor/al_pachino",
+            "description": "This endpoint will return back quotes by the given actor or actress.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "actor",
+                    "type": "string",
+                    "description": "",
+                    "default": "al_pachino"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/actor/al_pachino\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/actor/{actor}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 18,
+                    "quote": "Keep your friends close, but your enemies closer.",
+                    "character": "Michael Corleone",
+                    "quoteFrom": "The Godfather Part II",
+                    "actor": "Al Pachino",
+                    "year": 1974
+                }
+            ]
+        },
+        {
+            "name": "GET a random quote",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote",
+            "description": "This endpoint will return a random quote",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/random/quote\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 49,
+                "quote": "Well, I proved once and for all that the limb is mightier than the thumb.",
+                "character": "Ellie Andrews",
+                "quoteFrom": "It Happened One Night",
+                "actor": "Claudette Colbert",
+                "year": 1934
+            }
+        },
+        {
+            "name": "GET quote by movie or TV show name",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/from/the_wizard_of_oz",
+            "description": "This endpoint will return quotes by given movie or TV show name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "show",
+                    "type": "string",
+                    "description": "",
+                    "default": "the_wizard_of_oz"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/from/the_wizard_of_oz\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/from/{show}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 4,
+                    "quote": "Toto, I've a feeling we're not in Kansas anymore.",
+                    "character": "Dorothy Gale",
+                    "actor": "judy Garland",
+                    "quoteFrom": "The Wizard of Oz",
+                    "year": 1939
+                },
+                {
+                    "id": 11,
+                    "quote": "There's no place like home.",
+                    "character": "Dorothy Gale",
+                    "quoteFrom": "The Wizard of Oz",
+                    "actor": "Judy Graland",
+                    "year": 1939
+                }
+            ]
+        },
+        {
+            "name": "GET quote by Year",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/year/1939",
+            "description": "This endpoint will return back quotes by the given year",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1939"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/year/1939\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/year/{year}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 2,
+                    "quote": "Frankly, my dear, I don't give a damn.",
+                    "character": "Rhett Butler",
+                    "actor": "Clark Gable",
+                    "quoteFrom": "Gone with the Wind",
+                    "year": 1939
+                },
+                {
+                    "id": 4,
+                    "quote": "Toto, I've a feeling we're not in Kansas anymore.",
+                    "character": "Dorothy Gale",
+                    "actor": "judy Garland",
+                    "quoteFrom": "The Wizard of Oz",
+                    "year": 1939
+                },
+                {
+                    "id": 11,
+                    "quote": "There's no place like home.",
+                    "character": "Dorothy Gale",
+                    "quoteFrom": "The Wizard of Oz",
+                    "actor": "Judy Graland",
+                    "year": 1939
+                },
+                {
+                    "id": 14,
+                    "quote": "After all, tomorrow is another day!",
+                    "character": "Scarlett O'Hara",
+                    "quoteFrom": "Gone with the Wind",
+                    "actor": "Vivien Leigh",
+                    "year": 1939
+                },
+                {
+                    "id": 19,
+                    "quote": "Elementary, my dear Watson.",
+                    "character": "Sherlock Holmes",
+                    "quoteFrom": "The Adventures of Sherlock Holmes",
+                    "actor": "Basil Rathbone",
+                    "year": 1939
+                }
+            ]
+        },
+        {
+            "name": "Get quote by character",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/character/dorothy_gale",
+            "description": "This end point will return back quotes delivered by the given character",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "character",
+                    "type": "string",
+                    "description": "",
+                    "default": "dorothy_gale"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/character/dorothy_gale\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/character/{character}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 4,
+                    "quote": "Toto, I've a feeling we're not in Kansas anymore.",
+                    "character": "Dorothy Gale",
+                    "actor": "judy Garland",
+                    "quoteFrom": "The Wizard of Oz",
+                    "year": 1939
+                },
+                {
+                    "id": 11,
+                    "quote": "There's no place like home.",
+                    "character": "Dorothy Gale",
+                    "quoteFrom": "The Wizard of Oz",
+                    "actor": "Judy Graland",
+                    "year": 1939
+                }
+            ]
+        },
+        {
+            "name": "Get individual quotes by quote ID",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/4",
+            "description": "This endpoint will return back individual quotes based on the given ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "4"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/4\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 4,
+                "quote": "Toto, I've a feeling we're not in Kansas anymore.",
+                "character": "Dorothy Gale",
+                "actor": "judy Garland",
+                "quoteFrom": "The Wizard of Oz",
+                "year": 1939
+            }
+        },
+        {
+            "name": "Get all quotes",
+            "url": "https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes",
+            "description": "This endpoint will return back all the quotes in the API",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-and-tv-shows-quotes.p.rapidapi.com/quotes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-and-tv-shows-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 1,
+                    "quote": "All right, Mr. DeMille, I'm ready for my close-up",
+                    "character": "Norma Desmond",
+                    "actor": "Gloria Swanson",
+                    "quoteFrom": "Sunset Boulevard",
+                    "year": 1950
+                },
+                {
+                    "id": 2,
+                    "quote": "Frankly, my dear, I don't give a damn.",
+                    "character": "Rhett Butler",
+                    "actor": "Clark Gable",
+                    "quoteFrom": "Gone with the Wind",
+                    "year": 1939
+                },
+                {
+                    "id": 3,
+                    "quote": "I'm gonna make him an offer he can't refuse.",
+                    "character": "Don Vito Corleone",
+                    "actor": "Marlon Brando",
+                    "quoteFrom": "The godfather",
+                    "year": 1972
+                },
+                {
+                    "id": 4,
+                    "quote": "Toto, I've a feeling we're not in Kansas anymore.",
+                    "character": "Dorothy Gale",
+                    "actor": "judy Garland",
+                    "quoteFrom": "The Wizard of Oz",
+                    "year": 1939
+                },
+                {
+                    "id": 5,
+                    "quote": "May the Force be with you.",
+                    "character": "Han Solo",
+                    "actor": "Harrison Ford",
+                    "quoteFrom": "Star Wars",
+                    "year": 1977
+                },
+                {
+                    "id": 6,
+                    "quote": "Fasten your seatbelts. It's going to be a bumpy night.",
+                    "character": "Margo Channing",
+                    "actor": "Bette Davis",
+                    "quoteFrom": "All About Eve",
+                    "year": 1950
+                },
+                {
+                    "id": 7,
+                    "quote": "You talkin' to me?",
+                    "character": "Travis Bickle",
+                    "quoteFrom": "Taxi Driver",
+                    "actor": "Robert De Niro",
+                    "year": 1950
+                },
+                {
+                    "id": 8,
+                    "quote": "The stuff that dreams are made of.",
+                    "character": "Sam Spade",
+                    "quoteFrom": "The Maltese Falcon",
+                    "actor": "Humphrey Bogart",
+                    "year": 1941
+                },
+                {
+                    "id": 9,
+                    "quote": "Louis, I think this is the beginning of a beautiful friendship.",
+                    "character": "Rick Blaine",
+                    "quoteFrom": "Casablanca",
+                    "actor": "Humphrey Bogart",
+                    "year": 1942
+                },
+                {
+                    "id": 10,
+                    "quote": "Bond. James Bond.",
+                    "character": "James Bond",
+                    "quoteFrom": "Dr. No",
+                    "actor": "sean Connery",
+                    "year": 1962
+                },
+                {
+                    "id": 11,
+                    "quote": "There's no place like home.",
+                    "character": "Dorothy Gale",
+                    "quoteFrom": "The Wizard of Oz",
+                    "actor": "Judy Graland",
+                    "year": 1939
+                },
+                {
+                    "id": 12,
+                    "quote": "I am big! It's the pictures that got small.",
+                    "character": "Norma Desmond",
+                    "quoteFrom": "Sunset Boulevard",
+                    "actor": "Gloria Swanson",
+                    "year": 1950
+                },
+                {
+                    "id": 13,
+                    "quote": "You can't handle the truth!",
+                    "character": "Col. Nathan R. Jessup",
+                    "quoteFrom": "A Few Good men",
+                    "actor": "Jack Nicholson",
+                    "year": 1992
+                },
+                {
+                    "id": 14,
+                    "quote": "After all, tomorrow is another day!",
+                    "character": "Scarlett O'Hara",
+                    "quoteFrom": "Gone with the Wind",
+                    "actor": "Vivien Leigh",
+                    "year": 1939
+                },
+                {
+                    "id": 15,
+                    "quote": "I'll have what she's having.",
+                    "character": "Customer",
+                    "quoteFrom": "When Harry Met Sally",
+                    "actor": "Estelle Reiner",
+                    "year": 1989
+                },
+                {
+                    "id": 16,
+                    "quote": "Mama always said life was like a box of chocolates. You never know what you're gonna get.",
+                    "character": "Forrest Gump",
+                    "quoteFrom": "Forrest Gump",
+                    "actor": "Tom Hanks",
+                    "year": 1994
+                },
+                {
+                    "id": 17,
+                    "quote": "You had me at 'hello.'",
+                    "character": "Dorothy Boyd",
+                    "quoteFrom": "Jerry Maguire",
+                    "actor": "Ren\u00e9e Zellweger",
+                    "year": 1996
+                },
+                {
+                    "id": 18,
+                    "quote": "Keep your friends close, but your enemies closer.",
+                    "character": "Michael Corleone",
+                    "quoteFrom": "The Godfather Part II",
+                    "actor": "Al Pachino",
+                    "year": 1974
+                },
+                {
+                    "id": 19,
+                    "quote": "Elementary, my dear Watson.",
+                    "character": "Sherlock Holmes",
+                    "quoteFrom": "The Adventures of Sherlock Holmes",
+                    "actor": "Basil Rathbone",
+                    "year": 1939
+                },
+                {
+                    "id": 20,
+                    "quote": "Of all the gin joints in all the towns in all the world, she walks into mine.",
+                    "character": "Rick Blaine",
+                    "quoteFrom": "Casablanca",
+                    "actor": "Humphrey Bogart",
+                    "year": 1942
+                },
+                {
+                    "id": 21,
+                    "quote": "Oh, no, it wasn't the airplanes. It was Beauty killed the Beast.",
+                    "character": "Carl Denham",
+                    "quoteFrom": "King kong",
+                    "actor": "Robert Armstrong",
+                    "year": 1933
+                },
+                {
+                    "id": 22,
+                    "quote": "My precious.",
+                    "character": "Gollum",
+                    "quoteFrom": "The Lord of the Rings: The Two Towers",
+                    "actor": "Andy Serkis",
+                    "year": 2002
+                },
+                {
+                    "id": 23,
+                    "quote": "A martini. Shaken, not stirred.",
+                    "character": "James Bond",
+                    "quoteFrom": "Goldfinger",
+                    "actor": "Sean Connery",
+                    "year": 1964
+                },
+                {
+                    "id": 24,
+                    "quote": "I feel the need\u2014the need for speed!",
+                    "character": "Pete Mitchell and Nick Bradshaw",
+                    "quoteFrom": "Top Gun",
+                    "actor": "Tom Cruise and Anthony Edwards",
+                    "year": 1986
+                },
+                {
+                    "id": 25,
+                    "quote": "I'm the king of the world!",
+                    "character": "Jack Dawson",
+                    "quoteFrom": "Titanic",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 1997
+                },
+                {
+                    "id": 26,
+                    "quote": "Snap out of it!",
+                    "character": "Loretta Castorini",
+                    "quoteFrom": "Monnstruck",
+                    "actor": "Sher",
+                    "year": 1987
+                },
+                {
+                    "id": 27,
+                    "quote": "Carpe diem. Seize the day, boys. Make your lives extraordinary.",
+                    "character": "John Keating",
+                    "quoteFrom": "Dead Poets Society",
+                    "actor": "Robin Williams",
+                    "year": 1989
+                },
+                {
+                    "id": 28,
+                    "quote": "You have bewitched me, body and soul, and I love, I love, I love you. I never wish to be parted from you from this day on.",
+                    "character": "Darcy",
+                    "quoteFrom": "Pride and Prejudice",
+                    "actor": "Matthew Macfadyen",
+                    "year": 2005
+                },
+                {
+                    "id": 29,
+                    "quote": "I am Groot",
+                    "character": "Groot",
+                    "quoteFrom": "Guardians of the galaxy",
+                    "actor": "Vin Diesel",
+                    "year": 2014
+                },
+                {
+                    "id": 30,
+                    "quote": "This is Sparta!",
+                    "character": "King Leonidas I",
+                    "quoteFrom": "300",
+                    "actor": "Gerard Butler",
+                    "year": 2006
+                },
+                {
+                    "id": 31,
+                    "quote": "You're a wizard, 'arry.",
+                    "character": "Hagrid",
+                    "quoteFrom": "Harry Potter and the Sorcerer's Stone",
+                    "actor": "Robbie Coltrane",
+                    "year": 2001
+                },
+                {
+                    "id": 32,
+                    "quote": "I'm the guy who does his job. You must be the other guy.",
+                    "character": "Sgt. Sean Dignam",
+                    "quoteFrom": "The Departed",
+                    "actor": "Mark Wahlberg",
+                    "year": 2006
+                },
+                {
+                    "id": 33,
+                    "quote": "With great power comes great responsibility.",
+                    "character": "Ben Parker",
+                    "quoteFrom": "Spider Man",
+                    "actor": "Cliff Robertson",
+                    "year": 2002
+                },
+                {
+                    "id": 34,
+                    "quote": "I was perfect.",
+                    "character": "Nina",
+                    "quoteFrom": "Black Swan",
+                    "actor": "Natalie Portman",
+                    "year": 2010
+                },
+                {
+                    "id": 35,
+                    "quote": "I am Shiva, the god of death.",
+                    "character": "Arthur Eden",
+                    "quoteFrom": "Michael Clayton",
+                    "actor": "Tom Wilkinson",
+                    "year": 2007
+                },
+                {
+                    "id": 36,
+                    "quote": "Next time I have an idea like that, punch me in the face.",
+                    "character": "Tyrion Lannister",
+                    "quoteFrom": "Game of Thrones",
+                    "actor": "Peter Dinklage",
+                    "year": 2016
+                },
+                {
+                    "id": 37,
+                    "quote": "As a clever man once told me, \u201cWe make peace with our enemies, not our friends.",
+                    "character": "Tyrion Lannister",
+                    "quoteFrom": "Game of Thrones",
+                    "actor": "Peter Dinklage",
+                    "year": 2016
+                },
+                {
+                    "id": 38,
+                    "quote": "That\u2019s what I do: I drink and I know things.",
+                    "character": "Tyrion Lannister",
+                    "quoteFrom": "Game of Thrones",
+                    "actor": "Peter Dinklage",
+                    "year": 2016
+                },
+                {
+                    "id": 39,
+                    "quote": "Anderson, don't talk out loud. You lower the IQ of the whole street.",
+                    "character": "Sherlock Holmes",
+                    "quoteFrom": "Sherlock",
+                    "actor": "Benedict Cumberbatch",
+                    "year": 2010
+                },
+                {
+                    "id": 40,
+                    "quote": "We were on a break.",
+                    "character": "Ross Geller",
+                    "quoteFrom": "Friends",
+                    "actor": "David Schwimmer",
+                    "year": 1996
+                },
+                {
+                    "id": 41,
+                    "quote": "I hope you're pleased with yourselves. We could all have been killed \u2014 or worse, expelled. Now if you don't mind, I'm going to bed.",
+                    "character": "Hermione Granger",
+                    "quoteFrom": "Harry Potter and the Sorcerer's Stone",
+                    "actor": "Emma Watson",
+                    "year": 2001
+                },
+                {
+                    "id": 42,
+                    "quote": "We\u2019ve all got both light and darkness inside us. What matters is the part we choose to act on. That\u2019s who we really are.",
+                    "character": "Sirius Black",
+                    "quoteFrom": "Harry Potter and the Order of the Phoenix",
+                    "actor": "Gary Oldman",
+                    "year": 2007
+                },
+                {
+                    "id": 43,
+                    "quote": "You fail to recognize that it matters not what someone is born, but what they grow to be.",
+                    "character": "Albus Dumbledore",
+                    "quoteFrom": "Harry Potter and the Goblet of Fire",
+                    "actor": "Michael Gambon",
+                    "year": 2005
+                },
+                {
+                    "id": 44,
+                    "quote": "Of course it is happening inside your head\u2026 but why on earth should that mean that it is not real?",
+                    "character": "Albus Dumbledore",
+                    "quoteFrom": "Harry Potter and the Deathly Hallows",
+                    "actor": "Michael Gambon",
+                    "year": 2011
+                },
+                {
+                    "id": 45,
+                    "quote": "The ones that love us never really leave us. You can always find them.",
+                    "character": "Sirius Black",
+                    "quoteFrom": "Harry Potter and the Order of the Phoenix",
+                    "actor": "Gary Oldman",
+                    "year": 2007
+                },
+                {
+                    "id": 46,
+                    "quote": "What\u2019s comin\u2019 will come and we\u2019ll meet it when it does.",
+                    "character": "Rubeus Hagrid",
+                    "quoteFrom": "Harry Potter and the Goblet of Fire",
+                    "actor": "Robbie Coltrane",
+                    "year": 2005
+                },
+                {
+                    "id": 47,
+                    "quote": "Understanding is the first step to acceptance, and only with acceptance can there be recovery.",
+                    "character": "Albus Dumbledore",
+                    "quoteFrom": "Harry Potter and the Goblet of Fire",
+                    "actor": "Michael Gambon",
+                    "year": 2005
+                },
+                {
+                    "id": 48,
+                    "quote": "The greatest trick the devil ever pulled was convincing the world he did not exist.",
+                    "character": "Verbal Kint",
+                    "quoteFrom": "The Usual Suspects",
+                    "actor": "Kevin Spacey",
+                    "year": 1995
+                },
+                {
+                    "id": 49,
+                    "quote": "Well, I proved once and for all that the limb is mightier than the thumb.",
+                    "character": "Ellie Andrews",
+                    "quoteFrom": "It Happened One Night",
+                    "actor": "Claudette Colbert",
+                    "year": 1934
+                },
+                {
+                    "id": 50,
+                    "quote": "I am the one who knocks.",
+                    "character": "Walter White",
+                    "quoteFrom": "Breaking Bad",
+                    "actor": "Bryan Cranston",
+                    "year": 2011
+                },
+                {
+                    "id": 51,
+                    "quote": "All-righty then!",
+                    "character": "Ace ventura",
+                    "quoteFrom": "Ace ventura, Pet detective",
+                    "actor": "Jim Carrey",
+                    "year": 1994
+                },
+                {
+                    "id": 52,
+                    "quote": "Just when I thought I was out, they pull me back in.",
+                    "character": "Michael Corleone",
+                    "quoteFrom": "The Godfather part III",
+                    "actor": "Al Pacino",
+                    "year": 1990
+                },
+                {
+                    "id": 53,
+                    "quote": "I was born when she kissed me. I died when she left me. I lived a few weeks while she loved me.",
+                    "character": "Dixon Steele",
+                    "quoteFrom": "In A Lonely Place",
+                    "actor": "Humphrey Bogart",
+                    "year": 1950
+                },
+                {
+                    "id": 54,
+                    "quote": "Wait a minute, wait a minute. You ain't heard nothin' yet!",
+                    "character": "Jack Robin",
+                    "quoteFrom": "The Jazz Singer",
+                    "actor": "Al jolson",
+                    "year": 1927
+                },
+                {
+                    "id": 55,
+                    "quote": "Better to be king for a night than schmuck for a lifetime.",
+                    "character": "Rupert Pupkin",
+                    "quoteFrom": "The King of Comedy",
+                    "actor": "Robert De Niro",
+                    "year": 1983
+                },
+                {
+                    "id": 56,
+                    "quote": "Somebody stop me!",
+                    "character": "Stanley Ipkiss",
+                    "quoteFrom": "The mask",
+                    "actor": "Jim Carrey",
+                    "year": 1983
+                },
+                {
+                    "id": 57,
+                    "quote": "With my brains and your looks, we could go places.",
+                    "character": "frank Chambers",
+                    "quoteFrom": "The postman Always Rings Twice",
+                    "actor": "John Garfield",
+                    "year": 1946
+                },
+                {
+                    "id": 58,
+                    "quote": "Snakes! Why did it have to be snakes?",
+                    "character": "Indiana jones",
+                    "quoteFrom": "Raiders of the Lost Ark",
+                    "actor": "Harrison Ford",
+                    "year": 1987
+                },
+                {
+                    "id": 59,
+                    "quote": "There are only two things more beautiful than a good gun -- a Swiss watch and a woman from anywhere.",
+                    "character": "Cherry Valance",
+                    "quoteFrom": "Red River",
+                    "actor": "John Ireland",
+                    "year": 1948
+                },
+                {
+                    "id": 60,
+                    "quote": "Are you gonna bark all day, little doggie, or are you gonna bite?",
+                    "character": "Mr. Blonde",
+                    "quoteFrom": "Reservoir Dogs",
+                    "actor": "Michael Madsen",
+                    "year": 1992
+                },
+                {
+                    "id": 61,
+                    "quote": "Yo, Adrian!",
+                    "character": "Rocky Balboa",
+                    "quoteFrom": "Rocky",
+                    "actor": "Sylvester Stallone",
+                    "year": 1976
+                },
+                {
+                    "id": 62,
+                    "quote": "Get busy livin\u2019, or get busy dyin'.",
+                    "character": "Andy",
+                    "quoteFrom": "The Shawshank Redemption",
+                    "actor": "Tim Robbins",
+                    "year": 1994
+                },
+                {
+                    "id": 63,
+                    "quote": "Help me, Obi-Wan Kenobi. You're my only hope.",
+                    "character": "Princess leia",
+                    "quoteFrom": "Star wars",
+                    "actor": "Carrie Fisher",
+                    "year": 1977
+                },
+                {
+                    "id": 64,
+                    "quote": "I'm here to fight for truth, justice, and the American way.",
+                    "character": "Superman",
+                    "quoteFrom": "Superman",
+                    "actor": "Christopher Reeve",
+                    "year": 1978
+                },
+                {
+                    "id": 65,
+                    "quote": "Oh, Moses, Moses, you stubborn, splendid, adorable fool!",
+                    "character": "Nefretiri",
+                    "quoteFrom": "The Ten Commandments",
+                    "actor": "Anne Baxter",
+                    "year": 1956
+                },
+                {
+                    "id": 66,
+                    "quote": "To infinity and beyond!",
+                    "character": "Buzz Lightyear",
+                    "quoteFrom": "Toy Story",
+                    "actor": "Tim Allen (voice)",
+                    "year": 1995
+                },
+                {
+                    "id": 67,
+                    "quote": "Which would be worse, to live a monster or die as a good man?",
+                    "character": "Teddy",
+                    "quoteFrom": "Shutter Island",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2010
+                },
+                {
+                    "id": 68,
+                    "quote": "I'm going to have to science the s*** out of this.",
+                    "character": "Mark Watney",
+                    "quoteFrom": "The Martian",
+                    "actor": "Matt Damon",
+                    "year": 2015
+                },
+                {
+                    "id": 69,
+                    "quote": "This is the day you will always remember as the day you almost caught Captain Jack Sparrow!",
+                    "character": "Jack Sparrow",
+                    "quoteFrom": "Pirates of the Caribbean: The Curse of the Black Pearl",
+                    "actor": "Jonny Depp",
+                    "year": 2003
+                },
+                {
+                    "id": 70,
+                    "quote": "I am Iron Man.",
+                    "character": "Tony Stark",
+                    "quoteFrom": "Iron Man",
+                    "actor": "Robert Downey Jr",
+                    "year": 2008
+                },
+                {
+                    "id": 71,
+                    "quote": "Fool of a Took!",
+                    "character": "Gandalf",
+                    "quoteFrom": "Lord of The Rings Fellowship of Rings",
+                    "actor": "Ian McKellen",
+                    "year": 2001
+                },
+                {
+                    "id": 72,
+                    "quote": "It's classified. I could tell you, but then I'd have to kill you.",
+                    "character": "Pete Mitchell",
+                    "quoteFrom": "Top Gun",
+                    "actor": "Tom Cruise",
+                    "year": 1986
+                },
+                {
+                    "id": 73,
+                    "quote": "I'm not in the plane, I'm on the plane! Open the door!",
+                    "character": "Ethan Hunt",
+                    "quoteFrom": "Mission: Impossible - Rogue Nation",
+                    "actor": "Tom Cruise",
+                    "year": 2015
+                },
+                {
+                    "id": 74,
+                    "quote": "Look, Walker, whatever you've heard, if it makes your skin crawl, it's probably true.",
+                    "character": "Ethan Hunt",
+                    "quoteFrom": "Mission: Impossible - fallout",
+                    "actor": "Tom Cruise",
+                    "year": 2018
+                },
+                {
+                    "id": 75,
+                    "quote": "Desperate times, desperate measures.",
+                    "character": "Ethan Hunt",
+                    "quoteFrom": "Mission: Impossible - Rogue Nation",
+                    "actor": "Tom Cruise",
+                    "year": 2015
+                },
+                {
+                    "id": 76,
+                    "quote": "What's done is done, when we say it's done.",
+                    "character": "Ethan Hunt",
+                    "quoteFrom": "Mission: Impossible - fallout",
+                    "actor": "Tom Cruise",
+                    "year": 2018
+                },
+                {
+                    "id": 77,
+                    "quote": "Most people \u2014 same job, same gig, doing the same thing 10 years from now. Us, we don\u2019t know what we are doing 10 minutes from now.",
+                    "character": "Vincent",
+                    "quoteFrom": "Collateral",
+                    "actor": "Tom Cruise",
+                    "year": 2004
+                },
+                {
+                    "id": 78,
+                    "quote": "Just a walk in the park, Kazansky.",
+                    "character": "Pete Mitchell",
+                    "quoteFrom": "Top Gun",
+                    "actor": "Tom Cruise",
+                    "year": 1986
+                },
+                {
+                    "id": 79,
+                    "quote": "Gentleman, you had my curiosity, now you have my attention.",
+                    "character": "Calvin Candie",
+                    "quoteFrom": "Django Unchained",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2012
+                },
+                {
+                    "id": 80,
+                    "quote": "The wind cannot defeat a tree with strong roots.",
+                    "character": "Hugh Glass",
+                    "quoteFrom": "The Revenant",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2015
+                },
+                {
+                    "id": 81,
+                    "quote": "Nope! I\u2019ve got a tiger by the tail here and I\u2019m not about to let go!",
+                    "character": "Howard Hughes",
+                    "quoteFrom": "The Aviator",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2004
+                },
+                {
+                    "id": 82,
+                    "quote": "I knew it was a great mistake for a man like me to fall in love\u2026",
+                    "character": "Jay Gatsby",
+                    "quoteFrom": "The Great Gatsby",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2013
+                },
+                {
+                    "id": 83,
+                    "quote": "Dreams feel real while we\u2019re in them. It\u2019s only when we wake up that we realize something was actually strange.",
+                    "character": "Cobb",
+                    "quoteFrom": "Inception",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2010
+                },
+                {
+                    "id": 84,
+                    "quote": "No one forgets the truth; they just get better at lying.",
+                    "character": "Frank Wheeler",
+                    "quoteFrom": "Revolutionary Road",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 2008
+                },
+                {
+                    "id": 85,
+                    "quote": "Sin from my lips? O trespass sweetly urged! Give me my sin again.",
+                    "character": "Romeo",
+                    "quoteFrom": "Romeo + Juliet",
+                    "actor": "Leonardo DiCaprio",
+                    "year": 1996
+                },
+                {
+                    "id": 86,
+                    "quote": "Listen, here\u2019s the thing. If you can\u2019t spot the sucker in your first half-hour at the table, then you are the sucker.",
+                    "character": "Mike McDermott",
+                    "quoteFrom": "Rounders",
+                    "actor": "Matt Damon",
+                    "year": 1998
+                },
+                {
+                    "id": 87,
+                    "quote": "I always thought it would be better to be a fake somebody than a real nobody.",
+                    "character": "Tom Ripley",
+                    "quoteFrom": "The Talented Mr. Ripley",
+                    "actor": "Matt Damon",
+                    "year": 1999
+                },
+                {
+                    "id": 88,
+                    "quote": "Well, I got her number. How do you like them apples?",
+                    "character": "Will Hunting",
+                    "quoteFrom": "Good Will Hunting",
+                    "actor": "Matt Damon",
+                    "year": 1997
+                },
+                {
+                    "id": 89,
+                    "quote": "Never hate your enemies, it affects your judgment.",
+                    "character": "Don Vito Corleone",
+                    "quoteFrom": "The Godfather",
+                    "actor": "Marlon Brando",
+                    "year": 1972
+                },
+                {
+                    "id": 90,
+                    "quote": "The one thing that this job has taught me is that truth is stranger than fiction.",
+                    "character": "The bartender",
+                    "quoteFrom": "Predestination",
+                    "actor": "Ethan Hawke",
+                    "year": 2014
+                },
+                {
+                    "id": 91,
+                    "quote": "I knew a man once who said, 'Death smiles at us all. All a man can do is smile back.'",
+                    "character": "Maximus",
+                    "quoteFrom": "Gladiator",
+                    "actor": "Russell Crowe",
+                    "year": 2000
+                },
+                {
+                    "id": 92,
+                    "quote": "Only after disaster can we be resurrected.",
+                    "character": "Tyler Durden",
+                    "quoteFrom": "Fight club",
+                    "actor": "Brad pitt",
+                    "year": 1999
+                },
+                {
+                    "id": 93,
+                    "quote": "I will have my vengeance, in this life or the next.",
+                    "character": "Maximus",
+                    "quoteFrom": "Gladiator",
+                    "actor": "Russell Crowe",
+                    "year": 2000
+                },
+                {
+                    "id": 94,
+                    "quote": "Its not until you lose everything that you are free to do anything.",
+                    "character": "Tyler Durden",
+                    "quoteFrom": "Fight club",
+                    "actor": "Brad pitt",
+                    "year": 1999
+                },
+                {
+                    "id": 95,
+                    "quote": "Without pain, without sacrifice, we would have nothing.",
+                    "character": "Tyler Durden",
+                    "quoteFrom": "Fight club",
+                    "actor": "Brad pitt",
+                    "year": 1999
+                },
+                {
+                    "id": 96,
+                    "quote": "With a gun barrel between your teeth, you speak only in vowels.",
+                    "character": "Narrator",
+                    "quoteFrom": "Fight club",
+                    "actor": "Edward Norton",
+                    "year": 1999
+                },
+                {
+                    "id": 97,
+                    "quote": "Marla... the little scratch on the roof of your mouth that would heal if only you could stop tonguing it, but you can't.",
+                    "character": "Narrator",
+                    "quoteFrom": "Fight club",
+                    "actor": "Edward Norton",
+                    "year": 1999
+                },
+                {
+                    "id": 98,
+                    "quote": "If you wake up at a different time in a different place, could you wake up as a different person?",
+                    "character": "Narrator",
+                    "quoteFrom": "Fight club",
+                    "actor": "Edward Norton",
+                    "year": 1999
+                },
+                {
+                    "id": 99,
+                    "quote": "Never underestimate the predictability of stupidity.",
+                    "character": "Bullet Tooth Tony",
+                    "quoteFrom": "Snatch",
+                    "actor": "Vinnie Jones",
+                    "year": 2000
+                },
+                {
+                    "id": 100,
+                    "quote": "We all need mirrors to remind ourselves who we are. I'm no different.",
+                    "character": "Leonard Shelby",
+                    "quoteFrom": "Memento",
+                    "actor": "Guy Pearce",
+                    "year": 2000
+                }
+            ]
+        }
+    ],
+    "standardized_name": "movie_and_tv_shows_quotes"
+}

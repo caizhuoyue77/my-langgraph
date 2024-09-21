@@ -1,0 +1,53 @@
+{
+    "product_id": "api_51420ca6-3fef-458a-9066-15dd1b2ec201",
+    "tool_description": "testing",
+    "home_url": "https://rapidapi.com/AmirFischer/api/testing761/",
+    "name": "testing",
+    "title": "testing",
+    "pricing": "FREE",
+    "tool_name": "testing",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 467,
+        "avgSuccessRate": 80,
+        "popularityScore": 7,
+        "__typename": "Score"
+    },
+    "host": "testing761.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Fact for specific number",
+            "url": "https://testing761.p.rapidapi.com/7/math",
+            "description": "Fact for specific number",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "number",
+                    "type": null,
+                    "description": "",
+                    "default": "7"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://testing761.p.rapidapi.com/7/math\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing761.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://testing761.p.rapidapi.com/{number}/math\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing761.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Random Number Fact",
+            "url": "https://testing761.p.rapidapi.com/random/math",
+            "description": "Random Number Fact",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://testing761.p.rapidapi.com/random/math\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing761.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://testing761.p.rapidapi.com/random/math\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"testing761.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "testing"
+}

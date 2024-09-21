@@ -1,0 +1,55 @@
+{
+    "product_id": "api_b9529d07-887e-41d6-9334-7bc2b612f8fd",
+    "tool_description": "API that flips a coin",
+    "home_url": "https://rapidapi.com/gkbrk/api/coin-flip1/",
+    "name": "Coin Flip",
+    "title": "Coin Flip",
+    "pricing": "FREE",
+    "tool_name": "Coin Flip",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 254,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "coin-flip1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Heads / Tails",
+            "url": "https://coin-flip1.p.rapidapi.com/headstails",
+            "description": "Returns an outcome. Either heads or tails",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://coin-flip1.p.rapidapi.com/headstails\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"coin-flip1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://coin-flip1.p.rapidapi.com/headstails\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"coin-flip1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "coin_flip"
+}

@@ -1,0 +1,53 @@
+{
+    "product_id": "api_b245d43d-516b-43d1-93df-58570ae4ce42",
+    "tool_description": "Generate Facebook Ad using AI",
+    "home_url": "https://rapidapi.com/apis-world-apis-world-default/api/facebook-ad/",
+    "name": "Facebook Ad",
+    "title": "Facebook Ad",
+    "pricing": "FREEMIUM",
+    "tool_name": "Facebook Ad",
+    "score": {
+        "avgServiceLevel": 86,
+        "avgLatency": 9254,
+        "avgSuccessRate": 86,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "facebook-ad.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Facebook Ad Copy",
+            "url": "https://facebook-ad.p.rapidapi.com/facebook-ad",
+            "description": "Generate Facebook Ad using AI",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "description",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services."
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Apple"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://facebook-ad.p.rapidapi.com/facebook-ad\"\nquerystring = {\"description\": \"Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services.\", \"name\": \"Apple\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-ad.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://facebook-ad.p.rapidapi.com/facebook-ad\"\nquerystring = {\"description\": \"Apple designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services.\", \"name\": \"Apple\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-ad.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                " There's never been a better time to buy a Mac.",
+                "",
+                " You asked for it, and Apple delivered.",
+                " Enjoy all the benefits of owning an Apple product.",
+                " Why settle for one device when you can have a life-changing experience? Apple.",
+                " ",
+                " ",
+                " "
+            ]
+        }
+    ],
+    "standardized_name": "facebook_ad"
+}

@@ -1,0 +1,45 @@
+{
+    "product_id": "api_a63321a9-5e8f-4748-a2b2-8e82d47ce016",
+    "tool_description": "Get the latest OFP based on username. In xml or JSON",
+    "home_url": "https://rapidapi.com/pokertour/api/simbrief-get-latest-ofp/",
+    "name": "Simbrief - Get latest OFP",
+    "title": "Simbrief - Get latest OFP",
+    "pricing": "FREE",
+    "tool_name": "Simbrief - Get latest OFP",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1203,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "simbrief-get-latest-ofp.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Simbrief - Get latest OFP",
+            "url": "https://simbrief-get-latest-ofp.p.rapidapi.com/",
+            "description": "Get latest ofp in xml (default) or json based on username\nthe json param must be 0 or 1",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "username",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "json",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://simbrief-get-latest-ofp.p.rapidapi.com/\"\nquerystring = {\"username\": \"\", \"json\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simbrief-get-latest-ofp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://simbrief-get-latest-ofp.p.rapidapi.com/\"\nquerystring = {\"username\": \"\", \"json\": \"0\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"simbrief-get-latest-ofp.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "simbrief_get_latest_ofp"
+}

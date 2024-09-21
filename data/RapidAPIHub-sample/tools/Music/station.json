@@ -1,0 +1,55 @@
+{
+    "product_id": "api_2300cd1b-ff22-4977-b947-29f832642ac1",
+    "tool_description": "radio",
+    "home_url": "https://rapidapi.com/hiphopmusique4/api/station1/",
+    "name": "station",
+    "title": "station",
+    "pricing": "FREE",
+    "tool_name": "station",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 558,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "station1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "station",
+            "url": "https://station1.p.rapidapi.com/Hip-Hop-Musiquecom-s115313/",
+            "description": "radio",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://station1.p.rapidapi.com/Hip-Hop-Musiquecom-s115313/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"station1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://station1.p.rapidapi.com/Hip-Hop-Musiquecom-s115313/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"station1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "station"
+}

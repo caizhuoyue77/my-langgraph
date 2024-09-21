@@ -1,0 +1,73 @@
+{
+    "product_id": "api_c81228ee-8edc-419a-bc99-5b40076e7bea",
+    "tool_description": "Movie showtimes for Cinemas NOS (portuguese movie theaters)",
+    "home_url": "https://rapidapi.com/andrembs/api/movie-showtimes/",
+    "name": "Movie Showtimes",
+    "title": "Movie Showtimes",
+    "pricing": "FREE",
+    "tool_name": "Movie Showtimes",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 3273,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "movie-showtimes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/api/all",
+            "url": "https://movie-showtimes.p.rapidapi.com/api/all",
+            "description": "Get all the sessions for all the available movies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-showtimes.p.rapidapi.com/api/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-showtimes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-showtimes.p.rapidapi.com/api/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-showtimes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "/api/information",
+            "url": "https://movie-showtimes.p.rapidapi.com/api/information/tt6105098",
+            "description": "Get the sessions for the specified movie (IMDb id)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "IMDb movie id",
+                    "default": "tt6105098"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-showtimes.p.rapidapi.com/api/information/tt6105098\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-showtimes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-showtimes.p.rapidapi.com/api/information/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-showtimes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "movie_showtimes"
+}

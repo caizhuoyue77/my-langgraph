@@ -1,0 +1,74 @@
+{
+    "product_id": "api_caf40994-37b6-47fb-9211-d3a39ca1d24b",
+    "tool_description": "Meme Generator with support of adding captions and text directly on images to over 1.8k meme templates in 10+ fonts (works in multiple languages).",
+    "home_url": "https://rapidapi.com/eximia-eximia-default/api/meme-generator-and-template-database/",
+    "name": "Meme Generator and Template Database",
+    "title": "Meme Generator and Template Database",
+    "pricing": "FREEMIUM",
+    "tool_name": "Meme Generator and Template Database",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 713,
+        "avgSuccessRate": 94,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "meme-generator-and-template-database.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/search",
+            "url": "https://meme-generator-and-template-database.p.rapidapi.com/search",
+            "description": "Returns meme templates that contain a specific string. **searchString is case sensitive**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "searchString",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cat"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/search\"\nquerystring = {\"searchString\": \"cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/search\"\nquerystring = {\"searchString\": \"cat\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "/fonts",
+            "url": "https://meme-generator-and-template-database.p.rapidapi.com/fonts",
+            "description": "Any of the fonts can be used  in any text box or caption.\nSome fonts are language specific:\n- Chinese -> zcool-wenyi\n- Japanese -> takaopmincho\n-  Korean -> gugi\n- Hindi -> poppins",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/fonts\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/fonts\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "fonts": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "/templates",
+            "url": "https://meme-generator-and-template-database.p.rapidapi.com/templates",
+            "description": "Returns all of the currently supported templates and the number of text boxes that a particular template can support. For how to use this response go to **/template/:image**.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/templates\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://meme-generator-and-template-database.p.rapidapi.com/templates\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"meme-generator-and-template-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "meme_generator_and_template_database"
+}

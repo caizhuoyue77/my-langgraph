@@ -1,0 +1,84 @@
+{
+    "product_id": "api_c6a32a32-5c3e-4710-95f9-471d7895b28e",
+    "tool_description": "decide el tipo de consulta",
+    "home_url": "https://rapidapi.com/epsilon-beta-technologies-epsilon-beta-technologies-default/api/selector-tipo-consultas/",
+    "name": "selector-tipo-consultas",
+    "title": "selector-tipo-consultas",
+    "pricing": "FREEMIUM",
+    "tool_name": "selector-tipo-consultas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 855,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "selector-tipo-consultas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Generar Fhir ID QR",
+            "url": "https://selector-tipo-consultas.p.rapidapi.com/fhir_id_qr_code/a554c619-bc73-4080-9cc9-74da38789d48",
+            "description": "Recibe el id de fhir como string y lo convierte en codigo qr",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "fhir_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "a554c619-bc73-4080-9cc9-74da38789d48"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://selector-tipo-consultas.p.rapidapi.com/fhir_id_qr_code/a554c619-bc73-4080-9cc9-74da38789d48\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"selector-tipo-consultas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://selector-tipo-consultas.p.rapidapi.com/fhir_id_qr_code/{fhir_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"selector-tipo-consultas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "triage virtual",
+            "url": "https://selector-tipo-consultas.p.rapidapi.com/me duele la cabeza",
+            "description": "define si un paciente debe ser atendido via consulta virtual o presencial",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "me duele la cabeza"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://selector-tipo-consultas.p.rapidapi.com/me duele la cabeza\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"selector-tipo-consultas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://selector-tipo-consultas.p.rapidapi.com/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"selector-tipo-consultas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "resp": {
+                    "isEmergency": "false",
+                    "probabilidad": 98.6185676830434,
+                    "tipo_consulta": "virtual"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "resp": {
+                        "type": "object",
+                        "properties": {
+                            "probabilidad": {
+                                "type": "number"
+                            },
+                            "telemedicine": {
+                                "type": "string"
+                            },
+                            "tipo_consulta": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "selector_tipo_consultas"
+}

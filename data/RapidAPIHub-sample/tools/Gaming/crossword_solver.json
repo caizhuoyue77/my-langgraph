@@ -1,0 +1,47 @@
+{
+    "product_id": "api_5c970999-bd6c-4397-886f-ee78fdb709ca",
+    "tool_description": "Find all missing letters! 6.7 million words in English, Spanish and German. High performance algorithms. Brute-force assisted.",
+    "home_url": "https://rapidapi.com/myvatAPI/api/crossword-solver/",
+    "name": "CROSSWORD Solver",
+    "title": "CROSSWORD Solver",
+    "pricing": "FREEMIUM",
+    "tool_name": "CROSSWORD Solver",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 205,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "crossword-solver.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "CROSS",
+            "url": "https://crossword-solver.p.rapidapi.com/cross",
+            "description": "**Using this API is easy! An example?**\n\nSearch string:\n- must contain letters (a-z) AND at least one _ (underscore) for unknown letters.\n- must have a minimum length of 3 and a maximum lenght of 65 characters.\n- is a required parameter.\n\nExample request:   `word=u_b_l_e_a_l_`\n\nLanguage:\n- en, es, de (English, Spanish, German)\n- is a optional parameter. If not set /en/ is used. \n\nExample request:   `lang=en`\n\n**This is fun!**",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "u_b_l_e_a_l_"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://crossword-solver.p.rapidapi.com/cross\"\nquerystring = {\"lang\": \"\", \"word\": \"u_b_l_e_a_l_\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crossword-solver.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crossword-solver.p.rapidapi.com/cross\"\nquerystring = {\"lang\": \"\", \"word\": \"u_b_l_e_a_l_\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crossword-solver.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            }
+        }
+    ],
+    "standardized_name": "crossword_solver"
+}

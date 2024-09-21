@@ -1,0 +1,50 @@
+{
+    "product_id": "api_e5fe027a-21ce-40fd-860f-3dfbf6b23678",
+    "tool_description": "Access endless trivia question and answers. See more info at https://api-ninjas.com/api/trivia.",
+    "home_url": "https://rapidapi.com/apininjas/api/trivia-by-api-ninjas/",
+    "name": "Trivia by API-Ninjas",
+    "title": "Trivia by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Trivia by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 173,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "trivia-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/trivia",
+            "url": "https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia",
+            "description": "API Ninjas Trivia API endpoint",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "How many results to return. Must be between **1** and **30**. Default is **1**.",
+                    "default": ""
+                },
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "Category of trivia. Possible values are: \n\n**artliterature\nlanguage\nsciencenature\ngeneral\nfooddrink\npeopleplaces\ngeography\nhistoryholidays\nentertainment\ntoysgames\nmusic\nmathematics\nreligionmythology\nsportsleisure**",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia\"\nquerystring = {\"limit\": \"\", \"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trivia-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://trivia-by-api-ninjas.p.rapidapi.com/v1/trivia\"\nquerystring = {\"limit\": \"\", \"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"trivia-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "category": "geography",
+                    "question": "What is the capital of Panama ?",
+                    "answer": "Panama City"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "trivia_by_api_ninjas"
+}

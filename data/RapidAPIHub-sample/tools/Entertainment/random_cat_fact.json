@@ -1,0 +1,31 @@
+{
+    "product_id": "api_c231e413-2471-438c-874a-e0e895043951",
+    "tool_description": "Get some random cat facts",
+    "home_url": "https://rapidapi.com/maketest-1YGgU5ZOtA/api/random-cat-fact/",
+    "name": "Random Cat Fact",
+    "title": "Random Cat Fact",
+    "pricing": "FREEMIUM",
+    "tool_name": "Random Cat Fact",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 544,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "random-cat-fact.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Cat Facts",
+            "url": "https://random-cat-fact.p.rapidapi.com/",
+            "description": "Get some random cat fact",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://random-cat-fact.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-cat-fact.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://random-cat-fact.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-cat-fact.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "random_cat_fact"
+}

@@ -1,0 +1,38 @@
+{
+    "product_id": "api_8903da68-d7b5-421f-aab3-279549355cb6",
+    "tool_description": "daily limit check",
+    "home_url": "https://rapidapi.com/xeall-org-xeall-org-default/api/daily-limit-check/",
+    "name": "daily limit check",
+    "title": "daily limit check",
+    "pricing": "FREE",
+    "tool_name": "daily limit check",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "daily-limit-check.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "daily check",
+            "url": "https://daily-limit-check.p.rapidapi.com/daily",
+            "description": "daily limit check",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "daily",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "daily"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://daily-limit-check.p.rapidapi.com/daily\"\nquerystring = {\"daily\": \"daily\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-limit-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://daily-limit-check.p.rapidapi.com/daily\"\nquerystring = {\"daily\": \"daily\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-limit-check.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "daily_limit_check"
+}

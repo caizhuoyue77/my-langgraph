@@ -1,0 +1,127 @@
+{
+    "product_id": "api_c140e10f-9c31-492e-830f-309e3b2b402a",
+    "tool_description": "Do you live for the Fantasy 5? Well, you\u2019ve just found your match! Get the latest winning numbers and statistics for your game!",
+    "home_url": "https://rapidapi.com/avoratechnology/api/fantasy-5/",
+    "name": "Fantasy 5",
+    "title": "Fantasy 5",
+    "pricing": "FREEMIUM",
+    "tool_name": "Fantasy 5",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 390,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "fantasy-5.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Drawings Between Dates",
+            "url": "https://fantasy-5.p.rapidapi.com/BetweenDates/01-01-2023/01-10-2023",
+            "description": "Get all Fantasy 5 winning number sets between two specified dates where the first number supplied is the beginning date and the second number supplied is the end date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date1",
+                    "type": "string",
+                    "description": "Must be a date field in the form of MM-DD-YYYY. Please no slashes \\\"\\\\\\\".",
+                    "default": "01-01-2023"
+                },
+                {
+                    "name": "date2",
+                    "type": "string",
+                    "description": "Must be a date field in the form of MM-DD-YYYY. Please no slashes \\\"\\\\\\\".",
+                    "default": "01-10-2023"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/BetweenDates/01-01-2023/01-10-2023\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/BetweenDates/{date1}/{date2}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Drawing By Date",
+            "url": "https://fantasy-5.p.rapidapi.com/01-01-2023",
+            "description": "Get the winning Fantasy 5 number set from a specific drawing date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "Must be a date field in the form of MM-DD-YYYY. Please no slashes \\\"\\\\\\\".",
+                    "default": "01-01-2023"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/01-01-2023\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/{date}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Random QuickPick for Play",
+            "url": "https://fantasy-5.p.rapidapi.com/QuickPick",
+            "description": "Get a randomized Quick Pick for the Fantasy 5. This is a random set of playable Fantasy 5 numbers.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/QuickPick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/QuickPick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest 10 Drawings",
+            "url": "https://fantasy-5.p.rapidapi.com/latest10",
+            "description": "Get the latest, and last winning 10 Fantasy 5 number sets.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest Drawing",
+            "url": "https://fantasy-5.p.rapidapi.com/latest",
+            "description": "Get the latest, and last winning Fantasy 5 winning number set.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "General Statistics",
+            "url": "https://fantasy-5.p.rapidapi.com/stats",
+            "description": "This endpoint pulls basic statistics of the Fantasy 5 numbers. For each ball (denoted firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber) this endpoint returns the mean, median, mode, min, max, standard deviation, variance, skewness, and kurtosis. After which, the endpoint returns the number of occurrences of each number over the life of game.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All Fantasy 5",
+            "url": "https://fantasy-5.p.rapidapi.com/",
+            "description": "Get all winning drawings in Fantasy 5",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fantasy-5.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fantasy-5.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "fantasy_5"
+}

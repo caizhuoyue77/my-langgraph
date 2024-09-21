@@ -1,0 +1,551 @@
+{
+    "product_id": "api_6bb5cd8d-0746-49cf-bab4-cb5c5a8fc224",
+    "tool_description": "An api that can sustain client wordle matches sessions",
+    "home_url": "https://rapidapi.com/samueljansenn/api/wordle-api/",
+    "name": "wordle-api",
+    "title": "wordle-api",
+    "pricing": "FREEMIUM",
+    "tool_name": "wordle-api",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 759,
+        "avgSuccessRate": 95,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "wordle-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/documentation/environment",
+            "url": "https://wordle-api.p.rapidapi.com/documentation/environment",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/documentation/environment\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/documentation/environment\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "active": "dev"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object"
+            }
+        },
+        {
+            "name": "/documentation",
+            "url": "https://wordle-api.p.rapidapi.com/documentation",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/documentation\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/documentation\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "swagger": "2.0",
+                "paths": {
+                    "/match/authenticate": {
+                        "post": {
+                            "parameters": [],
+                            "tags": [
+                                "Security"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/SessionResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/api/match": {
+                        "delete": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "tags": [
+                                "RapiApiMatch"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        },
+                        "post": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "tags": [
+                                "RapiApiMatch"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/api/match/verify": {
+                        "patch": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "word",
+                                    "type": "string",
+                                    "in": "query",
+                                    "required": false,
+                                    "description": null
+                                }
+                            ],
+                            "tags": [
+                                "RapiApiMatch"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/api/match/authenticate": {
+                        "post": {
+                            "parameters": [],
+                            "tags": [
+                                "RapiApiSecurity"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/SessionResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/match": {
+                        "delete": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "tags": [
+                                "Match"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        },
+                        "post": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                }
+                            ],
+                            "tags": [
+                                "Match"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/match/verify": {
+                        "patch": {
+                            "parameters": [
+                                {
+                                    "name": "Context",
+                                    "description": "Bearer <token>",
+                                    "in": "header",
+                                    "required": true,
+                                    "type": "string"
+                                },
+                                {
+                                    "name": "word",
+                                    "type": "string",
+                                    "in": "query",
+                                    "required": false,
+                                    "description": null
+                                }
+                            ],
+                            "tags": [
+                                "Match"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/MatchResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/health": {
+                        "get": {
+                            "parameters": [],
+                            "tags": [
+                                "HealthCheck"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/ActuatorHealthResponseDto"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/documentation": {
+                        "get": {
+                            "parameters": [],
+                            "tags": [
+                                "Documentation"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/json"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "/documentation/environment": {
+                        "get": {
+                            "parameters": [],
+                            "tags": [
+                                "Documentation"
+                            ],
+                            "consumes": [
+                                "application/json"
+                            ],
+                            "produces": [
+                                "application/json"
+                            ],
+                            "responses": {
+                                "200": {
+                                    "description": "successful operation",
+                                    "schema": {
+                                        "$ref": "#/definitions/json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "definitions": {
+                    "SessionResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "context": {
+                                "type": "object",
+                                "example": null
+                            }
+                        },
+                        "required": [
+                            "context"
+                        ]
+                    },
+                    "MatchResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "context": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "correctWord": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "guessList": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "$ref": "#/definitions/GuessResponseDto"
+                                }
+                            },
+                            "guessStates": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "id": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "step": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "totalGuesses": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "user": {
+                                "$ref": "#/definitions/UserResponseDto"
+                            },
+                            "wordSize": {
+                                "type": "object",
+                                "example": null
+                            }
+                        },
+                        "required": [
+                            "context",
+                            "correctWord",
+                            "guessList",
+                            "guessStates",
+                            "id",
+                            "step",
+                            "totalGuesses",
+                            "user",
+                            "wordSize"
+                        ]
+                    },
+                    "GuessResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "word": {
+                                "type": "object",
+                                "example": null
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "word"
+                        ]
+                    },
+                    "UserResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "object",
+                                "example": null
+                            },
+                            "name": {
+                                "type": "object",
+                                "example": null
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "name"
+                        ]
+                    },
+                    "ActuatorHealthResponseDto": {
+                        "type": "object",
+                        "properties": {
+                            "status": {
+                                "type": "object",
+                                "example": null
+                            }
+                        },
+                        "required": [
+                            "status"
+                        ]
+                    },
+                    "json": {
+                        "type": "object",
+                        "properties": {},
+                        "required": []
+                    }
+                },
+                "tags": [
+                    {
+                        "name": "Security",
+                        "description": "Security controller",
+                        "externalDocs": null
+                    },
+                    {
+                        "name": "RapiApiMatch",
+                        "description": "RapiApi Match controller",
+                        "externalDocs": null
+                    },
+                    {
+                        "name": "RapiApiSecurity",
+                        "description": "RapiApi Security controller",
+                        "externalDocs": null
+                    },
+                    {
+                        "name": "Match",
+                        "description": "Match controller",
+                        "externalDocs": null
+                    },
+                    {
+                        "name": "HealthCheck",
+                        "description": "HealthCheck controller",
+                        "externalDocs": null
+                    },
+                    {
+                        "name": "Documentation",
+                        "description": "OpenApi documentation. Api Tree",
+                        "externalDocs": null
+                    }
+                ],
+                "host": "api.data-explore.com",
+                "schemes": [
+                    "https"
+                ],
+                "basePath": "/wordle-api",
+                "info": {
+                    "title": "WordleApi",
+                    "description": "A Wordle like game",
+                    "version": "0.0.1",
+                    "termsOfService": "http://swagger.io/terms/",
+                    "contact": {
+                        "name": "Samuel Jansen",
+                        "email": "samuel.jansenn@gmail.com"
+                    },
+                    "license": {
+                        "name": "Apache 2.0 / MIT License",
+                        "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object"
+            }
+        },
+        {
+            "name": "/health",
+            "url": "https://wordle-api.p.rapidapi.com/health",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/health\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wordle-api.p.rapidapi.com/health\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "UP"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "status"
+                ]
+            }
+        }
+    ],
+    "standardized_name": "wordle_api"
+}

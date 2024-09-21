@@ -1,0 +1,38 @@
+{
+    "product_id": "api_04a6f4e3-9114-49a5-a960-2612f4ee6caf",
+    "tool_description": "Thousands of hilarious dad jokes for your entertainment apps. See more info at https://api-ninjas.com/api/dadjokes",
+    "home_url": "https://rapidapi.com/apininjas/api/dad-jokes-by-api-ninjas/",
+    "name": "Dad Jokes by API-Ninjas",
+    "title": "Dad Jokes by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Dad Jokes by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 264,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "dad-jokes-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/dadjokes",
+            "url": "https://dad-jokes-by-api-ninjas.p.rapidapi.com/v1/dadjokes",
+            "description": "API Ninjas Dad Jokes API endpoint. Returns one (or more) random dad jokes.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "How many jokes to return. Must be between 1 and 10. Default is 1.",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://dad-jokes-by-api-ninjas.p.rapidapi.com/v1/dadjokes\"\nquerystring = {\"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dad-jokes-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://dad-jokes-by-api-ninjas.p.rapidapi.com/v1/dadjokes\"\nquerystring = {\"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"dad-jokes-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "dad_jokes_by_api_ninjas"
+}

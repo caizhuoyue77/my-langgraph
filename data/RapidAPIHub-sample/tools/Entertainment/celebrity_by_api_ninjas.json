@@ -1,0 +1,68 @@
+{
+    "product_id": "api_6a006508-4924-4e68-9ccd-243585012b1c",
+    "tool_description": "Get information on all your favorite celebrities. See more info at https://api-ninjas.com/api/celebrity.",
+    "home_url": "https://rapidapi.com/apininjas/api/celebrity-by-api-ninjas/",
+    "name": "Celebrity by API-Ninjas",
+    "title": "Celebrity by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Celebrity by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 490,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "celebrity-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/celebrity",
+            "url": "https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity",
+            "description": "API Ninjas Celebrity API endpoint.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "Name of the celebrity you wish to search. This field is case-insensitive.",
+                    "default": "Michael Jordan"
+                },
+                {
+                    "name": "min_height",
+                    "type": "STRING",
+                    "description": "Minimum height of celebrities in meters (e.g. **1.65**).",
+                    "default": ""
+                },
+                {
+                    "name": "min_net_worth",
+                    "type": "NUMBER",
+                    "description": "Minimum net worth of celebrities.",
+                    "default": ""
+                },
+                {
+                    "name": "nationality",
+                    "type": "STRING",
+                    "description": "Nationality of celebrities. Must be an ISO 3166 Alpha-2 country code (e.g. **US**).",
+                    "default": ""
+                },
+                {
+                    "name": "max_net_worth",
+                    "type": "NUMBER",
+                    "description": "Maximum net worth of celebrities.",
+                    "default": ""
+                },
+                {
+                    "name": "max_height",
+                    "type": "STRING",
+                    "description": "Maximum height of celebrities in meters (e.g. **1.80**).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity\"\nquerystring = {\"name\": \"Michael Jordan\", \"min_height\": \"\", \"min_net_worth\": \"\", \"nationality\": \"\", \"max_net_worth\": \"\", \"max_height\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"celebrity-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://celebrity-by-api-ninjas.p.rapidapi.com/v1/celebrity\"\nquerystring = {\"name\": \"Michael Jordan\", \"min_height\": \"\", \"min_net_worth\": \"\", \"nationality\": \"\", \"max_net_worth\": \"\", \"max_height\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"celebrity-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "celebrity_by_api_ninjas"
+}

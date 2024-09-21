@@ -1,0 +1,53 @@
+{
+    "product_id": "api_869b0ec4-e37d-4e05-a27d-6d637360a2a1",
+    "tool_description": "Retrieve the USDA Plant Hardiness Zone for a ZIP code",
+    "home_url": "https://rapidapi.com/fireside-worldwide-fireside-worldwide-default/api/plant-hardiness-zone/",
+    "name": "Plant Hardiness Zone",
+    "title": "Plant Hardiness Zone",
+    "pricing": "FREEMIUM",
+    "tool_name": "Plant Hardiness Zone",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 178,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "plant-hardiness-zone.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Retrieve the Hardiness Zone",
+            "url": "https://plant-hardiness-zone.p.rapidapi.com/zipcodes/90210",
+            "description": "Pass a ZIP code in the endpoint path to return an object that includes the ZIP code and USDA Plant Hardiness Zone.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "zipcode",
+                    "type": "string",
+                    "description": "",
+                    "default": "90210"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://plant-hardiness-zone.p.rapidapi.com/zipcodes/90210\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"plant-hardiness-zone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://plant-hardiness-zone.p.rapidapi.com/zipcodes/{zipcode}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"plant-hardiness-zone.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "hardiness_zone": "10b",
+                "zipcode": "90210"
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "hardiness_zone": {
+                        "type": "string"
+                    },
+                    "zipcode": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "plant_hardiness_zone"
+}

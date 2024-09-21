@@ -1,0 +1,72 @@
+{
+    "product_id": "api_87506237-0247-4e0c-99af-792e18a6ef23",
+    "tool_description": "Hourly time-series weather data for any location from 1950",
+    "home_url": "https://rapidapi.com/oikolab-oikolab-default/api/oikoweather/",
+    "name": "OikoWeather",
+    "title": "OikoWeather",
+    "pricing": "FREEMIUM",
+    "tool_name": "OikoWeather",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 865,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "oikoweather.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Weather Data",
+            "url": "https://oikoweather.p.rapidapi.com/weather",
+            "description": "Hourly historical and forecast weather parameters in time-series format, from 1950 to 16 days ahead for any location.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "'2010-01-01'"
+                },
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "23.3"
+                },
+                {
+                    "name": "param",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "temperature"
+                },
+                {
+                    "name": "lon",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "114.2"
+                },
+                {
+                    "name": "end",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "'2019-12-31'"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "freq",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "D"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://oikoweather.p.rapidapi.com/weather\"\nquerystring = {\"freq\": \"D\", \"start\": \"'2010-01-01'\", \"lat\": \"23.3\", \"param\": \"temperature\", \"lon\": \"114.2\", \"end\": \"'2019-12-31'\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"oikoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://oikoweather.p.rapidapi.com/weather\"\nquerystring = {\"freq\": \"D\", \"start\": \"'2010-01-01'\", \"lat\": \"23.3\", \"param\": \"temperature\", \"lon\": \"114.2\", \"end\": \"'2019-12-31'\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"oikoweather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "statusCode": 401,
+                "message": "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription."
+            }
+        }
+    ],
+    "standardized_name": "oikoweather"
+}

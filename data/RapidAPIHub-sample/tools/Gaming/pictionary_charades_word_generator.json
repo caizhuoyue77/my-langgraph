@@ -1,0 +1,68 @@
+{
+    "product_id": "api_f9465b80-ac83-4d09-9be5-b57e60b6042d",
+    "tool_description": "Generate words for Charades and Pictionary Games!",
+    "home_url": "https://rapidapi.com/kwik-api-kwik-api-default/api/pictionary-charades-word-generator/",
+    "name": "Pictionary Charades Word Generator",
+    "title": "Pictionary Charades Word Generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Pictionary Charades Word Generator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 322,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "pictionary-charades-word-generator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Charades Word",
+            "url": "https://pictionary-charades-word-generator.p.rapidapi.com/charades",
+            "description": "Get a random charades word with the specified difficulty. If not difficulty is supplied, a random difficulty will be used.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "difficulty",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://pictionary-charades-word-generator.p.rapidapi.com/charades\"\nquerystring = {\"difficulty\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pictionary-charades-word-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pictionary-charades-word-generator.p.rapidapi.com/charades\"\nquerystring = {\"difficulty\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pictionary-charades-word-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "difficulty": "actions",
+                "word": "watering a garden"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Pictionary Word",
+            "url": "https://pictionary-charades-word-generator.p.rapidapi.com/pictionary",
+            "description": "Get a random pictionary word with the specified difficulty. If not difficulty is supplied, a random difficulty will be used.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "difficulty",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://pictionary-charades-word-generator.p.rapidapi.com/pictionary\"\nquerystring = {\"difficulty\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pictionary-charades-word-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pictionary-charades-word-generator.p.rapidapi.com/pictionary\"\nquerystring = {\"difficulty\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pictionary-charades-word-generator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "difficulty": "vhard",
+                "word": "stun"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "pictionary_charades_word_generator"
+}

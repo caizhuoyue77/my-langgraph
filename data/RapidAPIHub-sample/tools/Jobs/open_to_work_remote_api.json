@@ -1,0 +1,212 @@
+{
+    "product_id": "api_980f37ba-2f54-41ef-82a6-13e484da2fcf",
+    "tool_description": "Open To Work Remote API:\n\nI build a powerful Job Search API for developers.\n\nHere you'll find a great list of remote jobs.\n\nIt contains accurate sources and allows different filters.\n\nFor more info:\nhttps://api.opentoworkremote.com/\n\nAnd if you have any doubt, contact me:\nhttps://linktr.ee/maurobonfietti\n",
+    "home_url": "https://rapidapi.com/maurobonfietti/api/open-to-work-remote-api/",
+    "name": "Open To Work Remote API",
+    "title": "Open To Work Remote API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Open To Work Remote API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 517,
+        "avgSuccessRate": 98,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "open-to-work-remote-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Jobs",
+            "url": "https://open-to-work-remote-api.p.rapidapi.com/jobs",
+            "description": "# Open To Work Remote - API\n\n## Search Jobs:\n\nThis endpoint allows you to search for jobs.\n\nYou can search for jobs by filtering by title, tags, salary, location, and company name. All the information comes paginated.\n\n*[Click 3 Dots Button To View More Details About All Params]*\n\n### Parameters and Filters:\n\n**page:** Select the page.\n**perPage:** Quantity of jobs shown per page.\n**title:** Allows search jobs by title/role.\n**tag:** Allows search jobs by tags/categories.\n**location:** Allows search jobs by location.\n**company:** Allows search jobs by the company name.\n**salaryMin:** Allows search jobs by salary.\n**source:** Allows search jobs by the Job Board source.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "perPage",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://open-to-work-remote-api.p.rapidapi.com/jobs\"\nquerystring = {\"page\": \"1\", \"perPage\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"open-to-work-remote-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://open-to-work-remote-api.p.rapidapi.com/jobs\"\nquerystring = {\"page\": \"1\", \"perPage\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"open-to-work-remote-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "pagesInfo": {
+                    "totalJobs": 2211,
+                    "totalpages": 443,
+                    "page": 1,
+                    "perPage": 5,
+                    "nextPage": "/jobs?page=2&title=&tag=&location=&salaryMin="
+                },
+                "jobs": [
+                    {
+                        "id": 149304,
+                        "company": "Svitla",
+                        "title": "Senior Node.js Engineer",
+                        "salaryMin": null,
+                        "salaryMax": null,
+                        "salaryRange": null,
+                        "logo": "https://media.licdn.com/dms/image/C4D0BAQFx2S9-g89faA/company-logo_200_200/0/1663947249276?e=1694649600&v=beta&t=8w0T_JRCjPQtlzNolYY2rwHjdSYv1q3fL1ztG1-IZPg",
+                        "location": "Remote, Ukraine",
+                        "slug": null,
+                        "url": "https://svitla.com/career/senior-nodejs-engineer-2023-04-27-09-27",
+                        "source": "OpenToWorkRemote",
+                        "tags": [],
+                        "featured": 1,
+                        "date": "2023-06-13",
+                        "publicationDate": "2023-06-13"
+                    },
+                    {
+                        "id": 145186,
+                        "company": "Synapse",
+                        "title": "Senior Software Engineer (Backend)",
+                        "salaryMin": null,
+                        "salaryMax": null,
+                        "salaryRange": null,
+                        "logo": "https://www.opentoworkremote.com/company-logo/Synapse.png",
+                        "location": "Remote, LATAM",
+                        "slug": null,
+                        "url": "https://jobs.lever.co/synapseint/531a4057-a2b2-48c5-aec0-8016e0806ac5",
+                        "source": "OpenToWorkRemote",
+                        "tags": [],
+                        "featured": 1,
+                        "date": "2023-06-07",
+                        "publicationDate": "2023-06-07"
+                    },
+                    {
+                        "id": 145194,
+                        "company": "Wakapi",
+                        "title": "Senior PHP Software Engineer",
+                        "salaryMin": null,
+                        "salaryMax": null,
+                        "salaryRange": null,
+                        "logo": "https://images.teamtailor-cdn.com/images/s3/teamtailor-production/logotype-v3/image_uploads/9c0b8148-bc61-420b-bdd4-78ff6758b643/original.png",
+                        "location": "Remote, LATAM",
+                        "slug": null,
+                        "url": "https://wakapi.teamtailor.com/jobs/2867081-senior-php-software-engineer-962",
+                        "source": "OpenToWorkRemote",
+                        "tags": [],
+                        "featured": 1,
+                        "date": "2023-06-07",
+                        "publicationDate": "2023-06-07"
+                    },
+                    {
+                        "id": 141224,
+                        "company": "Atom Chat",
+                        "title": "Back End Developer (Remote)",
+                        "salaryMin": null,
+                        "salaryMax": null,
+                        "salaryRange": null,
+                        "logo": "https://atomchat.io/wp-content/uploads/2023/03/logo-atom-chat.png",
+                        "location": "Remote, LATAM",
+                        "slug": null,
+                        "url": "https://atomchat.freshteam.com/jobs/Ju4JyAjO9DKp/back-end-developer-remote",
+                        "source": "OpenToWorkRemote",
+                        "tags": [],
+                        "featured": 1,
+                        "date": "2023-06-02",
+                        "publicationDate": "2023-06-02"
+                    },
+                    {
+                        "id": 141225,
+                        "company": "Atom Chat",
+                        "title": "Front End Developer (Remoto)",
+                        "salaryMin": null,
+                        "salaryMax": null,
+                        "salaryRange": null,
+                        "logo": "https://atomchat.io/wp-content/uploads/2023/03/logo-atom-chat.png",
+                        "location": "Remote, LATAM",
+                        "slug": null,
+                        "url": "https://atomchat.freshteam.com/jobs/UJ3eDZo00O2-/front-end-developer-remoto",
+                        "source": "OpenToWorkRemote",
+                        "tags": [],
+                        "featured": 1,
+                        "date": "2023-06-02",
+                        "publicationDate": "2023-06-02"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get One Job",
+            "url": "https://open-to-work-remote-api.p.rapidapi.com/jobs/138024",
+            "description": "# Open To Work Remote - API\n\n## Get One Job:\n\nThis endpoint allows you to get info on a job by id.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "138024"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://open-to-work-remote-api.p.rapidapi.com/jobs/138024\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"open-to-work-remote-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://open-to-work-remote-api.p.rapidapi.com/jobs/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"open-to-work-remote-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 138024,
+                "company": "OPAL",
+                "title": "Customer Success Manager",
+                "salaryMin": null,
+                "salaryMax": null,
+                "salaryRange": null,
+                "logo": "https://remotive.com/job/1693328/logo",
+                "location": "USA",
+                "slug": null,
+                "url": "https://remotive.com/remote-jobs/customer-support/customer-success-manager-1693328",
+                "source": "Remotive",
+                "tags": [
+                    "C",
+                    "education",
+                    "marketing",
+                    "microsoft",
+                    "saas",
+                    "sales",
+                    "salesforce",
+                    "growth",
+                    "management",
+                    "project management",
+                    "content",
+                    "customer success",
+                    "product",
+                    "knowledge",
+                    "data",
+                    "troubleshooting",
+                    "Enterprise",
+                    "business",
+                    "partnerships",
+                    "SOLID",
+                    "metrics",
+                    "engagement",
+                    "IT",
+                    "implementation",
+                    "organization",
+                    "applications",
+                    "communication",
+                    "time management",
+                    "support",
+                    "risk",
+                    "insurance",
+                    "programs",
+                    "C-Suite"
+                ],
+                "featured": null,
+                "date": "2023-05-28T09:40:03",
+                "publicationDate": "2023-05-28",
+                "description": "<p><strong>About the Job</strong></p>\n<p>As a Customer Success Manager you will be the primary point of contact for our user base with some of the biggest brands in the world. You will be working to understand their business, goals, and helping define what success looks like.</p>\n<p>In close collaboration with a Growth Account Executive counterpart, you\u2019ll develop account strategies to ensure Opal is demonstrating value for the customer. In addition, you will own renewals and potential growth opportunities for a portion of your book of business.</p>\n<p><strong>About You</strong></p>\n<p>You are a passionate professional with excellent communication skills and are a strong strategic thinker. You understand the difference between making customers happy versus successful and are laser focused on the latter. You thrive on feedback and combine it with metrics to drive yourself and your customers towards continuous growth.</p>\n<p><strong>About Opal</strong></p>\n<p>Opal is the planning platform that enables marketers to plan, create, and calendar their content in one place. By working in Opal, teams get the visibility they need to stay aligned and collaborate efficiently. Visit workwithopal.com to learn why Opal is trusted by leading brands including Target, Starbucks, Microsoft, General Motors, and many more!</p>\n<p><strong>Requirements</strong></p>\n<p><strong>Responsibilities</strong></p>\n<ul style=\"\">\n<li style=\"\">Establish customer rapport to develop consultative and productive customer relationships and become a customer advocate.</li>\n<li style=\"\">Guide customers through the Opal engagement and implementation model to ensure maximum usage, adoption, value, expansion, and retention.</li>\n<li style=\"\">In partnership with your Growth Account Executive, identify and pursue growth opportunities within the customer base.</li>\n<li style=\"\">Build and own a change management plan for each customer to drive continuous value and user retention..</li>\n<li style=\"\">Be the Opal product expert and demonstrate a deep understanding of the platform and solutions; use enablement materials to help customers leverage the platform\u2019s functionality to its fullest potential and achieve desired business outcomes for customers as well as Opal.</li>\n<li style=\"\">Create positive synergy with Growth Account Executive counterparts to deepen customer partnerships and collaborate on strategic approaches for each customer in your assigned territory.</li>\n<li style=\"\">Be the voice of the customer internally and collaborate with cross-functional teams (Education, Support, Sales, Product, and Marketing) on key milestones along the customer journey.</li>\n<li style=\"\">Understand and improve internal processes for troubleshooting customer issues.</li>\n<li style=\"\">Utilize digital CRMs (e.g. SalesForce, etc.) to accurately manage customer information, identify and resolve at-risk early indicators, service gaps, identify optimization and expansion opportunities, and bolster territory management and growth plans.</li>\n<li style=\"\">Work proactively to eliminate risk of customer churn, escalating issues as needed.</li>\n</ul>\n<p><strong>Performance Metrics</strong></p>\n<p>As a performance driven organization, we root all things in data. It helps us understand where we are succeeding, and where we need to improve. Some of the metrics we\u2019ll focus on:</p>\n<ul style=\"\">\n<li style=\"\">Gross retention rate</li>\n<li style=\"\">Usage and adoption of Opal within your customer portfolio</li>\n<li style=\"\">Expansion / Upsell opportunities created with your Sales counterpart</li>\n</ul>\n<p><strong>Skills, Experience, Knowledge:</strong></p>\n<ul style=\"\">\n<li style=\"\">5+ years of experience in an enterprise customer success or similar role at a SaaS company, ideally in the marketing vertical</li>\n<li style=\"\">Proven results in meeting customer retention and expansion goals.</li>\n<li style=\"\">Ability to correlate user and usage data alongside desired outcomes for customers.</li>\n<li style=\"\">A proactive, intentional approach towards handling strategic customer communication and challenges.</li>\n<li style=\"\">Solid understanding of the marketing industry tech stack and potential vulnerabilities, competitive tool functionality, purpose and ability to uncover potential threats.</li>\n<li style=\"\">Excellent written and verbal communication skills, including presenting in-person and remotely to a diverse range of stakeholders, including C-Suite</li>\n<li style=\"\">Proven ability to work and succeed in a fast-paced, changing environment</li>\n<li style=\"\">Exceptional project management skills including time management, task organization, and prioritization</li>\n<li style=\"\">Demonstrated success working with internal, cross-functional teams and individuals from diverse communities and cultures</li>\n</ul>\n<ul style=\"\">\n<li style=\"\">Natural alignment with Opal\u2019s Values: Open &amp; Honest, Passionate, Accountable, Level-Up, Intentional, Teamwork, and Excellence</li>\n</ul>\n<ul style=\"\">\n<li style=\"\">Experience in working with/on marketing teams</li>\n</ul>\n<p><strong>Education</strong>:</p>\n<ul style=\"\">\n<li style=\"\">Undergraduate degree or equivalent experience required; advanced degree in a related field a plus</li>\n</ul>\n<p><strong>Benefits</strong></p>\n<p><strong>Some benefits our team members enjoy include:</strong></p>\n<ul style=\"\">\n<li style=\"\">Competitive, market-leading compensation package, including stock options</li>\n<li style=\"\">100% company-paid Medical/Rx, Dental, and Vision Insurance for employees (plus company-subsidized dependent coverage)</li>\n<li style=\"\">Employer funded Health Savings Account (HSA)</li>\n<li style=\"\">Flexible Spending Accounts (FSA) for Health, Dependent Care, Commuter, Parking</li>\n<li style=\"\">Company-paid Life/AD&amp;D, Short and Long Term Disability Insurance (with voluntary buy up options)</li>\n<li style=\"\">Pet Insurance for your furry friend</li>\n<li style=\"\">Unlimited Paid Time Vacation, Paid Sick Time, and 21 Paid Company Holidays</li>\n<li style=\"\">Paid Parental Leave &amp; Back-to-Work Program</li>\n<li style=\"\">401(k) and Roth Retirement Plans</li>\n<li style=\"\">Company-sponsored outreach &amp; activity programs</li>\n</ul>\n<p><br><br></p>\n<p>Opal is an equal-opportunity employer and committed to creating an inclusive and diverse environment. We believe a diverse workplace promotes innovation and enhances decision making. We encourage applications from all qualified candidates and will consider all applicants without regard to race, color, religion, gender identity or expression, national origin, sexual orientation, disability, age, or veteran status.</p>\n<p>\u00a0</p>\n<p>Pay: $75,000 - $90,000 DOE</p>\n<img src=\"https://remotive.com/job/track/1693328/blank.gif?source=public_api\" alt=\"\"/>"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "open_to_work_remote_api"
+}

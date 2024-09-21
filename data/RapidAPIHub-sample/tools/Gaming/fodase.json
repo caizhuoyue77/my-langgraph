@@ -1,0 +1,33 @@
+{
+    "product_id": "api_4ada638d-ea0a-4c52-affb-a3e0a2dc6c45",
+    "tool_description": "Fodase fodase",
+    "home_url": "https://rapidapi.com/moaojarco/api/fodase1/",
+    "name": "Fodase",
+    "title": "Fodase",
+    "pricing": "FREE",
+    "tool_name": "Fodase",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 390,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "fodase1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get users",
+            "url": "https://fodase1.p.rapidapi.com/users",
+            "description": "sdfsdfsdf",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://fodase1.p.rapidapi.com/users\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fodase1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://fodase1.p.rapidapi.com/users\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"fodase1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info."
+            }
+        }
+    ],
+    "standardized_name": "fodase"
+}

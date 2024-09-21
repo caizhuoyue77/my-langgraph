@@ -1,0 +1,353 @@
+{
+    "product_id": "api_23182262-9954-4c66-b9c4-a07eda052245",
+    "tool_description": "Get music links of song or artist.",
+    "home_url": "https://rapidapi.com/leonardosartori62/api/musiclinkssapi/",
+    "name": "MusiclinkssApi",
+    "title": "MusiclinkssApi",
+    "pricing": "FREEMIUM",
+    "tool_name": "MusiclinkssApi",
+    "score": {
+        "avgServiceLevel": 98,
+        "avgLatency": 1353,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "musiclinkssapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search by url",
+            "url": "https://musiclinkssapi.p.rapidapi.com/search/url",
+            "description": "Given a **Spotify url**, this returns details about *tracks*, *albums* and *artists*.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "spotify_url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/search/url\"\nquerystring = {\"spotify_url\": \"https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/search/url\"\nquerystring = {\"spotify_url\": \"https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "links": {
+                    "Amazon": "https://amazon.com/dp/B000QJHO7W",
+                    "Bandcamp": "https://enniomorricone.bandcamp.com",
+                    "Soundcloud": "https://soundcloud.com/nnioorricone?id=151332061",
+                    "Youtube": "https://music.youtube.com/browse/UC6wtBSpA_X6XXk0YIHJj4gw",
+                    "Tidal": "https://listen.tidal.com/artist/4082",
+                    "Audius": "https://audius.co/EnnioMorricone",
+                    "Napster": "https://play.napster.com/artist/art.3304",
+                    "Apple": "https://music.apple.com/us/artist/ennio-morricone/281035?app=itunes",
+                    "Qobuz": "https://open.qobuz.com/artist/483",
+                    "Spotify": "https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C",
+                    "Audiomack": "https://audiomack.com/enniomorricone",
+                    "Deezer": "https://www.deezer.com/artist/1536"
+                },
+                "image": "https://is3-ssl.mzstatic.com/image/thumb/Features116/v4/f8/81/4e/f8814e3a-9ea7-8fc1-7d23-4f714f3870fe/mza_4851807307048652180.png/1400x1400bb.jpg",
+                "id": "1nIUhcKHnK6iyumRyoV68C",
+                "title": "Ennio Morricone",
+                "description": "Ennio Morricone (Italian pronunciation: ) was an italian composer (born 10 November 1928, Rome, Italy - died 6 July 2020, Rome, Italy). A favourite pupil of , he also deputized secretly for his trumpeter father in a light music orchestra. He thus developed two distinct sides to his musical personality: one of these led him to embrace serialism and the experimental work of the improvisation group ; the other gained him a leading role, principally as an arranger, in all types of mass-media popular music, including songs for radio, radio and television plays, and the first successful television variety shows.\r\nAfter many minor cinematic collaborations, Morricone achieved wider recognition with Sergio Leone's series of four Westerns. There followed important collaborations with directors such as , , , , , Roland Joff\u00e9 and . Despite inevitable self-repetitions over a total of more than 400 film scores, his work provides many examples of a highly original fusion of classical and popular idioms.\r\nMorricone's non-film works form a large and increasingly widely performed part of his output. Many of them use his technique of \u2018micro-cells\u2019, a pseudo-serial approach often incorporating modal and tonal allusions, which, with its extreme reduction of compositional materials, has much in common with his film-music techniques.\r\nAmong honours, he won the Academy Award in 2016 for his score to Quentin Tarantino's The Hateful Eight and has received five Academy Award nominations between 1979 and 2001, a Grammy and a Leone d'oro, and was awarded the Laurea ad Honorem by the University of Cagliari. Between 1991 and 1996 he taught film music at the Accademia Musicale Chigiana, Siena."
+            }
+        },
+        {
+            "name": "Get artist's albums",
+            "url": "https://musiclinkssapi.p.rapidapi.com/artist_albums",
+            "description": "Given a **Spotify url**,  returns basic details about albums of artist.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "spotify_url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/artist_albums\"\nquerystring = {\"spotify_url\": \"https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/artist_albums\"\nquerystring = {\"spotify_url\": \"https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Ennio",
+                    "id": "1bGbFTcIln2cvtn816wV5G",
+                    "url": "https://open.spotify.com/album/1bGbFTcIln2cvtn816wV5G",
+                    "image": "https://i.scdn.co/image/ab67616d0000b27368581667562a9c143b526c24",
+                    "release_date": "2023-05-05"
+                },
+                {
+                    "name": "Love Songs & Romantic Scores",
+                    "id": "116HqsOAODunDVXLO2O0JZ",
+                    "url": "https://open.spotify.com/album/116HqsOAODunDVXLO2O0JZ",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2733f3075cb6e166be19f5b2a76",
+                    "release_date": "2023-02-08"
+                },
+                {
+                    "name": "The Legend of Ennio Morricone",
+                    "id": "2Q92LA9EVSlgEBCafx5h0b",
+                    "url": "https://open.spotify.com/album/2Q92LA9EVSlgEBCafx5h0b",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273a7aecc038e1ae27af6e60c7f",
+                    "release_date": "2022-12-23"
+                },
+                {
+                    "name": "Quando l'amore \u00e8 sensualit\u00e0 (Original Motion Picture Soundtrack / Remastered 2022)",
+                    "id": "7mrQWCVxx1i4LNbvNQAu01",
+                    "url": "https://open.spotify.com/album/7mrQWCVxx1i4LNbvNQAu01",
+                    "image": "https://i.scdn.co/image/ab67616d0000b27374844541a51bed5fce84693a",
+                    "release_date": "2022-11-11"
+                },
+                {
+                    "name": "Absolutely... Ennio Morricone I (Original Arrangements and Music for Cello, Flute and Piano)",
+                    "id": "4kwlgVnUzDIZDcubtSJBR3",
+                    "url": "https://open.spotify.com/album/4kwlgVnUzDIZDcubtSJBR3",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273eb6cc4c38948d893fa53c7d9",
+                    "release_date": "2022-05-20"
+                },
+                {
+                    "name": "Nostromo (Music from the Original TV Series / Remastered 2022)",
+                    "id": "2mZwe8VHoszIFu4sDo6BGW",
+                    "url": "https://open.spotify.com/album/2mZwe8VHoszIFu4sDo6BGW",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273d4ccd8622725fbef8d1adc2f",
+                    "release_date": "2022-01-28"
+                },
+                {
+                    "name": "Morricone: Cinema Suites for Violin and Orchestra",
+                    "id": "2l6kVFsEXYnA28LqtRDDKd",
+                    "url": "https://open.spotify.com/album/2l6kVFsEXYnA28LqtRDDKd",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273f0facb5b772b0f140f5dba69",
+                    "release_date": "2022-01-14"
+                },
+                {
+                    "name": "Griminelli Plays Morricone",
+                    "id": "4xjuXCGpPebDFLYcquDnso",
+                    "url": "https://open.spotify.com/album/4xjuXCGpPebDFLYcquDnso",
+                    "image": "https://i.scdn.co/image/ab67616d0000b27368da5dab5a8447843dc84149",
+                    "release_date": "2021-12-17"
+                },
+                {
+                    "name": "Ennio Morricone Remixes (2021 Remastered Version)",
+                    "id": "3fkcxlhEdqpXnP4b5Z4yWG",
+                    "url": "https://open.spotify.com/album/3fkcxlhEdqpXnP4b5Z4yWG",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2733f56a7c55d94ed5fae62b98b",
+                    "release_date": "2021-11-12"
+                },
+                {
+                    "name": "IL VOLO SINGS MORRICONE",
+                    "id": "4RGzVRs9lpwmI4wjK4pGzA",
+                    "url": "https://open.spotify.com/album/4RGzVRs9lpwmI4wjK4pGzA",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2739ca091b1684f12d6abd38739",
+                    "release_date": "2021-11-05"
+                },
+                {
+                    "name": "Il bandito dagli occhi azzurri (Original Motion Picture Soundtrack / Remastered 2021)",
+                    "id": "1isHOQJkHmJQbSz4BOfW6T",
+                    "url": "https://open.spotify.com/album/1isHOQJkHmJQbSz4BOfW6T",
+                    "image": "https://i.scdn.co/image/ab67616d0000b27339aa0e2fa53ed69a70e052ba",
+                    "release_date": "2021-09-17"
+                },
+                {
+                    "name": "Ennio Morricone Film Music Collection",
+                    "id": "1pnX5XR70hyNVlny2AglRY",
+                    "url": "https://open.spotify.com/album/1pnX5XR70hyNVlny2AglRY",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273e857b31856bd9c0b48a01161",
+                    "release_date": "2021-07-14"
+                },
+                {
+                    "name": "Ennio Morricone - In Memoriam (Live)",
+                    "id": "07PFJvGJmAYOzBkCCaXJ9T",
+                    "url": "https://open.spotify.com/album/07PFJvGJmAYOzBkCCaXJ9T",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273f64ac32a70e0239d5fe31847",
+                    "release_date": "2021-06-28"
+                },
+                {
+                    "name": "Plays Morricone",
+                    "id": "2voNXg19DIR5sgZQG6it22",
+                    "url": "https://open.spotify.com/album/2voNXg19DIR5sgZQG6it22",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2733b1bf38b1b13e99b76642e70",
+                    "release_date": "2021-06-25"
+                },
+                {
+                    "name": "Ennio Morricone: Piano Music",
+                    "id": "0K8jvqDlWJr8RBTCDMSleo",
+                    "url": "https://open.spotify.com/album/0K8jvqDlWJr8RBTCDMSleo",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2731d3afef5a317a1320cb18c6e",
+                    "release_date": "2021-06-25"
+                },
+                {
+                    "name": "I malamondo (Original Motion Picture Soundtrack)",
+                    "id": "3PqJY35eclYVDjrVBSVYbH",
+                    "url": "https://open.spotify.com/album/3PqJY35eclYVDjrVBSVYbH",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273d8a400d62848a24f34f19562",
+                    "release_date": "2021-03-05"
+                },
+                {
+                    "name": "Noi lazzaroni (Original Motion Picture Soundtrack / Remastered 2021)",
+                    "id": "55E0sjjexEoQydw1sgDbIY",
+                    "url": "https://open.spotify.com/album/55E0sjjexEoQydw1sgDbIY",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273a581db42bc7310249191921e",
+                    "release_date": "2021-01-29"
+                },
+                {
+                    "name": "Il vizietto (La Cage aux Folles) [Original Motion Picture Soundtrack / Remastered 2021]",
+                    "id": "3CVruuLN6on926ispoppFc",
+                    "url": "https://open.spotify.com/album/3CVruuLN6on926ispoppFc",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273335bf6e9bf6a734f4e044171",
+                    "release_date": "2021-01-29"
+                },
+                {
+                    "name": "La battaglia di Algeri (Original Motion Picture Soundtrack / Remastered 2021)",
+                    "id": "0b0FKrUut1Vct8r82A1Nnx",
+                    "url": "https://open.spotify.com/album/0b0FKrUut1Vct8r82A1Nnx",
+                    "image": "https://i.scdn.co/image/ab67616d0000b27306ba0bac85f4da36b486eae3",
+                    "release_date": "2021-01-22"
+                },
+                {
+                    "name": "L'immoralit\u00e0 (Original Motion Picture Soundtrack / Remastered 2021)",
+                    "id": "3WiLiiPmEPWkbNaYdMqgMT",
+                    "url": "https://open.spotify.com/album/3WiLiiPmEPWkbNaYdMqgMT",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2734044eedd5998d24a570385e8",
+                    "release_date": "2021-01-15"
+                }
+            ]
+        },
+        {
+            "name": "Search by query",
+            "url": "https://musiclinkssapi.p.rapidapi.com/search/query",
+            "description": "Given a **query** and **type** of element, this returns details about *tracks*, *albums* and *artists*.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Ennio Morricone"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "artist"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/search/query\"\nquerystring = {\"q\": \"Ennio Morricone\", \"type\": \"artist\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://musiclinkssapi.p.rapidapi.com/search/query\"\nquerystring = {\"q\": \"Ennio Morricone\", \"type\": \"artist\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiclinkssapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Ennio Morricone",
+                    "id": "1nIUhcKHnK6iyumRyoV68C",
+                    "url": "https://open.spotify.com/artist/1nIUhcKHnK6iyumRyoV68C",
+                    "image": "https://i.scdn.co/image/ab6761610000e5ebd0430d67cd189b4b54dcf6f9"
+                },
+                {
+                    "name": "Ennio Morricone",
+                    "id": "6GSJbZPnvTKjFb9smrirt6",
+                    "url": "https://open.spotify.com/artist/6GSJbZPnvTKjFb9smrirt6"
+                },
+                {
+                    "name": "Ennio Morricone Orchestra",
+                    "id": "7GyecEYqMtx9Wnauu6h6nI",
+                    "url": "https://open.spotify.com/artist/7GyecEYqMtx9Wnauu6h6nI",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273a733ffcbb1e37d33dde1bff5"
+                },
+                {
+                    "name": "Ennio Morricone, Edda e i Cantori Moderni di Alessandroni",
+                    "id": "34H52ZX9sOcdhedbQk5S8o",
+                    "url": "https://open.spotify.com/artist/34H52ZX9sOcdhedbQk5S8o"
+                },
+                {
+                    "name": "Orchestra di Ennio Morricone",
+                    "id": "0SalrsObsha3wJFZoABztI",
+                    "url": "https://open.spotify.com/artist/0SalrsObsha3wJFZoABztI"
+                },
+                {
+                    "name": "Ennio Morricone e i Cantori Moderni di Alessandroni",
+                    "id": "1wa4Bnubvl05ch3X7UYg0O",
+                    "url": "https://open.spotify.com/artist/1wa4Bnubvl05ch3X7UYg0O"
+                },
+                {
+                    "name": "Piero Piccioni",
+                    "id": "2WPn0emjr8XPmMOT0bBcPe",
+                    "url": "https://open.spotify.com/artist/2WPn0emjr8XPmMOT0bBcPe",
+                    "image": "https://i.scdn.co/image/ab6761610000e5ebdd9c371428da68927911ab51"
+                },
+                {
+                    "name": "Dario Marianelli",
+                    "id": "0s1ec6aPpRZ4DCj15w1EFg",
+                    "url": "https://open.spotify.com/artist/0s1ec6aPpRZ4DCj15w1EFg",
+                    "image": "https://i.scdn.co/image/549e391d35cccd6f7eb602102dd1378d8afeb06a"
+                },
+                {
+                    "name": "Ennio Morricone",
+                    "id": "4bxLCrhyWoKTItGD8hsBdw",
+                    "url": "https://open.spotify.com/artist/4bxLCrhyWoKTItGD8hsBdw",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273e28e35c7568a3963ee99d42f"
+                },
+                {
+                    "name": "Andrea Morricone",
+                    "id": "6ClJFNWZvfAc1jD6fB37B3",
+                    "url": "https://open.spotify.com/artist/6ClJFNWZvfAc1jD6fB37B3",
+                    "image": "https://i.scdn.co/image/ab6761610000e5ebadacdb654883970ddf09fbf1"
+                },
+                {
+                    "name": "Ennio Morricone",
+                    "id": "7HUC7BQWNuwmZT8NchLbXg",
+                    "url": "https://open.spotify.com/artist/7HUC7BQWNuwmZT8NchLbXg",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273d9335996694abea33e0e350b"
+                },
+                {
+                    "name": "Roma Sinfonietta",
+                    "id": "4YfTc2eW16fPZ1O7Yncj9I",
+                    "url": "https://open.spotify.com/artist/4YfTc2eW16fPZ1O7Yncj9I",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273113efdf7b9df353363c17d33"
+                },
+                {
+                    "name": "Orchestra Ennio Morricone",
+                    "id": "18WifOnbMQQQIvQITgQXw5",
+                    "url": "https://open.spotify.com/artist/18WifOnbMQQQIvQITgQXw5"
+                },
+                {
+                    "name": "Henry Mancini",
+                    "id": "2EExdpjU4SK3xnJHO5paJf",
+                    "url": "https://open.spotify.com/artist/2EExdpjU4SK3xnJHO5paJf",
+                    "image": "https://i.scdn.co/image/ab6761610000e5eb9ee0e74df9f9ee5745caf24c"
+                },
+                {
+                    "name": "Ennio Morricone Giuseppe Patroni Griffi",
+                    "id": "3CY1RRjT09cYbshZhUMym8",
+                    "url": "https://open.spotify.com/artist/3CY1RRjT09cYbshZhUMym8"
+                },
+                {
+                    "name": "Edda Dell'Orso",
+                    "id": "44oCA91Zsi73fzubIX6Sqh",
+                    "url": "https://open.spotify.com/artist/44oCA91Zsi73fzubIX6Sqh",
+                    "image": "https://i.scdn.co/image/ab67616d0000b273ef4cc81fb3e342f6cf4206c8"
+                },
+                {
+                    "name": "Ennio Morricone",
+                    "id": "1rzR5RFlRt4SjnmuNoRFne",
+                    "url": "https://open.spotify.com/artist/1rzR5RFlRt4SjnmuNoRFne"
+                },
+                {
+                    "name": "Ennio M\u00e1no",
+                    "id": "257NeKIWsdypZxr0j4xnOs",
+                    "url": "https://open.spotify.com/artist/257NeKIWsdypZxr0j4xnOs",
+                    "image": "https://i.scdn.co/image/ab6761610000e5ebb814f63c01a4f940e23829db"
+                },
+                {
+                    "name": "Ennio Morricone Experience",
+                    "id": "6qeDzcj4VHr4uaVcqLcSqD",
+                    "url": "https://open.spotify.com/artist/6qeDzcj4VHr4uaVcqLcSqD",
+                    "image": "https://i.scdn.co/image/ab67616d0000b2738dbe15295b803af9d0620c1b"
+                },
+                {
+                    "name": "Ennio Morricone",
+                    "id": "6oNH7Z9OpCk1gj89aVyyVp",
+                    "url": "https://open.spotify.com/artist/6oNH7Z9OpCk1gj89aVyyVp"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "musiclinkssapi"
+}

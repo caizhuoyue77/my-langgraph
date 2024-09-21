@@ -1,0 +1,38 @@
+{
+    "product_id": "api_88a55b16-6470-4904-b6ef-3303faa5ed6b",
+    "tool_description": "Rock Paper Scissors game!",
+    "home_url": "https://rapidapi.com/hulchenko/api/vadym-rock-paper-scissors-api/",
+    "name": "vadym-rock-paper-scissors-api",
+    "title": "vadym-rock-paper-scissors-api",
+    "pricing": "FREE",
+    "tool_name": "vadym-rock-paper-scissors-api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 158,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "vadym-rock-paper-scissors-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Choice Endpoint",
+            "url": "https://vadym-rock-paper-scissors-api.p.rapidapi.com/",
+            "description": "User's selection",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "choice",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rock"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://vadym-rock-paper-scissors-api.p.rapidapi.com/\"\nquerystring = {\"choice\": \"rock\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vadym-rock-paper-scissors-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://vadym-rock-paper-scissors-api.p.rapidapi.com/\"\nquerystring = {\"choice\": \"rock\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"vadym-rock-paper-scissors-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "vadym_rock_paper_scissors_api"
+}

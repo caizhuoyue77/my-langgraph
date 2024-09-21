@@ -1,0 +1,36 @@
+{
+    "product_id": "api_b7f2ec03-89a7-4895-b65d-d8fe35001ec7",
+    "tool_description": "Stats",
+    "home_url": "https://rapidapi.com/rapjoker-iw1kXDcQ9lV/api/warzone-2/",
+    "name": "Warzone 2",
+    "title": "Warzone 2",
+    "pricing": "FREE",
+    "tool_name": "Warzone 2",
+    "score": null,
+    "host": "warzone-2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Warzone",
+            "url": "https://warzone-2.p.rapidapi.com/api/papi-client/crm/cod/v2/title/mw/platform/uno/gamer/tbenhard#3712856/matches/wz/start/0/end/0/details?=",
+            "description": "Activision ID :",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user",
+                    "type": "string",
+                    "description": "",
+                    "default": "tbenhard#3712856"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://warzone-2.p.rapidapi.com/api/papi-client/crm/cod/v2/title/mw/platform/uno/gamer/tbenhard#3712856/matches/wz/start/0/end/0/details?=\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"warzone-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://warzone-2.p.rapidapi.com/api/papi-client/crm/cod/v2/title/mw/platform/uno/gamer/{user}/matches/wz/start/0/end/0/details?=\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"warzone-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/api/papi-client/crm/cod/v2/title/mw/platform/uno/gamer/tbenhard' does not exist"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "warzone_2"
+}

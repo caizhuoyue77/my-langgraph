@@ -1,0 +1,127 @@
+{
+    "product_id": "api_e0306739-2952-4697-ba3e-ca6abad8f532",
+    "tool_description": "Get data about  characters from Marvel Vs Capcom 2 game.",
+    "home_url": "https://rapidapi.com/Josiassejod1-WNU9Fi2D8/api/marvel-vs-capcom-2/",
+    "name": "Marvel Vs Capcom 2",
+    "title": "Marvel Vs Capcom 2",
+    "pricing": "FREE",
+    "tool_name": "Marvel Vs Capcom 2",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "marvel-vs-capcom-2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Show Moves",
+            "url": "https://marvel-vs-capcom-2.p.rapidapi.com/characters/Akuma/moves",
+            "description": "Show Moves For A Specific Character",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Akuma"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters/Akuma/moves\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters/{name}/moves\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "character_name": "Cable",
+                    "move_name": "Viper Beam",
+                    "image": "/images/Move_Images/Cable/Viper Beam.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Scimitar",
+                    "image": "/images/Move_Images/Cable/Scimitar.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Elec-Trap",
+                    "image": "/images/Move_Images/Cable/Elec-Trap.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Crackdown",
+                    "image": "/images/Move_Images/Cable/Crackdown.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Psy-Charge",
+                    "image": "/images/Move_Images/Cable/Psy-Charge.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Hyper Viper",
+                    "image": "/images/Move_Images/Cable/Hyper Viper.PNG"
+                },
+                {
+                    "character_name": "Cable",
+                    "move_name": "Time Flip",
+                    "image": "/images/Move_Images/Cable/Time Flip.PNG"
+                }
+            ]
+        },
+        {
+            "name": "Show Character",
+            "url": "https://marvel-vs-capcom-2.p.rapidapi.com/characters/Cabel",
+            "description": "Get details about a single character and their traits",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Cabel"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters/Cabel\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters/{name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Cable",
+                    "head_shot": "https://vignette.wikia.nocookie.net/marvelvscapcom/images/b/be/MVC2_Cable.jpg/revision/latest?cb=20110914072054",
+                    "universe": "Marvel"
+                }
+            ]
+        },
+        {
+            "name": "All Characters",
+            "url": "https://marvel-vs-capcom-2.p.rapidapi.com/characters",
+            "description": "Access all characters in MVC2 (Marvel Vs Capcom) Universe",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://marvel-vs-capcom-2.p.rapidapi.com/characters\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"marvel-vs-capcom-2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Blackheart",
+                    "head_shot": "https://vignette.wikia.nocookie.net/marvelvscapcom/images/3/34/MVC2_Blackheart.jpg/revision/latest?cb=20110914071301",
+                    "universe": "Marvel"
+                },
+                {
+                    "name": "Cable",
+                    "head_shot": "https://vignette.wikia.nocookie.net/marvelvscapcom/images/b/be/MVC2_Cable.jpg/revision/latest?cb=20110914072054",
+                    "universe": "Marvel"
+                },
+                {
+                    "name": "Captain America",
+                    "head_shot": "https://vignette.wikia.nocookie.net/marvelvscapcom/images/2/21/MVC2_Captain_America.jpg/revision/latest?cb=20110914072107",
+                    "universe": "Marvel"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "marvel_vs_capcom_2"
+}

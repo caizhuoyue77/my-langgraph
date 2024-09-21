@@ -1,0 +1,31 @@
+{
+    "product_id": "api_b596d7ca-c21a-4c33-bbba-507044936ef2",
+    "tool_description": "Sholltna Website",
+    "home_url": "https://rapidapi.com/mrdpsho/api/sholltna/",
+    "name": "Sholltna",
+    "title": "Sholltna",
+    "pricing": "FREE",
+    "tool_name": "Sholltna",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 506,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.5,
+        "__typename": "Score"
+    },
+    "host": "sholltna.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "1",
+            "url": "https://sholltna.p.rapidapi.com/",
+            "description": "1st 1",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://sholltna.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sholltna.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sholltna.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sholltna.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "sholltna"
+}

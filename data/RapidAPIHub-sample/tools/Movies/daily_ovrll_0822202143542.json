@@ -1,0 +1,31 @@
+{
+    "product_id": "api_c80347ba-7434-4ce1-aecd-aef433f341a1",
+    "tool_description": "DAILY OVRLL cb0c4x5d20210822133542872",
+    "home_url": "https://rapidapi.com/ellahTestingTool/api/daily-ovrll-0822202143542/",
+    "name": "DAILY OVRLL 0822202143542",
+    "title": "DAILY OVRLL 0822202143542",
+    "pricing": "FREE",
+    "tool_name": "DAILY OVRLL 0822202143542",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 9406,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.9,
+        "__typename": "Score"
+    },
+    "host": "daily-ovrll-0822202143542.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/status/200",
+            "url": "https://daily-ovrll-0822202143542.p.rapidapi.com/status/200",
+            "description": "Testing",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://daily-ovrll-0822202143542.p.rapidapi.com/status/200\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-ovrll-0822202143542.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://daily-ovrll-0822202143542.p.rapidapi.com/status/200\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-ovrll-0822202143542.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "daily_ovrll_0822202143542"
+}

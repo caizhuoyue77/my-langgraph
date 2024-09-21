@@ -1,0 +1,1511 @@
+{
+    "product_id": "api_87b2d7a2-b7f8-4d39-9c63-4ea46c6f36e4",
+    "tool_description": "An API to get information for the game Lost Ark",
+    "home_url": "https://rapidapi.com/NigelvanDuijvendijk/api/lost-ark1/",
+    "name": "Lost Ark",
+    "title": "Lost Ark",
+    "pricing": "FREEMIUM",
+    "tool_name": "Lost Ark",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 413,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "lost-ark1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "get stats",
+            "url": "https://lost-ark1.p.rapidapi.com/api/stats",
+            "description": "Endpoint to get all possible stats",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "stats": [
+                    "Crit",
+                    "Specialization",
+                    "Domination",
+                    "Swiftness",
+                    "Endurance",
+                    "Expertise"
+                ]
+            }
+        },
+        {
+            "name": "Get a specific item by id",
+            "url": "https://lost-ark1.p.rapidapi.com/api/item/99020",
+            "description": "Enpoint to get a specific item by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "99020"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/item/99020\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/item/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "99020",
+                "name": "Resonating Giant's Heart",
+                "sell": "Unsellable",
+                "disassamble": "Can be disassembled",
+                "maxStack": 1,
+                "tier": "not specified",
+                "grade": 3,
+                "durability": "indestructible",
+                "description": "It might be helpful in unveiling the secret of Giant's Heart."
+            }
+        },
+        {
+            "name": "get a specific item",
+            "url": "https://lost-ark1.p.rapidapi.com/api/item/Hollowfruit",
+            "description": "Endpoint to get a specific item",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Hollowfruit"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/item/Hollowfruit\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/item/{name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "70500059",
+                "name": "Hollowfruit",
+                "sell": "Unsellable",
+                "disassamble": "Can be disassembled",
+                "maxStack": 999,
+                "tier": "not specified",
+                "grade": 3,
+                "durability": "indestructible",
+                "description": "<FONT COLOR='#FFD200'>An item used to increase Rapport with NPCs.</FONT>\nThe fruit of the Potenkul tree indigenous to Punika and the Rimeria continent. It looks luscious at first, but it's actually hollow on the inside.\n<FONT COLOR='#FFD200'>0 would love this."
+            }
+        },
+        {
+            "name": "get abyssal dungeons",
+            "url": "https://lost-ark1.p.rapidapi.com/api/abyssalDungeons",
+            "description": "endpoint to get all abyssal dungeons",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/abyssalDungeons\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/abyssalDungeons\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Ancient Elveria": {
+                    "parts": {
+                        "Demon Beast Canyon": {
+                            "itemLevel": 340
+                        },
+                        "Necromancer's Origin": {
+                            "itemLevel": 340
+                        }
+                    }
+                },
+                "Phantom Palace": {
+                    "parts": {
+                        "Hall of the Twisted Warlord": {
+                            "itemLevel": 460
+                        },
+                        "Hildebrandt Palace": {
+                            "itemLevel": 460
+                        }
+                    }
+                },
+                "Ark of Arrogance": {
+                    "parts": {
+                        "Road of Lament": {
+                            "itemLevel": 840
+                        },
+                        "Forge of Fallen Pride": {
+                            "itemLevel": 840
+                        }
+                    }
+                },
+                "Gate of Paradise": {
+                    "parts": {
+                        "Sea of Indolence": {
+                            "itemLevel": 960
+                        },
+                        "Tranquil Karkosa": {
+                            "itemLevel": 960
+                        },
+                        "Alaric's Sanctuary": {
+                            "itemLevel": 960
+                        }
+                    }
+                },
+                "Oreha's Well": {
+                    "parts": {
+                        "Alirta's Oculus": {
+                            "itemLevel": 1325
+                        },
+                        "Oreha Preveza": {
+                            "itemLevel": 1325
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "get raids by level",
+            "url": "https://lost-ark1.p.rapidapi.com/api/raids/1",
+            "description": "Get all guardian raids by level",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "level",
+                    "type": "string",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/raids/1\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/raids/{level}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Ur'nil",
+                    "itemLevel": 302
+                },
+                {
+                    "name": "Lumerus",
+                    "itemLevel": 340
+                },
+                {
+                    "name": "Icy Legoros",
+                    "itemLevel": 380
+                },
+                {
+                    "name": "vertus",
+                    "itemLevel": 420
+                }
+            ]
+        },
+        {
+            "name": "get raids",
+            "url": "https://lost-ark1.p.rapidapi.com/api/raids",
+            "description": "Endpoint to get all guardian raids",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/raids\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/raids\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Ur'nil": {
+                    "raidLevel": 1,
+                    "itemLevel": 302
+                },
+                "Lumerus": {
+                    "raidLevel": 1,
+                    "itemLevel": 340
+                },
+                "Icy Legoros": {
+                    "raidLevel": 1,
+                    "itemLevel": 380
+                },
+                "vertus": {
+                    "raidLevel": 1,
+                    "itemLevel": 420
+                },
+                "Chromanius": {
+                    "raidLevel": 2,
+                    "itemLevel": 460
+                },
+                "Nacrasena": {
+                    "raidLevel": 2,
+                    "itemLevel": 500
+                },
+                "Flame Fox Yoho": {
+                    "raidLevel": 2,
+                    "itemLevel": 540
+                },
+                "Tytalos": {
+                    "raidLevel": 2,
+                    "itemLevel": 580
+                },
+                "Dark Legoros": {
+                    "raidLevel": 3,
+                    "itemLevel": 802
+                },
+                "Helgaia": {
+                    "raidLevel": 3,
+                    "itemLevel": 840
+                },
+                "Calventus": {
+                    "raidLevel": 3,
+                    "itemLevel": 880
+                },
+                "Achates": {
+                    "raidLevel": 3,
+                    "itemLevel": 920
+                },
+                "Frost Helgaia": {
+                    "raidLevel": 4,
+                    "itemLevel": 960
+                },
+                "Lava Chromanium": {
+                    "raidLevel": 4,
+                    "itemLevel": 1000
+                },
+                "levanos": {
+                    "raidLevel": 4,
+                    "itemLevel": 1040
+                },
+                "Alberhastic": {
+                    "raidLevel": 4,
+                    "itemLevel": 1080
+                },
+                "Armored Nacrasena": {
+                    "raidLevel": 5,
+                    "itemLevel": 1302
+                },
+                "Igrexion": {
+                    "raidLevel": 5,
+                    "itemLevel": 1340
+                },
+                "Night Fox Yoho": {
+                    "raidLevel": 5,
+                    "itemLevel": 1370
+                },
+                "Velganos": {
+                    "raidLevel": 5,
+                    "itemLevel": 1385
+                }
+            }
+        },
+        {
+            "name": "get engravings",
+            "url": "https://lost-ark1.p.rapidapi.com/api/engravings",
+            "description": "Endpoint to get all engravings",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/engravings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/engravings\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "engravings": [
+                    "Disrespect",
+                    "Spirit Absorption",
+                    "Ether Enhancement",
+                    "Stabilized Status",
+                    "Grudge",
+                    "Super Charge",
+                    "Strong Will",
+                    "Drops of Ether",
+                    "Crisis Evasion",
+                    "Keen Blunt Weapon",
+                    "Vital Point Strike",
+                    "Increased Max MP",
+                    "MP Regen",
+                    "Master of Escape",
+                    "Fortitude",
+                    "Crushing Fist",
+                    "Shield Piercing",
+                    "Masters's Tenacity",
+                    "Divine Protection",
+                    "Heavy Armor",
+                    "Explosive Expert",
+                    "Enhanced Shield",
+                    "Necromancy",
+                    "Preemptive Strike",
+                    "Broken Bone",
+                    "Lightning Fury",
+                    "Cursed Doll",
+                    "Contender",
+                    "Master of Ambush",
+                    "Magick Stream",
+                    "Barricade",
+                    "Raid Captain",
+                    "Awakening",
+                    "Master Brawler",
+                    "Mass Increase",
+                    "Propulsion",
+                    "Hit Master",
+                    "Adrenaline",
+                    "All-out Attack",
+                    "Expert",
+                    "Emergency Rescue",
+                    "Precision Dagger"
+                ]
+            }
+        },
+        {
+            "name": "get classes",
+            "url": "https://lost-ark1.p.rapidapi.com/api/classes",
+            "description": "Get all classes and subclasses",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/classes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/classes\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Warrior": {
+                    "subclasses": [
+                        "Berserker",
+                        "Paladin",
+                        "Gunlancer"
+                    ]
+                },
+                "Martial artist": {
+                    "subclasses": [
+                        "Striker",
+                        "Wardancer",
+                        "Scrapper",
+                        "Soulfist"
+                    ]
+                },
+                "Gunner": {
+                    "Subclasses": [
+                        "Gunslinger",
+                        "Artillerist",
+                        "Deadeye",
+                        "Sharpshooter"
+                    ]
+                },
+                "Mage": {
+                    "Subclasses": [
+                        "Bard",
+                        "Sorceress"
+                    ]
+                },
+                "Assassin": {
+                    "Subclasses": [
+                        "Shadowhunter",
+                        "Deathblade"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get all island with dropped items",
+            "url": "https://lost-ark1.p.rapidapi.com/api/islands",
+            "description": "This endpoint will return all the islands with the id's of the dropped items on the island.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/islands\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lost-ark1.p.rapidapi.com/api/islands\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lost-ark1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "island",
+                    "items": {
+                        "133003": 1,
+                        "510103": 1,
+                        "889005": 30,
+                        "889101": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 2000,
+                        "403003": 1,
+                        "889102": 1,
+                        "6830302": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120308": 1,
+                        "133001": 1,
+                        "889103": 1,
+                        "58003011": 13
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120306": 1,
+                        "133001": 1,
+                        "140001": 1,
+                        "201109": 100,
+                        "889104": 1,
+                        "65200036": 12,
+                        "65200042": 12
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "510501": 1,
+                        "889105": 1,
+                        "97104017": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133008": 1,
+                        "143005": 1,
+                        "201109": 85,
+                        "889106": 1,
+                        "58002901": 12,
+                        "63230001": 6,
+                        "65200042": 10,
+                        "78132000": 1,
+                        "97104037": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "480014": 1,
+                        "889107": 1,
+                        "889720": 1,
+                        "58003006": 18,
+                        "58003011": 13
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132005": 1,
+                        "730016": 1,
+                        "889108": 1,
+                        "63210002": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "510902": 1,
+                        "889109": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "143001": 1,
+                        "201109": 10,
+                        "511010": 1,
+                        "889110": 1,
+                        "889907": 1,
+                        "65102011": 1,
+                        "65111011": 1,
+                        "78132014": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "141001": 1,
+                        "511101": 1,
+                        "511102": 1,
+                        "889111": 1,
+                        "58002901": 15
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "128013": 1,
+                        "143001": 1,
+                        "889112": 1,
+                        "70503113": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "889113": 1,
+                        "58002901": 3,
+                        "63200157": 1,
+                        "65113002": 1,
+                        "65200041": 7,
+                        "97104039": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "6830303": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132004": 1,
+                        "201201": 10000,
+                        "730014": 1,
+                        "730151": 1,
+                        "730155": 1,
+                        "889115": 1,
+                        "889718": 1,
+                        "58002901": 7,
+                        "65200032": 3,
+                        "65200036": 6
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 10100,
+                        "511601": 1,
+                        "520306": 3,
+                        "730012": 1,
+                        "730114": 1,
+                        "730126": 1,
+                        "730132": 1,
+                        "889116": 1,
+                        "58002901": 7,
+                        "63230001": 5,
+                        "65200031": 6
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 7000,
+                        "511701": 1,
+                        "889117": 1,
+                        "65200036": 4,
+                        "65200041": 8
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889182": 1,
+                        "65200032": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889118": 1,
+                        "63230001": 6,
+                        "65200036": 4,
+                        "65200041": 8,
+                        "70503113": 4
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "201109": 60,
+                        "58003014": 13,
+                        "58003016": 35,
+                        "58003018": 8,
+                        "58003023": 17
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889121": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889122": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889123": 1,
+                        "63200154": 1,
+                        "65107051": 1,
+                        "65110001": 1,
+                        "97104038": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "6830304": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889125": 1,
+                        "65200042": 6
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "128021": 1,
+                        "889126": 1,
+                        "97104036": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99074": 1,
+                        "120304": 1,
+                        "132001": 1,
+                        "201109": 130,
+                        "201201": 81000,
+                        "480002": 1,
+                        "889127": 1,
+                        "889723": 1,
+                        "58002901": 5,
+                        "63230001": 3,
+                        "63230012": 1,
+                        "65200041": 3,
+                        "70500045": 1,
+                        "70503113": 2,
+                        "83000010": 1,
+                        "97104023": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133001": 1,
+                        "889128": 1,
+                        "58002901": 15,
+                        "65200041": 11
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99072": 1,
+                        "133008": 1,
+                        "201109": 100,
+                        "201201": 40000,
+                        "710353": 1,
+                        "889129": 1,
+                        "58002901": 10,
+                        "63210002": 5,
+                        "63230001": 5
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "133001": 1,
+                        "201109": 50,
+                        "889130": 1,
+                        "58003013": 9,
+                        "58003016": 8,
+                        "58003024": 1,
+                        "78132006": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120323": 1,
+                        "120333": 1,
+                        "130603": 1,
+                        "132601": 1,
+                        "889131": 1,
+                        "889703": 1,
+                        "889722": 1,
+                        "889738": 1,
+                        "58002901": 2,
+                        "63210002": 2,
+                        "65200042": 6,
+                        "65400011": 1,
+                        "70503113": 1,
+                        "97104041": 1,
+                        "97104043": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 85,
+                        "889132": 1,
+                        "889701": 1,
+                        "63230001": 8,
+                        "65200041": 12,
+                        "70503113": 6,
+                        "78122630": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "201201": 15000,
+                        "889133": 1,
+                        "889719": 1,
+                        "58002901": 15,
+                        "63230001": 8,
+                        "65200031": 6,
+                        "65200042": 12
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201205": 153,
+                        "889134": 1,
+                        "66102011": 20,
+                        "66102111": 50,
+                        "66110001": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889135": 1,
+                        "63200155": 1,
+                        "97104035": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889136": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "58003014": 8,
+                        "58003016": 15,
+                        "58003018": 5,
+                        "58003024": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889138": 1,
+                        "63200151": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889139": 1,
+                        "58003014": 12,
+                        "58003016": 12,
+                        "58003021": 14,
+                        "58003022": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120310": 1,
+                        "132004": 4,
+                        "133005": 1,
+                        "142004": 1,
+                        "201201": 37000,
+                        "403017": 1,
+                        "514101": 1,
+                        "889140": 1,
+                        "58002901": 5,
+                        "65200031": 6,
+                        "65200041": 12
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "514201": 1,
+                        "889141": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120307": 1,
+                        "133003": 1,
+                        "480010": 1,
+                        "889142": 1,
+                        "889713": 1,
+                        "58003018": 11,
+                        "58003021": 2,
+                        "58003023": 8,
+                        "63200217": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "514501": 1,
+                        "889143": 1,
+                        "65112023": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120309": 1,
+                        "201201": 2000,
+                        "514601": 1,
+                        "889144": 1,
+                        "65200031": 2,
+                        "70503113": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889145": 1,
+                        "889906": 1,
+                        "65110002": 1,
+                        "65200032": 3,
+                        "65200036": 5,
+                        "65200041": 5,
+                        "65200042": 2,
+                        "70503113": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "130001": 2,
+                        "133001": 1,
+                        "514801": 1,
+                        "889146": 1,
+                        "889721": 1,
+                        "65111002": 1,
+                        "83000009": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889147": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "130003": 1,
+                        "889148": 1,
+                        "58003002": 10,
+                        "58003004": 43
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 85,
+                        "889149": 1,
+                        "58003002": 5,
+                        "58003004": 10,
+                        "58003006": 5,
+                        "58003007": 5,
+                        "58003009": 4
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889150": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889151": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889152": 1,
+                        "65200031": 3,
+                        "65200041": 6,
+                        "70503113": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 6000,
+                        "65200032": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133001": 2,
+                        "201109": 85,
+                        "710092": 1,
+                        "889154": 1,
+                        "63230001": 5,
+                        "70503113": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "516302": 1,
+                        "730048": 1,
+                        "730096": 1,
+                        "889155": 1,
+                        "65200032": 2,
+                        "65200036": 5
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133001": 1,
+                        "516401": 1,
+                        "889156": 1,
+                        "58003001": 38,
+                        "58003004": 11,
+                        "58003005": 28,
+                        "58003009": 12
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "889157": 1,
+                        "58003001": 39,
+                        "58003004": 19,
+                        "58003005": 31,
+                        "58003009": 12,
+                        "63230005": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133005": 1,
+                        "889158": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 115,
+                        "889159": 1,
+                        "58003001": 122,
+                        "58003003": 232,
+                        "58003007": 25
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "201109": 50,
+                        "480016": 1,
+                        "889160": 1,
+                        "58003001": 59,
+                        "58003004": 22,
+                        "58003005": 30,
+                        "58003009": 21,
+                        "65200041": 6,
+                        "97104015": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 5000,
+                        "889161": 1,
+                        "65111013": 1,
+                        "65200031": 3,
+                        "65200041": 6
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "128025": 1,
+                        "517001": 1,
+                        "889162": 1,
+                        "40611107": 18,
+                        "58002901": 7,
+                        "70503113": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133003": 1,
+                        "142001": 1,
+                        "201109": 50,
+                        "889005": 60,
+                        "889163": 1,
+                        "58002901": 12,
+                        "65200031": 6,
+                        "65200042": 6,
+                        "97104018": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99052": 1,
+                        "133005": 1,
+                        "201109": 100,
+                        "889164": 1,
+                        "78132015": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120230": 1,
+                        "132001": 1,
+                        "133006": 1,
+                        "201109": 1000,
+                        "201201": 15000,
+                        "889165": 1,
+                        "40611107": 12,
+                        "40611109": 6,
+                        "63200036": 1,
+                        "63210002": 4,
+                        "63230001": 8,
+                        "65108003": 1,
+                        "65200032": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99053": 1,
+                        "132001": 1,
+                        "132003": 1,
+                        "133004": 1,
+                        "141001": 1,
+                        "201201": 72000,
+                        "889166": 1,
+                        "889729": 1,
+                        "889909": 1,
+                        "58003013": 70,
+                        "58003014": 4,
+                        "58003015": 94,
+                        "58003016": 8,
+                        "58003018": 15,
+                        "58003021": 8
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132002": 2,
+                        "201201": 6000,
+                        "403017": 3,
+                        "889167": 1,
+                        "63200091": 1,
+                        "63200092": 1,
+                        "63210003": 3,
+                        "65200032": 3,
+                        "65200042": 4,
+                        "70502007": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "517603": 15,
+                        "730034": 1,
+                        "889168": 1,
+                        "65200031": 5,
+                        "65200032": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132004": 1,
+                        "133006": 1,
+                        "139004": 1,
+                        "889169": 1,
+                        "58002901": 3,
+                        "63210002": 2,
+                        "78132005": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132002": 1,
+                        "143003": 1,
+                        "517801": 40,
+                        "889170": 1,
+                        "63210002": 4,
+                        "63230001": 4,
+                        "65200036": 4,
+                        "65200041": 8,
+                        "65200042": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "730014": 1,
+                        "730015": 1,
+                        "889171": 1,
+                        "65200041": 5,
+                        "65200047": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99060": 1,
+                        "889172": 1,
+                        "63230001": 2,
+                        "65200032": 1,
+                        "65200042": 3,
+                        "70500042": 1,
+                        "97104026": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "518103": 1,
+                        "889173": 1,
+                        "65200037": 2,
+                        "65200042": 6
+                    }
+                },
+                {
+                    "name": "island"
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 7000,
+                        "889175": 1,
+                        "58002901": 7,
+                        "63230001": 4,
+                        "65200036": 4,
+                        "65200041": 8
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133009": 1,
+                        "518402": 1,
+                        "518403": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133001": 1,
+                        "480012": 1,
+                        "500223": 1,
+                        "889177": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133003": 1,
+                        "201109": 150,
+                        "889178": 1,
+                        "58002901": 5,
+                        "58003014": 3,
+                        "58003016": 6,
+                        "58003024": 1,
+                        "63210002": 3,
+                        "63230001": 5,
+                        "65200032": 3,
+                        "65200036": 4
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 100,
+                        "518703": 1,
+                        "889179": 1,
+                        "65200041": 5,
+                        "65200042": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889180": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889181": 1,
+                        "58003013": 81,
+                        "58003015": 217,
+                        "58003018": 7,
+                        "58003021": 23
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133007": 1,
+                        "201109": 1180
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133006": 1,
+                        "201109": 875
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 200,
+                        "201201": 5000,
+                        "889183": 1,
+                        "63200182": 1,
+                        "63230001": 3,
+                        "65112012": 1,
+                        "65200032": 2,
+                        "65200042": 6,
+                        "97104040": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120327": 1,
+                        "128075": 1,
+                        "128076": 1,
+                        "140004": 1,
+                        "141005": 1,
+                        "142007": 1,
+                        "143008": 1,
+                        "519301": 1,
+                        "889184": 1,
+                        "889911": 1,
+                        "58003013": 98,
+                        "58003015": 138,
+                        "58003018": 8,
+                        "58003021": 25,
+                        "65200046": 3,
+                        "66130022": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 300,
+                        "889189": 1,
+                        "889912": 1,
+                        "40611107": 36,
+                        "63210002": 30,
+                        "63230001": 24,
+                        "65200032": 9,
+                        "70503113": 18
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "120334": 1,
+                        "120335": 1,
+                        "133001": 1,
+                        "889185": 1,
+                        "63210002": 4,
+                        "65200031": 6,
+                        "65200037": 2,
+                        "65200041": 8,
+                        "65200042": 3,
+                        "70503113": 4
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99029": 1,
+                        "132001": 1,
+                        "201201": 10000,
+                        "889186": 1,
+                        "889734": 1,
+                        "58002901": 10,
+                        "63230001": 5
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 50,
+                        "889187": 1,
+                        "63210002": 4,
+                        "65102002": 1,
+                        "65200031": 2,
+                        "65200041": 5
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 10,
+                        "889188": 1,
+                        "65107022": 1,
+                        "66102001": 1,
+                        "66102101": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132001": 1,
+                        "201201": 40000,
+                        "889191": 1,
+                        "889728": 1,
+                        "58000201": 5,
+                        "63230001": 5,
+                        "63230013": 1,
+                        "65200032": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "141001": 1,
+                        "201201": 15000,
+                        "889192": 1,
+                        "58002901": 15,
+                        "63230001": 8,
+                        "65200031": 6,
+                        "65200032": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 690
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 1600,
+                        "201201": 10000,
+                        "889193": 1,
+                        "40611107": 6,
+                        "58002901": 16,
+                        "63230001": 5,
+                        "70503113": 3
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "132003": 1,
+                        "201234": 2235,
+                        "889194": 1,
+                        "889914": 1,
+                        "63200021": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "889198": 1,
+                        "66102013": 80,
+                        "66102113": 250,
+                        "66110021": 35,
+                        "66111022": 5,
+                        "66111023": 2
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "520301": 950,
+                        "520303": 10,
+                        "520304": 5,
+                        "520305": 7,
+                        "520306": 5,
+                        "520307": 3,
+                        "520308": 50,
+                        "520309": 50,
+                        "520310": 2,
+                        "889197": 1,
+                        "63040006": 1,
+                        "65110004": 1,
+                        "70500059": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133002": 1,
+                        "133007": 1,
+                        "201109": 700
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "99079": 1,
+                        "889200": 1,
+                        "63200022": 1,
+                        "65112013": 1,
+                        "66102013": 1100,
+                        "66102113": 400,
+                        "66111021": 5,
+                        "66111022": 3,
+                        "66111023": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201201": 10000,
+                        "889199": 1,
+                        "58000146": 1000
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201109": 500,
+                        "889202": 1,
+                        "58002801": 1,
+                        "58002802": 1,
+                        "58002803": 1,
+                        "58002804": 1
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "201110": 1,
+                        "889203": 182100
+                    }
+                },
+                {
+                    "name": "island",
+                    "items": {
+                        "133001": 1,
+                        "889120": 1,
+                        "58003001": 82,
+                        "58003003": 105,
+                        "58003004": 4,
+                        "58003005": 18,
+                        "58003006": 1,
+                        "58003009": 8,
+                        "58003010": 1
+                    }
+                }
+            ]
+        }
+    ],
+    "standardized_name": "lost_ark"
+}

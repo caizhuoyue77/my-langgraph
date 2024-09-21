@@ -1,0 +1,128 @@
+{
+    "product_id": "api_a44dedc3-e774-42a2-806c-46568723f5b7",
+    "tool_description": "View Sonv",
+    "home_url": "https://rapidapi.com/sabarmenanti223/api/view-song/",
+    "name": "View Song",
+    "title": "View Song",
+    "pricing": "FREE",
+    "tool_name": "View Song",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 481,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.3,
+        "__typename": "Score"
+    },
+    "host": "view-song.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "View song",
+            "url": "https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo",
+            "description": "View song",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "song_preview_kbps",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "320"
+                },
+                {
+                    "name": "https_only",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "wmid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "161445361"
+                },
+                {
+                    "name": "songid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ttEleQJoxgCuNOIbUuRh7Q=="
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "fe7cc2de3cfcc4efd457838a9521e7e9"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"country\": \"id\", \"song_preview_kbps\": \"320\", \"https_only\": \"1\", \"wmid\": \"161445361\", \"songid\": \"ttEleQJoxgCuNOIbUuRh7Q==\", \"lang\": \"id\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"view-song.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"country\": \"id\", \"song_preview_kbps\": \"320\", \"https_only\": \"1\", \"wmid\": \"161445361\", \"songid\": \"ttEleQJoxgCuNOIbUuRh7Q==\", \"lang\": \"id\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"view-song.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "View song_copy",
+            "url": "https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo",
+            "description": "View song",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "https_only",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "wmid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "161445361"
+                },
+                {
+                    "name": "songid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ttEleQJoxgCuNOIbUuRh7Q=="
+                },
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "fe7cc2de3cfcc4efd457838a9521e7e9"
+                },
+                {
+                    "name": "song_preview_kbps",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "320"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"https_only\": \"1\", \"wmid\": \"161445361\", \"songid\": \"ttEleQJoxgCuNOIbUuRh7Q==\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\", \"song_preview_kbps\": \"320\", \"lang\": \"id\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"view-song.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://view-song.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"https_only\": \"1\", \"wmid\": \"161445361\", \"songid\": \"ttEleQJoxgCuNOIbUuRh7Q==\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\", \"song_preview_kbps\": \"320\", \"lang\": \"id\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"view-song.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "view_song"
+}

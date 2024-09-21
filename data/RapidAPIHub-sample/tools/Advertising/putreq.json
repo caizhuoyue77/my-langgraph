@@ -1,0 +1,42 @@
+{
+    "product_id": "api_bf9f611a-6936-4240-a9c1-fe9a18b30d62",
+    "tool_description": "put req",
+    "home_url": "https://rapidapi.com/antonyrapid/api/putreq/",
+    "name": "Putreq",
+    "title": "Putreq",
+    "pricing": "FREEMIUM",
+    "tool_name": "Putreq",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 911,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "putreq.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Endpoint A",
+            "url": "https://putreq.p.rapidapi.com/",
+            "description": "end",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://putreq.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"putreq.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://putreq.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"putreq.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Endpint B",
+            "url": "https://putreq.p.rapidapi.com/",
+            "description": "efsdfs",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://putreq.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"putreq.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://putreq.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"putreq.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "putreq"
+}

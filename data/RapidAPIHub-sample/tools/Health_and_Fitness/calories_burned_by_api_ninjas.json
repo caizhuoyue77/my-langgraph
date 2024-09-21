@@ -1,0 +1,106 @@
+{
+    "product_id": "api_c7a18b23-3f75-4b92-a63a-aeb97bc34aba",
+    "tool_description": "Calories burned calculator for hundreds of different sports/activities. See more info at https://api-ninjas.com/api/caloriesburned.",
+    "home_url": "https://rapidapi.com/apininjas/api/calories-burned-by-api-ninjas/",
+    "name": "Calories Burned by API-Ninjas",
+    "title": "Calories Burned by API-Ninjas",
+    "pricing": "FREEMIUM",
+    "tool_name": "Calories Burned by API-Ninjas",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 416,
+        "avgSuccessRate": 95,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "calories-burned-by-api-ninjas.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/v1/caloriesburned",
+            "url": "https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned",
+            "description": "API Ninjas Calories Burned API endpoint.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "activity",
+                    "type": "STRING",
+                    "description": "name of the given activity. This value can be partial (e.g. ski will match water skiing and downhill skiing)",
+                    "default": "skiing"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "weight",
+                    "type": "NUMBER",
+                    "description": "weight of the user performing the activity in pounds. Must be between 50 and 500. Default value is 160.",
+                    "default": ""
+                },
+                {
+                    "name": "duration",
+                    "type": "STRING",
+                    "description": "how long the activity was performed in minutes. Must be 1 or greater. Default value is 60 (1 hour).",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned\"\nquerystring = {\"activity\": \"skiing\", \"weight\": \"\", \"duration\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calories-burned-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://calories-burned-by-api-ninjas.p.rapidapi.com/v1/caloriesburned\"\nquerystring = {\"activity\": \"skiing\", \"weight\": \"\", \"duration\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"calories-burned-by-api-ninjas.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Skiing, water skiing",
+                    "calories_per_hour": 435,
+                    "duration_minutes": 60,
+                    "total_calories": 435
+                },
+                {
+                    "name": "Cross country snow skiing, slow",
+                    "calories_per_hour": 508,
+                    "duration_minutes": 60,
+                    "total_calories": 508
+                },
+                {
+                    "name": "Cross country skiing, moderate",
+                    "calories_per_hour": 581,
+                    "duration_minutes": 60,
+                    "total_calories": 581
+                },
+                {
+                    "name": "Cross country skiing, vigorous",
+                    "calories_per_hour": 653,
+                    "duration_minutes": 60,
+                    "total_calories": 653
+                },
+                {
+                    "name": "Cross country skiing, racing",
+                    "calories_per_hour": 1016,
+                    "duration_minutes": 60,
+                    "total_calories": 1016
+                },
+                {
+                    "name": "Cross country skiing, uphill",
+                    "calories_per_hour": 1198,
+                    "duration_minutes": 60,
+                    "total_calories": 1198
+                },
+                {
+                    "name": "Snow skiing, downhill skiing, light",
+                    "calories_per_hour": 363,
+                    "duration_minutes": 60,
+                    "total_calories": 363
+                },
+                {
+                    "name": "Downhill snow skiing, moderate",
+                    "calories_per_hour": 435,
+                    "duration_minutes": 60,
+                    "total_calories": 435
+                },
+                {
+                    "name": "Downhill snow skiing, racing",
+                    "calories_per_hour": 581,
+                    "duration_minutes": 60,
+                    "total_calories": 581
+                }
+            ]
+        }
+    ],
+    "standardized_name": "calories_burned_by_api_ninjas"
+}

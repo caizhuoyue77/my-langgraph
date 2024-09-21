@@ -1,0 +1,5032 @@
+{
+    "product_id": "api_320bdeaf-ef89-41da-8cba-559affd2e278",
+    "tool_description": "Best players and teams within the competitive Valorant esports landscape",
+    "home_url": "https://rapidapi.com/every-api-every-api-default/api/valorant2/",
+    "name": "Valorant",
+    "title": "Valorant",
+    "pricing": "FREE",
+    "tool_name": "Valorant",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1132,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "valorant2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Valorant Players",
+            "url": "https://valorant2.p.rapidapi.com/valorant_players",
+            "description": "This API gets all valorant players",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://valorant2.p.rapidapi.com/valorant_players\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://valorant2.p.rapidapi.com/valorant_players\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 1,
+                    "Rank": 1,
+                    "Player": "zombs",
+                    "Gold": 13,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$113,550"
+                },
+                {
+                    "id": 2,
+                    "Rank": 2,
+                    "Player": "ShahZaM",
+                    "Gold": 13,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$113,450"
+                },
+                {
+                    "id": 3,
+                    "Rank": 3,
+                    "Player": "dapr",
+                    "Gold": 14,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$112,870"
+                },
+                {
+                    "id": 4,
+                    "Rank": 4,
+                    "Player": "SicK",
+                    "Gold": 12,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$112,650"
+                },
+                {
+                    "id": 5,
+                    "Rank": 5,
+                    "Player": "cNed",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 1,
+                    "Earnings": "$107,735"
+                },
+                {
+                    "id": 6,
+                    "Rank": 6,
+                    "Player": "starxo",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$104,394"
+                },
+                {
+                    "id": 7,
+                    "Rank": 7,
+                    "Player": "Kiles",
+                    "Gold": 6,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 1,
+                    "Earnings": "$104,093"
+                },
+                {
+                    "id": 8,
+                    "Rank": 8,
+                    "Player": "nAts",
+                    "Gold": 14,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 1,
+                    "Earnings": "$103,829"
+                },
+                {
+                    "id": 9,
+                    "Rank": 9,
+                    "Player": "Chronicle",
+                    "Gold": 13,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 1,
+                    "Earnings": "$103,574"
+                },
+                {
+                    "id": 10,
+                    "Rank": 10,
+                    "Player": "d3ffo",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 1,
+                    "Earnings": "$102,773"
+                },
+                {
+                    "id": 11,
+                    "Rank": 11,
+                    "Player": "Sheydos",
+                    "Gold": 10,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 1,
+                    "Earnings": "$102,626"
+                },
+                {
+                    "id": 12,
+                    "Rank": 12,
+                    "Player": "BONECOLD",
+                    "Gold": 5,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$101,918"
+                },
+                {
+                    "id": 13,
+                    "Rank": 13,
+                    "Player": "Redgar",
+                    "Gold": 9,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$101,115"
+                },
+                {
+                    "id": 14,
+                    "Rank": 14,
+                    "Player": "zeek",
+                    "Gold": 13,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 1,
+                    "Earnings": "$94,754"
+                },
+                {
+                    "id": 15,
+                    "Rank": 15,
+                    "Player": "TenZ",
+                    "Gold": 8,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 1,
+                    "Earnings": "$92,750"
+                },
+                {
+                    "id": 16,
+                    "Rank": 16,
+                    "Player": "ScreaM",
+                    "Gold": 15,
+                    "Silver": 9,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$70,399"
+                },
+                {
+                    "id": 17,
+                    "Rank": 17,
+                    "Player": "soulcas",
+                    "Gold": 11,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$68,163"
+                },
+                {
+                    "id": 18,
+                    "Rank": 18,
+                    "Player": "L1NK",
+                    "Gold": 11,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$68,083"
+                },
+                {
+                    "id": 19,
+                    "Rank": 19,
+                    "Player": "mixwell",
+                    "Gold": 17,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$60,855"
+                },
+                {
+                    "id": 20,
+                    "Rank": 20,
+                    "Player": "crashies",
+                    "Gold": 3,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$60,250"
+                },
+                {
+                    "id": 21,
+                    "Rank": 21,
+                    "Player": "Victor",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$59,250"
+                },
+                {
+                    "id": 22,
+                    "Rank": 22,
+                    "Player": "FNS",
+                    "Gold": 6,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$58,120"
+                },
+                {
+                    "id": 23,
+                    "Rank": 23,
+                    "Player": "Marved",
+                    "Gold": 1,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$54,950"
+                },
+                {
+                    "id": 24,
+                    "Rank": 24,
+                    "Player": "Jamppi",
+                    "Gold": 4,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$53,980"
+                },
+                {
+                    "id": 25,
+                    "Rank": 25,
+                    "Player": "Rb",
+                    "Gold": 19,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$51,200"
+                },
+                {
+                    "id": 26,
+                    "Rank": 26,
+                    "Player": "stax",
+                    "Gold": 18,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$50,477"
+                },
+                {
+                    "id": 27,
+                    "Rank": 27,
+                    "Player": "AvovA",
+                    "Gold": 11,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$48,903"
+                },
+                {
+                    "id": 28,
+                    "Rank": 28,
+                    "Player": "Asuna",
+                    "Gold": 2,
+                    "Silver": 5,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$48,570"
+                },
+                {
+                    "id": 29,
+                    "Rank": 29,
+                    "Player": "k1Ng",
+                    "Gold": 17,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$48,469"
+                },
+                {
+                    "id": 30,
+                    "Rank": 30,
+                    "Player": "ardiis",
+                    "Gold": 18,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$48,424"
+                },
+                {
+                    "id": 31,
+                    "Rank": 31,
+                    "Player": "Boaster",
+                    "Gold": 5,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$48,061"
+                },
+                {
+                    "id": 32,
+                    "Rank": 32,
+                    "Player": "Mistic",
+                    "Gold": 5,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$47,905"
+                },
+                {
+                    "id": 33,
+                    "Rank": 33,
+                    "Player": "nukkye",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$47,557"
+                },
+                {
+                    "id": 34,
+                    "Rank": 34,
+                    "Player": "Derke",
+                    "Gold": 1,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$46,685"
+                },
+                {
+                    "id": 35,
+                    "Rank": 35,
+                    "Player": "Hiko",
+                    "Gold": 6,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$45,750"
+                },
+                {
+                    "id": 36,
+                    "Rank": 36,
+                    "Player": "yay",
+                    "Gold": 4,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$44,600"
+                },
+                {
+                    "id": 37,
+                    "Rank": 37,
+                    "Player": "Doma",
+                    "Gold": 5,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$43,977"
+                },
+                {
+                    "id": 38,
+                    "Rank": 38,
+                    "Player": "nitr0",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$43,800"
+                },
+                {
+                    "id": 39,
+                    "Rank": 39,
+                    "Player": "Magnum",
+                    "Gold": 7,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$42,531"
+                },
+                {
+                    "id": 40,
+                    "Rank": 40,
+                    "Player": "Kryptix",
+                    "Gold": 9,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$42,375"
+                },
+                {
+                    "id": 41,
+                    "Rank": 41,
+                    "Player": "NagZ",
+                    "Gold": 13,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$41,980"
+                },
+                {
+                    "id": 42,
+                    "Rank": 42,
+                    "Player": "steel",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$41,550"
+                },
+                {
+                    "id": 43,
+                    "Rank": 43,
+                    "Player": "koldamenta",
+                    "Gold": 2,
+                    "Silver": 7,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$41,514"
+                },
+                {
+                    "id": 44,
+                    "Rank": 44,
+                    "Player": "vanity",
+                    "Gold": 5,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$40,700"
+                },
+                {
+                    "id": 45,
+                    "Rank": 45,
+                    "Player": "Lakia",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$39,316"
+                },
+                {
+                    "id": 46,
+                    "Rank": 46,
+                    "Player": "Laz",
+                    "Gold": 11,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$38,480"
+                },
+                {
+                    "id": 47,
+                    "Rank": 47,
+                    "Player": "delz1k",
+                    "Gold": 8,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$38,350"
+                },
+                {
+                    "id": 48,
+                    "Rank": 48,
+                    "Player": "Mazino",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$38,200"
+                },
+                {
+                    "id": 49,
+                    "Rank": 48,
+                    "Player": "Klaus",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$38,200"
+                },
+                {
+                    "id": 50,
+                    "Rank": 50,
+                    "Player": "mitch",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$37,610"
+                },
+                {
+                    "id": 51,
+                    "Rank": 51,
+                    "Player": "Zest",
+                    "Gold": 17,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$37,341"
+                },
+                {
+                    "id": 52,
+                    "Rank": 52,
+                    "Player": "xeta",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$36,069"
+                },
+                {
+                    "id": 53,
+                    "Rank": 53,
+                    "Player": "ANGE1",
+                    "Gold": 11,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$35,806"
+                },
+                {
+                    "id": 54,
+                    "Rank": 54,
+                    "Player": "keznit",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$35,800"
+                },
+                {
+                    "id": 55,
+                    "Rank": 55,
+                    "Player": "Ethan",
+                    "Gold": 1,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$35,400"
+                },
+                {
+                    "id": 56,
+                    "Rank": 56,
+                    "Player": "Zyppan",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$35,335"
+                },
+                {
+                    "id": 57,
+                    "Rank": 57,
+                    "Player": "hazed",
+                    "Gold": 13,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$33,985"
+                },
+                {
+                    "id": 58,
+                    "Rank": 58,
+                    "Player": "Davidp",
+                    "Gold": 10,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$33,722"
+                },
+                {
+                    "id": 59,
+                    "Rank": 59,
+                    "Player": "Reita",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$33,133"
+                },
+                {
+                    "id": 60,
+                    "Rank": 60,
+                    "Player": "leaf",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$33,060"
+                },
+                {
+                    "id": 61,
+                    "Rank": 61,
+                    "Player": "pAura",
+                    "Gold": 11,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$32,166"
+                },
+                {
+                    "id": 62,
+                    "Rank": 62,
+                    "Player": "Wardell",
+                    "Gold": 16,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$31,260"
+                },
+                {
+                    "id": 63,
+                    "Rank": 63,
+                    "Player": "pyth",
+                    "Gold": 10,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$31,096"
+                },
+                {
+                    "id": 64,
+                    "Rank": 64,
+                    "Player": "Saadhak",
+                    "Gold": 16,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$30,575"
+                },
+                {
+                    "id": 65,
+                    "Rank": 65,
+                    "Player": "sScary",
+                    "Gold": 12,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$30,066"
+                },
+                {
+                    "id": 66,
+                    "Rank": 66,
+                    "Player": "SUYGETSU",
+                    "Gold": 10,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$29,407"
+                },
+                {
+                    "id": 67,
+                    "Rank": 67,
+                    "Player": "crow",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$29,367"
+                },
+                {
+                    "id": 68,
+                    "Rank": 68,
+                    "Player": "Crws",
+                    "Gold": 12,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$29,246"
+                },
+                {
+                    "id": 69,
+                    "Rank": 69,
+                    "Player": "sushiboys",
+                    "Gold": 11,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$29,231"
+                },
+                {
+                    "id": 70,
+                    "Rank": 70,
+                    "Player": "keloqz",
+                    "Gold": 1,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$29,226"
+                },
+                {
+                    "id": 71,
+                    "Rank": 71,
+                    "Player": "foxz",
+                    "Gold": 11,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$29,083"
+                },
+                {
+                    "id": 72,
+                    "Rank": 72,
+                    "Player": "paTiTek",
+                    "Gold": 11,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$29,046"
+                },
+                {
+                    "id": 73,
+                    "Rank": 73,
+                    "Player": "Subroza",
+                    "Gold": 13,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$27,960"
+                },
+                {
+                    "id": 74,
+                    "Rank": 74,
+                    "Player": "takej",
+                    "Gold": 8,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$27,796"
+                },
+                {
+                    "id": 75,
+                    "Rank": 75,
+                    "Player": "barce",
+                    "Gold": 8,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$27,732"
+                },
+                {
+                    "id": 76,
+                    "Rank": 76,
+                    "Player": "effys",
+                    "Gold": 7,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$27,675"
+                },
+                {
+                    "id": 77,
+                    "Rank": 77,
+                    "Player": "Suggest",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$27,118"
+                },
+                {
+                    "id": 78,
+                    "Rank": 77,
+                    "Player": "allow",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$27,118"
+                },
+                {
+                    "id": 79,
+                    "Rank": 79,
+                    "Player": "peri",
+                    "Gold": 2,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$26,891"
+                },
+                {
+                    "id": 80,
+                    "Rank": 80,
+                    "Player": "Sacy",
+                    "Gold": 4,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$26,607"
+                },
+                {
+                    "id": 81,
+                    "Rank": 81,
+                    "Player": "Nivera",
+                    "Gold": 2,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$26,561"
+                },
+                {
+                    "id": 82,
+                    "Rank": 82,
+                    "Player": "AYRIN",
+                    "Gold": 12,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$26,350"
+                },
+                {
+                    "id": 83,
+                    "Rank": 83,
+                    "Player": "BuZz",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$26,248"
+                },
+                {
+                    "id": 84,
+                    "Rank": 84,
+                    "Player": "Xeppaa",
+                    "Gold": 3,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$26,100"
+                },
+                {
+                    "id": 85,
+                    "Rank": 85,
+                    "Player": "ShadoW",
+                    "Gold": 8,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$24,471"
+                },
+                {
+                    "id": 86,
+                    "Rank": 86,
+                    "Player": "drone",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$24,060"
+                },
+                {
+                    "id": 87,
+                    "Rank": 87,
+                    "Player": "BcJ",
+                    "Gold": 11,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$23,790"
+                },
+                {
+                    "id": 88,
+                    "Rank": 88,
+                    "Player": "frz",
+                    "Gold": 7,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$23,777"
+                },
+                {
+                    "id": 89,
+                    "Rank": 89,
+                    "Player": "Munchkin",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$23,690"
+                },
+                {
+                    "id": 90,
+                    "Rank": 90,
+                    "Player": "reltuC",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$23,310"
+                },
+                {
+                    "id": 91,
+                    "Rank": 91,
+                    "Player": "rite2ace",
+                    "Gold": 25,
+                    "Silver": 9,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$23,184"
+                },
+                {
+                    "id": 92,
+                    "Rank": 92,
+                    "Player": "Shao",
+                    "Gold": 9,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,968"
+                },
+                {
+                    "id": 93,
+                    "Rank": 93,
+                    "Player": "Hellff",
+                    "Gold": 14,
+                    "Silver": 12,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$21,584"
+                },
+                {
+                    "id": 94,
+                    "Rank": 94,
+                    "Player": "Meddo",
+                    "Gold": 6,
+                    "Silver": 10,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$21,555"
+                },
+                {
+                    "id": 95,
+                    "Rank": 95,
+                    "Player": "neth",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$21,440"
+                },
+                {
+                    "id": 96,
+                    "Rank": 95,
+                    "Player": "meL",
+                    "Gold": 6,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,440"
+                },
+                {
+                    "id": 97,
+                    "Rank": 97,
+                    "Player": "sutecas",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,397"
+                },
+                {
+                    "id": 98,
+                    "Rank": 98,
+                    "Player": "gtnziN",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,325"
+                },
+                {
+                    "id": 99,
+                    "Rank": 99,
+                    "Player": "katsumi",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,300"
+                },
+                {
+                    "id": 100,
+                    "Rank": 99,
+                    "Player": "Jazzyk1ns",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,300"
+                },
+                {
+                    "id": 101,
+                    "Rank": 101,
+                    "Player": "russ",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,279"
+                },
+                {
+                    "id": 102,
+                    "Rank": 102,
+                    "Player": "mummAy",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$21,275"
+                },
+                {
+                    "id": 103,
+                    "Rank": 103,
+                    "Player": "JessieVash",
+                    "Gold": 18,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,265"
+                },
+                {
+                    "id": 104,
+                    "Rank": 104,
+                    "Player": "Dispenser",
+                    "Gold": 17,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,243"
+                },
+                {
+                    "id": 105,
+                    "Rank": 105,
+                    "Player": "BORKUM",
+                    "Gold": 16,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,213"
+                },
+                {
+                    "id": 106,
+                    "Rank": 106,
+                    "Player": "DubsteP",
+                    "Gold": 13,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,051"
+                },
+                {
+                    "id": 107,
+                    "Rank": 107,
+                    "Player": "corey",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$21,000"
+                },
+                {
+                    "id": 108,
+                    "Rank": 108,
+                    "Player": "Turko",
+                    "Gold": 5,
+                    "Silver": 10,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$20,905"
+                },
+                {
+                    "id": 109,
+                    "Rank": 109,
+                    "Player": "penny",
+                    "Gold": 4,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$20,657"
+                },
+                {
+                    "id": 110,
+                    "Rank": 110,
+                    "Player": "Nozwerr",
+                    "Gold": 13,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$20,035"
+                },
+                {
+                    "id": 111,
+                    "Rank": 111,
+                    "Player": "JhoW",
+                    "Gold": 8,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$19,837"
+                },
+                {
+                    "id": 112,
+                    "Rank": 112,
+                    "Player": "Zellsis",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$19,735"
+                },
+                {
+                    "id": 113,
+                    "Rank": 113,
+                    "Player": "ZachaREEE",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$19,700"
+                },
+                {
+                    "id": 114,
+                    "Rank": 114,
+                    "Player": "Medusa",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$19,698"
+                },
+                {
+                    "id": 115,
+                    "Rank": 115,
+                    "Player": "babybay",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$19,650"
+                },
+                {
+                    "id": 116,
+                    "Rank": 116,
+                    "Player": "lowel",
+                    "Gold": 6,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$19,549"
+                },
+                {
+                    "id": 117,
+                    "Rank": 117,
+                    "Player": "Amaterasu",
+                    "Gold": 23,
+                    "Silver": 7,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$19,478"
+                },
+                {
+                    "id": 118,
+                    "Rank": 118,
+                    "Player": "Vibhor",
+                    "Gold": 20,
+                    "Silver": 7,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$19,301"
+                },
+                {
+                    "id": 119,
+                    "Rank": 119,
+                    "Player": "ec1s",
+                    "Gold": 9,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$19,228"
+                },
+                {
+                    "id": 120,
+                    "Rank": 120,
+                    "Player": "zepher",
+                    "Gold": 5,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$19,068"
+                },
+                {
+                    "id": 121,
+                    "Rank": 121,
+                    "Player": "MaKo",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$19,003"
+                },
+                {
+                    "id": 122,
+                    "Rank": 122,
+                    "Player": "AsLanM4shadoW",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$18,828"
+                },
+                {
+                    "id": 123,
+                    "Rank": 123,
+                    "Player": "xand",
+                    "Gold": 5,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$18,762"
+                },
+                {
+                    "id": 124,
+                    "Rank": 124,
+                    "Player": "Patiphan",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$18,611"
+                },
+                {
+                    "id": 125,
+                    "Rank": 125,
+                    "Player": "zekken",
+                    "Gold": 18,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$18,498"
+                },
+                {
+                    "id": 126,
+                    "Rank": 126,
+                    "Player": "mwzera",
+                    "Gold": 8,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$18,463"
+                },
+                {
+                    "id": 127,
+                    "Rank": 127,
+                    "Player": "kaboose",
+                    "Gold": 4,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$18,190"
+                },
+                {
+                    "id": 128,
+                    "Rank": 128,
+                    "Player": "Art1st",
+                    "Gold": 15,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$18,060"
+                },
+                {
+                    "id": 129,
+                    "Rank": 129,
+                    "Player": "gMd",
+                    "Gold": 5,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$18,000"
+                },
+                {
+                    "id": 130,
+                    "Rank": 130,
+                    "Player": "mindfreak",
+                    "Gold": 10,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,846"
+                },
+                {
+                    "id": 131,
+                    "Rank": 130,
+                    "Player": "f0rsakeN",
+                    "Gold": 10,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$17,846"
+                },
+                {
+                    "id": 132,
+                    "Rank": 132,
+                    "Player": "Benkai",
+                    "Gold": 9,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,779"
+                },
+                {
+                    "id": 133,
+                    "Rank": 132,
+                    "Player": "d4v41",
+                    "Gold": 9,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,779"
+                },
+                {
+                    "id": 134,
+                    "Rank": 134,
+                    "Player": "witz",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$17,768"
+                },
+                {
+                    "id": 135,
+                    "Rank": 135,
+                    "Player": "baddyG",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$17,725"
+                },
+                {
+                    "id": 136,
+                    "Rank": 136,
+                    "Player": "zeddy",
+                    "Gold": 16,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$17,688"
+                },
+                {
+                    "id": 137,
+                    "Rank": 136,
+                    "Player": "Coffee",
+                    "Gold": 16,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$17,688"
+                },
+                {
+                    "id": 138,
+                    "Rank": 138,
+                    "Player": "aimDLL",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,686"
+                },
+                {
+                    "id": 139,
+                    "Rank": 139,
+                    "Player": "Sayf",
+                    "Gold": 1,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,616"
+                },
+                {
+                    "id": 140,
+                    "Rank": 140,
+                    "Player": "draken",
+                    "Gold": 2,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,508"
+                },
+                {
+                    "id": 141,
+                    "Rank": 141,
+                    "Player": "shalaby",
+                    "Gold": 14,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,505"
+                },
+                {
+                    "id": 142,
+                    "Rank": 142,
+                    "Player": "niesoW",
+                    "Gold": 7,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$17,463"
+                },
+                {
+                    "id": 143,
+                    "Rank": 143,
+                    "Player": "dephh",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$17,450"
+                },
+                {
+                    "id": 144,
+                    "Rank": 144,
+                    "Player": "alexis",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$17,300"
+                },
+                {
+                    "id": 145,
+                    "Rank": 144,
+                    "Player": "Annie",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$17,300"
+                },
+                {
+                    "id": 146,
+                    "Rank": 146,
+                    "Player": "PureR",
+                    "Gold": 8,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$17,110"
+                },
+                {
+                    "id": 147,
+                    "Rank": 147,
+                    "Player": "SasuKe",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$17,017"
+                },
+                {
+                    "id": 148,
+                    "Rank": 147,
+                    "Player": "STERBEN",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$17,017"
+                },
+                {
+                    "id": 149,
+                    "Rank": 149,
+                    "Player": "mojj",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$16,937"
+                },
+                {
+                    "id": 150,
+                    "Rank": 150,
+                    "Player": "chrollo",
+                    "Gold": 13,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$16,905"
+                },
+                {
+                    "id": 151,
+                    "Rank": 151,
+                    "Player": "hugeon",
+                    "Gold": 12,
+                    "Silver": 1,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$16,796"
+                },
+                {
+                    "id": 152,
+                    "Rank": 152,
+                    "Player": "KappA",
+                    "Gold": 20,
+                    "Silver": 10,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$16,788"
+                },
+                {
+                    "id": 153,
+                    "Rank": 153,
+                    "Player": "bonkar",
+                    "Gold": 2,
+                    "Silver": 10,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$16,778"
+                },
+                {
+                    "id": 154,
+                    "Rank": 154,
+                    "Player": "Leo",
+                    "Gold": 0,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$16,742"
+                },
+                {
+                    "id": 155,
+                    "Rank": 155,
+                    "Player": "HellrangeR",
+                    "Gold": 19,
+                    "Silver": 10,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$16,588"
+                },
+                {
+                    "id": 156,
+                    "Rank": 156,
+                    "Player": "mag0o",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$16,375"
+                },
+                {
+                    "id": 157,
+                    "Rank": 157,
+                    "Player": "skillZ",
+                    "Gold": 18,
+                    "Silver": 7,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$16,262"
+                },
+                {
+                    "id": 158,
+                    "Rank": 158,
+                    "Player": "SkRossi",
+                    "Gold": 18,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$16,153"
+                },
+                {
+                    "id": 159,
+                    "Rank": 159,
+                    "Player": "Jonn",
+                    "Gold": 9,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$16,057"
+                },
+                {
+                    "id": 160,
+                    "Rank": 160,
+                    "Player": "fr0st",
+                    "Gold": 11,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$16,010"
+                },
+                {
+                    "id": 161,
+                    "Rank": 161,
+                    "Player": "MkaeL",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$16,000"
+                },
+                {
+                    "id": 162,
+                    "Rank": 162,
+                    "Player": "Genghsta",
+                    "Gold": 2,
+                    "Silver": 5,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$15,990"
+                },
+                {
+                    "id": 163,
+                    "Rank": 163,
+                    "Player": "DEATHMAKER",
+                    "Gold": 7,
+                    "Silver": 9,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$15,940"
+                },
+                {
+                    "id": 164,
+                    "Rank": 164,
+                    "Player": "CREA",
+                    "Gold": 9,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$15,921"
+                },
+                {
+                    "id": 165,
+                    "Rank": 165,
+                    "Player": "dimasick",
+                    "Gold": 3,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$15,912"
+                },
+                {
+                    "id": 166,
+                    "Rank": 166,
+                    "Player": "Lightningfast",
+                    "Gold": 17,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$15,891"
+                },
+                {
+                    "id": 167,
+                    "Rank": 167,
+                    "Player": "huynh",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$15,820"
+                },
+                {
+                    "id": 168,
+                    "Rank": 168,
+                    "Player": "PTC",
+                    "Gold": 11,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$15,819"
+                },
+                {
+                    "id": 169,
+                    "Rank": 169,
+                    "Player": "murizzz",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$15,706"
+                },
+                {
+                    "id": 170,
+                    "Rank": 170,
+                    "Player": "Yacine",
+                    "Gold": 1,
+                    "Silver": 8,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$15,452"
+                },
+                {
+                    "id": 171,
+                    "Rank": 171,
+                    "Player": "qck",
+                    "Gold": 1,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$15,449"
+                },
+                {
+                    "id": 172,
+                    "Rank": 172,
+                    "Player": "valyn",
+                    "Gold": 14,
+                    "Silver": 13,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$15,320"
+                },
+                {
+                    "id": 173,
+                    "Rank": 173,
+                    "Player": "Tuna",
+                    "Gold": 12,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$14,989"
+                },
+                {
+                    "id": 174,
+                    "Rank": 174,
+                    "Player": "Bazzi",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$14,982"
+                },
+                {
+                    "id": 175,
+                    "Rank": 175,
+                    "Player": "kero",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$14,954"
+                },
+                {
+                    "id": 176,
+                    "Rank": 176,
+                    "Player": "Khalil",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$14,944"
+                },
+                {
+                    "id": 177,
+                    "Rank": 177,
+                    "Player": "jcStani",
+                    "Gold": 2,
+                    "Silver": 6,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$14,850"
+                },
+                {
+                    "id": 178,
+                    "Rank": 178,
+                    "Player": "LEGOO",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$14,828"
+                },
+                {
+                    "id": 179,
+                    "Rank": 179,
+                    "Player": "JohnOlsen",
+                    "Gold": 8,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$14,762"
+                },
+                {
+                    "id": 180,
+                    "Rank": 179,
+                    "Player": "ChAlalala",
+                    "Gold": 8,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$14,762"
+                },
+                {
+                    "id": 181,
+                    "Rank": 181,
+                    "Player": "LAMMYSNAX",
+                    "Gold": 8,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$14,724"
+                },
+                {
+                    "id": 182,
+                    "Rank": 182,
+                    "Player": "v1xen",
+                    "Gold": 7,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$14,528"
+                },
+                {
+                    "id": 183,
+                    "Rank": 183,
+                    "Player": "exy",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$14,521"
+                },
+                {
+                    "id": 184,
+                    "Rank": 184,
+                    "Player": "Fearoth",
+                    "Gold": 10,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$14,486"
+                },
+                {
+                    "id": 185,
+                    "Rank": 185,
+                    "Player": "TS",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$14,312"
+                },
+                {
+                    "id": 186,
+                    "Rank": 186,
+                    "Player": "Wedid",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$14,286"
+                },
+                {
+                    "id": 187,
+                    "Rank": 187,
+                    "Player": "Nyang",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$14,269"
+                },
+                {
+                    "id": 188,
+                    "Rank": 188,
+                    "Player": "hoody",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$14,003"
+                },
+                {
+                    "id": 189,
+                    "Rank": 189,
+                    "Player": "zizox",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$13,890"
+                },
+                {
+                    "id": 190,
+                    "Rank": 190,
+                    "Player": "ANDROID",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$13,835"
+                },
+                {
+                    "id": 191,
+                    "Rank": 191,
+                    "Player": "YaBoiDre",
+                    "Gold": 4,
+                    "Silver": 5,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$13,725"
+                },
+                {
+                    "id": 192,
+                    "Rank": 192,
+                    "Player": "Shanks",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$13,655"
+                },
+                {
+                    "id": 193,
+                    "Rank": 193,
+                    "Player": "rhyme",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$13,618"
+                },
+                {
+                    "id": 194,
+                    "Rank": 194,
+                    "Player": "dicey",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$13,480"
+                },
+                {
+                    "id": 195,
+                    "Rank": 194,
+                    "Player": "aproto",
+                    "Gold": 5,
+                    "Silver": 2,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$13,480"
+                },
+                {
+                    "id": 196,
+                    "Rank": 196,
+                    "Player": "AKUMAAAAA",
+                    "Gold": 7,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$13,408"
+                },
+                {
+                    "id": 197,
+                    "Rank": 197,
+                    "Player": "Marzil",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$13,325"
+                },
+                {
+                    "id": 198,
+                    "Rank": 198,
+                    "Player": "JonahP",
+                    "Gold": 6,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$13,295"
+                },
+                {
+                    "id": 199,
+                    "Rank": 199,
+                    "Player": "adverso",
+                    "Gold": 12,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$13,135"
+                },
+                {
+                    "id": 200,
+                    "Rank": 200,
+                    "Player": "Tacolilla",
+                    "Gold": 12,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$13,057"
+                },
+                {
+                    "id": 201,
+                    "Rank": 201,
+                    "Player": "hoppY",
+                    "Gold": 13,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,976"
+                },
+                {
+                    "id": 202,
+                    "Rank": 202,
+                    "Player": "XiSTOU",
+                    "Gold": 4,
+                    "Silver": 6,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$12,972"
+                },
+                {
+                    "id": 203,
+                    "Rank": 203,
+                    "Player": "moose",
+                    "Gold": 3,
+                    "Silver": 0,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$12,932"
+                },
+                {
+                    "id": 204,
+                    "Rank": 204,
+                    "Player": "luckeRRR",
+                    "Gold": 5,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$12,841"
+                },
+                {
+                    "id": 205,
+                    "Rank": 205,
+                    "Player": "logaN",
+                    "Gold": 12,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,820"
+                },
+                {
+                    "id": 206,
+                    "Rank": 206,
+                    "Player": "rodeN",
+                    "Gold": 14,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,798"
+                },
+                {
+                    "id": 207,
+                    "Rank": 207,
+                    "Player": "thief",
+                    "Gold": 4,
+                    "Silver": 5,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$12,780"
+                },
+                {
+                    "id": 208,
+                    "Rank": 208,
+                    "Player": "Melser",
+                    "Gold": 9,
+                    "Silver": 8,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,713"
+                },
+                {
+                    "id": 209,
+                    "Rank": 209,
+                    "Player": "rion",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$12,687"
+                },
+                {
+                    "id": 210,
+                    "Rank": 210,
+                    "Player": "kiNgg",
+                    "Gold": 8,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,670"
+                },
+                {
+                    "id": 211,
+                    "Rank": 211,
+                    "Player": "eeiu",
+                    "Gold": 1,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$12,425"
+                },
+                {
+                    "id": 212,
+                    "Rank": 212,
+                    "Player": "s0m",
+                    "Gold": 1,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$12,375"
+                },
+                {
+                    "id": 213,
+                    "Rank": 213,
+                    "Player": "stellar",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$12,355"
+                },
+                {
+                    "id": 214,
+                    "Rank": 214,
+                    "Player": "heat",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$12,293"
+                },
+                {
+                    "id": 215,
+                    "Rank": 215,
+                    "Player": "blaZek1ng",
+                    "Gold": 9,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$12,283"
+                },
+                {
+                    "id": 216,
+                    "Rank": 216,
+                    "Player": "tex",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$12,275"
+                },
+                {
+                    "id": 217,
+                    "Rank": 217,
+                    "Player": "Sayaplayer",
+                    "Gold": 2,
+                    "Silver": 0,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$12,250"
+                },
+                {
+                    "id": 218,
+                    "Rank": 218,
+                    "Player": "PLAYER1",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$12,200"
+                },
+                {
+                    "id": 219,
+                    "Rank": 219,
+                    "Player": "Fit1nho",
+                    "Gold": 10,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$12,083"
+                },
+                {
+                    "id": 220,
+                    "Rank": 220,
+                    "Player": "qRaxs",
+                    "Gold": 2,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$12,023"
+                },
+                {
+                    "id": 221,
+                    "Rank": 221,
+                    "Player": "neptune",
+                    "Gold": 4,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,945"
+                },
+                {
+                    "id": 222,
+                    "Rank": 222,
+                    "Player": "TakaS",
+                    "Gold": 13,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,904"
+                },
+                {
+                    "id": 223,
+                    "Rank": 223,
+                    "Player": "mazin",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,901"
+                },
+                {
+                    "id": 224,
+                    "Rank": 224,
+                    "Player": "10X",
+                    "Gold": 0,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,898"
+                },
+                {
+                    "id": 225,
+                    "Rank": 225,
+                    "Player": "fznnn",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,878"
+                },
+                {
+                    "id": 226,
+                    "Rank": 226,
+                    "Player": "neT",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,850"
+                },
+                {
+                    "id": 227,
+                    "Rank": 227,
+                    "Player": "toronto",
+                    "Gold": 4,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$11,794"
+                },
+                {
+                    "id": 228,
+                    "Rank": 228,
+                    "Player": "Shawn",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,782"
+                },
+                {
+                    "id": 229,
+                    "Rank": 229,
+                    "Player": "Cryocells",
+                    "Gold": 10,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$11,700"
+                },
+                {
+                    "id": 230,
+                    "Rank": 230,
+                    "Player": "Excali",
+                    "Gold": 21,
+                    "Silver": 12,
+                    "Bronze": 8,
+                    "S_Tier": 0,
+                    "Earnings": "$11,637"
+                },
+                {
+                    "id": 231,
+                    "Rank": 231,
+                    "Player": "Tehbotol",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$11,553"
+                },
+                {
+                    "id": 232,
+                    "Rank": 232,
+                    "Player": "BerserX",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$11,496"
+                },
+                {
+                    "id": 233,
+                    "Rank": 233,
+                    "Player": "avez",
+                    "Gold": 9,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,403"
+                },
+                {
+                    "id": 234,
+                    "Rank": 234,
+                    "Player": "chiwawa",
+                    "Gold": 3,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$11,360"
+                },
+                {
+                    "id": 235,
+                    "Rank": 235,
+                    "Player": "fl1pzjder",
+                    "Gold": 6,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$11,352"
+                },
+                {
+                    "id": 236,
+                    "Rank": 236,
+                    "Player": "KP",
+                    "Gold": 12,
+                    "Silver": 12,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$11,325"
+                },
+                {
+                    "id": 237,
+                    "Rank": 237,
+                    "Player": "Antidote",
+                    "Gold": 18,
+                    "Silver": 9,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$11,259"
+                },
+                {
+                    "id": 238,
+                    "Rank": 238,
+                    "Player": "supamen",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,250"
+                },
+                {
+                    "id": 239,
+                    "Rank": 239,
+                    "Player": "Jady",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$11,193"
+                },
+                {
+                    "id": 240,
+                    "Rank": 240,
+                    "Player": "trent",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$11,170"
+                },
+                {
+                    "id": 241,
+                    "Rank": 241,
+                    "Player": "m1tez",
+                    "Gold": 1,
+                    "Silver": 9,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$11,133"
+                },
+                {
+                    "id": 242,
+                    "Rank": 242,
+                    "Player": "bENITA",
+                    "Gold": 4,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$11,000"
+                },
+                {
+                    "id": 243,
+                    "Rank": 243,
+                    "Player": "ade",
+                    "Gold": 3,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$10,938"
+                },
+                {
+                    "id": 244,
+                    "Rank": 244,
+                    "Player": "Duno",
+                    "Gold": 6,
+                    "Silver": 7,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$10,890"
+                },
+                {
+                    "id": 245,
+                    "Rank": 245,
+                    "Player": "Daveeys",
+                    "Gold": 9,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,862"
+                },
+                {
+                    "id": 246,
+                    "Rank": 246,
+                    "Player": "Brave",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$10,844"
+                },
+                {
+                    "id": 247,
+                    "Rank": 247,
+                    "Player": "poised",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,830"
+                },
+                {
+                    "id": 248,
+                    "Rank": 248,
+                    "Player": "zunba",
+                    "Gold": 2,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,814"
+                },
+                {
+                    "id": 249,
+                    "Rank": 249,
+                    "Player": "Esperanza",
+                    "Gold": 0,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,742"
+                },
+                {
+                    "id": 250,
+                    "Rank": 250,
+                    "Player": "ShoT_UP",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,740"
+                },
+                {
+                    "id": 251,
+                    "Rank": 251,
+                    "Player": "Efina",
+                    "Gold": 1,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$10,706"
+                },
+                {
+                    "id": 252,
+                    "Rank": 252,
+                    "Player": "Fisker",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,669"
+                },
+                {
+                    "id": 253,
+                    "Rank": 253,
+                    "Player": "eKo",
+                    "Gold": 5,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$10,659"
+                },
+                {
+                    "id": 254,
+                    "Rank": 254,
+                    "Player": "pANcada",
+                    "Gold": 10,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,650"
+                },
+                {
+                    "id": 255,
+                    "Rank": 255,
+                    "Player": "Rainy",
+                    "Gold": 11,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,648"
+                },
+                {
+                    "id": 256,
+                    "Rank": 256,
+                    "Player": "jammyz",
+                    "Gold": 6,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,620"
+                },
+                {
+                    "id": 257,
+                    "Rank": 257,
+                    "Player": "LEXY",
+                    "Gold": 6,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,605"
+                },
+                {
+                    "id": 258,
+                    "Rank": 258,
+                    "Player": "Harry",
+                    "Gold": 0,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,568"
+                },
+                {
+                    "id": 259,
+                    "Rank": 259,
+                    "Player": "HyP",
+                    "Gold": 9,
+                    "Silver": 6,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$10,559"
+                },
+                {
+                    "id": 260,
+                    "Rank": 260,
+                    "Player": "thwifo",
+                    "Gold": 6,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,520"
+                },
+                {
+                    "id": 261,
+                    "Rank": 261,
+                    "Player": "Derrek",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,415"
+                },
+                {
+                    "id": 262,
+                    "Rank": 262,
+                    "Player": "Cloud",
+                    "Gold": 2,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$10,302"
+                },
+                {
+                    "id": 263,
+                    "Rank": 263,
+                    "Player": "SuperBusS",
+                    "Gold": 8,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,176"
+                },
+                {
+                    "id": 264,
+                    "Rank": 264,
+                    "Player": "Critical",
+                    "Gold": 26,
+                    "Silver": 9,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$10,171"
+                },
+                {
+                    "id": 265,
+                    "Rank": 265,
+                    "Player": "Secret",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$10,164"
+                },
+                {
+                    "id": 266,
+                    "Rank": 266,
+                    "Player": "Izzy",
+                    "Gold": 1,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$10,141"
+                },
+                {
+                    "id": 267,
+                    "Rank": 267,
+                    "Player": "krain",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$9,981"
+                },
+                {
+                    "id": 268,
+                    "Rank": 268,
+                    "Player": "Jinggg",
+                    "Gold": 5,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,866"
+                },
+                {
+                    "id": 269,
+                    "Rank": 269,
+                    "Player": "flowerful",
+                    "Gold": 8,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$9,720"
+                },
+                {
+                    "id": 270,
+                    "Rank": 270,
+                    "Player": "HellFull",
+                    "Gold": 4,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,703"
+                },
+                {
+                    "id": 271,
+                    "Rank": 271,
+                    "Player": "prozin",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$9,693"
+                },
+                {
+                    "id": 272,
+                    "Rank": 272,
+                    "Player": "wippie",
+                    "Gold": 1,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$9,675"
+                },
+                {
+                    "id": 273,
+                    "Rank": 273,
+                    "Player": "panini",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$9,650"
+                },
+                {
+                    "id": 274,
+                    "Rank": 273,
+                    "Player": "Lorri",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$9,650"
+                },
+                {
+                    "id": 275,
+                    "Rank": 275,
+                    "Player": "GODLIKE",
+                    "Gold": 1,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$9,437"
+                },
+                {
+                    "id": 276,
+                    "Rank": 276,
+                    "Player": "Sp1ke",
+                    "Gold": 5,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$9,428"
+                },
+                {
+                    "id": 277,
+                    "Rank": 277,
+                    "Player": "Kongared",
+                    "Gold": 12,
+                    "Silver": 6,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$9,380"
+                },
+                {
+                    "id": 278,
+                    "Rank": 277,
+                    "Player": "wannafly",
+                    "Gold": 12,
+                    "Silver": 6,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$9,380"
+                },
+                {
+                    "id": 279,
+                    "Rank": 279,
+                    "Player": "Iyo",
+                    "Gold": 11,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,331"
+                },
+                {
+                    "id": 280,
+                    "Rank": 280,
+                    "Player": "bnj",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$9,255"
+                },
+                {
+                    "id": 281,
+                    "Rank": 281,
+                    "Player": "b0i",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,225"
+                },
+                {
+                    "id": 282,
+                    "Rank": 282,
+                    "Player": "Kant",
+                    "Gold": 10,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,193"
+                },
+                {
+                    "id": 283,
+                    "Rank": 283,
+                    "Player": "ChoboMe",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,192"
+                },
+                {
+                    "id": 284,
+                    "Rank": 284,
+                    "Player": "gaabxx",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$9,080"
+                },
+                {
+                    "id": 285,
+                    "Rank": 285,
+                    "Player": "asteriskk",
+                    "Gold": 7,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$9,033"
+                },
+                {
+                    "id": 286,
+                    "Rank": 286,
+                    "Player": "it not han",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$9,020"
+                },
+                {
+                    "id": 287,
+                    "Rank": 287,
+                    "Player": "NLaaeR",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$9,006"
+                },
+                {
+                    "id": 288,
+                    "Rank": 288,
+                    "Player": "fra",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,953"
+                },
+                {
+                    "id": 289,
+                    "Rank": 289,
+                    "Player": "shion",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,908"
+                },
+                {
+                    "id": 290,
+                    "Rank": 290,
+                    "Player": "insider",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,895"
+                },
+                {
+                    "id": 291,
+                    "Rank": 291,
+                    "Player": "myssen",
+                    "Gold": 3,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,888"
+                },
+                {
+                    "id": 292,
+                    "Rank": 292,
+                    "Player": "NcSlasher",
+                    "Gold": 6,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,874"
+                },
+                {
+                    "id": 293,
+                    "Rank": 293,
+                    "Player": "bang",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,870"
+                },
+                {
+                    "id": 294,
+                    "Rank": 293,
+                    "Player": "Moh",
+                    "Gold": 8,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,870"
+                },
+                {
+                    "id": 295,
+                    "Rank": 295,
+                    "Player": "OuTLaW",
+                    "Gold": 9,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,853"
+                },
+                {
+                    "id": 296,
+                    "Rank": 296,
+                    "Player": "Skadoodle",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,850"
+                },
+                {
+                    "id": 297,
+                    "Rank": 297,
+                    "Player": "Clawdia",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,800"
+                },
+                {
+                    "id": 298,
+                    "Rank": 298,
+                    "Player": "DeNaro",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,732"
+                },
+                {
+                    "id": 299,
+                    "Rank": 299,
+                    "Player": "Eugene",
+                    "Gold": 0,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,731"
+                },
+                {
+                    "id": 300,
+                    "Rank": 300,
+                    "Player": "bramz",
+                    "Gold": 13,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,674"
+                },
+                {
+                    "id": 301,
+                    "Rank": 301,
+                    "Player": "jfoeN",
+                    "Gold": 13,
+                    "Silver": 4,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$8,672"
+                },
+                {
+                    "id": 302,
+                    "Rank": 302,
+                    "Player": "retrQ",
+                    "Gold": 14,
+                    "Silver": 10,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,669"
+                },
+                {
+                    "id": 303,
+                    "Rank": 303,
+                    "Player": "Fr4nky",
+                    "Gold": 8,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,663"
+                },
+                {
+                    "id": 304,
+                    "Rank": 304,
+                    "Player": "frostmind",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,625"
+                },
+                {
+                    "id": 305,
+                    "Rank": 305,
+                    "Player": "JinNy",
+                    "Gold": 12,
+                    "Silver": 8,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$8,598"
+                },
+                {
+                    "id": 306,
+                    "Rank": 306,
+                    "Player": "Depyro",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$8,591"
+                },
+                {
+                    "id": 307,
+                    "Rank": 306,
+                    "Player": "Eeyore",
+                    "Gold": 6,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,591"
+                },
+                {
+                    "id": 308,
+                    "Rank": 306,
+                    "Player": "Milk",
+                    "Gold": 8,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,591"
+                },
+                {
+                    "id": 309,
+                    "Rank": 309,
+                    "Player": "t3xture",
+                    "Gold": 0,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,571"
+                },
+                {
+                    "id": 310,
+                    "Rank": 310,
+                    "Player": "Alejo",
+                    "Gold": 13,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,534"
+                },
+                {
+                    "id": 311,
+                    "Rank": 310,
+                    "Player": "sickLy",
+                    "Gold": 13,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,534"
+                },
+                {
+                    "id": 312,
+                    "Rank": 312,
+                    "Player": "iNTRO",
+                    "Gold": 0,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,472"
+                },
+                {
+                    "id": 313,
+                    "Rank": 313,
+                    "Player": "Texta",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,440"
+                },
+                {
+                    "id": 314,
+                    "Rank": 313,
+                    "Player": "tucks",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,440"
+                },
+                {
+                    "id": 315,
+                    "Rank": 315,
+                    "Player": "RockeT",
+                    "Gold": 3,
+                    "Silver": 9,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$8,422"
+                },
+                {
+                    "id": 316,
+                    "Rank": 316,
+                    "Player": "BraveAF",
+                    "Gold": 1,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,414"
+                },
+                {
+                    "id": 317,
+                    "Rank": 317,
+                    "Player": "light",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,388"
+                },
+                {
+                    "id": 318,
+                    "Rank": 318,
+                    "Player": "Kehmicals",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,361"
+                },
+                {
+                    "id": 319,
+                    "Rank": 319,
+                    "Player": "pleets",
+                    "Gold": 5,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,354"
+                },
+                {
+                    "id": 320,
+                    "Rank": 320,
+                    "Player": "gob b",
+                    "Gold": 21,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,337"
+                },
+                {
+                    "id": 321,
+                    "Rank": 321,
+                    "Player": "vakk",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,317"
+                },
+                {
+                    "id": 322,
+                    "Rank": 322,
+                    "Player": "Shniider",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,249"
+                },
+                {
+                    "id": 323,
+                    "Rank": 323,
+                    "Player": "Dobsha",
+                    "Gold": 5,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,150"
+                },
+                {
+                    "id": 324,
+                    "Rank": 324,
+                    "Player": "THEE",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$8,132"
+                },
+                {
+                    "id": 325,
+                    "Rank": 325,
+                    "Player": "Acetics",
+                    "Gold": 13,
+                    "Silver": 8,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$8,124"
+                },
+                {
+                    "id": 326,
+                    "Rank": 326,
+                    "Player": "RUBINO",
+                    "Gold": 0,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,122"
+                },
+                {
+                    "id": 327,
+                    "Rank": 327,
+                    "Player": "Gray",
+                    "Gold": 10,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$8,114"
+                },
+                {
+                    "id": 328,
+                    "Rank": 328,
+                    "Player": "vice",
+                    "Gold": 3,
+                    "Silver": 5,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$8,105"
+                },
+                {
+                    "id": 329,
+                    "Rank": 329,
+                    "Player": "TiGG",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$8,100"
+                },
+                {
+                    "id": 330,
+                    "Rank": 330,
+                    "Player": "psy",
+                    "Gold": 7,
+                    "Silver": 11,
+                    "Bronze": 7,
+                    "S_Tier": 0,
+                    "Earnings": "$8,061"
+                },
+                {
+                    "id": 331,
+                    "Rank": 331,
+                    "Player": "ban",
+                    "Gold": 5,
+                    "Silver": 7,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$8,057"
+                },
+                {
+                    "id": 332,
+                    "Rank": 332,
+                    "Player": "c4Lypso",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$8,037"
+                },
+                {
+                    "id": 333,
+                    "Rank": 333,
+                    "Player": "Rawfiul",
+                    "Gold": 5,
+                    "Silver": 7,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$8,008"
+                },
+                {
+                    "id": 334,
+                    "Rank": 334,
+                    "Player": "Caz",
+                    "Gold": 4,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$8,003"
+                },
+                {
+                    "id": 335,
+                    "Rank": 335,
+                    "Player": "BEAST",
+                    "Gold": 5,
+                    "Silver": 8,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,968"
+                },
+                {
+                    "id": 336,
+                    "Rank": 336,
+                    "Player": "Sand",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,967"
+                },
+                {
+                    "id": 337,
+                    "Rank": 337,
+                    "Player": "Russ",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,955"
+                },
+                {
+                    "id": 338,
+                    "Rank": 338,
+                    "Player": "ntk",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,937"
+                },
+                {
+                    "id": 339,
+                    "Rank": 339,
+                    "Player": "minse",
+                    "Gold": 11,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,934"
+                },
+                {
+                    "id": 340,
+                    "Rank": 340,
+                    "Player": "xander",
+                    "Gold": 4,
+                    "Silver": 8,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$7,932"
+                },
+                {
+                    "id": 341,
+                    "Rank": 341,
+                    "Player": "NaturE",
+                    "Gold": 0,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,930"
+                },
+                {
+                    "id": 342,
+                    "Rank": 342,
+                    "Player": "7ssk7",
+                    "Gold": 7,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,919"
+                },
+                {
+                    "id": 343,
+                    "Rank": 343,
+                    "Player": "Bunny",
+                    "Gold": 1,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,914"
+                },
+                {
+                    "id": 344,
+                    "Rank": 344,
+                    "Player": "SkaNoodles",
+                    "Gold": 7,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,867"
+                },
+                {
+                    "id": 345,
+                    "Rank": 345,
+                    "Player": "fiveK",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,843"
+                },
+                {
+                    "id": 346,
+                    "Rank": 346,
+                    "Player": "disk0",
+                    "Gold": 7,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,808"
+                },
+                {
+                    "id": 347,
+                    "Rank": 347,
+                    "Player": "naxy",
+                    "Gold": 16,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,802"
+                },
+                {
+                    "id": 348,
+                    "Rank": 348,
+                    "Player": "Rexy",
+                    "Gold": 4,
+                    "Silver": 12,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$7,798"
+                },
+                {
+                    "id": 349,
+                    "Rank": 349,
+                    "Player": "drn",
+                    "Gold": 16,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,792"
+                },
+                {
+                    "id": 350,
+                    "Rank": 350,
+                    "Player": "nat1",
+                    "Gold": 16,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,782"
+                },
+                {
+                    "id": 351,
+                    "Rank": 351,
+                    "Player": "bstrdd",
+                    "Gold": 15,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,755"
+                },
+                {
+                    "id": 352,
+                    "Rank": 352,
+                    "Player": "Paincakes",
+                    "Gold": 15,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,745"
+                },
+                {
+                    "id": 353,
+                    "Rank": 353,
+                    "Player": "daiki",
+                    "Gold": 15,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,711"
+                },
+                {
+                    "id": 354,
+                    "Rank": 354,
+                    "Player": "RvK",
+                    "Gold": 4,
+                    "Silver": 7,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$7,692"
+                },
+                {
+                    "id": 355,
+                    "Rank": 355,
+                    "Player": "hikkA",
+                    "Gold": 6,
+                    "Silver": 8,
+                    "Bronze": 8,
+                    "S_Tier": 0,
+                    "Earnings": "$7,659"
+                },
+                {
+                    "id": 356,
+                    "Rank": 356,
+                    "Player": "sonder",
+                    "Gold": 8,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,650"
+                },
+                {
+                    "id": 357,
+                    "Rank": 357,
+                    "Player": "GodDead",
+                    "Gold": 0,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,642"
+                },
+                {
+                    "id": 358,
+                    "Rank": 358,
+                    "Player": "liazzi",
+                    "Gold": 1,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,617"
+                },
+                {
+                    "id": 359,
+                    "Rank": 359,
+                    "Player": "phaze",
+                    "Gold": 6,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,544"
+                },
+                {
+                    "id": 360,
+                    "Rank": 360,
+                    "Player": "blackhawk",
+                    "Gold": 6,
+                    "Silver": 11,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$7,523"
+                },
+                {
+                    "id": 361,
+                    "Rank": 361,
+                    "Player": "Whimp",
+                    "Gold": 5,
+                    "Silver": 10,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$7,485"
+                },
+                {
+                    "id": 362,
+                    "Rank": 362,
+                    "Player": "AslaN",
+                    "Gold": 23,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,457"
+                },
+                {
+                    "id": 363,
+                    "Rank": 363,
+                    "Player": "autumn",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,448"
+                },
+                {
+                    "id": 364,
+                    "Rank": 364,
+                    "Player": "Kanpeki",
+                    "Gold": 9,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,435"
+                },
+                {
+                    "id": 365,
+                    "Rank": 365,
+                    "Player": "Astell",
+                    "Gold": 2,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,428"
+                },
+                {
+                    "id": 366,
+                    "Rank": 366,
+                    "Player": "Akashi",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,389"
+                },
+                {
+                    "id": 367,
+                    "Rank": 367,
+                    "Player": "Zander",
+                    "Gold": 4,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,380"
+                },
+                {
+                    "id": 368,
+                    "Rank": 368,
+                    "Player": "Rheat",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,361"
+                },
+                {
+                    "id": 369,
+                    "Rank": 369,
+                    "Player": "Clarenz",
+                    "Gold": 4,
+                    "Silver": 7,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,332"
+                },
+                {
+                    "id": 370,
+                    "Rank": 370,
+                    "Player": "randyySavage",
+                    "Gold": 14,
+                    "Silver": 9,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,329"
+                },
+                {
+                    "id": 371,
+                    "Rank": 371,
+                    "Player": "RAINMAKER",
+                    "Gold": 11,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,308"
+                },
+                {
+                    "id": 372,
+                    "Rank": 372,
+                    "Player": "dinkzj",
+                    "Gold": 8,
+                    "Silver": 8,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,299"
+                },
+                {
+                    "id": 373,
+                    "Rank": 373,
+                    "Player": "shooterR",
+                    "Gold": 7,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,298"
+                },
+                {
+                    "id": 374,
+                    "Rank": 374,
+                    "Player": "Meiy",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,293"
+                },
+                {
+                    "id": 375,
+                    "Rank": 375,
+                    "Player": "Moe40",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,274"
+                },
+                {
+                    "id": 376,
+                    "Rank": 376,
+                    "Player": "k1Ng",
+                    "Gold": 6,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,269"
+                },
+                {
+                    "id": 377,
+                    "Rank": 377,
+                    "Player": "Lok1",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$7,255"
+                },
+                {
+                    "id": 378,
+                    "Rank": 378,
+                    "Player": "soulM8",
+                    "Gold": 5,
+                    "Silver": 0,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,253"
+                },
+                {
+                    "id": 379,
+                    "Rank": 379,
+                    "Player": "trexx",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,251"
+                },
+                {
+                    "id": 380,
+                    "Rank": 380,
+                    "Player": "AZK",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,250"
+                },
+                {
+                    "id": 381,
+                    "Rank": 380,
+                    "Player": "showliana",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,250"
+                },
+                {
+                    "id": 382,
+                    "Rank": 382,
+                    "Player": "AztKk",
+                    "Gold": 3,
+                    "Silver": 6,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$7,244"
+                },
+                {
+                    "id": 383,
+                    "Rank": 383,
+                    "Player": "Cla",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,236"
+                },
+                {
+                    "id": 384,
+                    "Rank": 383,
+                    "Player": "Ninou",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,236"
+                },
+                {
+                    "id": 385,
+                    "Rank": 383,
+                    "Player": "LiriLia",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,236"
+                },
+                {
+                    "id": 386,
+                    "Rank": 386,
+                    "Player": "naTz",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,228"
+                },
+                {
+                    "id": 387,
+                    "Rank": 387,
+                    "Player": "hvoya",
+                    "Gold": 7,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,227"
+                },
+                {
+                    "id": 388,
+                    "Rank": 388,
+                    "Player": "v1nNy",
+                    "Gold": 10,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,185"
+                },
+                {
+                    "id": 389,
+                    "Rank": 389,
+                    "Player": "BabyJ",
+                    "Gold": 1,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$7,180"
+                },
+                {
+                    "id": 390,
+                    "Rank": 390,
+                    "Player": "rain",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,160"
+                },
+                {
+                    "id": 391,
+                    "Rank": 390,
+                    "Player": "EMUHLEET",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,160"
+                },
+                {
+                    "id": 392,
+                    "Rank": 390,
+                    "Player": "Theia",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,160"
+                },
+                {
+                    "id": 393,
+                    "Rank": 393,
+                    "Player": "Sliicyy",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,158"
+                },
+                {
+                    "id": 394,
+                    "Rank": 394,
+                    "Player": "HsB",
+                    "Gold": 4,
+                    "Silver": 0,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,156"
+                },
+                {
+                    "id": 395,
+                    "Rank": 395,
+                    "Player": "iFly",
+                    "Gold": 5,
+                    "Silver": 8,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$7,151"
+                },
+                {
+                    "id": 396,
+                    "Rank": 396,
+                    "Player": "Gucc107",
+                    "Gold": 12,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,150"
+                },
+                {
+                    "id": 397,
+                    "Rank": 397,
+                    "Player": "cath",
+                    "Gold": 3,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,130"
+                },
+                {
+                    "id": 398,
+                    "Rank": 398,
+                    "Player": "Pooh1Tap",
+                    "Gold": 7,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,110"
+                },
+                {
+                    "id": 399,
+                    "Rank": 399,
+                    "Player": "Kishi",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$7,074"
+                },
+                {
+                    "id": 400,
+                    "Rank": 400,
+                    "Player": "poiz",
+                    "Gold": 1,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,060"
+                },
+                {
+                    "id": 401,
+                    "Rank": 401,
+                    "Player": "kAdavra",
+                    "Gold": 2,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,059"
+                },
+                {
+                    "id": 402,
+                    "Rank": 402,
+                    "Player": "Danielesflo",
+                    "Gold": 6,
+                    "Silver": 8,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$7,050"
+                },
+                {
+                    "id": 403,
+                    "Rank": 403,
+                    "Player": "Puleule",
+                    "Gold": 13,
+                    "Silver": 3,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$7,025"
+                },
+                {
+                    "id": 404,
+                    "Rank": 404,
+                    "Player": "koosta",
+                    "Gold": 0,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$7,000"
+                },
+                {
+                    "id": 405,
+                    "Rank": 405,
+                    "Player": "zAAz",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,991"
+                },
+                {
+                    "id": 406,
+                    "Rank": 405,
+                    "Player": "mimi",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,991"
+                },
+                {
+                    "id": 407,
+                    "Rank": 405,
+                    "Player": "juliano",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,991"
+                },
+                {
+                    "id": 408,
+                    "Rank": 405,
+                    "Player": "Petra",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,991"
+                },
+                {
+                    "id": 409,
+                    "Rank": 409,
+                    "Player": "hype",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,986"
+                },
+                {
+                    "id": 410,
+                    "Rank": 410,
+                    "Player": "RyZzi",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,980"
+                },
+                {
+                    "id": 411,
+                    "Rank": 411,
+                    "Player": "alvar",
+                    "Gold": 8,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,960"
+                },
+                {
+                    "id": 412,
+                    "Rank": 412,
+                    "Player": "rise",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,950"
+                },
+                {
+                    "id": 413,
+                    "Rank": 413,
+                    "Player": "Daicute",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,918"
+                },
+                {
+                    "id": 414,
+                    "Rank": 414,
+                    "Player": "aspas",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,916"
+                },
+                {
+                    "id": 415,
+                    "Rank": 415,
+                    "Player": "Dcop",
+                    "Gold": 14,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,915"
+                },
+                {
+                    "id": 416,
+                    "Rank": 416,
+                    "Player": "Boo",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,883"
+                },
+                {
+                    "id": 417,
+                    "Rank": 417,
+                    "Player": "SpY",
+                    "Gold": 7,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,800"
+                },
+                {
+                    "id": 418,
+                    "Rank": 418,
+                    "Player": "adrnking",
+                    "Gold": 8,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,780"
+                },
+                {
+                    "id": 419,
+                    "Rank": 419,
+                    "Player": "Jeong Hi",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,769"
+                },
+                {
+                    "id": 420,
+                    "Rank": 419,
+                    "Player": "Closer",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,769"
+                },
+                {
+                    "id": 421,
+                    "Rank": 421,
+                    "Player": "Aleko",
+                    "Gold": 5,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,740"
+                },
+                {
+                    "id": 422,
+                    "Rank": 422,
+                    "Player": "XXiF",
+                    "Gold": 6,
+                    "Silver": 9,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,680"
+                },
+                {
+                    "id": 423,
+                    "Rank": 423,
+                    "Player": "glovee",
+                    "Gold": 0,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,666"
+                },
+                {
+                    "id": 424,
+                    "Rank": 424,
+                    "Player": "Governor",
+                    "Gold": 8,
+                    "Silver": 9,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,664"
+                },
+                {
+                    "id": 425,
+                    "Rank": 425,
+                    "Player": "Lee",
+                    "Gold": 8,
+                    "Silver": 7,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,656"
+                },
+                {
+                    "id": 426,
+                    "Rank": 426,
+                    "Player": "Dazlly",
+                    "Gold": 5,
+                    "Silver": 7,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$6,645"
+                },
+                {
+                    "id": 427,
+                    "Rank": 427,
+                    "Player": "tsack",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,555"
+                },
+                {
+                    "id": 428,
+                    "Rank": 428,
+                    "Player": "POACH",
+                    "Gold": 5,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,535"
+                },
+                {
+                    "id": 429,
+                    "Rank": 429,
+                    "Player": "Relyks",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,510"
+                },
+                {
+                    "id": 430,
+                    "Rank": 430,
+                    "Player": "Bgg",
+                    "Gold": 9,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,467"
+                },
+                {
+                    "id": 431,
+                    "Rank": 431,
+                    "Player": "Obnoks",
+                    "Gold": 18,
+                    "Silver": 2,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,457"
+                },
+                {
+                    "id": 432,
+                    "Rank": 432,
+                    "Player": "tayhuhu",
+                    "Gold": 10,
+                    "Silver": 12,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,431"
+                },
+                {
+                    "id": 433,
+                    "Rank": 433,
+                    "Player": "Zik",
+                    "Gold": 10,
+                    "Silver": 5,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,409"
+                },
+                {
+                    "id": 434,
+                    "Rank": 434,
+                    "Player": "Muj",
+                    "Gold": 1,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,400"
+                },
+                {
+                    "id": 435,
+                    "Rank": 435,
+                    "Player": "shiba",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,396"
+                },
+                {
+                    "id": 436,
+                    "Rank": 436,
+                    "Player": "Bob",
+                    "Gold": 8,
+                    "Silver": 8,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,355"
+                },
+                {
+                    "id": 437,
+                    "Rank": 437,
+                    "Player": "arch",
+                    "Gold": 6,
+                    "Silver": 6,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$6,348"
+                },
+                {
+                    "id": 438,
+                    "Rank": 438,
+                    "Player": "spellfull",
+                    "Gold": 7,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,330"
+                },
+                {
+                    "id": 439,
+                    "Rank": 439,
+                    "Player": "Nelo",
+                    "Gold": 6,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,322"
+                },
+                {
+                    "id": 440,
+                    "Rank": 440,
+                    "Player": "Sylvan",
+                    "Gold": 1,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,312"
+                },
+                {
+                    "id": 441,
+                    "Rank": 441,
+                    "Player": "mw1",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,270"
+                },
+                {
+                    "id": 442,
+                    "Rank": 442,
+                    "Player": "cactuzio",
+                    "Gold": 11,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,236"
+                },
+                {
+                    "id": 443,
+                    "Rank": 443,
+                    "Player": "zyad",
+                    "Gold": 7,
+                    "Silver": 4,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$6,226"
+                },
+                {
+                    "id": 444,
+                    "Rank": 444,
+                    "Player": "Glance",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,221"
+                },
+                {
+                    "id": 445,
+                    "Rank": 445,
+                    "Player": "Shizue",
+                    "Gold": 8,
+                    "Silver": 12,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,213"
+                },
+                {
+                    "id": 446,
+                    "Rank": 445,
+                    "Player": "shyz",
+                    "Gold": 8,
+                    "Silver": 12,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,213"
+                },
+                {
+                    "id": 447,
+                    "Rank": 447,
+                    "Player": "Lmemore",
+                    "Gold": 3,
+                    "Silver": 2,
+                    "Bronze": 6,
+                    "S_Tier": 0,
+                    "Earnings": "$6,208"
+                },
+                {
+                    "id": 448,
+                    "Rank": 448,
+                    "Player": "Stefanie",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,200"
+                },
+                {
+                    "id": 449,
+                    "Rank": 449,
+                    "Player": "iDex",
+                    "Gold": 6,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,174"
+                },
+                {
+                    "id": 450,
+                    "Rank": 450,
+                    "Player": "Redneval",
+                    "Gold": 8,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,167"
+                },
+                {
+                    "id": 451,
+                    "Rank": 451,
+                    "Player": "kon4n",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,157"
+                },
+                {
+                    "id": 452,
+                    "Rank": 451,
+                    "Player": "matheuzin",
+                    "Gold": 2,
+                    "Silver": 4,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,157"
+                },
+                {
+                    "id": 453,
+                    "Rank": 453,
+                    "Player": "Winsum",
+                    "Gold": 15,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,110"
+                },
+                {
+                    "id": 454,
+                    "Rank": 454,
+                    "Player": "Crunchy",
+                    "Gold": 7,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,107"
+                },
+                {
+                    "id": 455,
+                    "Rank": 455,
+                    "Player": "LaAw",
+                    "Gold": 10,
+                    "Silver": 6,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,097"
+                },
+                {
+                    "id": 456,
+                    "Rank": 456,
+                    "Player": "Sh0ckwave",
+                    "Gold": 5,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,091"
+                },
+                {
+                    "id": 457,
+                    "Rank": 457,
+                    "Player": "JinboongE",
+                    "Gold": 1,
+                    "Silver": 0,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,080"
+                },
+                {
+                    "id": 458,
+                    "Rank": 458,
+                    "Player": "skuba",
+                    "Gold": 1,
+                    "Silver": 5,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,060"
+                },
+                {
+                    "id": 459,
+                    "Rank": 459,
+                    "Player": "Ambi",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,059"
+                },
+                {
+                    "id": 460,
+                    "Rank": 460,
+                    "Player": "dizzyLife",
+                    "Gold": 7,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,050"
+                },
+                {
+                    "id": 461,
+                    "Rank": 461,
+                    "Player": "ZesBeeW",
+                    "Gold": 4,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,043"
+                },
+                {
+                    "id": 462,
+                    "Rank": 462,
+                    "Player": "JESMUND",
+                    "Gold": 5,
+                    "Silver": 5,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$6,038"
+                },
+                {
+                    "id": 463,
+                    "Rank": 463,
+                    "Player": "lenne",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$6,037"
+                },
+                {
+                    "id": 464,
+                    "Rank": 464,
+                    "Player": "AntiBiotique",
+                    "Gold": 10,
+                    "Silver": 2,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$6,036"
+                },
+                {
+                    "id": 465,
+                    "Rank": 465,
+                    "Player": "xenon",
+                    "Gold": 8,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$6,008"
+                },
+                {
+                    "id": 466,
+                    "Rank": 466,
+                    "Player": "sharyk",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,978"
+                },
+                {
+                    "id": 467,
+                    "Rank": 466,
+                    "Player": "Winteryrook",
+                    "Gold": 7,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,978"
+                },
+                {
+                    "id": 468,
+                    "Rank": 468,
+                    "Player": "crazyd33R",
+                    "Gold": 9,
+                    "Silver": 3,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,952"
+                },
+                {
+                    "id": 469,
+                    "Rank": 469,
+                    "Player": "IyeN",
+                    "Gold": 7,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,950"
+                },
+                {
+                    "id": 470,
+                    "Rank": 470,
+                    "Player": "CP2",
+                    "Gold": 14,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,880"
+                },
+                {
+                    "id": 471,
+                    "Rank": 471,
+                    "Player": "azys",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,874"
+                },
+                {
+                    "id": 472,
+                    "Rank": 472,
+                    "Player": "Brando",
+                    "Gold": 12,
+                    "Silver": 6,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,865"
+                },
+                {
+                    "id": 473,
+                    "Rank": 473,
+                    "Player": "klaudia",
+                    "Gold": 3,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,823"
+                },
+                {
+                    "id": 474,
+                    "Rank": 473,
+                    "Player": "Smurfette",
+                    "Gold": 3,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,823"
+                },
+                {
+                    "id": 475,
+                    "Rank": 475,
+                    "Player": "W1nner",
+                    "Gold": 2,
+                    "Silver": 6,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,800"
+                },
+                {
+                    "id": 476,
+                    "Rank": 476,
+                    "Player": "Twisten",
+                    "Gold": 10,
+                    "Silver": 3,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,792"
+                },
+                {
+                    "id": 477,
+                    "Rank": 477,
+                    "Player": "Surf",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,777"
+                },
+                {
+                    "id": 478,
+                    "Rank": 478,
+                    "Player": "ceNder",
+                    "Gold": 4,
+                    "Silver": 2,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,775"
+                },
+                {
+                    "id": 479,
+                    "Rank": 479,
+                    "Player": "Neon",
+                    "Gold": 12,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,770"
+                },
+                {
+                    "id": 480,
+                    "Rank": 480,
+                    "Player": "isaa",
+                    "Gold": 8,
+                    "Silver": 10,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,732"
+                },
+                {
+                    "id": 481,
+                    "Rank": 481,
+                    "Player": "jcrueL",
+                    "Gold": 5,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,730"
+                },
+                {
+                    "id": 482,
+                    "Rank": 482,
+                    "Player": "roxi",
+                    "Gold": 3,
+                    "Silver": 6,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,723"
+                },
+                {
+                    "id": 483,
+                    "Rank": 483,
+                    "Player": "mle",
+                    "Gold": 4,
+                    "Silver": 9,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,700"
+                },
+                {
+                    "id": 484,
+                    "Rank": 484,
+                    "Player": "Deryeon",
+                    "Gold": 2,
+                    "Silver": 3,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$5,698"
+                },
+                {
+                    "id": 485,
+                    "Rank": 485,
+                    "Player": "Dep",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 3,
+                    "S_Tier": 0,
+                    "Earnings": "$5,694"
+                },
+                {
+                    "id": 486,
+                    "Rank": 486,
+                    "Player": "pl1xx",
+                    "Gold": 10,
+                    "Silver": 7,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,690"
+                },
+                {
+                    "id": 487,
+                    "Rank": 487,
+                    "Player": "Bjor",
+                    "Gold": 7,
+                    "Silver": 5,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,685"
+                },
+                {
+                    "id": 488,
+                    "Rank": 488,
+                    "Player": "athxna",
+                    "Gold": 3,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,650"
+                },
+                {
+                    "id": 489,
+                    "Rank": 489,
+                    "Player": "Frosty",
+                    "Gold": 5,
+                    "Silver": 7,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,648"
+                },
+                {
+                    "id": 490,
+                    "Rank": 490,
+                    "Player": "JdFaker",
+                    "Gold": 3,
+                    "Silver": 8,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,606"
+                },
+                {
+                    "id": 491,
+                    "Rank": 491,
+                    "Player": "mada",
+                    "Gold": 2,
+                    "Silver": 1,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,600"
+                },
+                {
+                    "id": 492,
+                    "Rank": 492,
+                    "Player": "Hate",
+                    "Gold": 4,
+                    "Silver": 3,
+                    "Bronze": 0,
+                    "S_Tier": 0,
+                    "Earnings": "$5,592"
+                },
+                {
+                    "id": 493,
+                    "Rank": 493,
+                    "Player": "Jerk",
+                    "Gold": 9,
+                    "Silver": 10,
+                    "Bronze": 4,
+                    "S_Tier": 0,
+                    "Earnings": "$5,585"
+                },
+                {
+                    "id": 494,
+                    "Rank": 494,
+                    "Player": "Shin",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,578"
+                },
+                {
+                    "id": 495,
+                    "Rank": 494,
+                    "Player": "Goaster",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,578"
+                },
+                {
+                    "id": 496,
+                    "Rank": 496,
+                    "Player": "Kim",
+                    "Gold": 3,
+                    "Silver": 4,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,555"
+                },
+                {
+                    "id": 497,
+                    "Rank": 497,
+                    "Player": "Less",
+                    "Gold": 3,
+                    "Silver": 1,
+                    "Bronze": 1,
+                    "S_Tier": 0,
+                    "Earnings": "$5,543"
+                },
+                {
+                    "id": 498,
+                    "Rank": 498,
+                    "Player": "Senhoachic",
+                    "Gold": 7,
+                    "Silver": 2,
+                    "Bronze": 5,
+                    "S_Tier": 0,
+                    "Earnings": "$5,537"
+                },
+                {
+                    "id": 499,
+                    "Rank": 499,
+                    "Player": "chase",
+                    "Gold": 19,
+                    "Silver": 10,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,531"
+                },
+                {
+                    "id": 500,
+                    "Rank": 500,
+                    "Player": "Harmful",
+                    "Gold": 6,
+                    "Silver": 4,
+                    "Bronze": 2,
+                    "S_Tier": 0,
+                    "Earnings": "$5,530"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "valorant"
+}

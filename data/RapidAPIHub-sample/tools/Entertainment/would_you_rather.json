@@ -1,0 +1,31 @@
+{
+    "product_id": "api_fc8f120d-077b-483f-b407-e27fdd2c4dbe",
+    "tool_description": "Get random fun 'Would You Rather' questions that are up to date! :) Data is constantly being updated/added!",
+    "home_url": "https://rapidapi.com/thunderapi-thunderapi-default/api/would-you-rather/",
+    "name": "Would You Rather",
+    "title": "Would You Rather",
+    "pricing": "FREEMIUM",
+    "tool_name": "Would You Rather",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2119,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "would-you-rather.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "question",
+            "url": "https://would-you-rather.p.rapidapi.com/wyr/random",
+            "description": "Get random 'Would You Rather' question",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://would-you-rather.p.rapidapi.com/wyr/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"would-you-rather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://would-you-rather.p.rapidapi.com/wyr/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"would-you-rather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "would_you_rather"
+}

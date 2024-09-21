@@ -1,0 +1,140 @@
+{
+    "product_id": "53aa6086e4b051a76d241c64",
+    "tool_description": "APIv1 is the old Hummingbird API that is already implemented in multiple applications, its syntax and functionality will surely not change in the future so it is recommended to use this for any long-running projects.",
+    "home_url": "https://rapidapi.com/hummingbird/api/hummingbird-apiv1/",
+    "name": "Hummingbird APIv1",
+    "title": "Hummingbird APIv1",
+    "pricing": "FREE",
+    "tool_name": "Hummingbird APIv1",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 337,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.8,
+        "__typename": "Score"
+    },
+    "host": "hbrd-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Feed",
+            "url": "https://hbrd-v1.p.rapidapi.com/users/cybrox/feed",
+            "description": "Get the latest posts on a user's feed",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cybrox"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/cybrox/feed\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/{name}/feed\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Favourites",
+            "url": "https://hbrd-v1.p.rapidapi.com/users/cybrox/favorite_anime",
+            "description": "Get a user's favourite anime",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cybrox"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/cybrox/favorite_anime\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/{name}/favorite_anime\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "User",
+            "url": "https://hbrd-v1.p.rapidapi.com/users/{name}",
+            "description": "Get informations about a single user",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/{name}\"\nquerystring = {\"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/{name}\"\nquerystring = {\"name\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Library",
+            "url": "https://hbrd-v1.p.rapidapi.com/users/cybrox/library",
+            "description": "Get a user's anime library",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cybrox"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/cybrox/library\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/users/{name}/library\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Search",
+            "url": "https://hbrd-v1.p.rapidapi.com/search/anime",
+            "description": "Search for an anime (supports fuzzy search)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Your search term",
+                    "default": "log-horizon"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/search/anime\"\nquerystring = {\"query\": \"log-horizon\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/search/anime\"\nquerystring = {\"query\": \"log-horizon\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Anime",
+            "url": "https://hbrd-v1.p.rapidapi.com/anime/log-horizon",
+            "description": "Get information about a single anime",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The Anime-ID (eq. Anime slug)",
+                    "default": "log-horizon"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/anime/log-horizon\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hbrd-v1.p.rapidapi.com/anime/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hbrd-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "hummingbird_apiv1"
+}

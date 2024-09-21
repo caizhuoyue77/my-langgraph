@@ -1,0 +1,62 @@
+{
+    "product_id": "api_e4730ca1-4487-4778-bb70-b098db21401e",
+    "tool_description": "Spring Rest API",
+    "home_url": "https://rapidapi.com/sadovnik337/api/hleby6ek/",
+    "name": "HleBy6eK",
+    "title": "HleBy6eK",
+    "pricing": "FREE",
+    "tool_name": "HleBy6eK",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1013,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "hleby6ek.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Rating",
+            "url": "https://hleby6ek.p.rapidapi.com/stats",
+            "description": "Rating of the game for the month",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hleby6ek.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hleby6ek.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hleby6ek.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hleby6ek.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 1,
+                    "name": "1. Vampire Survivors",
+                    "img": "//steamcdn-a.akamaihd.net/steam/apps/1794680/capsule_184x69.jpg",
+                    "score": "8.80"
+                },
+                {
+                    "id": 2,
+                    "name": "2. Stray",
+                    "img": "//steamcdn-a.akamaihd.net/steam/apps/1332010/capsule_184x69.jpg",
+                    "score": "8.66"
+                },
+                {
+                    "id": 3,
+                    "name": "3. God of War",
+                    "img": "//steamcdn-a.akamaihd.net/steam/apps/1593500/capsule_184x69.jpg",
+                    "score": "8.61"
+                },
+                {
+                    "id": 4,
+                    "name": "4. PowerWash Simulator",
+                    "img": "//steamcdn-a.akamaihd.net/steam/apps/1290000/capsule_184x69.jpg",
+                    "score": "8.58"
+                },
+                {
+                    "id": 5,
+                    "name": "5. Marvel\u2019s Spider-Man Remastered",
+                    "img": "//steamcdn-a.akamaihd.net/steam/apps/1817070/capsule_184x69.jpg",
+                    "score": "8.55"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "hleby6ek"
+}

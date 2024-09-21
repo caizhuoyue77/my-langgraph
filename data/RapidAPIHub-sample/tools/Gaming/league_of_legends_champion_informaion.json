@@ -1,0 +1,85 @@
+{
+    "product_id": "api_fafee0ab-3388-4ffe-9b59-30ed4ce52e7c",
+    "tool_description": "API that will return a Champion object containing a list of Abilities including the champions passive ability. ",
+    "home_url": "https://rapidapi.com/imploms/api/league-of-legends-champion-informaion/",
+    "name": "League Of Legends Champion Informaion",
+    "title": "League Of Legends Champion Informaion",
+    "pricing": "FREEMIUM",
+    "tool_name": "League Of Legends Champion Informaion",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 10364,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "league-of-legends-champion-informaion.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Champions",
+            "url": "https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampions",
+            "description": "Accepts a comma delimited list of champion names or nicknames.\n\nReturns a list of Champions full names and list of passive ability and standard abilities in an on object format.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "champions",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "cait"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampions\"\nquerystring = {\"champions\": \"cait\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-champion-informaion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampions\"\nquerystring = {\"champions\": \"cait\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-champion-informaion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "date": "2023-06-16T10:18:01.6371456+00:00",
+                "champions": [
+                    {
+                        "name": "Caitlyn:",
+                        "p": {
+                            "name": "Headshot",
+                            "description": "Caitlyn's passive ability, which causes her next basic attack after a spellcast to deal bonus damage."
+                        },
+                        "q": {
+                            "name": "Piltover Peacemaker",
+                            "description": "Caitlyn fires a piercing shot, dealing physical damage to enemies in the target area."
+                        },
+                        "w": {
+                            "name": "Yordle Snap Trap",
+                            "description": "Caitlyn sets a trap undetectable to enemies, which stuns the first enemy that steps on it."
+                        },
+                        "e": {
+                            "name": "90 Caliber Net",
+                            "description": "Caitlyn fires a net that knocks back enemies and grants her bonus movement speed."
+                        },
+                        "r": {
+                            "name": "Ace in the Hole",
+                            "description": "Caitlyn takes a long-ranged shot, dealing physical damage to the first enemy hit."
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Champion Abilities as Text",
+            "url": "https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampionAbilitiesText",
+            "description": "Accepts a comma delimited list of champion names/nicknames and returns a text list of champions as well as their passive and standard abilities.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "champion",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "vayne"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampionAbilitiesText\"\nquerystring = {\"champion\": \"vayne\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-champion-informaion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-champion-informaion.p.rapidapi.com/LolInfo/GetChampionAbilitiesText\"\nquerystring = {\"champion\": \"vayne\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-champion-informaion.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "responseText": "\r\n\r\nVayne:\r\nP) Night Hunter: Vayne's passive ability, which grants her bonus movement speed when approaching enemies.\r\nQ) Tumble: Vayne dashes and turns invisible, dealing bonus damage as she lands.\r\nW) Silver Bolts: Vayne fires out bolts of silver, dealing magic damage and stacking bonus true damage with every third hit.\r\nE) Condemn: Vayne fires a bolt of energy, dealing magic damage and knocking enemies back.\r\nR) Final Hour: Vayne calls upon her knightly abilities, granting her bonus attack damage and stealth."
+            }
+        }
+    ],
+    "standardized_name": "league_of_legends_champion_informaion"
+}

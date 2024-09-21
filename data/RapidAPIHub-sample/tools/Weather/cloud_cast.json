@@ -1,0 +1,120 @@
+{
+    "product_id": "api_d28580f8-939e-40db-9815-e492b9c8612d",
+    "tool_description": "Cloudcast is a simple and efficient API built with Node.js and Express, designed to provide real-time weather information for any city in the world. It is able to fetch and deliver current weather conditions including temperature, humidity, wind speed, and other vital meteorological data.",
+    "home_url": "https://rapidapi.com/anthonys1760/api/cloud-cast/",
+    "name": "Cloud Cast",
+    "title": "Cloud Cast",
+    "pricing": "FREEMIUM",
+    "tool_name": "Cloud Cast",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1651,
+        "avgSuccessRate": 86,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "cloud-cast.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get humidty",
+            "url": "https://cloud-cast.p.rapidapi.com/humidity/{city}",
+            "description": "Get the humidity for the current city",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/humidity/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/humidity/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Request failed with status code 404"
+            }
+        },
+        {
+            "name": "Get wind speed",
+            "url": "https://cloud-cast.p.rapidapi.com/wind/{city}",
+            "description": "Get the current wind speed",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/wind/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/wind/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Request failed with status code 404"
+            }
+        },
+        {
+            "name": "Get hourly forecast",
+            "url": "https://cloud-cast.p.rapidapi.com/hourly/{city}",
+            "description": "Get the hourly forecast",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/hourly/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/hourly/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Request failed with status code 404"
+            }
+        },
+        {
+            "name": "Get the forecast",
+            "url": "https://cloud-cast.p.rapidapi.com/forecast/{city}",
+            "description": "Get the forecast for the current city",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/forecast/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/forecast/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Request failed with status code 404"
+            }
+        },
+        {
+            "name": "Get current weather",
+            "url": "https://cloud-cast.p.rapidapi.com/weather/{city}",
+            "description": "Gets the current weather for the inputted city name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/weather/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cloud-cast.p.rapidapi.com/weather/{city}\"\nquerystring = {\"city\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cloud-cast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Request failed with status code 404"
+            }
+        }
+    ],
+    "standardized_name": "cloud_cast"
+}

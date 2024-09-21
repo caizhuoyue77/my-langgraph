@@ -1,0 +1,25 @@
+{
+    "product_id": "api_9062ac4e-c77a-4960-bd37-7d362995165a",
+    "tool_description": "online",
+    "home_url": "https://rapidapi.com/hadijutt34/api/a56219609685dd9033d060cdbb60093c/",
+    "name": "a56219609685dd9033d060cdbb60093c",
+    "title": "a56219609685dd9033d060cdbb60093c",
+    "pricing": "FREE",
+    "tool_name": "a56219609685dd9033d060cdbb60093c",
+    "score": null,
+    "host": "a56219609685dd9033d060cdbb60093c.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "http://newexch.com",
+            "url": "https://a56219609685dd9033d060cdbb60093c.p.rapidapi.comhttp://",
+            "description": "betting exchange",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://a56219609685dd9033d060cdbb60093c.p.rapidapi.comhttp://\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"a56219609685dd9033d060cdbb60093c.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://a56219609685dd9033d060cdbb60093c.p.rapidapi.comhttp://\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"a56219609685dd9033d060cdbb60093c.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "a56219609685dd9033d060cdbb60093c"
+}

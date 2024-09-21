@@ -1,0 +1,405 @@
+{
+    "product_id": "api_f50f72a6-deea-48e9-b03a-476760f0910c",
+    "tool_description": "Get Details aboat players, champions, and more!\n\nCheck the About page for details on every API!",
+    "home_url": "https://rapidapi.com/maconnell.balderas/api/league-of-legends-galore/",
+    "name": "League Of Legends Galore",
+    "title": "League Of Legends Galore",
+    "pricing": "FREEMIUM",
+    "tool_name": "League Of Legends Galore",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2853,
+        "avgSuccessRate": 81,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "league-of-legends-galore.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Player Details",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/getPlayerRank",
+            "description": "Get Player Details based on UserName.\nCase Sensitive!",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "CoreJJ"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "na"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getPlayerRank\"\nquerystring = {\"name\": \"CoreJJ\", \"region\": \"na\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getPlayerRank\"\nquerystring = {\"name\": \"CoreJJ\", \"region\": \"na\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "username": "CoreJJ",
+                    "rank": "Gold IV",
+                    "lp": "52",
+                    "winLossRatio": "7 - 4",
+                    "mostPlayedChamps": [
+                        {
+                            "name": "Jhin",
+                            "winPercentage": "57%",
+                            "totalGames": "35 Played"
+                        },
+                        {
+                            "name": "Elise",
+                            "winPercentage": "71%",
+                            "totalGames": "17 Played"
+                        },
+                        {
+                            "name": "Jax",
+                            "winPercentage": "67%",
+                            "totalGames": "15 Played"
+                        },
+                        {
+                            "name": "Ezreal",
+                            "winPercentage": "33%",
+                            "totalGames": "15 Played"
+                        },
+                        {
+                            "name": "Jinx",
+                            "winPercentage": "46%",
+                            "totalGames": "13 Played"
+                        },
+                        {
+                            "name": "Annie",
+                            "winPercentage": "64%",
+                            "totalGames": "11 Played"
+                        },
+                        {
+                            "name": "Tristana",
+                            "winPercentage": "40%",
+                            "totalGames": "10 Played"
+                        }
+                    ]
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Random Champion",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/randomChamp",
+            "description": "This will go through the list of champions and return a single RANDOM champion!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/randomChamp\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/randomChamp\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "champName": "Kennen",
+                    "blueEssence": 4800,
+                    "RP": 880,
+                    "HP": 611,
+                    "hpGainPerLvL": 98,
+                    "HPR": 5.5,
+                    "hpRegenGainPerLvL": 0.65,
+                    "resource": "Energy",
+                    "mp": 0,
+                    "mpGainPerLvL": 0,
+                    "mpRegen": 0,
+                    "mpRegenGainPerLvL": 0,
+                    "moveSpeed": 335,
+                    "attDamage": 48,
+                    "attDamageGainPerLvL": 3.75,
+                    "attSpeed": 0.625,
+                    "attSpeedGainPerLvL": 3.4,
+                    "range": 550,
+                    "armor": 29,
+                    "armorGainPerLvL": 4.95,
+                    "magicArmor": 30,
+                    "magicArmorGainPerLvL": 1.3,
+                    "releaseDate": "2010-04-08",
+                    "Attributes": "Mage\u2002\u2022\u2002Marksman"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Champion Tier List",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/getChampTierList",
+            "description": "Get either a list of the current champion tier list or a tier list section based on YOUR request!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "rank",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "master"
+                },
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "kr"
+                },
+                {
+                    "name": "tier",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "s+"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getChampTierList\"\nquerystring = {\"rank\": \"master\", \"region\": \"kr\", \"tier\": \"s+\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getChampTierList\"\nquerystring = {\"rank\": \"master\", \"region\": \"kr\", \"tier\": \"s+\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "sTier": [
+                    {
+                        "name": "Neeko",
+                        "role": "MID",
+                        "winRate": "61.5%"
+                    },
+                    {
+                        "name": "Rek'Sai",
+                        "role": "JUNGLE",
+                        "winRate": "57.1%"
+                    },
+                    {
+                        "name": "Blitzcrank",
+                        "role": "SUPPORT",
+                        "winRate": "55.5%"
+                    },
+                    {
+                        "name": "Nidalee",
+                        "role": "JUNGLE",
+                        "winRate": "55.2%"
+                    },
+                    {
+                        "name": "Yuumi",
+                        "role": "SUPPORT",
+                        "winRate": "54.4%"
+                    },
+                    {
+                        "name": "Jax",
+                        "role": "TOP",
+                        "winRate": "54.3%"
+                    },
+                    {
+                        "name": "Fiora",
+                        "role": "TOP",
+                        "winRate": "54.1%"
+                    },
+                    {
+                        "name": "Kha'Zix",
+                        "role": "JUNGLE",
+                        "winRate": "53.9%"
+                    },
+                    {
+                        "name": "Zeri",
+                        "role": "ADC",
+                        "winRate": "53.6%"
+                    },
+                    {
+                        "name": "Milio",
+                        "role": "SUPPORT",
+                        "winRate": "53.0%"
+                    },
+                    {
+                        "name": "Lucian",
+                        "role": "ADC",
+                        "winRate": "53.0%"
+                    },
+                    {
+                        "name": "Graves",
+                        "role": "JUNGLE",
+                        "winRate": "52.3%"
+                    },
+                    {
+                        "name": "Ahri",
+                        "role": "MID",
+                        "winRate": "52.0%"
+                    },
+                    {
+                        "name": "K'Sante",
+                        "role": "TOP",
+                        "winRate": "51.7%"
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All League Ranks",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/getLoLRanks",
+            "description": "Get League of Legends ranks and their player base!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getLoLRanks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/getLoLRanks\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Iron",
+                    "playerBase": "~4.0%"
+                },
+                {
+                    "name": "Bronze",
+                    "playerBase": "~24.0%"
+                },
+                {
+                    "name": "Silver",
+                    "playerBase": "~33.0%"
+                },
+                {
+                    "name": "Gold",
+                    "playerBase": "~25.0%"
+                },
+                {
+                    "name": "Platinum",
+                    "playerBase": "~10.0%"
+                },
+                {
+                    "name": "Diamond",
+                    "playerBase": "~1.9%"
+                },
+                {
+                    "name": "Master",
+                    "playerBase": "~0.27%"
+                },
+                {
+                    "name": "GrandMaster",
+                    "playerBase": "~0.025%"
+                },
+                {
+                    "name": "Challenger",
+                    "playerBase": "0.011%"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search For A Champion",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/selectChamp",
+            "description": "This will go through the list of champions and return a single champion or a list of champions depending on YOUR request!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "releaseDate",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "zed"
+                },
+                {
+                    "name": "resource",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "rp",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "blueEssence",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "attribute",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/selectChamp\"\nquerystring = {\"releaseDate\": \"\", \"name\": \"zed\", \"resource\": \"\", \"rp\": \"\", \"blueEssence\": \"\", \"attribute\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/selectChamp\"\nquerystring = {\"releaseDate\": \"\", \"name\": \"zed\", \"resource\": \"\", \"rp\": \"\", \"blueEssence\": \"\", \"attribute\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Random Item",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/randomItem",
+            "description": "This will go through the list of items and return a single RANDOM item!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/randomItem\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/randomItem\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Stopwatch",
+                    "price": "750",
+                    "itemSynergy": [
+                        "Rylai's Crystal Scepter",
+                        "Immortal Shieldbow",
+                        "Death's Dance",
+                        "Rabadon's Deathcap",
+                        "Infinity Edge"
+                    ],
+                    "champSynergy": [
+                        "Dr. Mundo",
+                        "Nami",
+                        "Fiora",
+                        "Swain",
+                        "Heimerdinger"
+                    ]
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search For A Item",
+            "url": "https://league-of-legends-galore.p.rapidapi.com/api/selectItem",
+            "description": "This will go through the list of items and return a single item or a list of items depending on YOUR request!",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "champSynergy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "itemSynergy",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "price",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "sword"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/selectItem\"\nquerystring = {\"champSynergy\": \"\", \"itemSynergy\": \"\", \"price\": \"\", \"name\": \"sword\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://league-of-legends-galore.p.rapidapi.com/api/selectItem\"\nquerystring = {\"champSynergy\": \"\", \"itemSynergy\": \"\", \"price\": \"\", \"name\": \"sword\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"league-of-legends-galore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "league_of_legends_galore"
+}

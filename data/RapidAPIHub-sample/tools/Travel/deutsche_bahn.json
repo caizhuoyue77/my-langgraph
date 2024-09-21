@@ -1,0 +1,154 @@
+{
+    "product_id": "api_95635e45-5432-47ad-86a9-6dfbc889359e",
+    "tool_description": "Search stations and trips within Deutsche Bahn network. Find a train or public transport stop, search trains, trams, subway, and buses between two stations in the german railway network.. Get journey and fare data, departure and arrival times for any stop in Germany",
+    "home_url": "https://rapidapi.com/3b-data-3b-data-default/api/deutsche-bahn1/",
+    "name": "Deutsche Bahn",
+    "title": "Deutsche Bahn",
+    "pricing": "FREEMIUM",
+    "tool_name": "Deutsche Bahn",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 1792,
+        "avgSuccessRate": 90,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "deutsche-bahn1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search trips",
+            "url": "https://deutsche-bahn1.p.rapidapi.com/trips",
+            "description": "Find trips between two stations",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "Travel date in format DD.MM.YYYY",
+                    "default": "16.02.2022"
+                },
+                {
+                    "name": "from_id",
+                    "type": "STRING",
+                    "description": "Departure id",
+                    "default": "008011201"
+                },
+                {
+                    "name": "passenger0_age",
+                    "type": "NUMBER",
+                    "description": "Age of the first passenger",
+                    "default": "45"
+                },
+                {
+                    "name": "time",
+                    "type": "TIME (24-hour HH:MM)",
+                    "description": "Travel time",
+                    "default": "09:00"
+                },
+                {
+                    "name": "to_id",
+                    "type": "STRING",
+                    "description": "Arrival id",
+                    "default": "008011155"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "passenger3_age",
+                    "type": "NUMBER",
+                    "description": "Age of the fourth passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger2_discount",
+                    "type": "ENUM",
+                    "description": "Discount of the third passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger4_discount",
+                    "type": "ENUM",
+                    "description": "Discount of the fifth passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger1_discount",
+                    "type": "ENUM",
+                    "description": "Discount of the second passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger3_discount",
+                    "type": "ENUM",
+                    "description": "Discount of the fourth passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger2_age",
+                    "type": "NUMBER",
+                    "description": "Age of the third passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger0_discount",
+                    "type": "ENUM",
+                    "description": "Discount of the first passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger4_age",
+                    "type": "NUMBER",
+                    "description": "Age of the fifth passenger",
+                    "default": ""
+                },
+                {
+                    "name": "passenger1_age",
+                    "type": "NUMBER",
+                    "description": "Age of the second passenger",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://deutsche-bahn1.p.rapidapi.com/trips\"\nquerystring = {\"passenger3_age\": \"\", \"passenger2_discount\": \"\", \"passenger4_discount\": \"\", \"date\": \"16.02.2022\", \"passenger1_discount\": \"\", \"passenger3_discount\": \"\", \"from_id\": \"008011201\", \"passenger2_age\": \"\", \"passenger0_discount\": \"\", \"passenger4_age\": \"\", \"passenger0_age\": \"45\", \"time\": \"09:00\", \"passenger1_age\": \"\", \"to_id\": \"008011155\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"deutsche-bahn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://deutsche-bahn1.p.rapidapi.com/trips\"\nquerystring = {\"passenger3_age\": \"\", \"passenger2_discount\": \"\", \"passenger4_discount\": \"\", \"date\": \"16.02.2022\", \"passenger1_discount\": \"\", \"passenger3_discount\": \"\", \"from_id\": \"008011201\", \"passenger2_age\": \"\", \"passenger0_discount\": \"\", \"passenger4_age\": \"\", \"passenger0_age\": \"45\", \"time\": \"09:00\", \"passenger1_age\": \"\", \"to_id\": \"008011155\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"deutsche-bahn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Autocomplete",
+            "url": "https://deutsche-bahn1.p.rapidapi.com/autocomplete",
+            "description": "Search for train and public transport stations in Germany and across Europe",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "Query parameter",
+                    "default": "berlin"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://deutsche-bahn1.p.rapidapi.com/autocomplete\"\nquerystring = {\"query\": \"berlin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"deutsche-bahn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://deutsche-bahn1.p.rapidapi.com/autocomplete\"\nquerystring = {\"query\": \"berlin\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"deutsche-bahn1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "string"
+                        },
+                        "name": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "deutsche_bahn"
+}

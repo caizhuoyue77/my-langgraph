@@ -1,0 +1,31 @@
+{
+    "product_id": "api_a1417b75-996e-423d-bd5e-f4e7bdba06e1",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/sudhir18/api/media-group/",
+    "name": "Media-Group",
+    "title": "Media-Group",
+    "pricing": "FREE",
+    "tool_name": "Media-Group",
+    "score": {
+        "avgServiceLevel": 94,
+        "avgLatency": 1842,
+        "avgSuccessRate": 75,
+        "popularityScore": 7.3,
+        "__typename": "Score"
+    },
+    "host": "media-group.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "List genres",
+            "url": "https://media-group.p.rapidapi.com/genres",
+            "description": "List genres",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://media-group.p.rapidapi.com/genres\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"media-group.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://media-group.p.rapidapi.com/genres\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"media-group.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "media_group"
+}

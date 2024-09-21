@@ -1,0 +1,403 @@
+{
+    "product_id": "api_5bcab372-708b-4be7-8153-67f76fd06228",
+    "tool_description": "Get K-POP detailed songs, idol, group info!",
+    "home_url": "https://rapidapi.com/thunderapi-thunderapi-default/api/k-pop/",
+    "name": "K-POP",
+    "title": "K-POP",
+    "pricing": "FREEMIUM",
+    "tool_name": "K-POP",
+    "score": {
+        "avgServiceLevel": 97,
+        "avgLatency": 554,
+        "avgSuccessRate": 95,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "k-pop.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "girl-groups",
+            "url": "https://k-pop.p.rapidapi.com/girl-groups",
+            "description": "Get info of girl-groups",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query to search\n(Required)",
+                    "default": "Twice"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "by",
+                    "type": "STRING",
+                    "description": "default: Stage Name\n'by' parameter help you choose which info you would like to query based on.\n\nOnly the below values can be accepted for 'by'. \n\n- Group Name (default)\n- Short Group Name\n- Korean Name\n- Date of Debut\n- Company\n- Members\n- Original Members\n- Fanclub Name\n- Active",
+                    "default": "Group Name"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "default: all there is\ncount limit for result",
+                    "default": ""
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "default: 0\noffset for the result data",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/girl-groups\"\nquerystring = {\"by\": \"Group Name\", \"limit\": \"\", \"q\": \"Twice\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/girl-groups\"\nquerystring = {\"by\": \"Group Name\", \"limit\": \"\", \"q\": \"Twice\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Group Profile": "https://dbkpop.com/group/twice/",
+                        "Group Name": "TWICE",
+                        "Short Group Name": null,
+                        "Korean Name": "\ud2b8\uc640\uc774\uc2a4",
+                        "Date of Debut": "2015-10-20",
+                        "Company": "JYP",
+                        "Members": "9",
+                        "Orginal Members": "9",
+                        "Fanclub Name": "Once",
+                        "Active": "Yes"
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "random girl-group",
+            "url": "https://k-pop.p.rapidapi.com/girl-groups/random",
+            "description": "Get random girl-group",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/girl-groups/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/girl-groups/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Group Profile": "https://dbkpop.com/group/viviz/",
+                        "Group Name": "VIVIZ",
+                        "Short Group Name": null,
+                        "Korean Name": "\ube44\ube44\uc9c0",
+                        "Date of Debut": null,
+                        "Company": "Big Planet Made",
+                        "Members": "3",
+                        "Orginal Members": "3",
+                        "Fanclub Name": null,
+                        "Active": "Yes"
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "random boy-group",
+            "url": "https://k-pop.p.rapidapi.com/boy-groups/random",
+            "description": "Get random boy-group",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/boy-groups/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/boy-groups/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Group Profile": null,
+                        "Group Name": "JBJ95",
+                        "Short Group Name": null,
+                        "Korean Name": "\uc81c\uc774\ube44\uc81c\uc77495",
+                        "Date of Debut": "2018-10-30",
+                        "Company": "Hunus",
+                        "Members": "2",
+                        "Orginal Members": "2",
+                        "Fanclub Name": null,
+                        "Active": "Yes"
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "songs",
+            "url": "https://k-pop.p.rapidapi.com/songs",
+            "description": "Get K-POP songs info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query to search\n(Required)",
+                    "default": "Spring Day"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "by",
+                    "type": "STRING",
+                    "description": "default: Song Name\n'by' parameter help you choose which info you would like to query based on.\n\nOnly the below values can be accepted for \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"by\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\". \n\n- Song Name (default)\n- Date\n- Artist\n- Korean Name\n- Director\n- Type\n- Release\n",
+                    "default": "Song Name"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "default: all there is\ncount limit for result",
+                    "default": ""
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "default: 0\noffset for the result data",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/songs\"\nquerystring = {\"by\": \"Song Name\", \"q\": \"Spring Day\", \"limit\": \"\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/songs\"\nquerystring = {\"by\": \"Song Name\", \"q\": \"Spring Day\", \"limit\": \"\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Post": "",
+                        "Date": "2015-04-03",
+                        "Artist": "Take",
+                        "Song Name": "One Spring Day",
+                        "Korean Name": "\uc5b4\ub290 \ubd04\ub0a0\uc5d0",
+                        "Director": "",
+                        "Video": "https://youtu.be/_7EyhXyeA8A",
+                        "Type": "Boy",
+                        "Release": "Major"
+                    },
+                    {
+                        "Post": "https://dbkpop.com/mv/bts-spring-day/",
+                        "Date": "2017-02-13",
+                        "Artist": "BTS",
+                        "Song Name": "Spring Day",
+                        "Korean Name": "\ubd04\ub0a0",
+                        "Director": "LUMPENS",
+                        "Video": "https://youtu.be/xEeFrLSkMm8",
+                        "Type": "Boy",
+                        "Release": "Major"
+                    },
+                    {
+                        "Post": "",
+                        "Date": "2013-03-04",
+                        "Artist": "2AM",
+                        "Song Name": "One Spring Day",
+                        "Korean Name": "\uc5b4\ub290 \ubd04\ub0a0",
+                        "Director": "ZANYBROS",
+                        "Video": "https://youtu.be/UKgK5LqT6BY",
+                        "Type": "Boy",
+                        "Release": "Major"
+                    },
+                    {
+                        "Post": "",
+                        "Date": "2011-11-07",
+                        "Artist": "Urban Zakapa",
+                        "Song Name": "One Spring Day",
+                        "Korean Name": "\ubd04\uc744 \uadf8\ub9ac\ub2e4",
+                        "Director": "",
+                        "Video": "https://youtu.be/uFoCayuOaAE",
+                        "Type": "Co-ed",
+                        "Release": "Minor"
+                    }
+                ],
+                "count": 4
+            }
+        },
+        {
+            "name": "random idol",
+            "url": "https://k-pop.p.rapidapi.com/idols/random",
+            "description": "Get random idol",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/idols/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/idols/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Profile": "https://dbkpop.com/idol/jinyoung-got7/",
+                        "Stage Name": "Jinyoung",
+                        "Full Name": "Park Jinyoung",
+                        "Korean Name": "\ubc15\uc9c4\uc601",
+                        "K. Stage Name": "\uc9c4\uc601",
+                        "Date of Birth": "1994-09-22",
+                        "Group": "GOT7",
+                        "Country": "South Korea",
+                        "Second Country": null,
+                        "Height": "178",
+                        "Weight": "63",
+                        "Birthplace": "Changwon",
+                        "Other Group": null,
+                        "Former Group": null,
+                        "Gender": "M",
+                        "Position": null,
+                        "Instagram": null,
+                        "Twitter": null
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "boy-groups",
+            "url": "https://k-pop.p.rapidapi.com/boy-groups",
+            "description": "Get boy-groups info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query to search\n(Required)",
+                    "default": "BTS"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "default: 0\noffset for the result data",
+                    "default": ""
+                },
+                {
+                    "name": "by",
+                    "type": "STRING",
+                    "description": "default: Stage Name\n'by' parameter help you choose which info you would like to query based on.\n\nOnly the below values can be accepted for 'by'. \n\n- Group Name (default)\n- Short Group Name\n- Korean Name\n- Date of Debut\n- Company\n- Members\n- Original Members\n- Fanclub Name\n- Active",
+                    "default": "Group Name"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "default: all there is\ncount limit for result",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/boy-groups\"\nquerystring = {\"offset\": \"\", \"by\": \"Group Name\", \"limit\": \"\", \"q\": \"BTS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/boy-groups\"\nquerystring = {\"offset\": \"\", \"by\": \"Group Name\", \"limit\": \"\", \"q\": \"BTS\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Group Profile": "https://dbkpop.com/group/bts/",
+                        "Group Name": "BTS",
+                        "Short Group Name": "Bangtan Boys",
+                        "Korean Name": "\ubc29\ud0c4\uc18c\ub144\ub2e8",
+                        "Date of Debut": "2013-06-13",
+                        "Company": "Big Hit",
+                        "Members": "7",
+                        "Orginal Members": "7",
+                        "Fanclub Name": "ARMY",
+                        "Active": "Yes"
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "random song",
+            "url": "https://k-pop.p.rapidapi.com/songs/random",
+            "description": "Get random K-POP song",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/songs/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/songs/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Post": "",
+                        "Date": "2017-01-06",
+                        "Artist": "DAY6",
+                        "Song Name": "I Wait",
+                        "Korean Name": "\uc544 \uc65c",
+                        "Director": "Naive",
+                        "Video": "https://youtu.be/O3nFopIjmjI",
+                        "Type": "Boy",
+                        "Release": "Major"
+                    }
+                ],
+                "count": 1
+            }
+        },
+        {
+            "name": "Idols",
+            "url": "https://k-pop.p.rapidapi.com/idols",
+            "description": "Get idol individual info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Query to search\n(Required)",
+                    "default": "Jungkook"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "by",
+                    "type": "STRING",
+                    "description": "default: Stage Name\n'by' parameter help you choose which info you would like to query based on.\n\nOnly the below values can be accepted for 'by'\n\n-  Stage Name (default)\n- Full Name\n- Korean Name\n- K. Stage Name\n- Date of Birth\n- Group\n- Country\n- Second Country\n- Height\n- Weight\n- Birthplace\n- Other Group\n- Former Group\n- Gender\n- Position\n- Instagram\n- Twitter\n",
+                    "default": "Stage Name"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "default: all there is\ncount limit for result",
+                    "default": ""
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "default: 0\noffset for the result data",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/idols\"\nquerystring = {\"by\": \"Stage Name\", \"q\": \"Jungkook\", \"limit\": \"\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://k-pop.p.rapidapi.com/idols\"\nquerystring = {\"by\": \"Stage Name\", \"q\": \"Jungkook\", \"limit\": \"\", \"offset\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"k-pop.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "success",
+                "message": "Data fetched successfully",
+                "data": [
+                    {
+                        "Profile": "https://dbkpop.com/idol/jungkook-bts/",
+                        "Stage Name": "Jungkook",
+                        "Full Name": "Jeon Jungkook",
+                        "Korean Name": "\uc804\uc815\uad6d",
+                        "K. Stage Name": "\uc815\uad6d",
+                        "Date of Birth": "1997-09-01",
+                        "Group": "BTS",
+                        "Country": "South Korea",
+                        "Second Country": null,
+                        "Height": "178",
+                        "Weight": "66",
+                        "Birthplace": "Busan",
+                        "Other Group": null,
+                        "Former Group": null,
+                        "Gender": "M",
+                        "Position": null,
+                        "Instagram": null,
+                        "Twitter": null
+                    }
+                ],
+                "count": 1
+            }
+        }
+    ],
+    "standardized_name": "k_pop"
+}

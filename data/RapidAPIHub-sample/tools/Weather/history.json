@@ -1,0 +1,2292 @@
+{
+    "product_id": "api_901e945b-a0ef-4cbd-a184-02047cb1c6ba",
+    "tool_description": "Get 20 years historical weather data in Europe + Pollen + UV + Air Quality data",
+    "home_url": "https://rapidapi.com/wettercom-wettercom-data/api/history3/",
+    "name": "History",
+    "title": "History",
+    "pricing": "FREEMIUM",
+    "tool_name": "History",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1625,
+        "avgSuccessRate": 77,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "history3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "hourlyWeather",
+            "url": "https://history3.p.rapidapi.com/v0/hourly/10.87152/46.95828/20210101",
+            "description": "This endpoint returns the historical weather on hourly level for a given day for a given location (latitude and longitude)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude in decimal format of the requested point",
+                    "default": "46.95828"
+                },
+                {
+                    "name": "parameters",
+                    "type": "STRING",
+                    "description": "Define the parameter, you wish to request. Allowed options are \\\"all\\\", \\\"air_quality\\\", \\\"anomaly\\\", \\\"astronomy\\\", \\\"weather\\\", \\\"signal\\\", \\\"pollen\\\"",
+                    "default": "weather"
+                },
+                {
+                    "name": "day",
+                    "type": "STRING",
+                    "description": "The requested day in the format \\\"YYYYmmdd\\\"",
+                    "default": "20210101"
+                },
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "The longitude in decimal format of the requested point",
+                    "default": "10.87152"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/hourly/10.87152/46.95828/20210101\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/hourly/{lng}/{lat}/{day}\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "astronomy": {
+                    "max_sunshine": 8.6,
+                    "sunrise": "2021-01-01 07:02:00 UTC",
+                    "sunset": "2021-01-01 15:38:00 UTC"
+                },
+                "location": {
+                    "date": "2021-01-01",
+                    "height": 1847,
+                    "latitude": 46.95828,
+                    "longitude": 10.87152
+                },
+                "meta": {
+                    "additional_info": null,
+                    "errors": null
+                },
+                "weather": [
+                    {
+                        "air_pressure": 1006.8,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.3,
+                        "cloud_cover": 7.9,
+                        "dew_point": -17.6,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 55.5,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 00:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.5,
+                        "wind_direction": 206.0,
+                        "wind_peak": 9.6,
+                        "windchill": -12.1
+                    },
+                    {
+                        "air_pressure": 1007.3,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.5,
+                        "cloud_cover": 8.0,
+                        "dew_point": -17.5,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 57.0,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 01:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.7,
+                        "wind_direction": 189.9,
+                        "wind_peak": 10.0,
+                        "windchill": -12.5
+                    },
+                    {
+                        "air_pressure": 1007.1,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.7,
+                        "cloud_cover": 7.9,
+                        "dew_point": -17.6,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 57.6,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 02:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.6,
+                        "wind_direction": 173.4,
+                        "wind_peak": 10.5,
+                        "windchill": -12.7
+                    },
+                    {
+                        "air_pressure": 1006.6,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.8,
+                        "cloud_cover": 7.9,
+                        "dew_point": -17.7,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 57.1,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 03:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.5,
+                        "wind_direction": 174.8,
+                        "wind_peak": 10.9,
+                        "windchill": -12.7
+                    },
+                    {
+                        "air_pressure": 1006.6,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.9,
+                        "cloud_cover": 8.0,
+                        "dew_point": -17.8,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 57.7,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 04:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.4,
+                        "wind_direction": 176.2,
+                        "wind_peak": 10.8,
+                        "windchill": -12.8
+                    },
+                    {
+                        "air_pressure": 1007.2,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.9,
+                        "cloud_cover": 8.0,
+                        "dew_point": -17.6,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 58.3,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 05:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.5,
+                        "wind_direction": 176.1,
+                        "wind_peak": 10.4,
+                        "windchill": -12.8
+                    },
+                    {
+                        "air_pressure": 1007.5,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.8,
+                        "cloud_cover": 8.0,
+                        "dew_point": -17.2,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 60.1,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 06:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.2,
+                        "wind_direction": 173.2,
+                        "wind_peak": 10.7,
+                        "windchill": -12.5
+                    },
+                    {
+                        "air_pressure": 1008.2,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.6,
+                        "cloud_cover": 8.0,
+                        "dew_point": -16.6,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 61.9,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 07:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.1,
+                        "wind_direction": 170.7,
+                        "wind_peak": 10.8,
+                        "windchill": -12.2
+                    },
+                    {
+                        "air_pressure": 1008.5,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.5,
+                        "cloud_cover": 8.0,
+                        "dew_point": -16.4,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 61.7,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 08:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.2,
+                        "wind_direction": 170.4,
+                        "wind_peak": 11.7,
+                        "windchill": -12.1
+                    },
+                    {
+                        "air_pressure": 1008.8,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.2,
+                        "cloud_cover": 7.8,
+                        "dew_point": -16.2,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 61.3,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 1.8,
+                        "time": "2021-01-01 09:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.1,
+                        "wind_direction": 166.4,
+                        "wind_peak": 12.3,
+                        "windchill": -11.7
+                    },
+                    {
+                        "air_pressure": 1009.2,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.9,
+                        "cloud_cover": 7.0,
+                        "dew_point": -15.7,
+                        "evaporation_pressure": 2.9,
+                        "precipitation": -0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 62.0,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 7.4,
+                        "time": "2021-01-01 10:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.1,
+                        "wind_direction": 160.6,
+                        "wind_peak": 12.7,
+                        "windchill": -11.4
+                    },
+                    {
+                        "air_pressure": 1009.1,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.5,
+                        "cloud_cover": 6.4,
+                        "dew_point": -15.0,
+                        "evaporation_pressure": 3.0,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 63.7,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 12.2,
+                        "time": "2021-01-01 11:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 3.1,
+                        "wind_direction": 154.3,
+                        "wind_peak": 12.7,
+                        "windchill": -10.9
+                    },
+                    {
+                        "air_pressure": 1008.8,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.2,
+                        "cloud_cover": 8.0,
+                        "dew_point": -14.1,
+                        "evaporation_pressure": 3.0,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 67.2,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 12:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.8,
+                        "wind_direction": 149.9,
+                        "wind_peak": 13.2,
+                        "windchill": -10.3
+                    },
+                    {
+                        "air_pressure": 1008.7,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.0,
+                        "cloud_cover": 8.0,
+                        "dew_point": -13.4,
+                        "evaporation_pressure": 3.1,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 70.2,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 13:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.5,
+                        "wind_direction": 144.4,
+                        "wind_peak": 13.9,
+                        "windchill": -9.7
+                    },
+                    {
+                        "air_pressure": 1009.0,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.0,
+                        "cloud_cover": 7.2,
+                        "dew_point": -12.9,
+                        "evaporation_pressure": 3.1,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 73.3,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 6.0,
+                        "time": "2021-01-01 14:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.6,
+                        "wind_direction": 142.4,
+                        "wind_peak": 13.9,
+                        "windchill": -9.9
+                    },
+                    {
+                        "air_pressure": 1009.0,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.3,
+                        "cloud_cover": 6.8,
+                        "dew_point": -12.6,
+                        "evaporation_pressure": 3.0,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 77.3,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 3.2,
+                        "time": "2021-01-01 15:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.6,
+                        "wind_direction": 143.4,
+                        "wind_peak": 13.7,
+                        "windchill": -10.2
+                    },
+                    {
+                        "air_pressure": 1009.4,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -9.8,
+                        "cloud_cover": 6.7,
+                        "dew_point": -12.8,
+                        "evaporation_pressure": 2.9,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 78.9,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 16:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.5,
+                        "wind_direction": 145.7,
+                        "wind_peak": 14.9,
+                        "windchill": -10.6
+                    },
+                    {
+                        "air_pressure": 1009.5,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.2,
+                        "cloud_cover": 6.7,
+                        "dew_point": -13.3,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 78.8,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 17:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.4,
+                        "wind_direction": 148.7,
+                        "wind_peak": 15.1,
+                        "windchill": -11.0
+                    },
+                    {
+                        "air_pressure": 1009.5,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.5,
+                        "cloud_cover": 7.1,
+                        "dew_point": -13.6,
+                        "evaporation_pressure": 2.8,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 78.2,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 18:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.3,
+                        "wind_direction": 157.0,
+                        "wind_peak": 13.8,
+                        "windchill": -11.1
+                    },
+                    {
+                        "air_pressure": 1009.6,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.6,
+                        "cloud_cover": 7.7,
+                        "dew_point": -13.3,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.0,
+                        "precipitation_form": 0,
+                        "relative_humidity": 81.3,
+                        "snowfall": 0.0,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 19:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.6,
+                        "wind_direction": 158.7,
+                        "wind_peak": 14.8,
+                        "windchill": -11.6
+                    },
+                    {
+                        "air_pressure": 1009.5,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.7,
+                        "cloud_cover": 7.0,
+                        "dew_point": -13.5,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.1,
+                        "precipitation_form": 7,
+                        "relative_humidity": 80.3,
+                        "snowfall": 0.1,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 20:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.2,
+                        "wind_direction": 159.2,
+                        "wind_peak": 15.1,
+                        "windchill": -11.2
+                    },
+                    {
+                        "air_pressure": 1010.3,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.9,
+                        "cloud_cover": 6.8,
+                        "dew_point": -13.1,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.1,
+                        "precipitation_form": 7,
+                        "relative_humidity": 84.1,
+                        "snowfall": 0.1,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 21:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.4,
+                        "wind_direction": 155.9,
+                        "wind_peak": 14.7,
+                        "windchill": -11.6
+                    },
+                    {
+                        "air_pressure": 1010.2,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.9,
+                        "cloud_cover": 7.4,
+                        "dew_point": -13.2,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.1,
+                        "precipitation_form": 7,
+                        "relative_humidity": 83.8,
+                        "snowfall": 0.1,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 22:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.3,
+                        "wind_direction": 154.9,
+                        "wind_peak": 15.3,
+                        "windchill": -11.5
+                    },
+                    {
+                        "air_pressure": 1010.4,
+                        "air_temp_anomaly": null,
+                        "air_temp_long_time_avg": null,
+                        "air_temp_mean": -10.8,
+                        "cloud_cover": 7.9,
+                        "dew_point": -13.2,
+                        "evaporation_pressure": 2.7,
+                        "precipitation": 0.1,
+                        "precipitation_form": 7,
+                        "relative_humidity": 83.9,
+                        "snowfall": 0.1,
+                        "solar_radiation": null,
+                        "sunshine": 0.0,
+                        "time": "2021-01-01 23:00:00 UTC",
+                        "weather_state": null,
+                        "wind_avg": 2.0,
+                        "wind_direction": 156.3,
+                        "wind_peak": 14.8,
+                        "windchill": -11.2
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "description": "Hourly values of the the requested parameters",
+                "properties": {
+                    "air_quality": {
+                        "items": {
+                            "properties": {
+                                "CO": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "Distance": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "NO2": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "O3": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "PM10": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "SO2": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "time": {
+                                    "format": "date-time",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "astronomy": {
+                        "properties": {
+                            "max_sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunrise": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "sunset": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "location": {
+                        "properties": {
+                            "date": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "height": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "latitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "meta": {
+                        "properties": {
+                            "additional_info": {
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "string"
+                            },
+                            "sources": {
+                                "items": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather": {
+                        "items": {
+                            "properties": {
+                                "air_pressure": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_anomaly": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_long_time_avg": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_mean": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "cloud_cover": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "dew_point": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "evaporation_pressure": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "precipitation": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "precipitation_form": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "relative_humidity": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "snowfall": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "sunshine": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "time": {
+                                    "format": "date-time",
+                                    "type": "string"
+                                },
+                                "wind_avg": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "wind_direction": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "wind_peak": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "hourlyWeatherZip",
+            "url": "https://history3.p.rapidapi.com/v0/hourly-zip/DE/81245/20210101",
+            "description": "This endpoint returns the historical weather on hourly level for a given day for a given location (country and zip-code)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "parameters",
+                    "type": "STRING",
+                    "description": "Define the parameter, you wish to request. Allowed options are \\\\\\\"all\\\\\\\", \\\\\\\"air_quality\\\\\\\", \\\\\\\"anomaly\\\\\\\", \\\\\\\"astronomy\\\\\\\", \\\\\\\"weather\\\\\\\", \\\\\\\"signal\\\\\\\", \\\\\\\"pollen\\\\\\\"",
+                    "default": "weather"
+                },
+                {
+                    "name": "zip-code",
+                    "type": "STRING",
+                    "description": "The postal code for the requested country",
+                    "default": "81245"
+                },
+                {
+                    "name": "day",
+                    "type": "STRING",
+                    "description": "The requested day in the format \\\\\\\"YYYYmmdd\\\\\\\"",
+                    "default": "20210101"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "The ISO Alpha-2 code of the country",
+                    "default": "DE"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/hourly-zip/DE/81245/20210101\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/hourly-zip/{country}/{zip_code}/{day}\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the DAILY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/wettercom-wettercom-data/api/history3"
+            },
+            "statuscode": 200,
+            "schema": {
+                "description": "Hourly values of the the requested parameters",
+                "properties": {
+                    "air_quality": {
+                        "items": {
+                            "properties": {
+                                "CO": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "Distance": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "NO2": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "O3": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "PM10": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "SO2": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "time": {
+                                    "format": "date-time",
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "astronomy": {
+                        "properties": {
+                            "max_sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunrise": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "sunset": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "location": {
+                        "properties": {
+                            "date": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "height": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "latitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "meta": {
+                        "properties": {
+                            "additional_info": {
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "string"
+                            },
+                            "sources": {
+                                "items": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather": {
+                        "items": {
+                            "properties": {
+                                "air_pressure": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_anomaly": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_long_time_avg": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "air_temp_mean": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "cloud_cover": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "dew_point": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "evaporation_pressure": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "precipitation": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "precipitation_form": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "relative_humidity": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "snowfall": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "sunshine": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "time": {
+                                    "format": "date-time",
+                                    "type": "string"
+                                },
+                                "wind_avg": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "wind_direction": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                },
+                                "wind_peak": {
+                                    "format": "float",
+                                    "maximum": 3.402823669209385e+38,
+                                    "minimum": -3.402823669209385e+38,
+                                    "type": "number"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "dailyWeatherZip",
+            "url": "https://history3.p.rapidapi.com/v0/daily-zip/DE/81245/20210101",
+            "description": "This endpoint returns the historical weather for a given day for a given location (Country and zip code)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "The ISO Alpha-2 code of the country",
+                    "default": "DE"
+                },
+                {
+                    "name": "zip-code",
+                    "type": "STRING",
+                    "description": "The postal code for the requested country",
+                    "default": "81245"
+                },
+                {
+                    "name": "parameters",
+                    "type": "STRING",
+                    "description": "Define the parameter, you wish to request. Allowed options are \\\\\\\"all\\\\\\\", \\\\\\\"air_quality\\\\\\\", \\\\\\\"anomaly\\\\\\\", \\\\\\\"astronomy\\\\\\\", \\\\\\\"weather\\\\\\\", \\\\\\\"signal\\\\\\\", \\\\\\\"pollen\\\\\\\", \\\\\\\"occurrence\\\\\\\"",
+                    "default": "weather"
+                },
+                {
+                    "name": "day",
+                    "type": "STRING",
+                    "description": "The requested day in the format \\\\\\\"YYYYmmdd\\\\\\\"",
+                    "default": "20210101"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily-zip/DE/81245/20210101\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily-zip/{country}/{zip_code}/{day}\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the DAILY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/wettercom-wettercom-data/api/history3"
+            },
+            "statuscode": 200,
+            "schema": {
+                "description": "Daily summary of the the requested parameters",
+                "properties": {
+                    "air_quality": {
+                        "properties": {
+                            "CO": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "Distance": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "NO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "O3": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "PM10": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "SO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "anomaly": {
+                        "properties": {
+                            "long_time_t2m_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "astronomy": {
+                        "properties": {
+                            "max_sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunrise": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "sunset": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "loacation": {
+                        "properties": {
+                            "date": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "height": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "latitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "meta": {
+                        "properties": {
+                            "additional_info": {
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "string"
+                            },
+                            "sources": {
+                                "items": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "occurrence": {
+                        "properties": {
+                            "max_cloud_cover": {
+                                "type": "number"
+                            },
+                            "max_precipatiation_intensity": {
+                                "type": "number"
+                            },
+                            "max_temperature": {
+                                "type": "number"
+                            },
+                            "min_cloud_cover": {
+                                "type": "number"
+                            },
+                            "min_temperature": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "pollen": {
+                        "properties": {
+                            "alder": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ambrosia": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ash": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "birch": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "day": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "grasses": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "hazel": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "mugwort": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "rye": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather": {
+                        "properties": {
+                            "air_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "cloud_cover": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "dew_point": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "evaporation_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation_form": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "relative_humidity": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "snowfall": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_direction": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_peak": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather_signals": {
+                        "properties": {
+                            "ice_day": {
+                                "type": "boolean"
+                            },
+                            "rain_day": {
+                                "type": "boolean"
+                            },
+                            "snow_day": {
+                                "type": "boolean"
+                            },
+                            "summer_day": {
+                                "type": "boolean"
+                            },
+                            "tropical_night": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "windchill": {
+                        "properties": {
+                            "temp_max_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_mean_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_min_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "dailyWeather",
+            "url": "https://history3.p.rapidapi.com/v0/daily/10.87152/46.95828/20210101",
+            "description": "This endpoint returns the historical weather for a given day for a given location (latitude and longitude)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "The longitude in decimal format of the requested point",
+                    "default": "10.87152"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude in decimal format of the requested point",
+                    "default": "46.95828"
+                },
+                {
+                    "name": "parameters",
+                    "type": "STRING",
+                    "description": "Define the parameter, you wish to request. Allowed options are \\\"all\\\", \\\"air_quality\\\", \\\"anomaly\\\", \\\"astronomy\\\", \\\"weather\\\", \\\"signal\\\", \\\"pollen\\\", \\\"occurrence\\\"",
+                    "default": "weather"
+                },
+                {
+                    "name": "day",
+                    "type": "STRING",
+                    "description": "The requested day in the format \\\"YYYYmmdd\\\"",
+                    "default": "20210101"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily/10.87152/46.95828/20210101\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily/{lng}/{lat}/{day}\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the DAILY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/wettercom-wettercom-data/api/history3"
+            },
+            "statuscode": 200,
+            "schema": {
+                "description": "Daily summary of the the requested parameters",
+                "properties": {
+                    "air_quality": {
+                        "properties": {
+                            "CO": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "Distance": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "NO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "O3": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "PM10": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "SO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "anomaly": {
+                        "properties": {
+                            "long_time_t2m_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "astronomy": {
+                        "properties": {
+                            "max_sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunrise": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "sunset": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "loacation": {
+                        "properties": {
+                            "date": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "height": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "latitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "meta": {
+                        "properties": {
+                            "additional_info": {
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "string"
+                            },
+                            "sources": {
+                                "items": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "occurrence": {
+                        "properties": {
+                            "max_cloud_cover": {
+                                "type": "number"
+                            },
+                            "max_precipatiation_intensity": {
+                                "type": "number"
+                            },
+                            "max_temperature": {
+                                "type": "number"
+                            },
+                            "min_cloud_cover": {
+                                "type": "number"
+                            },
+                            "min_temperature": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "pollen": {
+                        "properties": {
+                            "alder": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ambrosia": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ash": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "birch": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "day": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "grasses": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "hazel": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "mugwort": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "rye": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather": {
+                        "properties": {
+                            "air_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "cloud_cover": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "dew_point": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "evaporation_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation_form": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "relative_humidity": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "snowfall": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_direction": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_peak": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather_signals": {
+                        "properties": {
+                            "ice_day": {
+                                "type": "boolean"
+                            },
+                            "rain_day": {
+                                "type": "boolean"
+                            },
+                            "snow_day": {
+                                "type": "boolean"
+                            },
+                            "summer_day": {
+                                "type": "boolean"
+                            },
+                            "tropical_night": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "windchill": {
+                        "properties": {
+                            "temp_max_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_mean_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_min_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "dailyWeatherSeries",
+            "url": "https://history3.p.rapidapi.com/v0/daily/10.87152/46.95828/20210101/20210102",
+            "description": "This endpoint returns the historical weather for a given series of days for a given location (latitude and longitude)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lng",
+                    "type": "STRING",
+                    "description": "The longitude in decimal format of the requested point",
+                    "default": "10.87152"
+                },
+                {
+                    "name": "start_day",
+                    "type": "STRING",
+                    "description": "The requested start day in the format \\\"YYYYmmdd\\\"",
+                    "default": "20210101"
+                },
+                {
+                    "name": "end_day",
+                    "type": "STRING",
+                    "description": "The requested end day in the format \\\"YYYYmmdd\\\"",
+                    "default": "20210102"
+                },
+                {
+                    "name": "parameters",
+                    "type": "STRING",
+                    "description": "Define the parameter, you wish to request. Allowed options are \\\"all\\\", \\\"air_quality\\\", \\\"anomaly\\\", \\\"astronomy\\\", \\\"weather\\\", \\\"signal\\\", \\\"pollen\\\", \\\"occurrence\\\"",
+                    "default": "weather"
+                },
+                {
+                    "name": "lat",
+                    "type": "STRING",
+                    "description": "The latitude in decimal format of the requested point",
+                    "default": "46.95828"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily/10.87152/46.95828/20210101/20210102\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://history3.p.rapidapi.com/v0/daily/{lng}/{lat}/{start_day}/{end_day}\"\nquerystring = {\"parameters\": \"weather\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"history3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the DAILY quota for Requests on your current plan, BASIC. Upgrade your plan at https://rapidapi.com/wettercom-wettercom-data/api/history3"
+            },
+            "statuscode": 200,
+            "schema": {
+                "description": "Daily summary of the the requested parameters",
+                "properties": {
+                    "air_quality": {
+                        "properties": {
+                            "CO": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "Distance": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "NO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "O3": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "PM10": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "SO2": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "anomaly": {
+                        "properties": {
+                            "long_time_t2m_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "long_time_t2m_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_anomaly_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "astronomy": {
+                        "properties": {
+                            "max_sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunrise": {
+                                "format": "date-time",
+                                "type": "string"
+                            },
+                            "sunset": {
+                                "format": "date-time",
+                                "type": "string"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "loacation": {
+                        "properties": {
+                            "date": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "height": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "latitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "longitude": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "meta": {
+                        "properties": {
+                            "additional_info": {
+                                "type": "string"
+                            },
+                            "errors": {
+                                "type": "string"
+                            },
+                            "sources": {
+                                "items": {
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "array"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "occurrence": {
+                        "properties": {
+                            "max_cloud_cover": {
+                                "type": "number"
+                            },
+                            "max_precipatiation_intensity": {
+                                "type": "number"
+                            },
+                            "max_temperature": {
+                                "type": "number"
+                            },
+                            "min_cloud_cover": {
+                                "type": "number"
+                            },
+                            "min_temperature": {
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "pollen": {
+                        "properties": {
+                            "alder": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ambrosia": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "ash": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "birch": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "day": {
+                                "format": "date",
+                                "type": "string"
+                            },
+                            "grasses": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "hazel": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "mugwort": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            },
+                            "rye": {
+                                "format": "int32",
+                                "maximum": 2147483647,
+                                "minimum": -2147483648,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather": {
+                        "properties": {
+                            "air_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_max": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_mean": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "air_temp_min": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "cloud_cover": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "dew_point": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "evaporation_pressure": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "precipitation_form": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "relative_humidity": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "snowfall": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "sunshine": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_avg": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_direction": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "wind_peak": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "weather_signals": {
+                        "properties": {
+                            "ice_day": {
+                                "type": "boolean"
+                            },
+                            "rain_day": {
+                                "type": "boolean"
+                            },
+                            "snow_day": {
+                                "type": "boolean"
+                            },
+                            "summer_day": {
+                                "type": "boolean"
+                            },
+                            "tropical_night": {
+                                "type": "boolean"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "windchill": {
+                        "properties": {
+                            "temp_max_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_mean_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            },
+                            "temp_min_windchill": {
+                                "format": "float",
+                                "maximum": 3.402823669209385e+38,
+                                "minimum": -3.402823669209385e+38,
+                                "type": "number"
+                            }
+                        },
+                        "type": "object"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "history"
+}

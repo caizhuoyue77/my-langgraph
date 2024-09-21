@@ -1,0 +1,40 @@
+{
+    "product_id": "53aa4f4ae4b008bb2ef863d2",
+    "tool_description": "API for Hummingbird, the easiest way to track, share and discover new anime. \r\n\r\nFree for non-commercial use.",
+    "home_url": "https://rapidapi.com/vikhyat/api/hummingbird-v1/",
+    "name": "Hummingbird v1",
+    "title": "Hummingbird v1",
+    "pricing": "FREE",
+    "tool_name": "Hummingbird v1",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 616,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "hummingbirdv1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Anime",
+            "url": "https://hummingbirdv1.p.rapidapi.com/anime/steins-gate",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "Anime ID",
+                    "default": "steins-gate"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hummingbirdv1.p.rapidapi.com/anime/steins-gate\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hummingbirdv1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hummingbirdv1.p.rapidapi.com/anime/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hummingbirdv1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "hummingbird_v1"
+}

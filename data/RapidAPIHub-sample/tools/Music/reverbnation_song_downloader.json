@@ -1,0 +1,65 @@
+{
+    "product_id": "api_79c7551c-8853-4e1f-a81c-0418d6865478",
+    "tool_description": "Get ReverbNation data of any paid song(s) with download URLs",
+    "home_url": "https://rapidapi.com/420vijay47/api/reverbnation-song-downloader/",
+    "name": "ReverbNation Song Downloader",
+    "title": "ReverbNation Song Downloader",
+    "pricing": "FREEMIUM",
+    "tool_name": "ReverbNation Song Downloader",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 826,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "reverbnation-song-downloader.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Download ReverbNation Song",
+            "url": "https://reverbnation-song-downloader.p.rapidapi.com/reverbnation",
+            "description": "Get song data & download URL of any paid song.\n(Fetch song name, artist, thumbnail, duration & mp3 downloadable link)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.reverbnation.com/lenafayre/song/22754745-this-world"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://reverbnation-song-downloader.p.rapidapi.com/reverbnation\"\nquerystring = {\"url\": \"https://www.reverbnation.com/lenafayre/song/22754745-this-world\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reverbnation-song-downloader.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://reverbnation-song-downloader.p.rapidapi.com/reverbnation\"\nquerystring = {\"url\": \"https://www.reverbnation.com/lenafayre/song/22754745-this-world\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reverbnation-song-downloader.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "song_name": "This World",
+                "artist": "Lena Fayre",
+                "thumb": "https://gp1.wac.edgecastcdn.net/802892/http_public_production/artists/images/2701468/original/crop:x0y0w2540h1352/hash:1467340635/1460755386_LEAH_DOUBLE_MAIN.png?1467340635",
+                "duration": "3m 35s",
+                "dlink": "https://gp1.wpc.edgecastcdn.net/802892/http_private_production_west/songs/mp3_files/22754745/original/This_World.mp3?e8817609673e6ceae29a01a9b1c7efb2124b11d271a4293e82edb01be745eb457b0ed0fc6ba319fde788e8762a2a71f7d95b95c9d2082bdfe8d9e38ada278fa404baeae3090b5c73057743744a633fab93b228ecda8354706682e7e64bb253c16be96dfea60d64cdd244f888fc30c7719df0762c85c2856b2c90b7e1d65a454c1a55c8fe90"
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "song_name": {
+                        "type": "string"
+                    },
+                    "artist": {
+                        "type": "string"
+                    },
+                    "thumb": {
+                        "type": "string"
+                    },
+                    "duration": {
+                        "type": "string"
+                    },
+                    "dlink": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "reverbnation_song_downloader"
+}

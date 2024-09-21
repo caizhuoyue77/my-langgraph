@@ -1,0 +1,58 @@
+{
+    "product_id": "api_19fea929-2943-4de8-9a02-e1b26b1ffab2",
+    "tool_description": "Your Source for Endless Laughter - Jokester API is your go-to source for hilarious jokes and puns.",
+    "home_url": "https://rapidapi.com/kevinwilliamsedu3000/api/jokester/",
+    "name": " Jokester",
+    "title": " Jokester",
+    "pricing": "FREEMIUM",
+    "tool_name": " Jokester",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1347,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "jokester.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/jokes/categories",
+            "url": "https://jokester.p.rapidapi.com/jokes/categories",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://jokester.p.rapidapi.com/jokes/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jokester.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jokester.p.rapidapi.com/jokes/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jokester.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "array",
+                "items": {
+                    "type": "string"
+                }
+            }
+        },
+        {
+            "name": "/jokes",
+            "url": "https://jokester.p.rapidapi.com/jokes",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "category",
+                    "type": "STRING",
+                    "description": "Filter jokes by category",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jokester.p.rapidapi.com/jokes\"\nquerystring = {\"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jokester.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jokester.p.rapidapi.com/jokes\"\nquerystring = {\"category\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jokester.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "jokester"
+}

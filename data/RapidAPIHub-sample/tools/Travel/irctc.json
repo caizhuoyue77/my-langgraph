@@ -1,0 +1,335 @@
+{
+    "product_id": "api_3735830a-da89-4c0c-930e-dc1b3a212532",
+    "tool_description": "An API with various functionalities for Indian railways IRCTC API. We are not affiliated with Indian railways IRCTC in any form, and this is not an official API, but all the results are real-time and accurate. You can get in touch with us at https://t.me/rapidapisupport. For payment related inquiries, APIs and customised plans.",
+    "home_url": "https://rapidapi.com/IRCTCAPI/api/irctc1/",
+    "name": "IRCTC",
+    "title": "IRCTC",
+    "pricing": "FREEMIUM",
+    "tool_name": "IRCTC",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 905,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "irctc1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "TrainsBetweenStations",
+            "url": "https://irctc1.p.rapidapi.com/api/v2/trainBetweenStations",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "toStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bdts"
+                },
+                {
+                    "name": "fromStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bju"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/trainBetweenStations\"\nquerystring = {\"toStationCode\": \"bdts\", \"fromStationCode\": \"bju\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/trainBetweenStations\"\nquerystring = {\"toStationCode\": \"bdts\", \"fromStationCode\": \"bju\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Fare",
+            "url": "https://irctc1.p.rapidapi.com/api/v2/getFare",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "trainNo",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "19038"
+                },
+                {
+                    "name": "toStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BVI"
+                },
+                {
+                    "name": "fromStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ST"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/getFare\"\nquerystring = {\"trainNo\": \"19038\", \"toStationCode\": \"BVI\", \"fromStationCode\": \"ST\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/getFare\"\nquerystring = {\"trainNo\": \"19038\", \"toStationCode\": \"BVI\", \"fromStationCode\": \"ST\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GetTrainClasses",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/getTrainClasses",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "trainNo",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 19038
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getTrainClasses\"\nquerystring = {\"trainNo\": 19038}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getTrainClasses\"\nquerystring = {\"trainNo\": 19038}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "CheckSeatAvailability",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/checkSeatAvailability",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "quota",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "GN"
+                },
+                {
+                    "name": "classType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2A"
+                },
+                {
+                    "name": "fromStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "ST"
+                },
+                {
+                    "name": "toStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BVI"
+                },
+                {
+                    "name": "trainNo",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 19038
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2022-05-25"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/checkSeatAvailability\"\nquerystring = {\"quota\": \"GN\", \"classType\": \"2A\", \"fromStationCode\": \"ST\", \"toStationCode\": \"BVI\", \"trainNo\": 19038, \"date\": \"2022-05-25\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/checkSeatAvailability\"\nquerystring = {\"quota\": \"GN\", \"classType\": \"2A\", \"fromStationCode\": \"ST\", \"toStationCode\": \"BVI\", \"trainNo\": 19038, \"date\": \"2022-05-25\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get PNR Status V3",
+            "url": "https://irctc1.p.rapidapi.com/api/v3/getPNRStatus",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "pnrNumber",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v3/getPNRStatus\"\nquerystring = {\"pnrNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v3/getPNRStatus\"\nquerystring = {\"pnrNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Train Schedule",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/getTrainSchedule",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "trainNo",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "12936"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getTrainSchedule\"\nquerystring = {\"trainNo\": \"12936\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getTrainSchedule\"\nquerystring = {\"trainNo\": \"12936\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get Train Live Status",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/liveTrainStatus",
+            "description": "This API will take train no and day of journey, and will return current status of train with other informations.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "trainNo",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "19038"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "startDay",
+                    "type": "STRING",
+                    "description": "Optional File\nstart day range from 0-4\n0 = Day 1\n1 = 1 Day Ago\n2 = 2 Day Ago\n3 = 3 Day Ago\n4 = 4 Day Ago",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/liveTrainStatus\"\nquerystring = {\"trainNo\": \"19038\", \"startDay\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/liveTrainStatus\"\nquerystring = {\"trainNo\": \"19038\", \"startDay\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "TrainsBetweenStations V3",
+            "url": "https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "dateOfJourney",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "toStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "NDLS"
+                },
+                {
+                    "name": "fromStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BVI"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations\"\nquerystring = {\"dateOfJourney\": \"\", \"toStationCode\": \"NDLS\", \"fromStationCode\": \"BVI\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v3/trainBetweenStations\"\nquerystring = {\"dateOfJourney\": \"\", \"toStationCode\": \"NDLS\", \"fromStationCode\": \"BVI\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SearchTrain",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/searchTrain",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 190
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/searchTrain\"\nquerystring = {\"query\": 190}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/searchTrain\"\nquerystring = {\"query\": 190}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "SearchStation",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/searchStation",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "BJU"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/searchStation\"\nquerystring = {\"query\": \"BJU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/searchStation\"\nquerystring = {\"query\": \"BJU\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "CheckPNRStatus",
+            "url": "https://irctc1.p.rapidapi.com/api/v2/getPNRStatus",
+            "description": "-",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "pnrNumber",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/getPNRStatus\"\nquerystring = {\"pnrNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v2/getPNRStatus\"\nquerystring = {\"pnrNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "GetFare",
+            "url": "https://irctc1.p.rapidapi.com/api/v1/getFare",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "trainNo",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 19038
+                },
+                {
+                    "name": "fromStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "bvi"
+                },
+                {
+                    "name": "toStationCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "st"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getFare\"\nquerystring = {\"trainNo\": 19038, \"fromStationCode\": \"bvi\", \"toStationCode\": \"st\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://irctc1.p.rapidapi.com/api/v1/getFare\"\nquerystring = {\"trainNo\": 19038, \"fromStationCode\": \"bvi\", \"toStationCode\": \"st\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"irctc1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "irctc"
+}

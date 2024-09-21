@@ -1,0 +1,112 @@
+{
+    "product_id": "api_89bf66ad-02d4-43e3-9c2b-33e7e3b7536b",
+    "tool_description": "Fetches songs & album data from Apple Music",
+    "home_url": "https://rapidapi.com/420vijay47/api/apple-music24/",
+    "name": "Apple Music",
+    "title": "Apple Music",
+    "pricing": "FREEMIUM",
+    "tool_name": "Apple Music",
+    "score": {
+        "avgServiceLevel": 96,
+        "avgLatency": 797,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "apple-music24.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Album",
+            "url": "https://apple-music24.p.rapidapi.com/playlist1/",
+            "description": "Get entire Playlist data of any album from Apple Music.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://music.apple.com/us/album/m-s-dhoni-the-untold-story-original-motion-picture/1158884319"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apple-music24.p.rapidapi.com/playlist1/\"\nquerystring = {\"url\": \"https://music.apple.com/us/album/m-s-dhoni-the-untold-story-original-motion-picture/1158884319\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apple-music24.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apple-music24.p.rapidapi.com/playlist1/\"\nquerystring = {\"url\": \"https://music.apple.com/us/album/m-s-dhoni-the-untold-story-original-motion-picture/1158884319\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apple-music24.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "album_details": {
+                    "album": "M.S. Dhoni: The Untold Story (Original Motion Picture Soundtrack)",
+                    "artist": null,
+                    "thumb": "https://is5-ssl.mzstatic.com/image/thumb/Music126/v4/28/03/a1/2803a189-b430-0a28-3c65-a4b704314232/8902894358361_cover.jpg/316x316bb.webp",
+                    "date": "2016-09-17",
+                    "count": 7,
+                    "0": {
+                        "link": "https://music.apple.com/us/album/besabriyaan/1158884319?i=1158884516",
+                        "name": "Besabriyaan",
+                        "artist": "Armaan Malik",
+                        "duration": "4m 15s"
+                    },
+                    "1": {
+                        "link": "https://music.apple.com/us/album/kaun-tujhe/1158884319?i=1158884517",
+                        "name": "Kaun Tujhe",
+                        "artist": "Palak Muchhal",
+                        "duration": "4m 1s"
+                    },
+                    "2": {
+                        "link": "https://music.apple.com/us/album/jab-tak/1158884319?i=1158884518",
+                        "name": "Jab Tak",
+                        "artist": "Armaan Malik",
+                        "duration": "2m 54s"
+                    },
+                    "3": {
+                        "link": "https://music.apple.com/us/album/phir-kabhi/1158884319?i=1158884519",
+                        "name": "Phir Kabhi",
+                        "artist": "Arijit Singh",
+                        "duration": "4m 47s"
+                    },
+                    "4": {
+                        "link": "https://music.apple.com/us/album/parwah-nahin/1158884319?i=1158884520",
+                        "name": "Parwah Nahin",
+                        "artist": "Siddharth Basrur",
+                        "duration": "4m 2s"
+                    },
+                    "5": {
+                        "link": "https://music.apple.com/us/album/jab-tak-redux/1158884319?i=1158884522",
+                        "name": "Jab Tak (Redux)",
+                        "artist": "Armaan Malik",
+                        "duration": "3m 38s"
+                    },
+                    "6": {
+                        "link": "https://music.apple.com/us/album/padhoge-likhoge/1158884319?i=1158884523",
+                        "name": "Padhoge Likhoge",
+                        "artist": "Ananya Nanda & Adithyan A Prithviraj",
+                        "duration": "3m 7s"
+                    }
+                }
+            }
+        },
+        {
+            "name": "Single Track",
+            "url": "https://apple-music24.p.rapidapi.com/track/",
+            "description": "Get Single track data from Apple Music",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://music.apple.com/us/album/penolong-yang-setia/1546605591?i=1546605594"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://apple-music24.p.rapidapi.com/track/\"\nquerystring = {\"url\": \"https://music.apple.com/us/album/penolong-yang-setia/1546605591?i=1546605594\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apple-music24.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apple-music24.p.rapidapi.com/track/\"\nquerystring = {\"url\": \"https://music.apple.com/us/album/penolong-yang-setia/1546605591?i=1546605594\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apple-music24.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Penolong Yang Setia",
+                "albumname": "Penolong Yang Setia - Single",
+                "artist": "Melitha Sidabutar",
+                "thumb": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/3c/b0/1c/3cb01cca-0a17-96fe-db67-8399dabc47d4/cover.jpg/316x316bb.webp",
+                "duration": "4m 13s"
+            }
+        }
+    ],
+    "standardized_name": "apple_music"
+}

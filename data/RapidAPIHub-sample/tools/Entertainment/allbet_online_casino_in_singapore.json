@@ -1,0 +1,31 @@
+{
+    "product_id": "api_1edfe4a4-dcbf-4240-b1c1-5d14f32df755",
+    "tool_description": "With an simple-to-direct user border, large cards, and fast gameplay. Casinos have been one of the best famous entertaining businesses of the last 100 years.",
+    "home_url": "https://rapidapi.com/antoniobennet345/api/allbet-online-casino-in-singapore/",
+    "name": "Allbet Online Casino  in Singapore",
+    "title": "Allbet Online Casino  in Singapore",
+    "pricing": "FREE",
+    "tool_name": "Allbet Online Casino  in Singapore",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 568,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "allbet-online-casino-in-singapore.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Allbet Casino Singapore",
+            "url": "https://allbet-online-casino-in-singapore.p.rapidapi.com/",
+            "description": "[Allbet ](https://allbetsg.com/\n)is so much more than just an online Allbet Casino Singapore.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://allbet-online-casino-in-singapore.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"allbet-online-casino-in-singapore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://allbet-online-casino-in-singapore.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"allbet-online-casino-in-singapore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "allbet_online_casino_in_singapore"
+}

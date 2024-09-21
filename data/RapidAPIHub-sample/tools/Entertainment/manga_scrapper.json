@@ -1,0 +1,285 @@
+{
+    "product_id": "api_31783428-1db4-4e10-9eed-be278768dbf8",
+    "tool_description": "Get webtoon / comic data from favourite scanlation websites.",
+    "home_url": "https://rapidapi.com/tigaron/api/manga-scrapper/",
+    "name": "Manga Scrapper",
+    "title": "Manga Scrapper",
+    "pricing": "FREEMIUM",
+    "tool_name": "Manga Scrapper",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 580,
+        "avgSuccessRate": 95,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "manga-scrapper.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "A chapter by its slug",
+            "url": "https://manga-scrapper.p.rapidapi.com/chapters/the-world-after-the-fall-chapter-64",
+            "description": "Make request to fetch a specific chapter information for a specific webtoon from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "slug",
+                    "type": "string",
+                    "description": "Specify the chapter's slug. See /chapters for the chapter list.",
+                    "default": "the-world-after-the-fall-chapter-64"
+                },
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "Specify the webtoon provider's slug. See /providers for the provider list.",
+                    "default": "flame"
+                },
+                {
+                    "name": "webtoon",
+                    "type": "STRING",
+                    "description": "Specify the webtoon's slug. See /webtoons for the webtoon list.",
+                    "default": "the-world-after-the-fall"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters/the-world-after-the-fall-chapter-64\"\nquerystring = {\"provider\": \"flame\", \"webtoon\": \"the-world-after-the-fall\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters/{slug}\"\nquerystring = {\"provider\": \"flame\", \"webtoon\": \"the-world-after-the-fall\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search result for webtoon's query",
+            "url": "https://manga-scrapper.p.rapidapi.com/search",
+            "description": "Make request to find webtoons based on the provided query.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "Specify the search query",
+                    "default": "mercenary survivor"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "Specify the webtoon provider's slug to get a more refined results. See /providers for the provider list.",
+                    "default": ""
+                },
+                {
+                    "name": "size",
+                    "type": "NUMBER",
+                    "description": "Number of search result to show between 1 - 20",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/search\"\nquerystring = {\"provider\": \"\", \"size\": \"10\", \"q\": \"mercenary survivor\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/search\"\nquerystring = {\"provider\": \"\", \"size\": \"10\", \"q\": \"mercenary survivor\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Pass a Cloudflare protected site",
+            "url": "https://manga-scrapper.p.rapidapi.com/crawler",
+            "description": "Make a request to fetch a website protected with Cloudflare's IUAM (I'm Under Attack Mode). This endpoint returns HTML document ready for data scraping purposes.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "http://www.asurascans.com/"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/crawler\"\nquerystring = {\"url\": \"http://www.asurascans.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/crawler\"\nquerystring = {\"url\": \"http://www.asurascans.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest chapters updates",
+            "url": "https://manga-scrapper.p.rapidapi.com/updates",
+            "description": "Make request to fetch latest chapters updates up to 7 days ago.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "day",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "7"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/updates\"\nquerystring = {\"provider\": \"\", \"day\": \"7\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/updates\"\nquerystring = {\"provider\": \"\", \"day\": \"7\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Chapters list - all",
+            "url": "https://manga-scrapper.p.rapidapi.com/chapters/all",
+            "description": "Make request to fetch chapter collection for a specific webtoon from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "webtoon",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "my-wife-is-a-demon-queen"
+                },
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "flame"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters/all\"\nquerystring = {\"webtoon\": \"my-wife-is-a-demon-queen\", \"provider\": \"flame\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters/all\"\nquerystring = {\"webtoon\": \"my-wife-is-a-demon-queen\", \"provider\": \"flame\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Chapters list - paginated",
+            "url": "https://manga-scrapper.p.rapidapi.com/chapters",
+            "description": "Make request to fetch chapter collection for a specific webtoon from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "Specify the webtoon provider' slug. See /providers for the provider list.",
+                    "default": "cosmic"
+                },
+                {
+                    "name": "webtoon",
+                    "type": "STRING",
+                    "description": "Specify the webtoon's slug. See /webtoons for the webtoon list.",
+                    "default": "eleceed"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Number of results per page, between 1 - 20.",
+                    "default": "10"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Specify the page to fetch.",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters\"\nquerystring = {\"provider\": \"cosmic\", \"webtoon\": \"eleceed\", \"limit\": \"10\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/chapters\"\nquerystring = {\"provider\": \"cosmic\", \"webtoon\": \"eleceed\", \"limit\": \"10\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Providers list - all",
+            "url": "https://manga-scrapper.p.rapidapi.com/providers",
+            "description": "Make request to fetch webtoon providers list.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/providers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/providers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "A webtoon by its slug",
+            "url": "https://manga-scrapper.p.rapidapi.com/webtoons/heroine-app",
+            "description": "Make request to fetch a specific webtoon information from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "Specify the webtoon provider' slug. See /providers for the provider list.",
+                    "default": "omega"
+                },
+                {
+                    "name": "slug",
+                    "type": "string",
+                    "description": "Specify the webtoon's slug. See /webtoons for the webtoon list.",
+                    "default": "heroine-app"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons/heroine-app\"\nquerystring = {\"provider\": \"omega\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons/{slug}\"\nquerystring = {\"provider\": \"omega\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Webtoons list - all",
+            "url": "https://manga-scrapper.p.rapidapi.com/webtoons/all",
+            "description": "Make request to fetch webtoon's series collection from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "surya"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons/all\"\nquerystring = {\"provider\": \"surya\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons/all\"\nquerystring = {\"provider\": \"surya\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Webtoons list - paginated",
+            "url": "https://manga-scrapper.p.rapidapi.com/webtoons",
+            "description": "Make request to fetch webtoon's series collection from a specific provider.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "provider",
+                    "type": "STRING",
+                    "description": "Specify the webtoon provider' slug. See /providers for the provider list.",
+                    "default": "surya"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "Specify the page to fetch.",
+                    "default": "1"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "Number of results per page, between 1 - 20.",
+                    "default": "10"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons\"\nquerystring = {\"provider\": \"surya\", \"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://manga-scrapper.p.rapidapi.com/webtoons\"\nquerystring = {\"provider\": \"surya\", \"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"manga-scrapper.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "manga_scrapper"
+}

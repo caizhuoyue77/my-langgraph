@@ -1,0 +1,27 @@
+{
+    "product_id": "api_e73ad95b-17e3-484c-982b-ed137832b766",
+    "tool_description": "ddd",
+    "home_url": "https://rapidapi.com/xc1rze/api/ddd59/",
+    "name": "ddd",
+    "title": "ddd",
+    "pricing": "FREE",
+    "tool_name": "ddd",
+    "score": null,
+    "host": "ddd59.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "dddddda",
+            "url": "https://ddd59.p.rapidapi.com/",
+            "description": "fdfdf",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ddd59.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ddd59.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ddd59.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ddd59.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        }
+    ],
+    "standardized_name": "ddd"
+}

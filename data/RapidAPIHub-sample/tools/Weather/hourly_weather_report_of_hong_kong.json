@@ -1,0 +1,458 @@
+{
+    "product_id": "api_64344109-4873-4af4-a046-1c919a985ecd",
+    "tool_description": "Hourly Weather Report of Hong Kong with rainfall, UV index, humidity, and temperature.",
+    "home_url": "https://rapidapi.com/don.ling.lok/api/hourly-weather-report-of-hong-kong/",
+    "name": "Hourly Weather Report of Hong Kong",
+    "title": "Hourly Weather Report of Hong Kong",
+    "pricing": "FREEMIUM",
+    "tool_name": "Hourly Weather Report of Hong Kong",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 441,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.4,
+        "__typename": "Score"
+    },
+    "host": "hourly-weather-report-of-hong-kong.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Current Weather Report",
+            "url": "https://hourly-weather-report-of-hong-kong.p.rapidapi.com/weatherAPI/opendata/weather.php",
+            "description": "Current Weather Report",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "en"
+                },
+                {
+                    "name": "dataType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rhrread"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hourly-weather-report-of-hong-kong.p.rapidapi.com/weatherAPI/opendata/weather.php\"\nquerystring = {\"lang\": \"en\", \"dataType\": \"rhrread\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hourly-weather-report-of-hong-kong.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hourly-weather-report-of-hong-kong.p.rapidapi.com/weatherAPI/opendata/weather.php\"\nquerystring = {\"lang\": \"en\", \"dataType\": \"rhrread\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hourly-weather-report-of-hong-kong.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "rainfall": {
+                    "data": [
+                        {
+                            "unit": "mm",
+                            "place": "Central & Western District",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Eastern District",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Kwai Tsing",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Islands District",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "North District",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Sai Kung",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Sha Tin",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Southern District",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Tai Po",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Tsuen Wan",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Tuen Mun",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Wan Chai",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Yuen Long",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Yau Tsim Mong",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Sham Shui Po",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Kowloon City",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Wong Tai Sin",
+                            "max": 0,
+                            "main": "FALSE"
+                        },
+                        {
+                            "unit": "mm",
+                            "place": "Kwun Tong",
+                            "max": 0,
+                            "main": "FALSE"
+                        }
+                    ],
+                    "startTime": "2023-06-17T01:45:00+08:00",
+                    "endTime": "2023-06-17T02:45:00+08:00"
+                },
+                "icon": [
+                    62
+                ],
+                "iconUpdateTime": "2023-06-16T18:00:00+08:00",
+                "uvindex": "",
+                "updateTime": "2023-06-17T03:02:00+08:00",
+                "temperature": {
+                    "data": [
+                        {
+                            "place": "King's Park",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Hong Kong Observatory",
+                            "value": 26,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Wong Chuk Hang",
+                            "value": 24,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Ta Kwu Ling",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Lau Fau Shan",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tai Po",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Sha Tin",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tuen Mun",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tseung Kwan O",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Sai Kung",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Cheung Chau",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Chek Lap Kok",
+                            "value": 27,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tsing Yi",
+                            "value": 24,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tsuen Wan Ho Koon",
+                            "value": 24,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tsuen Wan Shing Mun Valley",
+                            "value": 24,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Hong Kong Park",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Shau Kei Wan",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Kowloon City",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Happy Valley",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Wong Tai Sin",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Stanley",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Kwun Tong",
+                            "value": 26,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Sham Shui Po",
+                            "value": 25,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Kai Tak Runway Park",
+                            "value": 26,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Yuen Long Park",
+                            "value": 24,
+                            "unit": "C"
+                        },
+                        {
+                            "place": "Tai Mei Tuk",
+                            "value": 25,
+                            "unit": "C"
+                        }
+                    ],
+                    "recordTime": "2023-06-17T03:00:00+08:00"
+                },
+                "warningMessage": "",
+                "mintempFrom00To09": "",
+                "rainfallFrom00To12": "",
+                "rainfallLastMonth": "",
+                "rainfallJanuaryToLastMonth": "",
+                "tcmessage": "",
+                "humidity": {
+                    "recordTime": "2023-06-17T03:00:00+08:00",
+                    "data": [
+                        {
+                            "unit": "percent",
+                            "value": 91,
+                            "place": "Hong Kong Observatory"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "rainfall": {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "place": {
+                                            "type": "string"
+                                        },
+                                        "max": {
+                                            "type": "integer"
+                                        },
+                                        "main": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "startTime": {
+                                "type": "string"
+                            },
+                            "endTime": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "icon": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        }
+                    },
+                    "iconUpdateTime": {
+                        "type": "string"
+                    },
+                    "uvindex": {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "place": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "integer"
+                                        },
+                                        "desc": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "recordDesc": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "updateTime": {
+                        "type": "string"
+                    },
+                    "temperature": {
+                        "type": "object",
+                        "properties": {
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "place": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "integer"
+                                        },
+                                        "unit": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            },
+                            "recordTime": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "warningMessage": {
+                        "type": "string"
+                    },
+                    "mintempFrom00To09": {
+                        "type": "string"
+                    },
+                    "rainfallFrom00To12": {
+                        "type": "string"
+                    },
+                    "rainfallLastMonth": {
+                        "type": "string"
+                    },
+                    "rainfallJanuaryToLastMonth": {
+                        "type": "string"
+                    },
+                    "tcmessage": {
+                        "type": "string"
+                    },
+                    "humidity": {
+                        "type": "object",
+                        "properties": {
+                            "recordTime": {
+                                "type": "string"
+                            },
+                            "data": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "unit": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "integer"
+                                        },
+                                        "place": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "hourly_weather_report_of_hong_kong"
+}

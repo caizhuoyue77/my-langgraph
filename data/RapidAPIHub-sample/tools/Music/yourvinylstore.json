@@ -1,0 +1,92 @@
+{
+    "product_id": "api_897d34b8-81f1-44aa-8d27-87147ee91905",
+    "tool_description": "Best vinyl records in your collection.",
+    "home_url": "https://rapidapi.com/mail.munteanu/api/yourvinylstore/",
+    "name": "YourVinylStore",
+    "title": "YourVinylStore",
+    "pricing": "FREE",
+    "tool_name": "YourVinylStore",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 13,
+        "avgSuccessRate": 0,
+        "popularityScore": 0,
+        "__typename": "Score"
+    },
+    "host": "yourvinylstore.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Your Vinyl Store",
+            "url": "https://yourvinylstore.p.rapidapi.com/endpoint",
+            "description": "Best vinyl records in your collection",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "Year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Artist",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Genre",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Album",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yourvinylstore.p.rapidapi.com/endpoint\"\nquerystring = {\"Year\": \"\", \"Artist\": \"\", \"Genre\": \"\", \"Album\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yourvinylstore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yourvinylstore.p.rapidapi.com/endpoint\"\nquerystring = {\"Year\": \"\", \"Artist\": \"\", \"Genre\": \"\", \"Album\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yourvinylstore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Your Vinyl Store_copy",
+            "url": "https://yourvinylstore.p.rapidapi.com/endpoint",
+            "description": "Best vinyl records in your collection",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "Year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Artist",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Genre",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "Album",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://yourvinylstore.p.rapidapi.com/endpoint\"\nquerystring = {\"Year\": \"\", \"Artist\": \"\", \"Genre\": \"\", \"Album\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yourvinylstore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yourvinylstore.p.rapidapi.com/endpoint\"\nquerystring = {\"Year\": \"\", \"Artist\": \"\", \"Genre\": \"\", \"Album\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yourvinylstore.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "yourvinylstore"
+}

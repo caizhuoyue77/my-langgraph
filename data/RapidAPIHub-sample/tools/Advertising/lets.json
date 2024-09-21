@@ -1,0 +1,25 @@
+{
+    "product_id": "api_d75e15d6-2334-4479-808d-47780fd1e0f2",
+    "tool_description": "lets",
+    "home_url": "https://rapidapi.com/peskabar873/api/lets1/",
+    "name": "lets",
+    "title": "lets",
+    "pricing": "FREE",
+    "tool_name": "lets",
+    "score": null,
+    "host": "lets1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "sdafdasf",
+            "url": "https://lets1.p.rapidapi.comlets",
+            "description": "adsfdasf",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lets1.p.rapidapi.comlets\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lets1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lets1.p.rapidapi.comlets\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lets1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "lets"
+}

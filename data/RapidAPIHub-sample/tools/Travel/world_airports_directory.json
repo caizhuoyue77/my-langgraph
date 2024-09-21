@@ -1,0 +1,92 @@
+{
+    "product_id": "api_77e51c8c-5f32-45a5-9f43-2f7aa941ac19",
+    "tool_description": "API returns all matching airpot details based on the most relevant keyword of city, airport code, city code etc. among collection of all airports around the world.",
+    "home_url": "https://rapidapi.com/karanp41-eRiF1pYLK1P/api/world-airports-directory/",
+    "name": "World Airports Directory",
+    "title": "World Airports Directory",
+    "pricing": "FREEMIUM",
+    "tool_name": "World Airports Directory",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 1510,
+        "avgSuccessRate": 94,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "world-airports-directory.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "SearchAirports",
+            "url": "https://world-airports-directory.p.rapidapi.com/v1/airports/dub",
+            "description": "Primary API to  get all the matching airports based on the keyword you pass in the params. API runs best matching algorithm to find most relevant airports matching with either city, city code or airport code and so on.\n**BONUS**: It returns complete `Airport Name, Lat, Long, Timezone, Country, Country Code, Airport Code and City Code.`\n\nNOTE: This API is case insensitive.\n\nFor e.g.\n1. When user trying with city `/v1/airports/dubai`\n2. When user trying with Airport Code `/v1/airports/dxb`\n3. When user trying with city code `/v1/airports/omdb`",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchingKeywordAirportOrCityOrCode",
+                    "type": "string",
+                    "description": "",
+                    "default": "dub"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Valid format to sort is `field:order`\ne.g. `AirportName:asc`, `AirportName:desc`\nwhere `asc` for sorting in ascending order\n`desc` for sorting in descending order",
+                    "default": "AirportName:asc"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "This controls the pagination of results.\nDefault is `1`",
+                    "default": 1
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "This indicates how many results you would like to query in one time.\nDefault value is `10` if limit is not provided.\nMaximum limit is `20`",
+                    "default": 20
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-airports-directory.p.rapidapi.com/v1/airports/dub\"\nquerystring = {\"sortBy\": \"AirportName:asc\", \"page\": 1, \"limit\": 20}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-airports-directory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-airports-directory.p.rapidapi.com/v1/airports/{matchingkeywordairportorcityorcode}\"\nquerystring = {\"sortBy\": \"AirportName:asc\", \"page\": 1, \"limit\": 20}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-airports-directory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "ListAllAirports",
+            "url": "https://world-airports-directory.p.rapidapi.com/v1/airports",
+            "description": "API to explore all airports we have in our huge directory.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 20
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": 1
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Valid format to sort is `field:order`\ne.g. `name:asc`, `name:desc`\nwhere `asc` for sorting in ascending order\n`desc` for sorting in descending order",
+                    "default": "name:asc"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-airports-directory.p.rapidapi.com/v1/airports\"\nquerystring = {\"limit\": 20, \"page\": 1, \"sortBy\": \"name:asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-airports-directory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-airports-directory.p.rapidapi.com/v1/airports\"\nquerystring = {\"limit\": 20, \"page\": 1, \"sortBy\": \"name:asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-airports-directory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "world_airports_directory"
+}

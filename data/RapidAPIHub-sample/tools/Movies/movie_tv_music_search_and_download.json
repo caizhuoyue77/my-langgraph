@@ -1,0 +1,2761 @@
+{
+    "product_id": "api_848d5ecd-7dcb-46e8-974e-62956f776882",
+    "tool_description": "Get multiple downloadable torrent links by keyword search of movie, TV, and music titles with a rate value of 10 being the best.Download via uTorrent, BitTorrent and other clients",
+    "home_url": "https://rapidapi.com/mikechen342/api/movie-tv-music-search-and-download/",
+    "name": "Movie, TV, music search and download",
+    "title": "Movie, TV, music search and download",
+    "pricing": "FREEMIUM",
+    "tool_name": "Movie, TV, music search and download",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 472,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "movie-tv-music-search-and-download.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search Torrents",
+            "url": "https://movie-tv-music-search-and-download.p.rapidapi.com/search",
+            "description": "Get downloadable  torrent link by movie name.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "keywords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Fast X 2023"
+                },
+                {
+                    "name": "quantity",
+                    "type": "NUMBER",
+                    "description": "MAX:40",
+                    "default": "40"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/search\"\nquerystring = {\"keywords\": \"Fast X 2023\", \"page\": \"1\", \"quantity\": \"40\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/search\"\nquerystring = {\"keywords\": \"Fast X 2023\", \"page\": \"1\", \"quantity\": \"40\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "200",
+                "keyword": "Fast X 2023",
+                "quantity": 40,
+                "result": [
+                    {
+                        "title": "Fast X (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/F250E644F2180A3410EA853E09AC401273149FA7.torrent",
+                        "size": "2.6 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Fast X (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/6555224E5622F28B35D12A9C45329A6D04F7AAA1.torrent",
+                        "size": "1.27 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Fast X 2023 1080p AMZN WEBRip 1600MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/948826CF52A051339D9985EF0CFD27CD06DFA9B5.torrent",
+                        "size": "1.6 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Fast X 2023 720p AMZN WEBRip 900MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/33FAAB109F2B55ADA883D6EA1A42647DD9F1B4F8.torrent",
+                        "size": "897.11 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 2160p AMZN WEB-DL DDP5 1 HDR H 265-FAMiLYFOREVER[TGx]",
+                        "torrent": "https://itorrents.org/torrent/866437F7B8BCBF59808D0EE2B436AB07D0990AC1.torrent",
+                        "size": "15.31 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 1080p MA WEB-DL DDP5 1 Atmos x264-CMRG[TGx]",
+                        "torrent": "https://itorrents.org/torrent/F890D7315D111149CA1A9EB3CF33772A52A84F50.torrent",
+                        "size": "8.55 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 HDTS 1080p x264 AAC - HushRips",
+                        "torrent": "https://itorrents.org/torrent/9546523940D8B78EE4A93AFFD7ADC4EB4303C1A1.torrent",
+                        "size": "2.12 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 V3 720p HDTS x264 AC3 X264 Will1869",
+                        "torrent": "https://itorrents.org/torrent/C65777EE4254FE79B4C3D09D2A2C716A21A7C57D.torrent",
+                        "size": "1.87 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 1080p 10bit WEBRip 6CH x265 HEVC-PSA",
+                        "torrent": "https://itorrents.org/torrent/495FABDD6375A9649EC7F40738244D23EB4ABBCC.torrent",
+                        "size": "2.23 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 1080p CAMRip x264 Latino YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/16EA0D3FCBFE4BD474F6911BE56B2B3DDA1541AA.torrent",
+                        "size": "1.99 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 HDCAM c1nem4 x264-SUNSCREEN[TGx]",
+                        "torrent": "https://itorrents.org/torrent/9B88353E3E12CC0111CA9B912990EC12F87F4EFA.torrent",
+                        "size": "996.32 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Fast X 2023 V3 1080p HDTS x264 AAC",
+                        "torrent": "https://itorrents.org/torrent/B32B58C72AD86C4E853B384F6B9FF1DCD8A2A26B.torrent",
+                        "size": "2.35 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 2160p MA WEB-DL DDP5 1 Atmos DoVi HDR H 265-CMRG",
+                        "torrent": "https://itorrents.org/torrent/C8F28DEE56EC5560470D6E8B3005A127E9E1BF9D.torrent",
+                        "size": "25.01 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 2160p WEBRip 3999MB DDP5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/2919C1E45F655E9A8ED1ECB97681682740100B83.torrent",
+                        "size": "4.01 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X (2023) (1080p MA WEB-DL x265 HEVC 10bit EAC3 5 1 SAMPA) [QxR]",
+                        "torrent": "https://itorrents.org/torrent/A4A890340CB675B0AD5C0CE85BF45FC07E01244E.torrent",
+                        "size": "5.08 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X ENG V2 2023 1080p HDTS x264 AAC 2GB",
+                        "torrent": "https://itorrents.org/torrent/9D85A4C8CC4EC2387042C9882E6AB5F0168CE5D6.torrent",
+                        "size": "2.35 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Fast X 2023 1080p AMZN WEBRip DD5 1 x264 Dual YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/B4CA35016F3DCFCEE8EFB5BEDCD88997CD922D1C.torrent",
+                        "size": "2.97 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Fast X (2023) 2160p HDR 5 1 - 2 0 x265 10bit Phun Psyz",
+                        "torrent": "https://itorrents.org/torrent/32184B0732D789BD17881BCD39A7A96AA8826578.torrent",
+                        "size": "3.49 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 1080p HDRip x264 AAC 2GB - ShortRips",
+                        "torrent": "https://itorrents.org/torrent/3209FD06F24C922CBB6165E020F9DD82BAC0071E.torrent",
+                        "size": "2.33 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X ENG V2 2023 1080p HDTS x264 AAC 2GB - HushRips",
+                        "torrent": "https://itorrents.org/torrent/35EF0D3B53881BEF79E32CFABE91929FE2D15D8C.torrent",
+                        "size": "2.16 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 V3 1080p HDTS x264 AAC",
+                        "torrent": "https://itorrents.org/torrent/D85226FDE93807E5A21808CD06C55308F7CD4576.torrent",
+                        "size": "2.35 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast &amp;amp; Furious The Fast Saga - FAST X (Original Motion Picture Soundtrack) ..",
+                        "torrent": "https://itorrents.org/torrent/3E0F0C5ADA4115C87388754C3E3CA652885091D0.torrent",
+                        "size": "120.12 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 English HQ S-Print 1080p x264 AAC HC-ESub CineVood",
+                        "torrent": "https://itorrents.org/torrent/B7AD34A134C08B9EB009873F094E1C5D4D4790A1.torrent",
+                        "size": "2.18 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 2160p WEB H265-SLOT[TGx]",
+                        "torrent": "https://itorrents.org/torrent/E7DDDA98EF2A11A2F23E1BE9030E540A7ABFEBB2.torrent",
+                        "size": "12.47 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 1080p 10bit WEBRip 6CH x265 HEVC-PSA",
+                        "torrent": "https://itorrents.org/torrent/82EE4A5093B30D204997E43FF1558BF57C041EE1.torrent",
+                        "size": "2.23 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X (2023) 720p WEBRip-LAMA",
+                        "torrent": "https://itorrents.org/torrent/936A9589AA039317A80F55CFEDA972D7A5E0CE1D.torrent",
+                        "size": "1.27 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 NEW SOURCE V2 HDTS 1080p x264 AAC - HushRips",
+                        "torrent": "https://itorrents.org/torrent/DF09317974EBFAC0052F284961412DC69BD50692.torrent",
+                        "size": "2.11 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 1080p",
+                        "torrent": "https://itorrents.org/torrent/78FC3B6B5C1A4ECCD60439E5029AB6786ED928D3.torrent",
+                        "size": "12.13 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 1080p MA WEB-DL DDP5 1 Atmos H 264-CMRG",
+                        "torrent": "https://itorrents.org/torrent/176B7F9269A0CD729D87225A9F16BAA05C648B88.torrent",
+                        "size": "8.55 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 2160p WEBRip x265 English DDP5 1 Atmos ESub - SP3LL",
+                        "torrent": "https://itorrents.org/torrent/E8ADCF30DD02E27D0A541E78CA2D48D1F7753855.torrent",
+                        "size": "6.68 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Fast X 2023 V2 1080p Ts Ac3 H264 Trial YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/566DD2CF8528E837DFFFE315B5639DBB20361E94.torrent",
+                        "size": "7.91 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 720p HDCAM-C1NEM4",
+                        "torrent": "https://itorrents.org/torrent/6AC5D8EBA9441BBB65FEAF113B19CD13B5654814.torrent",
+                        "size": "1.95 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 V3 HDCAM 1080p ENG x264 YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/CC1317A20834EF0368E37ED698D4E4759B70F122.torrent",
+                        "size": "5.6 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Fast X 2023 2160p 10bit HDR DV WEBRip 6CH x265 HEVC-PSA",
+                        "torrent": "https://itorrents.org/torrent/73F03779C60441E3C7ADD00F50BF1B106E7B6703.torrent",
+                        "size": "4.84 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 2160p LG C1 Tested Dolbi Vision DDP5 1 Atmos x265 MP4-BEN THE MEN",
+                        "torrent": "https://itorrents.org/torrent/7C9FF772A0CCAB85F4F751F08055512D6A7E2D6A.torrent",
+                        "size": "25.02 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 1080p WEBRip x265-INFINITY",
+                        "torrent": "https://itorrents.org/torrent/9095C74238D090A16F39EAB35F236570F923FC8D.torrent",
+                        "size": "2.2 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast X 2023 2160p MA WEB-DL DDP5 1 Atmos DV HEVC-CMRG",
+                        "torrent": "https://itorrents.org/torrent/03C30D54B61BB48A02757D7FAEEEEF60D9E97494.torrent",
+                        "size": "25.06 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Fast X 2023 WEBRip 1440p DD+5 1 Atmos x264-3Li",
+                        "torrent": "https://itorrents.org/torrent/AC93FF5887C042E704A0E29A2871B5A5EDEEE857.torrent",
+                        "size": "10.05 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Fast X ENG V2 2023 1080p HDTS x264 AAC 2GB",
+                        "torrent": "https://itorrents.org/torrent/4FFA5C32F6C0FC017EA22D16E7D757367132E3C4.torrent",
+                        "size": "2.35 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Fast X 2023 HDTS c1nem4 x264-SUNSCREEN[TGx]",
+                        "torrent": "https://itorrents.org/torrent/4686D2F919D537BE2690D815506F32A41CB26FB0.torrent",
+                        "size": "995.9 MB",
+                        "rate": 3
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Monthly Top 100 Music Torrents",
+            "url": "https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_music",
+            "description": "Monthly Top 100 Music Torrents",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_music\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_music\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "200",
+                "result": [
+                    {
+                        "title": "Foo Fighters - But Here We Are (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/6E0D07BBE4E6B4973FDD524E847BF0A9721D4D6F.torrent",
+                        "size": "110.94 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Best Golden Oldies Album In The World Ever! (2023) Mp3 320kbps [PMEDIA] \ufffd..",
+                        "torrent": "https://itorrents.org/torrent/5E33ADE6842B6A003726F6C667769EE484D2E506.torrent",
+                        "size": "895.97 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Pink Floyd - The Dark Side Of The Moon (30th Anniversary Edition) (2003 Rock) [F..",
+                        "torrent": "https://itorrents.org/torrent/05FAF0770FD5A472E78A1478E14510689687892B.torrent",
+                        "size": "2.39 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Foo Fighters - But Here We Are (2023) [24Bit-48kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/B5C9D441847BD4510288A7989808C276290640BA.torrent",
+                        "size": "634.88 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Various Artists - Happy 100 Songs (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/BBAB705853252CF72347F44FE02F10255F88D0A7.torrent",
+                        "size": "765.86 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Various Artists - Hi-Res Masters Greatest Hits Ever Vol III [24Bit-FLAC] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/5D239CA7C9EB75D12AF2FBFFACD14B52A585D7FE.torrent",
+                        "size": "10.54 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Various Artists - The 80s Decade of Classics (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/E1B5B5E51C082B513187966F9838029834A93B14.torrent",
+                        "size": "564.64 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Taylor Swift - Midnights (The Late Night Edition) (2023) FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/8CA429DAE10E0975A3C5FD8A60EFB7F22BDC2ECC.torrent",
+                        "size": "445.68 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Alicia Keys - Songs In A Minor (Deluxe Edition) (2023) Mp3 320kbps [PMEDIA] \u2b50\ufffd..",
+                        "torrent": "https://itorrents.org/torrent/46A7C12DB843AE5548E6A20265383F42A17F2640.torrent",
+                        "size": "262.15 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Taylor Swift - Midnights (The Til Dawn Edition) (2023) [24Bit-48kHz] FLAC [PMEDI..",
+                        "torrent": "https://itorrents.org/torrent/EC15CECB0F63173365C642DCD0E82C9EA6189045.torrent",
+                        "size": "948.81 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "The Official UK Top 100 Singles Chart (08-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/BF4DBDE375B5003A19E5B7EEDD606BC382879658.torrent",
+                        "size": "766.51 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Michael Jackson - Hi-Res Masters (FLAC Songs) [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/299F98B27D3E7533EB882C9DC081EF5AA7F22654.torrent",
+                        "size": "4.17 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Avenged Sevenfold - Life Is But A Dream (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/7F57BC40F130304D8012E7762A9B2F8A5BDD6DA6.torrent",
+                        "size": "124.21 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Taylor Swift - Midnights (The Late Night Edition) (2023) Mp3 320kbps [PMEDIA] \ufffd..",
+                        "torrent": "https://itorrents.org/torrent/FD96CC68E79C7C8A0C9536C1378D985CBC7D3F80.torrent",
+                        "size": "176.2 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Billboard Hot 100 Singles Chart (03-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/C93BBFD6FAE69F4D41FB4E7F80AE42B563E5C23F.torrent",
+                        "size": "733.83 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 80s Summer Essentials (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/42E2CC3748B88F607A64F374C94508E810D4B91C.torrent",
+                        "size": "823.26 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Sting - Sacred Love (Reissue 2023) [24Bit-96kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/DCBDF2B3649FB8333B2D73A5BD6E1FE41283F9AA.torrent",
+                        "size": "1.19 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Janelle Monae - The Age of Pleasure (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/E4683A469942E1C7FE36DCBFAEE56F166C473489.torrent",
+                        "size": "75.87 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Top 100 DJs Chart (02-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F5051D2210F1C6276444605862F568849B57E816.torrent",
+                        "size": "657.13 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - The 90s Decade of Classics (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/FDE6436525F265141E6431EA770B31BDF92EEF40.torrent",
+                        "size": "556.59 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Various Artists - 100 Greatest Rock Songs Ever (2023) Mp3 320kbps [PMEDIA] \u2b50\ufffd..",
+                        "torrent": "https://itorrents.org/torrent/AB2C2DAD0096432A72345ABE5C186EB36CA686F0.torrent",
+                        "size": "900.6 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 90s Workout (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F88D3BF77DA2BAB9944ED1DE8554E6024E08B7B1.torrent",
+                        "size": "729.93 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 70s Best of by uDiscover (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/799DD754BC6944C6E0B593E8C96669E7BE386DC4.torrent",
+                        "size": "923.28 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Tina Turner - The Platinum Collection 3CD (2009) [Mp3 320] vtwin88cube",
+                        "torrent": "https://itorrents.org/torrent/1A7575D36E097EDA4331F6F27C567D415C9EDAF4.torrent",
+                        "size": "465.37 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 80s Workout (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F73F8A8DE54492D7A0CCF3064CAA6D92FE82C9B8.torrent",
+                        "size": "770.27 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 80s Best of by uDiscover (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/73DB2C977BC4DDECAF7685000736582E84E6181A.torrent",
+                        "size": "864.75 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Dire Straits - Brothers In Arms (20th Anniversary Edition) (2005 Rock) [Flac 24-..",
+                        "torrent": "https://itorrents.org/torrent/B57BEE909463B8C2894B98A6B2198DBD325C6B88.torrent",
+                        "size": "3 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "VA - New Music Releases Week 22 of 2023 (Mp3 320kbps Songs) [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/42E5688E394C0C75CD2A625D514E3E6C5B3AA613.torrent",
+                        "size": "3.76 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - Relaxing Acoustic (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/0E0C7057957AEECC61391E7581803705B0088296.torrent",
+                        "size": "340.67 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Metro Boomin - SPIDER-MAN ACROSS THE SPIDER-VERSE (SOUNDTRACK FROM AND INSPIRED..",
+                        "torrent": "https://itorrents.org/torrent/2A082733EC66CFB53481A32B8EA7092A40927A00.torrent",
+                        "size": "109.78 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 90s Best of by uDiscover (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F6C736A1E812166D6D2C60515FE8EBC6E57DB736.torrent",
+                        "size": "771.23 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Norah Jones - Little Broken Hearts (Deluxe Edition) (2023) FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F345D8316847496D8F43C8F9B1E1D737507F30CC.torrent",
+                        "size": "723.64 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Yes - Mirror To The Sky (2023) [24Bit-96kkHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/AC22AB7FCD7F2E0CA11B8E54844EE281ECBBD9D8.torrent",
+                        "size": "1.26 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Transformers Rise Of The Beasts 2023 Soundtrack (by Jongnic Bontemps)YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/8CD6E4790F5F94ADEF9413591C069B2A01D82B47.torrent",
+                        "size": "163.05 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Official UK Top 100 Singles Chart (01-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/5FCA6335C0C8A02017CDE8F27F617B461B2EAFEB.torrent",
+                        "size": "751.94 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Fast &amp;amp; Furious The Fast Saga - FAST X (Original Motion Picture Soundtrack) ..",
+                        "torrent": "https://itorrents.org/torrent/3E0F0C5ADA4115C87388754C3E3CA652885091D0.torrent",
+                        "size": "120.12 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 80s &amp;amp; 90s Party Hits (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/671F7776A6D3425AD59051D2FD2556F4B0FB7B8B.torrent",
+                        "size": "556.8 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - Old is gold (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/26268C083B51F07FA856388B82C6D792E29CC964.torrent",
+                        "size": "847.62 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Drive-By Truckers - The Complete Dirty South (2023) FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/1E4E0CE197DCF41FD5F29027F7C1CE4E0C104D20.torrent",
+                        "size": "576.84 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - The Best Summertime Album In The World Ever! (3CD) (2023) M..",
+                        "torrent": "https://itorrents.org/torrent/2AF912E53B38C1644787879FB64D97B168C70A2F.torrent",
+                        "size": "551.97 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Lil Durk - Almost Healed (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/D501E8C65A91DF8E69CAB49B4D21FEC575C8EEED.torrent",
+                        "size": "133.43 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "B B King - The Blues (1958 Blues) [Flac 16-44]",
+                        "torrent": "https://itorrents.org/torrent/9EED663412A6C33E3657108D30445804766975F1.torrent",
+                        "size": "159.18 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "TikTok Trending Top 50 Singles Chart (02-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/BDC51E01410A758D974355F32283B789762383CF.torrent",
+                        "size": "360.31 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Tina Turner - Presenting Tina Turner (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/FE07BFFF7D3E152D1B877A09F902566E150A9119.torrent",
+                        "size": "385.36 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Bob Dylan - Shadow Kingdom (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/F492F8CAD1CB28501EB95A8CC06A98B8CA1940D5.torrent",
+                        "size": "130.18 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Rammstein - Sehnsucht (Anniversary Edition - Remastered) (2023) Mp3 320kbps [PME..",
+                        "torrent": "https://itorrents.org/torrent/A0A1D134919E009FC9487A466D6AF2CAE481D6B0.torrent",
+                        "size": "112.63 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Avenged Sevenfold - Life Is But A Dream (2023) FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/B1C8A64DEF898510121E59D683210D9747D35AB4.torrent",
+                        "size": "334.49 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Official UK Top 100 Singles Chart (15-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/099875005628D2F29A91FE222CA95B74471AC33D.torrent",
+                        "size": "775.38 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Taylor Swift - Midnights (The Til Dawn Edition) (2023) Mp3 320kbps [PMEDIA] \u2b50\ufffd..",
+                        "torrent": "https://itorrents.org/torrent/ACAA7D042B5E2ADFCDDF02CB8A156E56A2F87539.torrent",
+                        "size": "187.65 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Kenny Rogers - Life Is Like A Song (Deluxe) (2023) [24Bit-44 1kHz] FLAC [PMEDIA]..",
+                        "torrent": "https://itorrents.org/torrent/5C15D9A77B979D7C60E0C31096082535129654DB.torrent",
+                        "size": "484.46 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Noel Gallagher&amp;#039;s High Flying Birds - Council Skies (Deluxe) (2023) Mp3 320k..",
+                        "torrent": "https://itorrents.org/torrent/B8CFFFAD5EC1EDEA1B597894DA02D9E1A9230E8A.torrent",
+                        "size": "263.65 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Transformers Rise of the Beasts (Music from the Motion Picture) (2023) [24Bit-48..",
+                        "torrent": "https://itorrents.org/torrent/6DC49DABBEBD4559E5474191676B65204E0AD8A1.torrent",
+                        "size": "725 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Elvis Presley - Elvis Presley (1956) [FLAC EAC LOG SCANS CUE] vtwin88cube",
+                        "torrent": "https://itorrents.org/torrent/C676931AE5FB9506C45BCAD1B30217099872DCFA.torrent",
+                        "size": "118.47 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Billboard Hot 100 Singles Chart (10-June-2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/6CF9DD074E5C99F56C0B0E2167A582C167C22E69.torrent",
+                        "size": "730.37 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - The Best Golden Oldies Album In The World Ever! (2023) FLAC",
+                        "torrent": "https://itorrents.org/torrent/6804A0F63206C6E1CA1FA52EDEAA78440B77B545.torrent",
+                        "size": "2.41 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 2000s Best of by uDiscover (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/68EAA1CAA5A4EBF39372508E7F546C5CC592430A.torrent",
+                        "size": "862.61 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Simply Red - Time (Deluxe Edition) (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/8321A4709A1AC7CEFAF4FAE234ADF9040AC4A0DF.torrent",
+                        "size": "119.57 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Kylie Minogue - Padam Padam (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/97B713CA1CB47EF44EDE5820957796EB859883F3.torrent",
+                        "size": "16 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - Play - Rock Ballads (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/8FB7492E002A6DE4DBD282ED0C9DA39AC320C0AC.torrent",
+                        "size": "408.12 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Ke$ha - Gag Order (2023) [24Bit-44 1kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/46960512B0CB1958E651973D25E1723AEC21A6FC.torrent",
+                        "size": "416.8 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - Mastermix Issue 444 (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/34F635534ED2556EC9D67266B8059D9A83503A5B.torrent",
+                        "size": "419.09 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Matchbox Twenty - Where The Light Goes (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/C8656419BEDDE83EED48CA0FFA56B7CFEDFA4412.torrent",
+                        "size": "103.54 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Mike Oldfield - Tubular Bells (50th Anniversary Edition) (2023) [24Bit-44 1kHz] ..",
+                        "torrent": "https://itorrents.org/torrent/3032BD4CE29E084116E1E5CFEF715FDF788107E6.torrent",
+                        "size": "1.42 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Various Artists - Best of 2000 (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/E97AE1E5D0CFA4E3230EECC5CA49E55C31081198.torrent",
+                        "size": "500.51 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Herbie Hancock - Possibilities (2023) [16Bit-44 1kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/5B404AA868490D97D04013E6452BC59902D64B7C.torrent",
+                        "size": "339.85 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Slipknot - Adderall (2023) [24Bit-96kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/31536CE981AF348028C6D6A21B60AEE82E612B51.torrent",
+                        "size": "354.07 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Paul Simon - Seven Psalms (2023) [16Bit-44 1kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/431AE1DFD26F331F3395FD762CF3FD5DF0EAE41E.torrent",
+                        "size": "162.47 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Frank Sinatra - Hi-Res Masters (FLAC Songs) [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/86B494A223DA1BD29D1285DE0CBC107E66FCC325.torrent",
+                        "size": "3.51 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Alicia Keys - Songs In A Minor (Deluxe Edition) (2023) FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/5E3883EDBB4F0366051A08A185590B117EBA0CEC.torrent",
+                        "size": "717.32 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Norah Jones - Little Broken Hearts (Deluxe Edition) (2023) Mp3 320kbps [PMEDIA] ..",
+                        "torrent": "https://itorrents.org/torrent/2A3CB41A47DBD23F16BE39B5097C1CDA68B0E369.torrent",
+                        "size": "316.68 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Jack Johnson - In Between Dub (2023) [24Bit-48kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/198555242EDA3203C8676BAA210FAB2708F07D6D.torrent",
+                        "size": "470.58 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Lewis Capaldi - Broken By Desire To Be Heavenly Sent (2023) Mp3 320kbps [PMEDIA]..",
+                        "torrent": "https://itorrents.org/torrent/FE41E3CEA8F6855AD7439B1968BC839E227FE06C.torrent",
+                        "size": "99.94 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Rammstein - Sehnsucht (Anniversary Edition - Remastered) (2023) [24Bit-44 1kHz]",
+                        "torrent": "https://itorrents.org/torrent/50E0E23424EADAB6D1CE8DE6CDCACF4F3F3E2C36.torrent",
+                        "size": "608.61 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "VA - New Music Releases Week 23 of 2023 (Mp3 )[Anamous]",
+                        "torrent": "https://itorrents.org/torrent/76A1AA2B7187472C07220D021226B8438C73479C.torrent",
+                        "size": "4.08 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Taylor Swift - Midnights (The Til Dawn Edition) (2023 Pop) [Flac 24-48]",
+                        "torrent": "https://itorrents.org/torrent/D2ED73946490DAC4871D923179BAC80398577DCE.torrent",
+                        "size": "946.66 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Mike Oldfield - Tubular Bells (50th Anniversary Edition) (2023 Pop) [Flac 24-44]",
+                        "torrent": "https://itorrents.org/torrent/D460CFCDE43FD7743B7FB21D8370002CFA6881DC.torrent",
+                        "size": "1.42 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Various Artists - Hi-Res Masters: 100 Tracks to Test your Speakers [24Bit-FLAC] ..",
+                        "torrent": "https://itorrents.org/torrent/2DD5232CEDF1F12FF1F7299B07A2A463C434E96C.torrent",
+                        "size": "11.9 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Various Artists - 2010s Best of by uDiscover (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/BE15485D53A6FB9EA27AB1EBBF9D4EB7C9AD14A8.torrent",
+                        "size": "685.03 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Steve Lukather - Bridges (2023) [24Bit-44 1kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/3BC2BA288EE6FF58DA0E3685ABE00A77456ED6D5.torrent",
+                        "size": "423.37 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "The Beach Boys - Surf&amp;#039;s Up (1971 PBTHAL 24-96 FLAC) [Anamous]",
+                        "torrent": "https://itorrents.org/torrent/15DD47761ABA95D1C750F7A85EA25C4BD2E9AB9E.torrent",
+                        "size": "728.71 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Alice Cooper - Killer (Expanded &amp; Remastered) (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/1C29B4EBE1C6371C9CB224B9E45F57AF889F20F3.torrent",
+                        "size": "261.28 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Sparks - The Girl Is Crying In Her Latte (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/EB85BEF3E31CDC77D2962A29F31B2BEDA4DDC0E1.torrent",
+                        "size": "117.46 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "The Moody Blues - The Moody Blues Anthology (1998) [FLAC] vtwin88cube",
+                        "torrent": "https://itorrents.org/torrent/7CF65DD7A6CB1FD30419AEAD12363985805C972C.torrent",
+                        "size": "966.19 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "The Beach Boys - 50 Fifty Big Ones (Greatest Hits) (2012) [Mp3 320] vtwin88cube",
+                        "torrent": "https://itorrents.org/torrent/5910D2B24B980EE3AD81EEE58ADF442C6AB48BDD.torrent",
+                        "size": "311.32 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Various Artists - Party Hits 2023 by Digster Pop (2023) Mp3 320kbps [PMEDIA] \u2b50..",
+                        "torrent": "https://itorrents.org/torrent/B691A431404EF954A99F3A0D4F1368A50C76C5A9.torrent",
+                        "size": "378.49 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Greta Van Fleet - Farewell For Now [EP] (2023) [24Bit-96kHz] FLAC [PMEDIA] \u2b50\ufffd..",
+                        "torrent": "https://itorrents.org/torrent/159FD4C781F1A352A73164F219F5CEA60D99A06C.torrent",
+                        "size": "327.69 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Extreme - SIX (2023) [24Bit-96kHz] FLAC [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/6B35E75D2AC7E6BAE008F7D6673E691B24086867.torrent",
+                        "size": "1.09 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Guns N' Roses - Chinese Democracy (2008) (PBTHAL LP 24-96 FLAC) vtwin88cube",
+                        "torrent": "https://itorrents.org/torrent/03A9B067D14E949BC86AB12141602EAC73BDED8E.torrent",
+                        "size": "1.43 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Pet Shop Boys - SMASH-The Singles 1985 -2020 (2023 Remaster) (2023) [24Bit-44 1k..",
+                        "torrent": "https://itorrents.org/torrent/2DBD5A4B0BFC57114E7BC5AA3FDDC5155E51711F.torrent",
+                        "size": "2.62 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "SPIDER-MAN ACROSS THE SPIDER-VERSE (SOUNDTRACK FROM AND INSPIRED BY THE MOTION P..",
+                        "torrent": "https://itorrents.org/torrent/2E3C63099E40779D3AEB3B576938F154CF03C86D.torrent",
+                        "size": "955.09 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Extreme - SIX (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/7246CC8F8E95956C1DBDCBE8645BF8762CDE738E.torrent",
+                        "size": "122.08 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Simple Minds - New Gold Dream (81 82 83 84) (Deluxe) (1982 Pop Rock) [Flac 16-44..",
+                        "torrent": "https://itorrents.org/torrent/DC0B5B431529C8FC923239A97CB052303C4B7930.torrent",
+                        "size": "730.29 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Alice Cooper - Killer (Expanded &amp; Remastered) (2023 Hard Rock) [Flac 24-96]",
+                        "torrent": "https://itorrents.org/torrent/78E402B153DFDE55194813CC084D935B900FA3C3.torrent",
+                        "size": "2.45 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Various Artists - 80&amp;#039;s Slow Grooves (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/46DE0084AF518BFE733A22D84192AD600916A558.torrent",
+                        "size": "324.62 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Simple Minds - Sons And FascinationSister Feelings Call (1981 Pop Rock) [Flac 16..",
+                        "torrent": "https://itorrents.org/torrent/8020AC97D7FB95BAF7CEFA38933B4F5CA19C0FCB.torrent",
+                        "size": "413.34 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Tiesto - DRIVE (Bonus Track Edition) (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/7B58FAD7AA6A20F11F7CA3EF7FE02BA803E3943C.torrent",
+                        "size": "82.22 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Various Artists - Road Trip Southern Rock (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/34C73650734ED43E5DDD713CDFF1A4CA0996C6AF.torrent",
+                        "size": "275.6 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Alice Cooper - Killer (Expanded &amp; Remastered) (2023) [24Bit-96kHz] FLAC",
+                        "torrent": "https://itorrents.org/torrent/BC7DE93D67175D502966570B27EDAEF3C35BFDCD.torrent",
+                        "size": "2.45 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "The Weeknd - The Idol Episode 1 (Music from the HBO Original Series) (2023) Mp3 ..",
+                        "torrent": "https://itorrents.org/torrent/6FF8B9529CD9A68889C11E4BE285DA8F6A6D6717.torrent",
+                        "size": "18.6 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Various Artists - Drinking Songs (2023) Mp3 320kbps [PMEDIA] \u2b50\ufe0f",
+                        "torrent": "https://itorrents.org/torrent/7D066305CFC5055C3886D5B072DFF703DBBE43BF.torrent",
+                        "size": "313.75 MB",
+                        "rate": 3
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Monthly Top 100 Games Torrents",
+            "url": "https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_games",
+            "description": "Monthly Top 100 Games Torrents",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_games\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_games\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "200",
+                "result": [
+                    {
+                        "title": "Lust Theory: Season 2 (v1 0 3) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/EE435AFE99D9CB9784AAFD1C06B34410174F9E3A.torrent",
+                        "size": "11.63 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "System Shock - Remake (v1 0 16944 Goodies Pack Russian Fonts Fix, MULTi13) [FitG..",
+                        "torrent": "https://itorrents.org/torrent/15D06C2D55E32CAEA1690D2616A5FDA1D28D92BB.torrent",
+                        "size": "2.79 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Amnesia: The Bunker (MULTi8) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/498633DE53AC2587FD4E925A2635F81A196AB4E2.torrent",
+                        "size": "6.05 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Cities: Skylines - Collection (v1 17 0-f3 All DLCs Bonus Content, MULTi9) [FitGi..",
+                        "torrent": "https://itorrents.org/torrent/072770D06ADBEA93ACCF0CAD5ADD4F08E9EB557A.torrent",
+                        "size": "6.31 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Sims 4: Deluxe Edition (v1 98 127 1030 All DLCs &amp;amp;amp",
+                        "torrent": "https://itorrents.org/torrent/B4EA31FD376F928C4E33C74CC657C4C701D6A7EC.torrent",
+                        "size": "33.57 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Warhammer 40,000: Boltgun (MULTi14) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/1F0B866B414C9418999608119C6474F45B8CC0AD.torrent",
+                        "size": "2.88 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "SUCCUBUS: Ultimate Edition (v1 13 13 DLCs Bonuses, MULTi12) [FitGirl Repack, Sel..",
+                        "torrent": "https://itorrents.org/torrent/D63911B2EAF65ED0815C0360479DDCBB9626892B.torrent",
+                        "size": "17.69 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "No Man&amp;#039;s Sky (v4 30-105707 DLC Bonus OST, MULTi14) [FitGirl Repack, Selecti..",
+                        "torrent": "https://itorrents.org/torrent/59CF33A6DE34BEECE9B28623D0ECF94DD1B26334.torrent",
+                        "size": "7.73 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "The Last Orgasm (MULTi29) [DODI Repack]",
+                        "torrent": "https://itorrents.org/torrent/71F3CDBFCBDE573250713DFA0F40ADA642B611C0.torrent",
+                        "size": "2.94 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Car For Sale Simulator 2023",
+                        "torrent": "https://itorrents.org/torrent/32DF8F580804866F4D1FA4412D23D1E3FE2340D8.torrent",
+                        "size": "2.08 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Marvel\u2019s Spider-Man: Miles Morales (v2 209 0 0 + DLC + Bonus Content + MULTi23..",
+                        "torrent": "https://itorrents.org/torrent/AD5BF1AECDBF0309DD007CE3CC3847059A9607BD.torrent",
+                        "size": "36.75 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Age of Empires II: Definitive Edition (v101 102 18071 0 #83607 5 DLCs, MULTi17) ..",
+                        "torrent": "https://itorrents.org/torrent/3B0734D748A831BA6C0AA270522F28293ABA767E.torrent",
+                        "size": "17.49 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Planet of Lana (v1 0 6 0 Bonus Soundtrack, MULTi11) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/461C95646C54E5237BF925857676B05F8D7F7AD0.torrent",
+                        "size": "2.57 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Greyhill Incident: Digital Abducted Edition ( DLC &amp;amp;amp",
+                        "torrent": "https://itorrents.org/torrent/0B743A0A19B584B9FB02B9CF6D1D7F14C0F37671.torrent",
+                        "size": "6.92 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Warhammer 40000 Boltgun-FLT",
+                        "torrent": "https://itorrents.org/torrent/97C8CCAF5980F6F5CF17C7B085E638F610D75CAD.torrent",
+                        "size": "4.37 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Etrian Odyssey Origins Collection ( 3 DLCs, MULTi9) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/69F29FFEFE903D348B3B039994A94E6DCFCC5258.torrent",
+                        "size": "786.36 MB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Resident Evil 4 - Deluxe Edition [Build 11025382 + DLCs] (2023) - RePack By Dece..",
+                        "torrent": "https://itorrents.org/torrent/A87B44761A1C801D99E26BD8723E9D3732BA08D8.torrent",
+                        "size": "41.74 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "MotoGP 23 ( 2 DLCs Windows 7 Fix, MULTi11) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/AFF3FB74895C2C5FFDF16F18E801FFA0D4762204.torrent",
+                        "size": "12.12 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Electrician Simulator: Complete ( Smart Devices DLC, MULTi14) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/49E257698F2732ABD1A9180EE54D30123097126C.torrent",
+                        "size": "5.13 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Project Lazarus (v7 0 Release, MULTi22) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/673E382D9388ABE741CD9B776D190112E9FF23CF.torrent",
+                        "size": "1.23 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Sands of Salzaar (v1 0 30 3 DLCs, ENG CHS) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/54E23C1044B469537298B53330A0A55F2B9D2BB8.torrent",
+                        "size": "1 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "MILFs of Sunville - Season 1",
+                        "torrent": "https://itorrents.org/torrent/8A20A82C6AF105C5FD3BC31C5B4D7D85AA34E374.torrent",
+                        "size": "7.27 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Only Up! ( Windows 7 Fix) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/CDEE79238104E22558F49A10050A2D3AB9492951.torrent",
+                        "size": "3.79 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Miasma Chronicles ( Windows 7 Fix, MULTi12) [FitGirl Repack, Selective Download ..",
+                        "torrent": "https://itorrents.org/torrent/406273EEFB1B97358C5F65123E290AF784D278AC.torrent",
+                        "size": "10.49 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "System Shock Remake-RUNE",
+                        "torrent": "https://itorrents.org/torrent/1B8A99AB311684DEDB22FBFC3CE7899090C6BFB6.torrent",
+                        "size": "3.92 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "CONVERGENCE: A League of Legends Story (Version a7e37f30e71, MULTi15) [FitGir Re..",
+                        "torrent": "https://itorrents.org/torrent/37A1A1070C24C40925DAC4F5D2C76A9F9C5814C0.torrent",
+                        "size": "3.07 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Espresso Tycoon (MULTi13) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/891CAB415F0ED80E8CDA0A1C9B2EE18975E37E09.torrent",
+                        "size": "1.74 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Only Up-SKIDROW",
+                        "torrent": "https://itorrents.org/torrent/2A386E32D0A2AD4C7FA35FD225D6B97D833CD656.torrent",
+                        "size": "5.24 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Riftbreaker (v739 356 2 DLCs, MULTi10) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/B57E7744BC8A07E841D50F8E37060D82CBF39589.torrent",
+                        "size": "7.88 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "We Love Katamari REROLL Royal Reverie - Special Edition ( DLC, MULTi9) [FitGirl ..",
+                        "torrent": "https://itorrents.org/torrent/51BCD2061EFF5813FFCCC69629621996D271A7FD.torrent",
+                        "size": "4.21 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Gunfire Reborn (Build 11365376 2 DLCs, MULTi18) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/C4D099D342BCC4EE4CFBC6ADAE4A83ACF3632135.torrent",
+                        "size": "1.48 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Victoria 3 (v1 3 0 5 DLCs Bonuses, MULTi11) [FitGirl Repack, Selective Download ..",
+                        "torrent": "https://itorrents.org/torrent/2A5E11923589AEE22E89D693E38240B8A56A159B.torrent",
+                        "size": "3.87 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Quarry: Deluxe Edition (v1 07 3 DLCs, MULTi20) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/56D545813308312657F8B8645756D1F4EEF7DACE.torrent",
+                        "size": "33.47 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Nocturnal (v1 0 0 668, MULTi8) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/69545B5E3A3FC38422E76E7C3B29A2221145198B.torrent",
+                        "size": "460.52 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Last of Us Part I v1 1 0-RUNE",
+                        "torrent": "https://itorrents.org/torrent/C2D518F62AEE52BA129DE4BC9931F3B98BEBED13.torrent",
+                        "size": "75.1 GB",
+                        "rate": 6
+                    },
+                    {
+                        "title": "Urban Flow (MULTi10) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/5A0117C4DD014EF407CF909E9784BAFD4F77D906.torrent",
+                        "size": "774.91 MB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Loop8: Summer of Gods ( 7 DLCs ArtBook, MULTi8) [FitGirl Repack, Selective Downl..",
+                        "torrent": "https://itorrents.org/torrent/B6A4A8CFE670A54D958A6107F68A43DD7420F029.torrent",
+                        "size": "2.44 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Cities: Skylines - Collection (v1 17 0-f3 + All DLCs + Bonus Content + MULTi9) (..",
+                        "torrent": "https://itorrents.org/torrent/DF2A99A083158629A93389AD5D362F5836396A18.torrent",
+                        "size": "7.04 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Railway Empire 2: Deluxe Edition (v1 0 1 52027 5 DLCs Bonuses, MULTi12) [FitGirl..",
+                        "torrent": "https://itorrents.org/torrent/8A41090AE9A7EB302D5BF563024227837D4E991D.torrent",
+                        "size": "14.92 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Solasta: Crown of the Magister - Lightbringers Edition (v1 5 46 8 DLCs Bonuses, ..",
+                        "torrent": "https://itorrents.org/torrent/7D1D9DDA7233DE85DCEA6C227091CE51CB50E6EB.torrent",
+                        "size": "13.93 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Flyto (MULTi11) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/A6595EFD65E86BD7C3FCD87F153119DE73F56518.torrent",
+                        "size": "5.81 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "System Shock (v1 0 16944 + Bonus Content + MULTi13) (From 2 3 GB) [DODI Repack]",
+                        "torrent": "https://itorrents.org/torrent/B97346E3AAB50950CFFDF502F054701D7F313233.torrent",
+                        "size": "3.02 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Warhammer 40,000: Battlesector - Deluxe Edition (v1 3 54 (21104) 5 DLC Bonus Con..",
+                        "torrent": "https://itorrents.org/torrent/1940C0133DC5FFF1B4F890902689B234140DF9F5.torrent",
+                        "size": "5.01 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Tale of Immortal (v1 0 105 259 DLC Bonus OST, MULTi3) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/EAC8D2CF43C1F9F6139C4C01B62FEE17C792CE62.torrent",
+                        "size": "3.72 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Voidigo (v1 0 0 Release, ENG SWE) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/F156CA7C60F1B956947D961880D69243276B6851.torrent",
+                        "size": "752.53 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "A Whisper in the Twilight: Chapter One [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/91ACBACA227D415444AC413B40055C5242A7F97B.torrent",
+                        "size": "2.58 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "Moonshine Inc : Supporter Edition (v1 1 DLC Bonus Content, MULTi6) [FitGirl Repa..",
+                        "torrent": "https://itorrents.org/torrent/7A096C3D4CE00EA69ACD74BEEE25F28E89979E2A.torrent",
+                        "size": "5.84 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Easy Red 2 (v1 2 3 2 DLCs, MULTi14) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/23245D5A8F329C6AA1813A4A968068EBAD7D29FD.torrent",
+                        "size": "3.17 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "SkateBIRD (v2 0 Skate Heaven Update, MULTi10) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/0EBC9EF44F4F41A2E6A63FC86D70C2EB09FEF22A.torrent",
+                        "size": "1.25 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Stasis: Bone Totem (v1 0 1 1 Bonus Content, MULTi9) [FitGirl Repack, Selective D..",
+                        "torrent": "https://itorrents.org/torrent/820202ECD543250EA57A1693A06A128FF4E16333.torrent",
+                        "size": "8.54 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Killer Frequency (MULTi11) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/ABF301BE694CE0B7EC3FBD23626BABC971EE63B6.torrent",
+                        "size": "907.37 MB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "MotoGP 23 (2 DLCs + MULTi11) [DODI Repack]",
+                        "torrent": "https://itorrents.org/torrent/760D4F70C8E040CE15C660E02398AE0B4218BBDC.torrent",
+                        "size": "12.34 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Amnesia: The Bunker (MULTi8) [DODI Repack]",
+                        "torrent": "https://itorrents.org/torrent/FF35D1EDEB9572A623E83EE50F6A631AEE4B7E3A.torrent",
+                        "size": "6.24 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "System of Souls (MULTi19) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/FDD4FD17B3081695AFC1A0802440608A7FE2A70F.torrent",
+                        "size": "1.21 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "The Outer Worlds: Spacer&amp;#039;s Choice Edition (v1 3 1 6298 19580 0 Bonus OST, M..",
+                        "torrent": "https://itorrents.org/torrent/D1D78CCD6A2D9EAD4A289722ED1C016DFC0924B0.torrent",
+                        "size": "39.09 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "GUILTY GEAR -STRIVE-: Ultimate Edition 2022 (v1 27 19 DLCs, MULTi9) [FitGirl Rep..",
+                        "torrent": "https://itorrents.org/torrent/30A3AEFD9F7D62316509B27D8249A64F9331AD7D.torrent",
+                        "size": "14.27 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "Above Snakes-TENOKE",
+                        "torrent": "https://itorrents.org/torrent/AB7624D73C8DF3C73B93DB13C8081EE25F6A2DC4.torrent",
+                        "size": "1.16 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "V Rising v0 6 0 57108",
+                        "torrent": "https://itorrents.org/torrent/AAE1A763FC28CC101B01F79249D5BA9C3391C804.torrent",
+                        "size": "5.42 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Lusty God",
+                        "torrent": "https://itorrents.org/torrent/EE4220FE0A87EA727894D33038E0C652AC9B91A9.torrent",
+                        "size": "48.63 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "DOOMBLADE (MULTi8) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/8427BA0CBCC520967853876D8DA833B9F3CDAC24.torrent",
+                        "size": "1.32 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "After Us (v1 24 12, MULTi16) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/2A3FF88A24C5635CFBE3FCB5BA2BCB126782A0F5.torrent",
+                        "size": "17.13 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Fetish Locator Week Three",
+                        "torrent": "https://itorrents.org/torrent/D8DF09516FE6A93BB9D55B4F457E4DB401228B7C.torrent",
+                        "size": "8.07 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Dungeon Defenders: Awakened (v2 1 0 35276 King&amp;#039;s Game Update 7 DLCs, MULTi8..",
+                        "torrent": "https://itorrents.org/torrent/7F9EA40EB30D8D84C266AA068E0A74B616D86798.torrent",
+                        "size": "3.8 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Return (v1 0 0 0 Bonus ArtBook, MULTi7) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/5E63B7BE65C7F2658E0B5E978F2FE7F96C2EF179.torrent",
+                        "size": "575.73 MB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Lord Of The Rings Battle For Middle Earth Anthology REPACK2-KaOs FIXED",
+                        "torrent": "https://itorrents.org/torrent/D0B530E455F2AF61217D037BE3E60F97D5DCC283.torrent",
+                        "size": "5.16 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Blightlands Blacksmith ( Windows 7 Fix) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/F1C270CA696C698F5F032B022CAC33DB0ADAB9C5.torrent",
+                        "size": "1.22 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "DESORDRE: A Puzzle Game Adventure (v1 0 4, MULTi7) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/D38300E6F6B119709ADF7FAEE95BFFBAAF78FF1C.torrent",
+                        "size": "2.37 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Humanity ( Bonus Soundtrack, MULTi6) [FitGirl Repack, Selective Download - from ..",
+                        "torrent": "https://itorrents.org/torrent/9F0F192273A941B4CFED2F7C4E0FD7E0882671C9.torrent",
+                        "size": "3.96 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "The Sims 4 v1 98 127 ALL DLC",
+                        "torrent": "https://itorrents.org/torrent/21B9B32A460FA0E88A3F444CB019EBE633C700D6.torrent",
+                        "size": "54.86 GB",
+                        "rate": 4
+                    },
+                    {
+                        "title": "The Lord of the Rings: Gollum - Precious Edition (v0 2 51064 + All DLCs + Bonus ..",
+                        "torrent": "https://itorrents.org/torrent/37CE09CD6CB0256AB19FAD8F9FB9BB7F5AA5633D.torrent",
+                        "size": "25.46 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Repella Fella: Pirate Edition [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/3547A5C46FB773EAF6E9F2A61C5831D463B19A5A.torrent",
+                        "size": "7.13 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Tank Mechanic Simulator (v1 4 0 Build 911 2 DLCs, MULTi15) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/67AA5A3B0D6A0541D64F12B9EAC2D17EC7E72547.torrent",
+                        "size": "4.15 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Arcade Paradise: Digital Deluxe Edition (v1 3 20230515 143309 8 DLCs Bonus OST, ..",
+                        "torrent": "https://itorrents.org/torrent/1170EFC87E60673F055CC98655302F9E013FE83F.torrent",
+                        "size": "2.18 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Warhammer 40,000: Boltgun (v1 17 38829 471 + MULTi14) [DODI Repack]",
+                        "torrent": "https://itorrents.org/torrent/59A054111EBED682B7C18433310B42A777B630BD.torrent",
+                        "size": "2.94 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Warhammer Underworlds: Shadespire Edition (v1 8 7 All DLCs, MULTi6) [FitGirl Rep..",
+                        "torrent": "https://itorrents.org/torrent/8D4938AA5F8340A0BE171E26B45438518F525354.torrent",
+                        "size": "4.81 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Tour de France 2023 (v01 00 04 703, MULTi7) [FitGirl Repack, Selective Download ..",
+                        "torrent": "https://itorrents.org/torrent/839656E79F8A678849C7CEEBBC6D0E0D8CDD2274.torrent",
+                        "size": "16.16 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Harmony: The Fall of Reverie (v1 01 1279966 Bonus Soundtrack, MULTi4) [FitGirl R..",
+                        "torrent": "https://itorrents.org/torrent/EE29F561F877B4DC7B6ADCDFDC626DD8D530C908.torrent",
+                        "size": "2.23 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Car For Sale Simulator 2023 v0 1 6",
+                        "torrent": "https://itorrents.org/torrent/C18EDC2D08E43AC42F7953BB9F804ACF0CDCECD8.torrent",
+                        "size": "1.06 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Euro Truck Simulator 2 v1 47 2 6s",
+                        "torrent": "https://itorrents.org/torrent/302AC6BD06E458FD9CBC1427869BBC39FD559B82.torrent",
+                        "size": "19.24 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "ZOMBIAX EVIL [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/9488FE8DC29C0041D3E2B69A3027195FA5699824.torrent",
+                        "size": "3.71 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Warhammer 40,000: Gladius - Relics of War (v1 12 0 15 DLCs Bonuses, MULTi6) [Fit..",
+                        "torrent": "https://itorrents.org/torrent/FB05C1BB8DF9BE6C232BAA9AABC93CC579977B46.torrent",
+                        "size": "1.75 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Bus Simulator 21: Next Stop - Gold Edition (Build 11097407 20 DLCs, MULTi13) [Fi..",
+                        "torrent": "https://itorrents.org/torrent/AC8709CBFE3AE63A9573166CE17496F14A94A4FA.torrent",
+                        "size": "5.51 GB",
+                        "rate": 5
+                    },
+                    {
+                        "title": "The Last Orgasm",
+                        "torrent": "https://itorrents.org/torrent/25A78CBB754EB817C5C3BA3CF639D3BCD614CAD7.torrent",
+                        "size": "3.53 GB",
+                        "rate": 3
+                    },
+                    {
+                        "title": "Summer Trip Cruise (v1 0 0 Bonus OST, MULTi10) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/C5094141EB0FACACB96B80ECF978532462F79B02.torrent",
+                        "size": "460.04 MB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Distant Worlds 2 (v1 1 4 4 Hyperspeed Update Ikkuro &amp;amp;amp",
+                        "torrent": "https://itorrents.org/torrent/506A4760D3F34FEE0311CEC75DD6B651091B7BD3.torrent",
+                        "size": "3.38 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Car For Sale Simulator 2023 v0 1 5065",
+                        "torrent": "https://itorrents.org/torrent/63CB987FA9B12428F2EF45253DBBEEBB39BDC835.torrent",
+                        "size": "1.02 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Mask of the Rose (v1 2 705 Bonus Soundtrack) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/64BA36ADD93146E0ABF1FE2263D2B2BF1C1F4144.torrent",
+                        "size": "779.84 MB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "The Last of Us Part I - Update v1 0 5 1 (Require Installed v1 0 5 0)",
+                        "torrent": "https://itorrents.org/torrent/2648B421C64F8708301E92BAAD25853C243B79E4.torrent",
+                        "size": "37.69 MB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Firmament (v1 0 0 e9748-p17307 Windows 7 Fix, MULTi11) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/09DEEF37E0CABF006AC9E2D357BC138FCA2A79F1.torrent",
+                        "size": "6.68 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Army of Ruin",
+                        "torrent": "https://itorrents.org/torrent/9EF3B6C82ECD4592CDA897E8D7FD630E07F61F9B.torrent",
+                        "size": "223.07 MB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "The Wonderful 101: Remastered (v1 0 8 4 DLCs, MULTi6) [FitGirl Repack, Selective..",
+                        "torrent": "https://itorrents.org/torrent/16C4E068C777883129560A7050B8DCB5002BDFA9.torrent",
+                        "size": "6.55 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Thea 2: The Shattering (v2 0508 0677 3 DLCs Bonus Content) [FitGirl Repack, Sele..",
+                        "torrent": "https://itorrents.org/torrent/C8E55066B2825CAB3111417B2AE865618CD2A319.torrent",
+                        "size": "1.88 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "The Outlast Trials (FIXED)",
+                        "torrent": "https://itorrents.org/torrent/A8A86E9E27DE487C30A22B17B14E4BC2272204EB.torrent",
+                        "size": "22.34 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "System Shock Remake v1 1 17082",
+                        "torrent": "https://itorrents.org/torrent/E2C7B7F1D43C5DC0074DE0923D995838A3047EFF.torrent",
+                        "size": "3.39 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Pro Cycling Manager 2023 (v1 1 4 386, MULTi9) [FitGirl Repack, Selective Downloa..",
+                        "torrent": "https://itorrents.org/torrent/AE817AD587D20EB986EC9649116E99467472B0F7.torrent",
+                        "size": "5.61 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "The Proponent [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/988C9C02E10AFDE5BA1DED3F4FC51A79A82854B6.torrent",
+                        "size": "777.54 MB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Medieval Kingdom Wars (v1 41 3 DLCs, MULTi8) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/237EED8EF9EC184417D96BC1888717715AC82DCD.torrent",
+                        "size": "1.56 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Liberte (v1 0 1m) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/C4F3FF8BF30CF969456A4FF05BB3EA1328D38765.torrent",
+                        "size": "1.33 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "CyberCity: SEX Saga",
+                        "torrent": "https://itorrents.org/torrent/1B4C5593705252D5FBFEBD03D892F5DE4DEDEEE7.torrent",
+                        "size": "6.49 GB",
+                        "rate": 2
+                    },
+                    {
+                        "title": "Candle Knight (MULTi8) [FitGirl Repack]",
+                        "torrent": "https://itorrents.org/torrent/59492DC4FD46CDC1B46625183EF3EB9F5D05E43C.torrent",
+                        "size": "5.51 GB",
+                        "rate": 2
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Monthly Top 100 TV-shows Torrents",
+            "url": "https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_tv_shows",
+            "description": "Monthly Top 100 TV-shows Torrents",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_tv_shows\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_tv_shows\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "200",
+                "result": [
+                    {
+                        "title": "Silo S01E08 1080p WEB H264-DiRT",
+                        "torrent": "https://itorrents.org/torrent/EBA953F26EA1FF2AAD7901B47D2FFDBFA0381F29.torrent",
+                        "size": "3.28 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/83292190BE7C0545180C195B1F51BD572466B3F9.torrent",
+                        "size": "1.91 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Black Mirror S06 COMPLETE 1080p NF WEB h264-ETHEL[TGx]",
+                        "torrent": "https://itorrents.org/torrent/4AB4090FEE3E805A8FA1E3AA35AA9161A0D08794.torrent",
+                        "size": "12.57 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Black Mirror S06E01 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/BBED6FF86827102A345BD4CBFF6C2D337CE7A754.torrent",
+                        "size": "2.3 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Black Mirror S06E02 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/A889BF55842B8D3BB66EF271E640A570EB210A6A.torrent",
+                        "size": "2.24 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Black Mirror S06E03 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/64E728B6BCCF76EF2C19A03BB454C9261A6B4220.torrent",
+                        "size": "3.5 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Black Mirror S06E05 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/4187B192FA6F63F81275AE5320C293F56A888C04.torrent",
+                        "size": "2.93 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E04 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/2C236C6CE7CA69EBE77F76D468B7ADAC3F06D994.torrent",
+                        "size": "1.61 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E03 1080p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/FE6C861086956094E2D20DB4967424F97F3AC7C3.torrent",
+                        "size": "922.43 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Outlander S07E01 1080p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/7353FA85B1D9B6DB5ADE6340C59F0490CCE01013.torrent",
+                        "size": "3.54 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fear the Walking Dead S08E06 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/BAC34632B74589B8E48615CF0C6403A8411637A4.torrent",
+                        "size": "3.95 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06 COMPLETE 720p NF WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/9154FE3A830EF9B85C6CC1CB49CF5F86CA961EFC.torrent",
+                        "size": "1.56 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/F23F8A5B82F95C37D5E75EEAC5F203810D30DFEB.torrent",
+                        "size": "253.11 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E07 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/2241ACAC09684733071344C85741F7666B7DFDCA.torrent",
+                        "size": "193.84 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E01 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/839099321D0BF099553D1F1FCA2C2CB8EE66F67F.torrent",
+                        "size": "813.37 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 720p WEB h264-ETHEL[TGx]",
+                        "torrent": "https://itorrents.org/torrent/8CFF4C04124D36C11AF61C71A59247C26B0C382D.torrent",
+                        "size": "645.38 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E05 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/90F7ECF265D3D49296BE9AD3BC6BDBD95AD09F7C.torrent",
+                        "size": "427.94 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E03 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/5018E5583DCF1BBF86ED376F702CA49158B57DDC.torrent",
+                        "size": "1.21 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E08 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/7BCBA3A11BB445F08192D7186E5FC01DDBDBE209.torrent",
+                        "size": "400.85 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E07 The Flamekeepers 1080p ATVP WEB-DL DDP5 1 H 264-NTb",
+                        "torrent": "https://itorrents.org/torrent/89B0CC8428037854E917B28A69CFC008576A0AE5.torrent",
+                        "size": "3.61 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/2BF7D57CA615F5EAA53458F261F5AA45EDDF8990.torrent",
+                        "size": "471.58 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E02 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/8C2ABB2B8C7DEF9CC71BF5178676EF7451AD500B.torrent",
+                        "size": "829.38 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E02 1080p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/3CCA7210B451DC15BC338101D79B6F840C780F24.torrent",
+                        "size": "946.77 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E06 1080p WEB H264-CAKES",
+                        "torrent": "https://itorrents.org/torrent/45122C0C52841BCF71B71307526DA83ADC17A59E.torrent",
+                        "size": "3.85 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E05 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/506601A8D6BA317EFB848554262AB2C8AFF6E1A2.torrent",
+                        "size": "1.13 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "FUBAR S01 COMPLETE 720p NF WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/C2A5CD7F5491E23D3E12B3A5BE0E1213E5DA6091.torrent",
+                        "size": "2.07 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "From S02E08 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/34E94F18ADD0E03EF8F10947508DA292B2D763BE.torrent",
+                        "size": "2.27 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Black Mirror S06E04 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/08F712F9B155DF3339BD3C310A0F707981732A96.torrent",
+                        "size": "710.76 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Ted Lasso S03E12 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/E202FB409F2313123BD18A609BD50E82A322FE72.torrent",
+                        "size": "1.05 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E08 720p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/CFEE08215F2DC30088CCB8A6C7E1160ECEEAC3B4.torrent",
+                        "size": "1.41 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "UFC 289 PPV Nunes vs Aldana HDTV x264-PUNCH[TGx]",
+                        "torrent": "https://itorrents.org/torrent/98CB55759C1D7AFF7821296356A3D7C3BB34DD2E.torrent",
+                        "size": "2.1 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Full Monty UK S01 COMPLETE 720p HULU WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/CB152C148BAB4BD41B63D7D4059F91EFB4E16ED5.torrent",
+                        "size": "2.34 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Silo S01E04 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/07C2061E6EC1113AECBB6AFE3984EA0DE2573474.torrent",
+                        "size": "369.1 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Ted Lasso S03E11 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/8555A87EA626A6144CA16279C4D405BA664A4FC1.torrent",
+                        "size": "834.21 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E06 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/831A4790646F4924F8F8ED31C95F26B654F40A52.torrent",
+                        "size": "403.18 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E06 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/415A2DEC0A92EA672094E0D00168A7369E808C3A.torrent",
+                        "size": "203.31 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Ted Lasso S03 COMPLETE 720p ATVP WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/AB86611E288185CEE02B596F5C1F036C71C2A9B3.torrent",
+                        "size": "3.84 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E01 1080p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/53BBA466E84FD2B416D7FB1AC4FB2B2C6F0F090E.torrent",
+                        "size": "895.71 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Grand Tour S05E02 1080p WEB h264-ETHEL[TGx]",
+                        "torrent": "https://itorrents.org/torrent/5205F9762E9DC3C859002B6BB24C56AB66270320.torrent",
+                        "size": "7.48 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E06 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/4B26EA8B13CF3C12C34BCB7AF1B93B7AB3228839.torrent",
+                        "size": "3.85 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 HDR 2160p WEB h265-ETHEL[TGx",
+                        "torrent": "https://itorrents.org/torrent/66C05BF675AA4A05FCF039472026A80F59B54BFE.torrent",
+                        "size": "4.98 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "From S02E07 1080p WEB h264-EDITH[TGx]",
+                        "torrent": "https://itorrents.org/torrent/D8C17B02475A5FAA27DB37B9A5ACD5726E2ABD7C.torrent",
+                        "size": "1.57 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "From S02E08 1080p WEB h264-ETHEL[TGx]",
+                        "torrent": "https://itorrents.org/torrent/5DF189843DF0F5E4623A81AEEE26644D735DEBBD.torrent",
+                        "size": "2.27 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Outlander S07E01 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/40D5C6748A31F8A0E03A03BE9E712FFDF07C9293.torrent",
+                        "size": "1.54 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Blacklist S10E17 HDTV x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/27454E1CB88E76FFEA2329210A42F24A2D5D3598.torrent",
+                        "size": "251.24 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Based on a True Story S01 COMPLETE 720p PCOK WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/E8E7982776848D4BD35FC5D6A43B1882D929CC19.torrent",
+                        "size": "1.6 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Walking Dead Dead City S01E01 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/2C7164318C863DDFAC3007DDC05C3FE8CC0BD3B0.torrent",
+                        "size": "3.04 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Never Have I Ever S04 COMPLETE 720p NF WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/A5C7AAEA2A2DCEBB52DF486E703BD2C8EBD73BAC.torrent",
+                        "size": "2.25 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Silo S01E08 1080p WEB H264-DiRT[TGx]",
+                        "torrent": "https://itorrents.org/torrent/E4F2C6116B7CA264DE1C74BDEB32FAAB3E856182.torrent",
+                        "size": "3.28 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Blacklist S10E17 720p HDTV x264-SYNCOPY",
+                        "torrent": "https://itorrents.org/torrent/1B347C28E2C088840D9FDCF05F52EF8A18617A74.torrent",
+                        "size": "900.08 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Mayans M C S05E05 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/A892339F382CA984559FBD00704BC02D62A557F6.torrent",
+                        "size": "366.14 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Silo S01E04 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/BB15108A432DD734847FD40A28660A4DD3526353.torrent",
+                        "size": "193.14 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Idol US S01E02 1080p WEB h264-ETHEL[TGx]",
+                        "torrent": "https://itorrents.org/torrent/E28AC02F8B3DE510429F36574BFD5F8B1D3D543D.torrent",
+                        "size": "2.86 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E01 1080p WEB h264-EDITH[TGx",
+                        "torrent": "https://itorrents.org/torrent/BD867F46774CF2BB50DE979DA82CBE6E0FCB7DBA.torrent",
+                        "size": "895.71 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Succession S04 COMPLETE 720p HMAX WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/1C2713C1466DCF22D3F8995781D51B24BA03025B.torrent",
+                        "size": "4.17 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fear the Walking Dead S08E06 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/64DF430834A934DC40D7CC6FFBC01AB9CD8B9856.torrent",
+                        "size": "474.66 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Succession S04E09 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/C09B847B25CF2E7E1A24DE627902F70CEE4D7D54.torrent",
+                        "size": "4.41 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Blacklist S10E13 WEBRip x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/B51B2F7A56D790107F0F75A20935D80BBE55D527.torrent",
+                        "size": "277.74 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Silo S01E08 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/9F777D3B763F47ABFC59DDF17756E6E4B3C14AD2.torrent",
+                        "size": "204.86 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Silo S01E07 The Flamekeepers 1080p ATVP WEB-DL DDP5 1 H 264-NTb[",
+                        "torrent": "https://itorrents.org/torrent/D532F6417F9E746A915FD258CA941D3AF166011F.torrent",
+                        "size": "3.61 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Outlander S07E01 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/117A4B90FE4BF17FD03B5D8C2DC72AA294F33DBF.torrent",
+                        "size": "318.91 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Asur (2023) S02 720p 10bit JC WEBRip x265 HEVC Hindi AAC 5 1 ESub",
+                        "torrent": "https://itorrents.org/torrent/C6BFBC340ADE1ED85988DF574D1A1D4DF3ED9254.torrent",
+                        "size": "2.05 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E02 1080p WEB h264-EDITH[TGx",
+                        "torrent": "https://itorrents.org/torrent/32AE48579B0C6071FC639E93FE44CB30247B0A2B.torrent",
+                        "size": "946.77 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 The Broken Circle 1080p AMZN WEB-DL DDP5 1 H",
+                        "torrent": "https://itorrents.org/torrent/6137D6B3EB3FAB33C9AED26B890C2D021FF3E89B.torrent",
+                        "size": "1.91 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "From S02E08 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/FAFE2DFA004F3A6C055A4D3DCB21CA15FB621F0C.torrent",
+                        "size": "237.56 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E05 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/6D27254D1FC556103D28BA5488B1CBE87384A34B.torrent",
+                        "size": "226.35 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Its Always Sunny in Philadelphia S16E01 720p WEB x265-MiNX",
+                        "torrent": "https://itorrents.org/torrent/16CC799C4006933EBE4C9DDA84CADB75A6DA259B.torrent",
+                        "size": "132.33 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E05 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/BA780B1A64907E2390B5CD033EB743DDA625097B.torrent",
+                        "size": "3.88 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Citadel S01 COMPLETE 720p AMZN WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/195B6657EF8B57FFA6301DF22A82AA703D6AB886.torrent",
+                        "size": "1.19 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Its Always Sunny In Philadelphia S16E03 720p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/6CA0C9AC79C745FDB2ACB4B031494050E2A2E655.torrent",
+                        "size": "475.99 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Superman and Lois S03E11 Complications 1080p AMZN WEB-DL DDP5 1 H 264-NTb",
+                        "torrent": "https://itorrents.org/torrent/B5D6A88BE408B72A2B6ED9E57EE40C21DAF80EE8.torrent",
+                        "size": "1.74 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E04 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/2653A81F0E516823C8430D73783892F424A4EC69.torrent",
+                        "size": "3.42 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Taskmaster S15E10 The Final 1080p HDTV H264-DARKFLiX",
+                        "torrent": "https://itorrents.org/torrent/AB23DB626AF920E3C3CB3318B88BEDEF1702EC04.torrent",
+                        "size": "1.34 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E06 720p WEB H264-CAKES",
+                        "torrent": "https://itorrents.org/torrent/4CB5247B3FBEB764B77AA13E30396F514413AADB.torrent",
+                        "size": "1.3 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Superman and Lois S03E11 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/2A605401BA405246E5DE475818F7B33DAB6921F1.torrent",
+                        "size": "192.38 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "From S02E06 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/2DB2A5F7FA718FFF547DCAF827D54BE972013AEA.torrent",
+                        "size": "2.47 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Succession S04E10 1080p HEVC x265-MeGusta",
+                        "torrent": "https://itorrents.org/torrent/FF7E17444B85EBF3E81E79CE28ACE8384ABDE784.torrent",
+                        "size": "689.54 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Succession S04E09 1080p WEB H264-CAKES",
+                        "torrent": "https://itorrents.org/torrent/7417BD6A4A20CDA250695760020BB9B21B9FB0C8.torrent",
+                        "size": "4.41 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E07 1080p HEVC x265-MeGusta[TGx]",
+                        "torrent": "https://itorrents.org/torrent/90B7AE2A8921ED2B6409228D2E2B055548DF055A.torrent",
+                        "size": "387.99 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "From S02E07 1080p WEB h264-EDITH",
+                        "torrent": "https://itorrents.org/torrent/CD2E0782752249A61AC0FDE6CE0A8F3B10C8EF20.torrent",
+                        "size": "1.57 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Greys Anatomy S19E19 720p HDTV x264-SYNCOPY",
+                        "torrent": "https://itorrents.org/torrent/3293FA10A234866FCFDB17ECD63F1A22FC5DD2D8.torrent",
+                        "size": "867.06 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Star Trek Strange New Worlds S02E01 720p WEB x265-MiNX[TGx]",
+                        "torrent": "https://itorrents.org/torrent/5A4758CE1BCC1EA78EA8E9FAAB8E63C18DE358EA.torrent",
+                        "size": "199.42 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fear the Walking Dead S08E05 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/07F4020D429FD91EED09D94E16160FFFBDD43767.torrent",
+                        "size": "4.76 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Crowded Room S01E01 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/0F9EAD25F824EB01D8E7735AF8DD8692D3F215C8.torrent",
+                        "size": "462.39 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Clean Sweep 2023 S01 COMPLETE 720p WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/C97401547256FA2D73CA2D2BF1185EBA8EBEEB17.torrent",
+                        "size": "1.46 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "How I Met Your Father S02E15 1080p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/484B455E5D713B7BE44B9413BA0E34E29AD8A562.torrent",
+                        "size": "884.44 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Succession S04E10 1080p WEB H264-CAKES[TGx]",
+                        "torrent": "https://itorrents.org/torrent/22446814158C4E8CF657366BC0AAF19669122969.torrent",
+                        "size": "3.22 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Blacklist S10E15E16 720p HDTV x264-SYNCOPY",
+                        "torrent": "https://itorrents.org/torrent/196E6C64D224C51969E550573A421E4AC53DCDC6.torrent",
+                        "size": "1.78 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Ultimate Fighter S31E03 720p WEB-DL H264 Fight-BB",
+                        "torrent": "https://itorrents.org/torrent/11E1981B2DF900DD4EC62AD3BD921CD17FC098F4.torrent",
+                        "size": "1.65 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "From S02E07 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/4AC5A7A664BB8C76066FE723566B013811F6686C.torrent",
+                        "size": "283.06 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Manifest S04 COMPLETE 720p NF WEBRip x264-GalaxyTV",
+                        "torrent": "https://itorrents.org/torrent/AD425EE0170F9543407219BC08B0F7B875125D08.torrent",
+                        "size": "5.92 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fear the Walking Dead S08E06 720p WEB h264-ETHEL",
+                        "torrent": "https://itorrents.org/torrent/1E30FB60B9AC7008039BFC9B525396A174EF6303.torrent",
+                        "size": "2.35 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "From S02E08 Forest for the Trees 1080p AMZN WEB-DL DDP5 1 H 264-",
+                        "torrent": "https://itorrents.org/torrent/6E65730D37BA2D1DFB03443FD944AE850D3D4B1F.torrent",
+                        "size": "2.28 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Ted Lasso S03E12 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/F5F625CB186A33A2F89715714E671BA426EC7E88.torrent",
+                        "size": "554.49 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Full Monty UK S01 COMPLETE 720p HULU WEBRip x264",
+                        "torrent": "https://itorrents.org/torrent/F9174C51A2B6F44CC5A28EA934236921C00D6E49.torrent",
+                        "size": "2.34 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "WWE Monday Night Raw 2023 06 12 HDTV x264-NWCHD [TJET]",
+                        "torrent": "https://itorrents.org/torrent/D296C440F0A9C4FDCE3D4B9D6042619ECBDD64A8.torrent",
+                        "size": "1.43 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "UFC 289 Nunes vs Aldana PPV 1080p WEB h264-VERUM[TGx]",
+                        "torrent": "https://itorrents.org/torrent/EAA78419807EDF4893F4D5FF5AC7614E113C865D.torrent",
+                        "size": "8.15 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Silo S01E04 1080p WEB H264-CAKES",
+                        "torrent": "https://itorrents.org/torrent/3FDACB1E6CBCBD3BE74A77F7F8B15CDCE3189F45.torrent",
+                        "size": "3.42 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Idol US S01E02 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/0DA893F16824D764FA4B1B13E02E6D56D4B66755.torrent",
+                        "size": "343.56 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Its Always Sunny in Philadelphia S16E01 WEB x264-TORRENTGALAXY",
+                        "torrent": "https://itorrents.org/torrent/9D542EEDAEC0807E8C8023D01AB62292BC2AB5B4.torrent",
+                        "size": "157.45 MB",
+                        "rate": 7
+                    }
+                ]
+            }
+        },
+        {
+            "name": "Get Monthly Top 100 Movies Torrents",
+            "url": "https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_movies",
+            "description": "Monthly Top 100 Movies Torrents",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_movies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movie-tv-music-search-and-download.p.rapidapi.com/monthly_top100_movies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movie-tv-music-search-and-download.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "code": "200",
+                "result": [
+                    {
+                        "title": "Fast X (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/F250E644F2180A3410EA853E09AC401273149FA7.torrent",
+                        "size": "2.6 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "John Wick Chapter 4 (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/550177581AF98D94D93AF8630FE846E91FAB290A.torrent",
+                        "size": "3.12 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Fast X (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/6555224E5622F28B35D12A9C45329A6D04F7AAA1.torrent",
+                        "size": "1.27 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Fast X 2023 1080p AMZN WEBRip 1600MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/948826CF52A051339D9985EF0CFD27CD06DFA9B5.torrent",
+                        "size": "1.6 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "John Wick Chapter 4 (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/EF9D993C558774DA736BCDAA483A8B79825C0188.torrent",
+                        "size": "1.52 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "John Wick Chapter 4 (2023) [2160p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/DD0AE9420A62BFD75E97D2E6B7443C556599C67A.torrent",
+                        "size": "7.56 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Kandahar 2023 1080p WEBRip 1400MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/575E17151771A28A779E990DE50B1343EB1E81B8.torrent",
+                        "size": "1.4 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Spider Man Across the Spider Verse 2023 V2 1080p HDTS Clean X264 Will1869",
+                        "torrent": "https://itorrents.org/torrent/0D733BB795B1B985D90CD8F12E5CCA1572BDD2A1.torrent",
+                        "size": "2.7 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Transformers Rise Of The Beasts 2023 ENG V2 1080p HDTS x264 AAC - HushRips",
+                        "torrent": "https://itorrents.org/torrent/41E5D6265B38E1E19FF09E3859D9002DE60DC643.torrent",
+                        "size": "2.33 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Hypnotic (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/B6395921CB060911EB7B98CE62299B24A451464F.torrent",
+                        "size": "1.72 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "John Wick Chapter 4 2023 1080p WEBRip 10Bit DDP5 1 x265-Asiimov",
+                        "torrent": "https://itorrents.org/torrent/7D95F5D6F6C1159255BBF7A939F10B8961EED07A.torrent",
+                        "size": "3.25 GB",
+                        "rate": 10
+                    },
+                    {
+                        "title": "Beau Is Afraid (2023) [1080p] [WEBRip] [5 1",
+                        "torrent": "https://itorrents.org/torrent/A2DE5BB9A8FB40DB3AC30BE70742CECEB08371B8.torrent",
+                        "size": "3.3 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 720p AMZN WEBRip 900MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/33FAAB109F2B55ADA883D6EA1A42647DD9F1B4F8.torrent",
+                        "size": "897.11 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Black Demon (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/12CC338DC0BB21F2A04516EA3E0AE8A52A3426CA.torrent",
+                        "size": "1.85 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "John Wick Chapter 4 (2023) [1080p] [BluRay] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/9B4E1C8DF1A1B0CCEB542AD1FD6FCF6D03694298.torrent",
+                        "size": "3.12 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Beau Is Afraid (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/8AB9DE46180F5921C71DC973C3E2884C065F6A31.torrent",
+                        "size": "1.61 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "BlackBerry (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/4B7C9FA45FEF36456A982C3C5C6BDA6E3E6C7C63.torrent",
+                        "size": "2.21 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 2160p AMZN WEB-DL DDP5 1 HDR H 265-FAMiLYFOREVER[TGx]",
+                        "torrent": "https://itorrents.org/torrent/866437F7B8BCBF59808D0EE2B436AB07D0990AC1.torrent",
+                        "size": "15.31 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "97 Minutes (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/88B3E6CAA52312DED4F8BC3B86257B304EBFB18B.torrent",
+                        "size": "861.96 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 1080p MA WEB-DL DDP5 1 Atmos x264-CMRG[TGx]",
+                        "torrent": "https://itorrents.org/torrent/F890D7315D111149CA1A9EB3CF33772A52A84F50.torrent",
+                        "size": "8.55 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Hypnotic (2023) [720p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/AB2F7E6BB9420E9FEBA3FF5E05EF7B8B71FCCF47.torrent",
+                        "size": "857.57 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Secret Kingdom (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/80F661EF2BF305D1A525DF2D05E6F7358A154BEC.torrent",
+                        "size": "1.81 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Beau is Afraid 2023 1080p AMZN WEBRip 1600MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/BBE15597DEB3B828A7F048E70B0D654D0EED4FE6.torrent",
+                        "size": "1.61 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Love Again (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/7D5F0D25B815EC7F1B955FC0FB59B80382CF0ABC.torrent",
+                        "size": "1.92 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Dungeons &amp; Dragons Honor Among Thieves (2023) [1080p] [BluRay] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/59023A19090435283F25D9A85FF9284E9FC9B2E2.torrent",
+                        "size": "2.47 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "97 Minutes (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/637EB54C3AFC7AEA187973E6F5C99096C7A2FEA7.torrent",
+                        "size": "1.73 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Black Demon (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/5FE8D388BDABB10BDDE1DAA0373F38D10FC97E25.torrent",
+                        "size": "924.78 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Are You There God It's Me, Margaret (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/92AC84813ACF8CC03A3A28B9E34F96E45E090D6B.torrent",
+                        "size": "1.96 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 HDTS 1080p x264 AAC - HushRips",
+                        "torrent": "https://itorrents.org/torrent/9546523940D8B78EE4A93AFFD7ADC4EB4303C1A1.torrent",
+                        "size": "2.12 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Hypnotic 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/175BAED3EA4C79AE8D7BF7BF416ED13515034A08.torrent",
+                        "size": "796.7 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Secret Kingdom 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/172E4BC6BB0BB4CFB9E12EEA1685CD55E99C9171.torrent",
+                        "size": "797.27 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Spider-Man Across the Spider-Verse 2023 1080p WEB H264-SLOT",
+                        "torrent": "https://itorrents.org/torrent/A8F0208DD5D6145AA3D4A5955B551EE1C6F7BE38.torrent",
+                        "size": "8.65 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "97 Minutes 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/FE94FCB57412CE33E15892073B21A731F7844485.torrent",
+                        "size": "796.49 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 V3 720p HDTS x264 AC3 X264 Will1869",
+                        "torrent": "https://itorrents.org/torrent/C65777EE4254FE79B4C3D09D2A2C716A21A7C57D.torrent",
+                        "size": "1.87 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Transformers Rise Of The Beasts 2023 HDCAM c1nem4 x264-SUNSCREEN[TGx]",
+                        "torrent": "https://itorrents.org/torrent/BFB78CEA12A1997898C41836513F80C17601D982.torrent",
+                        "size": "995.34 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Nefarious 2023 1080p WEBRip 1400MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/29C557BF4E5174DB704E2C4A26BB3A180CA058E8.torrent",
+                        "size": "1.4 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Transformers Rise Of The Beasts 2023 1080p HDCAMRip LAT DUB YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/F39C40DB2F5A6443F0424A78BEF91ED2597ABE17.torrent",
+                        "size": "2.11 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "BlackBerry (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/3E570CC5F74420A0871C808CBF8B53F87AA94414.torrent",
+                        "size": "1.07 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Little Mermaid (2023) V2 1080p TS x264 AAC - HushRips",
+                        "torrent": "https://itorrents.org/torrent/4A782C044ADCE4522ECA5B95C61B5DAC69DC225C.torrent",
+                        "size": "2.37 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Spider Man Across the Spider Verse 2023 1080p V3 NEW No Chew Edition HDTS Video",
+                        "torrent": "https://itorrents.org/torrent/560C60C5822377D916815D66632ABF43E21EBF64.torrent",
+                        "size": "2.95 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Are You There God It's Me, Margaret (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/481F9AC7B3A6E857F940388C4952821CC38BBE12.torrent",
+                        "size": "975.61 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Fast X 2023 1080p 10bit WEBRip 6CH x265 HEVC-PSA",
+                        "torrent": "https://itorrents.org/torrent/495FABDD6375A9649EC7F40738244D23EB4ABBCC.torrent",
+                        "size": "2.23 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Guardian Of The Galaxy Volume 3 (2023) 2GB 1080p x264 AAC HDTC",
+                        "torrent": "https://itorrents.org/torrent/1C77346F11F9777D7EE760A1AF8A05993AD1AB55.torrent",
+                        "size": "2.38 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Beau is Afraid 2023 1080p AMZN WEB-DL DDP5 1 Atmos H 264-CMRG[TGx]",
+                        "torrent": "https://itorrents.org/torrent/F33C6341398AFA68DF49246486AF182CD569F671.torrent",
+                        "size": "8.98 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "My Fault 2023 DUBBED 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/A73955D26CFB3A50F2D3C29FBC1E0BECECD5DAF4.torrent",
+                        "size": "800.9 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "The Flash 2023 720p HDCAM-C1NEM4",
+                        "torrent": "https://itorrents.org/torrent/6DDFD59477F056B4B180E30DDBFFB26820EA9CC2.torrent",
+                        "size": "2.02 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Flamin' Hot (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/A9D8EAD0773E429BF5B684F195679365E658C8FD.torrent",
+                        "size": "1.82 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "John Wick Chapter 4 2023 1080p WEBRip 1600MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/F146CA1E074F7EADF9B85DD1376248C9A5634744.torrent",
+                        "size": "1.61 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "The Little Mermaid 2023 V2 HDCAM c1nem4 x264-SUNSCREEN[TGx]",
+                        "torrent": "https://itorrents.org/torrent/C3B23318C3DC2BF0ED157B9E03E0ADCF271EDA5A.torrent",
+                        "size": "994.92 MB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "BlackBerry 2023 1080p WEBRip 1400MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/AC5661122D964E9C3A2737295ABC925A99B3E6F0.torrent",
+                        "size": "1.4 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Beau is Afraid 2023 720p AMZN WEBRip 900MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/362DB1B0A16B624BA30B497968E20930453F2D46.torrent",
+                        "size": "898.29 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Come Out Fighting 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/6AE87D22D3B67570B6744D74BA7074BD1AD3CA3E.torrent",
+                        "size": "796.21 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Shazam! Fury of the Gods (2023) [1080p] [BluRay] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/E8B85085FC5F8FFC69A40F280AF9CF92FD75E9B6.torrent",
+                        "size": "2.4 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Secret Kingdom (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/47590DAEF1621B6D2F730B93CD3CA7A255FBFF4C.torrent",
+                        "size": "904.51 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "SpiderMan Across The Spider Verse 2023 1080p CAMRip LAT ENG DUB YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/AB565317785704321C652F462904223568B4674E.torrent",
+                        "size": "2.48 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Hypnotic 2023 1080p AMZN WEBRip 1400MB DD5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/9569B3885ACB8F8E293560A1D321224D3BBB1711.torrent",
+                        "size": "1.4 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Zara Hatke Zara Bachke V2 (2023) Hindi 1080p HDTS x264 AAC - QRips",
+                        "torrent": "https://itorrents.org/torrent/074FAFCE7A40D6028039B9278C59C964D613A451.torrent",
+                        "size": "2.35 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Avatar The Way Of Water (2022) BLURAY 1080p BluRay 5 1-LAMA",
+                        "torrent": "https://itorrents.org/torrent/FDB2F5217BD13D63C5944F30193E36CB11523217.torrent",
+                        "size": "3.55 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Master Gardener 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/4D897A4D1384EE3E5473AE4289C99D803B9447C5.torrent",
+                        "size": "797.46 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Reality (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/95833F41B2DDBDDF42BB6CB4FC8BED84CBFB878E.torrent",
+                        "size": "1.52 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Beau is Afraid 2023 2160p AMZN WEB-DL DDP5 1 Atmos HDR HEVC-CMRG[TGx]",
+                        "torrent": "https://itorrents.org/torrent/F1C361638DBD08998A8E13ACA2E6AC5DEBC07963.torrent",
+                        "size": "19.62 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Shazam! Fury of the Gods (2023) [720p] [BluRay]",
+                        "torrent": "https://itorrents.org/torrent/88BE8029A5FD39A3D8D9A32D50E9E65C383BF215.torrent",
+                        "size": "1.17 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Nefarious 2023 720p WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/0DFBDDC5F636C695BD5B957C51D69C59AC9F0718.torrent",
+                        "size": "796.05 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "White Men Can't Jump (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/EFD9A96B25DE4A170D0F08FD1052623CFE72CDB6.torrent",
+                        "size": "1.87 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Avatar The Way of Water 2022 2160p UHD Bluray REMUX HDR10 HEVC T",
+                        "torrent": "https://itorrents.org/torrent/DC224BB5C2A769CC2CF152456FF81C9F79BCD6D4.torrent",
+                        "size": "67.01 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Fast X 2023 1080p CAMRip x264 Latino YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/16EA0D3FCBFE4BD474F6911BE56B2B3DDA1541AA.torrent",
+                        "size": "1.99 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Sisu (2022) [2160p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/3D6B976B0BC2C7346B6C06D6B8ADFAF636798D79.torrent",
+                        "size": "4.08 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "BlackBerry 2023 720p WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/99E79A06CAEB90F5156B40531AE80567D5F3436F.torrent",
+                        "size": "796.5 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Transformers Rise Of The Beasts 2023 720p HDCAM-C1NEM4",
+                        "torrent": "https://itorrents.org/torrent/0CF7A0A1FFA65374F6A8512065541A99FAA1E46E.torrent",
+                        "size": "1.72 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Are You There God Its Me Margaret 2023 1080p AMZN WEBRip 1400MB",
+                        "torrent": "https://itorrents.org/torrent/C18F1BDA227D02739F33E3D4E09FA029E6E5387F.torrent",
+                        "size": "1.4 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Flamin' Hot (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/B698D7E1C0666D930238D81638C98D217B5F70DF.torrent",
+                        "size": "908.97 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Spider-Man Across The Spider-Verse (2023) 1080p WEBRip 5 1-LAMA[",
+                        "torrent": "https://itorrents.org/torrent/6C4D70A0FD9DCA0435BA73ABC76B8336297B5BC6.torrent",
+                        "size": "2.16 GB",
+                        "rate": 9
+                    },
+                    {
+                        "title": "Sex Game 6969 (2022) [In Korean ESubs] 720p WEBRip AAC x264 - QRips",
+                        "torrent": "https://itorrents.org/torrent/182E1B20122008B4D3396213C63C8542B3F68594.torrent",
+                        "size": "627.45 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Black Demon 2023 720p AMZN WEBRip 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/AE656E7A3CB470F828259ABDCBF54C2BD01D9120.torrent",
+                        "size": "796.79 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Super Mario Bros Movie 2023 1080p Proper WEBRip 10Bit DDP5 1 x265-Asiimov",
+                        "torrent": "https://itorrents.org/torrent/A19568DB4F6F4F576050DEAE58D29416718AEBD1.torrent",
+                        "size": "1.51 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Big George Foreman (2023) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/3AB0FDAA750458EE4925FBF6E50581495700CF3A.torrent",
+                        "size": "2.38 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Bloody Daddy 2023 1080p JC WEBRip x265 Hindi DD5 1 ESub - SP3LL",
+                        "torrent": "https://itorrents.org/torrent/A8FF8386E26F9991089A756055BB485058B152D9.torrent",
+                        "size": "2.96 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Super Mario Bros Movie (2023) 2160p 4K BluRay H265 10 Bit Ita Eng Ac3 5 1 S..",
+                        "torrent": "https://itorrents.org/torrent/4C0F2CD427C1B61D27A5BADF926558FC23F0EC3B.torrent",
+                        "size": "4.72 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Big George Foreman (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/965455DA73F98B3E0483AF85A6DCA0C73E6B019E.torrent",
+                        "size": "1.16 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 HDCAM c1nem4 x264-SUNSCREEN[TGx]",
+                        "torrent": "https://itorrents.org/torrent/9B88353E3E12CC0111CA9B912990EC12F87F4EFA.torrent",
+                        "size": "996.32 MB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "Fast X 2023 V3 1080p HDTS x264 AAC",
+                        "torrent": "https://itorrents.org/torrent/B32B58C72AD86C4E853B384F6B9FF1DCD8A2A26B.torrent",
+                        "size": "2.35 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Guardians Of The Galaxy Volume 3 (2023) 1080p TSRip x264 AAC",
+                        "torrent": "https://itorrents.org/torrent/2AD16E5D194015A068F38F9579DAB389B5AD26E0.torrent",
+                        "size": "2.38 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Spider-Man Across The Spider-Verse 2023 1080p HDCAM-C1NEM4",
+                        "torrent": "https://itorrents.org/torrent/F8780B4B0CFF8C81D91593EC82C7BFF14BC8E0CB.torrent",
+                        "size": "3.44 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Ambush 2023 720p BluRay 800MB x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/9B56942092E0D6E9C9DE3463C2BA8A5D722E61BE.torrent",
+                        "size": "836.56 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Hypnotic (2023) [2160p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/E728CC5FC9CB7EDFF8EBD3FA29666B5B865E037F.torrent",
+                        "size": "4.16 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 2160p MA WEB-DL DDP5 1 Atmos DoVi HDR H 265-CMRG",
+                        "torrent": "https://itorrents.org/torrent/C8F28DEE56EC5560470D6E8B3005A127E9E1BF9D.torrent",
+                        "size": "25.01 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "White Men Can't Jump (2023) [720p] [WEBRip]",
+                        "torrent": "https://itorrents.org/torrent/40D7FB1B429D9B0B09228A13F79DCF745209214F.torrent",
+                        "size": "931.56 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Guardians Of The Galaxy Volume 3 (2023) 1080p TSRip x264 AAC - Byte",
+                        "torrent": "https://itorrents.org/torrent/6C66F180F7FC6CD3EC35243166E4BE56E0CEC786.torrent",
+                        "size": "2.38 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "John Wick Chapter 4 2023 2160p WEBRip 3999MB DDP5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/0FF534F14ED31A1210CC4BAB5002D7FFFF62480E.torrent",
+                        "size": "4.01 GB",
+                        "rate": 8
+                    },
+                    {
+                        "title": "John Wick Chapter 4 2023 2160p UHD Bluray REMUX DV HDR10 HEVC TrueHD Atmos 7 1-G..",
+                        "torrent": "https://itorrents.org/torrent/BC141533430ABCA034122762AA4F29C73C6E96A4.torrent",
+                        "size": "74.2 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Spider-Man Across The Spider-Verse 2023 HDCAM c1nem4 x264-SUNSCR",
+                        "torrent": "https://itorrents.org/torrent/39F178765F4923F4953A8C3D0B6922C933CD1741.torrent",
+                        "size": "995.07 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Master Gardener 2023 1080p AMZN WEBRip 1400MB DD5 1 x264-GalaxyR",
+                        "torrent": "https://itorrents.org/torrent/CCAE5BD132C04260A78D8464F46C3BDA6708FA22.torrent",
+                        "size": "1.4 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Fast X 2023 2160p WEBRip 3999MB DDP5 1 x264-GalaxyRG",
+                        "torrent": "https://itorrents.org/torrent/2919C1E45F655E9A8ED1ECB97681682740100B83.torrent",
+                        "size": "4.01 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "John Wick: Chapter 4 2023 2160p 4K WEBRip DDP5 1 Atmos x265-Asiimov",
+                        "torrent": "https://itorrents.org/torrent/9DA41A0AAEDE4A572771096D23D74E8753753325.torrent",
+                        "size": "8.1 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Secret Kingdom 2023 1080p AMZN WEBRip 1400MB DD5 1 x264-Gala",
+                        "torrent": "https://itorrents.org/torrent/DBCA3A4033F2C8EE3545BEED37DFA22A05ED4C0D.torrent",
+                        "size": "1.4 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Little Mermaid 2023 1080p HDCAMRip Dual YG\u2b50",
+                        "torrent": "https://itorrents.org/torrent/F73AFD33F0A0060F9A029F72B1CDCB488E8667F2.torrent",
+                        "size": "7.63 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "BlackBerry 2023 1080p WEB H264-SLOT[TGx]",
+                        "torrent": "https://itorrents.org/torrent/4C85841B15A1A54C6FF44B1EA0BCA4187E34E8CC.torrent",
+                        "size": "5.87 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Somewhere in Queens (2022) [1080p] [WEBRip] [5 1]",
+                        "torrent": "https://itorrents.org/torrent/1C7EEC1FDAC15ACA8BE5B8F7A16C63D89C38F4A5.torrent",
+                        "size": "1.96 GB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "Sirf Ek Bandaa Kaafi Hai (2023) 720p 10bit DS4K WEBRip x265 HEVC",
+                        "torrent": "https://itorrents.org/torrent/5629C033AE53476A1B680F2CBEDBEA4DBE1CAB36.torrent",
+                        "size": "802.69 MB",
+                        "rate": 7
+                    },
+                    {
+                        "title": "The Flash 2023 1080p CAMRip English 1XBET",
+                        "torrent": "https://itorrents.org/torrent/08A3AAA027AB4CDFEDA9C472F72BE62506EF0C2C.torrent",
+                        "size": "3.42 GB",
+                        "rate": 7
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "movie_tv_music_search_and_download"
+}

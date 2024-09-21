@@ -1,0 +1,35 @@
+{
+    "product_id": "api_53d536d5-9b10-42c9-a3b6-84b159b4e845",
+    "tool_description": "Get random weather",
+    "home_url": "https://rapidapi.com/hbb1iqkp/api/weathertest19/",
+    "name": "WeatherTest",
+    "title": "WeatherTest",
+    "pricing": "FREE",
+    "tool_name": "WeatherTest",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1116,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "weathertest19.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Fake Weather",
+            "url": "https://weathertest19.p.rapidapi.com/",
+            "description": "Get a fake weather, no date or authentication is necessary",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://weathertest19.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"weathertest19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://weathertest19.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"weathertest19.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "condition": "Sunny"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "weathertest"
+}

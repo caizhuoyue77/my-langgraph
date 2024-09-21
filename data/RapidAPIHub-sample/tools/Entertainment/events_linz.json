@@ -1,0 +1,38 @@
+{
+    "product_id": "api_a5bba22d-bc9a-4198-8d9e-1f771265514c",
+    "tool_description": "API that provides events in Linz, Austria",
+    "home_url": "https://rapidapi.com/andicover/api/events-linz/",
+    "name": "Events Linz",
+    "title": "Events Linz",
+    "pricing": "FREE",
+    "tool_name": "Events Linz",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 500,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.7,
+        "__typename": "Score"
+    },
+    "host": "events-linz.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "events",
+            "url": "https://events-linz.p.rapidapi.com/events",
+            "description": "Retrieves events in Linz, Austria",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "pageSize",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "150"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://events-linz.p.rapidapi.com/events\"\nquerystring = {\"pageSize\": \"150\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"events-linz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://events-linz.p.rapidapi.com/events\"\nquerystring = {\"pageSize\": \"150\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"events-linz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "events_linz"
+}

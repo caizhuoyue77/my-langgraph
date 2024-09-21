@@ -1,0 +1,31 @@
+{
+    "product_id": "api_947995f3-56fd-4736-85ce-400e13f65423",
+    "tool_description": "API serves from large collections of quotes. A GET request will give you quote, author and related tags.",
+    "home_url": "https://rapidapi.com/dipinpjoseph/api/random-quote-generator2/",
+    "name": "Random Quote Generator",
+    "title": "Random Quote Generator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Random Quote Generator",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 5716,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "random-quote-generator2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Request Random Quote",
+            "url": "https://random-quote-generator2.p.rapidapi.com/randomQuote",
+            "description": "A simple get request.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://random-quote-generator2.p.rapidapi.com/randomQuote\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-quote-generator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://random-quote-generator2.p.rapidapi.com/randomQuote\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"random-quote-generator2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "random_quote_generator"
+}

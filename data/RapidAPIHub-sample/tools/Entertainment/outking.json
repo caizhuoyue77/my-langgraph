@@ -1,0 +1,44 @@
+{
+    "product_id": "api_519746c7-e6a9-4903-85bb-5e598d4db1ca",
+    "tool_description": "All the latest movie posters as well as an extensive database of older posters.",
+    "home_url": "https://rapidapi.com/lukewardford/api/outking/",
+    "name": "Outking",
+    "title": "Outking",
+    "pricing": "FREE",
+    "tool_name": "Outking",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 383,
+        "avgSuccessRate": 17,
+        "popularityScore": 2,
+        "__typename": "Score"
+    },
+    "host": "outking.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Poster",
+            "url": "https://outking.p.rapidapi.com/movie_posters",
+            "description": "Get movie poster by title and release year",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "The Shawshank Redemption"
+                },
+                {
+                    "name": "year",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1994"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://outking.p.rapidapi.com/movie_posters\"\nquerystring = {\"title\": \"The Shawshank Redemption\", \"year\": \"1994\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"outking.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://outking.p.rapidapi.com/movie_posters\"\nquerystring = {\"title\": \"The Shawshank Redemption\", \"year\": \"1994\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"outking.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "outking"
+}

@@ -1,0 +1,146 @@
+{
+    "product_id": "api_b274caf9-aa0b-416c-84a5-d2ab0f3d4696",
+    "tool_description": "Api Musik Kotak7",
+    "home_url": "https://rapidapi.com/sakfery/api/kotak7/",
+    "name": "kotak7",
+    "title": "kotak7",
+    "pricing": "FREE",
+    "tool_name": "kotak7",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 677,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.5,
+        "__typename": "Score"
+    },
+    "host": "kotak7.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Tangga lagu",
+            "url": "https://kotak7.p.rapidapi.com/toplist/33/tracks",
+            "description": "Daftar tangga lagu",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "index",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "50"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "33"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/toplist/33/tracks\"\nquerystring = {\"index\": \"0\", \"num\": \"50\", \"lang\": \"id\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/toplist/{id}/tracks\"\nquerystring = {\"index\": \"0\", \"num\": \"50\", \"lang\": \"id\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Artis info",
+            "url": "https://kotak7.p.rapidapi.com/artist/K0wfT9L1dhOcY3%2BWa%2BQY%2BA%3D%3D/albums",
+            "description": "Artis info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "6"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "index",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "K0wfT9L1dhOcY3%2BWa%2BQY%2BA%3D%3D"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/artist/K0wfT9L1dhOcY3%2BWa%2BQY%2BA%3D%3D/albums\"\nquerystring = {\"num\": \"6\", \"lang\": \"id\", \"index\": \"0\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/artist/{id}/albums\"\nquerystring = {\"num\": \"6\", \"lang\": \"id\", \"index\": \"0\", \"country\": \"id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Artis",
+            "url": "https://kotak7.p.rapidapi.com/tag/175/artists",
+            "description": "Daftar artis",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "index",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "30"
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "175"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/tag/175/artists\"\nquerystring = {\"index\": \"0\", \"lang\": \"id\", \"country\": \"id\", \"num\": \"30\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://kotak7.p.rapidapi.com/tag/{id}/artists\"\nquerystring = {\"index\": \"0\", \"lang\": \"id\", \"country\": \"id\", \"num\": \"30\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kotak7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "kotak7"
+}

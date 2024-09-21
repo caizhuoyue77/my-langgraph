@@ -1,0 +1,27 @@
+{
+    "product_id": "api_c7292687-b0ce-42fe-94cc-e392ac82ab0e",
+    "tool_description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with deskto...",
+    "home_url": "https://rapidapi.com/Kumaranvfx/api/comedy-kk/",
+    "name": "Comedy(KK)",
+    "title": "Comedy(KK)",
+    "pricing": "FREE",
+    "tool_name": "Comedy(KK)",
+    "score": null,
+    "host": "comedy-kk.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Funny Movement",
+            "url": "https://comedy-kk.p.rapidapi.com/",
+            "description": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://comedy-kk.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comedy-kk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://comedy-kk.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"comedy-kk.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "Base URL is missing or is not configured properly"
+            }
+        }
+    ],
+    "standardized_name": "comedy_kk"
+}

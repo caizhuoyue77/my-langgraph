@@ -1,0 +1,33 @@
+{
+    "product_id": "api_9ec33a98-acf1-4167-ba6b-186df41d3233",
+    "tool_description": "Live draw results of New York Lottery",
+    "home_url": "https://rapidapi.com/ai-box-ai-box-default/api/new-york-lottery/",
+    "name": "New York Lottery",
+    "title": "New York Lottery",
+    "pricing": "FREEMIUM",
+    "tool_name": "New York Lottery",
+    "score": {
+        "avgServiceLevel": 95,
+        "avgLatency": 736,
+        "avgSuccessRate": 95,
+        "popularityScore": 8.2,
+        "__typename": "Score"
+    },
+    "host": "new-york-lottery.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Draw Results",
+            "url": "https://new-york-lottery.p.rapidapi.com/get_draw_results",
+            "description": "Return all draw results for all games.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://new-york-lottery.p.rapidapi.com/get_draw_results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"new-york-lottery.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://new-york-lottery.p.rapidapi.com/get_draw_results\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"new-york-lottery.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "new_york_lottery"
+}

@@ -1,0 +1,62 @@
+{
+    "product_id": "api_5aba6857-659f-4a5c-af25-55c2513feba5",
+    "tool_description": "Estimates how successful a hypothetical video from a given YouTube channel will be in the first 30 days of its lifecycle. Useful for influencer marketers to plan for successful campaigns and publishers to better rank their content",
+    "home_url": "https://rapidapi.com/DMTAndy/api/youtuber-success-estimator/",
+    "name": "YouTuber Success Estimator",
+    "title": "YouTuber Success Estimator",
+    "pricing": "FREE",
+    "tool_name": "YouTuber Success Estimator",
+    "score": {
+        "avgServiceLevel": 86,
+        "avgLatency": 2598,
+        "avgSuccessRate": 86,
+        "popularityScore": 7.9,
+        "__typename": "Score"
+    },
+    "host": "youtuber-success-estimator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "estimate",
+            "url": "https://youtuber-success-estimator.p.rapidapi.com/api/v0/analytics/creators/estimator",
+            "description": "Submit a YouTube `channelId` value along with the `channelType` as query param values appended to the endpoint for getting back the estimated video view performance of the submitted channel.\n\n## Example\nThis submits a request for the estimated 30 day video view performance of the YouTube channel with that unique `channelId` value provided in the query param\n\n`GET /api/v0/dmt_estimator?channelId=UChQl2YkLt3dj-KDyGUBzcHw&channelType=youtube`\n\n## FAQ\n\nQ. Does the DMT Channel Estimator support other platforms like TikTok?\nA. This is currently planned and in development - if you have ideas for other platforms you'd like to be supported feel free to reach out!\n\nQ.  What is the accuracy of the estimations?\nA. This estimator has been tested in dozens of real-life campaigns with clients spending 6-7 figures on each influencer native ad campaign, totaling out in a median margin of error of 10%. Not bad!\n\nWe will say that while most channels have a certain degree of predictability in terms of performance, more popular *and* less frequently posting channels are outliers that the estimator will only be so accurate in estimating.\n\nQ. So no guarantees? How should I use this?\nA. Use it like the creators of the API have: as a way to understand baseline performance of a given influencer's channel and how you can back out of that with your own campaign's goals to a pricing number that makes sense.\n\nQ. Is there an offering for this API to integrate *directly* into my application?\nA. Yes, feel free to reach out and we can discuss more custom integrations including callback url support\n\nQ. Can I reach out if I am interested in doing a YouTube or broader influencer campaign activation?\nA. Yes, feel free to reach out and we can make a recommendation to you: [Best of Bold Agency](https://www.bestofbold.com/?utm_source=dmt-estimator)\n\nQ. What is the SLA for fixing bugs?\nA. ASAP! We dont have one much more official than that, we are focused availability and making sure the predictions are as accurate as possible\n\nQ. Will you expose the prediction model?\nA. No plans to do this for now, if you have ideas for prediction models or if and how you would like to incorporate your own, feel free to reach out!",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "channelType",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "youtube"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "channelName",
+                    "type": "STRING",
+                    "description": "Lookup a channel projection by the given name of the channel. Either channelName or channelId is required",
+                    "default": "chrispirillo"
+                },
+                {
+                    "name": "channelId",
+                    "type": "STRING",
+                    "description": "Lookup the channel projection by the unique id provided by the channel's host platform (for example: YouTube, TikTok, Twitch). Either channelId or channelName is required",
+                    "default": "UChQl2YkLt3dj-KDyGUBzcHw"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://youtuber-success-estimator.p.rapidapi.com/api/v0/analytics/creators/estimator\"\nquerystring = {\"channelName\": \"chrispirillo\", \"channelType\": \"youtube\", \"channelId\": \"UChQl2YkLt3dj-KDyGUBzcHw\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtuber-success-estimator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://youtuber-success-estimator.p.rapidapi.com/api/v0/analytics/creators/estimator\"\nquerystring = {\"channelName\": \"chrispirillo\", \"channelType\": \"youtube\", \"channelId\": \"UChQl2YkLt3dj-KDyGUBzcHw\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtuber-success-estimator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "channel": {
+                        "id": "UChQl2YkLt3dj-KDyGUBzcHw",
+                        "type": "youtube"
+                    },
+                    "projection": {
+                        "views": 360,
+                        "type": "default"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "youtuber_success_estimator"
+}

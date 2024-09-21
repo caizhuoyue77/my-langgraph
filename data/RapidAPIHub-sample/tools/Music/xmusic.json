@@ -1,0 +1,75 @@
+{
+    "product_id": "api_ded2b40c-fe46-4640-a786-af108038aa46",
+    "tool_description": "test apis xmusic",
+    "home_url": "https://rapidapi.com/sabarmenanti223/api/xmusic/",
+    "name": "xmusic",
+    "title": "xmusic",
+    "pricing": "FREE",
+    "tool_name": "xmusic",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 240,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.6,
+        "__typename": "Score"
+    },
+    "host": "xmusic.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "xmusic song info",
+            "url": "https://xmusic.p.rapidapi.com/web-fcgi-bin/web_get_songinfo",
+            "description": "Test apis xmusic song info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "id"
+                },
+                {
+                    "name": "songid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "aGhSCbhJJZoEaT5dC8jYNg=="
+                },
+                {
+                    "name": "song_preview_kbps",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "320"
+                },
+                {
+                    "name": "https_only",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "fe7cc2de3cfcc4efd457838a9521e7e9"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "wmid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "161445361"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://xmusic.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"lang\": \"id\", \"wmid\": \"161445361\", \"country\": \"id\", \"songid\": \"aGhSCbhJJZoEaT5dC8jYNg==\", \"song_preview_kbps\": \"320\", \"https_only\": \"1\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xmusic.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://xmusic.p.rapidapi.com/web-fcgi-bin/web_get_songinfo\"\nquerystring = {\"lang\": \"id\", \"wmid\": \"161445361\", \"country\": \"id\", \"songid\": \"aGhSCbhJJZoEaT5dC8jYNg==\", \"song_preview_kbps\": \"320\", \"https_only\": \"1\", \"s\": \"fe7cc2de3cfcc4efd457838a9521e7e9\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"xmusic.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "xmusic"
+}

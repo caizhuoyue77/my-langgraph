@@ -1,0 +1,164 @@
+{
+    "product_id": "api_5f485b39-50b2-4258-87d1-7696734fa23a",
+    "tool_description": "DiceForge is a powerful and versatile dice rolling API designed for tabletop RPG enthusiasts and game developers alike. With an intuitive interface and support for a wide range of dice configurations, DiceForge makes it easy to generate random outcomes for any scenario. Whether you're rolling character stats, simulating combat encounters, or resolving skill checks, DiceForge delivers reliable and customizable results to enhance your gaming experience. Level up your next adventure with DiceFor...",
+    "home_url": "https://rapidapi.com/skullzarmy-YuORutOAw/api/diceforge/",
+    "name": "DiceForge",
+    "title": "DiceForge",
+    "pricing": "FREEMIUM",
+    "tool_name": "DiceForge",
+    "score": {
+        "avgServiceLevel": 91,
+        "avgLatency": 16689,
+        "avgSuccessRate": 91,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "diceforge.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/roll",
+            "url": "https://diceforge.p.rapidapi.com/roll",
+            "description": "Rolls a set of dice and returns the results.\n\nMethods: GET, POST\n\nParameters:\n\nsides (integer): A list of integers representing the number of sides for each die.\ncount (integer): A list of integers representing the number of times to roll each die. Defaults to 1 if not provided.\nmodifier (integer): A list of integers representing the modifier to apply to the total of each die roll.\nadvantage (boolean): If set to true, rolls each die twice and takes the higher result.\ndisadvantage (boolean): If set to true, rolls each die twice and takes the lower result.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sides",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "6"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "count",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "advantage",
+                    "type": "BOOLEAN",
+                    "description": "",
+                    "default": "true"
+                },
+                {
+                    "name": "modifier",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://diceforge.p.rapidapi.com/roll\"\nquerystring = {\"count\": \"1\", \"advantage\": \"true\", \"modifier\": \"5\", \"sides\": \"6\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diceforge.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://diceforge.p.rapidapi.com/roll\"\nquerystring = {\"count\": \"1\", \"advantage\": \"true\", \"modifier\": \"5\", \"sides\": \"6\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diceforge.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "dice": [
+                    {
+                        "sides": 6,
+                        "results": [
+                            {
+                                "rolls": [
+                                    6,
+                                    3
+                                ],
+                                "selected_roll": 6
+                            }
+                        ],
+                        "modifier": 5,
+                        "total": 11
+                    }
+                ],
+                "advantage": true,
+                "total": 11
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "dice": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "sides": {
+                                    "type": "integer"
+                                },
+                                "results": {
+                                    "oneOf": [
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "integer"
+                                            }
+                                        },
+                                        {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "rolls": {
+                                                        "type": "array",
+                                                        "items": {
+                                                            "type": "integer"
+                                                        }
+                                                    },
+                                                    "selected_roll": {
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "rolls",
+                                                    "selected_roll"
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                },
+                                "modifier": {
+                                    "type": "integer"
+                                },
+                                "total": {
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "sides",
+                                "results",
+                                "total"
+                            ]
+                        }
+                    },
+                    "total_modifier": {
+                        "type": "integer"
+                    },
+                    "total": {
+                        "type": "integer"
+                    },
+                    "advantage": {
+                        "type": "boolean"
+                    },
+                    "disadvantage": {
+                        "type": "boolean"
+                    }
+                },
+                "required": [
+                    "dice",
+                    "total"
+                ]
+            }
+        },
+        {
+            "name": "/statroll",
+            "url": "https://diceforge.p.rapidapi.com/statroll",
+            "description": "Rolls 4d6 for generating character stats, dropping the lowest die result from the total, and returns the results.\n\nMethods: GET, POST\n\nParameters:\n\nmodifier (integer): An integer representing the modifier to apply to the total of the stat roll.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://diceforge.p.rapidapi.com/statroll\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diceforge.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://diceforge.p.rapidapi.com/statroll\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"diceforge.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "This endpoint is disabled for your subscription"
+            }
+        }
+    ],
+    "standardized_name": "diceforge"
+}

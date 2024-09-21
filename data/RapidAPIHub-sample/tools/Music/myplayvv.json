@@ -1,0 +1,31 @@
+{
+    "product_id": "api_6ff7ed5a-63a4-4872-ba1e-3c8e64204e6f",
+    "tool_description": "Music sharing service",
+    "home_url": "https://rapidapi.com/onestrim-G-guN2kcaG/api/myplayvv/",
+    "name": "myPlayvv",
+    "title": "myPlayvv",
+    "pricing": "FREE",
+    "tool_name": "myPlayvv",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 191,
+        "avgSuccessRate": 0,
+        "popularityScore": 0,
+        "__typename": "Score"
+    },
+    "host": "myplayvv.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "myplayvv",
+            "url": "https://myplayvv.p.rapidapi.com/",
+            "description": "myplayvv",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://myplayvv.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"myplayvv.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://myplayvv.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"myplayvv.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "myplayvv"
+}

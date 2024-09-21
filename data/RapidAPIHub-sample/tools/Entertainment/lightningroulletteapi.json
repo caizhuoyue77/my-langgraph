@@ -1,0 +1,42 @@
+{
+    "product_id": "api_6855b8fc-cf21-4198-a03f-e64489425c72",
+    "tool_description": "APILightningRoulette is a real-time API that provides developers with a way to integrate live data into their applications.This API is designed to be fast, reliable, and easy to use, allowing developers to quickly and easily access real-time lightning roulette game outcome data so they can integrate in any strategy",
+    "home_url": "https://rapidapi.com/eng.ekeyrouz/api/lightningroulletteapi/",
+    "name": "LightningRoulletteAPI",
+    "title": "LightningRoulletteAPI",
+    "pricing": "FREEMIUM",
+    "tool_name": "LightningRoulletteAPI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8813,
+        "avgSuccessRate": 100,
+        "popularityScore": 8,
+        "__typename": "Score"
+    },
+    "host": "lightningroulletteapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "History",
+            "url": "https://lightningroulletteapi.p.rapidapi.com/history",
+            "description": "The Histories of last 30 spins with all the details",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lightningroulletteapi.p.rapidapi.com/history\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lightningroulletteapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lightningroulletteapi.p.rapidapi.com/history\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lightningroulletteapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get last update",
+            "url": "https://lightningroulletteapi.p.rapidapi.com/latest-outcome",
+            "description": "A JSON response with information about a single roulette spin.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lightningroulletteapi.p.rapidapi.com/latest-outcome\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lightningroulletteapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lightningroulletteapi.p.rapidapi.com/latest-outcome\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lightningroulletteapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "lightningroulletteapi"
+}

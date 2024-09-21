@@ -1,0 +1,81 @@
+{
+    "product_id": "api_cbc5d8dc-980c-4b23-9e55-4ac8c5dc3241",
+    "tool_description": "A list of major US hospitals including hospital names, addresses, type and ownership.",
+    "home_url": "https://rapidapi.com/dotenv/api/us-hospitals/",
+    "name": "US Hospitals",
+    "title": "US Hospitals",
+    "pricing": "FREEMIUM",
+    "tool_name": "US Hospitals",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 740,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "us-hospitals.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getHospitalsById",
+            "url": "https://us-hospitals.p.rapidapi.com/",
+            "description": "###Find US Hospitals by CMS Certification Number\nSimply add your search string as a parameter to the \"ccn\" query.\n\n**Note**: The API only returns the first 30 results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "ccn",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "670068"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://us-hospitals.p.rapidapi.com/\"\nquerystring = {\"ccn\": \"670068\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-hospitals.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://us-hospitals.p.rapidapi.com/\"\nquerystring = {\"ccn\": \"670068\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-hospitals.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "Provider CCN": 670068,
+                    "Hospital Name": "Texas Health Presbyterian Hospital Flower Mound",
+                    "Alias": "Presbyterian Hosp Flower Mound",
+                    "Url": "http://www.texashealthflowermound.com/",
+                    "Phone": "(469)322-7000",
+                    "Service": "General medical and surgical",
+                    "Type": "General Short Term",
+                    "Approval Codes": "Medicare certification by the Centers for Medicare and Medicaid Services,,The Joint Commission accreditation,,The Joint Commission accreditation,",
+                    "Street Address": "4400 Long Prairie Road",
+                    "City": "Flower Mound",
+                    "State Code": "TX",
+                    "Zip Code": "75028-1892",
+                    "County": "Denton",
+                    "Medicare CBSA Number": 19124,
+                    "Rural Versus Urban": "U",
+                    "Control": "Partnership,Investor-owned,for-profit",
+                    "Number of Beds": 99,
+                    "Parent Unit": null,
+                    "Affiliated Units": null,
+                    "System": null
+                }
+            ]
+        },
+        {
+            "name": "getHospitalsByName",
+            "url": "https://us-hospitals.p.rapidapi.com/",
+            "description": "###Find US Hospitals by name.\nSimply add your search string to the \"name\" parameter in the url.\nTip:  The API also works if your search for *name='pr'* instead of *name='presbyterian'.* \n\n**Note**: The API only returns the first 30 results.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "presbyterian"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://us-hospitals.p.rapidapi.com/\"\nquerystring = {\"name\": \"presbyterian\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-hospitals.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://us-hospitals.p.rapidapi.com/\"\nquerystring = {\"name\": \"presbyterian\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"us-hospitals.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "us_hospitals"
+}

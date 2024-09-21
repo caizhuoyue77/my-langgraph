@@ -1,0 +1,33 @@
+{
+    "product_id": "api_65ccd9e6-f2ee-4688-9e36-5c4da7424388",
+    "tool_description": "Get today's wordle word",
+    "home_url": "https://rapidapi.com/kwik-api-kwik-api-default/api/wordle-today/",
+    "name": "Wordle Today",
+    "title": "Wordle Today",
+    "pricing": "FREEMIUM",
+    "tool_name": "Wordle Today",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 360,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "wordle-today.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Today's Wordle",
+            "url": "https://wordle-today.p.rapidapi.com/today",
+            "description": "Get today's wordle word",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wordle-today.p.rapidapi.com/today\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-today.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wordle-today.p.rapidapi.com/today\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-today.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "wordle_today"
+}

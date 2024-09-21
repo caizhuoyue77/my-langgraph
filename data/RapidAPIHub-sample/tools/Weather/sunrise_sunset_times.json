@@ -1,0 +1,60 @@
+{
+    "product_id": "api_6fff002f-c3e9-4b07-bb79-2ac6741e8d46",
+    "tool_description": "Get sunrise and sunset times using date, latitude, and longitude.",
+    "home_url": "https://rapidapi.com/Macca895/api/sunrise-sunset-times/",
+    "name": "Sunrise Sunset Times",
+    "title": "Sunrise Sunset Times",
+    "pricing": "FREEMIUM",
+    "tool_name": "Sunrise Sunset Times",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 560,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "sunrise-sunset-times.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Sunrise and Sunset Times",
+            "url": "https://sunrise-sunset-times.p.rapidapi.com/getSunriseAndSunset",
+            "description": "Get sunrise and sunset times by date, latitude, and longitude.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "51.5072"
+                },
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2021-10-31"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "-0.1276"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "timeZoneId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "America/New_York"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://sunrise-sunset-times.p.rapidapi.com/getSunriseAndSunset\"\nquerystring = {\"latitude\": \"51.5072\", \"timeZoneId\": \"America/New_York\", \"date\": \"2021-10-31\", \"longitude\": \"-0.1276\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sunrise-sunset-times.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://sunrise-sunset-times.p.rapidapi.com/getSunriseAndSunset\"\nquerystring = {\"latitude\": \"51.5072\", \"timeZoneId\": \"America/New_York\", \"date\": \"2021-10-31\", \"longitude\": \"-0.1276\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"sunrise-sunset-times.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "sunrise": "2021-10-31T02:52-04:00[America/New_York]",
+                "sunset": "2021-10-31T12:35-04:00[America/New_York]"
+            }
+        }
+    ],
+    "standardized_name": "sunrise_sunset_times"
+}

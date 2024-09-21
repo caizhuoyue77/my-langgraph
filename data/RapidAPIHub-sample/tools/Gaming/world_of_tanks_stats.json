@@ -1,0 +1,103 @@
+{
+    "product_id": "api_addb4936-4bd0-4041-bf82-4ef4f1a45b74",
+    "tool_description": "Your can get information about a player like wn8.",
+    "home_url": "https://rapidapi.com/BlackFlagTV/api/world-of-tanks-stats/",
+    "name": "World of Tanks Stats",
+    "title": "World of Tanks Stats",
+    "pricing": "FREEMIUM",
+    "tool_name": "World of Tanks Stats",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3723,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.3,
+        "__typename": "Score"
+    },
+    "host": "world-of-tanks-stats.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Stats",
+            "url": "https://world-of-tanks-stats.p.rapidapi.com/test.php",
+            "description": "Get WN8, WN7, battles, victories, defeats, kills, draws, avereageTier, tanksSpotted, battlesSurvived",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "PasiHD"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-of-tanks-stats.p.rapidapi.com/test.php\"\nquerystring = {\"name\": \"PasiHD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-of-tanks-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-of-tanks-stats.p.rapidapi.com/test.php\"\nquerystring = {\"name\": \"PasiHD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-of-tanks-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "PasiHD",
+                "account_id": 522274623,
+                "battles": {
+                    "total": "2728",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "averageTier": {
+                    "total": "6,14",
+                    "last24h": "0,00",
+                    "last7d": "0,00",
+                    "last30d": "0,00"
+                },
+                "victories": {
+                    "total": "1330",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "defeats": {
+                    "total": "1361",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "draws": {
+                    "total": "37",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "battlesSurvived": {
+                    "total": "675",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "kills": {
+                    "total": "1139",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "tanksSpotted": {
+                    "total": "1978",
+                    "last24h": "0",
+                    "last7d": "0",
+                    "last30d": "0"
+                },
+                "wn7": {
+                    "total": "625,87",
+                    "last24h": "0,00",
+                    "last7d": "0,00",
+                    "last30d": "0,00"
+                },
+                "wn8": {
+                    "total": "622,18",
+                    "last24h": "0,00",
+                    "last7d": "0,00",
+                    "last30d": "0,00"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "world_of_tanks_stats"
+}

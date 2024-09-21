@@ -1,0 +1,25 @@
+{
+    "product_id": "api_c399bfe5-0bd5-419e-bf16-bd4693f2a123",
+    "tool_description": "download this g develop game ",
+    "home_url": "https://rapidapi.com/gabmomoh2/api/game3/",
+    "name": "game",
+    "title": "game",
+    "pricing": "FREE",
+    "tool_name": "game",
+    "score": null,
+    "host": "game3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "game",
+            "url": "https://game3.p.rapidapi.comhttp://www.mediafire.com/file/9ezvd76dd9dxgab/game.apk/file",
+            "description": "get game",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://game3.p.rapidapi.comhttp://www.mediafire.com/file/9ezvd76dd9dxgab/game.apk/file\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"game3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://game3.p.rapidapi.comhttp://www.mediafire.com/file/9ezvd76dd9dxgab/game.apk/file\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"game3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "game"
+}

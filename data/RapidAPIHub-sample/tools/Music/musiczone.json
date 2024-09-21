@@ -1,0 +1,31 @@
+{
+    "product_id": "api_359d13fb-c997-41c6-9dd2-b2da7cbae73b",
+    "tool_description": "API for songs",
+    "home_url": "https://rapidapi.com/chanchal172002/api/musiczone1/",
+    "name": "MusicZone",
+    "title": "MusicZone",
+    "pricing": "FREE",
+    "tool_name": "MusicZone",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 697,
+        "avgSuccessRate": 0,
+        "popularityScore": 0,
+        "__typename": "Score"
+    },
+    "host": "musiczone1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getSongs",
+            "url": "https://musiczone1.p.rapidapi.com/",
+            "description": "get song details",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://musiczone1.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiczone1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://musiczone1.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musiczone1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "musiczone"
+}

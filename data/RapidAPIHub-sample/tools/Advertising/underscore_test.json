@@ -1,0 +1,37 @@
+{
+    "product_id": "api_a081d744-e9c6-4cf2-9001-1ea7a4478952",
+    "tool_description": "underscore test",
+    "home_url": "https://rapidapi.com/alextrevgoda/api/underscore-test/",
+    "name": "underscore test",
+    "title": "underscore test",
+    "pricing": "FREEMIUM",
+    "tool_name": "underscore test",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1075,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.5,
+        "__typename": "Score"
+    },
+    "host": "underscore-test.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/test",
+            "url": "https://underscore-test.p.rapidapi.com/test",
+            "description": "/test",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://underscore-test.p.rapidapi.com/test\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"underscore-test.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://underscore-test.p.rapidapi.com/test\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"underscore-test.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "70",
+                "valid_keys": [
+                    "property_size",
+                    "location"
+                ]
+            }
+        }
+    ],
+    "standardized_name": "underscore_test"
+}

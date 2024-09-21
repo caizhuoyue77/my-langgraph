@@ -1,0 +1,36 @@
+{
+    "product_id": "api_029eb023-df9b-460e-b378-681592112285",
+    "tool_description": "FlightsLogic provides Flight API, Airline Consolidator, Flight Aggregator to the travel agents, tour operators and travel companies worldwide.",
+    "home_url": "https://rapidapi.com/mohammadjaved/api/flight-integration/",
+    "name": "Flight Integration",
+    "title": "Flight Integration",
+    "pricing": "FREE",
+    "tool_name": "Flight Integration",
+    "score": null,
+    "host": "flight-integration.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Flight Integration",
+            "url": "https://flight-integration.p.rapidapi.comhttps://flightslogic.com/fareapi.php",
+            "description": "FlightsLogic provides Flight API, Airline Consolidator, Flight Aggregator to the travel agents, tour operators and travel companies worldwide.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://flight-integration.p.rapidapi.comhttps://flightslogic.com/fareapi.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-integration.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-integration.p.rapidapi.comhttps://flightslogic.com/fareapi.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-integration.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Flight",
+            "url": "https://flight-integration.p.rapidapi.comhttps://flightslogic.com",
+            "description": "FlightsLogic provides Flight API, Airline Consolidator, Flight Aggregator to the travel agents, tour operators and travel companies worldwide.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://flight-integration.p.rapidapi.comhttps://flightslogic.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-integration.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-integration.p.rapidapi.comhttps://flightslogic.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-integration.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "flight_integration"
+}

@@ -1,0 +1,106 @@
+{
+    "product_id": "api_db00b154-7ed3-4d21-985f-51cbb91f5b7b",
+    "tool_description": "Last update: February 11, 2023.\nAn API providing a lot of different wisdom quotes.  You will love it!",
+    "home_url": "https://rapidapi.com/demha/api/wisdom-quotes/",
+    "name": "Wisdom Quotes",
+    "title": "Wisdom Quotes",
+    "pricing": "FREEMIUM",
+    "tool_name": "Wisdom Quotes",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 10496,
+        "avgSuccessRate": 96,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "wisdom-quotes.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Wisdom Quote By ID",
+            "url": "https://wisdom-quotes.p.rapidapi.com/quotes/777",
+            "description": "Returns a single wisdom quote by a given ID. The highest is 27753.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "777"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/777\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get A Random Wisdom Quote",
+            "url": "https://wisdom-quotes.p.rapidapi.com/quotes/random",
+            "description": "Returns a JSON object which includes a random wisdom quote and its related id.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Wisdom Quotes By Page",
+            "url": "https://wisdom-quotes.p.rapidapi.com/quotes/page/12",
+            "description": "Returns an JSON object that includes:\n\n- the page number requested  (current_page), \n- the amount of all pages (max_pages),\n- the amount of the quotes (quotes_count) (15 per page),\n- the wisdom quotes array (quotes).",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "string",
+                    "description": "",
+                    "default": "12"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/page/12\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/page/{page}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Wisdom Quotes By Topic",
+            "url": "https://wisdom-quotes.p.rapidapi.com/quotes/topics/Anger",
+            "description": "Returns an array of all wisdom quotes that are related to a given topic.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "topic",
+                    "type": "string",
+                    "description": "",
+                    "default": "Anger"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/topics/Anger\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/topics/{topic}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All Wisdom Topics",
+            "url": "https://wisdom-quotes.p.rapidapi.com/quotes/topics",
+            "description": "Returns an Array of all available wisdom topics. \nEach topic has its own quotes.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/topics\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wisdom-quotes.p.rapidapi.com/quotes/topics\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wisdom-quotes.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "wisdom_quotes"
+}

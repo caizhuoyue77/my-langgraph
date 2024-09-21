@@ -1,0 +1,46 @@
+{
+    "product_id": "api_0fd0e811-2ce2-4712-8e47-d58ac8d8bd7f",
+    "tool_description": "This  APIs and Services from the web to do just one thing... send cat facts.",
+    "home_url": "https://rapidapi.com/standingapi-standingapi-default/api/daily-cat-facts/",
+    "name": "Daily Cat Facts",
+    "title": "Daily Cat Facts",
+    "pricing": "FREEMIUM",
+    "tool_name": "Daily Cat Facts",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 127406,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "daily-cat-facts.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get some random facts",
+            "url": "https://daily-cat-facts.p.rapidapi.com/facts/random",
+            "description": "Get some random facts .",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "animal_type",
+                    "type": "STRING",
+                    "description": "Type of animal the fact will describe . Default : \\\"cat\\\"",
+                    "default": ""
+                },
+                {
+                    "name": "amount",
+                    "type": "NUMBER",
+                    "description": "Number of Facts to retrieve. If set to one, response will be a fact object. If many, response will be an array of Facts . \nDefault : 1.\nLimit : 500.",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://daily-cat-facts.p.rapidapi.com/facts/random\"\nquerystring = {\"animal_type\": \"\", \"amount\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-cat-facts.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://daily-cat-facts.p.rapidapi.com/facts/random\"\nquerystring = {\"animal_type\": \"\", \"amount\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"daily-cat-facts.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "daily_cat_facts"
+}

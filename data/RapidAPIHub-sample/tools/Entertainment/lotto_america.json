@@ -1,0 +1,131 @@
+{
+    "product_id": "api_5603b0c8-06f2-4a89-90b7-8ce893c2d58b",
+    "tool_description": "Do you live for the Lotto America? Well, you\u2019ve just found your match! Get the latest winning numbers and statistics for your game!",
+    "home_url": "https://rapidapi.com/avoratechnology/api/lotto-america/",
+    "name": "Lotto America",
+    "title": "Lotto America",
+    "pricing": "FREEMIUM",
+    "tool_name": "Lotto America",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 259,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "lotto-america.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "General Statistics",
+            "url": "https://lotto-america.p.rapidapi.com/stats",
+            "description": "This endpoint pulls basic statistics of the Lotto America numbers. For each ball (denoted firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, starBall, bonus) this endpoint returns the mean, median, mode, min, max, standard deviation, variance, skewness, and kurtosis. After which, the endpoint returns the number of occurrences of each number over the life of game.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Drawings Between Dates",
+            "url": "https://lotto-america.p.rapidapi.com/BetweenDates/01-01-2023/01-31-2023",
+            "description": "Get all Lotto America winning number sets between two specified dates where the first number supplied is the beginning date and the second number supplied is the end date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date2",
+                    "type": "string",
+                    "description": "",
+                    "default": "01-31-2023"
+                },
+                {
+                    "name": "date1",
+                    "type": "string",
+                    "description": "",
+                    "default": "01-01-2023"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/BetweenDates/01-01-2023/01-31-2023\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/BetweenDates/{date1}/{date2}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Drawing By Date",
+            "url": "https://lotto-america.p.rapidapi.com/01-04-2023",
+            "description": "Get the winning Lotto America number set from a specific drawing date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "string",
+                    "description": "",
+                    "default": "01-04-2023"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/01-04-2023\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/{date}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Random QuickPick for Play",
+            "url": "https://lotto-america.p.rapidapi.com/QuickPick",
+            "description": "Get a randomized Quick Pick for Lotto America. This is a random set of playable Powerball numbers",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/QuickPick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/QuickPick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest 10 Drawings",
+            "url": "https://lotto-america.p.rapidapi.com/latest10",
+            "description": "Get the latest, and last winning 10 Lotto America number sets.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest Drawing",
+            "url": "https://lotto-america.p.rapidapi.com/latest",
+            "description": "Get the latest, and last winning Lotto America winning number set.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All Lotto America Drawings",
+            "url": "https://lotto-america.p.rapidapi.com/",
+            "description": "Get all winning drawings from Lotto America.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://lotto-america.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"lotto-america.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "lotto_america"
+}

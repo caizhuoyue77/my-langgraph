@@ -1,0 +1,25 @@
+{
+    "product_id": "api_d70665a2-462b-4dea-9baf-5bdfef8777ad",
+    "tool_description": "obhavouchun",
+    "home_url": "https://rapidapi.com/azikolmn/api/havo/",
+    "name": "havo",
+    "title": "havo",
+    "pricing": "FREE",
+    "tool_name": "havo",
+    "score": null,
+    "host": "havo.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "weatherendpoin",
+            "url": "https://havo.p.rapidapi.comhttps://aziko59.000webhostapp.com",
+            "description": "ob havo",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://havo.p.rapidapi.comhttps://aziko59.000webhostapp.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"havo.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://havo.p.rapidapi.comhttps://aziko59.000webhostapp.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"havo.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "havo"
+}

@@ -1,0 +1,154 @@
+{
+    "product_id": "api_8b501857-4195-4916-9b3b-52b66cadc703",
+    "tool_description": "Provides a number of different categories to choose from. You can get a random word and its taboo words or you can get taboo words for the word or phrase you provide.",
+    "home_url": "https://rapidapi.com/ioanniszifos/api/taboo-api/",
+    "name": "taboo-api",
+    "title": "taboo-api",
+    "pricing": "FREEMIUM",
+    "tool_name": "taboo-api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2487,
+        "avgSuccessRate": 89,
+        "popularityScore": 7.6,
+        "__typename": "Score"
+    },
+    "host": "taboo-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Result From Category",
+            "url": "https://taboo-api.p.rapidapi.com/taboo/category/actors",
+            "description": "Given a stored category, get a random result which will contain the main phrase and the taboo words.\n\nOptionally pass a parameter which will control the amount of taboo words to be returned, \"forbiddenWordLimit\" defaults to 4 and has a max of 10",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "category",
+                    "type": "string",
+                    "description": "",
+                    "default": "actors"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "forbiddenWordLimit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/category/actors\"\nquerystring = {\"forbiddenWordLimit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/category/{category}\"\nquerystring = {\"forbiddenWordLimit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "word": "Vanessa Hudgens",
+                "forbiddenWords": [
+                    "painted lady",
+                    "bandslam",
+                    "identified",
+                    "thirteen",
+                    "Pyrameis"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Taboo Words From Word",
+            "url": "https://taboo-api.p.rapidapi.com/taboo/word/laptop",
+            "description": "Provide your own word and get the taboo words back.\n\nOptionally pass a parameter which will control the amount of taboo words to be returned, \"forbiddenWordLimit\" defaults to 4 and has a max of 10",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word",
+                    "type": "string",
+                    "description": "",
+                    "default": "laptop"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "forbiddenWordLimit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/word/laptop\"\nquerystring = {\"forbiddenWordLimit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/word/{word}\"\nquerystring = {\"forbiddenWordLimit\": \"5\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "word": "laptop",
+                "related": [
+                    "touchpad",
+                    "notebook computer",
+                    "ibook",
+                    "lappy",
+                    "motherboard"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Stored Word From Any Category",
+            "url": "https://taboo-api.p.rapidapi.com/taboo/word",
+            "description": "Get a random result which will contain the main phrase and the taboo words, result may come from any of the stored categories.\n\nOptionally pass a parameter which will control the amount of taboo words to be returned, \"forbiddenWordLimit\" defaults to 4 and has a max of 10",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "forbiddenWordLimit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "6"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/word\"\nquerystring = {\"forbiddenWordLimit\": \"6\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/word\"\nquerystring = {\"forbiddenWordLimit\": \"6\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "category": "actors",
+                "word": "Lisa Kudrow",
+                "forbiddenWords": [
+                    "disfigure",
+                    "cheers",
+                    "primetime emmy award",
+                    "encino, los angeles",
+                    "knowing",
+                    "foil"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get All Stored Categories",
+            "url": "https://taboo-api.p.rapidapi.com/taboo/categories",
+            "description": "Get a list of all stored categories. Use them to get results for the specified category",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://taboo-api.p.rapidapi.com/taboo/categories\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"taboo-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                "actors",
+                "animals",
+                "books",
+                "countries",
+                "capitalCities",
+                "foods",
+                "gemstones",
+                "movies",
+                "plants",
+                "professions",
+                "series",
+                "singers",
+                "songs",
+                "sports",
+                "superheroes",
+                "videoGames",
+                "words"
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "taboo_api"
+}

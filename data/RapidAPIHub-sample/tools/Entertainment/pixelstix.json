@@ -1,0 +1,341 @@
+{
+    "product_id": "api_470c5a70-2944-4f2e-955a-bd7841194d76",
+    "tool_description": "PixelStix is a suite of technologies for locating and interacting with physical objects.",
+    "home_url": "https://rapidapi.com/pixelstixlabs-pixelstixlabs-default/api/pixelstix/",
+    "name": "PixelStix",
+    "title": "PixelStix",
+    "pricing": "FREEMIUM",
+    "tool_name": "PixelStix",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 309,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.8,
+        "__typename": "Score"
+    },
+    "host": "pixelstix.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "PixelStix Meta",
+            "url": "https://pixelstix.p.rapidapi.com/api/v2/public/object_voices/BAAA",
+            "description": "This endpoint will retrieve the meta information for a given PixelStix code and any Maps/Galleries it may be associated with if the PixelStix is of type 'PREMIUM'",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "pixelstix_code",
+                    "type": "string",
+                    "description": "",
+                    "default": "BAAA"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/public/object_voices/BAAA\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/public/object_voices/{pixelstix_code}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "result": 1,
+                "message": "PixelStix successfully loaded.",
+                "data": {
+                    "object_voice": {
+                        "account": {
+                            "account_id": 1,
+                            "created": "2017-10-13 23:39:36",
+                            "last_active": "2023-04-29 21:59:37",
+                            "role": "Admin",
+                            "username": "james"
+                        },
+                        "account_id": 1,
+                        "alias": "",
+                        "category": "PREMIUM",
+                        "clears_remaining": 999,
+                        "code": "BAAA",
+                        "created": "2017-10-14 00:24:44",
+                        "first_assigned": "2018-12-26 15:59:12",
+                        "geo_fixed": true,
+                        "last_assigned": "2021-06-23 02:57:00",
+                        "lat": 28.53361002,
+                        "lon": -82.49990355,
+                        "mimetype": "text/html",
+                        "parent_code": null,
+                        "scans": 834,
+                        "tag": [
+                            {
+                                "account": {
+                                    "account_id": 1843,
+                                    "created": "2021-01-29 18:17:59",
+                                    "last_active": "2021-02-02 14:55:15",
+                                    "role": "User",
+                                    "username": "user"
+                                },
+                                "account_id": 1843,
+                                "badge": null,
+                                "badges_id": null,
+                                "object_voice_count": 1,
+                                "popularity": 834,
+                                "public": 1,
+                                "remote_content_access": "yes",
+                                "scans": 834,
+                                "tag_name": "user",
+                                "tags_id": 337
+                            }
+                        ],
+                        "visibility": "Private",
+                        "web_location": [
+                            {
+                                "code": "BAAA",
+                                "date_created": "2021-06-23 02:58:01",
+                                "location": "https://player.vimeo.com/video/566392763?autoplay=1",
+                                "tags_id": null,
+                                "thumbnail_default": "https://cdn.discordapp.com/attachments/529300531831898113/1023645916038709289/view_content_bg.jpg",
+                                "type": "text/html"
+                            }
+                        ]
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "PixelStix Map Meta",
+            "url": "https://pixelstix.p.rapidapi.com/api/v2/public/tags/tag_name/morningbreath",
+            "description": "A PixelStix Map is a collection of PREMIUM PixelStix that have been assigned latitude and longitude coordinates. A PREMIUM PixelStix can belong to multiple Maps and is also known as a Gallery.\n\nThis endpoint will retrieve information about your particular Map/Gallery. The name used in the endpoint is the same name that you will see in the list of galleries when using the PixelStix app.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "pixelstix_map_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "morningbreath"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/public/tags/tag_name/morningbreath\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/public/tags/tag_name/{pixelstix_map_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "result": 1,
+                "message": "PixelStix found for this tag.",
+                "data": {
+                    "object_voice": [
+                        {
+                            "account": {
+                                "account_id": 157,
+                                "created": "2019-07-07 09:24:52",
+                                "last_active": "2019-12-05 13:49:54",
+                                "role": "User",
+                                "username": "shine"
+                            },
+                            "account_id": 157,
+                            "alias": "Morning Breath 2015",
+                            "category": "PREMIUM",
+                            "clears_remaining": 1,
+                            "code": "9M9tQJGxqzbiJdhn9cifbJ6WjB7rQ1",
+                            "created": "2019-06-19 12:23:03",
+                            "first_assigned": "2019-09-05 15:50:50",
+                            "geo_fixed": true,
+                            "last_assigned": "2019-09-05 15:50:50",
+                            "lat": 27.7708966,
+                            "lon": -82.6612626,
+                            "mimetype": "text/html",
+                            "parent_code": null,
+                            "scans": 204,
+                            "tag": [
+                                {
+                                    "account": {
+                                        "account_id": 157,
+                                        "created": "2019-07-07 09:24:52",
+                                        "last_active": "2019-12-05 13:49:54",
+                                        "role": "User",
+                                        "username": "shine"
+                                    },
+                                    "account_id": 157,
+                                    "badge": {
+                                        "badges_id": 4,
+                                        "primary_url": "https://cdn.discordapp.com/attachments/529300531831898113/633854715511177236/unknown.png"
+                                    },
+                                    "badges_id": 4,
+                                    "object_voice_count": 129,
+                                    "popularity": 25371,
+                                    "public": 1,
+                                    "remote_content_access": "yes",
+                                    "scans": 25371,
+                                    "tag_name": "shine",
+                                    "tags_id": 14
+                                },
+                                {
+                                    "account": {
+                                        "account_id": 573,
+                                        "created": "2020-02-21 19:09:53",
+                                        "last_active": "2020-02-21 19:09:53",
+                                        "role": "User",
+                                        "username": "morningbreath"
+                                    },
+                                    "account_id": 573,
+                                    "badge": {
+                                        "badges_id": 97,
+                                        "primary_url": "https://cdn.discordapp.com/attachments/529300531831898113/620304340791328778/unknown.png"
+                                    },
+                                    "badges_id": 97,
+                                    "object_voice_count": 2,
+                                    "popularity": 408,
+                                    "public": 1,
+                                    "remote_content_access": "yes",
+                                    "scans": 408,
+                                    "tag_name": "morningbreath",
+                                    "tags_id": 98
+                                }
+                            ],
+                            "visibility": "Public",
+                            "web_location": [
+                                {
+                                    "code": "9M9tQJGxqzbiJdhn9cifbJ6WjB7rQ1",
+                                    "date_created": "2019-09-05 15:50:50",
+                                    "location": "http://shineonstpete.com/portfolio/morning-breath/",
+                                    "tags_id": null,
+                                    "thumbnail_default": "https://cdn.discordapp.com/attachments/529300531831898113/1023645916038709289/view_content_bg.jpg",
+                                    "type": "text/html"
+                                }
+                            ]
+                        },
+                        {
+                            "account": {
+                                "account_id": 157,
+                                "created": "2019-07-07 09:24:52",
+                                "last_active": "2019-12-05 13:49:54",
+                                "role": "User",
+                                "username": "shine"
+                            },
+                            "account_id": 157,
+                            "alias": "Morning Breath 2019",
+                            "category": "PREMIUM",
+                            "clears_remaining": 1,
+                            "code": "Bl549cqBuoDU7hxff9jajOno0OgJH8",
+                            "created": "2019-06-19 12:23:03",
+                            "first_assigned": "2019-10-20 22:33:46",
+                            "geo_fixed": true,
+                            "last_assigned": "2019-10-20 22:33:46",
+                            "lat": 27.7744295,
+                            "lon": -82.6471293,
+                            "mimetype": "text/html",
+                            "parent_code": null,
+                            "scans": 204,
+                            "tag": [
+                                {
+                                    "account": {
+                                        "account_id": 157,
+                                        "created": "2019-07-07 09:24:52",
+                                        "last_active": "2019-12-05 13:49:54",
+                                        "role": "User",
+                                        "username": "shine"
+                                    },
+                                    "account_id": 157,
+                                    "badge": {
+                                        "badges_id": 4,
+                                        "primary_url": "https://cdn.discordapp.com/attachments/529300531831898113/633854715511177236/unknown.png"
+                                    },
+                                    "badges_id": 4,
+                                    "object_voice_count": 129,
+                                    "popularity": 25371,
+                                    "public": 1,
+                                    "remote_content_access": "yes",
+                                    "scans": 25371,
+                                    "tag_name": "shine",
+                                    "tags_id": 14
+                                },
+                                {
+                                    "account": {
+                                        "account_id": 573,
+                                        "created": "2020-02-21 19:09:53",
+                                        "last_active": "2020-02-21 19:09:53",
+                                        "role": "User",
+                                        "username": "morningbreath"
+                                    },
+                                    "account_id": 573,
+                                    "badge": {
+                                        "badges_id": 97,
+                                        "primary_url": "https://cdn.discordapp.com/attachments/529300531831898113/620304340791328778/unknown.png"
+                                    },
+                                    "badges_id": 97,
+                                    "object_voice_count": 2,
+                                    "popularity": 408,
+                                    "public": 1,
+                                    "remote_content_access": "yes",
+                                    "scans": 408,
+                                    "tag_name": "morningbreath",
+                                    "tags_id": 98
+                                },
+                                {
+                                    "account": {
+                                        "account_id": 157,
+                                        "created": "2019-07-07 09:24:52",
+                                        "last_active": "2019-12-05 13:49:54",
+                                        "role": "User",
+                                        "username": "shine"
+                                    },
+                                    "account_id": 157,
+                                    "badge": {
+                                        "badges_id": 135,
+                                        "primary_url": "https://cdn.discordapp.com/attachments/529300531831898113/633861913603866634/shine_2019.png"
+                                    },
+                                    "badges_id": 135,
+                                    "object_voice_count": 22,
+                                    "popularity": 5167,
+                                    "public": 0,
+                                    "remote_content_access": "yes",
+                                    "scans": 5167,
+                                    "tag_name": "shine_2019",
+                                    "tags_id": 135
+                                }
+                            ],
+                            "visibility": "Public",
+                            "web_location": [
+                                {
+                                    "code": "Bl549cqBuoDU7hxff9jajOno0OgJH8",
+                                    "date_created": "2019-10-20 22:33:46",
+                                    "location": "https://stpeteartsalliance.org/shine?alias=/2019_SHINE_Mural_Morning_Breath",
+                                    "tags_id": null,
+                                    "thumbnail_default": "https://cdn.discordapp.com/attachments/529300531831898113/1023645916038709289/view_content_bg.jpg",
+                                    "type": "text/html"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Last N Days Scan Counts For Tag",
+            "url": "https://pixelstix.p.rapidapi.com/api/v2/analytics/tags/14/recent_days_scans",
+            "description": "Gets the number of scans over the last N days, per day",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "days",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2"
+                },
+                {
+                    "name": "jwt",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "map_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "14"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/analytics/tags/14/recent_days_scans\"\nquerystring = {\"days\": \"2\", \"jwt\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://pixelstix.p.rapidapi.com/api/v2/analytics/tags/{map_id}/recent_days_scans\"\nquerystring = {\"days\": \"2\", \"jwt\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"pixelstix.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per hour for your plan, BASIC, by the API provider"
+            }
+        }
+    ],
+    "standardized_name": "pixelstix"
+}

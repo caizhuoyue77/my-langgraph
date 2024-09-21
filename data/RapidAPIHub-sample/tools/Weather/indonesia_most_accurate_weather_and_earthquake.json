@@ -1,0 +1,674 @@
+{
+    "product_id": "api_87d0c656-7ffa-4ada-821c-1cdbe60ae742",
+    "tool_description": "Provide most accurate data of Indonesian cities weather and forecast plus latest earthquake alert.\n\nPrakiraan cuaca, suhu udara, kelembapan udara, kecepatan angin, dan arah angin untuk kota-kota besar di 34 provinsi di Indonesia dalam waktu 3 harian dan gempa terbaru dengan format JSON yang lebih ramah.",
+    "home_url": "https://rapidapi.com/cacing/api/indonesia-most-accurate-weather-and-earthquake/",
+    "name": "Indonesia Most Accurate Weather and Earthquake",
+    "title": "Indonesia Most Accurate Weather and Earthquake",
+    "pricing": "FREEMIUM",
+    "tool_name": "Indonesia Most Accurate Weather and Earthquake",
+    "score": {
+        "avgServiceLevel": 45,
+        "avgLatency": 226,
+        "avgSuccessRate": 45,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Weather forecast for Indonesian cities BMKG",
+            "url": "https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/weather/jawa-timur/surabaya",
+            "description": "Weather forecast for Indonesian cities BMKG",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "province",
+                    "type": "string",
+                    "description": "",
+                    "default": "jawa-timur"
+                },
+                {
+                    "name": "city",
+                    "type": "string",
+                    "description": "",
+                    "default": "surabaya"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/weather/jawa-timur/surabaya\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/weather/{province}/{city}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "message": null,
+                "data": {
+                    "id": "501306",
+                    "latitude": "-7.27981",
+                    "longitude": "112.71109",
+                    "coordinate": "112.71109 -7.27981",
+                    "type": "land",
+                    "region": "",
+                    "level": "1",
+                    "description": "Surabaya",
+                    "domain": "Jawa Timur",
+                    "tags": "",
+                    "params": [
+                        {
+                            "id": "hu",
+                            "description": "Humidity",
+                            "type": "hourly",
+                            "times": [
+                                {
+                                    "type": "hourly",
+                                    "h": "0",
+                                    "datetime": "202306160000",
+                                    "value": "80 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "6",
+                                    "datetime": "202306160600",
+                                    "value": "55 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "12",
+                                    "datetime": "202306161200",
+                                    "value": "75 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "18",
+                                    "datetime": "202306161800",
+                                    "value": "90 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "24",
+                                    "datetime": "202306170000",
+                                    "value": "80 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "30",
+                                    "datetime": "202306170600",
+                                    "value": "55 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "36",
+                                    "datetime": "202306171200",
+                                    "value": "75 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "42",
+                                    "datetime": "202306171800",
+                                    "value": "90 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "48",
+                                    "datetime": "202306180000",
+                                    "value": "80 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "54",
+                                    "datetime": "202306180600",
+                                    "value": "70 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "60",
+                                    "datetime": "202306181200",
+                                    "value": "70 %"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "66",
+                                    "datetime": "202306181800",
+                                    "value": "80 %"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "humax",
+                            "description": "Max humidity",
+                            "type": "daily",
+                            "times": [
+                                {
+                                    "type": "daily",
+                                    "day": "20230616",
+                                    "datetime": "202306161200",
+                                    "value": "85 %"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230617",
+                                    "datetime": "202306171200",
+                                    "value": "90 %"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230618",
+                                    "datetime": "202306181200",
+                                    "value": "90 %"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "tmax",
+                            "description": "Max temperature",
+                            "type": "daily",
+                            "times": [
+                                {
+                                    "type": "daily",
+                                    "day": "20230616",
+                                    "datetime": "202306161200",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230617",
+                                    "datetime": "202306171200",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230618",
+                                    "datetime": "202306181200",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "humin",
+                            "description": "Min humidity",
+                            "type": "daily",
+                            "times": [
+                                {
+                                    "type": "daily",
+                                    "day": "20230616",
+                                    "datetime": "202306161200",
+                                    "value": "55 %"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230617",
+                                    "datetime": "202306171200",
+                                    "value": "55 %"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230618",
+                                    "datetime": "202306181200",
+                                    "value": "65 %"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "tmin",
+                            "description": "Min temperature",
+                            "type": "daily",
+                            "times": [
+                                {
+                                    "type": "daily",
+                                    "day": "20230616",
+                                    "datetime": "202306161200",
+                                    "celcius": "26 C",
+                                    "fahrenheit": "78.8 F"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230617",
+                                    "datetime": "202306171200",
+                                    "celcius": "25 C",
+                                    "fahrenheit": "77 F"
+                                },
+                                {
+                                    "type": "daily",
+                                    "day": "20230618",
+                                    "datetime": "202306181200",
+                                    "celcius": "25 C",
+                                    "fahrenheit": "77 F"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "t",
+                            "description": "Temperature",
+                            "type": "hourly",
+                            "times": [
+                                {
+                                    "type": "hourly",
+                                    "h": "0",
+                                    "datetime": "202306160000",
+                                    "celcius": "26 C",
+                                    "fahrenheit": "78.8 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "6",
+                                    "datetime": "202306160600",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "12",
+                                    "datetime": "202306161200",
+                                    "celcius": "28 C",
+                                    "fahrenheit": "82.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "18",
+                                    "datetime": "202306161800",
+                                    "celcius": "25 C",
+                                    "fahrenheit": "77 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "24",
+                                    "datetime": "202306170000",
+                                    "celcius": "26 C",
+                                    "fahrenheit": "78.8 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "30",
+                                    "datetime": "202306170600",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "36",
+                                    "datetime": "202306171200",
+                                    "celcius": "28 C",
+                                    "fahrenheit": "82.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "42",
+                                    "datetime": "202306171800",
+                                    "celcius": "25 C",
+                                    "fahrenheit": "77 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "48",
+                                    "datetime": "202306180000",
+                                    "celcius": "27 C",
+                                    "fahrenheit": "80.6 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "54",
+                                    "datetime": "202306180600",
+                                    "celcius": "33 C",
+                                    "fahrenheit": "91.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "60",
+                                    "datetime": "202306181200",
+                                    "celcius": "28 C",
+                                    "fahrenheit": "82.4 F"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "66",
+                                    "datetime": "202306181800",
+                                    "celcius": "25 C",
+                                    "fahrenheit": "77 F"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "weather",
+                            "description": "Weather",
+                            "type": "hourly",
+                            "times": [
+                                {
+                                    "type": "hourly",
+                                    "h": "0",
+                                    "datetime": "202306160000",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "6",
+                                    "datetime": "202306160600",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "12",
+                                    "datetime": "202306161200",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "18",
+                                    "datetime": "202306161800",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "24",
+                                    "datetime": "202306170000",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "30",
+                                    "datetime": "202306170600",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "36",
+                                    "datetime": "202306171200",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "42",
+                                    "datetime": "202306171800",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "48",
+                                    "datetime": "202306180000",
+                                    "code": "0",
+                                    "name": "Cerah"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "54",
+                                    "datetime": "202306180600",
+                                    "code": "0",
+                                    "name": "Cerah"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "60",
+                                    "datetime": "202306181200",
+                                    "code": "1",
+                                    "name": "Cerah Berawan"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "66",
+                                    "datetime": "202306181800",
+                                    "code": "0",
+                                    "name": "Cerah"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "wd",
+                            "description": "Wind direction",
+                            "type": "hourly",
+                            "times": [
+                                {
+                                    "type": "hourly",
+                                    "h": "0",
+                                    "datetime": "202306160000",
+                                    "deg": "270",
+                                    "card": "W (West)",
+                                    "sexa": "27000"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "6",
+                                    "datetime": "202306160600",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "12",
+                                    "datetime": "202306161200",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "18",
+                                    "datetime": "202306161800",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "24",
+                                    "datetime": "202306170000",
+                                    "deg": "270",
+                                    "card": "W (West)",
+                                    "sexa": "27000"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "30",
+                                    "datetime": "202306170600",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "36",
+                                    "datetime": "202306171200",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "42",
+                                    "datetime": "202306171800",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "48",
+                                    "datetime": "202306180000",
+                                    "deg": "67.5",
+                                    "card": "ENE (East-Northeast)",
+                                    "sexa": "6730"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "54",
+                                    "datetime": "202306180600",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "60",
+                                    "datetime": "202306181200",
+                                    "deg": "90",
+                                    "card": "E (East)",
+                                    "sexa": "9000"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "66",
+                                    "datetime": "202306181800",
+                                    "deg": "112.5",
+                                    "card": "ESE (East-Southeast)",
+                                    "sexa": "11230"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "ws",
+                            "description": "Wind speed",
+                            "type": "hourly",
+                            "times": [
+                                {
+                                    "type": "hourly",
+                                    "h": "0",
+                                    "datetime": "202306160000",
+                                    "kt": "2",
+                                    "mph": "2.3015589",
+                                    "kph": "3.704",
+                                    "ms": "1.028888888"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "6",
+                                    "datetime": "202306160600",
+                                    "kt": "10",
+                                    "mph": "11.5077945",
+                                    "kph": "18.52",
+                                    "ms": "5.14444444"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "12",
+                                    "datetime": "202306161200",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "18",
+                                    "datetime": "202306161800",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "24",
+                                    "datetime": "202306170000",
+                                    "kt": "2",
+                                    "mph": "2.3015589",
+                                    "kph": "3.704",
+                                    "ms": "1.028888888"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "30",
+                                    "datetime": "202306170600",
+                                    "kt": "10",
+                                    "mph": "11.5077945",
+                                    "kph": "18.52",
+                                    "ms": "5.14444444"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "36",
+                                    "datetime": "202306171200",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "42",
+                                    "datetime": "202306171800",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "48",
+                                    "datetime": "202306180000",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "54",
+                                    "datetime": "202306180600",
+                                    "kt": "10",
+                                    "mph": "11.5077945",
+                                    "kph": "18.52",
+                                    "ms": "5.14444444"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "60",
+                                    "datetime": "202306181200",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                },
+                                {
+                                    "type": "hourly",
+                                    "h": "66",
+                                    "datetime": "202306181800",
+                                    "kt": "5",
+                                    "mph": "5.75389725",
+                                    "kph": "9.26",
+                                    "ms": "2.57222222"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Latest earth quake happened on Indonesia BMKG",
+            "url": "https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/quake",
+            "description": "Latest earth quake happened on Indonesia",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/quake\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com/quake\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indonesia-most-accurate-weather-and-earthquake.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "success": true,
+                "message": null,
+                "data": {
+                    "tanggal": "16 Jun 2023",
+                    "jam": "01:06:22 WIB",
+                    "datetime": "2023-06-15T18:06:22+00:00",
+                    "coordinates": "-22.82,176.44 BB",
+                    "lintang": "22.82 LS",
+                    "bujur": "176.44 BB",
+                    "magnitude": "6.9",
+                    "kedalaman": "161 km",
+                    "wilayah": "771 km BaratDaya SUVA-FIJIISLAND",
+                    "potensi": "Tidak berpotensi tsunami",
+                    "dirasakan": "-",
+                    "shakemap": "https://data.bmkg.go.id/DataMKG/TEWS/20230616011556.mmi.jpg"
+                }
+            }
+        }
+    ],
+    "standardized_name": "indonesia_most_accurate_weather_and_earthquake"
+}

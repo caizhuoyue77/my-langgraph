@@ -1,0 +1,33 @@
+{
+    "product_id": "api_3dbe596e-fda9-43e7-9b4f-ede78005f58e",
+    "tool_description": "The Wordle Game API allows developers to integrate a fun word-guessing game into their applications. Players can make guesses of five-letter English words, and the API will return a string indicating which letters are correct, which are incorrect but present in the word, and which are not present at all. The API generates a new secret word every 24 hours to keep the game fresh and challenging.",
+    "home_url": "https://rapidapi.com/azizbergach/api/wordle-game-api1/",
+    "name": "Wordle Game API",
+    "title": "Wordle Game API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Wordle Game API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 945,
+        "avgSuccessRate": 99,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "wordle-game-api1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "today word",
+            "url": "https://wordle-game-api1.p.rapidapi.com/word",
+            "description": "get today word or the correct answer",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://wordle-game-api1.p.rapidapi.com/word\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-game-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://wordle-game-api1.p.rapidapi.com/word\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"wordle-game-api1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "word": "which"
+            }
+        }
+    ],
+    "standardized_name": "wordle_game_api"
+}

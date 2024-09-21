@@ -1,0 +1,27 @@
+{
+    "product_id": "api_e9b9d548-c52c-4710-b003-1f2ee27adc04",
+    "tool_description": "Ajoutez les donn\u00e9es m\u00e9t\u00e9orologiques d'aujourd'hui \u00e0 votre application.",
+    "home_url": "https://rapidapi.com/qwiper-qwiper-default/api/qwiper-weather/",
+    "name": "Qwiper Weather",
+    "title": "Qwiper Weather",
+    "pricing": "FREE",
+    "tool_name": "Qwiper Weather",
+    "score": null,
+    "host": "qwiper-weather.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "M\u00e9t\u00e9o d'aujourd'hui - Niamey, Niger",
+            "url": "https://qwiper-weather.p.rapidapi.com/?json=true",
+            "description": "Obtenez la temp\u00e9rature, les conditions du ciel, les vents, l'humidit\u00e9, etc. pour la ville de Niamey.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://qwiper-weather.p.rapidapi.com/?json=true\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qwiper-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://qwiper-weather.p.rapidapi.com/?json=true\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"qwiper-weather.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Endpoint '/' does not exist"
+            }
+        }
+    ],
+    "standardized_name": "qwiper_weather"
+}

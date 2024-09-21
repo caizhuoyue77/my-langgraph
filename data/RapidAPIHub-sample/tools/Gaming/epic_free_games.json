@@ -1,0 +1,92 @@
+{
+    "product_id": "api_6af05807-ea71-4d34-8b19-979db69ae0df",
+    "tool_description": "Epic Games Store - Free Games with details.\n\nGame Name,\nGame Description,\nGame Image Wide - Tall,\nGame Publisher,\nGame Discount Price,\nGame Original Price,\nGame Price Currency Code,\nGame Epic URL\n\n",
+    "home_url": "https://rapidapi.com/1yesari1/api/epic-free-games/",
+    "name": "Epic Free Games",
+    "title": "Epic Free Games",
+    "pricing": "FREEMIUM",
+    "tool_name": "Epic Free Games",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 576,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "epic-free-games.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Epic Free Games",
+            "url": "https://epic-free-games.p.rapidapi.com/epic-free-games",
+            "description": "Get Epic Free Games",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://epic-free-games.p.rapidapi.com/epic-free-games\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-free-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://epic-free-games.p.rapidapi.com/epic-free-games\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-free-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "Idle Champions of the Forgotten Realms",
+                    "description": "Idle Champions is a licensed Dungeons & Dragons strategy management video game uniting iconic characters from novels, campaigns, and shows into one epic adventure.",
+                    "offerImageWide": "https://cdn1.epicgames.com/offer/7e508f543b05465abe3a935960eb70ac/IdleChampions_FreeGamesPromo_1200x16001_1200x1600-764258f78394b9f79815bbd9010e8454",
+                    "offerImageTall": "https://cdn1.epicgames.com/offer/7e508f543b05465abe3a935960eb70ac/IdleChampions_FreeGamesPromo_2560x14401_2560x1440-8ce28f11dab0dcafa37bfedfac54931d",
+                    "publisher": "Codename Entertainment",
+                    "discountPrice": 0,
+                    "originalPrice": 0,
+                    "currencyCode": "USD",
+                    "appUrl": "https://store.epicgames.com/en-US/p/idle-champions-of-the-forgotten-realms"
+                },
+                {
+                    "name": "Guacamelee! Super Turbo Championship Edition",
+                    "description": "Guacamelee! is a Metroidvania-style action-platformer set in a magical Mexican-inspired world. The game draws its inspiration from traditional Mexican culture and folklore, and features many interesting and unique characters.",
+                    "offerImageWide": "https://cdn1.epicgames.com/spt-assets/7041a1ca4ed543459b95d78887047bd9/guacamelee-stce-ztldk.jpg",
+                    "offerImageTall": "https://cdn1.epicgames.com/spt-assets/7041a1ca4ed543459b95d78887047bd9/guacamelee-stce-18fca.jpg",
+                    "publisher": "Drinkbox Studios Inc.",
+                    "discountPrice": 0,
+                    "originalPrice": 1499,
+                    "currencyCode": "USD",
+                    "appUrl": "https://store.epicgames.com/en-US/p/guacamelee-stce-7cdbc8"
+                },
+                {
+                    "name": "Guacamelee! 2",
+                    "description": "Head back to the Mexiverse in this long-awaited sequel to the smash hit Guacamelee! Uppercut your way to victory across stunning new hand-crafted levels. Featuring a dense and colorful world, new luchador moves, sassy new bosses, twice the enemies, and 300% more chickens!",
+                    "offerImageWide": "https://cdn1.epicgames.com/spt-assets/b05acd7d28d34f6d93a961b0e53ddf0b/guacamelee-2-1lym2.jpg",
+                    "offerImageTall": "https://cdn1.epicgames.com/spt-assets/b05acd7d28d34f6d93a961b0e53ddf0b/guacamelee-2-qew88.jpg",
+                    "publisher": "Drinkbox Studios Inc.",
+                    "discountPrice": 0,
+                    "originalPrice": 1999,
+                    "currencyCode": "USD",
+                    "appUrl": "https://store.epicgames.com/en-US/p/guacamelee-2-ac4977"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Epic Free Games Coming Soon",
+            "url": "https://epic-free-games.p.rapidapi.com/epic-free-games-coming-soon",
+            "description": "Get Epic Free Games - Coming Soon",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://epic-free-games.p.rapidapi.com/epic-free-games-coming-soon\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-free-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://epic-free-games.p.rapidapi.com/epic-free-games-coming-soon\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"epic-free-games.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "name": "theHunter: Call of the Wild\u2122",
+                    "description": "Experience an atmospheric hunting game like no other in this realistic and visually breathtaking open world. Immerse yourself in the atmospheric single player campaign, or share the ultimate hunting experience with friends.",
+                    "offerImageWide": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_theHunterCalloftheWild_ExpansiveWorlds_S2_1200x1600-1e9b46aaabc33fe0a08cf5b418e76ba2",
+                    "offerImageTall": "https://cdn1.epicgames.com/salesEvent/salesEvent/EGS_theHunterCalloftheWild_ExpansiveWorlds_S2_1200x1600-1e9b46aaabc33fe0a08cf5b418e76ba2",
+                    "publisher": "Expansive Worlds AB",
+                    "discountPrice": 1999,
+                    "originalPrice": 1999,
+                    "currencyCode": "USD",
+                    "appUrl": "https://store.epicgames.com/en-US/p/thehunter-call-of-the-wild"
+                }
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "epic_free_games"
+}

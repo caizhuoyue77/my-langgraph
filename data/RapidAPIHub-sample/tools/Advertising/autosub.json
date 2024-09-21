@@ -1,0 +1,41 @@
+{
+    "product_id": "api_98d61b02-12ee-4428-a8c2-670fbf8703df",
+    "tool_description": "Auto sub",
+    "home_url": "https://rapidapi.com/antonyrapid/api/autosub/",
+    "name": "Autosub",
+    "title": "Autosub",
+    "pricing": "FREE",
+    "tool_name": "Autosub",
+    "score": {
+        "avgServiceLevel": 72,
+        "avgLatency": 11503,
+        "avgSuccessRate": 72,
+        "popularityScore": 7.8,
+        "__typename": "Score"
+    },
+    "host": "autosub.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "brotli",
+            "url": "https://autosub.p.rapidapi.com/get",
+            "description": "testing auto subscription",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "Host",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "test"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://autosub.p.rapidapi.com/get\"\nquerystring = {\"Host\": \"test\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"autosub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://autosub.p.rapidapi.com/get\"\nquerystring = {\"Host\": \"test\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"autosub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "messages": "The request to the API has timed out. Please try again later, or if the issue persists, please contact the API provider",
+                "info": "Your Client (working) ---> Gateway (working) ---> API (took too long to respond)"
+            }
+        }
+    ],
+    "standardized_name": "autosub"
+}

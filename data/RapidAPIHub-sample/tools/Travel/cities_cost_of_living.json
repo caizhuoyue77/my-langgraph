@@ -1,0 +1,74 @@
+{
+    "product_id": "api_5e99f02c-8e6c-4dd8-a225-83bf1e03bc27",
+    "tool_description": "Get detailed information about the living expenses of 650+ cities around the world.",
+    "home_url": "https://rapidapi.com/ditno-ditno-default/api/cities-cost-of-living1/",
+    "name": "Cities Cost of Living",
+    "title": "Cities Cost of Living",
+    "pricing": "FREEMIUM",
+    "tool_name": "Cities Cost of Living",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1100,
+        "avgSuccessRate": 82,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "cities-cost-of-living1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Currencies List",
+            "url": "https://cities-cost-of-living1.p.rapidapi.com/get_currencies_list",
+            "description": "Get a list of all the Currencies available",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cities-cost-of-living1.p.rapidapi.com/get_currencies_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cities-cost-of-living1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cities-cost-of-living1.p.rapidapi.com/get_currencies_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cities-cost-of-living1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "currencies": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Get Cities List",
+            "url": "https://cities-cost-of-living1.p.rapidapi.com/get_cities_list",
+            "description": "Get a list of all the Cities available",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cities-cost-of-living1.p.rapidapi.com/get_cities_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cities-cost-of-living1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cities-cost-of-living1.p.rapidapi.com/get_cities_list\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cities-cost-of-living1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "cities": {
+                        "items": {
+                            "properties": {
+                                "country": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "cities_cost_of_living"
+}

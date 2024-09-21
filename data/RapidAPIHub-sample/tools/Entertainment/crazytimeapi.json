@@ -1,0 +1,806 @@
+{
+    "product_id": "api_e67a5465-0c49-4881-82fc-00c0a9433429",
+    "tool_description": "CrazyTimeAPI is a real-time API that provides developers with a way to integrate live data into their applications.This API is designed to be fast, reliable, and easy to use, allowing developers to quickly and easily access real-time game outcome data so they can integrate in any strategy",
+    "home_url": "https://rapidapi.com/eng.ekeyrouz/api/crazytimeapi/",
+    "name": "CrazyTimeAPI",
+    "title": "CrazyTimeAPI",
+    "pricing": "FREEMIUM",
+    "tool_name": "CrazyTimeAPI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8204,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "crazytimeapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Statistics",
+            "url": "https://crazytimeapi.p.rapidapi.com/stats",
+            "description": "Stats of wheelResults:\n\"count\"\n\"percentage\"\n\"lastOccurredAt\"\n\"lastSeenBefore\"\n\"hotFrequencyPercentage\": 1.11\nNote that Duration is Hourly basis 1,2,3,.......72 ect",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "duration",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "3"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/stats\"\nquerystring = {\"duration\": \"3\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/stats\"\nquerystring = {\"duration\": \"3\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "totalCount": 210,
+                "aggStats": [
+                    {
+                        "wheelResult": "1",
+                        "count": 86,
+                        "percentage": 40.95,
+                        "lastOccurredAt": "2023-06-16T18:19:09.860Z",
+                        "lastSeenBefore": 1,
+                        "hotFrequencyPercentage": 5.33
+                    },
+                    {
+                        "wheelResult": "2",
+                        "count": 49,
+                        "percentage": 23.33,
+                        "lastOccurredAt": "2023-06-16T18:19:57.009Z",
+                        "lastSeenBefore": 0,
+                        "hotFrequencyPercentage": -3.06
+                    },
+                    {
+                        "wheelResult": "5",
+                        "count": 30,
+                        "percentage": 14.29,
+                        "lastOccurredAt": "2023-06-16T18:15:51.914Z",
+                        "lastSeenBefore": 6,
+                        "hotFrequencyPercentage": 10.23
+                    },
+                    {
+                        "wheelResult": "CoinFlip",
+                        "count": 23,
+                        "percentage": 10.95,
+                        "lastOccurredAt": "2023-06-16T18:12:02.256Z",
+                        "lastSeenBefore": 11,
+                        "hotFrequencyPercentage": 48.01
+                    },
+                    {
+                        "wheelResult": "10",
+                        "count": 14,
+                        "percentage": 6.67,
+                        "lastOccurredAt": "2023-06-16T18:18:19.314Z",
+                        "lastSeenBefore": 3,
+                        "hotFrequencyPercentage": -9.91
+                    },
+                    {
+                        "wheelResult": "Pachinko",
+                        "count": 4,
+                        "percentage": 1.9,
+                        "lastOccurredAt": "2023-06-16T18:07:37.976Z",
+                        "lastSeenBefore": 16,
+                        "hotFrequencyPercentage": -48.52
+                    },
+                    {
+                        "wheelResult": "CashHunt",
+                        "count": 3,
+                        "percentage": 1.43,
+                        "lastOccurredAt": "2023-06-16T17:39:29.995Z",
+                        "lastSeenBefore": 50,
+                        "hotFrequencyPercentage": -61.39
+                    },
+                    {
+                        "wheelResult": "CrazyBonus",
+                        "count": 1,
+                        "percentage": 0.48,
+                        "lastOccurredAt": "2023-06-16T16:05:52.444Z",
+                        "lastSeenBefore": 156,
+                        "hotFrequencyPercentage": -74.26
+                    }
+                ],
+                "bestMultipliers": [
+                    {
+                        "id": "648c9e524241415da105e315",
+                        "wheelResult": "CashHunt",
+                        "lastOccurredAt": "2023-06-16T17:39:29.995Z",
+                        "maxMultiplier": 100,
+                        "bigWinStreamUrl": null
+                    },
+                    {
+                        "id": "648c9b3a4241415da105e2bd",
+                        "wheelResult": "CashHunt",
+                        "lastOccurredAt": "2023-06-16T17:26:17.978Z",
+                        "maxMultiplier": 100,
+                        "bigWinStreamUrl": null
+                    },
+                    {
+                        "id": "648c95204241415da105e20d",
+                        "wheelResult": "CashHunt",
+                        "lastOccurredAt": "2023-06-16T17:00:15.495Z",
+                        "maxMultiplier": 100,
+                        "bigWinStreamUrl": null
+                    },
+                    {
+                        "id": "648c88614241415da105e0bc",
+                        "wheelResult": "CrazyBonus",
+                        "lastOccurredAt": "2023-06-16T16:05:52.444Z",
+                        "maxMultiplier": 50,
+                        "bigWinStreamUrl": null
+                    },
+                    {
+                        "id": "648c8bfb4241415da105e11a",
+                        "wheelResult": "Pachinko",
+                        "lastOccurredAt": "2023-06-16T16:21:13.178Z",
+                        "maxMultiplier": 35,
+                        "bigWinStreamUrl": null
+                    }
+                ],
+                "topSlotToWheelResultStats": [
+                    {
+                        "matched": true,
+                        "percentage": 5.7142857142857135,
+                        "totalCount": 12
+                    },
+                    {
+                        "matched": false,
+                        "percentage": 94.28571428571428,
+                        "totalCount": 198
+                    }
+                ],
+                "winnerAggregatedStats": [
+                    {
+                        "screenName": "Cas...",
+                        "count": 38,
+                        "totalWonAmount": 298518.95
+                    },
+                    {
+                        "screenName": "Smi...",
+                        "count": 16,
+                        "totalWonAmount": 88801.94
+                    },
+                    {
+                        "screenName": "o2p...",
+                        "count": 27,
+                        "totalWonAmount": 31916.93
+                    },
+                    {
+                        "screenName": "Nip...",
+                        "count": 17,
+                        "totalWonAmount": 26675
+                    },
+                    {
+                        "screenName": "PIC...",
+                        "count": 10,
+                        "totalWonAmount": 25400
+                    },
+                    {
+                        "screenName": "cos...",
+                        "count": 11,
+                        "totalWonAmount": 13625
+                    },
+                    {
+                        "screenName": "Gso...",
+                        "count": 5,
+                        "totalWonAmount": 12150.88
+                    },
+                    {
+                        "screenName": "eni...",
+                        "count": 7,
+                        "totalWonAmount": 11922.48
+                    },
+                    {
+                        "screenName": "sta...",
+                        "count": 1,
+                        "totalWonAmount": 11694.09
+                    },
+                    {
+                        "screenName": "Mel...",
+                        "count": 4,
+                        "totalWonAmount": 11575.91
+                    }
+                ],
+                "bestIndividualWins": [
+                    {
+                        "id": "648c82ea4241415da105e02a",
+                        "screenName": "Cas...",
+                        "winAmount": 23753.62,
+                        "wheelResult": "CoinFlip",
+                        "maxMultiplier": 25,
+                        "lastOccurredAt": "2023-06-16T15:42:33.937Z"
+                    },
+                    {
+                        "id": "648c95e04241415da105e220",
+                        "screenName": "Cas...",
+                        "winAmount": 19185.61,
+                        "wheelResult": "10",
+                        "maxMultiplier": 20,
+                        "lastOccurredAt": "2023-06-16T17:03:27.300Z"
+                    },
+                    {
+                        "id": "648c81374241415da105dffb",
+                        "screenName": "Cas...",
+                        "winAmount": 14617.61,
+                        "wheelResult": "5",
+                        "maxMultiplier": 15,
+                        "lastOccurredAt": "2023-06-16T15:35:19.307Z"
+                    },
+                    {
+                        "id": "648c91034241415da105e19b",
+                        "screenName": "Cas...",
+                        "winAmount": 14617.61,
+                        "wheelResult": "CoinFlip",
+                        "maxMultiplier": 15,
+                        "lastOccurredAt": "2023-06-16T16:42:43.414Z"
+                    },
+                    {
+                        "id": "648c91034241415da105e19b",
+                        "screenName": "sta...",
+                        "winAmount": 11694.09,
+                        "wheelResult": "CoinFlip",
+                        "maxMultiplier": 15,
+                        "lastOccurredAt": "2023-06-16T16:42:43.414Z"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "latest-outcome",
+            "url": "https://crazytimeapi.p.rapidapi.com/latest-outcome",
+            "description": "Get the last Outcome data and details",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/latest-outcome\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/latest-outcome\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "648ca7cd4241415da105e424",
+                "transmissionId": "djItMS0wOjE3MTg0MzcyMC0xNjg2OTM5NTk3Nzg2",
+                "totalWinners": 1836,
+                "totalAmount": 7062,
+                "winners": [
+                    {
+                        "screenName": "FR4...",
+                        "winnings": 2100,
+                        "payout": null,
+                        "multiplier": null
+                    },
+                    {
+                        "screenName": "dvd...",
+                        "winnings": 300,
+                        "payout": null,
+                        "multiplier": null
+                    },
+                    {
+                        "screenName": "Kev...",
+                        "winnings": 174,
+                        "payout": null,
+                        "multiplier": null
+                    },
+                    {
+                        "screenName": "Vit...",
+                        "winnings": 150,
+                        "payout": null,
+                        "multiplier": null
+                    },
+                    {
+                        "screenName": "Luc...",
+                        "winnings": 135,
+                        "payout": null,
+                        "multiplier": null
+                    }
+                ],
+                "data": {
+                    "id": "1769369651d70d1f99723d95",
+                    "startedAt": "2023-06-16T18:19:14.673Z",
+                    "settledAt": "2023-06-16T18:19:57.009Z",
+                    "status": "Resolved",
+                    "gameType": "crazytime",
+                    "currency": "EUR",
+                    "wager": 0.95,
+                    "payout": 0,
+                    "table": {
+                        "id": "CrazyTime0000001",
+                        "name": "Crazy Time"
+                    },
+                    "dealer": {
+                        "name": "Lora",
+                        "uid": "tts122943_______"
+                    },
+                    "numOfParticipants": 1,
+                    "result": {
+                        "outcome": {
+                            "topSlot": {
+                                "wheelSector": "CoinFlip",
+                                "multiplier": 2
+                            },
+                            "wheelResult": {
+                                "type": "WinningNumber",
+                                "wheelSector": "2"
+                            },
+                            "maxMultiplier": 2,
+                            "isTopSlotMatchedToWheelResult": false
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "History",
+            "url": "https://crazytimeapi.p.rapidapi.com/history",
+            "description": "Get the last 10 spins Histories and details",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/history\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://crazytimeapi.p.rapidapi.com/history\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"crazytimeapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": "648ca7cd4241415da105e424",
+                    "transmissionId": "djItMS0wOjE3MTg0MzcyMC0xNjg2OTM5NTk3Nzg2",
+                    "totalWinners": 1836,
+                    "totalAmount": 7062,
+                    "winners": [
+                        {
+                            "screenName": "FR4...",
+                            "winnings": 2100,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "dvd...",
+                            "winnings": 300,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Kev...",
+                            "winnings": 174,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Vit...",
+                            "winnings": 150,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Luc...",
+                            "winnings": 135,
+                            "payout": null,
+                            "multiplier": null
+                        }
+                    ],
+                    "data": {
+                        "id": "1769369651d70d1f99723d95",
+                        "startedAt": "2023-06-16T18:19:14.673Z",
+                        "settledAt": "2023-06-16T18:19:57.009Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CoinFlip",
+                                    "multiplier": 2
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "2"
+                                },
+                                "maxMultiplier": 2,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca79e4241415da105e41e",
+                    "data": {
+                        "id": "1769368aa66548de6282342a",
+                        "startedAt": "2023-06-16T18:18:22.669Z",
+                        "settledAt": "2023-06-16T18:19:09.860Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "numOfParticipants": 0,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "5",
+                                    "multiplier": 3
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "1"
+                                },
+                                "maxMultiplier": 1,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca79e4241415da105e41f",
+                    "transmissionId": "djItMS0wOjE3MTg0MjgzOC0xNjg2OTM5NTUwMDUw",
+                    "data": {
+                        "id": "1769368aa66548de6282342a",
+                        "startedAt": "2023-06-16T18:18:24.551Z",
+                        "settledAt": "2023-06-16T18:19:09.210Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 23.36,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "5",
+                                    "multiplier": 3
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "1"
+                                },
+                                "maxMultiplier": 1,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca76c4241415da105e418",
+                    "transmissionId": "djItMS0wOjE3MTg0MTk4OS0xNjg2OTM5NTAwMDQx",
+                    "data": {
+                        "id": "1769367e8f7bebdddb986ea9",
+                        "startedAt": "2023-06-16T18:17:32.628Z",
+                        "settledAt": "2023-06-16T18:18:19.314Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 23.36,
+                        "payout": 38.55,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "2",
+                                    "multiplier": 3
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "10"
+                                },
+                                "maxMultiplier": 10,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca7384241415da105e412",
+                    "transmissionId": "djItMS0wOjE3MTg0MTEwNi0xNjg2OTM5NDQ4Mzg4",
+                    "data": {
+                        "id": "176936735361929c9aa263b1",
+                        "startedAt": "2023-06-16T18:16:44.375Z",
+                        "settledAt": "2023-06-16T18:17:26.959Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CashHunt",
+                                    "multiplier": 2
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "1"
+                                },
+                                "maxMultiplier": 1,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca7084241415da105e40f",
+                    "transmissionId": "djItMS0wOjE3MTg0MDMyNS0xNjg2OTM5Mzk5OTgy",
+                    "data": {
+                        "id": "1769366856e05a1b7682099f",
+                        "startedAt": "2023-06-16T18:15:57.189Z",
+                        "settledAt": "2023-06-16T18:16:39.122Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CoinFlip",
+                                    "multiplier": 2
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "2"
+                                },
+                                "maxMultiplier": 2,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca6d84241415da105e40a",
+                    "transmissionId": "djItMS0wOjE3MTgzOTYwOC0xNjg2OTM5MzUyNjQw",
+                    "data": {
+                        "id": "1769365e499fe91a0b89968c",
+                        "startedAt": "2023-06-16T18:15:14.017Z",
+                        "settledAt": "2023-06-16T18:15:51.914Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CrazyBonus",
+                                    "multiplier": 2
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "5"
+                                },
+                                "maxMultiplier": 5,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca6ad4241415da105e405",
+                    "transmissionId": "djItMS0wOjE3MTgzODkyMS0xNjg2OTM5MzA5ODAw",
+                    "totalWinners": 1519,
+                    "totalAmount": 2441,
+                    "winners": [
+                        {
+                            "screenName": "gal...",
+                            "winnings": 154.47,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Ggi...",
+                            "winnings": 100.38,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "jus...",
+                            "winnings": 100,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Kam...",
+                            "winnings": 81.9,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "rom...",
+                            "winnings": 60,
+                            "payout": null,
+                            "multiplier": null
+                        }
+                    ],
+                    "data": {
+                        "id": "1769365404b3c2997c364ae0",
+                        "startedAt": "2023-06-16T18:14:29.911Z",
+                        "settledAt": "2023-06-16T18:15:08.741Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.5,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "Pachinko",
+                                    "multiplier": 2
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "1"
+                                },
+                                "maxMultiplier": 1,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca6814241415da105e3ff",
+                    "transmissionId": "djItMS0wOjE3MTgzODE1NS0xNjg2OTM5MjY1NTQ5",
+                    "totalWinners": 1940,
+                    "totalAmount": 5487,
+                    "winners": [
+                        {
+                            "screenName": "nfe...",
+                            "winnings": 485.48,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Mar...",
+                            "winnings": 300,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Luc...",
+                            "winnings": 195.39,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "Vis...",
+                            "winnings": 160.6,
+                            "payout": null,
+                            "multiplier": null
+                        },
+                        {
+                            "screenName": "dvd...",
+                            "winnings": 150,
+                            "payout": null,
+                            "multiplier": null
+                        }
+                    ],
+                    "data": {
+                        "id": "176936491b7320d82e08609a",
+                        "startedAt": "2023-06-16T18:13:43.048Z",
+                        "settledAt": "2023-06-16T18:14:24.611Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CrazyBonus",
+                                    "multiplier": 3
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "2"
+                                },
+                                "maxMultiplier": 2,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                },
+                {
+                    "id": "648ca6524241415da105e3fb",
+                    "transmissionId": "djItMS0wOjE3MTgzNzI3OC0xNjg2OTM5MjE4NDM1",
+                    "data": {
+                        "id": "1769363de131cd57247df179",
+                        "startedAt": "2023-06-16T18:12:54.826Z",
+                        "settledAt": "2023-06-16T18:13:37.761Z",
+                        "status": "Resolved",
+                        "gameType": "crazytime",
+                        "currency": "EUR",
+                        "wager": 0.95,
+                        "payout": 0,
+                        "table": {
+                            "id": "CrazyTime0000001",
+                            "name": "Crazy Time"
+                        },
+                        "dealer": {
+                            "name": "Lora",
+                            "uid": "tts122943_______"
+                        },
+                        "numOfParticipants": 1,
+                        "result": {
+                            "outcome": {
+                                "topSlot": {
+                                    "wheelSector": "CrazyBonus"
+                                },
+                                "wheelResult": {
+                                    "type": "WinningNumber",
+                                    "wheelSector": "2"
+                                },
+                                "maxMultiplier": 2,
+                                "isTopSlotMatchedToWheelResult": false
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ],
+    "standardized_name": "crazytimeapi"
+}

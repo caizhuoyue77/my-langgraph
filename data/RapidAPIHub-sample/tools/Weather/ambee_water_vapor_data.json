@@ -1,0 +1,93 @@
+{
+    "product_id": "api_0302689d-3ca4-4be8-9166-aa3100a75d00",
+    "tool_description": "World\u2019s first ever water vapor API. Integrate water vapor API for global real-time water vapor information. Test an API call. Get accurate & actionable data insights.",
+    "home_url": "https://rapidapi.com/subhashambee/api/ambee-water-vapor-data/",
+    "name": "Ambee Water Vapor Data",
+    "title": "Ambee Water Vapor Data",
+    "pricing": "FREE",
+    "tool_name": "Ambee Water Vapor Data",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 224,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "ambee-water-vapor-data.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Water Vapour Data By Coordinates",
+            "url": "https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/latest/by-lat-lng",
+            "description": "Get Water Vapour data by Coordinates",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "12.9716"
+                },
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "77.5946"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "maxDistance",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/latest/by-lat-lng\"\nquerystring = {\"lat\": \"12.9716\", \"lng\": \"77.5946\", \"maxDistance\": \"\", \"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ambee-water-vapor-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/latest/by-lat-lng\"\nquerystring = {\"lat\": \"12.9716\", \"lng\": \"77.5946\", \"maxDistance\": \"\", \"limit\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ambee-water-vapor-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Water Vapour History by Lat Lng",
+            "url": "https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/history/by-lat-lng",
+            "description": "Water vapour History by lat lng",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lat",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "20.59"
+                },
+                {
+                    "name": "lng",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "78.96"
+                },
+                {
+                    "name": "endDate",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "'YYYY-MM-DD hh:mm:ss'"
+                },
+                {
+                    "name": "startDate",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "'YYYY-MM-DD hh:mm:ss'"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/history/by-lat-lng\"\nquerystring = {\"lat\": \"20.59\", \"lng\": \"78.96\", \"endDate\": \"'YYYY-MM-DD hh:mm:ss'\", \"startDate\": \"'YYYY-MM-DD hh:mm:ss'\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ambee-water-vapor-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ambee-water-vapor-data.p.rapidapi.com/waterVapor/history/by-lat-lng\"\nquerystring = {\"lat\": \"20.59\", \"lng\": \"78.96\", \"endDate\": \"'YYYY-MM-DD hh:mm:ss'\", \"startDate\": \"'YYYY-MM-DD hh:mm:ss'\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ambee-water-vapor-data.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "ambee_water_vapor_data"
+}

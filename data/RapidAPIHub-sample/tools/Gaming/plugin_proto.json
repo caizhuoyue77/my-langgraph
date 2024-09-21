@@ -1,0 +1,38 @@
+{
+    "product_id": "api_3a48baac-d992-42ab-8e03-5d83a516a5cb",
+    "tool_description": "Protocol",
+    "home_url": "https://rapidapi.com/mylove.whererunow/api/plugin-proto/",
+    "name": "Plugin.proto",
+    "title": "Plugin.proto",
+    "pricing": "FREE",
+    "tool_name": "Plugin.proto",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 211,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.2,
+        "__typename": "Score"
+    },
+    "host": "plugin-proto.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Api.points",
+            "url": "https://plugin-proto.p.rapidapi.com/proto/api/token",
+            "description": "For unlimited lucky",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "iniyethawe",
+                    "type": "STRING",
+                    "description": "-1",
+                    "default": "-1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://plugin-proto.p.rapidapi.com/proto/api/token\"\nquerystring = {\"iniyethawe\": \"-1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"plugin-proto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://plugin-proto.p.rapidapi.com/proto/api/token\"\nquerystring = {\"iniyethawe\": \"-1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"plugin-proto.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "plugin_proto"
+}

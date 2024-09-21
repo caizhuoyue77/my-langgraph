@@ -1,0 +1,2988 @@
+{
+    "product_id": "api_46d2c092-39b6-4c8f-83b8-78ce75e133e7",
+    "tool_description": "An api of generated RPG items",
+    "home_url": "https://rapidapi.com/Rhatcher94/api/rpg-items/",
+    "name": "RPG Items",
+    "title": "RPG Items",
+    "pricing": "FREE",
+    "tool_name": "RPG Items",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 19961,
+        "avgSuccessRate": 98,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "rpg-items.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Item by ID",
+            "url": "https://rpg-items.p.rapidapi.com/item/6383989636a233ea35d1e566",
+            "description": "Get all RPG items",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "6383989636a233ea35d1e566"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item/6383989636a233ea35d1e566\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "6383989636a233ea35d1e566",
+                "name": "Linen Cloth Legs",
+                "type": "armor",
+                "slot": "legs",
+                "rank": 1,
+                "rarity": "common"
+            }
+        },
+        {
+            "name": "Get Items by query",
+            "url": "https://rpg-items.p.rapidapi.com/item/one",
+            "description": "Get all RPG items",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "rank",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "slot",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "chest"
+                },
+                {
+                    "name": "rarity",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "common"
+                },
+                {
+                    "name": "name",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Linen Cloth Robe"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "armor"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item/one\"\nquerystring = {\"rank\": \"1\", \"slot\": \"chest\", \"rarity\": \"common\", \"name\": \"Linen Cloth Robe\", \"type\": \"armor\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item/one\"\nquerystring = {\"rank\": \"1\", \"slot\": \"chest\", \"rarity\": \"common\", \"name\": \"Linen Cloth Robe\", \"type\": \"armor\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": "6383989636a233ea35d1e565",
+                    "name": "Linen Cloth Robe",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "common"
+                }
+            ]
+        },
+        {
+            "name": "Get All Items",
+            "url": "https://rpg-items.p.rapidapi.com/item",
+            "description": "Get all RPG items",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://rpg-items.p.rapidapi.com/item\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"rpg-items.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": "6383989636a233ea35d1e565",
+                    "name": "Linen Cloth Robe",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e566",
+                    "name": "Linen Cloth Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e567",
+                    "name": "Linen Cloth Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e568",
+                    "name": "Linen Cloth Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e569",
+                    "name": "Linen Cloth Hat",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56a",
+                    "name": "Linen Cloth Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56b",
+                    "name": "Linen Cloth Robe of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56c",
+                    "name": "Linen Cloth Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56d",
+                    "name": "Linen Cloth Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56e",
+                    "name": "Linen Cloth Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e56f",
+                    "name": "Linen Cloth Hat of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e570",
+                    "name": "Linen Cloth Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e571",
+                    "name": "Linen Cloth Robe of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e572",
+                    "name": "Linen Cloth Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e573",
+                    "name": "Linen Cloth Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e574",
+                    "name": "Linen Cloth Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e575",
+                    "name": "Linen Cloth Hat of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e576",
+                    "name": "Linen Cloth Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e577",
+                    "name": "Linen Cloth Robe of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e578",
+                    "name": "Linen Cloth Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e579",
+                    "name": "Linen Cloth Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57a",
+                    "name": "Linen Cloth Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57b",
+                    "name": "Linen Cloth Hat of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57c",
+                    "name": "Linen Cloth Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57d",
+                    "name": "Linen Cloth Robe of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57e",
+                    "name": "Linen Cloth Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e57f",
+                    "name": "Linen Cloth Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e580",
+                    "name": "Linen Cloth Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e581",
+                    "name": "Linen Cloth Hat of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e582",
+                    "name": "Linen Cloth Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e583",
+                    "name": "Silk Cloth Robe",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e584",
+                    "name": "Silk Cloth Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e585",
+                    "name": "Silk Cloth Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e586",
+                    "name": "Silk Cloth Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e587",
+                    "name": "Silk Cloth Hat",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e588",
+                    "name": "Silk Cloth Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e589",
+                    "name": "Silk Cloth Robe of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58a",
+                    "name": "Silk Cloth Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58b",
+                    "name": "Silk Cloth Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58c",
+                    "name": "Silk Cloth Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58d",
+                    "name": "Silk Cloth Hat of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58e",
+                    "name": "Silk Cloth Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e58f",
+                    "name": "Silk Cloth Robe of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e590",
+                    "name": "Silk Cloth Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e591",
+                    "name": "Silk Cloth Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e592",
+                    "name": "Silk Cloth Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e593",
+                    "name": "Silk Cloth Hat of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e594",
+                    "name": "Silk Cloth Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e595",
+                    "name": "Silk Cloth Robe of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e596",
+                    "name": "Silk Cloth Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e597",
+                    "name": "Silk Cloth Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e598",
+                    "name": "Silk Cloth Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e599",
+                    "name": "Silk Cloth Hat of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59a",
+                    "name": "Silk Cloth Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59b",
+                    "name": "Silk Cloth Robe of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59c",
+                    "name": "Silk Cloth Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59d",
+                    "name": "Silk Cloth Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59e",
+                    "name": "Silk Cloth Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e59f",
+                    "name": "Silk Cloth Hat of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a0",
+                    "name": "Silk Cloth Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a1",
+                    "name": "Rune Cloth Robe",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a2",
+                    "name": "Rune Cloth Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a3",
+                    "name": "Rune Cloth Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a4",
+                    "name": "Rune Cloth Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a5",
+                    "name": "Rune Cloth Hat",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a6",
+                    "name": "Rune Cloth Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a7",
+                    "name": "Rune Cloth Robe of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a8",
+                    "name": "Rune Cloth Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5a9",
+                    "name": "Rune Cloth Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5aa",
+                    "name": "Rune Cloth Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ab",
+                    "name": "Rune Cloth Hat of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ac",
+                    "name": "Rune Cloth Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ad",
+                    "name": "Rune Cloth Robe of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ae",
+                    "name": "Rune Cloth Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5af",
+                    "name": "Rune Cloth Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b0",
+                    "name": "Rune Cloth Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b1",
+                    "name": "Rune Cloth Hat of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b2",
+                    "name": "Rune Cloth Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b3",
+                    "name": "Rune Cloth Robe of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b4",
+                    "name": "Rune Cloth Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b5",
+                    "name": "Rune Cloth Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b6",
+                    "name": "Rune Cloth Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b7",
+                    "name": "Rune Cloth Hat of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b8",
+                    "name": "Rune Cloth Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5b9",
+                    "name": "Rune Cloth Robe of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ba",
+                    "name": "Rune Cloth Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5bb",
+                    "name": "Rune Cloth Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5bc",
+                    "name": "Rune Cloth Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5bd",
+                    "name": "Rune Cloth Hat of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5be",
+                    "name": "Rune Cloth Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5bf",
+                    "name": "Soft Leather Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c0",
+                    "name": "Soft Leather Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c1",
+                    "name": "Soft Leather Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c2",
+                    "name": "Soft Leather Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c3",
+                    "name": "Soft Leather Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c4",
+                    "name": "Soft Leather Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c5",
+                    "name": "Soft Leather Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c6",
+                    "name": "Soft Leather Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c7",
+                    "name": "Soft Leather Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c8",
+                    "name": "Soft Leather Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5c9",
+                    "name": "Soft Leather Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ca",
+                    "name": "Soft Leather Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5cb",
+                    "name": "Soft Leather Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5cc",
+                    "name": "Soft Leather Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5cd",
+                    "name": "Soft Leather Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ce",
+                    "name": "Soft Leather Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5cf",
+                    "name": "Soft Leather Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d0",
+                    "name": "Soft Leather Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d1",
+                    "name": "Soft Leather Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d2",
+                    "name": "Soft Leather Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d3",
+                    "name": "Soft Leather Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d4",
+                    "name": "Soft Leather Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d5",
+                    "name": "Soft Leather Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d6",
+                    "name": "Soft Leather Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d7",
+                    "name": "Soft Leather Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d8",
+                    "name": "Soft Leather Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5d9",
+                    "name": "Soft Leather Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5da",
+                    "name": "Soft Leather Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5db",
+                    "name": "Soft Leather Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5dc",
+                    "name": "Soft Leather Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5dd",
+                    "name": "Medium Leather Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5de",
+                    "name": "Medium Leather Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5df",
+                    "name": "Medium Leather Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e0",
+                    "name": "Medium Leather Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e1",
+                    "name": "Medium Leather Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e2",
+                    "name": "Medium Leather Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e3",
+                    "name": "Medium Leather Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e4",
+                    "name": "Medium Leather Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e5",
+                    "name": "Medium Leather Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e6",
+                    "name": "Medium Leather Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e7",
+                    "name": "Medium Leather Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e8",
+                    "name": "Medium Leather Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5e9",
+                    "name": "Medium Leather Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ea",
+                    "name": "Medium Leather Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5eb",
+                    "name": "Medium Leather Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ec",
+                    "name": "Medium Leather Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ed",
+                    "name": "Medium Leather Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ee",
+                    "name": "Medium Leather Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ef",
+                    "name": "Medium Leather Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f0",
+                    "name": "Medium Leather Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f1",
+                    "name": "Medium Leather Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f2",
+                    "name": "Medium Leather Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f3",
+                    "name": "Medium Leather Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f4",
+                    "name": "Medium Leather Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f5",
+                    "name": "Medium Leather Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f6",
+                    "name": "Medium Leather Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f7",
+                    "name": "Medium Leather Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f8",
+                    "name": "Medium Leather Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5f9",
+                    "name": "Medium Leather Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5fa",
+                    "name": "Medium Leather Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5fb",
+                    "name": "Hard Leather Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5fc",
+                    "name": "Hard Leather Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5fd",
+                    "name": "Hard Leather Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5fe",
+                    "name": "Hard Leather Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e5ff",
+                    "name": "Hard Leather Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e600",
+                    "name": "Hard Leather Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e601",
+                    "name": "Hard Leather Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e602",
+                    "name": "Hard Leather Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e603",
+                    "name": "Hard Leather Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e604",
+                    "name": "Hard Leather Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e605",
+                    "name": "Hard Leather Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e606",
+                    "name": "Hard Leather Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e607",
+                    "name": "Hard Leather Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e608",
+                    "name": "Hard Leather Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e609",
+                    "name": "Hard Leather Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60a",
+                    "name": "Hard Leather Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60b",
+                    "name": "Hard Leather Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60c",
+                    "name": "Hard Leather Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60d",
+                    "name": "Hard Leather Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60e",
+                    "name": "Hard Leather Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e60f",
+                    "name": "Hard Leather Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e610",
+                    "name": "Hard Leather Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e611",
+                    "name": "Hard Leather Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e612",
+                    "name": "Hard Leather Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e613",
+                    "name": "Hard Leather Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e614",
+                    "name": "Hard Leather Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e615",
+                    "name": "Hard Leather Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e616",
+                    "name": "Hard Leather Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e617",
+                    "name": "Hard Leather Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e618",
+                    "name": "Hard Leather Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e619",
+                    "name": "Iron Chain Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61a",
+                    "name": "Iron Chain Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61b",
+                    "name": "Iron Chain Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61c",
+                    "name": "Iron Chain Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61d",
+                    "name": "Iron Chain Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61e",
+                    "name": "Iron Chain Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e61f",
+                    "name": "Iron Chain Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e620",
+                    "name": "Iron Chain Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e621",
+                    "name": "Iron Chain Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e622",
+                    "name": "Iron Chain Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e623",
+                    "name": "Iron Chain Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e624",
+                    "name": "Iron Chain Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e625",
+                    "name": "Iron Chain Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e626",
+                    "name": "Iron Chain Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e627",
+                    "name": "Iron Chain Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e628",
+                    "name": "Iron Chain Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e629",
+                    "name": "Iron Chain Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62a",
+                    "name": "Iron Chain Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62b",
+                    "name": "Iron Chain Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62c",
+                    "name": "Iron Chain Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62d",
+                    "name": "Iron Chain Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62e",
+                    "name": "Iron Chain Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e62f",
+                    "name": "Iron Chain Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e630",
+                    "name": "Iron Chain Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e631",
+                    "name": "Iron Chain Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e632",
+                    "name": "Iron Chain Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e633",
+                    "name": "Iron Chain Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e634",
+                    "name": "Iron Chain Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e635",
+                    "name": "Iron Chain Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e636",
+                    "name": "Iron Chain Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e637",
+                    "name": "Steel Chain Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e638",
+                    "name": "Steel Chain Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e639",
+                    "name": "Steel Chain Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63a",
+                    "name": "Steel Chain Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63b",
+                    "name": "Steel Chain Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63c",
+                    "name": "Steel Chain Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63d",
+                    "name": "Steel Chain Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63e",
+                    "name": "Steel Chain Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e63f",
+                    "name": "Steel Chain Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e640",
+                    "name": "Steel Chain Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e641",
+                    "name": "Steel Chain Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e642",
+                    "name": "Steel Chain Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e643",
+                    "name": "Steel Chain Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e644",
+                    "name": "Steel Chain Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e645",
+                    "name": "Steel Chain Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e646",
+                    "name": "Steel Chain Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e647",
+                    "name": "Steel Chain Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e648",
+                    "name": "Steel Chain Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e649",
+                    "name": "Steel Chain Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64a",
+                    "name": "Steel Chain Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64b",
+                    "name": "Steel Chain Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64c",
+                    "name": "Steel Chain Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64d",
+                    "name": "Steel Chain Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64e",
+                    "name": "Steel Chain Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e64f",
+                    "name": "Steel Chain Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e650",
+                    "name": "Steel Chain Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e651",
+                    "name": "Steel Chain Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e652",
+                    "name": "Steel Chain Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e653",
+                    "name": "Steel Chain Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e654",
+                    "name": "Steel Chain Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e655",
+                    "name": "Mithril Chain Chest",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e656",
+                    "name": "Mithril Chain Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e657",
+                    "name": "Mithril Chain Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e658",
+                    "name": "Mithril Chain Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e659",
+                    "name": "Mithril Chain Cowl",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65a",
+                    "name": "Mithril Chain Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65b",
+                    "name": "Mithril Chain Chest of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65c",
+                    "name": "Mithril Chain Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65d",
+                    "name": "Mithril Chain Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65e",
+                    "name": "Mithril Chain Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e65f",
+                    "name": "Mithril Chain Cowl of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e660",
+                    "name": "Mithril Chain Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e661",
+                    "name": "Mithril Chain Chest of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e662",
+                    "name": "Mithril Chain Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e663",
+                    "name": "Mithril Chain Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e664",
+                    "name": "Mithril Chain Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e665",
+                    "name": "Mithril Chain Cowl of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e666",
+                    "name": "Mithril Chain Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e667",
+                    "name": "Mithril Chain Chest of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e668",
+                    "name": "Mithril Chain Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e669",
+                    "name": "Mithril Chain Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66a",
+                    "name": "Mithril Chain Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66b",
+                    "name": "Mithril Chain Cowl of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66c",
+                    "name": "Mithril Chain Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66d",
+                    "name": "Mithril Chain Chest of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66e",
+                    "name": "Mithril Chain Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e66f",
+                    "name": "Mithril Chain Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e670",
+                    "name": "Mithril Chain Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e671",
+                    "name": "Mithril Chain Cowl of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e672",
+                    "name": "Mithril Chain Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e673",
+                    "name": "Iron Plate Body",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e674",
+                    "name": "Iron Plate Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e675",
+                    "name": "Iron Plate Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e676",
+                    "name": "Iron Plate Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e677",
+                    "name": "Iron Plate Helm",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e678",
+                    "name": "Iron Plate Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e679",
+                    "name": "Iron Plate Body of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67a",
+                    "name": "Iron Plate Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67b",
+                    "name": "Iron Plate Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67c",
+                    "name": "Iron Plate Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67d",
+                    "name": "Iron Plate Helm of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67e",
+                    "name": "Iron Plate Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e67f",
+                    "name": "Iron Plate Body of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e680",
+                    "name": "Iron Plate Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e681",
+                    "name": "Iron Plate Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e682",
+                    "name": "Iron Plate Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e683",
+                    "name": "Iron Plate Helm of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e684",
+                    "name": "Iron Plate Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e685",
+                    "name": "Iron Plate Body of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e686",
+                    "name": "Iron Plate Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e687",
+                    "name": "Iron Plate Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e688",
+                    "name": "Iron Plate Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e689",
+                    "name": "Iron Plate Helm of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68a",
+                    "name": "Iron Plate Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68b",
+                    "name": "Iron Plate Body of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68c",
+                    "name": "Iron Plate Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68d",
+                    "name": "Iron Plate Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68e",
+                    "name": "Iron Plate Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e68f",
+                    "name": "Iron Plate Helm of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e690",
+                    "name": "Iron Plate Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 1,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e691",
+                    "name": "Steel Plate Body",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e692",
+                    "name": "Steel Plate Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e693",
+                    "name": "Steel Plate Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e694",
+                    "name": "Steel Plate Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e695",
+                    "name": "Steel Plate Helm",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e696",
+                    "name": "Steel Plate Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e697",
+                    "name": "Steel Plate Body of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e698",
+                    "name": "Steel Plate Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e699",
+                    "name": "Steel Plate Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69a",
+                    "name": "Steel Plate Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69b",
+                    "name": "Steel Plate Helm of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69c",
+                    "name": "Steel Plate Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69d",
+                    "name": "Steel Plate Body of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69e",
+                    "name": "Steel Plate Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e69f",
+                    "name": "Steel Plate Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a0",
+                    "name": "Steel Plate Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a1",
+                    "name": "Steel Plate Helm of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a2",
+                    "name": "Steel Plate Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a3",
+                    "name": "Steel Plate Body of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a4",
+                    "name": "Steel Plate Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a5",
+                    "name": "Steel Plate Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a6",
+                    "name": "Steel Plate Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a7",
+                    "name": "Steel Plate Helm of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a8",
+                    "name": "Steel Plate Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6a9",
+                    "name": "Steel Plate Body of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6aa",
+                    "name": "Steel Plate Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ab",
+                    "name": "Steel Plate Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ac",
+                    "name": "Steel Plate Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ad",
+                    "name": "Steel Plate Helm of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ae",
+                    "name": "Steel Plate Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 2,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6af",
+                    "name": "Mithril Plate Body",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b0",
+                    "name": "Mithril Plate Legs",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b1",
+                    "name": "Mithril Plate Gloves",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b2",
+                    "name": "Mithril Plate Shoulders",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b3",
+                    "name": "Mithril Plate Helm",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b4",
+                    "name": "Mithril Plate Boots",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "common"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b5",
+                    "name": "Mithril Plate Body of the Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b6",
+                    "name": "Mithril Plate Legs of the Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b7",
+                    "name": "Mithril Plate Gloves of the Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b8",
+                    "name": "Mithril Plate Shoulders of the Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6b9",
+                    "name": "Mithril Plate Helm of the Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ba",
+                    "name": "Mithril Plate Boots of the Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6bb",
+                    "name": "Mithril Plate Body of the Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6bc",
+                    "name": "Mithril Plate Legs of the Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6bd",
+                    "name": "Mithril Plate Gloves of the Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6be",
+                    "name": "Mithril Plate Shoulders of the Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6bf",
+                    "name": "Mithril Plate Helm of the Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c0",
+                    "name": "Mithril Plate Boots of the Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "uncommon"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c1",
+                    "name": "Mithril Plate Body of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c2",
+                    "name": "Mithril Plate Legs of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c3",
+                    "name": "Mithril Plate Gloves of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c4",
+                    "name": "Mithril Plate Shoulders of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c5",
+                    "name": "Mithril Plate Helm of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c6",
+                    "name": "Mithril Plate Boots of the Elder Eagle",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c7",
+                    "name": "Mithril Plate Body of the Elder Bear",
+                    "type": "armor",
+                    "slot": "chest",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c8",
+                    "name": "Mithril Plate Legs of the Elder Bear",
+                    "type": "armor",
+                    "slot": "legs",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6c9",
+                    "name": "Mithril Plate Gloves of the Elder Bear",
+                    "type": "armor",
+                    "slot": "hands",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6ca",
+                    "name": "Mithril Plate Shoulders of the Elder Bear",
+                    "type": "armor",
+                    "slot": "shoulders",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6cb",
+                    "name": "Mithril Plate Helm of the Elder Bear",
+                    "type": "armor",
+                    "slot": "helm",
+                    "rank": 3,
+                    "rarity": "rare"
+                },
+                {
+                    "id": "6383989636a233ea35d1e6cc",
+                    "name": "Mithril Plate Boots of the Elder Bear",
+                    "type": "armor",
+                    "slot": "boots",
+                    "rank": 3,
+                    "rarity": "rare"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "rpg_items"
+}

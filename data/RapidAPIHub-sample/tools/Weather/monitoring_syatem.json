@@ -1,0 +1,48 @@
+{
+    "product_id": "api_0aaaa948-6e11-4d67-a085-a23865baf184",
+    "tool_description": "Monitor The Weather Details",
+    "home_url": "https://rapidapi.com/openweatherhajopi/api/monitoring-syatem/",
+    "name": "Monitoring Syatem",
+    "title": "Monitoring Syatem",
+    "pricing": "FREE",
+    "tool_name": "Monitoring Syatem",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 8,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "monitoring-syatem.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Weather",
+            "url": "https://monitoring-syatem.p.rapidapi.com/add",
+            "description": "Weather details Monitoring and Update in mobile",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "data",
+                    "type": "STRING",
+                    "description": "Weather Details Monitoring",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://monitoring-syatem.p.rapidapi.com/add\"\nquerystring = {\"data\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"monitoring-syatem.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://monitoring-syatem.p.rapidapi.com/add\"\nquerystring = {\"data\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"monitoring-syatem.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "weather_id": "2",
+                "date": "26-09-2021",
+                "temperature": "76",
+                "humidity": "67%",
+                "pollen": "low",
+                "air": "good",
+                "so": "good",
+                "no": "bad",
+                "type": "string"
+            }
+        }
+    ],
+    "standardized_name": "monitoring_syatem"
+}

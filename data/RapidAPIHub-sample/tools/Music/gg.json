@@ -1,0 +1,31 @@
+{
+    "product_id": "api_2b6d5679-4076-4b13-8ede-fb85aa138a91",
+    "tool_description": "Test purpose",
+    "home_url": "https://rapidapi.com/bitterice67/api/gg43/",
+    "name": "GG",
+    "title": "GG",
+    "pricing": "FREE",
+    "tool_name": "GG",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 468,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "gg43.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "confusing",
+            "url": "https://gg43.p.rapidapi.com/",
+            "description": "i don't know what i'm doing",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://gg43.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gg43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://gg43.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"gg43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "gg"
+}

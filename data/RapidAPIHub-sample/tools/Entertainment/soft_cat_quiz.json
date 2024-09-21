@@ -1,0 +1,42 @@
+{
+    "product_id": "api_df9a6cf6-b01b-4fd4-b340-f4288d023651",
+    "tool_description": "An API Service returning data for a  Quiz Web Application about cats.",
+    "home_url": "https://rapidapi.com/AbdulQuayyum/api/soft-cat-quiz/",
+    "name": "Soft-cat-quiz",
+    "title": "Soft-cat-quiz",
+    "pricing": "FREEMIUM",
+    "tool_name": "Soft-cat-quiz",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 32051,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.1,
+        "__typename": "Score"
+    },
+    "host": "soft-cat-quiz.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Results",
+            "url": "https://soft-cat-quiz.p.rapidapi.com/v1/Result",
+            "description": "This endpoint returns the result of the users who attempted the quiz",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://soft-cat-quiz.p.rapidapi.com/v1/Result\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"soft-cat-quiz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://soft-cat-quiz.p.rapidapi.com/v1/Result\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"soft-cat-quiz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get Questions and Answers",
+            "url": "https://soft-cat-quiz.p.rapidapi.com/v1/Questions",
+            "description": "This endpoint returns the quiz questions and answers",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://soft-cat-quiz.p.rapidapi.com/v1/Questions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"soft-cat-quiz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://soft-cat-quiz.p.rapidapi.com/v1/Questions\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"soft-cat-quiz.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "soft_cat_quiz"
+}

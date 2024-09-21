@@ -1,0 +1,25 @@
+{
+    "product_id": "api_4c38874b-ab21-489e-b42c-f5e7e5b13204",
+    "tool_description": "FlightsLogic provides Flight Booking Software, Flight Booking API to the travel agents, tour operators and travel companies worldwide.",
+    "home_url": "https://rapidapi.com/mohammadjaved/api/flightslogics-flight-booking-flight-booking-software/",
+    "name": "FlightsLogic's Flight Booking | Flight Booking Software",
+    "title": "FlightsLogic's Flight Booking | Flight Booking Software",
+    "pricing": "FREE",
+    "tool_name": "FlightsLogic's Flight Booking | Flight Booking Software",
+    "score": null,
+    "host": "flightslogics-flight-booking-flight-booking-software.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "https://flightslogic.com/about.php",
+            "url": "https://flightslogics-flight-booking-flight-booking-software.p.rapidapi.comhttps://flightslogic.com/about.php",
+            "description": "FlightsLogic provides Flight Booking Software, Flight Booking API to the travel agents, tour operators and travel companies worldwide.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://flightslogics-flight-booking-flight-booking-software.p.rapidapi.comhttps://flightslogic.com/about.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flightslogics-flight-booking-flight-booking-software.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flightslogics-flight-booking-flight-booking-software.p.rapidapi.comhttps://flightslogic.com/about.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flightslogics-flight-booking-flight-booking-software.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "flightslogic_s_flight_booking_flight_booking_software"
+}

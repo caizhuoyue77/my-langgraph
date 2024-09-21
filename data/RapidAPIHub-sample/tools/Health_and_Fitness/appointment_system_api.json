@@ -1,0 +1,542 @@
+{
+    "product_id": "api_51c6bd7a-cf48-480a-971c-021e64364f51",
+    "tool_description": "Appointment System Api with user operations and admin operations. Api has all appointment operations for a clinic",
+    "home_url": "https://rapidapi.com/endertasar/api/appointment-system-api/",
+    "name": "Appointment System API",
+    "title": "Appointment System API",
+    "pricing": "FREE",
+    "tool_name": "Appointment System API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1341,
+        "avgSuccessRate": 94,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "appointment-system-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Appointments",
+            "url": "https://appointment-system-api.p.rapidapi.com/appointment/getAppointments",
+            "description": "EndPoints returns all appointments in the date. \n\nParameter Description :\ndate : the date the appointments is requested\nclinicName : Name of the clinic\n\nReturn Value : \nIt returns json object. Json contains all the appointments in requested date.\n\nJson Format :\n\nhLabel:\"07:00\"\nid:5\naDay:\"2022-09-09T00:00:00\"\naHour:58\naName:\"Efe Kemal TASAR\"\naTel:\"+905376853054\"\naType:\"Appoint\"",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2022.09.09"
+                },
+                {
+                    "name": "clinicName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "DemoUser"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/getAppointments\"\nquerystring = {\"date\": \"2022.09.09\", \"clinicName\": \"DemoUser\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/getAppointments\"\nquerystring = {\"date\": \"2022.09.09\", \"clinicName\": \"DemoUser\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": []
+        },
+        {
+            "name": "Appointment Time List",
+            "url": "https://appointment-system-api.p.rapidapi.com/appointment/getHoursByDayByClinic",
+            "description": "EndPoint gets Appointment Time List by Day. EndPoint gets date parameter and returns List of Appointment Times of that date. In the list there is available field, This field indicates whether there is an appointment at the specified time.\nParameter Descriptions : \ndate --> The day that hours will be return\nclinicName --> Name of the clinic\n\nReturn Value: \nThe EndPoint returns json object in format below.\n[\n{\"id\":1\n\"hLabel\":\"07:00\"\n\"available\":\"true\"\n\"hour\":7\n\"minute\":0\n\"interval\":15\n},\n......\n]\n\nId --> is the key value of the record.\nhLabel --> is the string format of the time\navailable --> if is true that means the time is suitable for new record. If it is false that means there is another appointment in this time interval. \nhour --> Hour of the appointment time.\nminute --> Minute of the appointment time.\ninterval  --> this field points out to the interval whether 15 minutes or 30 minutes",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2022.09.05"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "clinicName",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "DemoClinic"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/getHoursByDayByClinic\"\nquerystring = {\"date\": \"2022.09.05\", \"clinicName\": \"DemoClinic\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/getHoursByDayByClinic\"\nquerystring = {\"date\": \"2022.09.05\", \"clinicName\": \"DemoClinic\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "id": 1,
+                    "hLabel": "07:00",
+                    "available": "true",
+                    "hour": 7,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 2,
+                    "hLabel": "07:15",
+                    "available": "true",
+                    "hour": 7,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 3,
+                    "hLabel": "07:30",
+                    "available": "true",
+                    "hour": 7,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 4,
+                    "hLabel": "07:45",
+                    "available": "true",
+                    "hour": 7,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 5,
+                    "hLabel": "08:00",
+                    "available": "true",
+                    "hour": 8,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 6,
+                    "hLabel": "08:15",
+                    "available": "true",
+                    "hour": 8,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 7,
+                    "hLabel": "08:30",
+                    "available": "true",
+                    "hour": 8,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 8,
+                    "hLabel": "08:45",
+                    "available": "true",
+                    "hour": 8,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 9,
+                    "hLabel": "09:00",
+                    "available": "true",
+                    "hour": 9,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 10,
+                    "hLabel": "09:15",
+                    "available": "true",
+                    "hour": 9,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 11,
+                    "hLabel": "09:30",
+                    "available": "true",
+                    "hour": 9,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 12,
+                    "hLabel": "09:45",
+                    "available": "true",
+                    "hour": 9,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 13,
+                    "hLabel": "10:00",
+                    "available": "true",
+                    "hour": 10,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 15,
+                    "hLabel": "10:30",
+                    "available": "true",
+                    "hour": 10,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 16,
+                    "hLabel": "10:45",
+                    "available": "true",
+                    "hour": 10,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 17,
+                    "hLabel": "11:00",
+                    "available": "true",
+                    "hour": 11,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 18,
+                    "hLabel": "11:15",
+                    "available": "true",
+                    "hour": 11,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 19,
+                    "hLabel": "11:30",
+                    "available": "true",
+                    "hour": 11,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 20,
+                    "hLabel": "11:45",
+                    "available": "true",
+                    "hour": 11,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 21,
+                    "hLabel": "12:00",
+                    "available": "true",
+                    "hour": 12,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 22,
+                    "hLabel": "12:15",
+                    "available": "true",
+                    "hour": 12,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 23,
+                    "hLabel": "12:30",
+                    "available": "true",
+                    "hour": 12,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 24,
+                    "hLabel": "12:45",
+                    "available": "true",
+                    "hour": 12,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 25,
+                    "hLabel": "13:00",
+                    "available": "true",
+                    "hour": 13,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 26,
+                    "hLabel": "13:15",
+                    "available": "true",
+                    "hour": 13,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 27,
+                    "hLabel": "13:30",
+                    "available": "true",
+                    "hour": 13,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 28,
+                    "hLabel": "13:45",
+                    "available": "true",
+                    "hour": 13,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 29,
+                    "hLabel": "14:00",
+                    "available": "true",
+                    "hour": 14,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 30,
+                    "hLabel": "14:15",
+                    "available": "true",
+                    "hour": 14,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 31,
+                    "hLabel": "14:30",
+                    "available": "true",
+                    "hour": 14,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 32,
+                    "hLabel": "14:45",
+                    "available": "true",
+                    "hour": 14,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 33,
+                    "hLabel": "15:00",
+                    "available": "true",
+                    "hour": 15,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 34,
+                    "hLabel": "15:15",
+                    "available": "true",
+                    "hour": 15,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 35,
+                    "hLabel": "15:30",
+                    "available": "true",
+                    "hour": 15,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 36,
+                    "hLabel": "15:45",
+                    "available": "true",
+                    "hour": 15,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 37,
+                    "hLabel": "16:00",
+                    "available": "true",
+                    "hour": 16,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 38,
+                    "hLabel": "16:15",
+                    "available": "true",
+                    "hour": 16,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 39,
+                    "hLabel": "16:30",
+                    "available": "true",
+                    "hour": 16,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 40,
+                    "hLabel": "16:45",
+                    "available": "true",
+                    "hour": 16,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 41,
+                    "hLabel": "17:00",
+                    "available": "true",
+                    "hour": 17,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 42,
+                    "hLabel": "17:15",
+                    "available": "true",
+                    "hour": 17,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 43,
+                    "hLabel": "17:30",
+                    "available": "true",
+                    "hour": 17,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 44,
+                    "hLabel": "17:45",
+                    "available": "true",
+                    "hour": 17,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 45,
+                    "hLabel": "18:00",
+                    "available": "true",
+                    "hour": 18,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 46,
+                    "hLabel": "18:15",
+                    "available": "true",
+                    "hour": 18,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 47,
+                    "hLabel": "18:30",
+                    "available": "true",
+                    "hour": 18,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 48,
+                    "hLabel": "18:45",
+                    "available": "true",
+                    "hour": 18,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 49,
+                    "hLabel": "19:00",
+                    "available": "true",
+                    "hour": 19,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 50,
+                    "hLabel": "19:15",
+                    "available": "true",
+                    "hour": 19,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 51,
+                    "hLabel": "19:30",
+                    "available": "true",
+                    "hour": 19,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 52,
+                    "hLabel": "19:45",
+                    "available": "true",
+                    "hour": 19,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 53,
+                    "hLabel": "20:00",
+                    "available": "true",
+                    "hour": 20,
+                    "minute": 0,
+                    "interval": 15
+                },
+                {
+                    "id": 54,
+                    "hLabel": "20:15",
+                    "available": "true",
+                    "hour": 20,
+                    "minute": 15,
+                    "interval": 15
+                },
+                {
+                    "id": 55,
+                    "hLabel": "20:30",
+                    "available": "true",
+                    "hour": 20,
+                    "minute": 30,
+                    "interval": 15
+                },
+                {
+                    "id": 56,
+                    "hLabel": "20:45",
+                    "available": "true",
+                    "hour": 20,
+                    "minute": 45,
+                    "interval": 15
+                },
+                {
+                    "id": 57,
+                    "hLabel": "21:00",
+                    "available": "false",
+                    "hour": 21,
+                    "minute": 0,
+                    "interval": 15
+                }
+            ]
+        },
+        {
+            "name": "Login",
+            "url": "https://appointment-system-api.p.rapidapi.com/appointment/login",
+            "description": "This Endpoint is use for login to the system and getting the Api Key for the clinic. It needs username and password as query parameters. \nParameter Descriptions:\nusername --> parameter for username in the system. It is the same with username while creating the account.\npassword --> password for the username. It is same with the password while creating the acoount.\n\nReturn Value\nThis Endpoint returns string value.\nIf you get a sting with 6+ long this means that you have successfully passed username and password check and you are getting the Accesskey fort he system.\nIf you get \u201cW1\u201d it means a warning that your username doesn\u2019t exists\nIf you get \u201cW2\u201d it means a warning that your password is not correct.\nIt you get \u201cE1\u201d it means a programmatic internal error. If you get E1 in the next calls you can get help from us.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "password",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "DemoPass"
+                },
+                {
+                    "name": "username",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "DemoUser"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/login\"\nquerystring = {\"password\": \"DemoPass\", \"username\": \"DemoUser\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://appointment-system-api.p.rapidapi.com/appointment/login\"\nquerystring = {\"password\": \"DemoPass\", \"username\": \"DemoUser\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"appointment-system-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "appointment_system_api"
+}

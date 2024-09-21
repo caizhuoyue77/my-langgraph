@@ -1,0 +1,38 @@
+{
+    "product_id": "53c8ea64e4b0f2806c3d3d9c",
+    "tool_description": "\u0454\u03b7\u0442\u0454\u044f \u0443\u03c3\u03c5\u044f \u0442\u0454\u03c7\u0442 \u03b1\u03b7\u2202 \u00a2\u043d\u03b1\u03b7g\u0454 \u0442\u03c3 \u0192\u03b1\u03b7\u00a2\u0443 \u0442\u0454\u03c7\u0442 \u03c5\u0455\u03b9\u03b7g \u0442\u043d\u03b9\u0455 \u00a2\u03c3\u03c3\u2113 \u03b1\u03c1\u03b9 :)",
+    "home_url": "https://rapidapi.com/ajith/api/fancy-text/",
+    "name": "Fancy text",
+    "title": "Fancy text",
+    "pricing": "FREE",
+    "tool_name": "Fancy text",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 36,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "ajith-Fancy-text-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/text",
+            "url": "https://ajith-Fancy-text-v1.p.rapidapi.com/text",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "\u0454\u03b7\u0442\u0454\u044f \u0443\u03c3\u03c5\u044f \u0442\u0454\u03c7\u0442 \u03b1\u03b7\u2202 \u00a2\u043d\u03b1\u03b7g\u0454 \u0442\u03c3 \u0192\u03b1\u03b7\u00a2\u0443 \u0442\u0454\u03c7\u0442 \u03c5\u0455\u03b9\u03b7g \u0442\u043d\u03b9\u0455 \u00a2\u03c3\u03c3\u2113 \u03b1\u03c1\u03b9 :",
+                    "default": "This is funny."
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ajith-Fancy-text-v1.p.rapidapi.com/text\"\nquerystring = {\"text\": \"This is funny.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ajith-Fancy-text-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ajith-Fancy-text-v1.p.rapidapi.com/text\"\nquerystring = {\"text\": \"This is funny.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ajith-Fancy-text-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "fancy_text"
+}

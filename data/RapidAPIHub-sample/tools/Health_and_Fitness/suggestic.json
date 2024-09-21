@@ -1,0 +1,58 @@
+{
+    "product_id": "api_5ebf9415-a218-4c97-8210-f2b643cb5819",
+    "tool_description": "Suggestic Food & Meal Plan API",
+    "home_url": "https://rapidapi.com/suggestic-suggestic-default/api/suggestic1/",
+    "name": "Suggestic",
+    "title": "Suggestic",
+    "pricing": "FREE",
+    "tool_name": "Suggestic",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 589,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "suggestic1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Create User",
+            "url": "https://suggestic1.p.rapidapi.com/",
+            "description": "Each Suggestic partner/client has the ability to create their own set of users.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://suggestic1.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestic1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://suggestic1.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestic1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Remove a Meal Plan",
+            "url": "https://suggestic1.p.rapidapi.com/",
+            "description": "Use the **removeMealPlan** mutation to remove the current and following days in the profile's meal plan. Therefore, it is not possible to delete meal plans which dates have already passed.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "auth",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://suggestic1.p.rapidapi.com/\"\nquerystring = {\"auth\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestic1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://suggestic1.p.rapidapi.com/\"\nquerystring = {\"auth\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"suggestic1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "errors": [
+                    {
+                        "message": "GraphQL operations must contain a non-empty `query` or a `persistedQuery` extension.",
+                        "extensions": {
+                            "code": "INTERNAL_SERVER_ERROR"
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "suggestic"
+}

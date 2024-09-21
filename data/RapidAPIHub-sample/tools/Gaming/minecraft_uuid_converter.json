@@ -1,0 +1,80 @@
+{
+    "product_id": "api_8ad8531d-d3b8-482c-a1bb-ef3dd31ea46c",
+    "tool_description": "Converts your Mojang Minecraft username into a UUID.",
+    "home_url": "https://rapidapi.com/rapidapiSS/api/minecraft-uuid-converter/",
+    "name": "Minecraft UUID Converter",
+    "title": "Minecraft UUID Converter",
+    "pricing": "FREEMIUM",
+    "tool_name": "Minecraft UUID Converter",
+    "score": {
+        "avgServiceLevel": 96,
+        "avgLatency": 396,
+        "avgSuccessRate": 96,
+        "popularityScore": 8.6,
+        "__typename": "Score"
+    },
+    "host": "minecraft-uuid-converter.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "UUID to Name",
+            "url": "https://minecraft-uuid-converter.p.rapidapi.com/uuid/069a79f444e94726a5befca90e38aaf5",
+            "description": "Convert your Mineccraft UUID to a Name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "uuid",
+                    "type": "string",
+                    "description": "",
+                    "default": "069a79f444e94726a5befca90e38aaf5"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://minecraft-uuid-converter.p.rapidapi.com/uuid/069a79f444e94726a5befca90e38aaf5\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"minecraft-uuid-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://minecraft-uuid-converter.p.rapidapi.com/uuid/{uuid}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"minecraft-uuid-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Notch",
+                "uuid": "069a79f444e94726a5befca90e38aaf5",
+                "images": {
+                    "faceImage": "https://crafatar.com/avatars/069a79f444e94726a5befca90e38aaf5",
+                    "headImage": "https://crafatar.com/renders/head/069a79f444e94726a5befca90e38aaf5",
+                    "bodyImage": "https://crafatar.com/renders/body/069a79f444e94726a5befca90e38aaf5",
+                    "skinImage": "https://crafatar.com/skins/069a79f444e94726a5befca90e38aaf5",
+                    "capeImage": "https://crafatar.com/capes/069a79f444e94726a5befca90e38aaf5"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Name to UUID",
+            "url": "https://minecraft-uuid-converter.p.rapidapi.com/name/Kara_Danvers",
+            "description": "Provide your Minecraft username",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Kara_Danvers"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://minecraft-uuid-converter.p.rapidapi.com/name/Kara_Danvers\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"minecraft-uuid-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://minecraft-uuid-converter.p.rapidapi.com/name/{name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"minecraft-uuid-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "Kara_Danvers",
+                "uuid": "5fd4500260fb438f9758ff34ec8432e9",
+                "images": {
+                    "faceImage": "https://crafatar.com/avatars/5fd4500260fb438f9758ff34ec8432e9",
+                    "headImage": "https://crafatar.com/renders/head/5fd4500260fb438f9758ff34ec8432e9",
+                    "bodyImage": "https://crafatar.com/renders/body/5fd4500260fb438f9758ff34ec8432e9",
+                    "skinImage": "https://crafatar.com/skins/5fd4500260fb438f9758ff34ec8432e9",
+                    "capeImage": "https://crafatar.com/capes/5fd4500260fb438f9758ff34ec8432e9"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "minecraft_uuid_converter"
+}

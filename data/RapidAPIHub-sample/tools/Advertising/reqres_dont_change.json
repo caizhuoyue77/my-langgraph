@@ -1,0 +1,127 @@
+{
+    "product_id": "api_f7763f4d-dcef-4f3c-b74b-4264171df340",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/alextrevgoda/api/reqres-dont-change/",
+    "name": "Reqres - dont change!",
+    "title": "Reqres - dont change!",
+    "pricing": "FREE",
+    "tool_name": "Reqres - dont change!",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 170,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "reqres-dont-change.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Users",
+            "url": "https://reqres-dont-change.p.rapidapi.com/api/users",
+            "description": "Users",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://reqres-dont-change.p.rapidapi.com/api/users\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reqres-dont-change.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://reqres-dont-change.p.rapidapi.com/api/users\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reqres-dont-change.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "page": 1,
+                "per_page": 6,
+                "total": 12,
+                "total_pages": 2,
+                "data": [
+                    {
+                        "id": 1,
+                        "email": "george.bluth@reqres.in",
+                        "first_name": "George",
+                        "last_name": "Bluth",
+                        "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                    },
+                    {
+                        "id": 2,
+                        "email": "janet.weaver@reqres.in",
+                        "first_name": "Janet",
+                        "last_name": "Weaver",
+                        "avatar": "https://reqres.in/img/faces/2-image.jpg"
+                    },
+                    {
+                        "id": 3,
+                        "email": "emma.wong@reqres.in",
+                        "first_name": "Emma",
+                        "last_name": "Wong",
+                        "avatar": "https://reqres.in/img/faces/3-image.jpg"
+                    },
+                    {
+                        "id": 4,
+                        "email": "eve.holt@reqres.in",
+                        "first_name": "Eve",
+                        "last_name": "Holt",
+                        "avatar": "https://reqres.in/img/faces/4-image.jpg"
+                    },
+                    {
+                        "id": 5,
+                        "email": "charles.morris@reqres.in",
+                        "first_name": "Charles",
+                        "last_name": "Morris",
+                        "avatar": "https://reqres.in/img/faces/5-image.jpg"
+                    },
+                    {
+                        "id": 6,
+                        "email": "tracey.ramos@reqres.in",
+                        "first_name": "Tracey",
+                        "last_name": "Ramos",
+                        "avatar": "https://reqres.in/img/faces/6-image.jpg"
+                    }
+                ],
+                "support": {
+                    "url": "https://reqres.in/#support-heading",
+                    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+                }
+            }
+        },
+        {
+            "name": "User by id",
+            "url": "https://reqres-dont-change.p.rapidapi.com/api/users/1",
+            "description": "User by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "string",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "array[]",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": "[\"asd\", \"dsa\"]"
+                },
+                {
+                    "name": "array[]",
+                    "type": "ARRAY",
+                    "description": "",
+                    "default": "2"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://reqres-dont-change.p.rapidapi.com/api/users/1\"\nquerystring = {\"array[]\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reqres-dont-change.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://reqres-dont-change.p.rapidapi.com/api/users/{id}\"\nquerystring = {\"array[]\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"reqres-dont-change.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": {
+                    "id": 1,
+                    "email": "george.bluth@reqres.in",
+                    "first_name": "George",
+                    "last_name": "Bluth",
+                    "avatar": "https://reqres.in/img/faces/1-image.jpg"
+                },
+                "support": {
+                    "url": "https://reqres.in/#support-heading",
+                    "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
+                }
+            }
+        }
+    ],
+    "standardized_name": "reqres_dont_change"
+}

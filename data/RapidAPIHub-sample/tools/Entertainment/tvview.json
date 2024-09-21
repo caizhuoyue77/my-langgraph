@@ -1,0 +1,31 @@
+{
+    "product_id": "api_0a41eb80-dec4-4fbc-b336-a563c5222b76",
+    "tool_description": "Live FREE to Air Tv Channel Streaming Links. For Development Purpose Only.",
+    "home_url": "https://rapidapi.com/premraj00071/api/tvview/",
+    "name": "TVView",
+    "title": "TVView",
+    "pricing": "FREE",
+    "tool_name": "TVView",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 81366,
+        "avgSuccessRate": 83,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "tvview.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "AllChannel",
+            "url": "https://tvview.p.rapidapi.com/getAll",
+            "description": "Get All the Channel",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://tvview.p.rapidapi.com/getAll\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tvview.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://tvview.p.rapidapi.com/getAll\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"tvview.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "tvview"
+}

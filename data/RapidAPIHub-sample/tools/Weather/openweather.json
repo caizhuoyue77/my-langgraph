@@ -1,0 +1,104 @@
+{
+    "product_id": "api_195a1540-7bd7-435a-8031-30d2d4fdb4cc",
+    "tool_description": "Openweather",
+    "home_url": "https://rapidapi.com/KirylBokiy/api/openweather43/",
+    "name": "OpenWeather",
+    "title": "OpenWeather",
+    "pricing": "FREE",
+    "tool_name": "OpenWeather",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 93,
+        "avgSuccessRate": 88,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "openweather43.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "getCurrentWeather",
+            "url": "https://openweather43.p.rapidapi.com/weather",
+            "description": "Test",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "appid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "da0f9c8d90bde7e619c3ec47766a42f4"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "City name",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Parameter to get the output in your language. Translation is applied for the city name and description fields",
+                    "default": ""
+                },
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "Units of measurement. For temperature in Fahrenheit imperial; For temperature in Celsius - metric; for temperature in Kelvin - standart",
+                    "default": "standard"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://openweather43.p.rapidapi.com/weather\"\nquerystring = {\"appid\": \"da0f9c8d90bde7e619c3ec47766a42f4\", \"lang\": \"\", \"units\": \"standard\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"openweather43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://openweather43.p.rapidapi.com/weather\"\nquerystring = {\"appid\": \"da0f9c8d90bde7e619c3ec47766a42f4\", \"lang\": \"\", \"units\": \"standard\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"openweather43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "cod": "400",
+                "message": "Nothing to geocode"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "getForecastWeather",
+            "url": "https://openweather43.p.rapidapi.com/forecast",
+            "description": " ",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "City name",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "cnt",
+                    "type": "NUMBER",
+                    "description": "A number of timestamps, which will be returned in the API response.",
+                    "default": ""
+                },
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "Units of measurement. For temperature in Fahrenheit imperial; For temperature in Celsius - metric; for temperature in Kelvin - standart",
+                    "default": "standard"
+                },
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "Parameter to get the output in your language. Translation is applied for the city name and description fields",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://openweather43.p.rapidapi.com/forecast\"\nquerystring = {\"cnt\": \"\", \"units\": \"standard\", \"lang\": \"\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"openweather43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://openweather43.p.rapidapi.com/forecast\"\nquerystring = {\"cnt\": \"\", \"units\": \"standard\", \"lang\": \"\", \"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"openweather43.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "cod": "400",
+                "message": "Nothing to geocode"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "openweather"
+}

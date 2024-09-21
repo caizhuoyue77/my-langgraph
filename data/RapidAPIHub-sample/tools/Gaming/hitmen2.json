@@ -1,0 +1,25 @@
+{
+    "product_id": "api_40b45018-5995-401e-832f-5ef8fd8a0038",
+    "tool_description": "crea",
+    "home_url": "https://rapidapi.com/jitpj74/api/hitmen2/",
+    "name": "hitmen2",
+    "title": "hitmen2",
+    "pricing": "FREE",
+    "tool_name": "hitmen2",
+    "score": null,
+    "host": "hitmen2.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "hit",
+            "url": "https://hitmen2.p.rapidapi.comhttp://hitman11.com/",
+            "description": "main",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://hitmen2.p.rapidapi.comhttp://hitman11.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hitmen2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://hitmen2.p.rapidapi.comhttp://hitman11.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"hitmen2.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "hitmen2"
+}

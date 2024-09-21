@@ -1,0 +1,234 @@
+{
+    "product_id": "api_2e170407-d4d6-4634-9468-c4ef537a3d41",
+    "tool_description": "Validate or GET username with ID. Available for Free Fire true ID, Mobile Legends true ID, PUBG Mobile true ID, Higgs Domino true ID, AoV true ID etc.",
+    "home_url": "https://rapidapi.com/nazi436123/api/id-game-checker/",
+    "name": "ID Game Checker",
+    "title": "ID Game Checker",
+    "pricing": "FREEMIUM",
+    "tool_name": "ID Game Checker",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 4891,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "id-game-checker.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GET username Valorant",
+            "url": "https://id-game-checker.p.rapidapi.com/valorant/ucup/123",
+            "description": "Enter the Valorant Riot ID and Tag in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "riot-id",
+                    "type": "string",
+                    "description": "",
+                    "default": "ucup"
+                },
+                {
+                    "name": "tag",
+                    "type": "string",
+                    "description": "",
+                    "default": "123"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/valorant/ucup/123\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/valorant/{riot_id}/{tag}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username PUBG Mobile",
+            "url": "https://id-game-checker.p.rapidapi.com/PUBG-mobile/5204837417",
+            "description": "Enter your PUBG Mobile ID  in the required parameters\n\nINFO: The API for this game is currently in the process of being maintained",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "5204837417"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/PUBG-mobile/5204837417\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/PUBG-mobile/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Arena of Valor",
+            "url": "https://id-game-checker.p.rapidapi.com/arena-of-valor/195293573153949",
+            "description": "Enter your Arena of Valor ID  in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "195293573153949"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/arena-of-valor/195293573153949\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/arena-of-valor/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Point Blank",
+            "url": "https://id-game-checker.p.rapidapi.com/point-blank/blackforster",
+            "description": "Enter your Point Blank ID  in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "blackforster"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/point-blank/blackforster\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/point-blank/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Call of Duty Mobile",
+            "url": "https://id-game-checker.p.rapidapi.com/CoD-mobile/8370310025568788107",
+            "description": "Enter your Call of Duty Mobile ID  in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "8370310025568788107"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/CoD-mobile/8370310025568788107\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/CoD-mobile/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Genshin Impact",
+            "url": "https://id-game-checker.p.rapidapi.com/genshin-impact/844335555/asia",
+            "description": "Enter the Genshin Impact ID and Server in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "server",
+                    "type": "STRING",
+                    "description": "Choice your server",
+                    "default": "asia"
+                },
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "844335555"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/genshin-impact/844335555/asia\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/genshin-impact/{id}/{server}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Higgs Domino",
+            "url": "https://id-game-checker.p.rapidapi.com/higgs-domino/55666",
+            "description": "Enter your Higgs Domino ID  in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "55666"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/higgs-domino/55666\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/higgs-domino/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Free Fire",
+            "url": "https://id-game-checker.p.rapidapi.com/free-fire/1958604115",
+            "description": "Enter your Free Fire ID  in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1958604115"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/free-fire/1958604115\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/free-fire/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET username Mobile Legends",
+            "url": "https://id-game-checker.p.rapidapi.com/mobile-legends/1393323764/15748",
+            "description": "Enter the Mobile Legends ID and Server in the required parameters",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1393323764"
+                },
+                {
+                    "name": "server",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "15748"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/mobile-legends/1393323764/15748\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://id-game-checker.p.rapidapi.com/mobile-legends/{id}/{server}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"id-game-checker.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per minute for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "id_game_checker"
+}

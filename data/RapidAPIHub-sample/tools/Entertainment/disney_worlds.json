@@ -1,0 +1,103 @@
+{
+    "product_id": "api_613d45bc-8d3f-4b56-99f3-69443789eff1",
+    "tool_description": "Download and stream Seasonal movies and full movies without buffering, from the official company of Disney Inc.",
+    "home_url": "https://rapidapi.com/infodisneyworlds-9g14EzTIwj7/api/disney-worlds/",
+    "name": "Disney worlds",
+    "title": "Disney worlds",
+    "pricing": "FREEMIUM",
+    "tool_name": "Disney worlds",
+    "score": null,
+    "host": "disney-worlds.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "seasonal movies",
+            "url": "https://disney-worlds.p.rapidapi.com/seasonalmovies",
+            "description": "Get a full list of all seasonal movies",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/seasonalmovies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/seasonalmovies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "animes",
+            "url": "https://disney-worlds.p.rapidapi.com/animemovies",
+            "description": "Get the best and current disney animes released today",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/animemovies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/animemovies\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "romance",
+            "url": "https://disney-worlds.p.rapidapi.com/romancemovie",
+            "description": "get all full movies for romance",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "romance_id"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/romancemovie\"\nquerystring = {\"movieid\": \"romance_id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/romancemovie\"\nquerystring = {\"movieid\": \"romance_id\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "action movies",
+            "url": "https://disney-worlds.p.rapidapi.com/actionmovies",
+            "description": "get action movies by generating movie id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "action",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "movie_name"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/actionmovies\"\nquerystring = {\"action\": \"movie_name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/actionmovies\"\nquerystring = {\"action\": \"movie_name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "movie details",
+            "url": "https://disney-worlds.p.rapidapi.com/moviedetails",
+            "description": "Get movie details by searching movie name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "avengers"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/moviedetails\"\nquerystring = {\"movieid\": \"avengers\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/moviedetails\"\nquerystring = {\"movieid\": \"avengers\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "latest movie",
+            "url": "https://disney-worlds.p.rapidapi.com/latestmovie",
+            "description": "Get the latest movies released from disney and other platforms",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/latestmovie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://disney-worlds.p.rapidapi.com/latestmovie\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"disney-worlds.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "disney_worlds"
+}

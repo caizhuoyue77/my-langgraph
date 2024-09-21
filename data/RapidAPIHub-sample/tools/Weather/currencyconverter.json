@@ -1,0 +1,25 @@
+{
+    "product_id": "api_e7d95a6e-4add-4ec7-9aec-0bb00d6671ff",
+    "tool_description": "Test api",
+    "home_url": "https://rapidapi.com/tempmailfortesttt/api/currencyconverter4/",
+    "name": "CurrencyConverter",
+    "title": "CurrencyConverter",
+    "pricing": "FREE",
+    "tool_name": "CurrencyConverter",
+    "score": null,
+    "host": "currencyconverter4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "weather",
+            "url": "https://currencyconverter4.p.rapidapi.comvk.com",
+            "description": "aaaaaaaa",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://currencyconverter4.p.rapidapi.comvk.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyconverter4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://currencyconverter4.p.rapidapi.comvk.com\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"currencyconverter4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "currencyconverter"
+}

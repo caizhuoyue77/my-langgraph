@@ -1,0 +1,69 @@
+{
+    "product_id": "api_bca41f5c-d078-477e-9db8-0bc1ff451082",
+    "tool_description": "An online service that grabs YouTube video file from the unique server address on Google.",
+    "home_url": "https://rapidapi.com/aidangig/api/youtube-to-mp4/",
+    "name": "YouTube to Mp4",
+    "title": "YouTube to Mp4",
+    "pricing": "FREEMIUM",
+    "tool_name": "YouTube to Mp4",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 352,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.4,
+        "__typename": "Score"
+    },
+    "host": "youtube-to-mp4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Title & URL",
+            "url": "https://youtube-to-mp4.p.rapidapi.com/url=&title",
+            "description": "fetches YouTube direct download link and video title",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.youtube.com/watch?v=IfNB5RTxnhI"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Call of Duty : Modern Warfare 2 Remastered - All Weapon Reload Animations in 4 Minutes"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://youtube-to-mp4.p.rapidapi.com/url=&title\"\nquerystring = {\"url\": \"https://www.youtube.com/watch?v=IfNB5RTxnhI\", \"title\": \"Call of Duty : Modern Warfare 2 Remastered - All Weapon Reload Animations in 4 Minutes\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtube-to-mp4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://youtube-to-mp4.p.rapidapi.com/url=&title\"\nquerystring = {\"url\": \"https://www.youtube.com/watch?v=IfNB5RTxnhI\", \"title\": \"Call of Duty : Modern Warfare 2 Remastered - All Weapon Reload Animations in 4 Minutes\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtube-to-mp4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "youtube_to_mp4"
+}

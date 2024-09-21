@@ -1,0 +1,502 @@
+{
+    "product_id": "api_d1f06480-dabc-4ecb-a4a7-6907cf4366d7",
+    "tool_description": "AdCopy AI: The perfect solution for SEM and PPC marketers. With its advanced cloud infrastructure and OpenAI's ChatGPT engine, AdCopy AI generates top-notch ad copy tailored to Google's (TM) specifications, ensuring high relevance scores and reducing CPC and CPM costs. Say goodbye to time-consuming ad writing and hello to AdCopy AI - the AI technology that revolutionizes the way you write Ad Copy for your Google Ads (TM), freeing up your time and effort so you can focus on other important tasks.",
+    "home_url": "https://rapidapi.com/BigFoxMedia/api/adcopy-ai-google-ads-ai-text-generation/",
+    "name": "AdCopy AI - Google Ads AI Text Generation",
+    "title": "AdCopy AI - Google Ads AI Text Generation",
+    "pricing": "FREEMIUM",
+    "tool_name": "AdCopy AI - Google Ads AI Text Generation",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 384,
+        "avgSuccessRate": 98,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Fetch Async Content",
+            "url": "https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/adcopyai/fetchContent/",
+            "description": "Provide async prompt and threadid to fetch content.\nThis endpoint is Free and you are allowed to pull it once every 2 seconds to fetch your content.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "threadId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "6a6bbc6e-5896-45b6-8681-0a885e195f9a"
+                },
+                {
+                    "name": "promptId",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "be5272ef-fbda-4e6d-abf7-0fe88b937693"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/adcopyai/fetchContent/\"\nquerystring = {\"threadId\": \"6a6bbc6e-5896-45b6-8681-0a885e195f9a\", \"promptId\": \"be5272ef-fbda-4e6d-abf7-0fe88b937693\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/adcopyai/fetchContent/\"\nquerystring = {\"threadId\": \"6a6bbc6e-5896-45b6-8681-0a885e195f9a\", \"promptId\": \"be5272ef-fbda-4e6d-abf7-0fe88b937693\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "thread": "6a6bbc6e-5896-45b6-8681-0a885e195f9a",
+                "id": "be5272ef-fbda-4e6d-abf7-0fe88b937693",
+                "sequenceId": 1,
+                "data": {
+                    "count": "49",
+                    "data": [
+                        {
+                            "data": "Get more from Facebook and Google ads",
+                            "length": 37,
+                            "id": "c10297d2-7523-4901-bd5b-aad9d01cfa30"
+                        },
+                        {
+                            "data": "Get a free trial of Madgicx Ad Cloud",
+                            "length": 36,
+                            "id": "e50700bb-54e8-4c7e-87fc-cec01b670185"
+                        },
+                        {
+                            "data": "Madgicx Ad Cloud: Maximize ad impact",
+                            "length": 36,
+                            "id": "029bcd99-3e64-4ed2-8e84-8962bd852028"
+                        },
+                        {
+                            "data": "Ad Cloud for Powerful Ad Management",
+                            "length": 35,
+                            "id": "460880cd-6600-47a3-92c0-c7d89e062fce"
+                        },
+                        {
+                            "data": "Maximize ROI with Madgicx Ad Cloud",
+                            "length": 34,
+                            "id": "15d3409c-06b4-45f7-9aef-f7d8c1780fcd"
+                        },
+                        {
+                            "data": "Madgicx Ad Cloud: Your ad solution",
+                            "length": 34,
+                            "id": "906bbea5-daed-4d6b-8728-dce82e8dd163"
+                        },
+                        {
+                            "data": "Leverage Ad Cloud for Max Results",
+                            "length": 33,
+                            "id": "480d83af-c26c-4386-9d20-8a16de46b179"
+                        },
+                        {
+                            "data": "Get 10$ bonus with Madgicx signup",
+                            "length": 33,
+                            "id": "52a46758-d53f-4505-b0cd-f3dcd77a427c"
+                        },
+                        {
+                            "data": "Optimize Google ads with Madgicx",
+                            "length": 32,
+                            "id": "fc064c34-76af-4685-8c97-2c1702e677ac"
+                        },
+                        {
+                            "data": "The Ultimate Ad Management Tool",
+                            "length": 31,
+                            "id": "d1d580a6-f2f6-4ddb-8837-dd5f3f41e000"
+                        },
+                        {
+                            "data": "Revolutionize Your Ad Campaigns",
+                            "length": 31,
+                            "id": "9718cc3d-0819-4c93-bc95-dab7000f3e24"
+                        },
+                        {
+                            "data": "Ads & Facebook Ads on Autopilot",
+                            "length": 31,
+                            "id": "04bd37c5-498e-487a-9853-ffbffa17b7cf"
+                        },
+                        {
+                            "data": "Revolutionize your Facebook ads",
+                            "length": 31,
+                            "id": "417f46df-67e4-4fca-8df3-ecbc76073f0c"
+                        },
+                        {
+                            "data": "Optimize Ads for Increased ROI",
+                            "length": 30,
+                            "id": "2402c245-fac4-42df-a43f-791312a9b993"
+                        },
+                        {
+                            "data": "Google Ads Driving Big Results",
+                            "length": 30,
+                            "id": "bad20c61-cf3a-4ce7-9a98-8fd296597574"
+                        },
+                        {
+                            "data": "Facebook Ads That Drive Sales",
+                            "length": 29,
+                            "id": "5e78c0bb-233f-45ef-8e1b-d4338354efcb"
+                        },
+                        {
+                            "data": "Rev Up Your Ads with Madgicx",
+                            "length": 28,
+                            "id": "82a43349-2dee-4de6-861b-2f88dfdcc3af"
+                        },
+                        {
+                            "data": "Dominate with Ads & Facebook",
+                            "length": 28,
+                            "id": "1189e2e9-9b99-45e0-98b5-03862353fc06"
+                        },
+                        {
+                            "data": "Get $10 Bonus for Free Trial",
+                            "length": 28,
+                            "id": "0d427a82-f693-4151-9513-eb5e486c466d"
+                        },
+                        {
+                            "data": "Ads & Facebook Ads Made Easy",
+                            "length": 28,
+                            "id": "e13e53d4-519c-4d84-b272-cac4d8acc6b8"
+                        },
+                        {
+                            "data": "Boost Your Ads with Madgicx",
+                            "length": 27,
+                            "id": "67753ace-8ee2-49c6-a16a-30f6f209f02b"
+                        },
+                        {
+                            "data": "Maximize ROI with Ad Cloud",
+                            "length": 26,
+                            "id": "4c05bb0a-8a70-4e89-b020-4cff78428bc7"
+                        },
+                        {
+                            "data": "Revolutionize Facebook Ads",
+                            "length": 26,
+                            "id": "00e2ded3-4285-4302-a197-a9f449b97073"
+                        },
+                        {
+                            "data": "Optimize Facebook Ads Now",
+                            "length": 25,
+                            "id": "fb4354cc-4487-490f-a23c-0001780d99fe"
+                        },
+                        {
+                            "data": "Boost Ad Performance Fast",
+                            "length": 25,
+                            "id": "d21a08f1-8c1d-421f-9df2-e79a4ae38044"
+                        },
+                        {
+                            "data": "Boost Google Ads Results",
+                            "length": 24,
+                            "id": "fd4395b4-00f4-440a-b115-1d57835e5f2e"
+                        },
+                        {
+                            "data": "Automate Ad Optimization",
+                            "length": 24,
+                            "id": "f42dd905-1eb4-48eb-8b8a-fe4a81957cff"
+                        },
+                        {
+                            "data": "Transform Ad Performance",
+                            "length": 24,
+                            "id": "1f212011-f67c-464a-a03f-b717d925a43d"
+                        },
+                        {
+                            "data": "Streamline Ad Management",
+                            "length": 24,
+                            "id": "16e74e7b-6731-40fc-8777-a7df25779ba4"
+                        },
+                        {
+                            "data": "Get Professional Ad Help",
+                            "length": 24,
+                            "id": "199058b7-727e-4635-bf55-5aa0424bf922"
+                        },
+                        {
+                            "data": "Ad Management Made Easy",
+                            "length": 23,
+                            "id": "b8341c0d-93b7-4706-a604-bbe1e2f89258"
+                        },
+                        {
+                            "data": "Revolutionize Ads Today",
+                            "length": 23,
+                            "id": "dc5df27d-fb0a-482d-9a5e-11955512e201"
+                        },
+                        {
+                            "data": "Supercharge Ad Results",
+                            "length": 22,
+                            "id": "36aa11e8-0037-4a31-90d9-29bf24809677"
+                        },
+                        {
+                            "data": "Improve Google Ads ROI",
+                            "length": 22,
+                            "id": "06b2af1e-f22b-4a52-a025-7ec6d11da9b2"
+                        },
+                        {
+                            "data": "Automate Ad Management",
+                            "length": 22,
+                            "id": "11e0198b-9727-4dff-bbfb-f275ac8cb996"
+                        },
+                        {
+                            "data": "Dominate Ad Campaigns",
+                            "length": 21,
+                            "id": "01d692e1-326f-4fc4-bcce-ef963601858b"
+                        },
+                        {
+                            "data": "Optimize Facebook Ads",
+                            "length": 21,
+                            "id": "826261c3-9931-4024-9540-924136a60c88"
+                        },
+                        {
+                            "data": "Maximize Ad ROI Today",
+                            "length": 21,
+                            "id": "c4ceea17-6e3a-4fea-958d-fbe25599a621"
+                        },
+                        {
+                            "data": "Transform Ad Strategy",
+                            "length": 21,
+                            "id": "50b7bd65-b8d3-40cd-a47b-8c2030ae1196"
+                        },
+                        {
+                            "data": "Dominate Facebook Ads",
+                            "length": 21,
+                            "id": "650a2d41-c6e9-4f31-958b-18d672e4269b"
+                        },
+                        {
+                            "data": "Get Ad Results Faster",
+                            "length": 21,
+                            "id": "64197cb9-c8b4-4790-9024-99dc6056c546"
+                        },
+                        {
+                            "data": "Unleash Ad Potential",
+                            "length": 20,
+                            "id": "090307c5-a042-485e-82b0-561700d82ff3"
+                        },
+                        {
+                            "data": "Try Madgicx Ad Cloud",
+                            "length": 20,
+                            "id": "fb734028-1825-49c1-a06b-980d9f2a4adc"
+                        },
+                        {
+                            "data": "Manage Ads with Ease",
+                            "length": 20,
+                            "id": "88d0cab0-1d70-44a2-b268-6f9e8531b113"
+                        },
+                        {
+                            "data": "Upgrade Your Ad Game",
+                            "length": 20,
+                            "id": "a20c1178-ad70-4baa-b0ad-08d0170e1a32"
+                        },
+                        {
+                            "data": "Unleash Ad Potential",
+                            "length": 20,
+                            "id": "b285a076-6669-455f-887b-c35d32f89150"
+                        },
+                        {
+                            "data": "Master Google Ads",
+                            "length": 17,
+                            "id": "74fd494e-3c12-472f-bc88-c215fddc35fe"
+                        },
+                        {
+                            "data": "Get More from Ads",
+                            "length": 17,
+                            "id": "59a27f18-beda-4bc7-8311-21b40977eebb"
+                        },
+                        {
+                            "data": "Join Madgicx Now!",
+                            "length": 17,
+                            "id": "d1894bd6-aa7a-416e-a9c2-2a7955aad98b"
+                        }
+                    ]
+                }
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "API Key Validation",
+            "url": "https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/validateApi",
+            "description": "This endpoint is used only to validate API Keys, it simply returns a status of 200 and a message of 'OK'. \nThe use of this endpoint is Free, and is useful for server-to-server FREE API validation.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/validateApi\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/validateApi\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "10+ Ad Descriptions Generator (~ 25 Seconds)",
+            "url": "https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/descriptions/",
+            "description": "Get relevant & Complint Google Ad descriptions for SEM and PPC marketers, created by SEM Experts. Results include 10+ ad descriptions, and are based on user inputs as well as A.I. Intelligence based on OpenAI's engine. \n\n**Detailed description:**\nThe Descriptions generator endpoint uses advanced prompt engineering to analyze user inputs in the form of URL, subject, and important keywords to create high-quality ad descriptions that are tailored to the product or service being advertised. By leveraging the advanced capabilities of OpenAI's ChatGPT engine, the endpoint is able to deliver top-of-the-line ad descriptions that are optimized for relevance, clarity, and engagement.\n\n**Detailed Technical Documentation:**\nThe Descriptions generator endpoint of AdCopy AI can be accessed through a GET request, with the following query parameters:\n\n**subject:** Required. A string of between 10 and 60 characters, which represents the \"value proposition\" of the product or service being advertised. The user is advised to provide keywords in a comma-delimited format.\n\n**url:** Required. A string that represents the URL of a page that describes the product or service being advertised. The API will fetch the content from the page and extract relevant keywords to help generate quality ads.\n\n**mostImportantKeywords:** Optional. A string of up to 100 characters, representing the most important keywords about the ad group being advertised. The presence of these keywords in the resulting content is not guaranteed.\n\n**language:** Optional. A string that represents the target audience's language in ISO-2 format (e.g. EN, IT, ES, etc.). The field is currently in alpha testing and may not provide results in the requested language.\n\n**country:** Optional. A string that represents the target audience's country in ISO-2 format (e.g. US, CA, IT, etc.). The field is currently in alpha testing and may not provide country-specific content.\n\n**exampleDescriptions:** Optional. A string of at most 200 characters, representing example descriptions that the user may provide to fine-tune the results.\n\nThe endpoint will return up to 10 ad descriptions that are tailored to the product or service being advertised. The descriptions will be optimized for relevance, clarity, and engagement, leveraging the advanced capabilities of OpenAI's ChatGPT engine and Significat Prompt Optimization  for your specific ad and product  or service requirement.\n\nTry it now, for free.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "describeProductOrService",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally."
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://madgicx.com/"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "specialOffer",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "3 months Free Trial"
+                },
+                {
+                    "name": "callToAction",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Get Started!"
+                },
+                {
+                    "name": "keywordsToExclude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Example keyword"
+                },
+                {
+                    "name": "mostImportantKeywords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "facebook ads, google ads, adwords"
+                },
+                {
+                    "name": "exampleDescriptions",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free. 100+ AI Audiences, 7 Automation Tactics, 7-Day free trial and creative intelligence inside. Live Chat Support. Schedule A Demo. View Our Pricing Details. 7-Day Free Trial."
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/descriptions/\"\nquerystring = {\"specialOffer\": \"3 months Free Trial\", \"callToAction\": \"Get Started!\", \"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"keywordsToExclude\": \"Example keyword\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"url\": \"https://madgicx.com/\", \"exampleDescriptions\": \"Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free. 100+ AI Audiences, 7 Automation Tactics, 7-Day free trial and creative intelligence inside. Live Chat Support. Schedule A Demo. View Our Pricing Details. 7-Day Free Trial.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/descriptions/\"\nquerystring = {\"specialOffer\": \"3 months Free Trial\", \"callToAction\": \"Get Started!\", \"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"keywordsToExclude\": \"Example keyword\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"url\": \"https://madgicx.com/\", \"exampleDescriptions\": \"Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free. 100+ AI Audiences, 7 Automation Tactics, 7-Day free trial and creative intelligence inside. Live Chat Support. Schedule A Demo. View Our Pricing Details. 7-Day Free Trial.\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "20+ Ad Headlines Generator (~ 25 Seconds)",
+            "url": "https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/headlines",
+            "description": "Get relevant & Complint Google Ad headlines for SEM and PPC marketers, created by SEM Experts. Results include 10+ ad headlines, and are based on user inputs as well as A.I. Intelligence based on OpenAI's engine. \n\n**Detailed description:**\nThe Headlines generator endpoint uses advanced prompt engineering to analyze user inputs in the form of URL, subject, and important keywords to create high-quality ad headlines that are tailored to the product or service being advertised. By leveraging the advanced capabilities of OpenAI's ChatGPT engine, the endpoint is able to deliver top-of-the-line ad headlines that are optimized for relevance, clarity, and engagement.\n\n**Detailed Technical Documentation:**\nThe Headlines generator endpoint of AdCopy AI can be accessed through a GET request, with the following query parameters:\n\n**subject:** Required. A string of between 10 and 60 characters, which represents the \"value proposition\" of the product or service being advertised. The user is advised to provide keywords in a comma-delimited format.\n\n**url:** Required. A string that represents the URL of a page that describes the product or service being advertised. The API will fetch the content from the page and extract relevant keywords to help generate quality ads.\n\n**mostImportantKeywords:** Optional. A string of up to 100 characters, representing the most important keywords about the ad group being advertised. The presence of these keywords in the resulting content is not guaranteed.\n\n**language:** Optional. A string that represents the target audience's language in ISO-2 format (e.g. EN, IT, ES, etc.). The field is currently in alpha testing and may not provide results in the requested language.\n\n**country:** Optional. A string that represents the target audience's country in ISO-2 format (e.g. US, CA, IT, etc.). The field is currently in alpha testing and may not provide country-specific content.\n\n**exampleHeadlines:** Optional. A string of at most 200 characters, representing example headlines that the user may provide to fine-tune the results.\n\nThe endpoint will return up to 10 ad headlines that are tailored to the product or service being advertised. The headlines will be optimized for relevance, clarity, and engagement, leveraging the advanced capabilities of OpenAI's ChatGPT engine and Significat Prompt Optimization.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "describeProductOrService",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally."
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://madgicx.com/"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "specialOffer",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "3 months Free Trial"
+                },
+                {
+                    "name": "callToAction",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Get Started!"
+                },
+                {
+                    "name": "mostImportantKeywords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "facebook ads, google ads, adwords"
+                },
+                {
+                    "name": "keywordsToExclude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Example keyword"
+                },
+                {
+                    "name": "exampleHeadlines",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Tired of Overpriced Platforms? - This Software is like a Team"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/headlines\"\nquerystring = {\"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"specialOffer\": \"3 months Free Trial\", \"callToAction\": \"Get Started!\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"keywordsToExclude\": \"Example keyword\", \"exampleHeadlines\": \"Tired of Overpriced Platforms? - This Software is like a Team\", \"url\": \"https://madgicx.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGenerator/headlines\"\nquerystring = {\"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"specialOffer\": \"3 months Free Trial\", \"callToAction\": \"Get Started!\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"keywordsToExclude\": \"Example keyword\", \"exampleHeadlines\": \"Tired of Overpriced Platforms? - This Software is like a Team\", \"url\": \"https://madgicx.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "Ad Generator (20+ Head. and 10+ Desc.) (~ 1 Min)",
+            "url": "https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGeneratorFull/",
+            "description": "Get a relevant & Compliant Google Ad, for SEM and PPC marketers, created by SEM Experts. Result includes 10+ ad descriptions &  20+ headlines, and  is based on user inputs as well as A.I. Intelligence based on OpenAI's engine. \n\n**Detailed description:**\nThe Full Ad generator endpoint combines the power of the headlines AI generator with the descriptions AI generator to generator a full set of Google Ad Dynamic Search Ad consisting of 4 descriptions and 15 headlines ( though we provide more so you could pick and choose the best ones ). \n\nThis API endpoint uses advanced prompt engineering to analyze user inputs in the form of URL, subject, and important keywords to create high-quality ad descriptions that are tailored to the product or service being advertised. By leveraging the advanced capabilities of OpenAI's ChatGPT engine, the endpoint is able to deliver top-of-the-line ad descriptions that are optimized for relevance, clarity, and engagement.\n\n**Detailed Technical Documentation:**\nCombined the Descriptions & Headlines generator endpoint of AdCopy AI into a single GET request, with the following query parameters:\n\n**subject:** Required. A string of between 10 and 60 characters, which represents the \"value proposition\" of the product or service being advertised. The user is advised to provide keywords in a comma-delimited format.\n\n**url:** Required. A string that represents the URL of a page that describes the product or service being advertised. The API will fetch the content from the page and extract relevant keywords to help generate quality ads.\n\n**mostImportantKeywords:** Optional. A string of up to 100 characters, representing the most important keywords about the ad group being advertised. The presence of these keywords in the resulting content is not guaranteed.\n\n**language:** Optional. A string that represents the target audience's language in ISO-2 format (e.g. EN, IT, ES, etc.). The field is currently in alpha testing and may not provide results in the requested language.\n\n**country:** Optional. A string that represents the target audience's country in ISO-2 format (e.g. US, CA, IT, etc.). The field is currently in alpha testing and may not provide country-specific content.\n\n**exampleDescriptions:** Optional. A string of at most 200 characters, representing example descriptions that the user may provide to fine-tune the results.\n\n**exampleHeadlines:** Optional. A string of at most 200 characters, representing example headlines that the user may provide to fine-tune the results.\n\nThe endpoint will return at least 10 ad descriptions and at least 20 headlines that are tailored to the product or service being advertised. \n\nThe Headlines & Descriptions will be optimized for relevance, clarity, and engagement, leveraging the advanced capabilities of OpenAI's ChatGPT engine and Significat Prompt Optimization for your specific ad and product  or service requirement.\n\nTry it now, for free.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "describeProductOrService",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally."
+                },
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://madgicx.com/"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "specialOffer",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "3 months Free Trial"
+                },
+                {
+                    "name": "exampleHeadlines",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Automate Facebook & Google Ads"
+                },
+                {
+                    "name": "callToAction",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Get Started!"
+                },
+                {
+                    "name": "mostImportantKeywords",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "facebook ads, google ads, adwords"
+                },
+                {
+                    "name": "exampleDescriptions",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free"
+                },
+                {
+                    "name": "keywordsToExclude",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Example keyword"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGeneratorFull/\"\nquerystring = {\"specialOffer\": \"3 months Free Trial\", \"exampleHeadlines\": \"Automate Facebook & Google Ads\", \"callToAction\": \"Get Started!\", \"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"exampleDescriptions\": \"Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free\", \"keywordsToExclude\": \"Example keyword\", \"url\": \"https://madgicx.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com/v1/seo/adsGeneratorFull/\"\nquerystring = {\"specialOffer\": \"3 months Free Trial\", \"exampleHeadlines\": \"Automate Facebook & Google Ads\", \"callToAction\": \"Get Started!\", \"describeProductOrService\": \"The Madgicx Ad Cloud empowers Ecom brands and agencies to autonomously manage and optimize Facebook %26 Google ads to increase ad ROI incrementally.\", \"mostImportantKeywords\": \"facebook ads, google ads, adwords\", \"exampleDescriptions\": \"Great advertising optimization doesn't have to be that expensive. Try madgicx.com for free\", \"keywordsToExclude\": \"Example keyword\", \"url\": \"https://madgicx.com/\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"adcopy-ai-google-ads-ai-text-generation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "requirements": {
+                    "headline": {
+                        "min_length": 22,
+                        "max_length": 30
+                    },
+                    "desc": {
+                        "min_length": 75,
+                        "max_length": 90
+                    }
+                },
+                "elapsedTime": 3.703
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "adcopy_ai_google_ads_ai_text_generation"
+}

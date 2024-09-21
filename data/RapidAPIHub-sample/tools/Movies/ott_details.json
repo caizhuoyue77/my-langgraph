@@ -1,0 +1,1430 @@
+{
+    "product_id": "api_05ce4470-a4fe-4710-9d4d-722ecc94f922",
+    "tool_description": "Get Streaming details of Movie and TV Shows. We support 150+ Streaming platforms in US and India such as HBO, YouTube, Netflix , Primve Video, Hotstar, Hulu, etc . (use our OTT Providers endpoint to get the full list OTT providers we support) . In additon to streaming info we also provide basic details on any given movie title. ",
+    "home_url": "https://rapidapi.com/gox-ai-gox-ai-default/api/ott-details/",
+    "name": "OTT details",
+    "title": "OTT details",
+    "pricing": "FREEMIUM",
+    "tool_name": "OTT details",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 415,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "ott-details.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Advanced Search",
+            "url": "https://ott-details.p.rapidapi.com/advancedsearch",
+            "description": "This endpoint allows you to search for a movie or tvshow based on various parameters such as release year , imdb rating , genre , language etc.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "start_year",
+                    "type": "NUMBER",
+                    "description": "Enter any year between 1970 to 2020 to get results.",
+                    "default": "1970"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "max_imdb",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "7.8"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "Enter type 'movie' or 'show'",
+                    "default": "movie"
+                },
+                {
+                    "name": "sort",
+                    "type": "STRING",
+                    "description": "Enter values highestrated , lowestrated , latest , oldest to  sort results accodingly .",
+                    "default": "latest"
+                },
+                {
+                    "name": "min_imdb",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "6"
+                },
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "use comma seperated values to enter multiple genre eg : action,horror",
+                    "default": "action"
+                },
+                {
+                    "name": "language",
+                    "type": "STRING",
+                    "description": "use comma seperated values to enter multiple values , eg : english,german",
+                    "default": "english"
+                },
+                {
+                    "name": "end_year",
+                    "type": "NUMBER",
+                    "description": "Enter any year from 1970 to 2020 to  get results.",
+                    "default": "2020"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/advancedsearch\"\nquerystring = {\"start_year\": \"1970\", \"page\": \"1\", \"max_imdb\": \"7.8\", \"type\": \"movie\", \"sort\": \"latest\", \"min_imdb\": \"6\", \"genre\": \"action\", \"language\": \"english\", \"end_year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/advancedsearch\"\nquerystring = {\"start_year\": \"1970\", \"page\": \"1\", \"max_imdb\": \"7.8\", \"type\": \"movie\", \"sort\": \"latest\", \"min_imdb\": \"6\", \"genre\": \"action\", \"language\": \"english\", \"end_year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "page": 1,
+                "results": [
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNzY3YTUwYTQtNjkwNy00OTAyLWE0OWEtYmE3MGIyOWZkODY1XkEyXkFqcGdeQXVyMjkyNzYwMTc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Animation"
+                        ],
+                        "imdbid": "tt9580138",
+                        "title": "Mortal Kombat Legends: Scorpion's Revenge",
+                        "imdbrating": 7.4,
+                        "released": 2020,
+                        "synopsis": "Hanzo Hasashi loses his clan, family, and his life during an attack by a rival ninja clan. He is given the chance to compete in an interdimensional tournament to save his loved ones.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMmUyYTU5MjItMGNhOC00ZGFhLTkwYjctMjBmNTlkOTIzYmM1XkEyXkFqcGdeQXVyOTUyOTM3MDc@._V1_UY268_CR110,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Drama"
+                        ],
+                        "imdbid": "tt9286908",
+                        "title": "High Ground",
+                        "imdbrating": 6.5,
+                        "released": 2020,
+                        "synopsis": "In a bid to save the last of his family, Gutjuk, a young Aboriginal man, teams up with ex-soldier Travis to track down Baywara, the most dangerous warrior in the Territory, his uncle.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMDJiNzUwYzEtNmQ2Yy00NWE4LWEwNzctM2M0MjE0OGUxZTA3XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt8936646",
+                        "title": "Extraction",
+                        "imdbrating": 6.7,
+                        "released": 2020,
+                        "synopsis": "Tyler Rake, a fearless black market mercenary, embarks on the most deadly extraction of his career when he's enlisted to rescue the kidnapped son of an imprisoned international crime lord.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNzU1ZTE4YzAtOWNkYi00YWE4LThmY2YtMDNlYzU2ZTgxYTc2XkEyXkFqcGdeQXVyODQzNTE3ODc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Crime"
+                        ],
+                        "imdbid": "tt8851668",
+                        "title": "The Lovebirds",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A couple (Issa Rae and Kumail Nanjiani) experiences a defining moment in their relationship when they are unintentionally embroiled in a murder mystery."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMTdkOTEwYjMtNDA1YS00YzVlLTg0NWUtMmQzNDZhYWUxZmIyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Crime"
+                        ],
+                        "imdbid": "tt8629748",
+                        "title": "Spenser Confidential",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "synopsis": "When two Boston police officers are murdered, ex-cop Spenser teams up with his no-nonsense roommate, Hawk, to take down criminals.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNjg4MjRhZjgtNTIxOS00MmRjLTg4NTEtNjBkNzkwZjAxMjMyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Horror",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt8244784",
+                        "title": "The Hunt",
+                        "imdbrating": 6.5,
+                        "released": 2020,
+                        "synopsis": "Twelve strangers wake up in a clearing. They don't know where they are, or how they got there. They don't know they've been chosen - for a very specific purpose - The Hunt.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNzMyOWRjYjUtMjc2OC00MWUyLWEzODktYWZlZDYxYjk4MDViXkEyXkFqcGdeQXVyODE0OTU5Nzg@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy"
+                        ],
+                        "imdbid": "tt8242084",
+                        "title": "My Spy",
+                        "imdbrating": 6.3,
+                        "released": 2020,
+                        "synopsis": "A hardened CIA operative finds himself at the mercy of a precocious 9-year-old girl, having been sent undercover to surveil her family.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZDJiNWFiODAtN2I3Ny00NzUzLTk0ZjUtY2FjMzNjNTc2M2IyXkEyXkFqcGdeQXVyMzY3OTUwMTc@._V1_UY268_CR1,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Crime"
+                        ],
+                        "imdbid": "tt7846844",
+                        "title": "Enola Holmes",
+                        "imdbrating": 6.6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "When Enola Holmes-Sherlock's teen sister-discovers her mother missing, she sets off to find her, becoming a super-sleuth in her own right as she outwits her famous brother and unravels a dangerous conspiracy around a mysterious young Lord."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMzcyMzU4MDUtM2JhOC00ZDg2LTg5MGMtZjc2OGMyMjhlMGE2XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Drama",
+                            "Sci-Fi"
+                        ],
+                        "imdbid": "tt7737786",
+                        "title": "Greenland",
+                        "imdbrating": 6.4,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A family struggles for survival in the face of a cataclysmic natural disaster."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMzQ3NTQxMjItODBjYi00YzUzLWE1NzQtZTBlY2Y2NjZlNzkyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Comedy"
+                        ],
+                        "imdbid": "tt7713068",
+                        "title": "Birds of Prey",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "synopsis": "After splitting with the Joker, Harley Quinn joins superheroes Black Canary, Huntress and Renee Montoya to save a young girl from an evil crime lord.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMjlkZTJjMDQtMzI1My00YmViLWE0M2ItZTEwMzk1NDhlNDkwXkEyXkFqcGdeQXVyMzgxODI0MTk@._V1_UY268_CR1,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Mystery",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt7638348",
+                        "title": "Boss Level",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A retired special forces officer is trapped in a never ending time loop on the day of his death."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNDJiZDliZDAtMjc5Yy00MzVhLThkY2MtNDYwNTQ2ZTM5MDcxXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Fantasy"
+                        ],
+                        "imdbid": "tt7556122",
+                        "title": "The Old Guard",
+                        "imdbrating": 6.6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A covert team of immortal mercenaries are suddenly exposed and must now fight to keep their identity a secret just as an unexpected new member is discovered."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOTE3MzRkODctZjJmNi00NTI1LTk3NmItZTMxNzg2NWJkZDBiXkEyXkFqcGdeQXVyNjQyNjgwNjU@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Horror",
+                            "Sport"
+                        ],
+                        "imdbid": "tt7397552",
+                        "title": "Adrenaline Rush",
+                        "imdbrating": 7.1,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BYjE2MjIwMmYtM2ZiMy00MzdmLTkyNTYtNmFiNjM5MDJhMGVmXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Crime",
+                            "Mystery"
+                        ],
+                        "imdbid": "tt7149730",
+                        "title": "The Silencing",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A reformed hunter living in isolation on a wildlife sanctuary becomes involved in a deadly game of cat and mouse when he and the local Sheriff set out to track a vicious killer who may have kidnapped his daughter years ago."
+                    },
+                    {
+                        "imageurl": [],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Drama"
+                        ],
+                        "imdbid": "tt6878306",
+                        "title": "News of the World",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A Texan traveling across the wild West bringing the news of the world to local townspeople, agrees to help rescue a young girl who was kidnapped."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOGJmZjcxNTAtYjViZS00YzJmLTlkMzgtZmVkYTQ5YjUwMjIyXkEyXkFqcGdeQXVyNjMwMzc3MjE@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Sci-Fi"
+                        ],
+                        "imdbid": "tt6723592",
+                        "title": "Tenet",
+                        "imdbrating": 7.3,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Armed with only one word -- Tenet -- and fighting for the survival of the entire world, the Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time."
+                    },
+                    {
+                        "imageurl": [],
+                        "genre": [
+                            "Action",
+                            "Drama",
+                            "Sport"
+                        ],
+                        "imdbid": "tt6539992",
+                        "title": "Embattled",
+                        "imdbrating": 6.5,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A son aspires to follow in his famous MMA father's footsteps, but along his journey must figure out how to break the abusive cycle, if possible, that his father has continued."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMjU3ODRmMWMtMDU5OS00ZWFkLWI1NjMtNzZkN2Y0MjQ2YzlmL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMzMxMDc0Njk@._V1_UY268_CR137,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt6359464",
+                        "title": "Red Cargo",
+                        "imdbrating": 7.4,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Two undercover agents sent to get rid of rhino poaching syndicate, become the hunted after discovering that high ranking government officials are implicated."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZTFkZjYxNWItZmE2MC00MGE4LWIxYTgtZmIzOWM1YmI2YWEzXkEyXkFqcGdeQXVyMDM2NDM2MQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Drama",
+                            "History"
+                        ],
+                        "imdbid": "tt6048922",
+                        "title": "Greyhound",
+                        "imdbrating": 7,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Early in World War II, an inexperienced U.S. Navy captain must lead an Allied convoy being stalked by Nazi U-boat wolfpacks."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNGNhZTk5M2MtMzUzYy00NmZkLTljZmItZTU5MDU4Y2M0N2I4XkEyXkFqcGdeQXVyMjM1NTY3Njk@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Horror"
+                        ],
+                        "imdbid": "tt5654204",
+                        "title": "#Slaughterhouse",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A romantic spring getaway turns sinister when unexpected visitors join the party in a high-tech house that no one can escape."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BN2NiYzMyZmQtMDBkNC00Y2NkLWI1NjctZmQyNjM3ZWQ5YTc4XkEyXkFqcGdeQXVyMzAyNDMxMDQ@._V1_UY268_CR3,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt5612690",
+                        "title": "No Remorse",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMTg4NjQwNjk0NV5BMl5BanBnXkFtZTgwMzcyNTc1NzE@._V1_UY268_CR3,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Crime"
+                        ],
+                        "imdbid": "tt5274150",
+                        "title": "Banned, Exploited & Blacklisted: The Underground Work of Controversial Filmmaker Shane Ryan",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A collection of Ryan's work including short films, music videos, trailers/clips from both released feature films and uncompleted features, concept trailers, behind-the-scenes footage, interviews, and Ryan's childhood filmmaker beginnings."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMThlZjkzMzAtMGNiMy00ZjNiLWI4N2UtOTY5NTkyMGRiNTI4L2ltYWdlXkEyXkFqcGdeQXVyMTg1MTg3Njc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Crime"
+                        ],
+                        "imdbid": "tt4424284",
+                        "title": "Seth and Tia",
+                        "imdbrating": 6.7,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Two patients, Seth and Tia develop a friendship during their stay in a mental institution. They decide to make a plan to break out, but they can't do it alone,so they ally with an enemy ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMDM3YjZlMjctNmNiMC00NTIxLWE2OWMtNmU2NDMzNTUxNGFiXkEyXkFqcGdeQXVyNTA4NDgzMw@@._V1_UY268_CR1,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Crime"
+                        ],
+                        "imdbid": "tt3290322",
+                        "title": "The Runners",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "When his little sister is abducted from a homecoming after-party in rural East Texas, Ryan is in a race against the clock to save her before she disappears into the underworld of sex trafficking forever."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMjc1ZTNhODctNTdmZC00YjJiLTljYWItOGI1Nzc3MTMzMzM2XkEyXkFqcGdeQXVyODM3MzI1NA@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy"
+                        ],
+                        "imdbid": "tt3279024",
+                        "title": "Lumpia with a Vengeance",
+                        "imdbrating": 7.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "The LUMPIA-armed hero reappears in Fogtown and teams up with high school student Rachel to prevent a mysterious crime syndicate from destroying their town, and her parents' dream wedding."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOGJlMTc5YmYtYjFlNi00ZDJiLWFhNWMtMjc0NDBjOWNkNjA1XkEyXkFqcGdeQXVyMTA5NzExNzM1._V1_UY268_CR110,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Crime",
+                            "Drama"
+                        ],
+                        "imdbid": "tt1838556",
+                        "title": "Honest Thief",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A bank robber tries to turn himself in because he's falling in love and wants to live an honest life...but when he realizes the Feds are more corrupt than him, he must fight back to clear his name."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMWU0MGYwZWQtMzcwYS00NWVhLTlkZTAtYWVjOTYwZTBhZTBiXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Crime"
+                        ],
+                        "imdbid": "tt1502397",
+                        "title": "Bad Boys for Life",
+                        "imdbrating": 6.5,
+                        "released": 2020,
+                        "synopsis": "Miami detectives Mike Lowrey and Marcus Burnett must face off against a mother-and-son pair of drug lords who wreak vengeful havoc on their city.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BY2QyZTJmZTMtM2Q3Zi00NjUyLTk5NzctOTg0MjI4OWEwYjg3XkEyXkFqcGdeQXVyNzU3NjUxMzE@._V1_UY268_CR9,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Animation"
+                        ],
+                        "imdbid": "tt12093878",
+                        "title": "LEGO DC: Shazam - Magic & Monsters",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "synopsis": "When the boy hero Shazam is offered to join the Justice League he is reluctant about it, but when his rivals the Monster Society put the League in peril he's the only one who can save them.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt12065884",
+                        "title": "Hurricane Tsunami: Oceans Rising",
+                        "imdbrating": 6.9,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BMTYyOTIwYmYtZmQyMi00MTUwLWI2ZDItYTBjNDVhMWFhNWFlXkEyXkFqcGdeQXVyMTE1NjI5NTc2._V1_UY268_CR9,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Mystery"
+                        ],
+                        "imdbid": "tt12059646",
+                        "title": "Anonymous Vol. 1 - The Dreamland Adventures the Mysteries of Atlantis",
+                        "imdbrating": 7.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A Agent inside a dark NASA division using alien technology is hi-jacked by a new nation in Antarctica rising from the roots of Hitler's Vrill society. Agent Schwartz turns to his Russian ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNWIxOTNiZGItZjNiMi00OTY2LTk5NjYtYjlmNDhkYjE1OGNiXkEyXkFqcGdeQXVyOTEyNjEzNjg@._V1_UY268_CR3,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Drama"
+                        ],
+                        "imdbid": "tt12043434",
+                        "title": "A Free Can Gangster",
+                        "imdbrating": 7.7,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A young Senegalese immigrant is trying to survive in London after the home office has rejected his application for residency.Lost his father from prostate Cancer, he need to find away to ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BYTlhYjRmYmUtYTJlMS00OWMyLTk4MzUtMDQ3ODU3MWZjMDNkXkEyXkFqcGdeQXVyODk1MzE0Mzk@._V1_UY268_CR147,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Animation"
+                        ],
+                        "imdbid": "tt12042710",
+                        "title": "Enchantimals: Spring Into Harvest Hills",
+                        "imdbrating": 6.1,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt11958194",
+                        "title": "Liverpool vs Atletico Madrid",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZDBiZGQ0YjgtNzY1Mi00MTNiLThjODktMjBhMDA4OGQ5M2YwXkEyXkFqcGdeQXVyNjA0MDQ1NTc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Drama"
+                        ],
+                        "imdbid": "tt11946452",
+                        "title": "Crossing the Line",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A Mexican Sicario runs into a world of challenges when the cartel leader, \"The Viper\" assigns a Middle Eastern Hitman to accompany him on missions. The Iraqi methods are different than the established norms of the cartel."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZTgyNWM0NDktOWI5Ny00YjhhLWJjZmMtOTc0ODM0MjQzOTdlXkEyXkFqcGdeQXVyNjQ4Njg2NDc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Crime",
+                            "Drama"
+                        ],
+                        "imdbid": "tt11899710",
+                        "title": "Hitter Twist",
+                        "imdbrating": 7.6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A genius, seventeen-year-old drug dealer/musician comes to realize that the 'victimless crime' of helping his friends get high has connected him with vicious mobsters and ruthless thieves. ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BN2EzYzhlNjUtNjE5Ni00MzE1LWE2NDgtZDEwYjY5N2ZhNjQ0XkEyXkFqcGdeQXVyMTE4NzcwOTM4._V1_UY268_CR3,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy",
+                            "Horror"
+                        ],
+                        "imdbid": "tt11890562",
+                        "title": "Concrete shark",
+                        "imdbrating": 7.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "The director of the concrete plant fell into the concrete mixer. The devil from hell turned him into a concrete shark. Save the world from another monster will locksmiths Michael and Azamat."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BYjg0YTMwZWItODg0NC00YTRjLWE5MTAtZTdmNjQ0Y2Q0NGEzXkEyXkFqcGdeQXVyMTkwNzExODQ@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Mystery",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt11714030",
+                        "title": "Hell Hole",
+                        "imdbrating": 7.1,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Just outside a desolate ghost town, inside a long-abandoned gold mine, lurks a dark being, conjured by the Shanowah tribe ages ago to destroy those that threatened to wipe out their people...."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZDk4ZDM0YmQtOTRjMC00MmYyLTgyZjAtNzE3YzVhZWM3MmMzXkEyXkFqcGdeQXVyMTEyOTgxMDA5._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy"
+                        ],
+                        "imdbid": "tt11690838",
+                        "title": "The Legend of Baron To'a",
+                        "imdbrating": 6.3,
+                        "released": 2020,
+                        "synopsis": "Fritz, a young Tongan man grappling with his wrestling superstar father Baron To'a's legacy, both metaphorically and literally following in his deceased father's footsteps by fighting for the return of his dad's stolen championship belt.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOTY1MTQ1NzgtZTQwNi00ZjA2LTllNWUtNjY0MzY1ZDI1YjM5XkEyXkFqcGdeQXVyMTAwNDYzNzgz._V1_UY268_CR159,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Biography",
+                            "Documentary"
+                        ],
+                        "imdbid": "tt11634288",
+                        "title": "Battle of Little Bighorn",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "synopsis": "The U.S. expands westward after the Civil War displacing the last of the free-roaming Native Americans onto Reservations. This show focuses special attention on General George A. Custer and...",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOGQzZDE2MDctNTUwNy00MDY1LThlOTItMzE5MWViNTFjMDBiXkEyXkFqcGdeQXVyODkxNzcyODc@._V1_UY268_CR98,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt11343368",
+                        "title": "Pocket Full of Game",
+                        "imdbrating": 6.4,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Porsha is a female hustler who has it all money, beauty, respect. She earned it all by being loyal and respecting the codes of the street. A chance encounter with a stick up kid named Fresh introduces her to a whole new world."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BOWJlY2M2NTktZWYxYi00ZWNjLTlhNmMtYjM0ZjBjY2JhZTgxXkEyXkFqcGdeQXVyMTAxMzMxNjk2._V1_UY268_CR7,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt11207956",
+                        "title": "Sierra Sisters: The Hunt for Blackbeards Treasure",
+                        "imdbrating": 7.6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Follow treasure hunting sisters Hera and Athena as they embark on a journey to find the legendary treasure of Blackbeard the pirate. Along the way they encounter shadowy figures and ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNjdjOTI0NmYtNGEzYy00MmE3LWFkNDItZmU2YWJkODFmNjg1XkEyXkFqcGdeQXVyNTE3Njk0Ng@@._V1_UY268_CR16,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt11131480",
+                        "title": "16 Bars",
+                        "imdbrating": 7.5,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "This story follows Drew (played by emerging musical artist, Vyse), an aspiring young rapper as he is faced with the life struggles that led to his residence in a group home while balancing ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZjk0ZTk4OTQtYWYyZC00MTU5LTkxMjQtZDRlYjRkN2Y3ZjA5XkEyXkFqcGdeQXVyOTA1MDE3OA@@._V1_UY268_CR4,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Comedy"
+                        ],
+                        "imdbid": "tt11041352",
+                        "title": "Action",
+                        "imdbrating": 6.2,
+                        "released": 2020,
+                        "synopsis": "An American action star from the 90's is shooting a movie in Bulgaria, while three of his (now grown up) fans try to meet their childhood idol. After a series of bad decisions, the three ...",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BM2VhNWU2NWUtOGQ5Ni00OTNmLWFiZWItYzlhYzAzNjZlMzY3XkEyXkFqcGdeQXVyODQ1NDg4NjQ@._V1_UY268_CR43,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt10937188",
+                        "title": "Justice League Extinction",
+                        "imdbrating": 7.4,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A year has passed since the mother boxes were destroyed. Unaware to the Justice League, the boxes have released a power surge that has attracted the attention of their creator, Brainiac."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BNjY0MWZiNDQtMDk3My00MTZmLWI2ZGEtYWUxOTgyMzNjNTYwXkEyXkFqcGdeQXVyMTA0MjU4MDQ0._V1_UY268_CR16,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action"
+                        ],
+                        "imdbid": "tt10919858",
+                        "title": "It's About Choices",
+                        "imdbrating": 6.8,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "On the run from his corrupt employers an ex Special forces officer has been hiding out driving a cab for 4 years ,when suddenly he is visited by someone from his past . Doing the right thing and survival are the only choices he has."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZWY2MDEzNjYtOWVlMC00MGYzLWFhNjUtMTAzZTQ4MmQ3N2U4XkEyXkFqcGdeQXVyOTMwNjU3NDc@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Adventure",
+                            "Animation"
+                        ],
+                        "imdbid": "tt10841384",
+                        "title": "The Forevers",
+                        "imdbrating": 7.1,
+                        "released": 2020,
+                        "synopsis": "A group of brave superheroes has to come together to save the multiverse from evil terrorist birds.",
+                        "type": "movie"
+                    },
+                    {
+                        "imageurl": [],
+                        "genre": [
+                            "Action",
+                            "Drama",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt10558706",
+                        "title": "Commandos: The Mission",
+                        "imdbrating": 6.5,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "Six Dutch Commandos, commanded by John de Koning and stationed in Mali, are sent to Nigeria under American orders to free the son of a wealthy Nigerian oil family from Boko Haram rebels. ..."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BYThmODBlYjItOGRjYi00OWExLTg4MTEtMTAyOGU2MTFiOWE0XkEyXkFqcGdeQXVyNTM5ODc4MzE@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Western"
+                        ],
+                        "imdbid": "tt10398376",
+                        "title": "Gunfight at Silver Creek",
+                        "imdbrating": 7.2,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": ""
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZjQzNmQwZjMtMzU3OS00MDgzLTllM2YtMmQzZmViYmY0NWQ3XkEyXkFqcGdeQXVyNzk5OTM5ODg@._V1_UY268_CR12,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Animation"
+                        ],
+                        "imdbid": "tt10152746",
+                        "title": "Justice League: Invasion",
+                        "imdbrating": 6.7,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "A nightmare has arrived, the Invasion is here. Darkseid of Apokolips has set to Earth after a Mother Box is opened. Earth's heroes are soon to bring justice against Darkseid's inevitable strength."
+                    },
+                    {
+                        "imageurl": [
+                            "https://m.media-amazon.com/images/M/MV5BZTI0ZGIxZTEtMWQxMi00MDVhLWFmNWQtNmU5ZWNhYjJmYjJkXkEyXkFqcGdeQXVyMDA4NzMyOA@@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                        ],
+                        "genre": [
+                            "Action",
+                            "Thriller"
+                        ],
+                        "imdbid": "tt10059518",
+                        "title": "Unhinged",
+                        "imdbrating": 6,
+                        "released": 2020,
+                        "type": "movie",
+                        "synopsis": "After a confrontation with an unstable man at an intersection, a woman becomes the target of his rage."
+                    }
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Basic Info",
+            "url": "https://ott-details.p.rapidapi.com/getcastDetails",
+            "description": "Get info on a  cast such as name , profession , birth and death year , bio , poster , best titles  etc.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "peopleid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "nm0000375"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getcastDetails\"\nquerystring = {\"peopleid\": \"nm0000375\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getcastDetails\"\nquerystring = {\"peopleid\": \"nm0000375\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "peopleid": "nm0000375",
+                "name": "Robert Downey Jr.",
+                "profession": [
+                    "actor",
+                    "producer",
+                    "soundtrack"
+                ],
+                "knownForTitles": [
+                    "tt0371746",
+                    "tt1300854",
+                    "tt4154796",
+                    "tt0988045"
+                ],
+                "birthYear": "1965",
+                "deathYear": "\\N",
+                "bio": "Robert Downey Jr. has evolved into one of the most respected actors in Hollywood. With an amazing list of credits to his name, he has managed to stay new and fresh even after over four decades in the business.Downey was born April 4, 1965 in Manhattan, New York, the son of writer, director and filmographer Robert Downey Sr. and actress Elsie Downey (n&#xE9;e Elsie Ann Ford). Robert&apos;s father is of half Lithuanian Jewish, one quarter Hungarian Jewish, and one quarter Irish, descent, while Robert&apos;s mother was of English, Scottish, German, and Swiss-German ancestry. Robert and his sister, Allyson Downey, were immersed in film and the performing arts from a very young age, leading Downey Jr. to study at the Stagedoor Manor Performing Arts Training Center in upstate New York, before moving to California with his father following his parents&apos; 1978 divorce. In 1982, he dropped out of Santa Monica High School to pursue acting full time. Downey Sr., himself a drug addict, exposed his son to drugs at a very early age, and Downey Jr. would go on to struggle with abuse for decades.Downey Jr. made his debut as an actor at the age of five in the film Pound (1970), written and directed by his father, Robert Downey Sr.. He built his film repertoire throughout the 1980s and 1990s with roles in Tuff Turf (1985), Weird Science (1985), True Believer (1989), and Wonder Boys (2000) among many others. In 1992, Downey received an Academy Award nomination and won the BAFTA (British Academy Award) for Best Actor for his performance in the title role of Chaplin (1992).In Robert Altman&apos;s Short Cuts (1993), he appeared as an aspiring film make-up artist whose best friend commits murder. In Oliver Stone&apos;s Natural Born Killers (1994), with Woody Harrelson and Juliette Lewis, Downey starred as a tabloid TV journalist who exploits a murderous couple&apos;s killing spree to boost his ratings. For the comedy Heart and Souls (1993), Downey starred as a young man with a special relationship with four ghosts. In 1995, Downey starred in Restoration (1995), with Hugh Grant, Meg Ryan and Ian McKellen, directed by Michael Hoffman. Also that year, he starred in Richard III (1995), in which he appears opposite his Restoration (1995) co-star McKellen.In 1997, Downey was seen in Robert Altman&apos;s The Gingerbread Man (1998), alongside Kenneth Branagh, Daryl Hannah and Embeth Davidtz; in One Night Stand (1997), directed by Mike Figgis and starring Wesley Snipes and Nastassja Kinski; and in Hugo Pool (1997), directed by his father, Robert Downey Sr. and starring Sean Penn and Patrick Dempsey. In September of 1999, Downey appeared in Black &amp; White (1999), written and directed by James Toback, along with Ben Stiller, Elijah Wood, Gaby Hoffmann, Brooke Shields and Claudia Schiffer. In January of 1999, he starred with Annette Bening and Aidan Quinn in In Dreams (1999), directed by Neil Jordan.In 2000, Downey co-starred with Michael Douglas and Tobey Maguire in Wonder Boys (2000), directed by Curtis Hanson. In this dramatic comedy, Downey played the role of a bisexual literary agent. In 2001, Downey made his prime-time television debut when he joined the cast of the Fox-TV series Ally McBeal (1997) as attorney &quot;Larry Paul&quot;. For this role, he won the Golden Globe Award for Best Performance by an Actor in a Supporting Role in a Series, Mini-Series or Motion Picture Made for Television, as well as the Screen Actors Guild Award for Outstanding Performance by a Male in a Comedy Series. In addition, Downey was nominated for an Emmy for Outstanding Supporting Actor in a Comedy Series.The actor&apos;s drug-related problems escalated from 1996 to 2001, leading to arrests, rehab visits and incarcerations, and he was eventually fired from Ally McBeal (1997). Emerging clean and sober in 2003, Downey Jr. began to rebuild his career.He marked his debut into music with his debut album, titled &quot;The Futurist&quot;, on the Sony Classics Label on November 23rd, 2004. The album&apos;s eight original songs, that Downey wrote, and his two musical numbers debuting as cover songs revealed his sultry singing voice and his musical talents. Downey displayed his versatility in two different films in October 2003: the musical/drama The Singing Detective (2003), a remake of the BBC hit of the same name, and the thriller Gothika (2003) starring Halle Berry and Pen&#xE9;lope Cruz. Downey starred in powerful yet humbling roles inspired by real-life accounts of some of history&apos;s most precious kept secrets, including Richard Linklater&apos;s A Scanner Darkly (2006) in 2006 co-starring Keanu Reeves, Winona Ryder and Woody Harrelson, and Fur: An Imaginary Portrait of Diane Arbus (2006) co-starring Nicole Kidman, a film inspired by the life of Diane Arbus, the revered photographer whose images captured attention in the early 1960s. These roles exhibited Downey&apos;s momentum from the previous year of 2005, in which he starred in the Academy Award&#xAE;-nominated feature film Good Night, and Good Luck. (2005), directed by George Clooney and in Shane Black&apos;s action comedy Kiss Kiss Bang Bang (2005) co-starring Val Kilmer. In 2007, he co-starred in David Fincher&apos;s suspenseful Zodiac (2007), alongside Jake Gyllenhaal and Mark Ruffalo, about the notorious serial killer who haunted San Francisco during the 1970s.In May 2008, Downey achieved critical acclaim and worldwide box office success for his starring role in Iron Man (2008), Jon Favreau&apos;s big-screen rendering of the Marvel comic book superhero. The film co-starred Gwyneth Paltrow, Jeff Bridges and Terrence Howard. In August of 2008, Downey starred with Ben Stiller and Jack Black in the comedy Tropic Thunder (2008), and went on to receive an Academy Award&#xAE;-nomination for Best Supporting Actor for his, Kirk Lazarus.In December 2009, Downey starred in the action-adventure Sherlock Holmes (2009). The film, directed by Guy Ritchie, co-starred Jude Law and Rachel McAdams and earned Downey a Golden Globe for Best Performance by an Actor in a Motion Picture - Comedy or Musical in January of 2010. In early Summer 2010, Downey re-teamed with director Jon Favreau and reprised his role as &quot;Tony Stark/Iron Man&quot; in the hugely successful sequel to the original film, Iron Man 2 (2010), starring Gwyneth Paltrow, Scarlett Johansson, Samuel L. Jackson and Mickey Rourke.Downey next starred in Due Date (2010), a comedy directed by Todd Phillips, in which he plays the role of an expectant father on a road trip racing to get back in time for the birth of his first child. Due Date (2010), starring The Hangover (2009)&apos;s Zach Galifianakis, was released in November 2010.Downey was honored by Time Magazine&apos;s &quot;Time 100&quot; in 2008, an annual list of the 100 most influential people in the world. His laurels include two Academy Award nominations, three Golden Globe wins, numerous other award nominations and wins, and tremendous popular and commercial success, particularly in his roles as Sherlock Holmes and Tony Stark (the latter of which he has so far played in Iron Man (2008), Iron Man 2 (2010), The Avengers (2012), Iron Man Three (2013), and Avengers: Age of Ultron (2015). For three consecutive years, from 2012 to 2015, Downey has topped the Forbes list of Hollywood&apos;s highest-paid actors, making an estimated $80 million in earnings between June 2014 and June 2015.In 2005, Downey Jr. married Susan Downey, with whom he has two children. Downey also has another son, Indio Falconer Downey, born 1993, from his first marriage to Deborah Falconer, from whom he was officially divorced in 2004.Robert has jump-started the Team Downey Production Company with wife Susan Downey.\n          \n          - IMDb Mini Biography By: \n          \n            Anonymous, Rogers &amp; Cowan, and Pedro Borges",
+                "born": "April 4,      1965      in\u00a0Manhattan, New York City, New York, USA",
+                "birthName": "Robert John Downey Jr",
+                "poster": [
+                    "https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UX67_CR0,0,67,98_AL_.jpg"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "bio": {
+                        "type": "string"
+                    },
+                    "birthName": {
+                        "type": "string"
+                    },
+                    "birthYear": {
+                        "type": "string"
+                    },
+                    "born": {
+                        "type": "string"
+                    },
+                    "deathYear": {
+                        "type": "string"
+                    },
+                    "knownForTitles": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "peopleid": {
+                        "type": "string"
+                    },
+                    "poster": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "profession": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Params",
+            "url": "https://ott-details.p.rapidapi.com/getParams",
+            "description": "Get array of values that can be used as params in Advanced Search .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "param",
+                    "type": "STRING",
+                    "description": "input 'genre' or 'language' to get array of genre or languages that can be used as filter in advanced search .",
+                    "default": "genre"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getParams\"\nquerystring = {\"param\": \"genre\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getParams\"\nquerystring = {\"param\": \"genre\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                "Action",
+                "Adult",
+                "Adventure",
+                "Animation",
+                "Biography",
+                "Comedy",
+                "Crime",
+                "Documentary",
+                "Drama",
+                "Family",
+                "Fantasy",
+                "Game-Show",
+                "History",
+                "Horror",
+                "Music",
+                "Musical",
+                "Mystery",
+                "News",
+                "Reality-TV",
+                "Romance",
+                "Sci-Fi",
+                "Short",
+                "Sport",
+                "Talk-Show",
+                "Thriller",
+                "War",
+                "Western"
+            ],
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "type": "string"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "Search",
+            "url": "https://ott-details.p.rapidapi.com/search",
+            "description": "This endpoint allows you to search for a movie or tvshow based on the given 'title '.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Endgame"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "*Maximum number of pages returned is 10 ",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/search\"\nquerystring = {\"page\": \"1\", \"title\": \"Endgame\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/search\"\nquerystring = {\"page\": \"1\", \"title\": \"Endgame\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Title Details",
+            "url": "https://ott-details.p.rapidapi.com/gettitleDetails",
+            "description": "Get basic information on a movie or tv show such as imdbid , title , genre , runtime , imdbrating , language , synopsis , type , imageurl  , Streaming platforms info etc.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "imdbid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tt9904802"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/gettitleDetails\"\nquerystring = {\"imdbid\": \"tt9904802\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/gettitleDetails\"\nquerystring = {\"imdbid\": \"tt9904802\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "imageurl": [
+                    "https://m.media-amazon.com/images/M/MV5BNjIyNzU5ZDAtODNkOS00YjU4LTk5YmMtOGVkNDY1YjA0YmI1XkEyXkFqcGdeQXVyODY0NTMxNTE@._V1_UX182_CR0,0,182,268_AL_.jpg"
+                ],
+                "genre": [
+                    "War"
+                ],
+                "imdbid": "tt9904802",
+                "title": "Enemy Lines",
+                "runtime": "92 min",
+                "imdbrating": 4.5,
+                "released": 2020,
+                "synopsis": "In the frozen, war torn landscape of occupied Poland during World War II, a crack team of allied commandos are sent on a deadly mission behind enemy lines to extract a rocket scientist from the hands of the Nazis.",
+                "type": "movie",
+                "language": [
+                    "English",
+                    "Polish",
+                    "Russian",
+                    "German"
+                ],
+                "streamingAvailability": {
+                    "country": {
+                        "US": [
+                            {
+                                "url": "https://tv.apple.com/us/movie/enemy-lines/umc.cmc.7i6gfqlsivv4ywkbf7tt6um6u?playableId=tvs.sbd.9001%3A1497546013",
+                                "platform": "itunes"
+                            },
+                            {
+                                "url": "https://play.google.com/store/movies/details/Enemy_Lines?gl=US&hl=en&id=GE-cC6Xr3GQ.P",
+                                "platform": "play"
+                            },
+                            {
+                                "url": "https://www.vudu.com/content/movies/details/Enemy-Lines/1342209",
+                                "platform": "vudu"
+                            },
+                            {
+                                "url": "https://watch.amazon.com/detail?gti=amzn1.dv.gti.cab8ab06-7747-627f-a643-069ae09f86c6",
+                                "platform": "amazon"
+                            },
+                            {
+                                "url": "https://tubitv.com/movies/591103?utm_source=-feed&tracking=justwatch-feed",
+                                "platform": "tubitv"
+                            },
+                            {
+                                "url": "https://www.youtube.com/watch?v=bbHLhTIep40",
+                                "platform": "youtube"
+                            },
+                            {
+                                "url": "https://www.hoopladigital.com/title/13304214",
+                                "platform": "hoopla"
+                            },
+                            {
+                                "url": "https://www.redbox.com/ondemand-movies/enemy-lines",
+                                "platform": "redbox"
+                            },
+                            {
+                                "url": "https://www.directv.com/movies/Enemy-Lines-TXhBQXA5TnFzT3kxa2Q0Y3JhU3lBZz09",
+                                "platform": "directv"
+                            }
+                        ]
+                    }
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "genre": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "imageurl": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "imdbid": {
+                        "type": "string"
+                    },
+                    "imdbrating": {
+                        "type": "integer"
+                    },
+                    "language": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "released": {
+                        "type": "integer"
+                    },
+                    "runtime": {
+                        "type": "string"
+                    },
+                    "streamingAvailability": {
+                        "properties": {
+                            "country": {
+                                "properties": {
+                                    "US": {
+                                        "items": {
+                                            "properties": {
+                                                "platform": {
+                                                    "type": "string"
+                                                },
+                                                "url": {
+                                                    "type": "string"
+                                                }
+                                            },
+                                            "type": "object"
+                                        },
+                                        "type": "array"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "synopsis": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "Additional Title Details",
+            "url": "https://ott-details.p.rapidapi.com/getadditionalDetails",
+            "description": "Get  additional details for a movie or tv show like reviews  , quotes , plotsummary , number of votes , trailer url  , cast details etc.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "imdbid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tt7286456"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getadditionalDetails\"\nquerystring = {\"imdbid\": \"tt7286456\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getadditionalDetails\"\nquerystring = {\"imdbid\": \"tt7286456\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "imdbid": "tt7286456",
+                "title": "Joker",
+                "people": [
+                    {
+                        "peopleid": "nm0177896",
+                        "characters": null,
+                        "category": "producer",
+                        "job": "producer"
+                    },
+                    {
+                        "peopleid": "nm0001618",
+                        "characters": [
+                            "Arthur Fleck"
+                        ],
+                        "category": "actor",
+                        "job": null
+                    },
+                    {
+                        "peopleid": "nm5939164",
+                        "characters": [
+                            "Sophie Dumond"
+                        ],
+                        "category": "actress",
+                        "job": null
+                    },
+                    {
+                        "peopleid": "nm0175814",
+                        "characters": [
+                            "Penny Fleck"
+                        ],
+                        "category": "actress",
+                        "job": null
+                    },
+                    {
+                        "peopleid": "nm0680846",
+                        "characters": null,
+                        "category": "director",
+                        "job": null
+                    },
+                    {
+                        "peopleid": "nm0798788",
+                        "characters": null,
+                        "category": "writer",
+                        "job": "written by"
+                    },
+                    {
+                        "peopleid": "nm0004170",
+                        "characters": null,
+                        "category": "writer",
+                        "job": "based on characters created by"
+                    },
+                    {
+                        "peopleid": "nm0277730",
+                        "characters": null,
+                        "category": "writer",
+                        "job": "based on characters created by"
+                    },
+                    {
+                        "peopleid": "nm1047603",
+                        "characters": null,
+                        "category": "writer",
+                        "job": "based on characters created by"
+                    },
+                    {
+                        "peopleid": "nm0000134",
+                        "characters": [
+                            "Murray Franklin"
+                        ],
+                        "category": "actor",
+                        "job": null
+                    }
+                ],
+                "numVotes": 1195559,
+                "trailerUrl": [
+                    "https://imdb.com/title/tt7286456/videoplayer/vi1723318041?ref_=tt_pv_vi_aiv_1",
+                    "https://imdb.com/title/tt7286456/videoplayer/vi2883960089?ref_=tt_pv_vi_aiv_2",
+                    "https://imdb.com/title/tt7286456/videoplayer/vi2059058969?ref_=tt_pv_vi_aiv_3"
+                ],
+                "plotSummary": "\n            The story takes place in Gotham City, 1981.Arthur Fleck (Joaquin Phoenix) works as a clown-for-hire for a company called Ha-Ha's. He struggles with severe depression personally but finds some form of optimism in performing for others and trying to make people laugh. He is tasked with advertising a store by dancing and waving a sign around. On one such occasion, the sign gets snatched by a group of punk teens, forcing Arthur to chase them into an alley. They smash the sign against his face and proceed to mercilessly kick him while he's down.In this era, Gotham is struggling with crime, unemployment, and poverty. Arthur visits a social worker for his medication, as well as his ongoing mental health issues. On the bus ride home, a small child looks at Arthur. He makes silly faces that amuse the boy, but his mother tells Arthur to leave him alone. Arthur begins to laugh hysterically and uncontrollably. When the mother questions him, he hands her a card that explains that he has a mental condition that causes him to laugh the way that he does.Arthur returns home to a high-rise apartment project, where he lives with his ailing mother, Penny (Frances Conroy). After dinner, they sit and watch a TV talk show with host Murray Franklin (Robert DeNiro). Arthur imagines himself being on the show and getting Murray's attention. In his fantasy, Arthur charms the audience and Murray by telling them that he takes care of his mother. Murray relates to Arthur and invites him up on stage in front of everyone, where they share a familial embrace. It is revealed that Penny used to work for Thomas Wayne (Brett Cullen) and is obsessed with the millionaire and has been currently writing to him to try and better their living situation.At Ha-Ha's, Arthur is given a gun for protection by his co-worker Randall (Glenn Fleschler) after he hears about the mugging incident. Arthur is both reluctant and relieved to receive such a gift as firearms are outlawed at work but soon finds his confidence growing after receiving the weapon. However, soon after this, he is confronted by his cold and unfeeling boss, who reprimands him for losing the sign and takes the cost of it out of his pay. Arthur responds only by smiling bitterly.Arthur meets and becomes infatuated with one of his neighbors, a single mother named Sophie Dumond (Zazie Beetz). She speaks to him politely about relating issues that he can relate to. However, while trying to make an impression with her, he appears awkward and weird around her. At one point, he spends his day following her. Later, she comes by his apartment and asks if he was following her, and he admits that he was, but she doesn't seem put off by it. He invites her to a stand-up comedy show that he is performing at. She is hesitant but is won over by his charm and sense of humor. Arthur watches comedians perform to help him gain some insight into the craft, but feels more awkward and out of place as his over-the-top laughter is not genuine.Arthur goes to the comedy club for his performance. His nervousness consumes him and, as a coping mechanism, unintentionally finds himself laughing so hard that he can barely speak. He then begins going off into his routine, which isn't very funny. Sophie appears to be in the audience... the only person who is laughing at Arthur's jokes. This gives him the comfort he needs to continue to joke despite his inner torment and turmoil.Arthur later goes to a children's hospital to entertain them as a clown. He brought his gun with him, and it falls out on the floor. Arthur's boss later chews him out for this. Arthur pleads for a second chance, but his boss refuses and fires him on the spot. To top things off, Randall throws Arthur under the bus by claiming that Arthur got the gun himself. On the subway train ride home from Ha-Ha's in full clown getup, Arthur spots three drunk young Wall Street types working for Wayne Enterprises harassing a woman. Arthur starts laughing unintentionally and draws the attention of the men, while the woman wisely flees from that car. The men approach Arthur and mock him and his laughter before they start to beat him. Arthur fights back in self-defense, but they team up, and relentlessly beat him to the floor. Having had enough, Arthur then pulls out his gun and shoots two of them dead in self-defense before following the last guy out of the train and murdering him on the stairs.In shock over what he just did, Arthur retreats into a nearby public men's room. After a moment of frantic contemplation, he finds a force rising within him, and he begins to dance by himself. At this moment, he sees himself in the dirty mirror as a battered and smeared and yet powerful clown and begins to embrace it. He hides the gun and then returns to the apartment where he meets and kisses Sophie for the first time.The news of the three murders spreads, with some seeing it as an attack on the wealthy, while others support the act. Thomas Wayne speaks out and condemns it, labeling the lower class as \"clowns,\" which becomes a symbol they readily embrace. The next day, Arthur cleans out his locker at Ha Ha's but not before confronting Randall about betraying him and breaking the time punching machine. He then leaves, feeling high-spirited and free. News reports show clown rioters protesting through the city and wreaking trouble, condemning the higher privileged. Arthur sees that he has inadvertently caused this and begins to see his true potential, which makes him genuinely delighted.Arthur later finds one of Penny's letters to Thomas, which indicates that Arthur is Thomas' son. Arthur goes to Wayne Manor, where he meets young Bruce Wayne (Dante Pereira-Olson). After performing a magic trick for Bruce, he sticks his hands through the gate and forces Bruce to smile, realizing deep within that they may or may not be brothers. However, Alfred (Douglas Hodge) comes to intervene and tell Arthur to leave. Arthur mentions his mother and her involvement with Thomas. Alfred says he remembers Penny, but that she was lying to him. Arthur attacks and nearly strangles Alfred through the bars but then notices that Bruce is watching. Arthur then gets hold of himself and flees the Wayne premises.That evening, Arthur finds Thomas at a public art theater event. Arthur infiltrates the theater by impersonating an usher. He follows Thomas Wayne into a men's room and tries to confront him with the potential of him being his father. Arthur mentions Penny, whom Thomas also remembers. He says she was delusional and that there's no way Arthur could be his son. Thomas also explains that Penny never told Arthur that he was adopted, which Arthur strongly rejects before uncontrollably laughing in Thomas's face. Thomas, unaware of Arthur's condition, becomes defensive and punches Arthur in the face before having the man is thrown out of the building. Arthur returns home, where he tortures himself by slamming his head on the refrigerator in a fit of depression and longing.Two police detectives, Burke (Shea Wigham) and Garrity (Bill Camp) go to Arthur's apartment to question him on the subway murders due to the word that the suspect was wearing clown make-up, and they know Arthur lost his job earlier that day. Arthur denies any involvement and gets the detectives to leave. Not long after, Penny falls ill and is hospitalized. Sophie sits by Arthur as he tends to his mother. In the hospital, Arthur sees that Murray's show is playing a clip from his stand-up routine, but he is hurt to see that Murray only played it to mock Arthur.Arthur later receives a phone call from a rep for Murray's show. He is invited to appear as a guest, which Arthur reluctantly accepts. After studying other interviews on the comedy show, Arthur decides to commit suicide in front of the live audience, thinking it will make them laugh.Seeking hard proof, Arthur goes to Arkham Asylum and speaks to a clerk, Carl (Brian Tyree Henry), who has a file on Penny. When Carl says he can't give Arthur the info he wants, Arthur snatches the file and runs away to read it. Once away and hidden in a stairwell, Arthur opens the documents and reads them, finding that Thomas was telling the truth... according to the documents. The reality is that Penny adopted Arthur after he was found abandoned, and she abused him, tying him to a radiator and beating him alongside her abusive boyfriend. One part of the file mentions Arthur having a head injury, which is most likely what caused his laughing condition. Arthur returns to the hospital and tells Penny that he thought his life was a tragedy, but he sees it's a \"fucking comedy.\" With that, he smothers Penny to death.Arthur goes back home and breaks into Sophie's apartment. She sees him and is terrified, asking him to leave for the sake of her daughter. Arthur asks her if she has ever had \"a really bad day,\" to which she replies that she doesn't even know him. Through this, it is revealed that every other moment featuring Sophie was just in Arthur's head. A broken and frustrated Arthur apologizes for his intrusion and leaves Sophie alone, storming out of her apartment.Arthur starts to get ready for his appearance on Murray's show and paints his face white. He is visited in his apartment by Randall and another former co-worker, a dwarf named Gary (Leigh Gill). They offer condolences after they hear about Penny's death, but then Randall begins mentioning Burke and Garrity going to their apartments to question them about the subway murders. Arthur realizes that Randall is only seeking a way to use Arthur in order to cover his own butt and then snaps, brutally stabbing Randall twice in the face before smashing his head against the wall. A terrified Gary questions Arthur's deeds and begs to be let go. Arthur agrees to before playfully scaring him as a prank. Gary tries to undo the lock on Arthur's door but is unable to due to his height. He asks Arthur to open the door for him to which Arthur immediately agrees, pausing once to thank Gary for being the only person in his life who was nice to him. Arthur kisses Gary on the forehead and lets him go.Arthur then dyes his hair green, puts on full clown make-up, and dons a burgundy suit. He then dances down the stairways, fully embracing his insanity and carefree life. Burke and Garrity find Arthur dancing in the street and move in to arrest him. Arthur runs, and they chase him into the subway train where dozens of other Gotham citizens are dressed like clowns after being inspired by the murders. Arthur hides his face with a clown mask, which he steals from a protester and inadvertently starts a brawl in the train cars. As the detectives pursue Arthur, one clown gets in the way, and Burke accidentally shoots him dead when they struggle with his gun. The clowns pull the detectives out of the subway and start beating them relentlessly, allowing Arthur to get away, moving smoothly through the police forces which swarm the area.At the TV station, Arthur meets Murray and his agent Gene (Marc Maron). Before he goes on, Arthur asks Murray to introduce him as \"Joker,\" since Murray referred to him as such when playing his clip. Murray asks Arthur if his clown make-up has political agendas behind it to which Arthur replies, \"I don't believe in that. I don't believe in anything.\" While waiting to be introduced, Arthur sees Murray broadcasting a clip of a struggling Arthur trying to tell a joke. This causes Arthur's mind and plans to change, and then he dances out into the spotlight.Arthur goes out as the show begins. He awkwardly tells Murray a joke, which he finds funny for its dark humor though nobody else does. After being confronted with this, Arthur continues by admitting to the subway murders. Murray and the audience slowly realize that Arthur is serious. Arthur argues that the audience only cares for the victims because Thomas Wayne spoke for them, but anyone else like Arthur would be ignored and walked over. Murray and the audience grow angrier with Arthur, but so does he. Murray scolds Arthur, which escalates into Arthur snapping and telling another joke, grinning giddily. \"What do you get when you cross a mentally ill loner with a society that abandons him and treats him like trash?!\" he asks, only for Murray to try shutting him off before calling for the police. An enraged Arthur then screams, \"You get what you fucking' deserve!\" before blowing Murray's brains out in front of everyone. The audience runs away in terror, and the news of the murder immediately hits the airwaves. Arthur then laughs genuinely for the first time in his life.Gotham is now overrun by rioting citizens dressed as clowns after hearing about what Arthur did. The Waynes leave a movie theater to find the chaos in the streets. Thomas takes his wife Martha (Carrie Louise Putrello) and Bruce into an alley, but one clown follows them and tells Thomas he is getting what he deserves using the punchline that Arthur used on the Murray Franklin show. With that, he shoots Thomas and Martha dead in front of Bruce.Meanwhile, Arthur has been arrested and is being taken by the police. Arthur looks out the window and laughs gleefully as he sees the destruction and chaos he has caused. Just then, the clowns in an ambulance run into the car, killing the cops and freeing Arthur, who is injured and unconscious. When he awakes, Arthur finds himself surrounded by a mob of cheering mobsters in clown masks. The rioters then cheer Arthur on as he stands on a car and embraces their admiration, now that he has gotten the recognition he has long desired. He dances to their cheering and then pauses, finding that his nose is bleeding profusely. He then spreads the blood across his upper lip and grins before standing before them, elevated like a god.Sometime later, Arthur is locked up in Arkham. He laughs after telling this story and visualizes a young Bruce standing over his parents in the alley. Realizing that he has, in a way, turned Bruce into himself, Arthur laughs some more, finding this genuinely hilarious. He meets a new social worker (April Grace) and says he wants to tell her a joke, but she wouldn't get it. A few minutes later, Arthur then steps out of the room, leaving a trail of bloody footprints behind before he is chased around by orderlies.\n    ",
+                "quotes": [
+                    "\n\nArthur Fleck:\n[written in notebook]\nThe worst part of having a mental illness is people expect you to behave as if you don't.     ",
+                    "\n\nArthur Fleck:\nI used to think that my life was a tragedy, but now I realize, it's a fucking comedy.     ",
+                    "\n\nArthur Fleck:\nFor my whole life, I didn't know if I even really existed. But I do, and people are starting to notice.     ",
+                    "\n\nArthur Fleck:\nYou don't listen, do you? I don't think you ever really hear me. You just ask the same questions every week. \"How's your job?\" \"Are you having any negative thoughts?\" All I have are negative thoughts.     ",
+                    "\n\nArthur Fleck:\nMurray, one small thing? \nMurray Franklin:\nYeah? \nArthur Fleck:\nWhen you bring me out, can you introduce me as Joker?     "
+                ],
+                "reviews": [
+                    "I was a person that saw all the hype and claims of masterpiece as overreacting and overblown excitement for another Joker based film. I thought this looked solid at best and even a bit too pretentious in the trailer, but in here to say I was incredibly wrong. This is a massive achievement of cinema that's extremely rare in a day and age of cgi nonsense and reboots. While this is somewhat of a reboot of sorts, the standalone origin tale is impeccable from start to finish and echoes resemblance to the best joker origin comics from the past. Joaquin bleeds, sweats, and cries his every drop into this magnificently dedicated performance. Heath Ledger would be proud. This is undoubtedly the greatest acting performance since Heath's joker. The directing and writing is slickly brilliant and the bleak settings and tones are palpable throughout. When this film was over the place was blown away and every audience member was awestruck that they witnessed a film that could still transport them into a character's world and very existence. Believe the hype. This is going to be revered as a transcending masterpiece of cinema.",
+                    "Every once in a while a movie comes, that truly makes an impact. Joaquin's performance and scenography in all it's brilliance. Grotesque, haunting and cringy. Hard to watch at times,... but so mesmerizing, you won't blink an eye watching it. Tragic, but with seriously funny moments. Emotional rollercoaster - sometimes, with multiple emotions popping-up at the same time.this is far from a typical action-riddled predictable super-hero movie - it's a proper psychological thriller/drama, with the single best character development I have ever seen.",
+                    "This is a movie that only those who have felt alone and isolated can truly relate to it. You understand the motive and you feel sorry for the character. A lot of people will see this movie and think that it encourages violence. But truly, this movie should encourage each and every one of us to become a better person, treat everyone with respect and make each other feel like they belong in this world, instead of making them feel isolated.",
+                    "Truly a masterpiece, The Best Hollywood film of 2019, one of the Best films of the decade... And truly the Best film to bring a comic book so chillingly and realistically to real ife.\nRemarkable Direction, Cinematography, Music and the Acting.\nSome people are surprised to find it DISTURBING and VIOLENT, but it's a necessity and message.\nIt's about society and reflects those underappreciated/unrecognized/bullied people, proving they can do something too.\nThe way it shows class difference, corruption and how rich and talented rule others around them is not exaggerated and that's what makes it different.\nIt's BELIEVABLE.\nThere could be multiple JOKERs living in our society that could shake those around them in much bitter way than the film shows making people uncomforting people.\nConsider this a wake up call, a message, but first a film. A PERFECT film.",
+                    "Joaquin Phoenix gives a tour de force performance, fearless and stunning in its emotional depth and physicality. It's impossible to talk about this without referencing Heath Ledger's Oscar-winning performance from The Dark Knight, widely considered the definitive live-action portrayal of the Joker, so let's talk about it. The fact is, everyone is going to be stunned by what Phoenix accomplishes, because it's what many thought impossible - a portrayal that matches and potentially exceeds that of The Dark Knight's Clown Prince of Crime"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "imdbid": {
+                        "type": "string"
+                    },
+                    "numVotes": {
+                        "type": "integer"
+                    },
+                    "people": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "type": "array"
+                    },
+                    "plotSummary": {
+                        "type": "string"
+                    },
+                    "quotes": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "reviews": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "trailerUrl": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        {
+            "name": "OTT Providers",
+            "url": "https://ott-details.p.rapidapi.com/getPlatforms",
+            "description": "Get  information on OTT platforms we suuport .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "currently only USA and India region is supported enter param 'US' for USA and 'IN' for India.",
+                    "default": "IN"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getPlatforms\"\nquerystring = {\"region\": \"IN\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getPlatforms\"\nquerystring = {\"region\": \"IN\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You have exceeded the rate limit per second for your plan, BASIC, by the API provider"
+            },
+            "statuscode": 200,
+            "schema": {
+                "items": {
+                    "properties": {
+                        "label": {
+                            "type": "string"
+                        },
+                        "short": {
+                            "type": "string"
+                        },
+                        "value": {
+                            "type": "string"
+                        }
+                    },
+                    "type": "object"
+                },
+                "type": "array"
+            }
+        },
+        {
+            "name": "New Arrivals",
+            "url": "https://ott-details.p.rapidapi.com/getnew",
+            "description": "Get the latest arrivals from different platforms .",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "region",
+                    "type": "STRING",
+                    "description": "Use 'IN' for India and 'US' for USA , * currently we support only US and Indian region.",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getnew\"\nquerystring = {\"page\": \"1\", \"region\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ott-details.p.rapidapi.com/getnew\"\nquerystring = {\"page\": \"1\", \"region\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ott-details.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "page": 1,
+                "results": []
+            },
+            "statuscode": 200,
+            "schema": {
+                "properties": {
+                    "page": {
+                        "type": "integer"
+                    },
+                    "results": {
+                        "items": {
+                            "type": "object"
+                        },
+                        "type": "array"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    ],
+    "standardized_name": "ott_details"
+}

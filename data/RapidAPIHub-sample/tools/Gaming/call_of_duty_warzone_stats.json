@@ -1,0 +1,33 @@
+{
+    "product_id": "api_a4ede1fb-8b98-422a-b0b0-4c517e709a5f",
+    "tool_description": "Get Warzone gaming data",
+    "home_url": "https://rapidapi.com/Rollosis/api/call-of-duty-warzone-stats/",
+    "name": "Call of Duty: Warzone Stats",
+    "title": "Call of Duty: Warzone Stats",
+    "pricing": "FREE",
+    "tool_name": "Call of Duty: Warzone Stats",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 323,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "call-of-duty-warzone-stats.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "warzone/Rollosis/psn",
+            "url": "https://call-of-duty-warzone-stats.p.rapidapi.com/warzone/Rollosis/psn",
+            "description": "Warzone stats for Rollosis",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://call-of-duty-warzone-stats.p.rapidapi.com/warzone/Rollosis/psn\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"call-of-duty-warzone-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://call-of-duty-warzone-stats.p.rapidapi.com/warzone/Rollosis/psn\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"call-of-duty-warzone-stats.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "Invalid API key. Go to https://docs.rapidapi.com/docs/keys for more info."
+            }
+        }
+    ],
+    "standardized_name": "call_of_duty_warzone_stats"
+}

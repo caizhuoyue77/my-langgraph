@@ -1,0 +1,350 @@
+{
+    "product_id": "api_c8f4850e-7582-4390-9d3e-5f9c016fa321",
+    "tool_description": "Elevate your travel game with Flight Fare Search API! Get real-time flight data, fares, and airport info for seamless travel planning. Transform your app into a powerful travel companion with Flight Fare Search.",
+    "home_url": "https://rapidapi.com/farish978/api/flight-fare-search/",
+    "name": "Flight Fare Search",
+    "title": "Flight Fare Search",
+    "pricing": "FREEMIUM",
+    "tool_name": "Flight Fare Search",
+    "score": {
+        "avgServiceLevel": 70,
+        "avgLatency": 4089,
+        "avgSuccessRate": 70,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "flight-fare-search.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Airport Arrivals",
+            "url": "https://flight-fare-search.p.rapidapi.com/v2/airport/arrivals",
+            "description": "An Endpoint to fetch Arrivals on a given date",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "airportCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "LHR"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "carrierCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/arrivals\"\nquerystring = {\"carrierCode\": \"\", \"date\": \"\", \"airportCode\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/arrivals\"\nquerystring = {\"carrierCode\": \"\", \"date\": \"\", \"airportCode\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            }
+        },
+        {
+            "name": "Flight Search V2",
+            "url": "https://flight-fare-search.p.rapidapi.com/v2/flight/",
+            "description": "A faster, more agile Endpoint that's used to search flights.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "from",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "LHR"
+                },
+                {
+                    "name": "adult",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "to",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "DXB"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currency",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "USD"
+                },
+                {
+                    "name": "type",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "economy"
+                },
+                {
+                    "name": "child",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "infant",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/flight/\"\nquerystring = {\"date\": \"\", \"from\": \"LHR\", \"adult\": \"1\", \"currency\": \"USD\", \"type\": \"economy\", \"child\": \"\", \"infant\": \"\", \"to\": \"DXB\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/flight/\"\nquerystring = {\"date\": \"\", \"from\": \"LHR\", \"adult\": \"1\", \"currency\": \"USD\", \"type\": \"economy\", \"child\": \"\", \"infant\": \"\", \"to\": \"DXB\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "status": {
+                        "type": "integer"
+                    },
+                    "searchData": {
+                        "type": "object",
+                        "properties": {
+                            "from": {
+                                "type": "string"
+                            },
+                            "to": {
+                                "type": "string"
+                            },
+                            "date": {
+                                "type": "string"
+                            },
+                            "type": {
+                                "type": "string"
+                            },
+                            "adult": {
+                                "type": "integer"
+                            },
+                            "child": {
+                                "type": "integer"
+                            },
+                            "infant": {
+                                "type": "integer"
+                            },
+                            "currency": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "results": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "careerCode": {
+                                    "type": "string"
+                                },
+                                "flight_code": {
+                                    "type": "string"
+                                },
+                                "flight_name": {
+                                    "type": "string"
+                                },
+                                "stops": {
+                                    "type": "string"
+                                },
+                                "cabinType": {
+                                    "type": "string"
+                                },
+                                "baggage": {
+                                    "type": "object"
+                                },
+                                "currency": {
+                                    "type": "string"
+                                },
+                                "departureAirport": {
+                                    "type": "object",
+                                    "properties": {
+                                        "time": {
+                                            "type": "string"
+                                        },
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "tz": {
+                                            "type": "string"
+                                        },
+                                        "timeZone": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "label": {
+                                            "type": "string"
+                                        },
+                                        "country": {
+                                            "type": "object",
+                                            "properties": {
+                                                "label": {
+                                                    "type": "string"
+                                                },
+                                                "code": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "city": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "arrivalAirport": {
+                                    "type": "object",
+                                    "properties": {
+                                        "time": {
+                                            "type": "string"
+                                        },
+                                        "code": {
+                                            "type": "string"
+                                        },
+                                        "tz": {
+                                            "type": "string"
+                                        },
+                                        "timeZone": {
+                                            "type": "string"
+                                        },
+                                        "type": {
+                                            "type": "string"
+                                        },
+                                        "label": {
+                                            "type": "string"
+                                        },
+                                        "country": {
+                                            "type": "object",
+                                            "properties": {
+                                                "label": {
+                                                    "type": "string"
+                                                },
+                                                "code": {
+                                                    "type": "string"
+                                                }
+                                            }
+                                        },
+                                        "city": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "path": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string"
+                                    }
+                                },
+                                "duration": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "integer"
+                                        }
+                                    }
+                                },
+                                "stopSummary": {
+                                    "type": "object"
+                                },
+                                "totals": {
+                                    "type": "object",
+                                    "properties": {
+                                        "currency": {
+                                            "type": "string"
+                                        },
+                                        "baggage": {
+                                            "type": "null"
+                                        },
+                                        "penalty": {
+                                            "type": "null"
+                                        },
+                                        "total": {
+                                            "type": "number"
+                                        },
+                                        "tax": {
+                                            "type": "number"
+                                        },
+                                        "base": {
+                                            "type": "number"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Airport Departues",
+            "url": "https://flight-fare-search.p.rapidapi.com/v2/airport/departures",
+            "description": "An endpoint to get Departues in an airport",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "airportCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "LHR"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "carrierCode",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/departures\"\nquerystring = {\"carrierCode\": \"\", \"date\": \"\", \"airportCode\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/departures\"\nquerystring = {\"carrierCode\": \"\", \"date\": \"\", \"airportCode\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Airport Search",
+            "url": "https://flight-fare-search.p.rapidapi.com/v2/airport/search",
+            "description": "An endpoint to search airports",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "query",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "LHR"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/search\"\nquerystring = {\"query\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flight-fare-search.p.rapidapi.com/v2/airport/search\"\nquerystring = {\"query\": \"LHR\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flight-fare-search.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "flight_fare_search"
+}

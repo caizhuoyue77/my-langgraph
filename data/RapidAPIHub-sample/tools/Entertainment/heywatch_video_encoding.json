@@ -1,0 +1,303 @@
+{
+    "product_id": "53aa3858e4b051a76d23fc6d",
+    "tool_description": "Encode videos in the cloud with the HeyWatch Video Encoding API",
+    "home_url": "https://rapidapi.com/heywatch/api/heywatch-video-encoding/",
+    "name": "HeyWatch Video Encoding",
+    "title": "HeyWatch Video Encoding",
+    "pricing": "FREE",
+    "tool_name": "HeyWatch Video Encoding",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 643,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "heywatch.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "GetDownload",
+            "url": "https://heywatch.p.rapidapi.com/download/11919867",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "11919867"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/download/11919867\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/download/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GenerateEncodedVideoThumbnailSync",
+            "url": "https://heywatch.p.rapidapi.com/encoded_video/23067225.jpg",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067225"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "start",
+                    "type": "STRING",
+                    "description": "Offset in second",
+                    "default": "2"
+                },
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "Image Width",
+                    "default": "320"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "Image Height",
+                    "default": "180"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/23067225.jpg\"\nquerystring = {\"start\": \"2\", \"width\": \"320\", \"height\": \"180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/{id}.jpg\"\nquerystring = {\"start\": \"2\", \"width\": \"320\", \"height\": \"180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "DownloadVideo",
+            "url": "https://heywatch.p.rapidapi.com/video/23067224.bin",
+            "description": "Download the source video",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067224"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/23067224.bin\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/{id}.bin\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetAccount",
+            "url": "https://heywatch.p.rapidapi.com/account",
+            "description": "Get account information",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/account\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/account\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetAllVideos",
+            "url": "https://heywatch.p.rapidapi.com/video",
+            "description": "List of all videos",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetFormat",
+            "url": "https://heywatch.p.rapidapi.com/format/9222",
+            "description": "Get a specific format",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "9222"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/format/9222\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/format/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetVideo",
+            "url": "https://heywatch.p.rapidapi.com/video/23067224",
+            "description": "Get Information about a specific video",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067224"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/23067224\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "DownloadEncodedVideo",
+            "url": "https://heywatch.p.rapidapi.com/encoded_video/23067225.bin",
+            "description": "Download the encoded video file",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067225"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/23067225.bin\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/{id}.bin\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetHLSJob",
+            "url": "https://heywatch.p.rapidapi.com/hls/job/304",
+            "description": "Get information of the specified HLS Job",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "304"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/hls/job/304\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/hls/job/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetEncodedVideo",
+            "url": "https://heywatch.p.rapidapi.com/encoded_video/23067225",
+            "description": "Get specific info about an encoded video",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067225"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/23067225\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video/{id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GenerateVideoThumbnailSync",
+            "url": "https://heywatch.p.rapidapi.com/video/23067224.jpg",
+            "description": "Generate the thumbnail of the video (Sync)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "23067224"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "start",
+                    "type": "NUMBER",
+                    "description": "Offset in Second",
+                    "default": "2"
+                },
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "Image Width",
+                    "default": "320"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "Image Height",
+                    "default": "180"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/23067224.jpg\"\nquerystring = {\"start\": \"2\", \"width\": \"320\", \"height\": \"180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/video/{id}.jpg\"\nquerystring = {\"start\": \"2\", \"width\": \"320\", \"height\": \"180\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetAllEncodedVideos",
+            "url": "https://heywatch.p.rapidapi.com/encoded_video",
+            "description": "Get all encoded videos of your account",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/encoded_video\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetAllFormats",
+            "url": "https://heywatch.p.rapidapi.com/format",
+            "description": "Retrieve all the formats",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/format\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/format\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "GetAllJobs",
+            "url": "https://heywatch.p.rapidapi.com/job",
+            "description": "",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/job\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://heywatch.p.rapidapi.com/job\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"heywatch.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "heywatch_video_encoding"
+}

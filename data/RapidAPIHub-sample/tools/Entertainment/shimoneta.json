@@ -1,0 +1,40 @@
+{
+    "product_id": "api_116d8889-646d-4694-ba12-68b96bdb7fe8",
+    "tool_description": "This api can check if the input word is risky or not on global. It supports Japanese and English.",
+    "home_url": "https://rapidapi.com/SAZABEEAPIS/api/shimoneta3/",
+    "name": "SHIMONETA",
+    "title": "SHIMONETA",
+    "pricing": "FREEMIUM",
+    "tool_name": "SHIMONETA",
+    "score": {
+        "avgServiceLevel": 50,
+        "avgLatency": 1044,
+        "avgSuccessRate": 50,
+        "popularityScore": 6.5,
+        "__typename": "Score"
+    },
+    "host": "shimoneta3.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Send a word to check",
+            "url": "https://shimoneta3.p.rapidapi.com/",
+            "description": "The API returns what the word means if the word is vulgar.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "word",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "chimpo"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shimoneta3.p.rapidapi.com/\"\nquerystring = {\"word\": \"chimpo\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shimoneta3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shimoneta3.p.rapidapi.com/\"\nquerystring = {\"word\": \"chimpo\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shimoneta3.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "shimoneta"
+}

@@ -1,0 +1,38 @@
+{
+    "product_id": "api_b4e43451-0ae8-42ac-9723-6ad077d43795",
+    "tool_description": "free apis for everyone!",
+    "home_url": "https://rapidapi.com/krishnakast124/api/kast1/",
+    "name": "kast",
+    "title": "kast",
+    "pricing": "FREEMIUM",
+    "tool_name": "kast",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1039,
+        "avgSuccessRate": 100,
+        "popularityScore": 5.6,
+        "__typename": "Score"
+    },
+    "host": "kast1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/info/news",
+            "url": "https://kast1.p.rapidapi.com/info/news",
+            "description": "official api",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "global"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://kast1.p.rapidapi.com/info/news\"\nquerystring = {\"q\": \"global\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kast1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://kast1.p.rapidapi.com/info/news\"\nquerystring = {\"q\": \"global\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"kast1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "kast"
+}

@@ -1,0 +1,1126 @@
+{
+    "product_id": "5c0d5804e4b0b136b47424b8",
+    "tool_description": "This API helps to query rooms, price, facilities, policities, etc information from many hotels around the world to create a travel site such as : booking.com",
+    "home_url": "https://rapidapi.com/apidojo/api/booking/",
+    "name": "Booking",
+    "title": "Booking",
+    "pricing": "FREEMIUM",
+    "tool_name": "Booking",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 3215,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "apidojo-booking-v1.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "reviews/get-scores",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/reviews/get-scores",
+            "description": "Get reviewing scores",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "264831"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/reviews/get-scores\"\nquerystring = {\"hotel_ids\": \"264831\", \"languagecode\": \"en-us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/reviews/get-scores\"\nquerystring = {\"hotel_ids\": \"264831\", \"languagecode\": \"en-us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            }
+        },
+        {
+            "name": "review-filters/list",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/review-filters/list",
+            "description": "List supported options metadata for filtering reviews",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_id",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1790664"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "filter_language",
+                    "type": "STRING",
+                    "description": "One of the followings (separated by comma for multiple values): en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en,nl"
+                },
+                {
+                    "name": "filter_customer_type",
+                    "type": "STRING",
+                    "description": "One of the followings (separated by comma for multiple values) : couple|family_with_children|review_category_group_of_friends|solo_traveller",
+                    "default": "couple,family_with_children"
+                },
+                {
+                    "name": "user_sort",
+                    "type": "STRING",
+                    "description": "One of the followings : sort_most_relevant|sort_recent_desc|sort_recent_asc|sort_score_desc|sort_score_asc",
+                    "default": "sort_most_relevant"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/review-filters/list\"\nquerystring = {\"languagecode\": \"en-us\", \"filter_language\": \"en,nl\", \"filter_customer_type\": \"couple,family_with_children\", \"user_sort\": \"sort_most_relevant\", \"hotel_id\": \"1790664\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/review-filters/list\"\nquerystring = {\"languagecode\": \"en-us\", \"filter_language\": \"en,nl\", \"filter_customer_type\": \"couple,family_with_children\", \"user_sort\": \"sort_most_relevant\", \"hotel_id\": \"1790664\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "filters/list",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/filters/list",
+            "description": "A list of filter options to pass in categories_filter field. Pass params and values are as same as .../properties/list API",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "room_qty",
+                    "type": "NUMBER",
+                    "description": "The number of rooms",
+                    "default": "2"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date ",
+                    "default": "2019-03-15"
+                },
+                {
+                    "name": "dest_ids",
+                    "type": "NUMBER",
+                    "description": "Value of dest_id or city_ufi field from locations/auto-complete API (Don't pass this if you use latlong as search_type)",
+                    "default": "-3712125"
+                },
+                {
+                    "name": "guest_qty",
+                    "type": "STRING",
+                    "description": "The number of adults",
+                    "default": "1"
+                },
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2019-03-13"
+                },
+                {
+                    "name": "search_type",
+                    "type": "STRING",
+                    "description": "Value of dest_type returned by locations/auto-complete API",
+                    "default": "city"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "categories_filter",
+                    "type": "STRING",
+                    "description": "The id returned by .../filters/list API",
+                    "default": "price::9-40,free_cancellation::1,class::1,class::0,class::2"
+                },
+                {
+                    "name": "children_qty",
+                    "type": "STRING",
+                    "description": "The number of children",
+                    "default": "2"
+                },
+                {
+                    "name": "children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma",
+                    "default": "5,7"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "106.686102 - Don't pass this param if you DON'T use latlong as search_type",
+                    "default": ""
+                },
+                {
+                    "name": "price_filter_currencycode",
+                    "type": "STRING",
+                    "description": "The base currency to calculate exchange rate",
+                    "default": "USD"
+                },
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "10.838039 - Don't pass this param if you DON'T use latlong as search_type",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/filters/list\"\nquerystring = {\"languagecode\": \"en-us\", \"categories_filter\": \"price::9-40,free_cancellation::1,class::1,class::0,class::2\", \"room_qty\": \"2\", \"children_qty\": \"2\", \"children_age\": \"5,7\", \"departure_date\": \"2019-03-15\", \"dest_ids\": \"-3712125\", \"longitude\": \"\", \"price_filter_currencycode\": \"USD\", \"guest_qty\": \"1\", \"latitude\": \"\", \"arrival_date\": \"2019-03-13\", \"search_type\": \"city\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/filters/list\"\nquerystring = {\"languagecode\": \"en-us\", \"categories_filter\": \"price::9-40,free_cancellation::1,class::1,class::0,class::2\", \"room_qty\": \"2\", \"children_qty\": \"2\", \"children_age\": \"5,7\", \"departure_date\": \"2019-03-15\", \"dest_ids\": \"-3712125\", \"longitude\": \"\", \"price_filter_currencycode\": \"USD\", \"guest_qty\": \"1\", \"latitude\": \"\", \"arrival_date\": \"2019-03-13\", \"search_type\": \"city\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "reviews/list",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/reviews/list",
+            "description": "List reviews of stayed guests",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "2536126"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "user_sort",
+                    "type": "STRING",
+                    "description": "One of the followings : sort_most_relevant|sort_recent_desc|sort_recent_asc|sort_score_desc|sort_score_asc",
+                    "default": "sort_most_relevant"
+                },
+                {
+                    "name": "rows",
+                    "type": "NUMBER",
+                    "description": "The number of items per page",
+                    "default": "25"
+                },
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "The number of items to ignore as offset for paging ",
+                    "default": "0"
+                },
+                {
+                    "name": "filter_language",
+                    "type": "STRING",
+                    "description": "One of the followings (separated by comma for multiple values): en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en,nl"
+                },
+                {
+                    "name": "filter_customer_type",
+                    "type": "STRING",
+                    "description": "One of the followings (separated by comma for multiple values) : couple|family_with_children|review_category_group_of_friends|solo_traveller",
+                    "default": "couple,family_with_children"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/reviews/list\"\nquerystring = {\"languagecode\": \"en-us\", \"user_sort\": \"sort_most_relevant\", \"rows\": \"25\", \"offset\": \"0\", \"filter_language\": \"en,nl\", \"hotel_ids\": \"2536126\", \"filter_customer_type\": \"couple,family_with_children\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/reviews/list\"\nquerystring = {\"languagecode\": \"en-us\", \"user_sort\": \"sort_most_relevant\", \"rows\": \"25\", \"offset\": \"0\", \"filter_language\": \"en,nl\", \"hotel_ids\": \"2536126\", \"filter_customer_type\": \"couple,family_with_children\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "properties/get-hotel-photos",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-hotel-photos",
+            "description": "Get photos of hotel",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "Get value from properties/list",
+                    "default": "1950932"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-hotel-photos\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1950932\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-hotel-photos\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1950932\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/detail",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/detail",
+            "description": "Get brief information of a property",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rec_room_qty",
+                    "type": "NUMBER",
+                    "description": "The number of rooms",
+                    "default": "1"
+                },
+                {
+                    "name": "search_id",
+                    "type": "STRING",
+                    "description": "The value returned in properties/list API having response contains the selected hotel",
+                    "default": ""
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date ",
+                    "default": "2022-09-13"
+                },
+                {
+                    "name": "hotel_id",
+                    "type": "STRING",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1720410"
+                },
+                {
+                    "name": "rec_guest_qty",
+                    "type": "NUMBER",
+                    "description": "The number of adults separated by comma, and how you arrange them in rooms",
+                    "default": "2"
+                },
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2022-09-15"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "block_ids",
+                    "type": "STRING",
+                    "description": "The value of 'block_ids' field returned in .../properties/list endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "dest_ids",
+                    "type": "NUMBER",
+                    "description": "The value of 'dest_id' field returned in .../locations/auto-complete endpoint",
+                    "default": "-3727579"
+                },
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "One of the following : metric|imperial",
+                    "default": "imperial"
+                },
+                {
+                    "name": "currency_code",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "rec_children_qty",
+                    "type": "NUMBER",
+                    "description": "The number of children separated by comma, and how you arrange them in rooms",
+                    "default": ""
+                },
+                {
+                    "name": "recommend_for",
+                    "type": "NUMBER",
+                    "description": "The recommended number of persons per room",
+                    "default": "3"
+                },
+                {
+                    "name": "rec_children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma. Ex : 5,7",
+                    "default": ""
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/detail\"\nquerystring = {\"block_ids\": \"\", \"dest_ids\": \"-3727579\", \"rec_room_qty\": \"1\", \"units\": \"imperial\", \"currency_code\": \"USD\", \"rec_children_qty\": \"\", \"recommend_for\": \"3\", \"rec_children_age\": \"\", \"languagecode\": \"en-us\", \"search_id\": \"\", \"departure_date\": \"2022-09-13\", \"hotel_id\": \"1720410\", \"rec_guest_qty\": \"2\", \"arrival_date\": \"2022-09-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/detail\"\nquerystring = {\"block_ids\": \"\", \"dest_ids\": \"-3727579\", \"rec_room_qty\": \"1\", \"units\": \"imperial\", \"currency_code\": \"USD\", \"rec_children_qty\": \"\", \"recommend_for\": \"3\", \"rec_children_age\": \"\", \"languagecode\": \"en-us\", \"search_id\": \"\", \"departure_date\": \"2022-09-13\", \"hotel_id\": \"1720410\", \"rec_guest_qty\": \"2\", \"arrival_date\": \"2022-09-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/v2/get-rooms",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/v2/get-rooms",
+            "description": "Get full details of rooms in the hotel",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "rec_room_qty",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2022-10-5"
+                },
+                {
+                    "name": "rec_guest_qty",
+                    "type": "STRING",
+                    "description": "The number of adults separated by comma, and how you arrange them in rooms",
+                    "default": "2"
+                },
+                {
+                    "name": "hotel_id",
+                    "type": "STRING",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1720410"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date ",
+                    "default": "2022-10-10"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "One of the following : metric|imperial",
+                    "default": "imperial"
+                },
+                {
+                    "name": "currency_code",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "block_ids",
+                    "type": "STRING",
+                    "description": "The value of 'block_ids' field returned in .../properties/list endpoint",
+                    "default": ""
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "rec_children_qty",
+                    "type": "STRING",
+                    "description": "The number of children separated by comma, and how you arrange them in rooms",
+                    "default": ""
+                },
+                {
+                    "name": "rec_children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma. Ex : 5,12",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/v2/get-rooms\"\nquerystring = {\"units\": \"imperial\", \"rec_room_qty\": \"1\", \"currency_code\": \"USD\", \"block_ids\": \"\", \"languagecode\": \"en-us\", \"rec_children_qty\": \"\", \"arrival_date\": \"2022-10-5\", \"rec_guest_qty\": \"2\", \"rec_children_age\": \"\", \"hotel_id\": \"1720410\", \"departure_date\": \"2022-10-10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/v2/get-rooms\"\nquerystring = {\"units\": \"imperial\", \"rec_room_qty\": \"1\", \"currency_code\": \"USD\", \"block_ids\": \"\", \"languagecode\": \"en-us\", \"rec_children_qty\": \"\", \"arrival_date\": \"2022-10-5\", \"rec_guest_qty\": \"2\", \"rec_children_age\": \"\", \"hotel_id\": \"1720410\", \"departure_date\": \"2022-10-10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/get-policies",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-policies",
+            "description": "Get policies of property by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1528418"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "currency_code",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date at hotel",
+                    "default": "2019-03-15"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-policies\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1528418\", \"currency_code\": \"USD\", \"departure_date\": \"2019-03-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-policies\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1528418\", \"currency_code\": \"USD\", \"departure_date\": \"2019-03-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/get-featured-reviews",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-featured-reviews",
+            "description": "Get featured reviews of stayed guests",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_id",
+                    "type": "STRING",
+                    "description": "The value of hotel_id from properties/list API",
+                    "default": "1528418"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-featured-reviews\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_id\": \"1528418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-featured-reviews\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_id\": \"1528418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "properties/get-description",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-description",
+            "description": "Get description of property by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id from properties/list API",
+                    "default": "1528418"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "check_out",
+                    "type": "STRING",
+                    "description": "The check-out date",
+                    "default": "2019-03-15"
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "check_in",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2019-03-13"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-description\"\nquerystring = {\"hotel_ids\": \"1528418\", \"check_out\": \"2019-03-15\", \"languagecode\": \"en-us\", \"check_in\": \"2019-03-13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-description\"\nquerystring = {\"hotel_ids\": \"1528418\", \"check_out\": \"2019-03-15\", \"languagecode\": \"en-us\", \"check_in\": \"2019-03-13\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/list-by-map",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/list-by-map",
+            "description": "List properties by coordinate of bounding box",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel, the format is yyyy-MM-dd. Ex : 2022-08-14",
+                    "default": ""
+                },
+                {
+                    "name": "room_qty",
+                    "type": "STRING",
+                    "description": "The number of rooms",
+                    "default": "1"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date, the format is yyyy-MM-dd. Ex : 2022-08-15",
+                    "default": ""
+                },
+                {
+                    "name": "guest_qty",
+                    "type": "STRING",
+                    "description": "The number of adults",
+                    "default": "1"
+                },
+                {
+                    "name": "bbox",
+                    "type": "STRING",
+                    "description": "Coordinate of bounding box - latitude (bottom left),latitude (top right),longitude (bottom left),longitude (top right)",
+                    "default": "14.291283,14.948423,120.755688,121.136864"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "travel_purpose",
+                    "type": "STRING",
+                    "description": "One of the followings : leisure|business",
+                    "default": "leisure"
+                },
+                {
+                    "name": "categories_filter",
+                    "type": "STRING",
+                    "description": "The id returned by .../filters/list API, values separated by comma",
+                    "default": "class::1,class::2,class::3"
+                },
+                {
+                    "name": "children_qty",
+                    "type": "NUMBER",
+                    "description": "The number of children",
+                    "default": "2"
+                },
+                {
+                    "name": "search_id",
+                    "type": "STRING",
+                    "description": "Pass \\\\\\\"none\\\\\\\" or value returned right in this API",
+                    "default": "none"
+                },
+                {
+                    "name": "children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma",
+                    "default": "11,5"
+                },
+                {
+                    "name": "price_filter_currencycode",
+                    "type": "STRING",
+                    "description": "The base currency to calculate exchange rate",
+                    "default": "USD"
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "One of the followings : popularity|distance|class&#95;descending|class&#95;ascending|deals|review&#95;score|price",
+                    "default": "popularity"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/list-by-map\"\nquerystring = {\"travel_purpose\": \"leisure\", \"categories_filter\": \"class::1,class::2,class::3\", \"children_qty\": \"2\", \"search_id\": \"none\", \"children_age\": \"11,5\", \"price_filter_currencycode\": \"USD\", \"languagecode\": \"en-us\", \"arrival_date\": \"\", \"room_qty\": \"1\", \"departure_date\": \"\", \"order_by\": \"popularity\", \"guest_qty\": \"1\", \"bbox\": \"14.291283,14.948423,120.755688,121.136864\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/list-by-map\"\nquerystring = {\"travel_purpose\": \"leisure\", \"categories_filter\": \"class::1,class::2,class::3\", \"children_qty\": \"2\", \"search_id\": \"none\", \"children_age\": \"11,5\", \"price_filter_currencycode\": \"USD\", \"languagecode\": \"en-us\", \"arrival_date\": \"\", \"room_qty\": \"1\", \"departure_date\": \"\", \"order_by\": \"popularity\", \"guest_qty\": \"1\", \"bbox\": \"14.291283,14.948423,120.755688,121.136864\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "copyright": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "unfiltered_primary_count": {
+                        "type": "integer"
+                    },
+                    "search_radius": {
+                        "type": "integer"
+                    },
+                    "search_id": {
+                        "type": "string"
+                    },
+                    "page_loading_threshold": {
+                        "type": "integer"
+                    },
+                    "ranking_version": {
+                        "type": "integer"
+                    },
+                    "result": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "is_beach_ufi": {
+                        "type": "integer"
+                    },
+                    "unfiltered_count": {
+                        "type": "integer"
+                    },
+                    "primary_count": {
+                        "type": "integer"
+                    },
+                    "sort": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    },
+                    "sorting": {
+                        "type": "object",
+                        "properties": {
+                            "selected_identifier": {
+                                "type": "string"
+                            },
+                            "options": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "extended_count": {
+                        "type": "integer"
+                    },
+                    "room_distribution": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "children": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "integer"
+                                    }
+                                },
+                                "adults": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "count": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        {
+            "name": "properties/list",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/list",
+            "description": "List properties having type of resorts, hotels, motels, hostels, etc as on official site",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "offset",
+                    "type": "NUMBER",
+                    "description": "The number of items to ignore as offset for paging (fixed 30 items returned per page). You are interested in the optional parameter 'search_id'",
+                    "default": "0"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date, the format is yyyy-MM-dd. Ex : 2022-08-15",
+                    "default": ""
+                },
+                {
+                    "name": "room_qty",
+                    "type": "NUMBER",
+                    "description": "The number of rooms",
+                    "default": "1"
+                },
+                {
+                    "name": "guest_qty",
+                    "type": "NUMBER",
+                    "description": "The number of adults",
+                    "default": "1"
+                },
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel, the format is yyyy-MM-dd. Ex : 2022-08-14",
+                    "default": ""
+                },
+                {
+                    "name": "search_type",
+                    "type": "STRING",
+                    "description": "Value of dest_type returned by locations/auto-complete API",
+                    "default": "city"
+                },
+                {
+                    "name": "dest_ids",
+                    "type": "NUMBER",
+                    "description": "Value of dest&#95;id or city&#95;ufi field from locations/auto-complete API (Don't pass this if you use latlong as search&#95;type)",
+                    "default": "-3712125"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "price_filter_currencycode",
+                    "type": "STRING",
+                    "description": "The base currency to calculate exchange rate",
+                    "default": "USD"
+                },
+                {
+                    "name": "travel_purpose",
+                    "type": "STRING",
+                    "description": "One of the followings : leisure|business",
+                    "default": "leisure"
+                },
+                {
+                    "name": "latitude",
+                    "type": "STRING",
+                    "description": "10.838039 - Don't pass this param if you DON'T use latlong as search_type",
+                    "default": ""
+                },
+                {
+                    "name": "longitude",
+                    "type": "STRING",
+                    "description": "106.686102 - Don't pass this param if you DON'T use latlong as search_type",
+                    "default": ""
+                },
+                {
+                    "name": "categories_filter",
+                    "type": "STRING",
+                    "description": "The id returned by .../filters/list API, separated by comma for multiple options. Ex : price::9-40,free_cancellation::1,class::1,class::0,class::2",
+                    "default": ""
+                },
+                {
+                    "name": "order_by",
+                    "type": "STRING",
+                    "description": "One of the followings : popularity|distance|class&#95;descending|class&#95;ascending|deals|review&#95;score|price",
+                    "default": "popularity"
+                },
+                {
+                    "name": "children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma",
+                    "default": "5,7"
+                },
+                {
+                    "name": "children_qty",
+                    "type": "NUMBER",
+                    "description": "The number of children",
+                    "default": "2"
+                },
+                {
+                    "name": "search_id",
+                    "type": "STRING",
+                    "description": "Pass 'none' or value returned right in this API. You need to pass this parameter to get 'offset' working",
+                    "default": "none"
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/list\"\nquerystring = {\"price_filter_currencycode\": \"USD\", \"travel_purpose\": \"leisure\", \"latitude\": \"\", \"longitude\": \"\", \"categories_filter\": \"\", \"order_by\": \"popularity\", \"offset\": \"0\", \"departure_date\": \"\", \"children_age\": \"5,7\", \"room_qty\": \"1\", \"guest_qty\": \"1\", \"arrival_date\": \"\", \"children_qty\": \"2\", \"search_id\": \"none\", \"languagecode\": \"en-us\", \"search_type\": \"city\", \"dest_ids\": \"-3712125\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/list\"\nquerystring = {\"price_filter_currencycode\": \"USD\", \"travel_purpose\": \"leisure\", \"latitude\": \"\", \"longitude\": \"\", \"categories_filter\": \"\", \"order_by\": \"popularity\", \"offset\": \"0\", \"departure_date\": \"\", \"children_age\": \"5,7\", \"room_qty\": \"1\", \"guest_qty\": \"1\", \"arrival_date\": \"\", \"children_qty\": \"2\", \"search_id\": \"none\", \"languagecode\": \"en-us\", \"search_type\": \"city\", \"dest_ids\": \"-3712125\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/get-static-map",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-static-map",
+            "description": "Get static map at specific GEO location",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "width",
+                    "type": "NUMBER",
+                    "description": "The width of image in pixel",
+                    "default": "720"
+                },
+                {
+                    "name": "longitude",
+                    "type": "NUMBER",
+                    "description": "The latitude co-ordinate",
+                    "default": "106.663626"
+                },
+                {
+                    "name": "zoom",
+                    "type": "NUMBER",
+                    "description": "Zoom in/out of map",
+                    "default": "18"
+                },
+                {
+                    "name": "height",
+                    "type": "NUMBER",
+                    "description": "The height of image in pixel",
+                    "default": "280"
+                },
+                {
+                    "name": "latitude",
+                    "type": "NUMBER",
+                    "description": "The latitude co-ordinate",
+                    "default": "10.807570"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "currency_code",
+                    "type": "STRING",
+                    "description": "The currency code",
+                    "default": "USD"
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja\\\",         \\\"ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-static-map\"\nquerystring = {\"width\": \"720\", \"currency_code\": \"USD\", \"longitude\": \"106.663626\", \"zoom\": \"18\", \"height\": \"280\", \"latitude\": \"10.807570\", \"languagecode\": \"en-us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-static-map\"\nquerystring = {\"width\": \"720\", \"currency_code\": \"USD\", \"longitude\": \"106.663626\", \"zoom\": \"18\", \"height\": \"280\", \"latitude\": \"10.807570\", \"languagecode\": \"en-us\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/get-rooms (Deprecated)",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-rooms",
+            "description": "Get full details of rooms in the hotel",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "search_id",
+                    "type": "STRING",
+                    "description": "The value returned in properties/list API having response contains the selected hotel",
+                    "default": ""
+                },
+                {
+                    "name": "arrival_date",
+                    "type": "STRING",
+                    "description": "The check-in date at hotel",
+                    "default": "2019-03-13"
+                },
+                {
+                    "name": "rec_guest_qty",
+                    "type": "STRING",
+                    "description": "The number of adults separated by comma, and how you arrange them in rooms",
+                    "default": "2,2"
+                },
+                {
+                    "name": "hotel_id",
+                    "type": "STRING",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1720410"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "STRING",
+                    "description": "The check-out date ",
+                    "default": "2019-03-15"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "travel_purpose",
+                    "type": "STRING",
+                    "description": "One of the followings : leisure|business",
+                    "default": "leisure"
+                },
+                {
+                    "name": "rec_children_age",
+                    "type": "STRING",
+                    "description": "The year old of each child that separated by comma",
+                    "default": "5,7"
+                },
+                {
+                    "name": "recommend_for",
+                    "type": "NUMBER",
+                    "description": "The recommended number of persons per room",
+                    "default": "3"
+                },
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                },
+                {
+                    "name": "rec_children_qty",
+                    "type": "STRING",
+                    "description": "The number of children separated by comma, and how you arrange them in rooms",
+                    "default": "1,1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-rooms\"\nquerystring = {\"travel_purpose\": \"leisure\", \"search_id\": \"\", \"rec_children_age\": \"5,7\", \"recommend_for\": \"3\", \"languagecode\": \"en-us\", \"rec_children_qty\": \"1,1\", \"arrival_date\": \"2019-03-13\", \"rec_guest_qty\": \"2,2\", \"hotel_id\": \"1720410\", \"departure_date\": \"2019-03-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-rooms\"\nquerystring = {\"travel_purpose\": \"leisure\", \"search_id\": \"\", \"rec_children_age\": \"5,7\", \"recommend_for\": \"3\", \"languagecode\": \"en-us\", \"rec_children_qty\": \"1,1\", \"arrival_date\": \"2019-03-13\", \"rec_guest_qty\": \"2,2\", \"hotel_id\": \"1720410\", \"departure_date\": \"2019-03-15\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "properties/get-facilities",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/properties/get-facilities",
+            "description": "Get facilities of property by id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "hotel_ids",
+                    "type": "NUMBER",
+                    "description": "The value of hotel_id field from properties/list API",
+                    "default": "1528418"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-facilities\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1528418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/properties/get-facilities\"\nquerystring = {\"languagecode\": \"en-us\", \"hotel_ids\": \"1528418\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "currency/get-exchange-rates",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/currency/get-exchange-rates",
+            "description": "Get currency exchange rates between different countries",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "base_currency",
+                    "type": "STRING",
+                    "description": "One of the followings : en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja|ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "USD"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "The language code of specific country",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/currency/get-exchange-rates\"\nquerystring = {\"languagecode\": \"en-us\", \"base_currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/currency/get-exchange-rates\"\nquerystring = {\"languagecode\": \"en-us\", \"base_currency\": \"USD\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "locations/auto-complete",
+            "url": "https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete",
+            "description": "List suggested locations by countries, cities, districts, places name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "text",
+                    "type": "STRING",
+                    "description": "Name of cities, districts, places",
+                    "default": "hanoi"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "languagecode",
+                    "type": "STRING",
+                    "description": "One of the followings en|en-us|ar|bg|ca|cs|da|de|el|es|es-ar|et|fi|fr|he|hr|hu|id|is|it|ja\",         \"ko|lt|lv|ms|nl|no|pl|pt|pt-br|ro|ru|sk|sl|sr|sv|th|tl|tr|uk|vi|zh|zh-tw",
+                    "default": "en-us"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete\"\nquerystring = {\"languagecode\": \"en-us\", \"text\": \"hanoi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://apidojo-booking-v1.p.rapidapi.com/locations/auto-complete\"\nquerystring = {\"languagecode\": \"en-us\", \"text\": \"hanoi\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"apidojo-booking-v1.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "booking"
+}

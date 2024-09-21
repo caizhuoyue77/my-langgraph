@@ -1,0 +1,74 @@
+{
+    "product_id": "api_d2e5dd3c-1326-41a2-b85f-5bad38a2375a",
+    "tool_description": "ASR Hub is a nomalized XML API which integrates airline content from multiple sources like Direct &amp; NDC connect, Multi-GDS and aggregators from various markets and\u00a0 offers search, ticket, Payments, ancillary sales, and post bookings services through a single API.\u00a0 ASR Hub 1.0 provides the complete Travel Tech Stack for Airline Retailing\u200b.",
+    "home_url": "https://rapidapi.com/mystifly-mystifly-default/api/asr-hub/",
+    "name": "ASR Hub",
+    "title": "ASR Hub",
+    "pricing": "FREE",
+    "tool_name": "ASR Hub",
+    "score": {
+        "avgServiceLevel": 26,
+        "avgLatency": 563,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "asr-hub.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/api/TripDetails/{MFRef}",
+            "url": "https://asr-hub.p.rapidapi.com/api/TripDetails/{MFRef}",
+            "description": "Retrives the TripDetails based on the  MFRef Number\r\n- MFRef",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "MFRef",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://asr-hub.p.rapidapi.com/api/TripDetails/{MFRef}\"\nquerystring = {\"MFRef\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asr-hub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asr-hub.p.rapidapi.com/api/TripDetails/{MFRef}\"\nquerystring = {\"MFRef\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asr-hub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Success": false,
+                "Data": null,
+                "Message": "Missing session info in Header/Please validate format 'Bearer<Space><SessionId>'"
+            },
+            "statuscode": 1,
+            "schema": ""
+        },
+        {
+            "name": "/api/ScheduleChangeAccept/{MFRef}/{FlightId}",
+            "url": "https://asr-hub.p.rapidapi.com/api/ScheduleChangeAccept/{MFRef}/{FlightId}",
+            "description": "Accept Schedule Change based on the UserInputs\r\n - MFRef\r\n - Flight Id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "FlightId",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "MFRef",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://asr-hub.p.rapidapi.com/api/ScheduleChangeAccept/{MFRef}/{FlightId}\"\nquerystring = {\"FlightId\": \"\", \"MFRef\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asr-hub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://asr-hub.p.rapidapi.com/api/ScheduleChangeAccept/{MFRef}/{FlightId}\"\nquerystring = {\"FlightId\": \"\", \"MFRef\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"asr-hub.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "Success": false,
+                "Data": null,
+                "Message": "Missing session info in Header/Please validate format 'Bearer<Space><SessionId>'"
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "asr_hub"
+}

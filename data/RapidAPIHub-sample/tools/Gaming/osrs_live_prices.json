@@ -1,0 +1,99 @@
+{
+    "product_id": "api_dbae5dc9-5d5a-4e65-933a-aaa0a67071a6",
+    "tool_description": "Grand exchange data for old school runescape items. ",
+    "home_url": "https://rapidapi.com/Amoz3/api/osrs-live-prices/",
+    "name": "OSRS Live prices",
+    "title": "OSRS Live prices",
+    "pricing": "FREE",
+    "tool_name": "OSRS Live prices",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 7,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.4,
+        "__typename": "Score"
+    },
+    "host": "osrs-live-prices.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "historical prices",
+            "url": "https://osrs-live-prices.p.rapidapi.com/api/v1/prices",
+            "description": "Gives a list of the high and low prices of item with the given id at the given interval",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "timestep",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "5m"
+                },
+                {
+                    "name": "itemID",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "565"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://osrs-live-prices.p.rapidapi.com/api/v1/prices\"\nquerystring = {\"timestep\": \"5m\", \"itemID\": \"565\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"osrs-live-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://osrs-live-prices.p.rapidapi.com/api/v1/prices\"\nquerystring = {\"timestep\": \"5m\", \"itemID\": \"565\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"osrs-live-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "timestamp": 1667686500,
+                        "avgHighPrice": 217,
+                        "avgLowPrice": 217,
+                        "highPriceVolume": 236668,
+                        "lowPriceVolume": 206300
+                    },
+                    {
+                        "timestamp": 1667686800,
+                        "avgHighPrice": 217,
+                        "avgLowPrice": 216,
+                        "highPriceVolume": 416600,
+                        "lowPriceVolume": 136591
+                    },
+                    {
+                        "timestamp": 1667687100,
+                        "avgHighPrice": 217,
+                        "avgLowPrice": 215,
+                        "highPriceVolume": 222269,
+                        "lowPriceVolume": 36614
+                    }
+                ],
+                "itemId": 565
+            }
+        },
+        {
+            "name": "latest price",
+            "url": "https://osrs-live-prices.p.rapidapi.com/api/v1/latestprice",
+            "description": "gives the latest price for the given itemID and timestep",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "timestep",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "5m"
+                },
+                {
+                    "name": "itemID",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "314"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://osrs-live-prices.p.rapidapi.com/api/v1/latestprice\"\nquerystring = {\"timestep\": \"5m\", \"itemID\": \"314\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"osrs-live-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://osrs-live-prices.p.rapidapi.com/api/v1/latestprice\"\nquerystring = {\"timestep\": \"5m\", \"itemID\": \"314\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"osrs-live-prices.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "timestamp": 1667801400,
+                "avgHighPrice": 225,
+                "avgLowPrice": 222,
+                "highPriceVolume": 19795,
+                "lowPriceVolume": 15077
+            }
+        }
+    ],
+    "standardized_name": "osrs_live_prices"
+}

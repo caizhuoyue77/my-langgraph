@@ -1,0 +1,31 @@
+{
+    "product_id": "api_c77186f1-b1e1-46a2-88aa-81cd698eb9aa",
+    "tool_description": "yurna discord bot",
+    "home_url": "https://rapidapi.com/barndt20/api/yurna/",
+    "name": "yurna",
+    "title": "yurna",
+    "pricing": "FREE",
+    "tool_name": "yurna",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 455,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.1,
+        "__typename": "Score"
+    },
+    "host": "yurna.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "yurna",
+            "url": "https://yurna.p.rapidapi.com/",
+            "description": "Discord bot",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://yurna.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yurna.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://yurna.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"yurna.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "yurna"
+}

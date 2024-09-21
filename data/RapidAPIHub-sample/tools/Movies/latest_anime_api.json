@@ -1,0 +1,192 @@
+{
+    "product_id": "api_367966e3-c5b8-4cdb-8145-e0539c1f2acf",
+    "tool_description": "Now you can get data of all latest anime and episodes.",
+    "home_url": "https://rapidapi.com/sechno-sechno-default/api/latest-anime-api/",
+    "name": "Latest Anime API",
+    "title": "Latest Anime API",
+    "pricing": "FREE",
+    "tool_name": "Latest Anime API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1821,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "latest-anime-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Anime By Page",
+            "url": "https://latest-anime-api.p.rapidapi.com/anime/2",
+            "description": "Get Latest Anime by Page",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "num",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "2"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://latest-anime-api.p.rapidapi.com/anime/2\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"latest-anime-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://latest-anime-api.p.rapidapi.com/anime/{num}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"latest-anime-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {}
+            }
+        },
+        {
+            "name": "Get Latest  Anime",
+            "url": "https://latest-anime-api.p.rapidapi.com/anime",
+            "description": "Get latest anime data",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://latest-anime-api.p.rapidapi.com/anime\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"latest-anime-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://latest-anime-api.p.rapidapi.com/anime\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"latest-anime-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "anime_id": "ling-jian-zun",
+                    "name": "Ling Jian Zun",
+                    "img_url": "https://gogocdn.net/cover/ling-jian-zun.png"
+                },
+                {
+                    "anime_id": "wanmei-shijie",
+                    "name": "Wanmei Shijie",
+                    "img_url": "https://gogocdn.net/cover/wanmei-shijie.png"
+                },
+                {
+                    "anime_id": "black-clover-mahou-tei-no-ken",
+                    "name": "Black Clover: Mahou Tei no Ken",
+                    "img_url": "https://gogocdn.net/cover/black-clover-mahou-tei-no-ken-1679974385.png"
+                },
+                {
+                    "anime_id": "super-seminaries",
+                    "name": "Super Seminaries",
+                    "img_url": "https://gogocdn.net/cover/super-seminaries.png"
+                },
+                {
+                    "anime_id": "rebirth-as-the-great-celestial-s2",
+                    "name": "Rebirth as The Great Celestial S2",
+                    "img_url": "https://gogocdn.net/cover/rebirth-as-the-great-celestial-s2.png"
+                },
+                {
+                    "anime_id": "i-never-follow-the-routine-to-get-stronger",
+                    "name": "I Never Follow The Routine To Get Stronger",
+                    "img_url": "https://gogocdn.net/cover/i-never-follow-the-routine-to-get-stronger.png"
+                },
+                {
+                    "anime_id": "dragon-kings-son-in-law",
+                    "name": "Dragon King's Son-In-Law",
+                    "img_url": "https://gogocdn.net/cover/dragon-kings-son-in-law.png"
+                },
+                {
+                    "anime_id": "with-a-sword-domain-i-can-become-the-sword-saint",
+                    "name": "With a Sword Domain, I Can Become the Sword Saint",
+                    "img_url": "https://gogocdn.net/cover/with-a-sword-domain-i-can-become-the-sword-saint.png"
+                },
+                {
+                    "anime_id": "rebirth-of-wu-zun-in-power",
+                    "name": "Rebirth of Wu Zun in power",
+                    "img_url": "https://gogocdn.net/cover/rebirth-of-wu-zun-in-power.png"
+                },
+                {
+                    "anime_id": "become-the-castellan-in-another-world",
+                    "name": "Become the Castellan in Another World",
+                    "img_url": "https://gogocdn.net/cover/become-the-castellan-in-another-world.png"
+                },
+                {
+                    "anime_id": "wu-shang-shen-di-2nd-season",
+                    "name": "Wu Shang Shen Di 2nd Season",
+                    "img_url": "https://gogocdn.net/cover/wu-shang-shen-di-2nd-season.png"
+                },
+                {
+                    "anime_id": "the-strongest-physical-training-ancestor-in-history",
+                    "name": "The Strongest Physical Training Ancestor In History",
+                    "img_url": "https://gogocdn.net/cover/the-strongest-physical-training-ancestor-in-history-1678096358.png"
+                },
+                {
+                    "anime_id": "wulin-buer-zhoukan",
+                    "name": "Wulin Buer Zhoukan",
+                    "img_url": "https://gogocdn.net/cover/wulin-buer-zhoukan.png"
+                },
+                {
+                    "anime_id": "the-urban-miracle-doctor",
+                    "name": "The Urban Miracle Doctor",
+                    "img_url": "https://gogocdn.net/cover/the-urban-miracle-doctor.png"
+                },
+                {
+                    "anime_id": "my-karmic-girlfriend",
+                    "name": "My Karmic Girlfriend ",
+                    "img_url": "https://gogocdn.net/cover/my-karmic-girlfriend.png"
+                },
+                {
+                    "anime_id": "my-wife-is-a-demon-queen",
+                    "name": "My Wife Is a Demon Queen",
+                    "img_url": "https://gogocdn.net/cover/my-wife-is-a-demon-queen.png"
+                },
+                {
+                    "anime_id": "my-master-is-an-emperor",
+                    "name": "My Master Is An Emperor",
+                    "img_url": "https://gogocdn.net/cover/my-master-is-an-emperor.png"
+                },
+                {
+                    "anime_id": "ninjala",
+                    "name": "Ninjala",
+                    "img_url": "https://gogocdn.net/cover/ninjala.png"
+                },
+                {
+                    "anime_id": "yi-jian-duzun",
+                    "name": "Yi Jian Duzun",
+                    "img_url": "https://gogocdn.net/cover/yi-jian-duzun.png"
+                },
+                {
+                    "anime_id": "god-of-war",
+                    "name": "God Of War",
+                    "img_url": "https://gogocdn.net/cover/god-of-war.png"
+                },
+                {
+                    "anime_id": "starting-with-a-penny",
+                    "name": "Starting With a Penny",
+                    "img_url": "https://gogocdn.net/cover/starting-with-a-penny.png"
+                },
+                {
+                    "anime_id": "bai-lian-cheng-shen",
+                    "name": "Bai Lian Cheng Shen",
+                    "img_url": "https://gogocdn.net/cover/bai-lian-cheng-shen.png"
+                },
+                {
+                    "anime_id": "jiu-tian-xuan-di-jue-3",
+                    "name": "Jiu Tian Xuan Di Jue 3",
+                    "img_url": "https://gogocdn.net/cover/jiu-tian-xuan-di-jue-3.png"
+                },
+                {
+                    "anime_id": "demon-asura-becomes-a-5-year-old-loli",
+                    "name": "Demon Asura Becomes a 5 Year Old Loli",
+                    "img_url": "https://gogocdn.net/cover/demon-asura-becomes-a-5-year-old-loli.png"
+                },
+                {
+                    "anime_id": "time-bokan-series-gyakuten-ippatsuman",
+                    "name": "Time Bokan Series: Gyakuten Ippatsuman",
+                    "img_url": "https://gogocdn.net/cover/time-bokan-series-gyakuten-ippatsuman.png"
+                },
+                {
+                    "anime_id": "ancient-martial-artist-in-the-city-3nd-season",
+                    "name": "Ancient Martial Artist in the City 3nd Season",
+                    "img_url": "https://gogocdn.net/cover/ancient-martial-artist-in-the-city-3nd-season.png"
+                },
+                {
+                    "anime_id": "xiling-jiyuan",
+                    "name": "Xiling Jiyuan",
+                    "img_url": "https://gogocdn.net/cover/xiling-jiyuan.png"
+                },
+                {
+                    "anime_id": "revenge-after-respawn-spoil-the-iceberg-president",
+                    "name": "Revenge after respawn: Spoil the Iceberg president",
+                    "img_url": "https://gogocdn.net/cover/revenge-after-respawn-spoil-the-iceberg-president.png"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "latest_anime_api"
+}

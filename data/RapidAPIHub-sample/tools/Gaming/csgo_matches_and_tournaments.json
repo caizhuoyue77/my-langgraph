@@ -1,0 +1,898 @@
+{
+    "product_id": "api_5bba3aac-2651-4991-8086-64db6918812a",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/shmidtelson/api/csgo-matches-and-tournaments/",
+    "name": "CSGO matches and tournaments",
+    "title": "CSGO matches and tournaments",
+    "pricing": "FREEMIUM",
+    "tool_name": "CSGO matches and tournaments",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 820,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "csgo-matches-and-tournaments.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Played",
+            "url": "https://csgo-matches-and-tournaments.p.rapidapi.com/matches",
+            "description": "Last of played cs:go matches",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                },
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://csgo-matches-and-tournaments.p.rapidapi.com/matches\"\nquerystring = {\"limit\": \"10\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"csgo-matches-and-tournaments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://csgo-matches-and-tournaments.p.rapidapi.com/matches\"\nquerystring = {\"limit\": \"10\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"csgo-matches-and-tournaments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "created_at": "2023-06-13 21:06:55",
+                        "location": "online",
+                        "team_won": {
+                            "id": "22027300-af02-46f5-a955-2b3f3fde7aa4",
+                            "image_url": "https://storage.web7.pro/csgobot/team/the_union.png",
+                            "title": "The Union"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 1,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "efad0fe9-c25c-4277-8be6-80678e87363d",
+                        "team_lose": {
+                            "id": "0685e407-c848-4764-abc7-a4232a926ede",
+                            "image_url": "https://storage.web7.pro/csgobot/team/sele\u00e7\u00e3o_do_bt0.png",
+                            "title": "Sele\u00e7\u00e3o do bt0"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 23:10:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 22:50:12",
+                        "location": "online",
+                        "team_won": {
+                            "id": "368c29b4-4919-4077-b118-f7002a3bc9c5",
+                            "image_url": null,
+                            "title": "BESTIA"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "695b3ea6-2767-479f-96be-8798d69a89e3",
+                            "image_url": "https://storage.web7.pro/csgobot/country/argentina.png",
+                            "title": "Argentina"
+                        },
+                        "id": "e73f2b8c-8ca7-46ef-a4e2-0dc465c509a1",
+                        "team_lose": {
+                            "id": "1e4a2c3d-9817-4774-9701-6aabcf589553",
+                            "image_url": "https://storage.web7.pro/csgobot/team/los_grandes.png",
+                            "title": "Los Grandes"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 22:55:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 18:46:04",
+                        "location": "online",
+                        "team_won": {
+                            "id": "5b4350dd-886d-41ed-b061-b9e5fa6a3a9a",
+                            "image_url": "https://storage.web7.pro/csgobot/team/w7m_academy.png",
+                            "title": "W7M Academy"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "20456d11-5b84-496d-a97b-26605cc3ed9e",
+                        "team_lose": {
+                            "id": "22545563-8f5f-4e43-97aa-dfee7f60280e",
+                            "image_url": "https://storage.web7.pro/csgobot/team/oddik.png",
+                            "title": "ODDIK"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 19:40:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 19:03:58",
+                        "location": "online",
+                        "team_won": {
+                            "id": "416be8a1-b51d-4507-85f2-94b0a3a037f5",
+                            "image_url": "https://storage.web7.pro/csgobot/team/red_canids.png",
+                            "title": "RED Canids"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 1,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "724d67e5-32b9-4181-ac5f-a494de5ad6ea",
+                        "team_lose": {
+                            "id": "76ecf245-46f3-43c4-a7fa-eba1750415a6",
+                            "image_url": "https://storage.web7.pro/csgobot/team/intz.svg",
+                            "title": "INTZ"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 19:40:00"
+                    },
+                    {
+                        "created_at": "2023-06-12 22:47:07",
+                        "location": "online",
+                        "team_won": {
+                            "id": "26756a8f-09e7-4c87-a7c7-8f1ecfc76ae7",
+                            "image_url": "https://storage.web7.pro/csgobot/team/solid.png",
+                            "title": "Solid"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 1,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "d37e8fce-b507-47b1-947e-f98365b85c1a",
+                        "team_lose": {
+                            "id": "22027300-af02-46f5-a955-2b3f3fde7aa4",
+                            "image_url": "https://storage.web7.pro/csgobot/team/the_union.png",
+                            "title": "The Union"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "68bbb324-18a0-4c30-b875-4564eee74746",
+                            "image_url": null,
+                            "title": "RedZone PRO League 2023 Season 3"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 19:00:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 21:04:46",
+                        "location": "online",
+                        "team_won": {
+                            "id": "ab36f0e1-ce1d-4e2f-91c4-fa8180fb6141",
+                            "image_url": null,
+                            "title": "ex-777"
+                        },
+                        "team_lose_country": {
+                            "id": "19278078-dab8-49c8-bf1b-eb59f99c43e5",
+                            "image_url": "https://storage.web7.pro/csgobot/country/finland.png",
+                            "title": "Finland"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "52f2dc6a-dab6-4538-9dc6-7c41e4eb73da",
+                            "image_url": "https://storage.web7.pro/csgobot/country/norway.png",
+                            "title": "Norway"
+                        },
+                        "id": "d15425e0-271a-4fb7-9374-92dfc47690f8",
+                        "team_lose": {
+                            "id": "d19398fb-a6b4-4c16-ae56-376d3b0aa90f",
+                            "image_url": "https://storage.web7.pro/csgobot/team/jano.png",
+                            "title": "JANO"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 17:30:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 18:05:50",
+                        "location": "online",
+                        "team_won": {
+                            "id": "df234de7-b373-4612-8049-367b7ef3eba9",
+                            "image_url": null,
+                            "title": "O PLANO"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "41c53eb6-d62f-44bf-97d7-227eedcdf204",
+                        "team_lose": {
+                            "id": "02548fc6-e0bf-476c-be71-0428f493db38",
+                            "image_url": "https://storage.web7.pro/csgobot/team/case.png",
+                            "title": "Case"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 17:20:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 17:47:24",
+                        "location": "online",
+                        "team_won": {
+                            "id": "8a84f747-3a46-498f-8326-1716472a7afb",
+                            "image_url": "https://storage.web7.pro/csgobot/team/meta.png",
+                            "title": "Meta"
+                        },
+                        "team_lose_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "c90e6b09-f49b-45e3-a91d-311e39862443",
+                            "image_url": "https://storage.web7.pro/csgobot/country/brazil.png",
+                            "title": "Brazil"
+                        },
+                        "id": "58449892-a7a9-4547-b54f-e430830827e8",
+                        "team_lose": {
+                            "id": "b8f77ae4-0884-47ff-bf89-05e5fd647243",
+                            "image_url": "https://storage.web7.pro/csgobot/team/intense.svg",
+                            "title": "Intense"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "5d0f8bf0-9214-410e-a568-d94c9af17256",
+                            "image_url": null,
+                            "title": "CBCS 2023 Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 17:20:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 01:01:40",
+                        "location": "online",
+                        "team_won": {
+                            "id": "150da235-5d04-424f-b053-a79bdcf5139f",
+                            "image_url": null,
+                            "title": "PGE Turow"
+                        },
+                        "team_lose_country": {
+                            "id": "559b424e-db98-46d0-8801-ce5d9349b43e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/poland.png",
+                            "title": "Poland"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 1,
+                        "team_won_country": {
+                            "id": "559b424e-db98-46d0-8801-ce5d9349b43e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/poland.png",
+                            "title": "Poland"
+                        },
+                        "id": "34507f53-d7cf-4459-9086-a71203b6b4a7",
+                        "team_lose": {
+                            "id": "d22b53fb-3969-456a-b7b7-9ef0194bb601",
+                            "image_url": null,
+                            "title": "GGP"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "982407e4-b37e-46a5-89a6-2c967c35755c",
+                            "image_url": null,
+                            "title": "Polish Esports League 2023 Split 2"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 17:15:00"
+                    },
+                    {
+                        "created_at": "2023-06-13 20:50:35",
+                        "location": "online",
+                        "team_won": {
+                            "id": "3b5461e8-db11-4a82-bd7d-7ac6e19188ef",
+                            "image_url": null,
+                            "title": "The Prodigies"
+                        },
+                        "team_lose_country": {
+                            "id": "247455de-6d29-450a-ba91-33be90bec68e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/russia.png",
+                            "title": "Russia"
+                        },
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "score_lose": 0,
+                        "team_won_country": {
+                            "id": "cfe4b0cc-5449-4dce-82e1-b5658a32995b",
+                            "image_url": "https://storage.web7.pro/csgobot/country/latvia.png",
+                            "title": "Latvia"
+                        },
+                        "id": "87322947-a5e4-449a-851e-15222e2af62a",
+                        "team_lose": {
+                            "id": "9aca6ec5-1da3-46bb-b96a-8f8860043186",
+                            "image_url": null,
+                            "title": "Insilio"
+                        },
+                        "score_won": 2,
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "played_at": "2023-06-14 14:30:00"
+                    }
+                ],
+                "meta": {
+                    "limit": 10,
+                    "page": 1,
+                    "total": 38401,
+                    "pages": 3841
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "created_at": {
+                                    "type": "string"
+                                },
+                                "event": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "null"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "match_kind": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "played_at": {
+                                    "type": "string"
+                                },
+                                "score_lose": {
+                                    "type": "integer"
+                                },
+                                "score_won": {
+                                    "type": "integer"
+                                },
+                                "stars": {
+                                    "type": "integer"
+                                },
+                                "team_lose": {
+                                    "type": "object"
+                                },
+                                "team_lose_country": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "team_won": {
+                                    "type": "object"
+                                },
+                                "team_won_country": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "limit": {
+                                "type": "integer"
+                            },
+                            "page": {
+                                "type": "integer"
+                            },
+                            "pages": {
+                                "type": "integer"
+                            },
+                            "total": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Upcoming",
+            "url": "https://csgo-matches-and-tournaments.p.rapidapi.com/upcoming_matches",
+            "description": "Last of upcoming cs:go matches",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "limit",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://csgo-matches-and-tournaments.p.rapidapi.com/upcoming_matches\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"csgo-matches-and-tournaments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://csgo-matches-and-tournaments.p.rapidapi.com/upcoming_matches\"\nquerystring = {\"page\": \"1\", \"limit\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"csgo-matches-and-tournaments.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "created_at": "2023-06-11 18:48:46",
+                        "location": "online",
+                        "match_kind": {
+                            "id": "bff9b339-b88e-4976-9c62-d5725c318576",
+                            "title": "bo1"
+                        },
+                        "id": "2fb585ec-5b64-4d73-babb-7cbf917decc9",
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 10:00:00",
+                        "team1": {
+                            "id": "3b5ef78b-9e44-4b0e-aaec-fa6d9f2756b0",
+                            "image_url": "https://storage.web7.pro/csgobot/team/enterprise.png",
+                            "title": "Enterprise"
+                        },
+                        "team1_country": {
+                            "id": "c756b6f4-6ad9-4707-9ebc-22fe21a87059",
+                            "image_url": "https://storage.web7.pro/csgobot/country/czech_republic.png",
+                            "title": "Czech Republic"
+                        },
+                        "team2": {
+                            "id": "37cd2aa3-7db3-4868-b14a-3c40acca308a",
+                            "image_url": "https://storage.web7.pro/csgobot/team/ignis_serpens.png",
+                            "title": "Ignis Serpens"
+                        },
+                        "team2_country": {
+                            "id": "559b424e-db98-46d0-8801-ce5d9349b43e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/poland.png",
+                            "title": "Poland"
+                        }
+                    },
+                    {
+                        "created_at": "2023-06-06 09:50:26",
+                        "location": "lan",
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "id": "9769c040-7a94-4a15-aeea-12caf1576cef",
+                        "event": {
+                            "id": "09a74905-24db-44cf-914d-4e28c039297f",
+                            "image_url": null,
+                            "title": "Master League Portugal XI Finals"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 10:30:00",
+                        "team1": {
+                            "id": "a5218864-74e3-42b3-b031-e607ae69471b",
+                            "image_url": "https://storage.web7.pro/csgobot/team/ftw.png",
+                            "title": "FTW"
+                        },
+                        "team1_country": {
+                            "id": "fd61f666-90c2-4fbe-a1fe-b5e588cf1eb4",
+                            "image_url": "https://storage.web7.pro/csgobot/country/portugal.png",
+                            "title": "Portugal"
+                        },
+                        "team2": {
+                            "id": "400447b1-5726-4c67-97b4-42f3febc72b9",
+                            "image_url": "https://storage.web7.pro/csgobot/team/make_your_destiny.png",
+                            "title": "Make Your Destiny"
+                        },
+                        "team2_country": {
+                            "id": "fd61f666-90c2-4fbe-a1fe-b5e588cf1eb4",
+                            "image_url": "https://storage.web7.pro/csgobot/country/portugal.png",
+                            "title": "Portugal"
+                        }
+                    },
+                    {
+                        "created_at": "2023-06-11 19:05:11",
+                        "location": "online",
+                        "match_kind": {
+                            "id": "bff9b339-b88e-4976-9c62-d5725c318576",
+                            "title": "bo1"
+                        },
+                        "id": "9b021ce3-9b58-461c-8bc4-9f7ae8369f06",
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 11:00:00",
+                        "team1": {
+                            "id": "542004af-afe9-41eb-af9d-4e70dedc07a3",
+                            "image_url": "https://storage.web7.pro/csgobot/team/ago.png",
+                            "title": "AGO"
+                        },
+                        "team1_country": {
+                            "id": "559b424e-db98-46d0-8801-ce5d9349b43e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/poland.png",
+                            "title": "Poland"
+                        },
+                        "team2": {
+                            "id": "b1ca26c0-5fcb-4a17-bf9f-803f1a4ed30c",
+                            "image_url": "https://storage.web7.pro/csgobot/team/zero_tenacity.png",
+                            "title": "Zero Tenacity"
+                        },
+                        "team2_country": {
+                            "id": "79f3719d-d2ae-45c4-b68e-7b3385e51b6c",
+                            "image_url": "https://storage.web7.pro/csgobot/country/europe.png",
+                            "title": "Europe"
+                        }
+                    },
+                    {
+                        "created_at": "2023-06-11 19:08:18",
+                        "location": "online",
+                        "match_kind": {
+                            "id": "bff9b339-b88e-4976-9c62-d5725c318576",
+                            "title": "bo1"
+                        },
+                        "id": "e1fcc87d-c62f-4cd3-a30e-9550832834ad",
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 12:00:00",
+                        "team1": {
+                            "id": "d5be1629-d929-444f-9901-0ea3a5c8ce69",
+                            "image_url": "https://storage.web7.pro/csgobot/team/ence_academy.png",
+                            "title": "ENCE Academy"
+                        },
+                        "team1_country": {
+                            "id": "19278078-dab8-49c8-bf1b-eb59f99c43e5",
+                            "image_url": "https://storage.web7.pro/csgobot/country/finland.png",
+                            "title": "Finland"
+                        },
+                        "team2": {
+                            "id": "07cf528d-262c-4f51-ba5e-ef6065cc8435",
+                            "image_url": null,
+                            "title": "HOTU"
+                        },
+                        "team2_country": {
+                            "id": "247455de-6d29-450a-ba91-33be90bec68e",
+                            "image_url": "https://storage.web7.pro/csgobot/country/russia.png",
+                            "title": "Russia"
+                        }
+                    },
+                    {
+                        "created_at": "2023-06-11 20:06:15",
+                        "location": "online",
+                        "match_kind": {
+                            "id": "bff9b339-b88e-4976-9c62-d5725c318576",
+                            "title": "bo1"
+                        },
+                        "id": "a5349615-c5ac-4841-b7f1-2dae4d2aacdb",
+                        "event": {
+                            "id": "f8552e2b-255f-4d6a-b84b-930687f63e01",
+                            "image_url": null,
+                            "title": "LEON TEAMPLAY Season 1"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 13:00:00",
+                        "team1": {
+                            "id": "d8eef653-d3de-4a3b-af31-6f0969b80b89",
+                            "image_url": "https://storage.web7.pro/csgobot/team/nemiga.svg",
+                            "title": "Nemiga"
+                        },
+                        "team1_country": {
+                            "id": "79f3719d-d2ae-45c4-b68e-7b3385e51b6c",
+                            "image_url": "https://storage.web7.pro/csgobot/country/europe.png",
+                            "title": "Europe"
+                        },
+                        "team2": {
+                            "id": "37b3f482-dabe-415b-b122-304267346ebc",
+                            "image_url": null,
+                            "title": "Victory Zigzag"
+                        },
+                        "team2_country": {
+                            "id": "79f3719d-d2ae-45c4-b68e-7b3385e51b6c",
+                            "image_url": "https://storage.web7.pro/csgobot/country/europe.png",
+                            "title": "Europe"
+                        }
+                    },
+                    {
+                        "created_at": "2023-06-06 09:53:32",
+                        "location": "lan",
+                        "match_kind": {
+                            "id": "9abbbb65-1599-4b2c-8e4c-f82ca20b7a9b",
+                            "title": "bo3"
+                        },
+                        "id": "d33d92eb-41cd-472a-8395-857e9aee8817",
+                        "event": {
+                            "id": "09a74905-24db-44cf-914d-4e28c039297f",
+                            "image_url": null,
+                            "title": "Master League Portugal XI Finals"
+                        },
+                        "stars": 0,
+                        "play_at": "2023-06-17 15:00:00",
+                        "team1": {
+                            "id": "76519996-1d21-4874-9d75-0bd430e18156",
+                            "image_url": "https://storage.web7.pro/csgobot/team/saw.png",
+                            "title": "SAW"
+                        },
+                        "team1_country": {
+                            "id": "fd61f666-90c2-4fbe-a1fe-b5e588cf1eb4",
+                            "image_url": "https://storage.web7.pro/csgobot/country/portugal.png",
+                            "title": "Portugal"
+                        },
+                        "team2": {
+                            "id": "b0c1ed8e-5c69-4818-9caf-12949ea878ae",
+                            "image_url": "https://storage.web7.pro/csgobot/team/gtz.png",
+                            "title": "GTZ"
+                        },
+                        "team2_country": {
+                            "id": "fd61f666-90c2-4fbe-a1fe-b5e588cf1eb4",
+                            "image_url": "https://storage.web7.pro/csgobot/country/portugal.png",
+                            "title": "Portugal"
+                        }
+                    }
+                ],
+                "meta": {
+                    "limit": 10,
+                    "page": 1,
+                    "total": 6,
+                    "pages": 1
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "created_at": {
+                                    "type": "string"
+                                },
+                                "event": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "null"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "id": {
+                                    "type": "string"
+                                },
+                                "location": {
+                                    "type": "string"
+                                },
+                                "match_kind": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "play_at": {
+                                    "type": "string"
+                                },
+                                "stars": {
+                                    "type": "integer"
+                                },
+                                "team1": {
+                                    "type": "object"
+                                },
+                                "team1_country": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "team2": {
+                                    "type": "object"
+                                },
+                                "team2_country": {
+                                    "type": "object",
+                                    "properties": {
+                                        "id": {
+                                            "type": "string"
+                                        },
+                                        "image_url": {
+                                            "type": "string"
+                                        },
+                                        "title": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "meta": {
+                        "type": "object",
+                        "properties": {
+                            "limit": {
+                                "type": "integer"
+                            },
+                            "page": {
+                                "type": "integer"
+                            },
+                            "pages": {
+                                "type": "integer"
+                            },
+                            "total": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "csgo_matches_and_tournaments"
+}

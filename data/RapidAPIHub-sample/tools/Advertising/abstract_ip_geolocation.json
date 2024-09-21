@@ -1,0 +1,48 @@
+{
+    "product_id": "api_b5a1b3fc-0586-468c-806b-0bf471623f63",
+    "tool_description": "Get the location of any IP along with city, region, country, lat/long data, and more here https://www.abstractapi.com/ip-geolocation-api. Documentation available here: https://www.abstractapi.com/ip-geolocation-api#docs",
+    "home_url": "https://rapidapi.com/karmadele/api/abstract-ip-geolocation/",
+    "name": "Abstract IP geolocation",
+    "title": "Abstract IP geolocation",
+    "pricing": "FREE",
+    "tool_name": "Abstract IP geolocation",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 598,
+        "avgSuccessRate": 0,
+        "popularityScore": 0,
+        "__typename": "Score"
+    },
+    "host": "abstract-ip-geolocation.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Geolocation from an IP Address",
+            "url": "https://abstract-ip-geolocation.p.rapidapi.com/",
+            "description": "Get Geolocation from an IP Address",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://abstract-ip-geolocation.p.rapidapi.com/\"\nquerystring = {\"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abstract-ip-geolocation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://abstract-ip-geolocation.p.rapidapi.com/\"\nquerystring = {\"q\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abstract-ip-geolocation.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "error": {
+                    "message": "A validation error occurred.",
+                    "code": "validation_error",
+                    "details": {
+                        "api_key": [
+                            "This is a required argument."
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "abstract_ip_geolocation"
+}

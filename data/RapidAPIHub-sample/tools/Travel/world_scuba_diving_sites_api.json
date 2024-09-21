@@ -1,0 +1,111 @@
+{
+    "product_id": "api_105ea1a7-986c-452f-8489-97b17821c1fc",
+    "tool_description": "Are you a scuba diver looking for interesting dive sites around the world? You can now easily search for them using a text query to the endpoint based on a location or region. With our list of GPS coordinates for scuba diving sites, you can quickly find the coordinates of the places you want to explore and add them to your diving itinerary. Simply enter the name of the location or region you are interested in, and our system will provide you with a list of relevant coordinates for you to use ...",
+    "home_url": "https://rapidapi.com/jojokcreator/api/world-scuba-diving-sites-api/",
+    "name": "World Scuba Diving Sites Api",
+    "title": "World Scuba Diving Sites Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "World Scuba Diving Sites Api",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2485,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.9,
+        "__typename": "Score"
+    },
+    "host": "world-scuba-diving-sites-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Query Divesites by a country or a region.",
+            "url": "https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite",
+            "description": "The endpoint returns a json list of dive sites which match the region or country entered as the query. The range of results depend but there is usually around 100-500 sites for each country. There are around 15'000 dive sites listed in the database.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "thailand"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite\"\nquerystring = {\"country\": \"thailand\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-scuba-diving-sites-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite\"\nquerystring = {\"country\": \"thailand\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-scuba-diving-sites-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "message": "You are not subscribed to this API."
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "string"
+                                },
+                                "name": {
+                                    "type": "string"
+                                },
+                                "region": {
+                                    "type": "string"
+                                },
+                                "lat": {
+                                    "type": "string"
+                                },
+                                "lng": {
+                                    "type": "string"
+                                },
+                                "ocean": {
+                                    "type": "string"
+                                },
+                                "Location": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Query divesites by gps boundaries (For use with maps)",
+            "url": "https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite/gps",
+            "description": "The API endpoint that queries dive sites by GPS boundaries allows developers to search for dive sites within a specified geographical region, defined by a set of latitude and longitude coordinates. This endpoint can be particularly useful for creating interactive maps or applications that require displaying dive sites within a specific area. To use it add the four map bounds as query params",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "southWestLat",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "50.995577266225524"
+                },
+                {
+                    "name": "northEastLng",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "3.827225290533761"
+                },
+                {
+                    "name": "southWestLng",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "-12.542403615716239"
+                },
+                {
+                    "name": "northEastLat",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "58.59328356952258"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite/gps\"\nquerystring = {\"southWestLat\": \"50.995577266225524\", \"northEastLng\": \"3.827225290533761\", \"southWestLng\": \"-12.542403615716239\", \"northEastLat\": \"58.59328356952258\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-scuba-diving-sites-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://world-scuba-diving-sites-api.p.rapidapi.com/api/divesite/gps\"\nquerystring = {\"southWestLat\": \"50.995577266225524\", \"northEastLng\": \"3.827225290533761\", \"southWestLng\": \"-12.542403615716239\", \"northEastLat\": \"58.59328356952258\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"world-scuba-diving-sites-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "world_scuba_diving_sites_api"
+}

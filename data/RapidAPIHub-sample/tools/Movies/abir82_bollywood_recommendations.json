@@ -1,0 +1,155 @@
+{
+    "product_id": "api_f1816198-8ea9-453c-964c-9f1c7ee91c03",
+    "tool_description": "This API recommends a list of Bollywood movies from 2000 to 2019 based on the genre and year selected by the user",
+    "home_url": "https://rapidapi.com/abirbhattacharya82/api/abir82-bollywood-recommendations/",
+    "name": "Abir82 Bollywood Recommendations",
+    "title": "Abir82 Bollywood Recommendations",
+    "pricing": "FREE",
+    "tool_name": "Abir82 Bollywood Recommendations",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 228,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "abir82-bollywood-recommendations.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Fetch Movies",
+            "url": "https://abir82-bollywood-recommendations.p.rapidapi.com/",
+            "description": "This Endpoint allows to get a list of movies from 2000 to 2019 based on the genre selected by the user.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2018"
+                },
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Comedy"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://abir82-bollywood-recommendations.p.rapidapi.com/\"\nquerystring = {\"year\": \"2018\", \"genre\": \"Comedy\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abir82-bollywood-recommendations.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://abir82-bollywood-recommendations.p.rapidapi.com/\"\nquerystring = {\"year\": \"2018\", \"genre\": \"Comedy\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"abir82-bollywood-recommendations.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "Movie_ID": "36788",
+                        "Title": "Welcome To New York",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36797",
+                        "Title": "Raja Abroadiya",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36800",
+                        "Title": "Baa Baaa Black Sheep",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36801",
+                        "Title": "Shaadi Teri Bajayenge Hum Band",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36807",
+                        "Title": "Nanu Ki Jaanu",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36811",
+                        "Title": "102 Not Out",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36816",
+                        "Title": "Falooda",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36818",
+                        "Title": "High Jack",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36819",
+                        "Title": "Khajoor Pe Atke",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36829",
+                        "Title": "When Obama Loved Osama",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36838",
+                        "Title": "Karwaan",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36841",
+                        "Title": "Happy Phirr Bhag Jayegi",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36843",
+                        "Title": "Yamla Pagla Deewana: Phir Se",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36852",
+                        "Title": "Bajra vs Burger",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36855",
+                        "Title": "Mitron",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36866",
+                        "Title": "FryDay",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36876",
+                        "Title": "Jack and Dil",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    },
+                    {
+                        "Movie_ID": "36881",
+                        "Title": "Hotel Milan",
+                        "Year": "2018",
+                        "Genre": "Comedy"
+                    }
+                ]
+            }
+        }
+    ],
+    "standardized_name": "abir82_bollywood_recommendations"
+}

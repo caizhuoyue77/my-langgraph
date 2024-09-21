@@ -1,0 +1,98 @@
+{
+    "product_id": "api_c0405ae4-a5bf-4b39-b073-27e12431725d",
+    "tool_description": "Independent tracks with label numbers. Daily updating stats, weekly updating songs",
+    "home_url": "https://rapidapi.com/oztop/api/indie-songs-distrokid-unsigned/",
+    "name": "Indie Songs : DistroKid & Unsigned",
+    "title": "Indie Songs : DistroKid & Unsigned",
+    "pricing": "FREEMIUM",
+    "tool_name": "Indie Songs : DistroKid & Unsigned",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 841,
+        "avgSuccessRate": 100,
+        "popularityScore": 6.9,
+        "__typename": "Score"
+    },
+    "host": "indie-songs-distrokid-unsigned.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get songs with ALL metadata and stats (play counts)",
+            "url": "https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/full",
+            "description": "Get all tracks with full metadata including recent Spotify play counts.\n\nAlso Apple song URL, Spotify song URL, Composer name, ISRC, Label, Release date, Genres, Apple IDs, Spotify IDs are included.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "offset",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "0"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "20"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/full\"\nquerystring = {\"offset\": \"0\", \"limit\": \"20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/full\"\nquerystring = {\"offset\": \"0\", \"limit\": \"20\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Top 50 indie songs",
+            "url": "https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/",
+            "description": "Get TOP 50 indie songs based on their daily stream increase ratio",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Search indie songs by filters",
+            "url": "https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/search2",
+            "description": "Search song by track name,  artist name, label, release date, ISRC, composer name, genre",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "by",
+                    "type": "STRING",
+                    "description": "'trackname', 'artistname', 'isrc', 'label',  'genre', 'composer_name', or 'release_date'",
+                    "default": "trackname"
+                },
+                {
+                    "name": "q",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "love"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/search2\"\nquerystring = {\"by\": \"trackname\", \"q\": \"love\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/search2\"\nquerystring = {\"by\": \"trackname\", \"q\": \"love\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get CSV of Top 50 Indie Songs",
+            "url": "https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/csv2",
+            "description": "Get TOP 50 indie songs by their daily stream increase in a CSV format using URL",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/csv2\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://indie-songs-distrokid-unsigned.p.rapidapi.com/tracks/top50/csv2\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"indie-songs-distrokid-unsigned.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "indie_songs_distrokid_unsigned"
+}

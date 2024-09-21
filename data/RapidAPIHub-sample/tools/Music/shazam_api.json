@@ -1,0 +1,2753 @@
+{
+    "product_id": "api_22ba89ad-aa83-4530-b907-d809766caff2",
+    "tool_description": "Identify any song. Discover, artists, lyrics, videos & playlists to create a song detector site/application ",
+    "home_url": "https://rapidapi.com/yourdevmail/api/shazam-api7/",
+    "name": "Shazam API",
+    "title": "Shazam API",
+    "pricing": "FREEMIUM",
+    "tool_name": "Shazam API",
+    "score": {
+        "avgServiceLevel": 90,
+        "avgLatency": 1158,
+        "avgSuccessRate": 89,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "shazam-api7.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "charts/get-top-songs-in-world",
+            "url": "https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-world",
+            "description": "get top songs in world",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-world\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-world\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/makeba/1175093890",
+                    "artist_id": "42",
+                    "key": 267429991,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c6/ef/30/c6ef3043-c03c-caf7-caa3-a3431a086c65/mzaf_11631466525512100935.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Jain",
+                    "title": "Makeba",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/all-eyes-on-me-feat-dndm-shahlo-ahmedova-instrumental/1691603561",
+                    "artist_id": "42",
+                    "key": 646659264,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/82/ac/31/82ac3163-5235-c3e6-9d34-06703f069542/mzaf_13889154646070461795.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Dj Belite",
+                    "title": "All Eyes on Me (feat. DNDM & Shahlo Ahmedova) [Instrumental]",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/d%C5%BEanum/1678467661",
+                    "artist_id": "42",
+                    "key": 660372671,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/b1/e3/dd/b1e3dd80-171e-b927-d55d-b15508e19b4e/mzaf_6635262664981298608.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Teya Dora",
+                    "title": "D\u017eanum",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/daylight/1680069284",
+                    "artist_id": "42",
+                    "key": 659236090,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c6/50/55/c6505541-d6f9-ca32-b4e4-042900832b5b/mzaf_15495323272353546067.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "David Kushner",
+                    "title": "Daylight",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/calm-down/1614063395",
+                    "artist_id": "42",
+                    "key": 601555046,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Rema",
+                    "title": "Calm Down",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/all-my-life-feat-j-cole/1687215990",
+                    "artist_id": "42",
+                    "key": 665652121,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e7/f5/59/e7f559fc-49cf-f5fc-fd35-3490cdb0be06/mzaf_16381888323034067349.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Lil Durk",
+                    "title": "All My Life (feat. J. Cole)",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/tattoo/1672056674",
+                    "artist_id": "42",
+                    "key": 653369691,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/28/a3/3e/28a33e92-39f5-ba72-9b18-bba16f9b36de/mzaf_9634311354149611886.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Loreen",
+                    "title": "Tattoo",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/what-it-is-block-boy-feat-kodak-black/1676195700",
+                    "artist_id": "42",
+                    "key": 658691211,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/55/92/9a/55929adc-dc96-1c52-371d-e56894a34993/mzaf_1187070302074216169.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Doechii",
+                    "title": "What It Is (Block Boy) [feat. Kodak Black]",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/flowers/1663973555",
+                    "artist_id": "42",
+                    "key": 648859694,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3e/57/ef/3e57efa9-0572-82f5-0e92-ea5fef33982a/mzaf_14012893767887586921.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Miley Cyrus",
+                    "title": "Flowers",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/where-she-goes/1687809993",
+                    "artist_id": "42",
+                    "key": 666564809,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/64/a6/d4/64a6d4b6-7a59-8d57-ee2e-e53cafdf493d/mzaf_16160481135336850038.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Bad Bunny",
+                    "title": "WHERE SHE GOES",
+                    "youtube_link": null
+                }
+            ]
+        },
+        {
+            "name": "charts/get-top-songs-in_world_by_genre",
+            "url": "https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_world_by_genre",
+            "description": "get top songs in world by gener",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "POP,HIP_HOP_RAP,DANCE,ELECTRONIC,SOUL_RNB,ALTERNATIVE,ROCK,LATIN,FILM_TV,COUNTRY,AFRO_BEATS,WORLDWIDE,REGGAE_DANCE_HALL,HOUSE,K_POP,FRENCH_POP,SINGER_SONGWRITER,REG_MEXICO",
+                    "default": "POP"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_world_by_genre\"\nquerystring = {\"genre\": \"POP\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_world_by_genre\"\nquerystring = {\"genre\": \"POP\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en-US/GB/web/-/tracks/genre-global-chart-1?pageSize=4&startFrom=4",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "334329603",
+                                "alias": "jain",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/334329603/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1180771928",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1180771928?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1175094463",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c6/ef/30/c6ef3043-c03c-caf7-caa3-a3431a086c65/mzaf_11631466525512100935.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/makeba/1175093890?i=1175094463&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/makeba/1175093890?i=1175094463&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is5-ssl.mzstatic.com/image/thumb/Features116/v4/9d/93/ee/9d93ee11-53ed-d045-4b11-5f6f4b15f324/mzl.ztqrsgts.jpg/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "joecolor": "b:edba3dp:0b0b18s:391b20t:382e1fq:5d3b26"
+                        },
+                        "key": "267429991",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is5-ssl.mzstatic.com/image/thumb/Features116/v4/9d/93/ee/9d93ee11-53ed-d045-4b11-5f6f4b15f324/mzl.ztqrsgts.jpg/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/267429991/makeba",
+                            "html": "https://www.shazam.com/snippets/email-share/267429991?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/267429991",
+                            "subject": "Makeba - Jain",
+                            "text": "Makeba by Jain",
+                            "twitter": "I used @Shazam to discover Makeba by Jain."
+                        },
+                        "subtitle": "Jain",
+                        "title": "Makeba",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/267429991/makeba"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "1529375597",
+                                "alias": "david-kushner",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/1529375597/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1681943558",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1681943558?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1680069454",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c6/50/55/c6505541-d6f9-ca32-b4e4-042900832b5b/mzaf_15495323272353546067.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/daylight/1680069284?i=1680069454&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/daylight/1680069284?i=1680069454&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0c/ad/f1/0cadf121-b332-b02d-12d9-50cafd103190/516b46b4-4276-4575-ae88-6ba53f613dad_file_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:1e2400p:c7d284s:cfc857t:a5af6aq:aba746"
+                        },
+                        "key": "659236090",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0c/ad/f1/0cadf121-b332-b02d-12d9-50cafd103190/516b46b4-4276-4575-ae88-6ba53f613dad_file_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/659236090/daylight",
+                            "html": "https://www.shazam.com/snippets/email-share/659236090?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/659236090",
+                            "subject": "Daylight - David Kushner",
+                            "text": "Daylight by David Kushner",
+                            "twitter": "I used @Shazam to discover Daylight by David Kushner."
+                        },
+                        "subtitle": "David Kushner",
+                        "title": "Daylight",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/659236090/daylight"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "417755574",
+                                "alias": "loreen",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/417755574/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1672056675",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/28/a3/3e/28a33e92-39f5-ba72-9b18-bba16f9b36de/mzaf_9634311354149611886.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/tattoo/1672056674?i=1672056675&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/tattoo/1672056674?i=1672056675&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is5-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/9d/11/2e/9d112e73-3003-1289-9888-f6b72ec76ae9/44644485-08d0-4da5-9471-4185ed3089d6_ami-identity-ebd31eb1e543e630fcd5a70d51ee8e60-2023-02-27T10-45-58.766Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/50/32/fd/5032fddc-e486-956d-a503-7ec6d17af848/22UM1IM46463.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/50/32/fd/5032fddc-e486-956d-a503-7ec6d17af848/22UM1IM46463.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:3c3c3cp:f6f6f6s:e2e9f0t:d0d0d0q:c0c6cc"
+                        },
+                        "key": "653369691",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is5-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/9d/11/2e/9d112e73-3003-1289-9888-f6b72ec76ae9/44644485-08d0-4da5-9471-4185ed3089d6_ami-identity-ebd31eb1e543e630fcd5a70d51ee8e60-2023-02-27T10-45-58.766Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/653369691/tattoo",
+                            "html": "https://www.shazam.com/snippets/email-share/653369691?lang=en-US&country=GB",
+                            "image": "https://is3-ssl.mzstatic.com/image/thumb/Music126/v4/50/32/fd/5032fddc-e486-956d-a503-7ec6d17af848/22UM1IM46463.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/653369691",
+                            "subject": "Tattoo - Loreen",
+                            "text": "Tattoo by Loreen",
+                            "twitter": "I used @Shazam to discover Tattoo by Loreen."
+                        },
+                        "subtitle": "Loreen",
+                        "title": "Tattoo",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/653369691/tattoo"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "137057909",
+                                "alias": "miley-cyrus",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/137057909/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1663973562",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3e/57/ef/3e57efa9-0572-82f5-0e92-ea5fef33982a/mzaf_14012893767887586921.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "joecolor": "b:082443p:8cb5e2s:77aedet:7198c2q:6193bf"
+                        },
+                        "key": "648859694",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/648859694/flowers",
+                            "html": "https://www.shazam.com/snippets/email-share/648859694?lang=en-US&country=GB",
+                            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/648859694",
+                            "subject": "Flowers - Miley Cyrus",
+                            "text": "Flowers by Miley Cyrus",
+                            "twitter": "I used @Shazam to discover Flowers by Miley Cyrus."
+                        },
+                        "subtitle": "Miley Cyrus",
+                        "title": "Flowers",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/648859694/flowers"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "charts/get-top-songs-in_country_by_genre",
+            "url": "https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_country_by_genre",
+            "description": "get top songs in country by genre",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "genre",
+                    "type": "STRING",
+                    "description": "POP,HIP_HOP_RAP,DANCE,ELECTRONIC,SOUL_RNB,ALTERNATIVE,ROCK,LATIN,FILM_TV,COUNTRY,AFRO_BEATS,WORLDWIDE,REGGAE_DANCE_HALL,HOUSE,K_POP,FRENCH_POP,SINGER_SONGWRITER,REG_MEXICO",
+                    "default": "POP"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "DZ,BY,CI,SN,TN,AU,AT,AZ,AR,BE,BG,BR,GB,HU,VE,VN,GH,DE,GR,DK,EG,ZM,IL,IN,ID,IE,ES,IT,KZ,CM,CA,KE,CN,CO,CR,MY,MA,MX,MZ,NG,NL,NZ,NO,AE,PE,PL,PT,RU,RO,SA,SG,US,TH,TZ,TR,UG,UZ,UA,UY,PH,FI,FR,HR,CZ,CL,CH,SE,ZA,KR,JP",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_country_by_genre\"\nquerystring = {\"genre\": \"POP\", \"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in_country_by_genre\"\nquerystring = {\"genre\": \"POP\", \"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en-US/GB/web/-/tracks/genre-country-chart-US-1?pageSize=4&startFrom=4",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "334329603",
+                                "alias": "jain",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/334329603/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1180771928",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1180771928?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1175094463",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c6/ef/30/c6ef3043-c03c-caf7-caa3-a3431a086c65/mzaf_11631466525512100935.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/makeba/1175093890?i=1175094463&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/makeba/1175093890?i=1175094463&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is5-ssl.mzstatic.com/image/thumb/Features116/v4/9d/93/ee/9d93ee11-53ed-d045-4b11-5f6f4b15f324/mzl.ztqrsgts.jpg/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "joecolor": "b:edba3dp:0b0b18s:391b20t:382e1fq:5d3b26"
+                        },
+                        "key": "267429991",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is5-ssl.mzstatic.com/image/thumb/Features116/v4/9d/93/ee/9d93ee11-53ed-d045-4b11-5f6f4b15f324/mzl.ztqrsgts.jpg/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/267429991/makeba",
+                            "html": "https://www.shazam.com/snippets/email-share/267429991?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music125/v4/5a/78/86/5a788626-308e-eb19-80e3-1b3b78ef1fe8/886446194783.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/267429991",
+                            "subject": "Makeba - Jain",
+                            "text": "Makeba by Jain",
+                            "twitter": "I used @Shazam to discover Makeba by Jain."
+                        },
+                        "subtitle": "Jain",
+                        "title": "Makeba",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/267429991/makeba"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "1529375597",
+                                "alias": "david-kushner",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/1529375597/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1681943558",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1681943558?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1680069454",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/c6/50/55/c6505541-d6f9-ca32-b4e4-042900832b5b/mzaf_15495323272353546067.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/daylight/1680069284?i=1680069454&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/daylight/1680069284?i=1680069454&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0c/ad/f1/0cadf121-b332-b02d-12d9-50cafd103190/516b46b4-4276-4575-ae88-6ba53f613dad_file_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:1e2400p:c7d284s:cfc857t:a5af6aq:aba746"
+                        },
+                        "key": "659236090",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0c/ad/f1/0cadf121-b332-b02d-12d9-50cafd103190/516b46b4-4276-4575-ae88-6ba53f613dad_file_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/659236090/daylight",
+                            "html": "https://www.shazam.com/snippets/email-share/659236090?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music126/v4/2e/a7/75/2ea77552-aa74-8cf1-4765-0529f6080c26/23SYMIM03701.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/659236090",
+                            "subject": "Daylight - David Kushner",
+                            "text": "Daylight by David Kushner",
+                            "twitter": "I used @Shazam to discover Daylight by David Kushner."
+                        },
+                        "subtitle": "David Kushner",
+                        "title": "Daylight",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/659236090/daylight"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "966309175",
+                                "alias": "post-malone",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/966309175/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1682354356",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1682354356?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1688021694",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/20/6f/ed/206fed9f-fdf1-d3a7-f405-6ee8ed823aab/mzaf_3296027094397366594.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": true,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/chemical/1688021170?i=1688021694&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/chemical/1688021170?i=1688021694&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/ea/c1/e8/eac1e88f-a515-f679-c2e3-ae6cae2c4303/3b7fdb91-3d2e-4b53-9b7a-ef1c39f18cea_ami-identity-f6e441ca8bf36b9a475ea669b4b87be7-2023-04-14T22-56-21.301Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/60/6a/bc/606abcfb-9b0e-f7fe-e1b8-0d37091f29d1/23UMGIM50188.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/60/6a/bc/606abcfb-9b0e-f7fe-e1b8-0d37091f29d1/23UMGIM50188.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:301402p:96d0fcs:7abbfct:82abcaq:6b9aca"
+                        },
+                        "key": "662681761",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/ea/c1/e8/eac1e88f-a515-f679-c2e3-ae6cae2c4303/3b7fdb91-3d2e-4b53-9b7a-ef1c39f18cea_ami-identity-f6e441ca8bf36b9a475ea669b4b87be7-2023-04-14T22-56-21.301Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/662681761/chemical",
+                            "html": "https://www.shazam.com/snippets/email-share/662681761?lang=en-US&country=GB",
+                            "image": "https://is5-ssl.mzstatic.com/image/thumb/Music116/v4/60/6a/bc/606abcfb-9b0e-f7fe-e1b8-0d37091f29d1/23UMGIM50188.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/662681761",
+                            "subject": "Chemical - Post Malone",
+                            "text": "Chemical by Post Malone",
+                            "twitter": "I used @Shazam to discover Chemical by Post Malone."
+                        },
+                        "subtitle": "Post Malone",
+                        "title": "Chemical",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/662681761/chemical"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "137057909",
+                                "alias": "miley-cyrus",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/137057909/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1663973562",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3e/57/ef/3e57efa9-0572-82f5-0e92-ea5fef33982a/mzaf_14012893767887586921.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "joecolor": "b:082443p:8cb5e2s:77aedet:7198c2q:6193bf"
+                        },
+                        "key": "648859694",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/648859694/flowers",
+                            "html": "https://www.shazam.com/snippets/email-share/648859694?lang=en-US&country=GB",
+                            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/648859694",
+                            "subject": "Flowers - Miley Cyrus",
+                            "text": "Flowers by Miley Cyrus",
+                            "twitter": "I used @Shazam to discover Flowers by Miley Cyrus."
+                        },
+                        "subtitle": "Miley Cyrus",
+                        "title": "Flowers",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/648859694/flowers"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "charts/get-top-songs-in-country",
+            "url": "https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-country",
+            "description": "get top osngs in country",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "DZ,BY,CI,SN,TN,AU,AT,AZ,AR,BE,BG,BR,GB,HU,VE,VN,GH,DE,GR,DK,EG,ZM,IL,IN,ID,IE,ES,IT,KZ,CM,CA,KE,CN,CO,CR,MY,MA,MX,MZ,NG,NL,NZ,NO,AE,PE,PL,PT,RU,RO,SA,SG,US,TH,TZ,TR,UG,UZ,UA,UY,PH,FI,FR,HR,CZ,CL,CH,SE,ZA,KR,JP",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-country\"\nquerystring = {\"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-country\"\nquerystring = {\"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/all-my-life-feat-j-cole/1687215990",
+                    "artist_id": "42",
+                    "key": 665652121,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e7/f5/59/e7f559fc-49cf-f5fc-fd35-3490cdb0be06/mzaf_16381888323034067349.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Lil Durk",
+                    "title": "All My Life (feat. J. Cole)",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/calm-down/1614063395",
+                    "artist_id": "42",
+                    "key": 601555046,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Rema",
+                    "title": "Calm Down",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/favorite-song/1685966877",
+                    "artist_id": "42",
+                    "key": 652552217,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/66/c0/51/66c05187-d465-e02a-7a9e-7d1b20204b1a/mzaf_3019250844714644475.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Toosii",
+                    "title": "Favorite Song",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/fast-car/1666738524",
+                    "artist_id": "42",
+                    "key": 650240181,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8c/02/20/8c0220a9-50aa-cb75-16b3-67daca811f72/mzaf_16249762850733039726.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Luke Combs",
+                    "title": "Fast Car",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/makeba/1175093890",
+                    "artist_id": "42",
+                    "key": 267429991,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c6/ef/30/c6ef3043-c03c-caf7-caa3-a3431a086c65/mzaf_11631466525512100935.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Jain",
+                    "title": "Makeba",
+                    "youtube_link": null
+                }
+            ]
+        },
+        {
+            "name": "charts/get-top-songs-in-city",
+            "url": "https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-city",
+            "description": "return top songs in city",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "city_name",
+                    "type": "STRING",
+                    "description": "use city name from below \nhttps://github.com/dotX12/dotX12/blob/main/city.json",
+                    "default": "Chicago"
+                },
+                {
+                    "name": "country_code",
+                    "type": "STRING",
+                    "description": "DZ,BY,CI,SN,TN,AU,AT,AZ,AR,BE,BG,BR,GB,HU,VE,VN,GH,DE,GR,DK,EG,ZM,IL,IN,ID,IE,ES,IT,KZ,CM,CA,KE,CN,CO,CR,MY,MA,MX,MZ,NG,NL,NZ,NO,AE,PE,PL,PT,RU,RO,SA,SG,US,TH,TZ,TR,UG,UZ,UA,UY,PH,FI,FR,HR,CZ,CL,CH,SE,ZA,KR,JP",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-city\"\nquerystring = {\"city_name\": \"Chicago\", \"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/charts/get-top-songs-in-city\"\nquerystring = {\"city_name\": \"Chicago\", \"country_code\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/favorite-song/1685966877",
+                    "artist_id": "42",
+                    "key": 652552217,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/66/c0/51/66c05187-d465-e02a-7a9e-7d1b20204b1a/mzaf_3019250844714644475.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Toosii",
+                    "title": "Favorite Song",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/makeba/1175093890",
+                    "artist_id": "42",
+                    "key": 267429991,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/c6/ef/30/c6ef3043-c03c-caf7-caa3-a3431a086c65/mzaf_11631466525512100935.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Jain",
+                    "title": "Makeba",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/all-my-life-feat-j-cole/1687215990",
+                    "artist_id": "42",
+                    "key": 665652121,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/e7/f5/59/e7f559fc-49cf-f5fc-fd35-3490cdb0be06/mzaf_16381888323034067349.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Lil Durk",
+                    "title": "All My Life (feat. J. Cole)",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/calm-down/1614063395",
+                    "artist_id": "42",
+                    "key": 601555046,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Rema",
+                    "title": "Calm Down",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/subscribe",
+                    "artist_id": null,
+                    "key": 660928652,
+                    "photo_url": null,
+                    "ringtone": null,
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/None",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Playboi Carti Feat. Vory",
+                    "title": "Made It This Far (24 Songs)",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/last-night/1667990565",
+                    "artist_id": "42",
+                    "key": 650906965,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/89/1e/03/891e03c1-98b8-3cbc-a10a-612427bf354a/mzaf_6519185680716377585.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Morgan Wallen",
+                    "title": "Last Night",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/fast-car/1666738524",
+                    "artist_id": "42",
+                    "key": 650240181,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/8c/02/20/8c0220a9-50aa-cb75-16b3-67daca811f72/mzaf_16249762850733039726.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Luke Combs",
+                    "title": "Fast Car",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/subscribe",
+                    "artist_id": null,
+                    "key": 667880207,
+                    "photo_url": null,
+                    "ringtone": null,
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/None",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Tory Lanez",
+                    "title": "Hurts Me",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/search-rescue/1681131987",
+                    "artist_id": "42",
+                    "key": 662137404,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/48/2d/d5/482dd509-f360-04bd-81b9-dd33da6ee6da/mzaf_5425771201904411564.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Drake",
+                    "title": "Search & Rescue",
+                    "youtube_link": null
+                },
+                {
+                    "apple_music_url": "https://music.apple.com/gb/album/put-it-on-da-floor-again-continued-feat-cardi-b/1691052631",
+                    "artist_id": "42",
+                    "key": 668127965,
+                    "photo_url": null,
+                    "ringtone": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/1e/41/3f/1e413fd9-f837-9060-6914-49fa14c280f4/mzaf_13627656227842739162.plus.aac.ep.m4a",
+                    "sections": [],
+                    "shazam_url": "https://www.shazam.com/track/42",
+                    "spotify_uri": null,
+                    "spotify_uri_query": null,
+                    "spotify_url": null,
+                    "subtitle": "Latto",
+                    "title": "Put It On Da Floor Again (Continued) [feat. Cardi B]",
+                    "youtube_link": null
+                }
+            ]
+        },
+        {
+            "name": "artist/get-top-songs",
+            "url": "https://shazam-api7.p.rapidapi.com/artist/get-top-songs",
+            "description": "Get the top songs by artist according to Shazam",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The value of 'artist -> adam_id' field returned in \u2026/search endpoint\n",
+                    "default": "1304716885"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/artist/get-top-songs\"\nquerystring = {\"id\": \"1304716885\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/artist/get-top-songs\"\nquerystring = {\"id\": \"1304716885\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "attributes": {
+                            "albumName": "Calm Down - Single",
+                            "artistName": "Rema & Selena Gomez",
+                            "artwork": {
+                                "bgColor": "ea6c31",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "0d0400",
+                                "textColor2": "24160c",
+                                "textColor3": "39190a",
+                                "textColor4": "4c2713",
+                                "url": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "atmos",
+                                "lossless",
+                                "lossy-stereo",
+                                "spatial"
+                            ],
+                            "composerName": "Amanda Ibanez, Michael Hunter & Alexandre Uwaifo",
+                            "discNumber": 1,
+                            "durationInMillis": 239318,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": true,
+                            "isMasteredForItunes": true,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B2214021",
+                            "name": "Calm Down",
+                            "playParams": {
+                                "id": "1640501238",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/21/6a/f7/216af760-4f00-d65e-5176-d3b76ff1143d/mzaf_10299316430509002343.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2022-03-25",
+                            "trackNumber": 1,
+                            "url": "https://music.apple.com/es/album/calm-down/1640501237?i=1640501238"
+                        },
+                        "href": "/v1/catalog/es/songs/1640501238",
+                        "id": "1640501238",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Warm Up",
+                            "artistName": "Bad Gyal & Rema",
+                            "artwork": {
+                                "bgColor": "755f54",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "f6edd5",
+                                "textColor2": "eecc83",
+                                "textColor3": "dcd1bb",
+                                "textColor4": "d6b679",
+                                "url": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/be/84/2d/be842da3-ce01-f239-7094-509edce0a549/21UMGIM18183.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "es-ES",
+                            "audioTraits": [
+                                "atmos",
+                                "lossless",
+                                "lossy-stereo",
+                                "spatial"
+                            ],
+                            "composerName": "Dwayne Chin-Quee, Andron Francois Cross, Claudell M. Mosanto, Thomas Broussard, Alba Farelo Sole, Pablo D\u00edaz Reixa & Divine Ikubor",
+                            "discNumber": 1,
+                            "durationInMillis": 185457,
+                            "genreNames": [
+                                "M\u00fasica latina",
+                                "M\u00fasica"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": true,
+                            "isMasteredForItunes": true,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "USUM72102381",
+                            "name": "44",
+                            "playParams": {
+                                "id": "1556723450",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/83/54/14/8354149f-6c47-da3c-a26a-7872f553c8b9/mzaf_17313178088611867539.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2021-03-18",
+                            "trackNumber": 2,
+                            "url": "https://music.apple.com/es/album/44/1556723443?i=1556723450"
+                        },
+                        "href": "/v1/catalog/es/songs/1556723450",
+                        "id": "1556723450",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Rave & Roses",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "f7f1d1",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "020000",
+                                "textColor2": "1f1909",
+                                "textColor3": "333029",
+                                "textColor4": "4a4431",
+                                "url": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "atmos",
+                                "lossless",
+                                "lossy-stereo",
+                                "spatial"
+                            ],
+                            "composerName": "Divine Ikubor",
+                            "discNumber": 1,
+                            "durationInMillis": 219669,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana",
+                                "M\u00fasicas del mundo"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": true,
+                            "isMasteredForItunes": true,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B2214004",
+                            "name": "Calm Down",
+                            "playParams": {
+                                "id": "1614063459",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2022-02-11",
+                            "trackNumber": 4,
+                            "url": "https://music.apple.com/es/album/calm-down/1614063395?i=1614063459"
+                        },
+                        "href": "/v1/catalog/es/songs/1614063459",
+                        "id": "1614063459",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Rema - EP",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "e1b6bd",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "0f0d0c",
+                                "textColor2": "141410",
+                                "textColor3": "392f2f",
+                                "textColor4": "3d3433",
+                                "url": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/d2/b2/02/d2b20200-8cd2-be33-1f87-43fb3d981f8e/19UMGIM82727.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "yo",
+                            "audioTraits": [
+                                "lossless",
+                                "lossy-stereo"
+                            ],
+                            "composerName": "Divine Ikubor & Igbinoba Osazee",
+                            "discNumber": 1,
+                            "durationInMillis": 179775,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": false,
+                            "isMasteredForItunes": false,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B1914003",
+                            "name": "Dumebi",
+                            "playParams": {
+                                "id": "1479694296",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/cd/21/43/cd21435b-729b-af91-fd7a-2fdf42c58d85/mzaf_6532064682142152518.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2019-03-22",
+                            "trackNumber": 3,
+                            "url": "https://music.apple.com/es/album/dumebi/1479693891?i=1479694296"
+                        },
+                        "href": "/v1/catalog/es/songs/1479694296",
+                        "id": "1479694296",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Rave & Roses Ultra",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "f7f1d1",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "120006",
+                                "textColor2": "4b2500",
+                                "textColor3": "40302f",
+                                "textColor4": "6d4e2a",
+                                "url": "https://is3-ssl.mzstatic.com/image/thumb/Music116/v4/c8/97/ea/c897ea8e-fbc6-d4b8-48fe-d9e31b46f1ed/23SYMIM04172.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "atmos",
+                                "lossless",
+                                "lossy-stereo",
+                                "spatial"
+                            ],
+                            "composerName": "Michael Hunter",
+                            "contentRating": "explicit",
+                            "discNumber": 1,
+                            "durationInMillis": 204750,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": true,
+                            "isMasteredForItunes": true,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B2314006",
+                            "name": "Charm",
+                            "playParams": {
+                                "id": "1683359955",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/0f/2d/cf/0f2dcf33-025d-e1cc-c3ee-aa121c18c4e0/mzaf_1742496780684126570.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2023-04-27",
+                            "trackNumber": 10,
+                            "url": "https://music.apple.com/es/album/charm/1683358108?i=1683359955"
+                        },
+                        "href": "/v1/catalog/es/songs/1683359955",
+                        "id": "1683359955",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Soundgasm - Single",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "fcf300",
+                                "hasP3": false,
+                                "height": 5000,
+                                "textColor1": "010005",
+                                "textColor2": "2d1807",
+                                "textColor3": "333104",
+                                "textColor4": "574405",
+                                "url": "https://is3-ssl.mzstatic.com/image/thumb/Music125/v4/bd/a1/63/bda163e6-adfc-88e7-2550-915516d30f7e/21UMGIM42899.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 5000
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "atmos",
+                                "lossless",
+                                "lossy-stereo",
+                                "spatial"
+                            ],
+                            "composerName": "Michael Hunter",
+                            "contentRating": "explicit",
+                            "discNumber": 1,
+                            "durationInMillis": 204755,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": false,
+                            "isMasteredForItunes": false,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B2114003",
+                            "name": "Soundgasm",
+                            "playParams": {
+                                "id": "1569735646",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/74/b6/cc/74b6cc46-af16-db74-f51a-d376723e18ef/mzaf_5773194126582153124.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2021-06-10",
+                            "trackNumber": 1,
+                            "url": "https://music.apple.com/es/album/soundgasm/1569735642?i=1569735646"
+                        },
+                        "href": "/v1/catalog/es/songs/1569735646",
+                        "id": "1569735646",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Soweto (feat. Don Toliver) - Single",
+                            "artistName": "Victony, Rema & Tempoe",
+                            "artwork": {
+                                "bgColor": "2b1914",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "acebca",
+                                "textColor2": "ffa0b3",
+                                "textColor3": "92c1a5",
+                                "textColor4": "d48493",
+                                "url": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/fb/e2/0c/fbe20cab-aba4-4ad7-b518-6762f08ab29f/8720923398641.png/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "lossless",
+                                "lossy-stereo"
+                            ],
+                            "composerName": "Anthony Victor, Michael Alagwu, Caleb Toliver & Divine Ikubor",
+                            "contentRating": "explicit",
+                            "discNumber": 1,
+                            "durationInMillis": 219500,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": false,
+                            "isMasteredForItunes": false,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "QZWA32200112",
+                            "name": "Soweto (feat. Don Toliver)",
+                            "playParams": {
+                                "id": "1677020007",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/fa/0e/9b/fa0e9b31-7bb3-0abe-d118-05dacaec01ff/mzaf_10969837327974833645.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2023-03-22",
+                            "trackNumber": 1,
+                            "url": "https://music.apple.com/es/album/soweto-feat-don-toliver/1677020006?i=1677020007"
+                        },
+                        "href": "/v1/catalog/es/songs/1677020007",
+                        "id": "1677020007",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Rema - EP",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "e1b6bd",
+                                "hasP3": false,
+                                "height": 3000,
+                                "textColor1": "0f0d0c",
+                                "textColor2": "141410",
+                                "textColor3": "392f2f",
+                                "textColor4": "3d3433",
+                                "url": "https://is5-ssl.mzstatic.com/image/thumb/Music115/v4/d2/b2/02/d2b20200-8cd2-be33-1f87-43fb3d981f8e/19UMGIM82727.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 3000
+                            },
+                            "audioLocale": "pcm",
+                            "audioTraits": [
+                                "lossless",
+                                "lossy-stereo"
+                            ],
+                            "composerName": "Divine Ikubor & Igbinoba Osazee",
+                            "discNumber": 1,
+                            "durationInMillis": 227456,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": false,
+                            "isMasteredForItunes": false,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B1914004",
+                            "name": "Corny",
+                            "playParams": {
+                                "id": "1479694297",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/5b/17/4f/5b174f19-4ebe-3f08-522f-3067d7d44563/mzaf_11366526968062049861.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2019-03-22",
+                            "trackNumber": 4,
+                            "url": "https://music.apple.com/es/album/corny/1479693891?i=1479694297"
+                        },
+                        "href": "/v1/catalog/es/songs/1479694297",
+                        "id": "1479694297",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Rizzla - Single",
+                            "artistName": "The Martinez Brothers, Gordo & Rema",
+                            "artwork": {
+                                "bgColor": "000000",
+                                "hasP3": false,
+                                "height": 1600,
+                                "textColor1": "fafafa",
+                                "textColor2": "cccccc",
+                                "textColor3": "c8c8c8",
+                                "textColor4": "a3a3a3",
+                                "url": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/5b/b8/30/5bb830eb-a67f-3209-5175-fc245f521ec8/985742ed-e294-4eda-a100-96bf35405213.jpg/{w}x{h}bb.jpg",
+                                "width": 1600
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "lossless",
+                                "lossy-stereo"
+                            ],
+                            "composerName": "Christian Martinez, Steve Martinez Jr., Diamante Blackmon & Divine Ikubor",
+                            "contentRating": "explicit",
+                            "discNumber": 1,
+                            "durationInMillis": 217749,
+                            "genreNames": [
+                                "House",
+                                "M\u00fasica",
+                                "Dance",
+                                "Africana",
+                                "Afro-beat"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": false,
+                            "isMasteredForItunes": false,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "QZN882224581",
+                            "name": "Rizzla",
+                            "playParams": {
+                                "id": "1620823693",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/9a/b5/9e/9ab59e26-4a80-16eb-e8ec-05930f8169f1/mzaf_8890783020936130518.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2022-05-13",
+                            "trackNumber": 1,
+                            "url": "https://music.apple.com/es/album/rizzla/1620823692?i=1620823693"
+                        },
+                        "href": "/v1/catalog/es/songs/1620823693",
+                        "id": "1620823693",
+                        "type": "songs"
+                    },
+                    {
+                        "attributes": {
+                            "albumName": "Ginger Me - Single",
+                            "artistName": "Rema",
+                            "artwork": {
+                                "bgColor": "b7a759",
+                                "hasP3": false,
+                                "height": 1500,
+                                "textColor1": "0f0c0a",
+                                "textColor2": "1f2016",
+                                "textColor3": "312b1a",
+                                "textColor4": "3d3b23",
+                                "url": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/14/53/3a/14533ac7-f0fe-1e18-67a7-b3555ca098e1/20UMGIM44276.rgb.jpg/{w}x{h}bb.jpg",
+                                "width": 1500
+                            },
+                            "audioLocale": "en-US",
+                            "audioTraits": [
+                                "lossless",
+                                "lossy-stereo"
+                            ],
+                            "composerName": "Divine Ikubor",
+                            "discNumber": 1,
+                            "durationInMillis": 205893,
+                            "genreNames": [
+                                "Afrobeats",
+                                "M\u00fasica",
+                                "Africana"
+                            ],
+                            "hasLyrics": true,
+                            "hasTimeSyncedLyrics": true,
+                            "isAppleDigitalMaster": true,
+                            "isMasteredForItunes": true,
+                            "isVocalAttenuationAllowed": true,
+                            "isrc": "NGA3B2014009",
+                            "name": "Ginger Me",
+                            "playParams": {
+                                "id": "1517657509",
+                                "kind": "song"
+                            },
+                            "previews": [
+                                {
+                                    "url": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/b0/e3/f2/b0e3f236-0bd2-d7b2-6ac3-881c2f323306/mzaf_11517361569749758390.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "releaseDate": "2020-06-18",
+                            "trackNumber": 1,
+                            "url": "https://music.apple.com/es/album/ginger-me/1517657504?i=1517657509"
+                        },
+                        "href": "/v1/catalog/es/songs/1517657509",
+                        "id": "1517657509",
+                        "type": "songs"
+                    }
+                ],
+                "next": "/v1/catalog/es/artists/1304716885/view/top-songs?offset=10"
+            }
+        },
+        {
+            "name": "artist/get-details",
+            "url": "https://shazam-api7.p.rapidapi.com/artist/get-details",
+            "description": "Retrieving information from an artist profile",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The value of 'artist -> adam_id' field returned in \u2026/search endpoint\n",
+                    "default": "1304716885"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/artist/get-details\"\nquerystring = {\"id\": \"1304716885\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/artist/get-details\"\nquerystring = {\"id\": \"1304716885\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "data": [
+                    {
+                        "attributes": {
+                            "artwork": {
+                                "bgColor": "5b533f",
+                                "hasP3": false,
+                                "height": 3840,
+                                "textColor1": "deefe4",
+                                "textColor2": "c8e5cd",
+                                "textColor3": "c4d0c3",
+                                "textColor4": "b2c8b1",
+                                "url": "https://is1-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/{w}x{h}bb.jpg",
+                                "width": 3840
+                            },
+                            "genreNames": [
+                                "Afrobeats"
+                            ],
+                            "name": "Rema",
+                            "url": "https://music.apple.com/gb/artist/rema/1304716885"
+                        },
+                        "href": "/v1/catalog/gb/artists/1304716885",
+                        "id": "1304716885",
+                        "relationships": {
+                            "albums": {
+                                "data": [
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1614063395",
+                                        "id": "1614063395",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1479693891",
+                                        "id": "1479693891",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1521265051",
+                                        "id": "1521265051",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1640501237",
+                                        "id": "1640501237",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1683358108",
+                                        "id": "1683358108",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1479927424",
+                                        "id": "1479927424",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1557231938",
+                                        "id": "1557231938",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1465386941",
+                                        "id": "1465386941",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1500783298",
+                                        "id": "1500783298",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1677020006",
+                                        "id": "1677020006",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1502383821",
+                                        "id": "1502383821",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1479694504",
+                                        "id": "1479694504",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1669761326",
+                                        "id": "1669761326",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1564612929",
+                                        "id": "1564612929",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1553487589",
+                                        "id": "1553487589",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1541236114",
+                                        "id": "1541236114",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1651400866",
+                                        "id": "1651400866",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1503215220",
+                                        "id": "1503215220",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1670403434",
+                                        "id": "1670403434",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1683701365",
+                                        "id": "1683701365",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1640246182",
+                                        "id": "1640246182",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1551680707",
+                                        "id": "1551680707",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1515759167",
+                                        "id": "1515759167",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1613553953",
+                                        "id": "1613553953",
+                                        "type": "albums"
+                                    },
+                                    {
+                                        "href": "/v1/catalog/gb/albums/1613360188",
+                                        "id": "1613360188",
+                                        "type": "albums"
+                                    }
+                                ],
+                                "href": "/v1/catalog/gb/artists/1304716885/albums",
+                                "next": "/v1/catalog/gb/artists/1304716885/albums?offset=25"
+                            }
+                        },
+                        "type": "artists"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "songs/list-recommendations",
+            "url": "https://shazam-api7.p.rapidapi.com/songs/list-recommendations",
+            "description": "Similar songs based on song id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The value of 'key' field returned in \u2026/search endpoint\n",
+                    "default": "628712770"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/list-recommendations\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/list-recommendations\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "next": "https://cdn.shazam.com/shazam/v3/en-US/GB/web/-/tracks/track-similarities-id-628712770?pageSize=5&startFrom=5",
+                "properties": {},
+                "tracks": [
+                    {
+                        "artists": [
+                            {
+                                "adamid": "1304716885",
+                                "alias": "rema",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/1304716885/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1650414355&channel=",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1650414355?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1614063459",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/calm-down/1614063395?i=1614063459&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/calm-down/1614063395?i=1614063459&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:f7f1d1p:020000s:1f1909t:333029q:4a4431"
+                        },
+                        "key": "601555046",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/601555046/calm-down",
+                            "html": "https://www.shazam.com/snippets/email-share/601555046?lang=en-US&country=GB",
+                            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/601555046",
+                            "subject": "Calm Down - Rema",
+                            "text": "Calm Down by Rema",
+                            "twitter": "I used @Shazam to discover Calm Down by Rema."
+                        },
+                        "subtitle": "Rema",
+                        "title": "Calm Down",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/601555046/calm-down"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "63346553",
+                                "alias": "rihanna",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/63346553/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1652104610&channel=",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1652104610?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1651763192",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/37/ec/71/37ec7188-c1f5-47c1-43a7-28d32e26f172/mzaf_7868625517086999040.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/lift-me-up-from-black-panther-wakanda-forever-music/1651763191?i=1651763192&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/lift-me-up-from-black-panther-wakanda-forever-music/1651763191?i=1651763192&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/14/9d/76/149d76d9-cca6-b8e1-146f-e95a9802db13/mza_2396005047706780053.png/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music112/v4/46/17/80/461780d4-8620-3e89-7cc4-7f1f08152924/22UM1IM24755.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music112/v4/46/17/80/461780d4-8620-3e89-7cc4-7f1f08152924/22UM1IM24755.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:898989p:070707s:161616t:212121q:2d2d2d"
+                        },
+                        "key": "639053666",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is1-ssl.mzstatic.com/image/thumb/Features116/v4/14/9d/76/149d76d9-cca6-b8e1-146f-e95a9802db13/mza_2396005047706780053.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/639053666/lift-me-up-from-black-panther-wakanda-forever-music",
+                            "html": "https://www.shazam.com/snippets/email-share/639053666?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music112/v4/46/17/80/461780d4-8620-3e89-7cc4-7f1f08152924/22UM1IM24755.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/639053666",
+                            "subject": "Lift Me Up (From Black Panther: Wakanda Forever - Music From and Inspired By) - Rihanna",
+                            "text": "Lift Me Up (From Black Panther: Wakanda Forever - Music From and Inspired By) by Rihanna",
+                            "twitter": "I used @Shazam to discover Lift Me Up (From Black Panther: Wakanda Forever - Music From and Inspired By) by Rihanna."
+                        },
+                        "subtitle": "Rihanna",
+                        "title": "Lift Me Up (From Black Panther: Wakanda Forever - Music From and Inspired By)",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/639053666/lift-me-up-from-black-panther-wakanda-forever-music"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "137057909",
+                                "alias": "miley-cyrus",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/137057909/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1663973562",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview116/v4/3e/57/ef/3e57efa9-0572-82f5-0e92-ea5fef33982a/mzaf_14012893767887586921.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/flowers/1663973555?i=1663973562&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "joecolor": "b:082443p:8cb5e2s:77aedet:7198c2q:6193bf"
+                        },
+                        "key": "648859694",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is4-ssl.mzstatic.com/image/thumb/AMCArtistImages123/v4/b0/37/e1/b037e1f1-cf37-419e-66b2-2ecda585be40/c0ef2b77-e0ce-4518-b1a3-60596c96c801_ami-identity-b057dd0940cbcd4300602f5bf8130c3d-2023-01-05T15-01-46.780Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/648859694/flowers",
+                            "html": "https://www.shazam.com/snippets/email-share/648859694?lang=en-US&country=GB",
+                            "image": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/9e/80/c7/9e80c757-6994-4338-9e79-b92d5f75f788/196589561725.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/648859694",
+                            "subject": "Flowers - Miley Cyrus",
+                            "text": "Flowers by Miley Cyrus",
+                            "twitter": "I used @Shazam to discover Flowers by Miley Cyrus."
+                        },
+                        "subtitle": "Miley Cyrus",
+                        "title": "Flowers",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/648859694/flowers"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "1580652660",
+                                "alias": "rosa-linn",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/1580652660/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1648922849&channel=",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1648922849?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1646526227",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview122/v4/3f/51/6f/3f516f8f-aff1-2ccd-151a-e417ed5e934e/mzaf_4321344331127641664.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/snap/1646526226?i=1646526227&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/snap/1646526226?i=1646526227&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/75/4c/3b/754c3b37-5a16-c203-f6f6-ff5c3ddfa93e/pr_source.png/800x800cc.jpg",
+                            "coverart": "https://is4-ssl.mzstatic.com/image/thumb/Music122/v4/e6/f7/26/e6f726ab-1827-dec4-1613-394b537db8e4/196589496959.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is4-ssl.mzstatic.com/image/thumb/Music122/v4/e6/f7/26/e6f726ab-1827-dec4-1613-394b537db8e4/196589496959.jpg/400x400cc.jpg",
+                            "joecolor": "b:f3f0ebp:2d2526s:382a2at:554d4dq:5d5251"
+                        },
+                        "key": "607917333",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Music116/v4/75/4c/3b/754c3b37-5a16-c203-f6f6-ff5c3ddfa93e/pr_source.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/607917333/snap",
+                            "html": "https://www.shazam.com/snippets/email-share/607917333?lang=en-US&country=GB",
+                            "image": "https://is4-ssl.mzstatic.com/image/thumb/Music122/v4/e6/f7/26/e6f726ab-1827-dec4-1613-394b537db8e4/196589496959.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/607917333",
+                            "subject": "SNAP - Rosa Linn",
+                            "text": "SNAP by Rosa Linn",
+                            "twitter": "I used @Shazam to discover SNAP by Rosa Linn."
+                        },
+                        "subtitle": "Rosa Linn",
+                        "title": "SNAP",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/607917333/snap"
+                    },
+                    {
+                        "artists": [
+                            {
+                                "adamid": "156488786",
+                                "alias": "sam-smith",
+                                "id": "42"
+                            },
+                            {
+                                "adamid": "291697579",
+                                "alias": "kim-petras",
+                                "id": "42"
+                            }
+                        ],
+                        "highlightsurls": {
+                            "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/156488786/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1647565781&channel=",
+                            "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1647565781?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&channel="
+                        },
+                        "hub": {
+                            "actions": [
+                                {
+                                    "id": "1649325659",
+                                    "name": "apple",
+                                    "type": "applemusicplay"
+                                },
+                                {
+                                    "name": "apple",
+                                    "type": "uri",
+                                    "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview126/v4/3a/2e/99/3a2e99b8-ee01-7af0-f1e0-b189e54cf85c/mzaf_7494069049386285167.plus.aac.ep.m4a"
+                                }
+                            ],
+                            "displayname": "APPLE MUSIC",
+                            "explicit": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                            "options": [
+                                {
+                                    "actions": [
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "applemusicopen",
+                                            "uri": "https://music.apple.com/gb/album/unholy/1649325651?i=1649325659&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        },
+                                        {
+                                            "name": "hub:applemusic:deeplink",
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/unholy/1649325651?i=1649325659&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                        }
+                                    ],
+                                    "beacondata": {
+                                        "providername": "applemusic",
+                                        "type": "open"
+                                    },
+                                    "caption": "OPEN",
+                                    "colouroverflowimage": false,
+                                    "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                                    "listcaption": "Open in Apple Music",
+                                    "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                                    "providername": "applemusic",
+                                    "type": "open"
+                                }
+                            ],
+                            "type": "APPLEMUSIC"
+                        },
+                        "images": {
+                            "background": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages122/v4/de/0c/5f/de0c5f88-722a-32d8-ff95-51ea2d98cd33/9fd6e963-6b85-446e-aeb9-871641d96659_ami-identity-a9d9c72c23307ab2a64018246fe99b36-2022-11-11T11-06-33.418Z_cropped.png/800x800cc.jpg",
+                            "coverart": "https://is2-ssl.mzstatic.com/image/thumb/Music122/v4/0d/97/a6/0d97a649-760f-522c-269d-9d710dc372ba/22UM1IM07174.rgb.jpg/400x400cc.jpg",
+                            "coverarthq": "https://is2-ssl.mzstatic.com/image/thumb/Music122/v4/0d/97/a6/0d97a649-760f-522c-269d-9d710dc372ba/22UM1IM07174.rgb.jpg/400x400cc.jpg",
+                            "joecolor": "b:36311dp:e4c29ds:e0a581t:c1a583q:be8e6d"
+                        },
+                        "key": "632531170",
+                        "layout": "5",
+                        "properties": {},
+                        "share": {
+                            "avatar": "https://is2-ssl.mzstatic.com/image/thumb/AMCArtistImages122/v4/de/0c/5f/de0c5f88-722a-32d8-ff95-51ea2d98cd33/9fd6e963-6b85-446e-aeb9-871641d96659_ami-identity-a9d9c72c23307ab2a64018246fe99b36-2022-11-11T11-06-33.418Z_cropped.png/800x800cc.jpg",
+                            "href": "https://www.shazam.com/track/632531170/unholy",
+                            "html": "https://www.shazam.com/snippets/email-share/632531170?lang=en-US&country=GB",
+                            "image": "https://is2-ssl.mzstatic.com/image/thumb/Music122/v4/0d/97/a6/0d97a649-760f-522c-269d-9d710dc372ba/22UM1IM07174.rgb.jpg/400x400cc.jpg",
+                            "snapchat": "https://www.shazam.com/partner/sc/track/632531170",
+                            "subject": "Unholy - Sam Smith & Kim Petras",
+                            "text": "Unholy by Sam Smith & Kim Petras",
+                            "twitter": "I used @Shazam to discover Unholy by Sam Smith & Kim Petras."
+                        },
+                        "subtitle": "Sam Smith & Kim Petras",
+                        "title": "Unholy",
+                        "type": "MUSIC",
+                        "url": "https://www.shazam.com/track/632531170/unholy"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "songs/get-track-listening-count",
+            "url": "https://shazam-api7.p.rapidapi.com/songs/get-track-listening-count",
+            "description": "Returns the number of times a particular song has been played",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The value of 'key' field returned in \u2026/search endpoint\n\n",
+                    "default": "628712770"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/get-track-listening-count\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/get-track-listening-count\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": "628712770",
+                "total": 2941164,
+                "type": "tag"
+            }
+        },
+        {
+            "name": "songs/get_details",
+            "url": "https://shazam-api7.p.rapidapi.com/songs/get_details",
+            "description": "get details about song",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The value of 'key' field returned in \u2026/search endpoint\n\n",
+                    "default": "628712770"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/get_details\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/songs/get_details\"\nquerystring = {\"id\": \"628712770\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "albumadamid": "1640501237",
+                "alias": "calm-down",
+                "artists": [
+                    {
+                        "adamid": "1304716885",
+                        "alias": "rema",
+                        "id": "42"
+                    },
+                    {
+                        "adamid": "280215834",
+                        "alias": "selena-gomez",
+                        "id": "42"
+                    }
+                ],
+                "highlightsurls": {
+                    "artisthighlightsurl": "https://cdn.shazam.com/video/v3/en-US/GB/web/1304716885/highlights?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web&videoIdToFilter=1643167420",
+                    "trackhighlighturl": "https://cdn.shazam.com/video/v3/en-US/GB/web/highlights/1643167420?affiliate=mttnagencyid%3Ds2n%26mttnsiteid%3D125115%26mttn3pid%3DApple-Shazam%26mttnsub1%3DShazam_web%26mttnsub2%3D5348615A-616D-3235-3830-44754D6D5973%26itscg%3D30201%26app%3Dmusic%26itsct%3DShazam_web"
+                },
+                "hub": {
+                    "actions": [
+                        {
+                            "id": "1640501238",
+                            "name": "apple",
+                            "type": "applemusicplay"
+                        },
+                        {
+                            "name": "apple",
+                            "type": "uri",
+                            "uri": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/21/6a/f7/216af760-4f00-d65e-5176-d3b76ff1143d/mzaf_10299316430509002343.plus.aac.ep.m4a"
+                        }
+                    ],
+                    "displayname": "APPLE MUSIC",
+                    "explicit": false,
+                    "image": "https://images.shazam.com/static/icons/hub/web/v5/applemusic.png",
+                    "options": [
+                        {
+                            "actions": [
+                                {
+                                    "name": "hub:applemusic:deeplink",
+                                    "type": "applemusicopen",
+                                    "uri": "https://music.apple.com/gb/album/calm-down/1640501237?i=1640501238&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                },
+                                {
+                                    "name": "hub:applemusic:deeplink",
+                                    "type": "uri",
+                                    "uri": "https://music.apple.com/gb/album/calm-down/1640501237?i=1640501238&mttnagencyid=s2n&mttnsiteid=125115&mttn3pid=Apple-Shazam&mttnsub1=Shazam_web&mttnsub2=5348615A-616D-3235-3830-44754D6D5973&itscg=30201&app=music&itsct=Shazam_web"
+                                }
+                            ],
+                            "beacondata": {
+                                "providername": "applemusic",
+                                "type": "open"
+                            },
+                            "caption": "OPEN",
+                            "colouroverflowimage": false,
+                            "image": "https://images.shazam.com/static/icons/hub/web/v5/overflow-open-option.png",
+                            "listcaption": "Open in Apple Music",
+                            "overflowimage": "https://images.shazam.com/static/icons/hub/web/v5/applemusic-overflow.png",
+                            "providername": "applemusic",
+                            "type": "open"
+                        }
+                    ],
+                    "type": "APPLEMUSIC"
+                },
+                "images": {
+                    "background": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                    "coverart": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                    "coverarthq": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                    "joecolor": "b:ea6c31p:0d0400s:24160ct:39190aq:4c2713"
+                },
+                "isrc": "NGA3B2214021",
+                "key": "628712770",
+                "layout": "5",
+                "relatedtracksurl": "https://cdn.shazam.com/shazam/v3/en-US/GB/web/-/tracks/track-similarities-id-628712770?startFrom=0&pageSize=20&connected=",
+                "releasedate": "25-03-2022",
+                "sections": [
+                    {
+                        "metadata": [
+                            {
+                                "text": "Calm Down - Single",
+                                "title": "Album"
+                            },
+                            {
+                                "text": "Mavin Records / Jonzing World",
+                                "title": "Label"
+                            },
+                            {
+                                "text": "2022",
+                                "title": "Released"
+                            }
+                        ],
+                        "metapages": [
+                            {
+                                "caption": "Rema",
+                                "image": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg"
+                            },
+                            {
+                                "caption": "Calm Down",
+                                "image": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg"
+                            }
+                        ],
+                        "tabname": "Song",
+                        "type": "SONG"
+                    },
+                    {
+                        "tabname": "Related",
+                        "type": "RELATED",
+                        "url": "https://cdn.shazam.com/shazam/v3/en-US/GB/web/-/tracks/track-similarities-id-628712770?startFrom=0&pageSize=20&connected="
+                    }
+                ],
+                "share": {
+                    "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                    "href": "https://www.shazam.com/track/628712770/calm-down",
+                    "html": "https://www.shazam.com/snippets/email-share/628712770?lang=en-US&country=GB",
+                    "image": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                    "snapchat": "https://www.shazam.com/partner/sc/track/628712770",
+                    "subject": "Calm Down - Rema & Selena Gomez",
+                    "text": "Calm Down by Rema & Selena Gomez",
+                    "twitter": "I used @Shazam to discover Calm Down by Rema & Selena Gomez."
+                },
+                "subtitle": "Rema & Selena Gomez",
+                "title": "Calm Down",
+                "trackadamid": "1640501238",
+                "type": "MUSIC",
+                "url": "https://www.shazam.com/track/628712770/calm-down",
+                "urlparams": {
+                    "{trackartist}": "Rema+%26+Selena+Gomez",
+                    "{tracktitle}": "Calm+Down"
+                }
+            }
+        },
+        {
+            "name": "/search",
+            "url": "https://shazam-api7.p.rapidapi.com/search",
+            "description": "Search for songs, artists that match input term",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "term",
+                    "type": "STRING",
+                    "description": "Full name of songs or artists",
+                    "default": "calm down"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/search\"\nquerystring = {\"term\": \"calm down\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://shazam-api7.p.rapidapi.com/search\"\nquerystring = {\"term\": \"calm down\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"shazam-api7.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "artist": {
+                    "hits": [
+                        {
+                            "artist": {
+                                "adam_id": 1191795882,
+                                "alias": null,
+                                "avatar": "https://is4-ssl.mzstatic.com/image/thumb/Music111/v4/99/8c/45/998c45a3-87e0-92f3-6db9-8bbf7466c51b/113087177.jpg/800x800ac.jpg",
+                                "genres": [],
+                                "genres_primary": null,
+                                "name": "Calm Down",
+                                "url": "https://music.apple.com/gb/artist/calm-down/1191795882",
+                                "verified": false
+                            }
+                        },
+                        {
+                            "artist": {
+                                "adam_id": 380877279,
+                                "alias": null,
+                                "avatar": "https://is2-ssl.mzstatic.com/image/thumb/Features125/v4/4a/b7/6d/4ab76d68-276e-1c5f-80e6-6d229e5f702e/mzl.wspfriah.jpg/800x800bb.jpg",
+                                "genres": [],
+                                "genres_primary": null,
+                                "name": "City Calm Down",
+                                "url": "https://music.apple.com/gb/artist/city-calm-down/380877279",
+                                "verified": false
+                            }
+                        },
+                        {
+                            "artist": {
+                                "adam_id": 336005816,
+                                "alias": null,
+                                "avatar": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/73/d5/ec/73d5ec40-d2f8-1e30-81a9-0ed453a38d0d/cover_4050215755048.jpg/800x800ac.jpg",
+                                "genres": [],
+                                "genres_primary": null,
+                                "name": "CALMDOWN",
+                                "url": "https://music.apple.com/gb/artist/calmdown/336005816",
+                                "verified": false
+                            }
+                        },
+                        {
+                            "artist": {
+                                "adam_id": 1478501015,
+                                "alias": null,
+                                "avatar": "https://is3-ssl.mzstatic.com/image/thumb/Music122/v4/01/f1/e1/01f1e1e1-eb61-7a07-df4a-00bcd9dcbd98/5902898478747.jpg/800x800ac.jpg",
+                                "genres": [],
+                                "genres_primary": null,
+                                "name": "Calm Down Baby White Noise",
+                                "url": "https://music.apple.com/gb/artist/calm-down-baby-white-noise/1478501015",
+                                "verified": false
+                            }
+                        },
+                        {
+                            "artist": {
+                                "adam_id": 1675248695,
+                                "alias": null,
+                                "avatar": "https://is3-ssl.mzstatic.com/image/thumb/Music116/v4/c7/3b/e8/c73be80a-5094-11c5-14db-9f6bd6747f86/4064946167315_3000.jpg/800x800ac.jpg",
+                                "genres": [],
+                                "genres_primary": null,
+                                "name": "Calm Down",
+                                "url": "https://music.apple.com/gb/artist/calm-down/1675248695",
+                                "verified": false
+                            }
+                        }
+                    ]
+                },
+                "tracks": {
+                    "hits": [
+                        {
+                            "actions": [
+                                {
+                                    "id": "296981900",
+                                    "name": "track:296981900",
+                                    "type": "track"
+                                }
+                            ],
+                            "alias": "calm-down",
+                            "artists": [
+                                {
+                                    "adamid": "275649746",
+                                    "alias": "g-eazy",
+                                    "id": "42"
+                                }
+                            ],
+                            "heading": {
+                                "subtitle": "G-Eazy",
+                                "title": "Calm Down"
+                            },
+                            "images": {
+                                "blurred": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/09/7f/35/097f3543-b9e7-89c3-bc31-4fac80b4bb44/dj.mmkpchtu.jpg/400x400cc.jpg",
+                                "default": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/09/7f/35/097f3543-b9e7-89c3-bc31-4fac80b4bb44/dj.mmkpchtu.jpg/400x400cc.jpg",
+                                "play": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/09/7f/35/097f3543-b9e7-89c3-bc31-4fac80b4bb44/dj.mmkpchtu.jpg/400x400cc.jpg"
+                            },
+                            "key": "296981900",
+                            "share": {
+                                "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages116/v4/6d/5c/69/6d5c6940-485b-d60f-e334-b39e81c5780e/908da668-f697-4166-907d-149c5607c1bd_ami-identity-8da1dc8e941a35d55632abba2260c3e5-2023-03-16T23-59-48.216Z_cropped.png/800x800cc.jpg",
+                                "href": "https://www.shazam.com/track/296981900/calm-down",
+                                "html": "https://www.shazam.com/snippets/email-share/296981900?lang=en-US&country=GB",
+                                "image": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/09/7f/35/097f3543-b9e7-89c3-bc31-4fac80b4bb44/dj.mmkpchtu.jpg/400x400cc.jpg",
+                                "snapchat": "https://www.shazam.com/partner/sc/track/296981900",
+                                "subject": "Calm Down - G-Eazy",
+                                "text": "Calm Down by G-Eazy",
+                                "twitter": "I used @Shazam to discover Calm Down by G-Eazy."
+                            },
+                            "stores": {
+                                "apple": {
+                                    "actions": [
+                                        {
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/calm-down/1053579793?i=1053579805&app=music&itsct=Shazam_1"
+                                        }
+                                    ],
+                                    "coverarturl": "https://is2-ssl.mzstatic.com/image/thumb/Music124/v4/09/7f/35/097f3543-b9e7-89c3-bc31-4fac80b4bb44/dj.mmkpchtu.jpg/400x400cc.jpg",
+                                    "explicit": true,
+                                    "previewurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/15/a2/0b/15a20b12-99f0-c41a-3060-f76ec00b689e/mzaf_9944100265279170685.plus.aac.p.m4a",
+                                    "productid": "1053579793",
+                                    "trackid": "1053579805"
+                                }
+                            },
+                            "streams": {},
+                            "type": "MUSIC",
+                            "url": "https://www.shazam.com/track/296981900/calm-down",
+                            "urlparams": {
+                                "{trackartist}": "G-Eazy",
+                                "{tracktitle}": "Calm+Down"
+                            }
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "id": "601555046",
+                                    "name": "track:601555046",
+                                    "type": "track"
+                                }
+                            ],
+                            "alias": "calm-down",
+                            "artists": [
+                                {
+                                    "adamid": "1304716885",
+                                    "alias": "rema",
+                                    "id": "42"
+                                }
+                            ],
+                            "heading": {
+                                "subtitle": "Rema",
+                                "title": "Calm Down"
+                            },
+                            "images": {
+                                "blurred": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                                "default": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                                "play": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg"
+                            },
+                            "key": "601555046",
+                            "share": {
+                                "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                                "href": "https://www.shazam.com/track/601555046/calm-down",
+                                "html": "https://www.shazam.com/snippets/email-share/601555046?lang=en-US&country=GB",
+                                "image": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                                "snapchat": "https://www.shazam.com/partner/sc/track/601555046",
+                                "subject": "Calm Down - Rema",
+                                "text": "Calm Down by Rema",
+                                "twitter": "I used @Shazam to discover Calm Down by Rema."
+                            },
+                            "stores": {
+                                "apple": {
+                                    "actions": [
+                                        {
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/calm-down/1614063395?i=1614063459&app=music&itsct=Shazam_1"
+                                        }
+                                    ],
+                                    "coverarturl": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/b2/b4/7c/b2b47cf9-d8e2-53f6-5c62-c974d665c95b/22UMGIM08994.rgb.jpg/400x400cc.jpg",
+                                    "explicit": false,
+                                    "previewurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/70/9f/c7/709fc7e3-8e43-4b42-4f6e-c9f0a94842ce/mzaf_8187227090010990098.plus.aac.ep.m4a",
+                                    "productid": "1614063395",
+                                    "trackid": "1614063459"
+                                }
+                            },
+                            "streams": {},
+                            "type": "MUSIC",
+                            "url": "https://www.shazam.com/track/601555046/calm-down",
+                            "urlparams": {
+                                "{trackartist}": "Rema",
+                                "{tracktitle}": "Calm+Down"
+                            }
+                        },
+                        {
+                            "actions": [
+                                {
+                                    "id": "628712770",
+                                    "name": "track:628712770",
+                                    "type": "track"
+                                }
+                            ],
+                            "alias": "calm-down",
+                            "artists": [
+                                {
+                                    "adamid": "1304716885",
+                                    "alias": "rema",
+                                    "id": "42"
+                                },
+                                {
+                                    "adamid": "280215834",
+                                    "alias": "selena-gomez",
+                                    "id": "42"
+                                }
+                            ],
+                            "heading": {
+                                "subtitle": "Rema & Selena Gomez",
+                                "title": "Calm Down"
+                            },
+                            "images": {
+                                "blurred": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                                "default": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                                "play": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg"
+                            },
+                            "key": "628712770",
+                            "share": {
+                                "avatar": "https://is3-ssl.mzstatic.com/image/thumb/AMCArtistImages126/v4/0e/bc/cb/0ebccb7c-af52-7962-7583-96d95e677f6d/718012c7-9b6a-4153-9334-54f84d2935e3_ami-identity-9e987f39368f9dd37966c136969aac14-2023-02-11T08-30-18.286Z_cropped.png/800x800cc.jpg",
+                                "href": "https://www.shazam.com/track/628712770/calm-down",
+                                "html": "https://www.shazam.com/snippets/email-share/628712770?lang=en-US&country=GB",
+                                "image": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                                "snapchat": "https://www.shazam.com/partner/sc/track/628712770",
+                                "subject": "Calm Down - Rema & Selena Gomez",
+                                "text": "Calm Down by Rema & Selena Gomez",
+                                "twitter": "I used @Shazam to discover Calm Down by Rema & Selena Gomez."
+                            },
+                            "stores": {
+                                "apple": {
+                                    "actions": [
+                                        {
+                                            "type": "uri",
+                                            "uri": "https://music.apple.com/gb/album/calm-down/1640501237?i=1640501238&app=music&itsct=Shazam_1"
+                                        }
+                                    ],
+                                    "coverarturl": "https://is3-ssl.mzstatic.com/image/thumb/Music112/v4/ee/f1/dc/eef1dc82-f516-fd0f-581c-3f952a0e2243/22UMGIM92113.rgb.jpg/400x400cc.jpg",
+                                    "explicit": false,
+                                    "previewurl": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview112/v4/21/6a/f7/216af760-4f00-d65e-5176-d3b76ff1143d/mzaf_10299316430509002343.plus.aac.ep.m4a",
+                                    "productid": "1640501237",
+                                    "trackid": "1640501238"
+                                }
+                            },
+                            "streams": {},
+                            "type": "MUSIC",
+                            "url": "https://www.shazam.com/track/628712770/calm-down",
+                            "urlparams": {
+                                "{trackartist}": "Rema+%26+Selena+Gomez",
+                                "{tracktitle}": "Calm+Down"
+                            }
+                        }
+                    ]
+                }
+            }
+        }
+    ],
+    "standardized_name": "shazam_api"
+}

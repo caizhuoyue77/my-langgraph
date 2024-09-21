@@ -1,0 +1,71 @@
+{
+    "product_id": "api_24b48544-4b22-4dff-b5dd-64cf2281ee73",
+    "tool_description": "",
+    "home_url": "https://rapidapi.com/kasuken/api/horostory/",
+    "name": "Horostory",
+    "title": "Horostory",
+    "pricing": "FREEMIUM",
+    "tool_name": "Horostory",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 5936,
+        "avgSuccessRate": 98,
+        "popularityScore": 9.3,
+        "__typename": "Score"
+    },
+    "host": "horostory.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "planetaryoverview",
+            "url": "https://horostory.p.rapidapi.com/planetaryoverview",
+            "description": "get the Planetary Overview of the day",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://horostory.p.rapidapi.com/planetaryoverview\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horostory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://horostory.p.rapidapi.com/planetaryoverview\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horostory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "planet": "Sun",
+                    "sign": "Cancer",
+                    "description": "Today may be an emotionally charged day, as the Sun is in Cancer. Try to focus on yourself and how you feel instead of what everyone else is doing. You may need to take some time away to get in touch with your emotions."
+                },
+                {
+                    "planet": "Moon",
+                    "sign": "Cancer",
+                    "description": "Today, the Moon is in Cancer, bringing plenty of emotional energy. Be mindful of your feelings and those of others. Try to find some time to do something that nurtures your soul, such as yoga or meditation."
+                },
+                {
+                    "planet": "Mercury",
+                    "sign": "Leo",
+                    "description": "Today, Mercury is in Leo, bringing forth mental clarity and creativity. You may feel more open to taking risks and trying new things, so make sure you take advantage of any opportunities that come your way!"
+                }
+            ]
+        },
+        {
+            "name": "hoscoscope",
+            "url": "https://horostory.p.rapidapi.com/horoscope",
+            "description": "retrieve the horoscope for a specific sign and date",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "sign",
+                    "type": "ENUM",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://horostory.p.rapidapi.com/horoscope\"\nquerystring = {\"date\": \"\", \"sign\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horostory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://horostory.p.rapidapi.com/horoscope\"\nquerystring = {\"date\": \"\", \"sign\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"horostory.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "horostory"
+}

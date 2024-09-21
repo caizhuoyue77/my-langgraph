@@ -1,0 +1,81 @@
+{
+    "product_id": "api_feb23bd0-9131-4e06-8a60-32f9622796fd",
+    "tool_description": "You can download youtube videos as mp3 music and mp4 video.",
+    "home_url": "https://rapidapi.com/hiadeveloepr/api/youtube-mp3-converter/",
+    "name": "Youtube MP3 Converter",
+    "title": "Youtube MP3 Converter",
+    "pricing": "FREE",
+    "tool_name": "Youtube MP3 Converter",
+    "score": null,
+    "host": "youtube-mp3-converter.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get Download URL MP3/MP4",
+            "url": "https://youtube-mp3-converter.p.rapidapi.com/service/run?",
+            "description": "Get Download URL",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "lang",
+                    "type": "STRING",
+                    "description": "The language",
+                    "default": "en"
+                },
+                {
+                    "name": "id",
+                    "type": "STRING",
+                    "description": "The youtube video id",
+                    "default": "aJOTlE1K90k"
+                },
+                {
+                    "name": "action",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "button"
+                },
+                {
+                    "name": "widget",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "rapidapi"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "format",
+                    "type": "STRING",
+                    "description": "mp3 or mp4 ",
+                    "default": "mp3"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://youtube-mp3-converter.p.rapidapi.com/service/run?\"\nquerystring = {\"lang\": \"en\", \"id\": \"aJOTlE1K90k\", \"action\": \"button\", \"widget\": \"rapidapi\", \"format\": \"mp3\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtube-mp3-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://youtube-mp3-converter.p.rapidapi.com/service/run?\"\nquerystring = {\"lang\": \"en\", \"id\": \"aJOTlE1K90k\", \"action\": \"button\", \"widget\": \"rapidapi\", \"format\": \"mp3\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"youtube-mp3-converter.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "get": {
+                        "type": "string"
+                    },
+                    "parameters": {
+                        "type": "array"
+                    },
+                    "errors": {
+                        "type": "array"
+                    },
+                    "results": {
+                        "type": "integer"
+                    },
+                    "response": {
+                        "type": "array",
+                        "items": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "youtube_mp3_converter"
+}

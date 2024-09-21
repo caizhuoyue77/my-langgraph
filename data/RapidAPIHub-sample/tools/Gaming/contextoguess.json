@@ -1,0 +1,84 @@
+{
+    "product_id": "api_bccff881-15f9-4519-9aec-2f3947bd55c6",
+    "tool_description": "Allows for contexto integration into other services, feature to get second word",
+    "home_url": "https://rapidapi.com/tristansmyth/api/contextoguess/",
+    "name": "ContextoGuess",
+    "title": "ContextoGuess",
+    "pricing": "FREEMIUM",
+    "tool_name": "ContextoGuess",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 183,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "contextoguess.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Home",
+            "url": "https://contextoguess.p.rapidapi.com/",
+            "description": "Home",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "docs",
+            "url": "https://contextoguess.p.rapidapi.com/docs",
+            "description": "docs",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/docs\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/docs\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "getSecondWord",
+            "url": "https://contextoguess.p.rapidapi.com/getSecondWord/106",
+            "description": "returns the second word for a given game",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "game",
+                    "type": "string",
+                    "description": "",
+                    "default": "106"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/getSecondWord/106\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/getSecondWord/{game}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "guessWord",
+            "url": "https://contextoguess.p.rapidapi.com/guessWord/106/potato",
+            "description": "guess a word and it will return the position it holds",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "game",
+                    "type": "string",
+                    "description": "",
+                    "default": "106"
+                },
+                {
+                    "name": "guess",
+                    "type": "string",
+                    "description": "",
+                    "default": "potato"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/guessWord/106/potato\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://contextoguess.p.rapidapi.com/guessWord/{game}/{guess}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"contextoguess.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "contextoguess"
+}

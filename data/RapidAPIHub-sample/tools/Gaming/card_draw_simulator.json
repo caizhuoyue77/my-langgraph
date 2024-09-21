@@ -1,0 +1,99 @@
+{
+    "product_id": "api_3a9be077-8aad-4c4e-a736-f4649019d5bd",
+    "tool_description": "Draw cards from a regular 52 playing cards deck with a variety of options.",
+    "home_url": "https://rapidapi.com/deconincklouis/api/card-draw-simulator/",
+    "name": "Card Draw Simulator",
+    "title": "Card Draw Simulator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Card Draw Simulator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 152,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.7,
+        "__typename": "Score"
+    },
+    "host": "card-draw-simulator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Card",
+            "url": "https://card-draw-simulator.p.rapidapi.com/card",
+            "description": "Draw one card from a regular 52-card playing deck.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "suit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "all"
+                },
+                {
+                    "name": "value",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "A"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://card-draw-simulator.p.rapidapi.com/card\"\nquerystring = {\"suit\": \"all\", \"value\": \"A\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"card-draw-simulator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://card-draw-simulator.p.rapidapi.com/card\"\nquerystring = {\"suit\": \"all\", \"value\": \"A\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"card-draw-simulator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "card": "A\u2666"
+            },
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Cards",
+            "url": "https://card-draw-simulator.p.rapidapi.com/cards",
+            "description": "Draw multiple cards from a regular 52-card playing deck.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "value",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "all"
+                },
+                {
+                    "name": "suit",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "\u2660"
+                },
+                {
+                    "name": "back",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "false"
+                },
+                {
+                    "name": "pulls",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "10"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://card-draw-simulator.p.rapidapi.com/cards\"\nquerystring = {\"value\": \"all\", \"suit\": \"\u2660\", \"back\": \"false\", \"pulls\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"card-draw-simulator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://card-draw-simulator.p.rapidapi.com/cards\"\nquerystring = {\"value\": \"all\", \"suit\": \"\u2660\", \"back\": \"false\", \"pulls\": \"10\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"card-draw-simulator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "cards": [
+                    "A\u2660",
+                    "8\u2660",
+                    "Q\u2660",
+                    "9\u2660",
+                    "7\u2660",
+                    "5\u2660",
+                    "4\u2660",
+                    "K\u2660",
+                    "6\u2660",
+                    "10\u2660"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "card_draw_simulator"
+}

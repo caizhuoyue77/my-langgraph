@@ -1,0 +1,590 @@
+{
+    "product_id": "api_51483874-240b-47eb-b445-6957f105d5f4",
+    "tool_description": "Given a set of letters, generate all the words that can be produced by adding at least one additional letter, arranged hierarchically.",
+    "home_url": "https://rapidapi.com/grubbcc/api/word-tree/",
+    "name": "Word Tree",
+    "title": "Word Tree",
+    "pricing": "FREE",
+    "tool_name": "Word Tree",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 271,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.1,
+        "__typename": "Score"
+    },
+    "host": "word-tree.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "CSW21",
+            "url": "https://word-tree.p.rapidapi.com/CSW21/ANAGRAMS",
+            "description": "Search for words using Collins Scrabble Words 2021 lexicon.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "input",
+                    "type": "string",
+                    "description": "A series of at least 4 letters (a-z, case-insensitive). No other characters should be included or no meaningful results will be returned.",
+                    "default": "ANAGRAMS"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://word-tree.p.rapidapi.com/CSW21/ANAGRAMS\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"word-tree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://word-tree.p.rapidapi.com/CSW21/{input}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"word-tree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "prob": 100,
+                    "shortsteal": "",
+                    "def": "ANAGRAM, to transpose letters to form new words [v]",
+                    "id": "ANAGRAMS",
+                    "longsteal": ""
+                },
+                {
+                    "prob": 68.7,
+                    "shortsteal": "C",
+                    "def": "ARMAGNAC, (French) a dry French brandy [n]",
+                    "id": "ANAGRAMS.ARMAGNACS",
+                    "longsteal": "C"
+                },
+                {
+                    "prob": 68.5,
+                    "shortsteal": "I",
+                    "def": "MASCARA, to apply mascara [v]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING",
+                    "longsteal": "CI"
+                },
+                {
+                    "prob": 57.2,
+                    "shortsteal": "OO",
+                    "def": "a malignant tumour of the vascular epithelia, occurring e.g. in the liver [n ANGIOSARCOMAS or ANGIOSARCOMATA]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.ANGIOSARCOMA#",
+                    "longsteal": "CIOO"
+                },
+                {
+                    "prob": 32.7,
+                    "shortsteal": "DL",
+                    "def": "MACRODIAGONAL, in crystallography, the longer lateral axis [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.ANGIOSARCOMA#.MACRODIAGONALS#",
+                    "longsteal": "CDILOO"
+                },
+                {
+                    "prob": 24.5,
+                    "shortsteal": "PR",
+                    "def": "MACROSPORANGIUM, a sporangium producing only megaspores [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.ANGIOSARCOMA#.MACROSPORANGIA#",
+                    "longsteal": "CIOOPR"
+                },
+                {
+                    "prob": 7.1,
+                    "shortsteal": "OOS",
+                    "def": "ANGIOSARCOMA, a malignant tumour of the vascular epithelia, occurring e.g. in the liver [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.ANGIOSARCOMAS#",
+                    "longsteal": "CIOOS"
+                },
+                {
+                    "prob": 3.9,
+                    "shortsteal": "AOOT",
+                    "def": "ANGIOSARCOMA, a malignant tumour of the vascular epithelia, occurring e.g. in the liver [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.ANGIOSARCOMATA#",
+                    "longsteal": "ACIOOT"
+                },
+                {
+                    "prob": 0.3,
+                    "shortsteal": "ELMST",
+                    "def": "GRAMMATICAL, belonging to, or according to the rules of, grammar, also GRAMMATIC [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.GRAMMATICALNESS",
+                    "longsteal": "CEILMST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "OPPTT",
+                    "def": "the science of universal benevolent interference [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.PANTOPRAGMATICS#",
+                    "longsteal": "CIOPPTT"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "DOTU",
+                    "def": "a member of a coast guard, also COASTGUARDSMAN [n COASTGUARDMEN]",
+                    "id": "ANAGRAMS.ARMAGNACS.COASTGUARDMAN",
+                    "longsteal": "CDOTU"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "DOSTU",
+                    "def": "a member of a coast guard, also COASTGUARDMAN [n COASTGUARDSMEN]",
+                    "id": "ANAGRAMS.ARMAGNACS.COASTGUARDSMAN",
+                    "longsteal": "CDOSTU"
+                },
+                {
+                    "prob": 5.6,
+                    "shortsteal": "DM",
+                    "def": "GRANDMAMA, a grandmother [n]",
+                    "id": "ANAGRAMS.GRANDMAMAS",
+                    "longsteal": "DM"
+                },
+                {
+                    "prob": 5.6,
+                    "shortsteal": "AEIT",
+                    "def": "ANAGRAMMATISE, to make into an anagram, also ANAGRAMMATIZE [v]",
+                    "id": "ANAGRAMS.GRANDMAMAS.ANAGRAMMATISED#",
+                    "longsteal": "ADEIMT"
+                },
+                {
+                    "prob": 5.1,
+                    "shortsteal": "IIR",
+                    "def": "a social or political movement designed to improve the economic status of the farmer [n -S]",
+                    "id": "ANAGRAMS.AGRARIANISM",
+                    "longsteal": "IIR"
+                },
+                {
+                    "prob": 2.3,
+                    "shortsteal": "IMR",
+                    "def": "GRAMMARIAN, one versed in grammar; a philologist [n]",
+                    "id": "ANAGRAMS.GRAMMARIANS",
+                    "longsteal": "IMR"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "DMM",
+                    "def": "GRANDMAMMA, a grandmother [n]",
+                    "id": "ANAGRAMS.GRANDMAMMAS#",
+                    "longsteal": "DMM"
+                },
+                {
+                    "prob": 4.2,
+                    "shortsteal": "DOR",
+                    "def": "MANDRAGORA, (Shakespeare) any of the various plants of the genus Mandragora, aka mandrake [n]",
+                    "id": "ANAGRAMS.MANDRAGORAS",
+                    "longsteal": "DOR"
+                },
+                {
+                    "prob": 4.7,
+                    "shortsteal": "BEI",
+                    "def": "MANGABEIRA, (Portuguese) a Brazilian apocynaceous rubber tree [n]",
+                    "id": "ANAGRAMS.MANGABEIRAS#",
+                    "longsteal": "BEI"
+                },
+                {
+                    "prob": 2.1,
+                    "shortsteal": "LTU",
+                    "def": "a bead necklace worn by a married Hindu woman whose husband is living [n -S]",
+                    "id": "ANAGRAMS.MANGALSUTRA#",
+                    "longsteal": "LTU"
+                },
+                {
+                    "prob": 3.1,
+                    "shortsteal": "EPT",
+                    "def": "PARAMAGNET, an ordinary magnet as opposed to a diamagnet [n]",
+                    "id": "ANAGRAMS.PARAMAGNETS",
+                    "longsteal": "EPT"
+                },
+                {
+                    "prob": 3.1,
+                    "shortsteal": "EN",
+                    "def": "PERMANGANATE, a salt of permanganic acid [n]",
+                    "id": "ANAGRAMS.PARAMAGNETS.PERMANGANATES",
+                    "longsteal": "EENPT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "CILS",
+                    "def": "the state of being pragmatical [n]",
+                    "id": "ANAGRAMS.PARAMAGNETS.PRAGMATICALNESS#",
+                    "longsteal": "CEILPST"
+                },
+                {
+                    "prob": 0.8,
+                    "shortsteal": "IIRS",
+                    "def": "AGRARIANISM, a social or political movement designed to improve the economic status of the farmer [n]",
+                    "id": "ANAGRAMS.AGRARIANISMS",
+                    "longsteal": "IIRS"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "FIQU",
+                    "def": "AQUAFARMING, marine farming [n]",
+                    "id": "ANAGRAMS.AQUAFARMINGS#",
+                    "longsteal": "FIQU"
+                },
+                {
+                    "prob": 0.3,
+                    "shortsteal": "HIOP",
+                    "def": "GRAPHOMANIA, an obsession with writing [n]",
+                    "id": "ANAGRAMS.GRAPHOMANIAS#",
+                    "longsteal": "HIOP"
+                },
+                {
+                    "prob": 0.3,
+                    "shortsteal": "LSTU",
+                    "def": "MANGALSUTRA, a bead necklace worn by a married Hindu woman whose husband is living [n]",
+                    "id": "ANAGRAMS.MANGALSUTRAS#",
+                    "longsteal": "LSTU"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "HIPT",
+                    "def": "having equal mandibles [n -S]",
+                    "id": "ANAGRAMS.PARAGNATHISM#",
+                    "longsteal": "HIPT"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "AO",
+                    "def": "a fantastic sequence of haphazardly associative imagery, as seen in dreams or fever, also PHANTASMAGORY [n -S]",
+                    "id": "ANAGRAMS.PARAGNATHISM#.PHANTASMAGORIA",
+                    "longsteal": "AHIOPT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "CO",
+                    "def": "of or like a phantasmagoria, also PHANTASMAGORIAL [adj]",
+                    "id": "ANAGRAMS.PARAGNATHISM#.PHANTASMAGORIC",
+                    "longsteal": "CHIOPT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "ALO",
+                    "def": "of or like a phantasmagoria, also PHANTASMAGORIC [adj]",
+                    "id": "ANAGRAMS.PARAGNATHISM#.PHANTASMAGORIAL#",
+                    "longsteal": "AHILOPT"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "EIILM",
+                    "def": "the adoption of business methods and management structures in the running of public services, etc. [n -S]",
+                    "id": "ANAGRAMS.MANAGERIALISM#",
+                    "longsteal": "EIILM"
+                },
+                {
+                    "prob": 0.5,
+                    "shortsteal": "EIILT",
+                    "def": "a proponent of managerialism [n -S]",
+                    "id": "ANAGRAMS.MANAGERIALIST#",
+                    "longsteal": "EIILT"
+                },
+                {
+                    "prob": 0.5,
+                    "shortsteal": "I",
+                    "def": "a belief in human equality esp. with respect to social, political, and economic rights and privileges [n -S]",
+                    "id": "ANAGRAMS.MANAGERIALIST#.EGALITARIANISM",
+                    "longsteal": "EIIILT"
+                },
+                {
+                    "prob": 0.6,
+                    "shortsteal": "EILOU",
+                    "def": "a large dinosaur, also MEGALOSAUR, MEGALOSAURUS [n -S]",
+                    "id": "ANAGRAMS.MEGALOSAURIAN#",
+                    "longsteal": "EILOU"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "EGIOP",
+                    "def": "MEGASPORANGIUM, the sporangium in heterosporous plants where the megaspores develop [n]",
+                    "id": "ANAGRAMS.MEGASPORANGIA",
+                    "longsteal": "EGIOP"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IMPTT",
+                    "def": "a person composing sentences, verses, etc., containing all the letters of the alphabet [n -S]",
+                    "id": "ANAGRAMS.PANGRAMMATIST#",
+                    "longsteal": "IMPTT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "HIPST",
+                    "def": "PARAGNATHISM, having equal mandibles [n]",
+                    "id": "ANAGRAMS.PARAGNATHISMS#",
+                    "longsteal": "HIPST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "AO",
+                    "def": "PHANTASMAGORIA, a fantastic sequence of haphazardly associative imagery, as seen in dreams or fever, also PHANTASMAGORY [n]",
+                    "id": "ANAGRAMS.PARAGNATHISMS#.PHANTASMAGORIAS",
+                    "longsteal": "AHIOPST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EO",
+                    "def": "PHANTASMAGORY, a fantastic sequence of haphazardly associative imagery, as seen in dreams or fever, also PHANTASMAGORIA [n]",
+                    "id": "ANAGRAMS.PARAGNATHISMS#.PHANTASMAGORIES#",
+                    "longsteal": "EHIOPST"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "EIMPT",
+                    "def": "the state of being paramagnetic [n -S]",
+                    "id": "ANAGRAMS.PARAMAGNETISM",
+                    "longsteal": "EIMPT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "HOPTY",
+                    "def": "a fantastic sequence of haphazardly associative imagery, as seen in dreams or fever, also PHANTASMAGORIA [n PHANTASMAGORIES]",
+                    "id": "ANAGRAMS.PHANTASMAGORY#",
+                    "longsteal": "HOPTY"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "EIILST",
+                    "def": "MANAGERIALIST, a proponent of managerialism [n]",
+                    "id": "ANAGRAMS.MANAGERIALISTS#",
+                    "longsteal": "EIILST"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "I",
+                    "def": "EGALITARIANISM, a belief in human equality esp. with respect to social, political, and economic rights and privileges [n]",
+                    "id": "ANAGRAMS.MANAGERIALISTS#.EGALITARIANISMS",
+                    "longsteal": "EIIILST"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "EILOSU",
+                    "def": "MEGALOSAURIAN, a large dinosaur, also MEGALOSAUR, MEGALOSAURUS [n]",
+                    "id": "ANAGRAMS.MEGALOSAURIANS#",
+                    "longsteal": "EILOSU"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "EIMNOR",
+                    "def": "NEOGRAMMARIAN, a philologist of the nineteenth century German school that introduced scientific exactitude into the study of sound change [n]",
+                    "id": "ANAGRAMS.NEOGRAMMARIANS#",
+                    "longsteal": "EIMNOR"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IMPSTT",
+                    "def": "PANGRAMMATIST, a person composing sentences, verses, etc., containing all the letters of the alphabet [n]",
+                    "id": "ANAGRAMS.PANGRAMMATISTS#",
+                    "longsteal": "IMPSTT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EIMPST",
+                    "def": "PARAMAGNETISM, the state of being paramagnetic [n]",
+                    "id": "ANAGRAMS.PARAMAGNETISMS",
+                    "longsteal": "EIMPST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IIOPTT",
+                    "def": "the process of pragmatising, also PRAGMATIZATION [n -S]",
+                    "id": "ANAGRAMS.PRAGMATISATION#",
+                    "longsteal": "IIOPTT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "Z",
+                    "def": "PRAGMATIZATION, the process of pragmatizing, also PRAGMATISATION [n]",
+                    "id": "ANAGRAMS.PRAGMATISATION#.PRAGMATIZATIONS#",
+                    "longsteal": "IIOPTTZ"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IIILNOT",
+                    "def": "the act of marginalising, also MARGINALIZATION [n]",
+                    "id": "ANAGRAMS.MARGINALISATION",
+                    "longsteal": "IIILNOT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IIOPSTT",
+                    "def": "PRAGMATISATION, the process of pragmatising, also PRAGMATIZATION [n]",
+                    "id": "ANAGRAMS.PRAGMATISATIONS#",
+                    "longsteal": "IIOPSTT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EMORTTT",
+                    "def": "TETRAGRAMMATON, a sacred word or acronym of four letters [n]",
+                    "id": "ANAGRAMS.TETRAGRAMMATONS",
+                    "longsteal": "EMORTTT"
+                }
+            ]
+        },
+        {
+            "name": "NWL20",
+            "url": "https://word-tree.p.rapidapi.com/NWL20/ANAGRAMS",
+            "description": "Search using the NASPA Word List 2020 edition, \u00a9 2020 North American Word Game Players Association.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "input",
+                    "type": "string",
+                    "description": "",
+                    "default": "ANAGRAMS"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://word-tree.p.rapidapi.com/NWL20/ANAGRAMS\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"word-tree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://word-tree.p.rapidapi.com/NWL20/{input}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"word-tree.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                {
+                    "prob": 100,
+                    "shortsteal": "",
+                    "def": "ANAGRAM, to transpose the letters of a word or phrase to form a new one [v]",
+                    "id": "ANAGRAMS",
+                    "longsteal": ""
+                },
+                {
+                    "prob": 75.9,
+                    "shortsteal": "C",
+                    "def": "ARMAGNAC, a French brandy [n]",
+                    "id": "ANAGRAMS.ARMAGNACS",
+                    "longsteal": "C"
+                },
+                {
+                    "prob": 75.7,
+                    "shortsteal": "I",
+                    "def": "MASCARA, to color the eyelashes or eyebrows with a cosmetic [v]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING",
+                    "longsteal": "CI"
+                },
+                {
+                    "prob": 46.7,
+                    "shortsteal": "HOPT",
+                    "def": "[adj]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.PHANTASMAGORIC",
+                    "longsteal": "CHIOPT"
+                },
+                {
+                    "prob": 29,
+                    "shortsteal": "ELMST",
+                    "def": "the quality of being grammatical [n]",
+                    "id": "ANAGRAMS.ARMAGNACS.MASCARAING.GRAMMATICALNESS",
+                    "longsteal": "CEILMST"
+                },
+                {
+                    "prob": 0.2,
+                    "shortsteal": "DOTU",
+                    "def": "[n COASTGUARDMEN]",
+                    "id": "ANAGRAMS.ARMAGNACS.COASTGUARDMAN",
+                    "longsteal": "CDOTU"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "DOSTU",
+                    "def": "[n COASTGUARDSMEN]",
+                    "id": "ANAGRAMS.ARMAGNACS.COASTGUARDSMAN",
+                    "longsteal": "CDOSTU"
+                },
+                {
+                    "prob": 6.2,
+                    "shortsteal": "DM",
+                    "def": "GRANDMAMA [n GRANDMAMAS]",
+                    "id": "ANAGRAMS.GRANDMAMAS",
+                    "longsteal": "DM"
+                },
+                {
+                    "prob": 5.6,
+                    "shortsteal": "IIR",
+                    "def": "[n AGRARIANISMS]",
+                    "id": "ANAGRAMS.AGRARIANISM",
+                    "longsteal": "IIR"
+                },
+                {
+                    "prob": 2.6,
+                    "shortsteal": "IMR",
+                    "def": "GRAMMARIAN [n GRAMMARIANS]",
+                    "id": "ANAGRAMS.GRAMMARIANS",
+                    "longsteal": "IMR"
+                },
+                {
+                    "prob": 4.6,
+                    "shortsteal": "DOR",
+                    "def": "MANDRAGORA [n MANDRAGORAS]",
+                    "id": "ANAGRAMS.MANDRAGORAS",
+                    "longsteal": "DOR"
+                },
+                {
+                    "prob": 3.5,
+                    "shortsteal": "EPT",
+                    "def": "PARAMAGNET [n PARAMAGNETS]",
+                    "id": "ANAGRAMS.PARAMAGNETS",
+                    "longsteal": "EPT"
+                },
+                {
+                    "prob": 3.5,
+                    "shortsteal": "EN",
+                    "def": "PERMANGANATE [n PERMANGANATES]",
+                    "id": "ANAGRAMS.PARAMAGNETS.PERMANGANATES",
+                    "longsteal": "EENPT"
+                },
+                {
+                    "prob": 0.9,
+                    "shortsteal": "IIRS",
+                    "def": "AGRARIANISM [n AGRARIANISMS]",
+                    "id": "ANAGRAMS.AGRARIANISMS",
+                    "longsteal": "IIRS"
+                },
+                {
+                    "prob": 0.3,
+                    "shortsteal": "EGIOP",
+                    "def": "MEGASPORANGIUM [n MEGASPORANGIA]",
+                    "id": "ANAGRAMS.MEGASPORANGIA",
+                    "longsteal": "EGIOP"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "EIMPT",
+                    "def": "[n PARAMAGNETISMS]",
+                    "id": "ANAGRAMS.PARAMAGNETISM",
+                    "longsteal": "EIMPT"
+                },
+                {
+                    "prob": 0.1,
+                    "shortsteal": "EIIILT",
+                    "def": "[n EGALITARIANISMS]",
+                    "id": "ANAGRAMS.EGALITARIANISM",
+                    "longsteal": "EIIILT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EIMPST",
+                    "def": "PARAMAGNETISM [n PARAMAGNETISMS]",
+                    "id": "ANAGRAMS.PARAMAGNETISMS",
+                    "longsteal": "EIMPST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "AHIOPT",
+                    "def": "[n PHANTASMAGORIAS]",
+                    "id": "ANAGRAMS.PHANTASMAGORIA",
+                    "longsteal": "AHIOPT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EIIILST",
+                    "def": "EGALITARIANISM [n EGALITARIANISMS]",
+                    "id": "ANAGRAMS.EGALITARIANISMS",
+                    "longsteal": "EIIILST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "IIILNOT",
+                    "def": "marginalization [n]",
+                    "id": "ANAGRAMS.MARGINALISATION",
+                    "longsteal": "IIILNOT"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "AHIOPST",
+                    "def": "PHANTASMAGORIA [n PHANTASMAGORIAS]",
+                    "id": "ANAGRAMS.PHANTASMAGORIAS",
+                    "longsteal": "AHIOPST"
+                },
+                {
+                    "prob": 0,
+                    "shortsteal": "EMORTTT",
+                    "def": "TETRAGRAMMATON [n TETRAGRAMMATONS]",
+                    "id": "ANAGRAMS.TETRAGRAMMATONS",
+                    "longsteal": "EMORTTT"
+                }
+            ]
+        }
+    ],
+    "standardized_name": "word_tree"
+}

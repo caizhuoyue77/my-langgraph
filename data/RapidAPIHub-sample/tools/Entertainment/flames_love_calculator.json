@@ -1,0 +1,59 @@
+{
+    "product_id": "api_0d643388-0925-4646-991b-d9e52c61d738",
+    "tool_description": "Simple API to Calculate Flames score",
+    "home_url": "https://rapidapi.com/goforamit16/api/flames-love-calculator/",
+    "name": "Flames Love Calculator",
+    "title": "Flames Love Calculator",
+    "pricing": "FREEMIUM",
+    "tool_name": "Flames Love Calculator",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 291,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.3,
+        "__typename": "Score"
+    },
+    "host": "flames-love-calculator.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/flame",
+            "url": "https://flames-love-calculator.p.rapidapi.com/flame/Rahul/Shefali",
+            "description": "Pass both name as path parameters.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "sname",
+                    "type": "string",
+                    "description": "",
+                    "default": "Shefali"
+                },
+                {
+                    "name": "fname",
+                    "type": "string",
+                    "description": "",
+                    "default": "Rahul"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://flames-love-calculator.p.rapidapi.com/flame/Rahul/Shefali\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flames-love-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://flames-love-calculator.p.rapidapi.com/flame/{fname}/{sname}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"flames-love-calculator.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "fname": {
+                        "type": "string"
+                    },
+                    "sname": {
+                        "type": "string"
+                    },
+                    "result": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "flames_love_calculator"
+}

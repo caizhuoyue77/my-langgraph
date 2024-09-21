@@ -1,0 +1,588 @@
+{
+    "product_id": "api_e0a55b91-9b75-44fa-aa42-5a2d44d32779",
+    "tool_description": "Get Movies and TV Series and shows data. our API have concrete & big database.  \nAll Movies , Films &amp; TV Series and Shows metadata, images, posters, background images, TV Series Schedules, actors, cast, directors, trailers, ratings, IMDB ID, Boxoffice movies, Production company and more. Results are in JSON format. we are continuously updating our database records to deliver good service quality.\nIt will help you build a movie, series, streaming, reviews content site or application easily.",
+    "home_url": "https://rapidapi.com/amrelrafie/api/movies-tv-shows-database/",
+    "name": "Movies Tv Shows Database",
+    "title": "Movies Tv Shows Database",
+    "pricing": "FREEMIUM",
+    "tool_name": "Movies Tv Shows Database",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 950,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.7,
+        "__typename": "Score"
+    },
+    "host": "movies-tv-shows-database.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get TV Series By Year",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, year, id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2020"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"year\": \"2020\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"year\": \"2020\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV Schedule By Country",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return TV Series Name, Season Number, Episode number, Episode name, Air date, air time, runtime, Network, series  id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "country",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "US"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"country\": \"US\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "GET TV Series Episodes by Series ID, Season Number",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid TV Series ID (e.g. tt2741602)\nreturn Episode number, episode name, episode air date, vote average, vote count",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "season",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                },
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "A valid Series ID (e.g. tt2741602)",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"season\": \"1\", \"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"season\": \"1\", \"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Airing today TV Shows",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, year",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Trending TV Shows",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, year",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV ON the Air",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, year",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Popular TV Shows By Year",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, year",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2020"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Recently Added TV Series By Release Date",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, year",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV Series Aliases by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid TV Series ID (e.g. tt2741602)\nreturn tv series aliases",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "A valid Series ID (e.g. tt2741602)",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV Series Images by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid TV Series ID (e.g. tt2741602)\nreturn poster, fanart",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "A valid Series ID (e.g. tt2741602)",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV Series by Title",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "Search by TV Series Title\nreturn title, id, release_date",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "blacklist"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"title\": \"blacklist\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"title\": \"blacklist\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get by TV Series by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid TV Series ID (e.g. tt2741602)\n\nreturn title, description, release_date, id, irating, vote_count, meta, popularity, youtube_trailer_key",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "A valid Series ID (e.g. tt2741602)",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Movies by Year",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title, year , id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2020"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Similar Movies",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title , release date , id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tt1375666"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Box-Office Movies",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title , year , id",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Trending Movies",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title , year , id",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Now Playing Movies",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title, year, id",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Popular Movies by Year",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title , year , id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "year",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2020"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\", \"year\": \"2020\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Movie Aliases by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid Movie ID (e.g. tt1375666)\nreturn movie aliases",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "A valid Movie ID (e.g. tt1375666)",
+                    "default": "tt1375666"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Movie Images by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid Movie ID (e.g. tt1375666)\nreturn title, id, poster, fanart",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "A valid Movie ID (e.g. tt1375666)",
+                    "default": "tt1375666"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Movies By Title",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "Result set includes all search results\nEach item includes fields:\nTitle\nYear\nMovie  ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "title",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "Harry Potter"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"title\": \"Harry Potter\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"title\": \"Harry Potter\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Movie by ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid Movie ID (e.g. tt1375666)\nreturn Title, Description, Year, Release Date, Rated, Runtime, Genre, Directors, Actors, Languages, Country\n Rating, votes, Popularity, id",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "movieid",
+                    "type": "STRING",
+                    "description": "A valid Movie ID (e.g. tt1375666)",
+                    "default": "tt1375666"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"movieid\": \"tt1375666\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Upcoming Movies",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return movie results with title, year, id",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get TV Series Seasons By ID",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "A valid TV Series ID (e.g. tt2741602)\nreturn Season number, season air date, Episode count, Season trailer",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "A valid Series ID (e.g. tt2741602)",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Similar TV Shows",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "return tv series results with title, id, release date",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "seriesid",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "tt2741602"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"seriesid\": \"tt2741602\", \"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get Recently Added Movies by Release Date",
+            "url": "https://movies-tv-shows-database.p.rapidapi.com/",
+            "description": "get recently added movies \nreturn title, year,  id",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "page",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://movies-tv-shows-database.p.rapidapi.com/\"\nquerystring = {\"page\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"movies-tv-shows-database.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "movies_tv_shows_database"
+}

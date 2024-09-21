@@ -1,0 +1,151 @@
+{
+    "product_id": "api_08451057-05a5-4593-8d3d-41e33e8ddf7e",
+    "tool_description": "Get Movies and TV Shows data with ratings from multiple providers in JSON format",
+    "home_url": "https://rapidapi.com/linaspurinis/api/mdblist/",
+    "name": "MDBList",
+    "title": "MDBList",
+    "pricing": "FREEMIUM",
+    "tool_name": "MDBList",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 217,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.9,
+        "__typename": "Score"
+    },
+    "host": "mdblist.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Search by Title",
+            "url": "https://mdblist.p.rapidapi.com/",
+            "description": "Search for Movies or TV Shows by title, include option year or mediatype filter to narrow your results",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "s",
+                    "type": "STRING",
+                    "description": "Movie or TV Show Title to search",
+                    "default": "jaws"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "l",
+                    "type": "NUMBER",
+                    "description": "Limit returned items.\nYou can use numbes from 1 to 100 (default is 50)",
+                    "default": ""
+                },
+                {
+                    "name": "y",
+                    "type": "NUMBER",
+                    "description": "Year (format YYYY, for example 2020) to limit title search (would also include previous and next year movies)",
+                    "default": ""
+                },
+                {
+                    "name": "m",
+                    "type": "ENUM",
+                    "description": "Search for only movie or tv show, leave empty for both",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"l\": \"\", \"y\": \"\", \"s\": \"jaws\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"l\": \"\", \"y\": \"\", \"s\": \"jaws\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get by Trakt.tv ID",
+            "url": "https://mdblist.p.rapidapi.com/",
+            "description": "Returns movie or TV Show info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "t",
+                    "type": "STRING",
+                    "description": "A valid Trakt.tv ID",
+                    "default": "457"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "m",
+                    "type": "ENUM",
+                    "description": "Mediatype *movie* or *show* (default *movie*)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"t\": \"457\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"t\": \"457\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get by IMDb ID",
+            "url": "https://mdblist.p.rapidapi.com/",
+            "description": "Returns movie or TV Show info by IMDb ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "i",
+                    "type": "STRING",
+                    "description": "A valid IMDb ID",
+                    "default": "tt0073195"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"i\": \"tt0073195\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"i\": \"tt0073195\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get by TMDb ID",
+            "url": "https://mdblist.p.rapidapi.com/",
+            "description": "Returns movie or TV Show info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tm",
+                    "type": "NUMBER",
+                    "description": "A valid TMDb ID",
+                    "default": "578"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "m",
+                    "type": "ENUM",
+                    "description": "Mediatype *movie* or *show* (default *movie*)",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"tm\": \"578\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"tm\": \"578\", \"m\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Get by TVDB ID",
+            "url": "https://mdblist.p.rapidapi.com/",
+            "description": "Returns TV Show info",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "tv",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "273181"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"tv\": \"273181\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://mdblist.p.rapidapi.com/\"\nquerystring = {\"tv\": \"273181\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"mdblist.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "mdblist"
+}

@@ -1,0 +1,386 @@
+{
+    "product_id": "api_5a834d0f-918d-4d4e-b5cf-f6b73c78be86",
+    "tool_description": "A data provider for all things Jet Set Radio in JSON format!",
+    "home_url": "https://rapidapi.com/razznblue/api/jet-set-radio-api/",
+    "name": "Jet Set Radio API",
+    "title": "Jet Set Radio API",
+    "pricing": "FREE",
+    "tool_name": "Jet Set Radio API",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1051,
+        "avgSuccessRate": 100,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "jet-set-radio-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Graffiti Tags",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/graffiti-tags",
+            "description": "Returns a list of all Graffiti-Tags",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/graffiti-tags\"\nquerystring = {\"orderBy\": \"asc\", \"limit\": \"5\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/graffiti-tags\"\nquerystring = {\"orderBy\": \"asc\", \"limit\": \"5\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Artists",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/artists",
+            "description": "Returns a list of all music Artists who contributed to JSR/JSRF",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/artists\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/artists\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Songs",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/songs",
+            "description": "Returns a list of all Songs from JSR/JSRF",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/songs\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/songs\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Levels",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/levels",
+            "description": "Returns a list of all Levels",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/levels\"\nquerystring = {\"sortBy\": \"name\", \"limit\": \"5\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/levels\"\nquerystring = {\"sortBy\": \"name\", \"limit\": \"5\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Locations",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/locations",
+            "description": "Returns a list of all Locations in JSR/JSRF",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/locations\"\nquerystring = {\"sortBy\": \"name\", \"limit\": \"5\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/locations\"\nquerystring = {\"sortBy\": \"name\", \"limit\": \"5\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Games",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/games",
+            "description": "Returns a list of all Games",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/games\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/games\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "JSRF Character by ID",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/characters/jsrf/643c71888cabe0dcede868a3",
+            "description": "Returns a single Character by ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "characterId",
+                    "type": "string",
+                    "description": "",
+                    "default": "643c71888cabe0dcede868a3"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsrf/643c71888cabe0dcede868a3\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsrf/{characterid}\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "JSRF Characters",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/characters/jsrf",
+            "description": "Returns a list of all JSRF Characters",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsrf\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsrf\"\nquerystring = {\"limit\": \"5\", \"orderBy\": \"asc\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "JSR Character by ID",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/characters/jsr/643c71b18cabe0dcede868ed",
+            "description": "Returns a single Character by ID",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "characterId",
+                    "type": "string",
+                    "description": "",
+                    "default": "643c71b18cabe0dcede868ed"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                },
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsr/643c71b18cabe0dcede868ed\"\nquerystring = {\"orderBy\": \"asc\", \"limit\": \"5\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsr/{characterid}\"\nquerystring = {\"orderBy\": \"asc\", \"limit\": \"5\", \"sortBy\": \"name\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Characters",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/characters",
+            "description": "Returns a list of all Characters",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "JSR Characters",
+            "url": "https://jet-set-radio-api.p.rapidapi.com/characters/jsr",
+            "description": "Returns a list of all JSR Characters",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "limit",
+                    "type": "STRING",
+                    "description": "Limit the number of items returned in the response.",
+                    "default": "5"
+                },
+                {
+                    "name": "sortBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\nAny field on the document\n\nExamples:\n - name\n - stats",
+                    "default": "name"
+                },
+                {
+                    "name": "orderBy",
+                    "type": "STRING",
+                    "description": "Possible Values:\n - `asc`\n - `desc`\n\nsortBy must be present for this to take effect. \nThe default value is `asc`\n",
+                    "default": "asc"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsr\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jet-set-radio-api.p.rapidapi.com/characters/jsr\"\nquerystring = {\"limit\": \"5\", \"sortBy\": \"name\", \"orderBy\": \"asc\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jet-set-radio-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "jet_set_radio_api"
+}

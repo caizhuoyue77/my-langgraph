@@ -1,0 +1,327 @@
+{
+    "product_id": "api_1ea3c4dc-de8b-45db-b96c-e277bc955783",
+    "tool_description": "An Easy To Use Job Search API with jobs from all around the world.",
+    "home_url": "https://rapidapi.com/avaneesab5/api/jobsearch4/",
+    "name": "JobSearch",
+    "title": "JobSearch",
+    "pricing": "FREE",
+    "tool_name": "JobSearch",
+    "score": {
+        "avgServiceLevel": 89,
+        "avgLatency": 501,
+        "avgSuccessRate": 84,
+        "popularityScore": 9.6,
+        "__typename": "Score"
+    },
+    "host": "jobsearch4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/api/v1/Jobs/Search",
+            "url": "https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search",
+            "description": "Search for your dream job",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "SearchQuery",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "java"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "PageSize",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                },
+                {
+                    "name": "PageNumber",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": ""
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search\"\nquerystring = {\"SearchQuery\": \"java\", \"PageSize\": \"\", \"PageNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jobsearch4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jobsearch4.p.rapidapi.com/api/v1/Jobs/Search\"\nquerystring = {\"SearchQuery\": \"java\", \"PageSize\": \"\", \"PageNumber\": \"\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jobsearch4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "type": "https://tools.ietf.org/html/rfc7231#section-6.5.1",
+                "title": "One or more validation errors occurred.",
+                "status": 400,
+                "traceId": "00-b5cfd8d4380f926ba950d7161d6c0fb7-ec58f96a1dbc3074-00",
+                "errors": {
+                    "PageSize": [
+                        "The value '' is invalid."
+                    ],
+                    "PageNumber": [
+                        "The value '' is invalid."
+                    ]
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "data": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "format": "int32",
+                                "minimum": -2147483648,
+                                "maximum": 2147483647
+                            },
+                            "title": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "url": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "company": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "location": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "postDate": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "salary": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "jobSource": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "slug": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
+                            "sentiment": {
+                                "type": "object",
+                                "properties": {
+                                    "polarity": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "minimum": -3.402823669209385e+38,
+                                        "maximum": 3.402823669209385e+38
+                                    },
+                                    "subjectivity": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "minimum": -3.402823669209385e+38,
+                                        "maximum": 3.402823669209385e+38
+                                    }
+                                },
+                                "additionalProperties": false
+                            },
+                            "dateAdded": {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            "keyPhrases": {
+                                "type": [
+                                    "array",
+                                    "null"
+                                ],
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "affinity": {
+                                            "type": "number",
+                                            "format": "float",
+                                            "minimum": -3.402823669209385e+38,
+                                            "maximum": 3.402823669209385e+38
+                                        },
+                                        "text": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "tags": {
+                                "type": [
+                                    "array",
+                                    "null"
+                                ],
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "text": {
+                                            "type": [
+                                                "string",
+                                                "null"
+                                            ]
+                                        }
+                                    },
+                                    "additionalProperties": false
+                                }
+                            },
+                            "summary": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            }
+                        },
+                        "additionalProperties": false
+                    },
+                    "succeeded": {
+                        "type": "boolean"
+                    },
+                    "pageNumber": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "pageSize": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "firstPage": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "uri"
+                    },
+                    "lastPage": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "uri"
+                    },
+                    "totalPages": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "totalRecords": {
+                        "type": "integer",
+                        "format": "int32",
+                        "minimum": -2147483648,
+                        "maximum": 2147483647
+                    },
+                    "nextPage": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "uri"
+                    },
+                    "previousPage": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "uri"
+                    }
+                },
+                "additionalProperties": false
+            }
+        },
+        {
+            "name": "/api/v1/Jobs/{slug}",
+            "url": "https://jobsearch4.p.rapidapi.com/api/v1/Jobs/freelance-content-writercopywriter-9399",
+            "description": "Get details of a job by slug",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "slug",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "freelance-content-writercopywriter-9399"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://jobsearch4.p.rapidapi.com/api/v1/Jobs/freelance-content-writercopywriter-9399\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jobsearch4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://jobsearch4.p.rapidapi.com/api/v1/Jobs/{slug}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"jobsearch4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "id": 400469,
+                "title": "Freelance Content writer/Copywriter",
+                "url": "https://remote.co/job/freelance-content-writer-copywriter-16/",
+                "company": "Livingston Research",
+                "location": "remote",
+                "postDate": "03/16/2023 07:00:00",
+                "salary": null,
+                "jobSource": "remote_co",
+                "slug": "freelance-content-writercopywriter-9399",
+                "sentiment": {
+                    "polarity": 0,
+                    "subjectivity": 0
+                },
+                "dateAdded": "2023-03-18T03:46:17.748744+00:00",
+                "keyPhrases": [
+                    {
+                        "affinity": 1,
+                        "text": "Research"
+                    },
+                    {
+                        "affinity": 1,
+                        "text": "tasks"
+                    },
+                    {
+                        "affinity": 0.6666667,
+                        "text": "skilled"
+                    },
+                    {
+                        "affinity": 0.6666667,
+                        "text": "Livingston"
+                    },
+                    {
+                        "affinity": 0.6666667,
+                        "text": "help"
+                    }
+                ],
+                "tags": [
+                    {
+                        "text": "tasks"
+                    },
+                    {
+                        "text": "skilled"
+                    },
+                    {
+                        "text": "help"
+                    }
+                ],
+                "summary": "Competitive compensation in USD from $3 to $18 per hour of work depending on urgency and complexity of customers request   Performancebased bonuses you can earn up to 35 bonus for every order   Bonus system for nicelydone tasks you receive tips directly from clients we dont withhold any fee   Salary paid 2 times a month upon request   Flexible schedule Ability to combine this job with your daily life   Variety of writing tasks   247 support help with orderrelated questions   Personal Success Manager assisting you with nonorder related questions   Learning Lab with free online courses to upgrade your skills     We expect     Excellent written English   Ability to produce original content on collegelevel topics related to different subjects   Advanced time management skills   Research experience would be a plus   Stable and reliable internet access   Availability to work at least 10 hours per week or more     How to apply      Location  South America Africa Asia 100 Remote Freelance    L   ooking for a skilled Content writerCopywriter    Livingston Research delivers help and support to private and business clients around the world to facilitate learning and improve their performance through leadingedge technology services and data capabilities since 2009   We build launch and promote products and services to empower students in countries like the  US Canada  and all over the world    In order to  APPLY  for the position and join our Livingston Research freelance family you are to   Go to   httpsbitly3Ee6mqg     Fill in your account data and tell us about your experience and preferences    Complete a few test tasks in your area of specialization and a short English test     Once you successfully complete the probation stages our Recruiting Manager will get in touch with you via email within the next 24 business days",
+                "originalPosting": "<div class=\"job_description\">\n <div>\n  <p>\n   <strong>\n    Location:\n   </strong>\n   South America, Africa, Asia; 100% Remote; Freelance\n  </p>\n  <h3>\n   <strong>\n    L\n   </strong>\n   <strong>\n    ooking for a skilled Content writer/Copywriter!\n   </strong>\n  </h3>\n  <p>\n   Livingston Research delivers help and support to private and business clients around the world to facilitate learning and improve their performance through leading-edge technology, services, and data capabilities since 2009.\n  </p>\n  <p>\n   We build, launch and promote products and services to empower students in countries like the\n   <strong>\n    US, Canada\n   </strong>\n   and all over the world.\n  </p>\n  <p>\n   Now we are looking for skilled content writers to join our team.\n  </p>\n  <p>\n   Position\n   <strong>\n    <em>\n     involves researching and writing original texts\n    </em>\n   </strong>\n   on various topics in multiple subjects.\n  </p>\n </div>\n <h3>\n  <strong>\n   We offer:\n  </strong>\n </h3>\n <ul>\n  <li>\n   Competitive compensation in USD (from $3 to $18 per hour of work depending on urgency and complexity of customer\u2019s request)\n  </li>\n  <li>\n   Performance-based bonuses (you can earn up to 35% bonus for every order)\n  </li>\n  <li>\n   Bonus system for nicely-done tasks (you receive tips directly from clients, we don\u2019t withhold any fee!)\n  </li>\n  <li>\n   Salary paid 2 times a month, upon request\n  </li>\n  <li>\n   Flexible schedule. Ability to combine this job with your daily life\n  </li>\n  <li>\n   Variety of writing tasks\n  </li>\n  <li>\n   24/7 support help with order-related questions\n  </li>\n  <li>\n   Personal Success Manager, assisting you with non-order related questions\n  </li>\n  <li>\n   Learning Lab with free online courses to upgrade your skills\n  </li>\n </ul>\n <h3>\n  <strong>\n   We expect:\n  </strong>\n </h3>\n <ul>\n  <li>\n   Excellent written English\n  </li>\n  <li>\n   Ability to produce original content on college-level topics related to different subjects\n  </li>\n  <li>\n   Advanced time management skills\n  </li>\n  <li>\n   Research experience would be a plus\n  </li>\n  <li>\n   Stable and reliable internet access\n  </li>\n  <li>\n   Availability to work at least 10 hours per week or more\n  </li>\n </ul>\n <h3>\n  <strong>\n   How to apply:\n  </strong>\n </h3>\n <ol>\n  <li>\n   In order to\n   <strong>\n    APPLY\n   </strong>\n   for the position and join our Livingston Research freelance family, you are to:\n  </li>\n  <li>\n   Go to\n   <span data-sheets-hyperlink=\"https://bit.ly/3Ee6mqg\" data-sheets-userformat='{\"2\":1049089,\"3\":{\"1\":0},\"12\":0,\"23\":1}' data-sheets-value='{\"1\":2,\"2\":\"https://bit.ly/3Ee6mqg\"}'>\n    <a class=\"in-cell-link\" href=\"https://bit.ly/3Ee6mqg\" rel=\"noopener\" target=\"_blank\">\n     https://bit.ly/3Ee6mqg\n    </a>\n   </span>\n  </li>\n  <li>\n   Fill in your account data and tell us about your experience and preferences\n  </li>\n </ol>\n <div>\n  Complete a few test tasks in your area of specialization and a short English test.\n </div>\n <div>\n </div>\n <div>\n  Once you successfully complete the probation stages, our Recruiting Manager will get in touch with you via email within the next 2-4 business days.\n </div>\n</div>\n",
+                "viewCount": 0
+            },
+            "statuscode": 1,
+            "schema": ""
+        }
+    ],
+    "standardized_name": "jobsearch"
+}

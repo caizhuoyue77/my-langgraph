@@ -1,0 +1,94 @@
+{
+    "product_id": "api_481f1db1-c771-494d-8d4f-f6299c36ea0e",
+    "tool_description": "Best Live",
+    "home_url": "https://rapidapi.com/Thawtarlamin/api/football-highlight/",
+    "name": "Football Highlight",
+    "title": "Football Highlight",
+    "pricing": "FREEMIUM",
+    "tool_name": "Football Highlight",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 392,
+        "avgSuccessRate": 100,
+        "popularityScore": 7.7,
+        "__typename": "Score"
+    },
+    "host": "football-highlight.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Elhighlights",
+            "url": "https://football-highlight.p.rapidapi.com/tryupkora.php",
+            "description": "Elhighlights",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/tryupkora.php\"\nquerystring = {\"url\": \"https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/tryupkora.php\"\nquerystring = {\"url\": \"https://acrtadeon.elhighlights.com/embed/0nvR19fByJZmp\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Ok.RU Emb Link",
+            "url": "https://football-highlight.p.rapidapi.com/ok.php",
+            "description": "Ok.RU Emb Link",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://ok.ru/videoembed/5631089904367?autoplay=1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/ok.php\"\nquerystring = {\"url\": \"https://ok.ru/videoembed/5631089904367?autoplay=1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/ok.php\"\nquerystring = {\"url\": \"https://ok.ru/videoembed/5631089904367?autoplay=1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Youtube Emb Link",
+            "url": "https://football-highlight.p.rapidapi.com/youtube.php",
+            "description": "Youtube Emb Link",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "https://www.youtube.com/embed/OA9zy0BLm9g"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/youtube.php\"\nquerystring = {\"url\": \"https://www.youtube.com/embed/OA9zy0BLm9g\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/youtube.php\"\nquerystring = {\"url\": \"https://www.youtube.com/embed/OA9zy0BLm9g\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Highlight Link",
+            "url": "https://football-highlight.p.rapidapi.com/index.php",
+            "description": "Best Live Emb",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "url",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/index.php\"\nquerystring = {\"url\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-highlight.p.rapidapi.com/index.php\"\nquerystring = {\"url\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-highlight.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "football_highlight"
+}

@@ -1,0 +1,114 @@
+{
+    "product_id": "api_198e6a20-a444-4da8-a5eb-d0562ced0918",
+    "tool_description": "retrieve image, price, weapon, class for every released Skin in CS:GO or CS2",
+    "home_url": "https://rapidapi.com/pdeges/api/cs-skin-api/",
+    "name": "cs-skin API",
+    "title": "cs-skin API",
+    "pricing": "FREE",
+    "tool_name": "cs-skin API",
+    "score": {
+        "avgServiceLevel": 83,
+        "avgLatency": 8959,
+        "avgSuccessRate": 83,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "cs-skin-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Random Skin from Weapon",
+            "url": "https://cs-skin-api.p.rapidapi.com/random/AWP",
+            "description": "retrieve name, price, icon, class and weapon for a random counterstrike skin from a specific weapon\n(prices for field tested condition in USD)\n\n(replace weapon_name)\n\nExample: /api/random/AWP",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "weapon_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "AWP"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/random/AWP\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/random/{weapon_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "AWP | Pit Viper",
+                "price": "0.69",
+                "img": "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot621FA957ODGcDZH_9e_mr-GkvP9Jrafz2oJscdw2OrA9Nvx3w2y8hZrNm7zcYOddgZtYwyG_lW4w-rngp_v7YOJlyVPLSW-Rw/620fx620f",
+                "weapon": "AWP",
+                "class": "Sniper"
+            }
+        },
+        {
+            "name": "Random Skin from Class",
+            "url": "https://cs-skin-api.p.rapidapi.com/randomclass/Knife",
+            "description": "retrieve name, price, icon, class and weapon for a random counterstrike skin from a specific class \n(prices for field tested condition in USD)\n\n(replace class_name)\n\nExample: /api/randomclass/Rifle",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "class_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Knife"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/randomclass/Knife\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/randomclass/{class_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "StatTrak Bowie Knife | Damascus Steel",
+                "price": "276.34",
+                "img": "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpovbSsLQJfwObaZzRU7dCJlo-cnvLLMqrukmpc6dZyn_r-rNzKhVGwogYxfWr7coDEIFI7ZguGrgK9wejq1pO8u8zAy3ZluCQjsSvfnkGzghhJauVxxavJf5EXhkY/620fx620f",
+                "weapon": "Knife",
+                "class": "Knife"
+            }
+        },
+        {
+            "name": "Specific Skin",
+            "url": "https://cs-skin-api.p.rapidapi.com/AK-47_Slate",
+            "description": "retrieve name, price, icon, class and weapon for a specific counterstrike skin \n(prices for field tested condition in USD)\n\n(replace skin_name, underscores instead of spaces)\n\nExample: /api/AK-47_Redline",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "skin_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "AK-47_Slate"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/AK-47_Slate\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/{skin_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "name": "AK-47 | Slate",
+                "price": "3.93",
+                "img": "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpot7HxfDhnwMzJemkV08ykm4aOhOT9PLXQmlRc7cF4n-SP8dyhiwK1_xU4ajygIdSdJgVoMlzRrFTqlea5hpK66ZvNmnI3vHUk4WGdwUJBbIpZ4g/620fx620f",
+                "weapon": "AK-47",
+                "class": "Rifle"
+            }
+        },
+        {
+            "name": "Random Skin",
+            "url": "https://cs-skin-api.p.rapidapi.com/random",
+            "description": "retrieve name, price, icon, class and weapon for a random counterstrike skin (prices for field tested condition)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cs-skin-api.p.rapidapi.com/random\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cs-skin-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                [
+                    "Galil_AR_Amber_Fade",
+                    {
+                        "name": "Galil AR | Amber Fade",
+                        "price": "20.55",
+                        "img": "https://community.akamai.steamstatic.com/economy/image/-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgposbupIgthwczJcAJE7dizq42Og_b4P7LSqWZU7Mxkh6eX8Ymgi1Lt-xBuYGDxcoPAJAU7YVCD-1S5l-fu0Je1uc7JnHYx73Rz-z-DyHfcIMnX/620fx620f",
+                        "weapon": "Galil AR",
+                        "class": "Rifle"
+                    }
+                ]
+            ]
+        }
+    ],
+    "standardized_name": "cs_skin_api"
+}

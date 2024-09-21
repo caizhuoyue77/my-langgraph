@@ -1,0 +1,131 @@
+{
+    "product_id": "api_7762b127-6bbe-4b34-9421-5b279eedee36",
+    "tool_description": "Do you want to get paid for the rest of your life? This is your game! Introducing the latest winning numbers and the best statistics!",
+    "home_url": "https://rapidapi.com/avoratechnology/api/cash4life/",
+    "name": "Cash4Life",
+    "title": "Cash4Life",
+    "pricing": "FREEMIUM",
+    "tool_name": "Cash4Life",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 261,
+        "avgSuccessRate": 100,
+        "popularityScore": 9,
+        "__typename": "Score"
+    },
+    "host": "cash4life.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Drawings Between Dates",
+            "url": "https://cash4life.p.rapidapi.com/BetweenDates/2023-01-01/2023-01-05",
+            "description": "Get all Cash4Life winning number sets between two specified dates where the first number supplied is the beginning date and the second number supplied is the end date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date1",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2023-01-01"
+                },
+                {
+                    "name": "date2",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2023-01-05"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/BetweenDates/2023-01-01/2023-01-05\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/BetweenDates/{date1}/{date2}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Drawing by Date",
+            "url": "https://cash4life.p.rapidapi.com/2023-01-05",
+            "description": "Get the winning Cash4Life number set from a specific drawing date.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "DATE (YYYY-MM-DD)",
+                    "description": "",
+                    "default": "2023-01-05"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/2023-01-05\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/{date}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "General Statistics",
+            "url": "https://cash4life.p.rapidapi.com/stats",
+            "description": "This endpoint pulls basic statistics of the Cash4Life numbers. For each ball (denoted firstNumber, secondNumber, thirdNumber, fourthNumber, fifthNumber, and cashBall) this endpoint returns the mean, median, mode, min, max, standard deviation, variance, skewness, and kurtosis. After which, the endpoint returns the number of occurrences of each number over the life of game.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/stats\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Lastest Drawing",
+            "url": "https://cash4life.p.rapidapi.com/latest",
+            "description": "Get the latest, and last winning Cash4Life winning number set.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/latest\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Random QuickPick for Play",
+            "url": "https://cash4life.p.rapidapi.com/quickpick",
+            "description": "Get a quickpick number for the Cash4Life drawing.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/quickpick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/quickpick\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "Latest 10 Drawings",
+            "url": "https://cash4life.p.rapidapi.com/latest10",
+            "description": "Latest 10 Cash4Life drawings",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/latest10\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "All Drawings",
+            "url": "https://cash4life.p.rapidapi.com/",
+            "description": "All Cash4Life drawings",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://cash4life.p.rapidapi.com/\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"cash4life.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "cash4life"
+}

@@ -1,0 +1,91 @@
+{
+    "product_id": "api_dcc69bc2-1230-416c-90e8-0f6854890167",
+    "tool_description": "Spotify, Apple Music, YouTube, Amazon, Tidal, and more. Over 19 services supported.\n\nFetch metadata for the tracks, albums, playlists from multiple streaming services via URL.\nUse single search endpoints to find at once on all services and get sharable URLs to all of them. \n\nMusicAPI.com",
+    "home_url": "https://rapidapi.com/freeyourmusic-freeyourmusic-default/api/musicapi13/",
+    "name": "MusicAPI",
+    "title": "MusicAPI",
+    "pricing": "FREEMIUM",
+    "tool_name": "MusicAPI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1077,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "musicapi13.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/public/search/introspection",
+            "url": "https://musicapi13.p.rapidapi.com/public/search/introspection",
+            "description": "Allows you to fetch all different enums needed for sending API requests",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://musicapi13.p.rapidapi.com/public/search/introspection\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musicapi13.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://musicapi13.p.rapidapi.com/public/search/introspection\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"musicapi13.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "sources": [
+                    "amazonMusic",
+                    "appleMusic",
+                    "deezer",
+                    "pandora",
+                    "soundCloud",
+                    "spotify",
+                    "tidal",
+                    "youtube",
+                    "youtubeMusic",
+                    "napster",
+                    "qobuz",
+                    "qqMusic",
+                    "yandexMusic",
+                    "vkMusic",
+                    "anghami",
+                    "zvuk",
+                    "gaana",
+                    "jiosaavn",
+                    "resso",
+                    "boomplay"
+                ],
+                "authSources": [
+                    "spotify",
+                    "appleMusic",
+                    "youtube",
+                    "tidal",
+                    "resso",
+                    "boomplay",
+                    "amazonMusic"
+                ],
+                "types": [
+                    "track",
+                    "album"
+                ]
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "sources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "authSources": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "types": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "standardized_name": "musicapi"
+}

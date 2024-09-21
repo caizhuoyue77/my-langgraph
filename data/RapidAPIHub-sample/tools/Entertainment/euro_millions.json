@@ -1,0 +1,162 @@
+{
+    "product_id": "api_e975a154-7bf6-47f6-b9fb-a54d9e82b704",
+    "tool_description": "A rich API to get EuroMillions results. With this API you can consult the last result, submit the numbers of one or more bets and check how many numbers you hit. As it has a track record since 2004, you can even get statistics on the numbers that have been drawn the most, check if your lucky numbers have ever come out in previous draws or consult the results of a specific draw. For the most recent draws, you can find out how many bets matched the numbers and how much money each one received. ...",
+    "home_url": "https://rapidapi.com/jribeiro19/api/euro-millions/",
+    "name": "Euro Millions",
+    "title": "Euro Millions",
+    "pricing": "FREEMIUM",
+    "tool_name": "Euro Millions",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 224,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.2,
+        "__typename": "Score"
+    },
+    "host": "euro-millions.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Get the Last result",
+            "url": "https://euro-millions.p.rapidapi.com/results/lastresult",
+            "description": "Get the latest draw results available",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/lastresult\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/lastresult\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get All draws results",
+            "url": "https://euro-millions.p.rapidapi.com/results/history/allresults",
+            "description": "Get the results of all draws in history of EuroMillions since 2004",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/allresults\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/allresults\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get all stats",
+            "url": "https://euro-millions.p.rapidapi.com/results/stat/all",
+            "description": "Provide statistics about the frequency of each number in all draws in EuroMillions history in database. Here you can get the most frequent number or star in the draws.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/stat/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/stat/all\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get M1lhao",
+            "url": "https://euro-millions.p.rapidapi.com/results/v2/milhao/lastresult",
+            "description": "Get last drawn result of M1lhao (M1lh\u00e3o (\u2018The Million\u2019) is a supplementary game offered to Portuguese EuroMillions players which offers the chance to win a prize of \u20ac1 million on Friday evenings.)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/lastresult\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/lastresult\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get All M1lhao draws dates",
+            "url": "https://euro-millions.p.rapidapi.com/results/v2/milhao/history/alldraws",
+            "description": "Get all M1lhao draws dates (M1lh\u00e3o (\u2018The Million\u2019) is a supplementary game offered to Portuguese EuroMillions players which offers the chance to win a prize of \u20ac1 million on Friday evenings.)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/alldraws\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/alldraws\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get M1lhao by date",
+            "url": "https://euro-millions.p.rapidapi.com/results/v2/milhao/history/bydate",
+            "description": "Get a specific M1lhao drawn result by date (M1lh\u00e3o (\u2018The Million\u2019) is a supplementary game offered to Portuguese EuroMillions players which offers the chance to win a prize of \u20ac1 million on Friday evenings.)",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2022-07-01"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/bydate\"\nquerystring = {\"date\": \"2022-07-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/bydate\"\nquerystring = {\"date\": \"2022-07-01\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get All M1lhao results",
+            "url": "https://euro-millions.p.rapidapi.com/results/v2/milhao/history/allresults",
+            "description": "Get the whole history of M1lhao result draws",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/allresults\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/v2/milhao/history/allresults\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get Birthday draws",
+            "url": "https://euro-millions.p.rapidapi.com/results/birthday/draws",
+            "description": "Get all draws result occurred at a given birthday date (mm-dd) and check it out what's your lucky number and related statistics.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "01-21"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/birthday/draws\"\nquerystring = {\"date\": \"01-21\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/birthday/draws\"\nquerystring = {\"date\": \"01-21\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get All draws",
+            "url": "https://euro-millions.p.rapidapi.com/results/history/alldraws",
+            "description": "Get a list of all draws dates available in the API",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/alldraws\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/alldraws\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get result by date",
+            "url": "https://euro-millions.p.rapidapi.com/results/history/bydate",
+            "description": "Get the draws result for an specific date",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "date",
+                    "type": "STRING",
+                    "description": "The date you want to check draws numbers",
+                    "default": "2011-03-18"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/bydate\"\nquerystring = {\"date\": \"2011-03-18\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/history/bydate\"\nquerystring = {\"date\": \"2011-03-18\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Get last fresh result",
+            "url": "https://euro-millions.p.rapidapi.com/results/lastfresh",
+            "description": "Get the latest result available in real time on official results website",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/lastfresh\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://euro-millions.p.rapidapi.com/results/lastfresh\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"euro-millions.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "euro_millions"
+}

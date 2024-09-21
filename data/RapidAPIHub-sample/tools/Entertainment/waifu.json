@@ -1,0 +1,152 @@
+{
+    "product_id": "api_eb112b62-12e2-44fa-8063-8b5b14adf7dd",
+    "tool_description": "Talk to cute waifu chatbot!",
+    "home_url": "https://rapidapi.com/waifuai/api/waifu/",
+    "name": "Waifu",
+    "title": "Waifu",
+    "pricing": "FREEMIUM",
+    "tool_name": "Waifu",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 2345,
+        "avgSuccessRate": 96,
+        "popularityScore": 9.8,
+        "__typename": "Score"
+    },
+    "host": "waifu.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Check server status",
+            "url": "https://waifu.p.rapidapi.com/v1/server/status",
+            "description": "Check server status",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/server/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/server/status\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "status": "ok"
+            }
+        },
+        {
+            "name": "Get all users paged by hundreds",
+            "url": "https://waifu.p.rapidapi.com/v1/user/all/id/0",
+            "description": "Get all users paged by hundreds",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "page",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "0"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/all/id/0\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/all/id/{page}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "page": 0,
+                "users": []
+            }
+        },
+        {
+            "name": "Get users count",
+            "url": "https://waifu.p.rapidapi.com/v1/user/all/count",
+            "description": "Get users count",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/all/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/all/count\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "user_count": 0
+            }
+        },
+        {
+            "name": "Get user dialog string",
+            "url": "https://waifu.p.rapidapi.com/v1/user/dialog/str/sample_user_id",
+            "description": "Get user dialog string",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "sample_user_id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/dialog/str/sample_user_id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/dialog/str/{user_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "user_id": "sample_user_id",
+                "dialog": null
+            }
+        },
+        {
+            "name": "Get user dialog json",
+            "url": "https://waifu.p.rapidapi.com/v1/user/dialog/json/sample_user_id",
+            "description": "Get user dialog json",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "sample_user_id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/dialog/json/sample_user_id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/dialog/json/{user_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "user_id": "sample_user_id",
+                "dialog": null
+            }
+        },
+        {
+            "name": "Get user metadata",
+            "url": "https://waifu.p.rapidapi.com/v1/user/metadata/sample_user_id",
+            "description": "Get user metadata",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "sample_user_id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/metadata/sample_user_id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/metadata/{user_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "user_id": "sample_user_id",
+                "last_modified_datetime": null,
+                "last_modified_timestamp": null
+            }
+        },
+        {
+            "name": "Check user exists",
+            "url": "https://waifu.p.rapidapi.com/v1/user/id/sample_user_id",
+            "description": "Check user exists",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "user_id",
+                    "type": "string",
+                    "description": "",
+                    "default": "sample_user_id"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/id/sample_user_id\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://waifu.p.rapidapi.com/v1/user/id/{user_id}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"waifu.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": {
+                "user_id": "sample_user_id",
+                "exists": false
+            }
+        }
+    ],
+    "standardized_name": "waifu"
+}

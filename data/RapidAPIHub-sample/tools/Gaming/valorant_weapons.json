@@ -1,0 +1,56 @@
+{
+    "product_id": "api_3d860139-5b76-4397-8731-9678a711d828",
+    "tool_description": "Provides users with all relevant information regarding weapons in Valorant",
+    "home_url": "https://rapidapi.com/Panda64/api/valorant-weapons/",
+    "name": "Valorant Weapons",
+    "title": "Valorant Weapons",
+    "pricing": "FREE",
+    "tool_name": "Valorant Weapons",
+    "score": {
+        "avgServiceLevel": 86,
+        "avgLatency": 566,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "valorant-weapons.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Weapon Classes",
+            "url": "https://valorant-weapons.p.rapidapi.com/Sidearms",
+            "description": "Returns a list of all weapons classes (along with their respective weapons) that are currently in Valorant.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "weapon_class_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Sidearms"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://valorant-weapons.p.rapidapi.com/Sidearms\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant-weapons.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://valorant-weapons.p.rapidapi.com/{weapon_class_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant-weapons.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Weapon",
+            "url": "https://valorant-weapons.p.rapidapi.com/weapon/Vandal",
+            "description": "Returns the desired weapon's stats.",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "weapon_name",
+                    "type": "string",
+                    "description": "",
+                    "default": "Vandal"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://valorant-weapons.p.rapidapi.com/weapon/Vandal\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant-weapons.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://valorant-weapons.p.rapidapi.com/weapon/{weapon_name}\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"valorant-weapons.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "valorant_weapons"
+}

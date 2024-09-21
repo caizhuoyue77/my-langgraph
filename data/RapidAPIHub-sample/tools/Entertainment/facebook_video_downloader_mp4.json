@@ -1,0 +1,31 @@
+{
+    "product_id": "api_dffbfc40-8785-413d-b179-5d95f18bdbda",
+    "tool_description": "Facebook video downloader API Iframe and button API will allow adding FB video downloading option on any website. Check this link https://mp3downy.com/facebook-video-downloader-api",
+    "home_url": "https://rapidapi.com/satishch.net8/api/facebook-video-downloader-mp4/",
+    "name": "Facebook video downloader MP4",
+    "title": "Facebook video downloader MP4",
+    "pricing": "FREE",
+    "tool_name": "Facebook video downloader MP4",
+    "score": {
+        "avgServiceLevel": 0,
+        "avgLatency": 471,
+        "avgSuccessRate": 0,
+        "popularityScore": 0.3,
+        "__typename": "Score"
+    },
+    "host": "facebook-video-downloader-mp4.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Facebook video downloader",
+            "url": "https://facebook-video-downloader-mp4.p.rapidapi.com/facebook-video-downloader-api",
+            "description": "Facebook video downloader API @ https://mp3downy.com/facebook-video-downloader-api",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://facebook-video-downloader-mp4.p.rapidapi.com/facebook-video-downloader-api\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-video-downloader-mp4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://facebook-video-downloader-mp4.p.rapidapi.com/facebook-video-downloader-api\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"facebook-video-downloader-mp4.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "facebook_video_downloader_mp4"
+}

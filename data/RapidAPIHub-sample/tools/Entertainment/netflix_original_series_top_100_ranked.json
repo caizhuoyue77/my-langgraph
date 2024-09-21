@@ -1,0 +1,42 @@
+{
+    "product_id": "api_4565b906-c3dd-4e86-9a89-2507d512bc88",
+    "tool_description": "The Netflix  orginal Series Top 100 API contains information on movies, including the release year, duration, cast, brief summaries, and ratings . This data can be used for recommendation systems, data analysis, and research. ",
+    "home_url": "https://rapidapi.com/abinanthan2204/api/netflix-original-series-top-100-ranked/",
+    "name": "Netflix Original Series Top 100 (ranked)",
+    "title": "Netflix Original Series Top 100 (ranked)",
+    "pricing": "FREEMIUM",
+    "tool_name": "Netflix Original Series Top 100 (ranked)",
+    "score": {
+        "avgServiceLevel": 76,
+        "avgLatency": 820,
+        "avgSuccessRate": 54,
+        "popularityScore": 9.4,
+        "__typename": "Score"
+    },
+    "host": "netflix-original-series-top-100-ranked.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "By Filter",
+            "url": "https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series?lister-item-header=value",
+            "description": "by using search filter",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series?lister-item-header=value\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"netflix-original-series-top-100-ranked.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series?lister-item-header=value\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"netflix-original-series-top-100-ranked.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "search",
+            "url": "https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series",
+            "description": "Get Request for Netflix Original Series Top 100 (ranked)",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"netflix-original-series-top-100-ranked.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://netflix-original-series-top-100-ranked.p.rapidapi.com/uMEJkR/series\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"netflix-original-series-top-100-ranked.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "netflix_original_series_top_100_ranked"
+}

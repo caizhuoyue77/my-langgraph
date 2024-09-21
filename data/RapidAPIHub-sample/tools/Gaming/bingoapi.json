@@ -1,0 +1,85 @@
+{
+    "product_id": "api_99b6ce03-5d34-4358-95c0-3c26d5b63f31",
+    "tool_description": "Offload your server resources with Bingo API! It is a straightforward API that generates  Bingo cards in US and EU  game standards (75 or 90 numbers). Feel free to play with it with the free Basic Plan. If you have suggestions or requests just drop me a line.",
+    "home_url": "https://rapidapi.com/alessioforti/api/bingoapi/",
+    "name": "BingoAPI",
+    "title": "BingoAPI",
+    "pricing": "FREEMIUM",
+    "tool_name": "BingoAPI",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 646,
+        "avgSuccessRate": 100,
+        "popularityScore": 8.5,
+        "__typename": "Score"
+    },
+    "host": "bingoapi.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "/us",
+            "url": "https://bingoapi.p.rapidapi.com/us",
+            "description": "US game spec.\nReturns numbers between 1 and 75, randomized in 5 groups.\n\nIf you have a paid plan you can specify the number of cards to generate as a query parameter: `?cards=10`\nThis will return an array of array (the cards).\n\nPlease note that empty spaces are not returned as it is more portable for who don't need them. You are free to loop through the cards and add them at your wish.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [
+                {
+                    "name": "cards",
+                    "type": "STRING",
+                    "description": "",
+                    "default": "2"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://bingoapi.p.rapidapi.com/us\"\nquerystring = {\"cards\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bingoapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bingoapi.p.rapidapi.com/us\"\nquerystring = {\"cards\": \"2\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bingoapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": [
+                6,
+                13,
+                14,
+                20,
+                22,
+                25,
+                31,
+                42,
+                44,
+                50,
+                55,
+                56,
+                61,
+                68,
+                69
+            ],
+            "statuscode": 200,
+            "schema": {}
+        },
+        {
+            "name": "/eu",
+            "url": "https://bingoapi.p.rapidapi.com/eu",
+            "description": "EU game spec.\nReturns numbers between 1 and 90.\n\nIf you have a paid plan you can specify the number of cards to generate as a query parameter: `?cards=10`\nThis will return an array of array (the cards).\n\nPlease note that empty spaces are not returned as it is more portable for who don't need them. You are free to loop through the cards and add them at your wish.",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://bingoapi.p.rapidapi.com/eu\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bingoapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://bingoapi.p.rapidapi.com/eu\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"bingoapi.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": [
+                4,
+                7,
+                16,
+                22,
+                30,
+                36,
+                39,
+                43,
+                45,
+                54,
+                70,
+                74,
+                77,
+                85,
+                86
+            ],
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "bingoapi"
+}

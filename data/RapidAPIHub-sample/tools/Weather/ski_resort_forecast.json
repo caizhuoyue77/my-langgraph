@@ -1,0 +1,538 @@
+{
+    "product_id": "api_a64506c2-0f09-4f44-ad7c-a7a727a5c1b8",
+    "tool_description": "Forecast and current snow conditions for nearly every ski resort.  Perfect spelling of resort names is NOT required in most cases.",
+    "home_url": "https://rapidapi.com/joeykyber/api/ski-resort-forecast/",
+    "name": "Ski Resort Forecast",
+    "title": "Ski Resort Forecast",
+    "pricing": "FREE",
+    "tool_name": "Ski Resort Forecast",
+    "score": {
+        "avgServiceLevel": 100,
+        "avgLatency": 1821,
+        "avgSuccessRate": 100,
+        "popularityScore": 9.5,
+        "__typename": "Score"
+    },
+    "host": "ski-resort-forecast.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "5 Day Forecast",
+            "url": "https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/forecast",
+            "description": "Returns the 5 day forecast for a given resort name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "resort",
+                    "type": "string",
+                    "description": "",
+                    "default": "Jackson Hole"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "Specify desired units. Accepted values are 'i' (imperial) and 'm' (metric). Using this parameter improves response time.",
+                    "default": "i"
+                },
+                {
+                    "name": "el",
+                    "type": "STRING",
+                    "description": "Specify a part of the mountain. Accepted values are 'top', 'mid and 'bot'. Using this parameter improves response time.",
+                    "default": "top"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/forecast\"\nquerystring = {\"units\": \"i\", \"el\": \"top\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/{resort}/forecast\"\nquerystring = {\"units\": \"i\", \"el\": \"top\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": "",
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forecast5Day": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "dayOfWeek": {
+                                    "type": "string"
+                                },
+                                "am": {
+                                    "type": "object",
+                                    "properties": {
+                                        "summary": {
+                                            "type": "string"
+                                        },
+                                        "windSpeed": {
+                                            "type": "string"
+                                        },
+                                        "windDirection": {
+                                            "type": "string"
+                                        },
+                                        "snow": {
+                                            "type": "string"
+                                        },
+                                        "rain": {
+                                            "type": "string"
+                                        },
+                                        "maxTemp": {
+                                            "type": "string"
+                                        },
+                                        "minTemp": {
+                                            "type": "string"
+                                        },
+                                        "windChill": {
+                                            "type": "string"
+                                        },
+                                        "humidity": {
+                                            "type": "string"
+                                        },
+                                        "freezeLevel": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "pm": {
+                                    "type": "object",
+                                    "properties": {
+                                        "summary": {
+                                            "type": "string"
+                                        },
+                                        "windSpeed": {
+                                            "type": "string"
+                                        },
+                                        "windDirection": {
+                                            "type": "string"
+                                        },
+                                        "snow": {
+                                            "type": "string"
+                                        },
+                                        "rain": {
+                                            "type": "string"
+                                        },
+                                        "maxTemp": {
+                                            "type": "string"
+                                        },
+                                        "minTemp": {
+                                            "type": "string"
+                                        },
+                                        "windChill": {
+                                            "type": "string"
+                                        },
+                                        "humidity": {
+                                            "type": "string"
+                                        },
+                                        "freezeLevel": {
+                                            "type": "string"
+                                        }
+                                    }
+                                },
+                                "night": {
+                                    "type": "object",
+                                    "properties": {
+                                        "summary": {
+                                            "type": "string"
+                                        },
+                                        "windSpeed": {
+                                            "type": "string"
+                                        },
+                                        "windDirection": {
+                                            "type": "string"
+                                        },
+                                        "snow": {
+                                            "type": "string"
+                                        },
+                                        "rain": {
+                                            "type": "string"
+                                        },
+                                        "maxTemp": {
+                                            "type": "string"
+                                        },
+                                        "minTemp": {
+                                            "type": "string"
+                                        },
+                                        "windChill": {
+                                            "type": "string"
+                                        },
+                                        "humidity": {
+                                            "type": "string"
+                                        },
+                                        "freezeLevel": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "summary3Day": {
+                        "type": "string"
+                    },
+                    "summaryDays4To6": {
+                        "type": "string"
+                    },
+                    "basicInfo": {
+                        "type": "object",
+                        "properties": {
+                            "region": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "topLiftElevation": {
+                                "type": "string"
+                            },
+                            "midLiftElevation": {
+                                "type": "string"
+                            },
+                            "botLiftElevation": {
+                                "type": "string"
+                            },
+                            "lat": {
+                                "type": "string"
+                            },
+                            "lon": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Hourly Forecast",
+            "url": "https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/hourly",
+            "description": "Returns the hourly forecast for a given resort name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "resort",
+                    "type": "string",
+                    "description": "",
+                    "default": "Jackson Hole"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "el",
+                    "type": "STRING",
+                    "description": "Specify a part of the mountain. Accepted values are 'top', 'mid', and 'bot'. Using this parameter improves response time.",
+                    "default": "top"
+                },
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "Specify desired units. Accepted values are 'i' (imperial) and 'm' (metric). Using this parameter improves response time.",
+                    "default": "i"
+                },
+                {
+                    "name": "c",
+                    "type": "BOOLEAN",
+                    "description": "Limit result to current day only",
+                    "default": "false"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/hourly\"\nquerystring = {\"el\": \"top\", \"units\": \"i\", \"c\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/{resort}/hourly\"\nquerystring = {\"el\": \"top\", \"units\": \"i\", \"c\": \"false\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "forecast": [
+                    {
+                        "time": "10AM",
+                        "summary": "snow showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "WSW",
+                        "rain": "0in",
+                        "maxTemp": "34\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "75%",
+                        "freezeLevel": "10800ft"
+                    },
+                    {
+                        "time": "11AM",
+                        "summary": "snow showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0in",
+                        "maxTemp": "34\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "77%",
+                        "freezeLevel": "10800ft"
+                    },
+                    {
+                        "time": "12PM",
+                        "summary": "snow showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0in",
+                        "maxTemp": "36\u00b0F",
+                        "minTemp": null,
+                        "windChill": "34\u00b0F",
+                        "humidity": "73%",
+                        "freezeLevel": "11200ft"
+                    },
+                    {
+                        "time": "1PM",
+                        "summary": "rain showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0.04in",
+                        "maxTemp": "36\u00b0F",
+                        "minTemp": null,
+                        "windChill": "34\u00b0F",
+                        "humidity": "66%",
+                        "freezeLevel": "11500ft"
+                    },
+                    {
+                        "time": "2PM",
+                        "summary": "rain showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "34\u00b0F",
+                        "humidity": "64%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "3PM",
+                        "summary": "risk thun- der",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "71%",
+                        "freezeLevel": "11600ft"
+                    },
+                    {
+                        "time": "4PM",
+                        "summary": "risk thun- der",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0.04in",
+                        "maxTemp": "36\u00b0F",
+                        "minTemp": null,
+                        "windChill": "30\u00b0F",
+                        "humidity": "77%",
+                        "freezeLevel": "11600ft"
+                    },
+                    {
+                        "time": "5PM",
+                        "summary": "risk thun- der",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "75%",
+                        "freezeLevel": "11600ft"
+                    },
+                    {
+                        "time": "6PM",
+                        "summary": "rain showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "73%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "7PM",
+                        "summary": "rain showers",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "70%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "8PM",
+                        "summary": "rain showers",
+                        "windSpeed": "10mph",
+                        "windDirection": "W",
+                        "rain": "0.04in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "66%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "9PM",
+                        "summary": "clear",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "64%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "10PM",
+                        "summary": "some clouds",
+                        "windSpeed": "5mph",
+                        "windDirection": "W",
+                        "rain": "0in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "64%",
+                        "freezeLevel": "11800ft"
+                    },
+                    {
+                        "time": "11PM",
+                        "summary": "some clouds",
+                        "windSpeed": "5mph",
+                        "windDirection": "WNW",
+                        "rain": "0in",
+                        "maxTemp": "37\u00b0F",
+                        "minTemp": null,
+                        "windChill": "32\u00b0F",
+                        "humidity": "63%",
+                        "freezeLevel": "12000ft"
+                    }
+                ],
+                "basicInfo": {
+                    "region": "USA - Wyoming",
+                    "name": "Jackson Hole",
+                    "url": "https://www.snow-forecast.com/resorts/Jackson-Hole/6day/top",
+                    "topLiftElevation": "10447ft",
+                    "midLiftElevation": "8380ft",
+                    "botLiftElevation": "6309ft",
+                    "lat": "43.60",
+                    "lon": "-110.85"
+                }
+            },
+            "statuscode": 200,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "forecast": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "time": {
+                                    "type": "string"
+                                },
+                                "summary": {
+                                    "type": "string"
+                                },
+                                "windSpeed": {
+                                    "type": "string"
+                                },
+                                "windDirection": {
+                                    "type": "string"
+                                },
+                                "snow": {
+                                    "type": "string"
+                                },
+                                "rain": {
+                                    "type": "string"
+                                },
+                                "maxTemp": {
+                                    "type": "string"
+                                },
+                                "minTemp": {
+                                    "type": "string"
+                                },
+                                "windChill": {
+                                    "type": "string"
+                                },
+                                "humidity": {
+                                    "type": "string"
+                                },
+                                "freezeLevel": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "basicInfo": {
+                        "type": "object",
+                        "properties": {
+                            "region": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "topLiftElevation": {
+                                "type": "string"
+                            },
+                            "midLiftElevation": {
+                                "type": "string"
+                            },
+                            "botLiftElevation": {
+                                "type": "string"
+                            },
+                            "lat": {
+                                "type": "string"
+                            },
+                            "lon": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "name": "Current Snow Conditions",
+            "url": "https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/snowConditions",
+            "description": "Returns the current snow conditions for a given resort name",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "resort",
+                    "type": "string",
+                    "description": "",
+                    "default": "Jackson Hole"
+                }
+            ],
+            "optional_parameters": [
+                {
+                    "name": "units",
+                    "type": "STRING",
+                    "description": "Specify desired units. Accepted values are 'i' (imperial) and 'm' (metric). Using this parameter improves response time.",
+                    "default": "i"
+                }
+            ],
+            "code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/Jackson Hole/snowConditions\"\nquerystring = {\"units\": \"i\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://ski-resort-forecast.p.rapidapi.com/{resort}/snowConditions\"\nquerystring = {\"units\": \"i\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"ski-resort-forecast.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": {
+                "topSnowDepth": "0in",
+                "botSnowDepth": "0in",
+                "freshSnowfall": null,
+                "lastSnowfallDate": null,
+                "basicInfo": {
+                    "region": "USA - Wyoming",
+                    "name": "Jackson Hole",
+                    "url": "https://www.snow-forecast.com/resorts/Jackson-Hole/6day/top",
+                    "topLiftElevation": "10447ft",
+                    "midLiftElevation": "8380ft",
+                    "botLiftElevation": "6309ft",
+                    "lat": "-110.85",
+                    "lon": "43.60"
+                }
+            },
+            "statuscode": 200,
+            "schema": {}
+        }
+    ],
+    "standardized_name": "ski_resort_forecast"
+}

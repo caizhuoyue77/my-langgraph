@@ -1,0 +1,49 @@
+{
+    "product_id": "api_1ca9f573-edae-407c-8e9d-1dd14a3f91c4",
+    "tool_description": "Live Football Streaming HD",
+    "home_url": "https://rapidapi.com/Thawtarlamin/api/football-live-stream-api/",
+    "name": "Football Live Stream Api",
+    "title": "Football Live Stream Api",
+    "pricing": "FREEMIUM",
+    "tool_name": "Football Live Stream Api",
+    "score": {
+        "avgServiceLevel": 99,
+        "avgLatency": 2460,
+        "avgSuccessRate": 99,
+        "popularityScore": 9.1,
+        "__typename": "Score"
+    },
+    "host": "football-live-stream-api.p.rapidapi.com",
+    "api_list": [
+        {
+            "name": "Match Embed Link",
+            "url": "https://football-live-stream-api.p.rapidapi.com/stream.php",
+            "description": "Live Link",
+            "method": "GET",
+            "required_parameters": [
+                {
+                    "name": "matchid",
+                    "type": "NUMBER",
+                    "description": "",
+                    "default": "1"
+                }
+            ],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-live-stream-api.p.rapidapi.com/stream.php\"\nquerystring = {\"matchid\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-live-stream-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-live-stream-api.p.rapidapi.com/stream.php\"\nquerystring = {\"matchid\": \"1\"}\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-live-stream-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers, params=querystring)\nprint(response.json())\n",
+            "test_endpoint": ""
+        },
+        {
+            "name": "Football Live",
+            "url": "https://football-live-stream-api.p.rapidapi.com/index.php",
+            "description": "Live Match",
+            "method": "GET",
+            "required_parameters": [],
+            "optional_parameters": [],
+            "code": "import requests\n\nurl = \"https://football-live-stream-api.p.rapidapi.com/index.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-live-stream-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "convert_code": "import requests\n\nurl = \"https://football-live-stream-api.p.rapidapi.com/index.php\"\n\nheaders = {\n            \"X-RapidAPI-Key\": \"SIGN-UP-FOR-KEY\",\n            \"X-RapidAPI-Host\": \"football-live-stream-api.p.rapidapi.com\"\n        }\n\nresponse = requests.get(url, headers=headers)\nprint(response.json())\n",
+            "test_endpoint": ""
+        }
+    ],
+    "standardized_name": "football_live_stream_api"
+}
