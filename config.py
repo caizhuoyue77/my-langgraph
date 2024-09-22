@@ -1,7 +1,7 @@
 import os
 from utils import get_tool_list_str
 
-TOOL_LIST = get_tool_list_str()
+# TOOL_LIST = get_tool_list_str()
 
 MODEL = "qwen"  # qwen或者gpt-3.5
 

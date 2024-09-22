@@ -26,8 +26,8 @@ def get_tool_list_str(file_path="tools_shengqian.json"):
 
 
 def get_tool_list_str_from_json_list(tools_data):
+    print("TOOOO")
     """读取一个json list 转为字符串"""
-    print("TOOL list")
     print(tools_data)
     return "\n".join(
         f"({i+1}) {tool['name']}[{tool['input']}]: {tool['description']}"
