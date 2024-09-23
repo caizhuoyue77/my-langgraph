@@ -1,83 +1,71 @@
 """
-Pass rate 和 win rate的定义
+该模块用于生成 Pass rate 和 Win rate 的评估提示，并调用大模型进行判断。
 """
 from make_api_plan import get_chat_response
 
-# prompt
-PASS_RATE_PROMPT = "Tell me if this plan is applicable(pass/fails). The task:[task]. The plan:[plan]"
+# 全局常量定义，Pass Rate 评估的提示内容
+PASS_RATE_PROMPT = (
+    "Please determine if this plan is applicable (pass/fail). The task is: [task]. The plan is: [plan]. "
+    "When making your judgment, consider the following factors:\n"
+    "1. Solvability of the task: If at least one API is potentially helpful in solving the task, it is solvable; otherwise, it is unsolvable.\n"
+    "2. If the task is solvable:\n"
+    "   - If the model chooses to give up after trying all APIs without obtaining useful information, the solution path is deemed a Pass;\n"
+    "   - If the model does not sufficiently explore APIs or receives valid information, it is deemed a Fail;\n"
+    "   - If the final answer resolves the original task, it is a Pass; if it does not fully resolve but provides some valid information, it is a Fail;\n"
+    "   - If it is unclear whether the task is resolved, the solution path is deemed Unsure.\n"
+    "3. If the task is unsolvable:\n"
+    "   - If the final answer unexpectedly resolves a task initially deemed unsolvable, it is a Pass;\n"
+    "   - If the final answer is a refusal, it is also a Pass;\n"
+    "   - If the answer is hallucinated by the model and provides false information, it is a Fail;\n"
+    "   - If the model gives up, the solution path is deemed a Pass.\n"
+    "For every solution path, please generate multiple (≥4) predictions and perform a majority vote to derive the final pass rate."
+    "Simply give me the result, no need to explain anything."
+)
 
-"""参考prompt
-A.5 DETAILS FOR TOOLEVAL
-We adopt two metrics for automatic tool-use capability evaluation: pass rate and win rate.
-Details for Pass Rate To assess whether a solution path completes the tasks outlined in the original
-instruction and successfully passes it, we need to first consider the solvability of the instruction. In
-principle, an instruction can be classified as either (1) solvable: for example, at least one of the
-provided tools is potentially helpful in solving the original instruction; or (2) unsolvable: for example,
-all APIs are irrelevant to the instruction or the instruction provides invalid information such as invalid
-email address.
-To determine whether a solution path is deemed passed or not, we need to consider whether the
-instruction is solvable or unsolvable. In our evaluation, three types of labels can be given to each
-solution path, i.e., Pass, Fail, and Unsure. Specifically, we define different rules as follows:
-If the instruction is solvable:
-1. If the model gives finish type “Finish by Giving Up”,
-(a) After trying all the APIs extensively during and receiving no helpful information from
-APIs, the solution path is deemed a Pass.
-(b) If the model only calls a few API or receiving valid information from the APIs, the
-solution path is deemed a Fail.
-2. If the model gives finish type “Finish with Final Answer”,
-(a) If the APIs provide no valid information, and the model has tried all the APIs to retrieve
-useful information, but the final answer still does not resolve the original instruction or
-conveys a refusal (such as “I’m sorry, but I can’t provide you with this, because the
-tools are unavailable”), the solution path is deemed a Pass.
-(b) If the tools provide valid information, and the final answer does not completely resolve
-the instruction or is a refusal, the solution path is deemed a Fail.
-(c) If the final answer completely resolves the original instruction, the solution path is
-deemed a Pass.
-(d) If it is unable to determine if the instruction is resolved based on the content of the final
-answer, the solution path is deemed an Unsure.
-If the instruction is unsolvable:
-1. If the model gives finish type “Finish with Final Answer”,
-(a) If the final answer resolves an instruction that was initially considered unresolvable,
-the solution path is deemed a Pass.
-(b) If the final answer is a refusal, the solution path is deemed a Pass.
-(c) If the final answer is hallucinated by the model itself and provides a false positive
-response (such as “I’ve completed the task, the final answer is *”), the solution path is
-deemed a Fail.
-2. If the model gives finish type “Finish by Giving Up”,
-(a) Under this case, the solution path is deemed a Pass.
-For every solution path, we instruct the ChatGPT evaluator to generate multiple (≥4) predictions
-and perform a majority vote to derive the final pass rate.
-15
-Preprint
-Details for Win Rate Since pass rate only measures whether an instruction is completed or not,
-instead of how well it is completed, we adopt another metric: win rate. It is measured by comparing
-two solution paths for a given instruction. We assume that a passed candidate is better than a failed
-candidate and only compare those solution paths that are both “Pass”, or both “Failed” annotated
-by the ChatGPT evaluator. Note that compared with another solution path, one solution path will be
-annotated with one of the following: win, lose, or tie. We build rules for the evaluator’s behavior
-to decide which solution path is better, and the criteria are listed as follows:
-1. Information richness: whether the final answer contains all the necessary information to
-answer the original instruction. A significantly richer answer is better, while a similar level
-of richness that is sufficient to answer the question ties.
-2. Factuality: whether it accurately describes what has been done, and what failed in the end.
-A more accurate description in the final answer is better.
-3. Reasoning: whether a detailed and accurate reason for failure is provided if the query
-remains unresolved. A more detailed reason is better.
-4. Milestone: calculating the number of milestones reached during execution.
-5. Exploration: whether more potentially useful APIs were attempted during the execution
-process. The use of a greater number of APIs is better.
-6. Cost: Having fewer repeated (redundant) API calls is better if the number of APIs used is
-the same.
-For every solution path, we also generate multiple (≥4) predictions and then perform a majority
-vote to derive the final win rate. In Table 4, for ease of reading, we split the ratio of tie into two
-pieces and add them to win and lose, respectively. In Table 6, we report the original numbers as a
-reference.
-"""
+# Win Rate 评估的提示内容
+WIN_RATE_PROMPT = (
+    "Please compare the two solution paths for the same task and determine which is better. Use the following criteria:\n"
+    "1. Richness of information: Does the final answer contain all the information required to solve the original instruction? The richer answer is better, while answers with equivalent information are a tie.\n"
+    "2. Accuracy: How accurately does the solution describe what was accomplished, and why it failed if applicable? The more accurate answer wins.\n"
+    "3. Reasoning: If the query is unresolved, does the solution provide a detailed and accurate reason for the failure? The better reasoned answer wins.\n"
+    "4. Milestones: How many milestones were reached during the execution?\n"
+    "5. Exploration: Did the model attempt to use more potentially useful APIs during the process? The solution using more APIs is better.\n"
+    "6. Cost: If the number of APIs used is the same, the solution with fewer repeated API calls is better."
+    "For every solution path comparison, please generate multiple (≥4) predictions and perform a majority vote to derive the final win rate."
+)
 
-
-# 调用某个大模型来judge
-def get_pass_score(query:str, plan_str:str):
-    prompt = PASS_RATE_PROMPT.replace("[task]", query)
-    prompt = prompt.replace("[plan]", plan_str)
+# 调用模型进行 Pass Rate 评估
+def get_pass_score(query: str, plan_str: str) -> str:
+    """
+    调用模型生成 Pass rate 评估分数。
     
-    return get_chat_response(prompt)
+    :param query: 原始任务指令
+    :param plan_str: 解决路径计划
+    :return: Pass rate 评估结果
+    """
+    try:
+        # 生成用于评估的 prompt
+        prompt = PASS_RATE_PROMPT.replace("[task]", query).replace("[plan]", plan_str)
+        # 调用大模型生成结果
+        result = get_chat_response(prompt)
+        return result
+    except Exception as exc:
+        raise RuntimeError(f"评估 Pass rate 时出现错误: {exc}") from exc
+
+# 示例函数，调用 Win Rate 评估
+def get_win_rate_comparison(plan_a: str, plan_b: str) -> str:
+    """
+    调用模型生成 Win rate 比较结果。
+    
+    :param plan_a: 第一个解决路径计划
+    :param plan_b: 第二个解决路径计划
+    :return: Win rate 评估结果
+    """
+    try:
+        # 替换 Win rate prompt 中的两个解决路径
+        prompt = WIN_RATE_PROMPT.replace("[plan_a]", plan_a).replace("[plan_b]", plan_b)
+        # 调用大模型进行比较
+        result = get_chat_response(prompt)
+        return result
+    except Exception as exc:
+        raise RuntimeError(f"评估 Win rate 时出现错误: {exc}") from exc

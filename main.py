@@ -4,7 +4,6 @@ from make_api_plan import get_plan_for_dataset
 from judge_pass_rate import get_pass_score
 from search_on_graph import get_clusters
 
-
 # 定义全局变量
 API_LIST = [
     "myPlayvv",  # Music sharing service
@@ -83,64 +82,43 @@ CLUSTERS = [
     }
 ]
 
+REGEX_PATTERN = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*(?:\[(.*?)\])?"
 
 def main():
-    """
-    主函数，处理test.jsonl中的query，生成计划并计算pass rate。
-    """
-    # 打开输入文件
+    """主函数，处理test.jsonl中的query，生成计划并计算pass rate。"""
     with open('data/test1.jsonl', 'r', encoding='utf-8') as infile:
         with open('data/output_plans.jsonl', 'w', encoding='utf-8') as plan_file, \
              open('data/output_scores.jsonl', 'w', encoding='utf-8') as score_file:
-            
-            # 逐行读取文件
+             
             for line in infile:
                 try:
-                    # 解析JSON行
                     data = json.loads(line)
                     query = data.get('query', '')
-
-                    # 获取计划
                     plan = pipeline(query)
 
-                    # 将计划写入文件
+                    # 提取步骤
+                    steps = extract_steps(plan['plan'])
                     plan_output = {
                         "query": query,
                         "plan": plan.get('plan', ""),
-                        "api_calls": plan.get('api_calls', [])
+                        "api_calls": steps
                     }
-                    
-                    # 定义正则表达式模式
-                    REGEX_PATTERN = r"Plan:\s*(.+)\s*(#E\d+)\s*=\s*(\w+)\s*(?:\[(.*?)\])?"
-                    
-                    # 通过正则表达式提取信息
-                    match = re.search(REGEX_PATTERN, plan_output['plan'])
-                    if match:
-                        extracted_plan = {
-                            "action": match.group(1),  # 提取动作
-                            "endpoint": match.group(3),  # 提取API端点
-                            "params": match.group(4)  # 提取参数
-                        }
-                    else:
-                        extracted_plan = {}
+                    plan_file.write(json.dumps(plan_output, ensure_ascii=False) + '\n')
 
-                    # 将提取的计划写入文件
-                    plan_file.write(json.dumps({"query": query, "extracted_plan": extracted_plan}) + '\n')
-                    
                     # 获取pass rate
-                    pass_score = get_pass_score(query, plan_output["plan"])
-                    
-                    if "pass" in pass_score:
-                        pass_score = 1
-                    else:
-                        pass_score = 0
-                        
+                    pass_rate = get_pass_score(query, plan["plan"])
+                    pass_score = 1 if "pass" in pass_rate else 0
+
+                    # 打印结果
+                    print_plan(query, plan, pass_rate, pass_score)
+
                     score_output = {
                         "query": query,
-                        "plan": plan_output["plan"],
+                        "plan": plan,
+                        "pass_rate": pass_rate,
                         "pass_score": pass_score
                     }
-                    score_file.write(json.dumps(score_output) + '\n')
+                    score_file.write(json.dumps(score_output, ensure_ascii=False) + '\n')
 
                 except json.JSONDecodeError as e:
                     print(f"JSON解析错误: {e}")
@@ -149,38 +127,43 @@ def main():
                 except Exception as exc:
                     print(f"未知错误: {exc}")
 
+def extract_steps(plan_string: str):
+    """通过正则表达式提取计划步骤。"""
+    matches = re.findall(REGEX_PATTERN, plan_string)
+    return matches
 
 def pipeline(query: str):
-    """
-    根据输入的query，执行生成API调用计划并返回结果。
-    
-    参数:
-        query (str): 查询文本
-    
-    返回:
-        dict: 包含query和生成计划的字典
-    """
+    """根据输入的query，执行生成API调用计划并返回结果。"""
     try:
-        # Step 1: 从图谱上搜索相关的API集合
-        top_k = 3  # 选择最相关的3个clusters
+        top_k = 3
         selected_clusters = get_clusters(query, CLUSTERS, top_k)
-        
-        print(f"selected_cluster:{selected_clusters}")
-        
         related_apis = [api for cluster in selected_clusters for api in cluster.get('apis', [])]
-        
-        print(f"related_apis:{related_apis}")
-
-        # Step 2: 使用相关的API生成计划
         plans = get_plan_for_dataset([query], related_apis)
-        
-        # Step 3: 返回第一个生成的计划
         return plans[0] if plans else {"query": query, "plan": "", "api_calls": []}
     
     except Exception as e:
         print(f"生成计划时出现错误: {e}")
         return {"query": query, "plan": "", "api_calls": []}
 
+def print_plan(query: str, plan: dict, pass_rate : str, pass_score: int):
+    """以美观的方式打印计划和评分信息"""
+    print("\n" + "=" * 40)
+    print(f"查询: {query}")
+    print(f"计划: {plan.get('plan', '无计划')}")
+    
+    print("API 调用:")
+
+    if plan.get('api_calls'):
+        for idx, step in enumerate(plan['api_calls']):
+            print(f"step {idx + 1}")  # idx + 1 使步骤编号从1开始
+            print(f"  - 名称: {step['name']}")
+            print(f"    描述: {step['description']}")
+    else:
+        print("  无API调用")
+
+    print(f"测评结果: {pass_rate}")
+    print(f"得分: {pass_score}")
+    print("=" * 40 + "\n")
 
 if __name__ == '__main__':
     main()
