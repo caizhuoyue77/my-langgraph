@@ -9,296 +9,374 @@ import traceback
 from collections.abc import Mapping
 from dataclasses import dataclass
 from typing import Any
+from free_gpt import get_chat_response
 
 import networkx as nx
 import tiktoken
 
-import graphrag.config.defaults as defs
-from graphrag.index.typing import ErrorHandlerFn
-from graphrag.index.utils import clean_str
-from graphrag.llm import CompletionLLM
+# import graphrag.config.defaults as defs
+# from graphrag.index.typing import ErrorHandlerFn
+# from graphrag.index.utils import clean_str
+# from graphrag.llm import CompletionLLM
 
-from .prompts import CONTINUE_PROMPT, GRAPH_EXTRACTION_PROMPT, LOOP_PROMPT
+from prompts import CONTINUE_PROMPT, GRAPH_EXTRACTION_PROMPT, LOOP_PROMPT
 
 DEFAULT_TUPLE_DELIMITER = "<|>"
 DEFAULT_RECORD_DELIMITER = "##"
 DEFAULT_COMPLETION_DELIMITER = "<|COMPLETE|>"
-DEFAULT_ENTITY_TYPES = ["organization", "person", "geo", "event"]
+DEFAULT_ENTITY_TYPES = ["organization", "person", "geo", "event", "location", "time", "brand"]
+DEFAULT_ENTITY_STR = ','.join(DEFAULT_ENTITY_TYPES)
+
+# @dataclass
+# class GraphExtractionResult:
+#     """Unipartite graph extraction result class definition."""
+
+#     output: nx.Graph
+#     source_docs: dict[Any, Any]
 
 
-@dataclass
-class GraphExtractionResult:
-    """Unipartite graph extraction result class definition."""
+# class GraphExtractor:
+#     """Unipartite graph extractor class definition."""
 
-    output: nx.Graph
-    source_docs: dict[Any, Any]
+#     _llm: CompletionLLM
+#     _join_descriptions: bool
+#     _tuple_delimiter_key: str
+#     _record_delimiter_key: str
+#     _entity_types_key: str
+#     _input_text_key: str
+#     _completion_delimiter_key: str
+#     _entity_name_key: str
+#     _input_descriptions_key: str
+#     _extraction_prompt: str
+#     _summarization_prompt: str
+#     _loop_args: dict[str, Any]
+#     _max_gleanings: int
+#     _on_error: ErrorHandlerFn
 
+#     def __init__(
+#         self,
+#         llm_invoker: CompletionLLM,
+#         tuple_delimiter_key: str | None = None,
+#         record_delimiter_key: str | None = None,
+#         input_text_key: str | None = None,
+#         entity_types_key: str | None = None,
+#         completion_delimiter_key: str | None = None,
+#         prompt: str | None = None,
+#         join_descriptions=True,
+#         encoding_model: str | None = None,
+#         max_gleanings: int | None = None,
+#         on_error: ErrorHandlerFn | None = None,
+#     ):
+#         """Init method definition."""
+#         # TODO: streamline construction
+#         self._llm = llm_invoker
+#         self._join_descriptions = join_descriptions
+#         self._input_text_key = input_text_key or "input_text"
+#         self._tuple_delimiter_key = tuple_delimiter_key or "tuple_delimiter"
+#         self._record_delimiter_key = record_delimiter_key or "record_delimiter"
+#         self._completion_delimiter_key = (
+#             completion_delimiter_key or "completion_delimiter"
+#         )
+#         self._entity_types_key = entity_types_key or "entity_types"
+#         self._extraction_prompt = prompt or GRAPH_EXTRACTION_PROMPT
+#         self._max_gleanings = (
+#             max_gleanings
+#             if max_gleanings is not None
+#             else defs.ENTITY_EXTRACTION_MAX_GLEANINGS
+#         )
+#         self._on_error = on_error or (lambda _e, _s, _d: None)
 
-class GraphExtractor:
-    """Unipartite graph extractor class definition."""
+#         # Construct the looping arguments
+#         encoding = tiktoken.get_encoding(encoding_model or "cl100k_base")
+#         yes = encoding.encode("YES")
+#         no = encoding.encode("NO")
+#         self._loop_args = {"logit_bias": {yes[0]: 100, no[0]: 100}, "max_tokens": 1}
 
-    _llm: CompletionLLM
-    _join_descriptions: bool
-    _tuple_delimiter_key: str
-    _record_delimiter_key: str
-    _entity_types_key: str
-    _input_text_key: str
-    _completion_delimiter_key: str
-    _entity_name_key: str
-    _input_descriptions_key: str
-    _extraction_prompt: str
-    _summarization_prompt: str
-    _loop_args: dict[str, Any]
-    _max_gleanings: int
-    _on_error: ErrorHandlerFn
+#     async def __call__(
+#         self, texts: list[str], prompt_variables: dict[str, Any] | None = None
+#     ) -> GraphExtractionResult:
+#         """Call method definition."""
+#         if prompt_variables is None:
+#             prompt_variables = {}
+#         all_records: dict[int, str] = {}
+#         source_doc_map: dict[int, str] = {}
 
-    def __init__(
-        self,
-        llm_invoker: CompletionLLM,
-        tuple_delimiter_key: str | None = None,
-        record_delimiter_key: str | None = None,
-        input_text_key: str | None = None,
-        entity_types_key: str | None = None,
-        completion_delimiter_key: str | None = None,
-        prompt: str | None = None,
-        join_descriptions=True,
-        encoding_model: str | None = None,
-        max_gleanings: int | None = None,
-        on_error: ErrorHandlerFn | None = None,
-    ):
-        """Init method definition."""
-        # TODO: streamline construction
-        self._llm = llm_invoker
-        self._join_descriptions = join_descriptions
-        self._input_text_key = input_text_key or "input_text"
-        self._tuple_delimiter_key = tuple_delimiter_key or "tuple_delimiter"
-        self._record_delimiter_key = record_delimiter_key or "record_delimiter"
-        self._completion_delimiter_key = (
-            completion_delimiter_key or "completion_delimiter"
-        )
-        self._entity_types_key = entity_types_key or "entity_types"
-        self._extraction_prompt = prompt or GRAPH_EXTRACTION_PROMPT
-        self._max_gleanings = (
-            max_gleanings
-            if max_gleanings is not None
-            else defs.ENTITY_EXTRACTION_MAX_GLEANINGS
-        )
-        self._on_error = on_error or (lambda _e, _s, _d: None)
+#         # Wire defaults into the prompt variables
+#         prompt_variables = {
+#             **prompt_variables,
+#             self._tuple_delimiter_key: prompt_variables.get(self._tuple_delimiter_key)
+#             or DEFAULT_TUPLE_DELIMITER,
+#             self._record_delimiter_key: prompt_variables.get(self._record_delimiter_key)
+#             or DEFAULT_RECORD_DELIMITER,
+#             self._completion_delimiter_key: prompt_variables.get(
+#                 self._completion_delimiter_key
+#             )
+#             or DEFAULT_COMPLETION_DELIMITER,
+#             self._entity_types_key: ",".join(
+#                 prompt_variables[self._entity_types_key] or DEFAULT_ENTITY_TYPES
+#             ),
+#         }
 
-        # Construct the looping arguments
-        encoding = tiktoken.get_encoding(encoding_model or "cl100k_base")
-        yes = encoding.encode("YES")
-        no = encoding.encode("NO")
-        self._loop_args = {"logit_bias": {yes[0]: 100, no[0]: 100}, "max_tokens": 1}
+#         for doc_index, text in enumerate(texts):
+#             try:
+#                 # Invoke the entity extraction
+#                 result = await self._process_document(text, prompt_variables)
+#                 source_doc_map[doc_index] = text
+#                 all_records[doc_index] = result
+#             except Exception as e:
+#                 logging.exception("error extracting graph")
+#                 self._on_error(
+#                     e,
+#                     traceback.format_exc(),
+#                     {
+#                         "doc_index": doc_index,
+#                         "text": text,
+#                     },
+#                 )
 
-    async def __call__(
-        self, texts: list[str], prompt_variables: dict[str, Any] | None = None
-    ) -> GraphExtractionResult:
-        """Call method definition."""
-        if prompt_variables is None:
-            prompt_variables = {}
-        all_records: dict[int, str] = {}
-        source_doc_map: dict[int, str] = {}
+#         output = await self._process_results(
+#             all_records,
+#             prompt_variables.get(self._tuple_delimiter_key, DEFAULT_TUPLE_DELIMITER),
+#             prompt_variables.get(self._record_delimiter_key, DEFAULT_RECORD_DELIMITER),
+#         )
 
-        # Wire defaults into the prompt variables
-        prompt_variables = {
-            **prompt_variables,
-            self._tuple_delimiter_key: prompt_variables.get(self._tuple_delimiter_key)
-            or DEFAULT_TUPLE_DELIMITER,
-            self._record_delimiter_key: prompt_variables.get(self._record_delimiter_key)
-            or DEFAULT_RECORD_DELIMITER,
-            self._completion_delimiter_key: prompt_variables.get(
-                self._completion_delimiter_key
-            )
-            or DEFAULT_COMPLETION_DELIMITER,
-            self._entity_types_key: ",".join(
-                prompt_variables[self._entity_types_key] or DEFAULT_ENTITY_TYPES
-            ),
-        }
+#         return GraphExtractionResult(
+#             output=output,
+#             source_docs=source_doc_map,
+#         )
 
-        for doc_index, text in enumerate(texts):
-            try:
-                # Invoke the entity extraction
-                result = await self._process_document(text, prompt_variables)
-                source_doc_map[doc_index] = text
-                all_records[doc_index] = result
-            except Exception as e:
-                logging.exception("error extracting graph")
-                self._on_error(
-                    e,
-                    traceback.format_exc(),
-                    {
-                        "doc_index": doc_index,
-                        "text": text,
-                    },
-                )
+#     async def _process_document(
+#         self, text: str, prompt_variables: dict[str, str]
+#     ) -> str:
+#         response = await self._llm(
+#             self._extraction_prompt,
+#             variables={
+#                 **prompt_variables,
+#                 self._input_text_key: text,
+#             },
+#         )
+#         results = response.output or ""
 
-        output = await self._process_results(
-            all_records,
-            prompt_variables.get(self._tuple_delimiter_key, DEFAULT_TUPLE_DELIMITER),
-            prompt_variables.get(self._record_delimiter_key, DEFAULT_RECORD_DELIMITER),
-        )
+#         # Repeat to ensure we maximize entity count
+#         for i in range(self._max_gleanings):
+#             response = await self._llm(
+#                 CONTINUE_PROMPT,
+#                 name=f"extract-continuation-{i}",
+#                 history=response.history,
+#             )
+#             results += response.output or ""
 
-        return GraphExtractionResult(
-            output=output,
-            source_docs=source_doc_map,
-        )
+#             # if this is the final glean, don't bother updating the continuation flag
+#             if i >= self._max_gleanings - 1:
+#                 break
 
-    async def _process_document(
-        self, text: str, prompt_variables: dict[str, str]
-    ) -> str:
-        response = await self._llm(
-            self._extraction_prompt,
-            variables={
-                **prompt_variables,
-                self._input_text_key: text,
-            },
-        )
-        results = response.output or ""
+#             response = await self._llm(
+#                 LOOP_PROMPT,
+#                 name=f"extract-loopcheck-{i}",
+#                 history=response.history,
+#                 model_parameters=self._loop_args,
+#             )
+#             if response.output != "YES":
+#                 break
 
-        # Repeat to ensure we maximize entity count
-        for i in range(self._max_gleanings):
-            response = await self._llm(
-                CONTINUE_PROMPT,
-                name=f"extract-continuation-{i}",
-                history=response.history,
-            )
-            results += response.output or ""
+#         return results
 
-            # if this is the final glean, don't bother updating the continuation flag
-            if i >= self._max_gleanings - 1:
-                break
+async def _process_results(
+    self,
+    results: dict[int, str],
+    tuple_delimiter: str,
+    record_delimiter: str,
+) -> nx.Graph:
+    """Parse the result string to create an undirected unipartite graph.
 
-            response = await self._llm(
-                LOOP_PROMPT,
-                name=f"extract-loopcheck-{i}",
-                history=response.history,
-                model_parameters=self._loop_args,
-            )
-            if response.output != "YES":
-                break
+    Args:
+        - results - dict of results from the extraction chain
+        - tuple_delimiter - delimiter between tuples in an output record, default is '<|>'
+        - record_delimiter - delimiter between records, default is '##'
+    Returns:
+        - output - unipartite graph in graphML format
+    """
+    graph = nx.Graph()
+    for source_doc_id, extracted_data in results.items():
+        records = [r.strip() for r in extracted_data.split(record_delimiter)]
 
-        return results
+        for record in records:
+            record = re.sub(r"^\(|\)$", "", record.strip())
+            record_attributes = record.split(tuple_delimiter)
 
-    async def _process_results(
-        self,
-        results: dict[int, str],
-        tuple_delimiter: str,
-        record_delimiter: str,
-    ) -> nx.Graph:
-        """Parse the result string to create an undirected unipartite graph.
+            if record_attributes[0] == '"entity"' and len(record_attributes) >= 4:
+                # add this record as a node in the G
+                entity_name = clean_str(record_attributes[1].upper())
+                entity_type = clean_str(record_attributes[2].upper())
+                entity_description = clean_str(record_attributes[3])
 
-        Args:
-            - results - dict of results from the extraction chain
-            - tuple_delimiter - delimiter between tuples in an output record, default is '<|>'
-            - record_delimiter - delimiter between records, default is '##'
-        Returns:
-            - output - unipartite graph in graphML format
-        """
-        graph = nx.Graph()
-        for source_doc_id, extracted_data in results.items():
-            records = [r.strip() for r in extracted_data.split(record_delimiter)]
+                if entity_name in graph.nodes():
+                    node = graph.nodes[entity_name]
+                    if self._join_descriptions:
+                        node["description"] = "\n".join(
+                            list({
+                                *_unpack_descriptions(node),
+                                entity_description,
+                            })
+                        )
+                    else:
+                        if len(entity_description) > len(node["description"]):
+                            node["description"] = entity_description
+                    node["source_id"] = ", ".join(
+                        list({
+                            *_unpack_source_ids(node),
+                            str(source_doc_id),
+                        })
+                    )
+                    node["entity_type"] = (
+                        entity_type if entity_type != "" else node["entity_type"]
+                    )
+                else:
+                    graph.add_node(
+                        entity_name,
+                        type=entity_type,
+                        description=entity_description,
+                        source_id=str(source_doc_id),
+                    )
 
-            for record in records:
-                record = re.sub(r"^\(|\)$", "", record.strip())
-                record_attributes = record.split(tuple_delimiter)
+            if (
+                record_attributes[0] == '"relationship"'
+                and len(record_attributes) >= 5
+            ):
+                # add this record as edge
+                source = clean_str(record_attributes[1].upper())
+                target = clean_str(record_attributes[2].upper())
+                edge_description = clean_str(record_attributes[3])
+                edge_source_id = clean_str(str(source_doc_id))
+                try:
+                    weight = float(record_attributes[-1])
+                except ValueError:
+                    weight = 1.0
 
-                if record_attributes[0] == '"entity"' and len(record_attributes) >= 4:
-                    # add this record as a node in the G
-                    entity_name = clean_str(record_attributes[1].upper())
-                    entity_type = clean_str(record_attributes[2].upper())
-                    entity_description = clean_str(record_attributes[3])
-
-                    if entity_name in graph.nodes():
-                        node = graph.nodes[entity_name]
+                if source not in graph.nodes():
+                    graph.add_node(
+                        source,
+                        type="",
+                        description="",
+                        source_id=edge_source_id,
+                    )
+                if target not in graph.nodes():
+                    graph.add_node(
+                        target,
+                        type="",
+                        description="",
+                        source_id=edge_source_id,
+                    )
+                if graph.has_edge(source, target):
+                    edge_data = graph.get_edge_data(source, target)
+                    if edge_data is not None:
+                        weight += edge_data["weight"]
                         if self._join_descriptions:
-                            node["description"] = "\n".join(
+                            edge_description = "\n".join(
                                 list({
-                                    *_unpack_descriptions(node),
-                                    entity_description,
+                                    *_unpack_descriptions(edge_data),
+                                    edge_description,
                                 })
                             )
-                        else:
-                            if len(entity_description) > len(node["description"]):
-                                node["description"] = entity_description
-                        node["source_id"] = ", ".join(
+                        edge_source_id = ", ".join(
                             list({
-                                *_unpack_source_ids(node),
+                                *_unpack_source_ids(edge_data),
                                 str(source_doc_id),
                             })
                         )
-                        node["entity_type"] = (
-                            entity_type if entity_type != "" else node["entity_type"]
-                        )
-                    else:
-                        graph.add_node(
-                            entity_name,
-                            type=entity_type,
-                            description=entity_description,
-                            source_id=str(source_doc_id),
-                        )
+                graph.add_edge(
+                    source,
+                    target,
+                    weight=weight,
+                    description=edge_description,
+                    source_id=edge_source_id,
+                )
 
-                if (
-                    record_attributes[0] == '"relationship"'
-                    and len(record_attributes) >= 5
-                ):
-                    # add this record as edge
-                    source = clean_str(record_attributes[1].upper())
-                    target = clean_str(record_attributes[2].upper())
-                    edge_description = clean_str(record_attributes[3])
-                    edge_source_id = clean_str(str(source_doc_id))
-                    try:
-                        weight = float(record_attributes[-1])
-                    except ValueError:
-                        weight = 1.0
-
-                    if source not in graph.nodes():
-                        graph.add_node(
-                            source,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
-                        )
-                    if target not in graph.nodes():
-                        graph.add_node(
-                            target,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
-                        )
-                    if graph.has_edge(source, target):
-                        edge_data = graph.get_edge_data(source, target)
-                        if edge_data is not None:
-                            weight += edge_data["weight"]
-                            if self._join_descriptions:
-                                edge_description = "\n".join(
-                                    list({
-                                        *_unpack_descriptions(edge_data),
-                                        edge_description,
-                                    })
-                                )
-                            edge_source_id = ", ".join(
-                                list({
-                                    *_unpack_source_ids(edge_data),
-                                    str(source_doc_id),
-                                })
-                            )
-                    graph.add_edge(
-                        source,
-                        target,
-                        weight=weight,
-                        description=edge_description,
-                        source_id=edge_source_id,
-                    )
-
-        return graph
+    return graph
 
 
-def _unpack_descriptions(data: Mapping) -> list[str]:
-    value = data.get("description", None)
-    return [] if value is None else value.split("\n")
+# def _unpack_descriptions(data: Mapping) -> list[str]:
+#     value = data.get("description", None)
+#     return [] if value is None else value.split("\n")
 
 
-def _unpack_source_ids(data: Mapping) -> list[str]:
-    value = data.get("source_id", None)
-    return [] if value is None else value.split(", ")
+# def _unpack_source_ids(data: Mapping) -> list[str]:
+#     value = data.get("source_id", None)
+#     return [] if value is None else value.split(", ")
+
+def my_extraction():
+    # 1. get the graph
+    prompt = GRAPH_EXTRACTION_PROMPT
+    
+    prompt = prompt.replace('{tuple_delimiter}', DEFAULT_TUPLE_DELIMITER)
+    prompt = prompt.replace('{record_delimiter}', DEFAULT_RECORD_DELIMITER)
+    prompt = prompt.replace('{entity_types}', DEFAULT_ENTITY_STR)
+    prompt = prompt.replace('{completion_delimiter}', DEFAULT_COMPLETION_DELIMITER)
+    
+    input_text = """
+    韩国连续三天暴雨不断，强降雨破坏了房屋、道路和基础设施，1500多人被迫撤离。《韩国先驱报》报道，强降雨从9月19日下午持续到9月21日，先在济州岛开始，然后扩大到韩国全境。"""
+    prompt = prompt.replace('{input_text}', input_text)
+    
+    print(prompt)
+    print("=====================")
+    result = get_chat_response(prompt)
+    
+    print(result)
+    
+    return result
+ 
+ 
+import re
+import networkx as nx  
+
+def parse_graph_data(data: str) -> nx.Graph:
+    """解析图数据字符串并返回无向图对象。
+
+    参数:
+    data (str): 包含图数据的字符串，使用特定的分隔符分隔。
+
+    返回:
+    nx.Graph: 解析后的无向图。
+    """
+    graph = nx.Graph()
+    records = [record.strip() for record in data.split("##")]
+
+    for record in records:
+        record = re.sub(r"^\(|\)$", "", record.strip())
+        record_attributes = record.split("<|>")
+        
+        
+
+        if record_attributes[0] == '"entity"' and len(record_attributes) >= 4:
+            entity_name = record_attributes[1].strip('"').upper()
+            entity_type = record_attributes[2].strip('"').upper()
+            entity_description = record_attributes[3].strip('"')
+            
+            print(f"entity_name: {entity_name}")
+            print(f"entity_type: {entity_type}")
+            print(f"entity_description: {entity_description}")
+
+            graph.add_node(
+                entity_name,
+                type=entity_type,
+                description=entity_description,
+            )
+
+        if record_attributes[0] == '"relationship"' and len(record_attributes) >= 5:
+            source = record_attributes[1].strip('"').upper()
+            target = record_attributes[2].strip('"').upper()
+            edge_description = record_attributes[3].strip('"')
+            weight = float(record_attributes[4]) if record_attributes[4].isdigit() else 1.0
+
+            graph.add_edge(
+                source,
+                target,
+                weight=weight,
+                description=edge_description,
+            )
+
+    return graph
+ 
+if __name__ == '__main__':
+    data = my_extraction()
+    graph = parse_graph_data(data)
