@@ -1,7 +1,8 @@
 # my-langgraph 毕业毕业毕业
 
 ## 启动方式：
-1. conda activate langgraph
+1. 使用python3.10 pip install -r requirements.txt 
+或者如果你有环境 就 conda activate langgraph
 2. fastapi dev api.py（把后端开起来
    1. 也可以用uvicorn API:app --reload --host 0.0.0.0 --port 8000
 3. streamlit run chatbot.py（把前端开起来）
