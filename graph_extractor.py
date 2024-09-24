@@ -8,178 +8,24 @@ import re
 import traceback
 from collections.abc import Mapping
 from dataclasses import dataclass
-from typing import Any
-from free_gpt import get_chat_response
+from typing import Any, List, Dict
+from free_gpt import get_chat_response, count_tokens
+import os
+import json
+import random
+import csv
 
 import networkx as nx
 import tiktoken
-
-# import graphrag.config.defaults as defs
-# from graphrag.index.typing import ErrorHandlerFn
-# from graphrag.index.utils import clean_str
-# from graphrag.llm import CompletionLLM
-
 from prompts import CONTINUE_PROMPT, GRAPH_EXTRACTION_PROMPT, LOOP_PROMPT
 
 DEFAULT_TUPLE_DELIMITER = "<|>"
 DEFAULT_RECORD_DELIMITER = "##"
 DEFAULT_COMPLETION_DELIMITER = "<|COMPLETE|>"
-DEFAULT_ENTITY_TYPES = ["organization", "person", "geo", "event", "location", "time", "brand"]
+# DEFAULT_ENTITY_TYPES = ["organization", "person", "geo", "event", "location", "time", "date", "other"]
+DEFAULT_ENTITY_TYPES = ["API", "tool", "parameter", "type", "organization", "other"]
 DEFAULT_ENTITY_STR = ','.join(DEFAULT_ENTITY_TYPES)
 
-# @dataclass
-# class GraphExtractionResult:
-#     """Unipartite graph extraction result class definition."""
-
-#     output: nx.Graph
-#     source_docs: dict[Any, Any]
-
-
-# class GraphExtractor:
-#     """Unipartite graph extractor class definition."""
-
-#     _llm: CompletionLLM
-#     _join_descriptions: bool
-#     _tuple_delimiter_key: str
-#     _record_delimiter_key: str
-#     _entity_types_key: str
-#     _input_text_key: str
-#     _completion_delimiter_key: str
-#     _entity_name_key: str
-#     _input_descriptions_key: str
-#     _extraction_prompt: str
-#     _summarization_prompt: str
-#     _loop_args: dict[str, Any]
-#     _max_gleanings: int
-#     _on_error: ErrorHandlerFn
-
-#     def __init__(
-#         self,
-#         llm_invoker: CompletionLLM,
-#         tuple_delimiter_key: str | None = None,
-#         record_delimiter_key: str | None = None,
-#         input_text_key: str | None = None,
-#         entity_types_key: str | None = None,
-#         completion_delimiter_key: str | None = None,
-#         prompt: str | None = None,
-#         join_descriptions=True,
-#         encoding_model: str | None = None,
-#         max_gleanings: int | None = None,
-#         on_error: ErrorHandlerFn | None = None,
-#     ):
-#         """Init method definition."""
-#         # TODO: streamline construction
-#         self._llm = llm_invoker
-#         self._join_descriptions = join_descriptions
-#         self._input_text_key = input_text_key or "input_text"
-#         self._tuple_delimiter_key = tuple_delimiter_key or "tuple_delimiter"
-#         self._record_delimiter_key = record_delimiter_key or "record_delimiter"
-#         self._completion_delimiter_key = (
-#             completion_delimiter_key or "completion_delimiter"
-#         )
-#         self._entity_types_key = entity_types_key or "entity_types"
-#         self._extraction_prompt = prompt or GRAPH_EXTRACTION_PROMPT
-#         self._max_gleanings = (
-#             max_gleanings
-#             if max_gleanings is not None
-#             else defs.ENTITY_EXTRACTION_MAX_GLEANINGS
-#         )
-#         self._on_error = on_error or (lambda _e, _s, _d: None)
-
-#         # Construct the looping arguments
-#         encoding = tiktoken.get_encoding(encoding_model or "cl100k_base")
-#         yes = encoding.encode("YES")
-#         no = encoding.encode("NO")
-#         self._loop_args = {"logit_bias": {yes[0]: 100, no[0]: 100}, "max_tokens": 1}
-
-#     async def __call__(
-#         self, texts: list[str], prompt_variables: dict[str, Any] | None = None
-#     ) -> GraphExtractionResult:
-#         """Call method definition."""
-#         if prompt_variables is None:
-#             prompt_variables = {}
-#         all_records: dict[int, str] = {}
-#         source_doc_map: dict[int, str] = {}
-
-#         # Wire defaults into the prompt variables
-#         prompt_variables = {
-#             **prompt_variables,
-#             self._tuple_delimiter_key: prompt_variables.get(self._tuple_delimiter_key)
-#             or DEFAULT_TUPLE_DELIMITER,
-#             self._record_delimiter_key: prompt_variables.get(self._record_delimiter_key)
-#             or DEFAULT_RECORD_DELIMITER,
-#             self._completion_delimiter_key: prompt_variables.get(
-#                 self._completion_delimiter_key
-#             )
-#             or DEFAULT_COMPLETION_DELIMITER,
-#             self._entity_types_key: ",".join(
-#                 prompt_variables[self._entity_types_key] or DEFAULT_ENTITY_TYPES
-#             ),
-#         }
-
-#         for doc_index, text in enumerate(texts):
-#             try:
-#                 # Invoke the entity extraction
-#                 result = await self._process_document(text, prompt_variables)
-#                 source_doc_map[doc_index] = text
-#                 all_records[doc_index] = result
-#             except Exception as e:
-#                 logging.exception("error extracting graph")
-#                 self._on_error(
-#                     e,
-#                     traceback.format_exc(),
-#                     {
-#                         "doc_index": doc_index,
-#                         "text": text,
-#                     },
-#                 )
-
-#         output = await self._process_results(
-#             all_records,
-#             prompt_variables.get(self._tuple_delimiter_key, DEFAULT_TUPLE_DELIMITER),
-#             prompt_variables.get(self._record_delimiter_key, DEFAULT_RECORD_DELIMITER),
-#         )
-
-#         return GraphExtractionResult(
-#             output=output,
-#             source_docs=source_doc_map,
-#         )
-
-#     async def _process_document(
-#         self, text: str, prompt_variables: dict[str, str]
-#     ) -> str:
-#         response = await self._llm(
-#             self._extraction_prompt,
-#             variables={
-#                 **prompt_variables,
-#                 self._input_text_key: text,
-#             },
-#         )
-#         results = response.output or ""
-
-#         # Repeat to ensure we maximize entity count
-#         for i in range(self._max_gleanings):
-#             response = await self._llm(
-#                 CONTINUE_PROMPT,
-#                 name=f"extract-continuation-{i}",
-#                 history=response.history,
-#             )
-#             results += response.output or ""
-
-#             # if this is the final glean, don't bother updating the continuation flag
-#             if i >= self._max_gleanings - 1:
-#                 break
-
-#             response = await self._llm(
-#                 LOOP_PROMPT,
-#                 name=f"extract-loopcheck-{i}",
-#                 history=response.history,
-#                 model_parameters=self._loop_args,
-#             )
-#             if response.output != "YES":
-#                 break
-
-#         return results
 
 async def _process_results(
     self,
@@ -295,16 +141,8 @@ async def _process_results(
     return graph
 
 
-# def _unpack_descriptions(data: Mapping) -> list[str]:
-#     value = data.get("description", None)
-#     return [] if value is None else value.split("\n")
-
-
-# def _unpack_source_ids(data: Mapping) -> list[str]:
-#     value = data.get("source_id", None)
-#     return [] if value is None else value.split(", ")
-
-def my_extraction():
+    
+def my_extraction(input_text:str = "韩国连续三天暴雨不断，强降雨破坏了房屋、道路和基础设施，1500多人被迫撤离。《韩国先驱报》报道，强降雨从9月19日下午持续到9月21日，先在济州岛开始，然后扩大到韩国全境。"):
     # 1. get the graph
     prompt = GRAPH_EXTRACTION_PROMPT
     
@@ -312,22 +150,12 @@ def my_extraction():
     prompt = prompt.replace('{record_delimiter}', DEFAULT_RECORD_DELIMITER)
     prompt = prompt.replace('{entity_types}', DEFAULT_ENTITY_STR)
     prompt = prompt.replace('{completion_delimiter}', DEFAULT_COMPLETION_DELIMITER)
-    
-    input_text = """
-    韩国连续三天暴雨不断，强降雨破坏了房屋、道路和基础设施，1500多人被迫撤离。《韩国先驱报》报道，强降雨从9月19日下午持续到9月21日，先在济州岛开始，然后扩大到韩国全境。"""
     prompt = prompt.replace('{input_text}', input_text)
-    
-    print(prompt)
-    print("=====================")
+
     result = get_chat_response(prompt)
-    
-    print(result)
     
     return result
  
- 
-import re
-import networkx as nx  
 
 def parse_graph_data(data: str) -> nx.Graph:
     """解析图数据字符串并返回无向图对象。
@@ -338,45 +166,213 @@ def parse_graph_data(data: str) -> nx.Graph:
     返回:
     nx.Graph: 解析后的无向图。
     """
-    graph = nx.Graph()
+    graph = {}
+    nodes = []
+    edges = []
+    
+    # graph = nx.Graph()
     records = [record.strip() for record in data.split("##")]
 
     for record in records:
         record = re.sub(r"^\(|\)$", "", record.strip())
         record_attributes = record.split("<|>")
-        
-        
 
         if record_attributes[0] == '"entity"' and len(record_attributes) >= 4:
             entity_name = record_attributes[1].strip('"').upper()
             entity_type = record_attributes[2].strip('"').upper()
             entity_description = record_attributes[3].strip('"')
             
-            print(f"entity_name: {entity_name}")
-            print(f"entity_type: {entity_type}")
-            print(f"entity_description: {entity_description}")
+            nodes.append({"name": entity_name, "type": entity_type, "description": entity_description})
 
-            graph.add_node(
-                entity_name,
-                type=entity_type,
-                description=entity_description,
-            )
+            # graph.add_node(
+            #     entity_name,
+            #     type=entity_type,
+            #     description=entity_description,
+            # )
 
         if record_attributes[0] == '"relationship"' and len(record_attributes) >= 5:
             source = record_attributes[1].strip('"').upper()
             target = record_attributes[2].strip('"').upper()
             edge_description = record_attributes[3].strip('"')
             weight = float(record_attributes[4]) if record_attributes[4].isdigit() else 1.0
+            
+            edges.append({"source": source, "target": target, "weight": weight, "description": edge_description})
 
-            graph.add_edge(
-                source,
-                target,
-                weight=weight,
-                description=edge_description,
-            )
+            # graph.add_edge(
+            #     source,
+            #     target,
+            #     weight=weight,
+            #     description=edge_description,
+            # )
 
-    return graph
- 
+    return nodes, edges
+
+def write_jsonl_output(directory: str, output_file: str) -> None:
+    """
+    遍历指定目录及其所有子目录中的 JSON 文件，每个子文件夹随机选择 10 个 JSON 文件，
+    并将其信息以 JSON Lines 格式写入到指定的输出文件中。
+    
+    参数:
+    directory (str): JSON 文件所在的根目录路径
+    output_file (str): 输出的 JSON Lines 文件路径
+    """
+    try:
+        with open(output_file, 'w', encoding='utf-8') as outfile:
+            # 使用 os.walk() 遍历根目录及其所有子目录
+            for root, dirs, files in os.walk(directory):
+                # 只处理 .json 结尾的文件
+                json_files = [file for file in files if file.endswith('.json')]
+                
+                # 如果 json 文件数量大于 10，随机选择 10 个文件
+                if len(json_files) > 10:
+                    selected_files = random.sample(json_files, 10)
+                else:
+                    selected_files = json_files
+
+                # 处理每个被选中的 JSON 文件
+                for json_file in selected_files:
+                    json_path = os.path.join(root, json_file)
+                    
+                    try:
+                        with open(json_path, 'r', encoding='utf-8') as file:
+                            content = json.load(file)
+
+                            # 提取字段
+                            folder_name = os.path.basename(root)
+                            file_path = json_path
+                            tool_name = content.get('name', '')
+                            description = content.get('tool_description', '')
+
+                            # 写入 JSON Lines 格式
+                            json_line = {
+                                'folder_name': folder_name,
+                                'file_path': file_path,
+                                'tool_name': tool_name,
+                                'description': description
+                            }
+                            outfile.write(json.dumps(json_line, ensure_ascii=False) + '\n')
+                    
+                    except json.JSONDecodeError as json_error:
+                        print(f"文件解析失败: {json_file}, 错误: {json_error}")
+                    except FileNotFoundError as fnf_error:
+                        print(f"文件未找到: {fnf_error}")
+                    except Exception as e:
+                        print(f"处理文件 {json_file} 时出错: {e}")
+
+    except FileNotFoundError as fnf_error:
+        print(f"目录未找到: {fnf_error}")
+    except PermissionError as perm_error:
+        print(f"权限不足: {perm_error}")
+    except Exception as e:
+        print(f"出现错误: {e}")
+
+def load_json_from_jsonl(jsonl_file: str) -> List[Dict]:
+    """
+    读取 JSON Lines 文件，根据每个记录中的 'file_path' 字段读取对应的 JSON 文件，
+    并返回所有 JSON 文件的内容对象列表。
+    
+    参数:
+    jsonl_file (str): 包含 JSON 对象的 JSON Lines 文件路径
+    
+    返回:
+    List[Dict]: 包含所有 JSON 文件内容对象的列表
+    """
+    json_objects = []
+
+    try:
+        with open(jsonl_file, 'r', encoding='utf-8') as infile:
+            for line in infile:
+                record = json.loads(line)
+                file_path = record.get('file_path', '')
+                
+                if file_path:
+                    try:
+                        with open(file_path, 'r', encoding='utf-8') as json_file:
+                            content = json.load(json_file)
+                            json_objects.append(content)
+                    
+                    except json.JSONDecodeError as json_error:
+                        print(f"文件解析失败: {file_path}, 错误: {json_error}")
+                    except FileNotFoundError as fnf_error:
+                        print(f"文件未找到: {fnf_error}")
+                    except Exception as e:
+                        print(f"处理文件 {file_path} 时出错: {e}")
+
+    except FileNotFoundError as fnf_error:
+        print(f"文件未找到: {fnf_error}")
+    except PermissionError as perm_error:
+        print(f"权限不足: {perm_error}")
+    except Exception as e:
+        print(f"出现错误: {e}")
+
+    return json_objects
+
+
+def append_to_csv(file_path: str, data: list, fieldnames: list):
+    """将数据追加到 CSV 文件中"""
+    file_exists = os.path.exists(file_path)
+    with open(file_path, 'a', newline='') as csvfile:
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        if not file_exists:
+            writer.writeheader()  # 如果文件不存在，则写入表头
+        writer.writerows(data)
+
 if __name__ == '__main__':
-    data = my_extraction()
-    graph = parse_graph_data(data)
+    # 你要遍历的文件夹路径
+    directory_path = "/Users/caizhuoyue/Desktop/my-langgraph/data/RapidAPIHub-sample/tools"
+    # 输出的 JSON Lines 文件路径
+    output_file_path = "/Users/caizhuoyue/Desktop/my-langgraph/data/RapidAPIHub-sample/output.jsonl"
+
+    # 调用函数，随机选择每个子文件夹中的 10 个 JSON 文件，并输出到 JSON Lines 文件
+    write_jsonl_output(directory_path, output_file_path)
+
+    # 根据 JSON Lines 文件读取所有 JSON 文件的内容
+    json_objects = load_json_from_jsonl(output_file_path)
+    
+    json_objects = json_objects[:3]
+    
+    graph = {"nodes": [], "edges": []}
+    
+    idx = 0
+    
+    for json_object in json_objects:
+        temp = {}
+        temp["tool_name"] = json_object["tool_name"]
+        temp["tool_description"] = json_object["tool_description"]
+        temp["api_list"] = []
+        
+        for api in json_object["api_list"]:
+            temp["api_list"].append({"name": api["name"], "description": api["description"], "method": api["method"]})
+        
+        print(temp)
+        
+        print(f"idx:{idx}")
+        idx += 1
+        
+        input_text = str(temp)
+        
+        if(count_tokens(input_text) > 2000):
+            input_text = input_text[:2000]
+
+        data = my_extraction(input_text)
+        nodes, edges = parse_graph_data(data)
+        
+        print(f"新nodes个数{len(nodes)}")
+    
+        graph["nodes"].extend(nodes)
+        graph["edges"].extend(edges)
+        
+        append_to_csv(
+            "/Users/caizhuoyue/Desktop/my-langgraph/data/RapidAPIHub-sample/nodes-923.csv", 
+            nodes, 
+            fieldnames=["name", "type", "description"]
+        )
+        
+        append_to_csv(
+            "/Users/caizhuoyue/Desktop/my-langgraph/data/RapidAPIHub-sample/edges-923.csv", 
+            edges, 
+            fieldnames=["source", "target", "weight", "description"]
+        )
+        
+            
+    print(graph)    
