@@ -54,10 +54,16 @@ def get_plan_for_dataset(dataset: List[str], api_list, make_plan_func: callable 
     return all_plans
     
 
-def baseline_1():
+def react_func():
     # 示例基础实现
     pass
 
-def baseline_2():
+def cot_func():
     # 示例基础实现
+    pass
+
+def reflexion_func():
+    pass
+
+def dfsdt_func():
     pass
