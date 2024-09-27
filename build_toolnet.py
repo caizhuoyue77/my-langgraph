@@ -1,10 +1,39 @@
 import json
 import networkx as nx
 import matplotlib.pyplot as plt
-import community as louvain  # 导入Louvain库
+import community
 from collections import defaultdict
 import random
 import copy
+from search_on_graph import bge_m3_similarity
+
+# 获取与查询最相似的邻居
+def find_similar_neighbors(G, start_node, query, num_neighbors=10):
+    neighbors = list(G.neighbors(start_node))
+    similarities = {neighbor: bge_m3_similarity([query], [neighbor])[0][0] for neighbor in neighbors}
+    
+    # 按相似度排序，选择前 num_neighbors 个
+    sorted_neighbors = sorted(similarities.items(), key=lambda item: item[1], reverse=True)[:num_neighbors]
+    return [neighbor for neighbor, _ in sorted_neighbors]
+
+def greedy_search_with_similar_neighbors(G, start_node, query, max_nodes=10):
+    current_node = start_node
+    path = [current_node]
+
+    while len(path) < max_nodes:
+        similar_neighbors = find_similar_neighbors(G, current_node, query)
+        if not similar_neighbors:
+            break
+        
+        # 贪婪选择权重最大的邻居
+        next_node = max(similar_neighbors, key=lambda neighbor: G[current_node][neighbor]['weight'])
+        path.append(next_node)
+        current_node = next_node
+
+        if current_node == "end":
+            break
+
+    return path
 
 def parse_json_file(file_path):
     """
@@ -210,7 +239,7 @@ def louvain_clustering(G, resolution=1.0):
     :param G: Graph - 输入图
     :return: Dict - 节点与其聚类的映射
     """
-    partition = louvain.best_partition(G, resolution=resolution)  # 执行Louvain聚类
+    partition = communitybest_partition(G, resolution=resolution)  # 执行Louvain聚类
     return partition
 
 
@@ -264,6 +293,32 @@ def count_clusters(partition):
     unique_clusters = set(partition.values())  # 获取唯一簇标识
     return len(unique_clusters)  # 返回唯一簇的数量
  
+ # 执行Louvain聚类
+def perform_louvain_clustering(G):
+    partition = community.best_partition(G)
+    clusters = {}
+    for node, cluster_id in partition.items():
+        if cluster_id not in clusters:
+            clusters[cluster_id] = []
+        clusters[cluster_id].append(node)
+    return clusters
+
+# 获取最相似的cluster
+def get_most_similar_cluster(query: str, clusters: dict) -> int:
+    best_cluster_id = None
+    best_similarity = -1
+
+    for cluster_id, nodes in clusters.items():
+        # 计算cluster的summary
+        cluster_summary = " ".join(nodes)  # 可以根据需要调整summary的定义
+        similarity = bge_m3_similarity([query], [cluster_summary])[0][0]
+        
+        if similarity > best_similarity:
+            best_similarity = similarity
+            best_cluster_id = cluster_id
+
+    return best_cluster_id
+
 # 示例用法
 json_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/instruction/G1_query.json'
 
@@ -273,13 +328,13 @@ tool_sequences = parse_json_file(json_file_path)
 # 构建图谱
 G = build_graph_from_json(tool_sequences)
 
-print(f"Nodes:{len(G.nodes)}")
+# print(f"Nodes:{len(G.nodes)}")
 
 # 计算并输出边权重的统计信息
-max_weight, min_weight, avg_weight = calculate_weights_stats(G)
-print(f"Max Weight: {max_weight}")
-print(f"Min Weight: {min_weight}")
-print(f"Average Weight: {avg_weight}")
+# max_weight, min_weight, avg_weight = calculate_weights_stats(G)
+# print(f"Max Weight: {max_weight}")
+# print(f"Min Weight: {min_weight}")
+# print(f"Average Weight: {avg_weight}")
 
 # 采样图谱
 sampled_G = sample_graph(G, sample_size=100)
@@ -307,15 +362,15 @@ sampled_G = sample_graph(G, sample_size=100)
 
 
 # 使用Louvain算法进行聚类
-partition = louvain_clustering(G, 2.0)
-print(f"一共有{count_clusters(partition)}个cluster")
+# partition = louvain_clustering(G, 2.0)
+# print(f"一共有{count_clusters(partition)}个cluster")
 
 # 打印聚类结果及其信息
 # print("节点与聚类的映射：")
 # print_cluster_info(partition)
 
 # 可视化图谱及其聚类
-draw_graph_with_communities(G, partition)
+# draw_graph_with_communities(G, partition)
 
 def draw_graph(G):
     """
@@ -331,3 +386,106 @@ def draw_graph(G):
 
 # 调用可视化函数
 # draw_graph(sampled_G)
+
+start_node = "start"
+query = "weather forcast"
+
+# 执行贪婪搜索
+# result_path = greedy_search_with_similar_neighbors(G, start_node, query)
+# print(f"Greedy Search Path: {result_path}")
+
+
+# 执行Louvain聚类
+"""
+该模块用于对图进行Louvain聚类，并随机抽取k个社区（cluster）。
+"""
+
+import random
+import community as community_louvain  # 需要安装python-louvain库
+
+def perform_louvain_clustering(G, k: int):
+    """
+    对图进行Louvain聚类，并随机返回k个社区。
+    
+    参数:
+    G (nx.Graph): 输入的图
+    k (int): 要随机抽取的社区数量
+    
+    返回:
+    dict: k个随机抽取的社区及其对应的节点
+    """
+    # 执行Louvain聚类，得到每个节点所属的社区ID
+    partition = community_louvain.best_partition(G)
+    
+    # 根据partition组织社区
+    clusters = {}
+    for node, cluster_id in partition.items():
+        if cluster_id not in clusters:
+            clusters[cluster_id] = []
+        clusters[cluster_id].append(node)
+    
+    # 随机抽取k个社区
+    num_clusters = len(clusters)
+    if k > num_clusters:
+        raise ValueError(f"指定的k值 {k} 超过了社区数量 {num_clusters}")
+    
+    sampled_cluster_ids = random.sample(list(clusters.keys()), k)
+    
+    # 返回抽取的k个社区及其节点
+    sampled_clusters = {cluster_id: clusters[cluster_id] for cluster_id in sampled_cluster_ids}
+    
+    return sampled_clusters
+
+# 获取最相似的cluster
+def get_most_similar_cluster(query: str, clusters: dict) -> int:
+    best_cluster_id = None
+    best_similarity = -1
+
+    for cluster_id, nodes in clusters.items():
+        # 计算cluster的summary
+        cluster_summary = " ".join(nodes)  # 可以根据需要调整summary的定义
+        similarity = bge_m3_similarity([query], [cluster_summary])[0][0]
+        
+        if similarity > best_similarity:
+            best_similarity = similarity
+            best_cluster_id = cluster_id
+
+    return best_cluster_id
+
+# 定义获取最相似的前k个cluster的函数
+def get_top_k_similar_clusters(query: str, clusters: dict, k: int) -> list:
+    # 存储簇的相似度与ID
+    similarities = []
+
+    for cluster_id, nodes in clusters.items():
+        # 计算cluster的summary
+        cluster_summary = " ".join(nodes)  # 可以根据需要调整summary的定义
+        similarity = bge_m3_similarity([query], [cluster_summary])[0][0]
+        similarities.append((similarity, cluster_id, nodes))  # 存储相似度、ID和内容
+
+    # 按照相似度排序并取前k个
+    top_k = sorted(similarities, key=lambda x: x[0], reverse=True)[:k]
+    
+    return top_k  # 返回包含相似度、ID和内容的元组
+
+clusters = perform_louvain_clustering(G, 50)
+
+# print("Clusters found:", clusters)
+
+# 查询
+query = "what's the weather like today?"
+
+query = "what's the calories of french fries?"
+
+# 调用获取最相似的前k个cluster的函数
+
+k = 5
+top_k_clusters = get_top_k_similar_clusters(query, clusters, k)
+
+# 打印结果
+for similarity, cluster_id, nodes in top_k_clusters:
+    print(f"Cluster ID: {cluster_id}, 内容: {nodes}, 相似度: {similarity:.4f}")
+
+# 获取最相似的cluster
+# most_similar_cluster_id = get_most_similar_cluster(query, clusters)
+# print(f"========\nMost Similar Cluster ID: {most_similar_cluster_id}, Nodes: {clusters[most_similar_cluster_id]}\n=======")
