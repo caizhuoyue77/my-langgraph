@@ -240,7 +240,7 @@ def louvain_clustering(G, resolution=1.0):
     :param G: Graph - 输入图
     :return: Dict - 节点与其聚类的映射
     """
-    partition = communitybest_partition(G, resolution=resolution)  # 执行Louvain聚类
+    partition = community.best_partition(G, resolution=resolution)  # 执行Louvain聚类
     return partition
 
     
