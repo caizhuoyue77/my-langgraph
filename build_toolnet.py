@@ -1,6 +1,5 @@
 import json
 import networkx as nx
-import matplotlib.pyplot as plt
 import community
 from collections import defaultdict
 import random
@@ -47,6 +46,8 @@ def parse_json_file(file_path):
     # 读取JSON文件
     with open(file_path, 'r', encoding='utf-8') as file:
         data = json.load(file)
+    
+    print(f"读取的JSON文件的内容:{data}")
     
     # 遍历每个查询，提取relevant APIs
     for entry in data:
@@ -242,27 +243,6 @@ def louvain_clustering(G, resolution=1.0):
     partition = communitybest_partition(G, resolution=resolution)  # 执行Louvain聚类
     return partition
 
-
-def draw_graph_with_communities(G, partition):
-    """
-    可视化图谱，显示聚类结果
-    
-    :param G: Graph - 要绘制的图
-    :param partition: Dict - 节点与其聚类的映射
-    """
-    pos = nx.spring_layout(G)
-    cmap = plt.get_cmap('viridis', max(partition.values()) + 1)  # 根据聚类数量选择颜色
-
-    # 绘制节点
-    nx.draw(G, pos, node_color=[cmap(partition[node]) for node in G.nodes()],
-            with_labels=True, node_size=300, font_size=5)
-
-    # 绘制边
-    weights = nx.get_edge_attributes(G, 'weight')
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=weights)
-    
-    plt.title("Louvain Clustering")
-    plt.show()
     
 def print_cluster_info(partition):
     """
@@ -322,13 +302,15 @@ def get_most_similar_cluster(query: str, clusters: dict) -> int:
 # 示例用法
 json_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/instruction/G1_query.json'
 
+json_file_path = '/data/czy/Graduation/my-langgraph/data/instruction/G1_query.json'
+
 # 解析JSON文件，提取工具调用序列
 tool_sequences = parse_json_file(json_file_path)
 
 # 构建图谱
 G = build_graph_from_json(tool_sequences)
 
-# print(f"Nodes:{len(G.nodes)}")
+print(f"Nodes:{len(G.nodes)}")
 
 # 计算并输出边权重的统计信息
 # max_weight, min_weight, avg_weight = calculate_weights_stats(G)
@@ -369,23 +351,6 @@ sampled_G = sample_graph(G, sample_size=100)
 # print("节点与聚类的映射：")
 # print_cluster_info(partition)
 
-# 可视化图谱及其聚类
-# draw_graph_with_communities(G, partition)
-
-def draw_graph(G):
-    """
-    可视化图谱，显示工具及其转换边的权重。
-    
-    :param G: Graph - 要绘制的图
-    """
-    pos = nx.spring_layout(G)  # 使用弹簧布局
-    weights = nx.get_edge_attributes(G, 'weight')  # 获取边的权重
-    nx.draw(G, pos, with_labels=True, node_color='lightgreen', node_size=300, font_size=5)
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=weights)  # 显示边的权重标签
-    plt.show()  # 展示图形
-
-# 调用可视化函数
-# draw_graph(sampled_G)
 
 start_node = "start"
 query = "weather forcast"
@@ -468,7 +433,7 @@ def get_top_k_similar_clusters(query: str, clusters: dict, k: int) -> list:
     
     return top_k  # 返回包含相似度、ID和内容的元组
 
-clusters = perform_louvain_clustering(G, 50)
+clusters = perform_louvain_clustering(G, 200)
 
 # print("Clusters found:", clusters)
 
