@@ -3,6 +3,7 @@ import networkx as nx
 import random
 from collections import defaultdict
 import copy
+from api_retriever import query_database
 
 # 解析JSON文件，提取relevant APIs字段
 def parse_toolbench_file(file_path: str) -> list:
@@ -42,6 +43,8 @@ def build_graph_from_json(tool_sequences: list) -> nx.Graph:
         for i in range(len(sequence) - 1):
             tool1 = f"{sequence[i][0]}-{sequence[i][1]}"
             tool2 = f"{sequence[i + 1][0]}-{sequence[i + 1][1]}"
+            # print(tool1)
+            # print(tool2)
             transition_counts[(tool1, tool2)] += 1
             G.add_edge(tool1, tool2, weight=transition_counts[(tool1, tool2)])
 
@@ -84,7 +87,7 @@ def get_tool_info(tool_name: str, tool_info_path: str) -> dict:
     return {}
 
 # 随机遍历图中的节点，直到到达end或访问节点数超过20
-def traverse_graph(G: nx.Graph, start_node: str, tool_info_path: str) -> list:
+def traverse_graph(G: nx.Graph, query: str, tool_info_path: str) -> list:
     """
     随机遍历图中的节点，直到到达end节点或访问节点数超过20。
     
@@ -93,7 +96,12 @@ def traverse_graph(G: nx.Graph, start_node: str, tool_info_path: str) -> list:
     :param tool_info_path: str - 工具信息文件路径
     :return: List[str] - 访问的节点路径
     """
-    current_node = start_node  # 初始化起始节点
+    nodes = query_database(query, "api")
+    node = nodes[0]
+    current_node = f'{node["payload"]["tool_name"]}-{node["payload"]["api_name"]}'
+    
+    # current_node = "Leo Github Data Scraper-Get list of Github repo for Ruby Webscrapping"
+    print(current_node)
     path = [current_node]  # 记录访问路径
     visited_count = 0  # 已访问节点数
 
@@ -134,16 +142,21 @@ def main():
     # 设置文件路径
     json_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/instruction/G1_query.json'
     tool_info_path = '/Users/caizhuoyue/Desktop/my-langgraph/rapidapi_all_apis.json'
+    
+    json_file_path = './data/instruction/G1_query.json'
+    tool_info_path = './rapidapi_all_apis.json'
 
     # 解析JSON文件，获取工具调用序列
     tool_sequences = parse_toolbench_file(json_file_path)
+    
+    query = "need Yahoo Finance-earnings"
 
     # 构建图结构
     G = build_graph_from_json(tool_sequences)
     print(f"Graph Nodes: {len(G.nodes)}")  # 输出图中的节点数量
 
     # 从start节点开始遍历
-    path = traverse_graph(G, "start", tool_info_path)
+    path = traverse_graph(G, query , tool_info_path)
     print(f"Traversal Path: {path}")  # 输出遍历路径
 
 # 执行主函数
