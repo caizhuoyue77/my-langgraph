@@ -1,5 +1,9 @@
 import json
 import os
+import tiktoken
+from typing import List, Callable
+from datetime import datetime
+from FlagEmbedding import BGEM3FlagModel, FlagReranker
 
 def filter_api_by_category(json_file: str, categories: list) -> list:
     """
@@ -26,3 +30,23 @@ def filter_api_by_category(json_file: str, categories: list) -> list:
         raise RuntimeError(f"读取 JSON 文件时出错: {e}")
     except Exception as e:
         raise RuntimeError(f"发生错误: {e}")
+    
+
+def count_tokens(text: str, model: str = "gpt-3.5-turbo") -> int:
+    """
+    计算文本在指定模型中的token数量。
+
+    Args:
+        text (str): 需要计算的文本
+        model (str): 使用的模型名称，默认是 "gpt-3.5-turbo"
+
+    Returns:
+        int: 文本中的token数量
+    """
+    try:
+        encoder = tiktoken.encoding_for_model(model)
+    except KeyError as e:
+        raise ValueError(f"无效的模型名称: {model}, 错误信息: {e}")
+    
+    tokens = encoder.encode(text)
+    return len(tokens)
