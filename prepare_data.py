@@ -12,6 +12,7 @@ from qdrant_client.models import PointStruct
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 from qdrant_client import QdrantClient, models
 
+COLLECTION_NAME = "tool_collection_bge_small"
 
 # 定义模型实例（全局只初始化一次）
 model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
@@ -23,7 +24,7 @@ client = QdrantClient(url="http://localhost:6333")
 
 # 创建一个新的集合（如果集合已经存在，则跳过创建）
 client.recreate_collection(
-    collection_name="tool_collection_bge_small",
+    collection_name="COLLECTION_NAME",
     vectors_config=VectorParams(size=384, distance=Distance.DOT),
 )
 
@@ -97,7 +98,7 @@ def save_vectors_to_qdrant(vectors: np.ndarray, payloads: List[Dict[str, Any]], 
 
         # 执行向量插入操作
         operation_info = client.upsert(
-            collection_name="tool_collection_bge_small",
+            collection_name="COLLECTION_NAME",
             wait=True,
             points=points
         )
@@ -139,7 +140,7 @@ def query():
     embedding_3 = model.encode("weather").tolist()
     
     search_result = client.query_points(
-    collection_name="tool_collection_bge_small",
+    collection_name="COLLECTION_NAME",
     query=embedding_3,
      
     search_params=models.SearchParams(hnsw_ef=128, exact=False),
@@ -158,7 +159,7 @@ if __name__ == "__main__":
     # 计算并上传嵌入向量到 Qdrant 数据库
     compute_and_save_embeddings(tool_list)
     
-    info = client.get_collection(collection_name="tool_collection_bge_small")
+    info = client.get_collection(collection_name="COLLECTION_NAME")
     print(info)
     
     query()
