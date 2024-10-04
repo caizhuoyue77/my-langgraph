@@ -5,6 +5,7 @@ from collections import defaultdict
 import copy
 from api_retriever import query_database
 from algos.qwen25_7b import get_qwen25_7b
+from task_decomposer import Decomposer
 
 # 解析JSON文件，提取relevant APIs字段
 def parse_toolbench_file(file_path: str) -> list:
@@ -135,26 +136,34 @@ def traverse_graph(G: nx.Graph, query: str, tool_info_path: str) -> list:
     while current_node != "end" and visited_count < 20:
         print(f"Current Node: {current_node}")  # 输出当前节点信息
 
-        # 分割节点名称（格式：tool_type-tool_name）
         tool_name = current_node.split('-')[1] if '-' in current_node else current_node
 
-        # 获取工具的详细信息
         tool_info = get_tool_info(tool_name, tool_info_path)
         print(f"Tool Info for {tool_name}: {tool_info}")  # 输出工具详细信息
 
-        # 查找所有邻居（权重大于1）
+        # 查找所有邻居（权重大于1，排除 start 和 end）
         neighbors = [
             neighbor for neighbor in G.neighbors(current_node)
-            if G[current_node][neighbor].get('weight', 0) >= 1
+            if G[current_node][neighbor].get('weight', 0) >= 1 and neighbor not in ["start", "end"]
         ]
         
-        print("All neighbors")
+        print("Filtered neighbors (excluding 'start' and 'end'):")
         print(neighbors)
 
-        # 如果没有满足条件的邻居，则停止
-        if not neighbors:
-            print(f"No valid neighbors found for {current_node}. Stopping traversal.")
-            break
+        # 如果邻居数量超过5个，随机选择5个邻居
+        if len(neighbors) > 5:
+            neighbors = random.sample(neighbors, 5)
+
+        # 如果邻居数量不足5个，并且只有start、end或邻居数量在1-4个，调用query_database再添加5个邻居
+        elif len(neighbors) < 5:
+            print(f"Adding neighbors from query_database for {current_node}")
+            new_neighbors = query_database(query, "api")
+            for new_neighbor in new_neighbors:
+                neighbor_node = f'{new_neighbor["payload"]["tool_name"]}-{new_neighbor["payload"]["api_name"]}'
+                if neighbor_node not in neighbors:
+                    neighbors.append(neighbor_node)
+                if len(neighbors) >= 5:
+                    break
 
         # 调用choose_neighbor函数
         next_node = choose_neighbor(query, path, neighbors)
@@ -172,6 +181,7 @@ def traverse_graph(G: nx.Graph, query: str, tool_info_path: str) -> list:
     return path
 
 
+
 def choose_neighbor(query, path, neighbors):
     """
     根据当前路径和邻居节点，调用 LLM 选择下一个节点。
@@ -186,7 +196,7 @@ def choose_neighbor(query, path, neighbors):
     
     为了完成任务:{query}
     
-    # 历史工具调用记录
+    # 历史工具调用记录（这些已经选择并调用了，请不要重复选择，除非你认为有必要调用2遍）
     {path}
     
     # 当前可选工具
@@ -194,7 +204,7 @@ def choose_neighbor(query, path, neighbors):
     
     请你选择下*一*个工具。注意只能选一个。
     直接输出工具的名称，不要有额外的内容输出。
-    如果你认为历史工具调用已经可以完成任务，请你输出end。
+    如果你认为历史工具调用已经可以完成任务，请你立即输出end。
     """
     
     print(prompt)
@@ -221,15 +231,22 @@ def main():
     # 解析JSON文件，获取工具调用序列
     tool_sequences = parse_toolbench_file(json_file_path)
     
-    query = "what's the recipe of chicken soup and the weather in changsha"
-
     # 构建图结构
     G = build_graph_from_json(tool_sequences, './rapidapi_all_apis.json')
-    print(f"Graph Nodes: {len(G.nodes)}")  # 输出图中的节点数量
-
-    # 从start节点开始遍历
-    path = traverse_graph(G, query, tool_info_path)
-    print(f"Traversal Path: {path}")  # 输出遍历路径
+    print(f"No. of Graph Nodes: {len(G.nodes)}")  # 输出图中的节点数量
+    
+    query = "what's the recipe of chicken soup and the weather in changsha"
+    
+    decomposer = Decomposer("qwen2.5:7b", query)
+    sub_tasks = decomposer.run()
+    
+    for sub_task in sub_tasks:
+        print("=======================")
+        print(sub_task)
+        print("=======================")
+        # 从start节点开始遍历
+        path = traverse_graph(G, f"{sub_task['name']}:{sub_task['description']}", tool_info_path)
+        print(f"Traversal Path: {path}")  # 输出遍历路径
 
 # 执行主函数
 if __name__ == "__main__":

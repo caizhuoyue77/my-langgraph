@@ -16,7 +16,9 @@ from qdrant_client import QdrantClient, models
 
 
 # 定义模型实例（全局只初始化一次）
-model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
+# model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
+
+model = FlagModel('./bge-small-en', use_fp16=True)
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,4,6,7"
 
@@ -45,7 +47,6 @@ def encode_queries(queries: List[str], batch_size: int = 128, max_length: int = 
         return np.array([])
 
 
-
 def query_llm():
     # toolbench自己训练的那个retriever
     
@@ -59,7 +60,7 @@ def query_llm():
 
     # pass
 
-def query_database(query: str, mode : str = "tool", top_k : int = 8, category : str = ""):
+def query_database(query: str, mode : str = "api", top_k : int = 8, category : str = ""):
     query_embedding = model.encode(query).tolist()
     
     collection_name = f"{mode}_collection_bge_small"
