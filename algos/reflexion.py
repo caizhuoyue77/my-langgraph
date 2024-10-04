@@ -35,7 +35,7 @@ class Reflexion:
         pass_rate = judge.run()
         
         feedback = None
-        if "失败" in pass_rate:
+        if pass_rate <= 0:
             feedback = self.reflect()
             if feedback:
                 print("反思")
