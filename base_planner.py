@@ -15,6 +15,7 @@ class BasePlanner:
         self.final_plan = []  # 存储执行过的计划步骤
         self.category = category
         self.retriever = APIRetriever()
+        self.long_term_memory = []
         self.tools = self.retriever.query_database(query, "api", self.category)  # 查询API工具集
     
     

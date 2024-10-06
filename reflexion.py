@@ -6,24 +6,12 @@ from base_planner import BasePlanner
 
 
 class Reflexion(BasePlanner):
-    def __init__(self, model_name, query, category, max_iter = 4):
-        self.model_name = model_name
-        self.max_iter = max_iter
-        self.query = query
-        self.llm = OllamaLLM(model="qwen2.5:7b")
-        self.scratch_pad = [] # short term memory
-        self.final_answer = []
-        self.final_plan = []
-        self.long_term_memory = []
-        self.category = category
-        self.retriever = APIRetriever()
-        self.tools = self.retriever.query_database(query, "api", self.category)
-
 
     def run(self):
         index = 0
         while True and index < self.max_iter:
             plan = self.choose()
+
             if plan:
                 action = plan.get("action", None)
             else:
@@ -40,7 +28,6 @@ class Reflexion(BasePlanner):
             if result:
                 self.final_plan.append(action)
                 self.scratch_pad.append({"step":plan, "result": result})
-            print(f"Scratch pad: {self._parse_scratch_pad()}")
         
         judge = PassRate(self.query, self.final_plan, self.tools, self.final_answer)
         pass_rate = judge.run()
@@ -120,19 +107,22 @@ class Reflexion(BasePlanner):
 
 当前已经执行的步骤和结果:{self._parse_scratch_pad()}。
 
-你只能选择下一个工具，直接输出API名称。如果你认为已经完成任务，直接输出end即可。
+# 指令
+你只能选择下一个工具，选择一个API作为action来输出。
+如果你认为已经完成任务，在action部分输出end即可。
+注意，请你选择尽可能少的工具来完成任务
 
 # 之前的历史尝试和反思
 {self._parse_long_term_memory()}
 
-注意，完成任务可以直接输出end来结束。
 
 # 格式
-{{"Thouhgt":"","Action:""}}
+{{"thouhgt":"简单分析，10个字左右","action:"调用的api名称或者end"}}
 """
-
         ans = self.llm.invoke(prompt)
+        print(f"模型输出:{ans}")
         plan = self._parse_plan_str(ans)
+        print(f"parse成为plan之后:{plan}")
         return plan
         
     def _parse_scratch_pad(self):

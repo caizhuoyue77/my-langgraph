@@ -4,9 +4,8 @@ import random
 from collections import defaultdict
 import copy
 from api_retriever import APIRetriever
-from algos.qwen25_7b import get_qwen25_7b
+from qwen25_7b import get_qwen25_7b
 from task_decomposer import Decomposer
-
 
 retriever = APIRetriever()
 
@@ -81,7 +80,6 @@ def build_graph_from_json(tool_sequences: list, api_info_file: str) -> nx.Graph:
         G_copy.add_edge(node, end_node, weight=1)
 
     return G_copy
-
 
 
 # 根据工具名称查找详细描述
@@ -206,6 +204,23 @@ end
 2.如果你认为已经选择的工具组可以完成任务，那么你不需要选择新工具，直接输出end。
 3.注意，一次只能选择一个
 4.如果有多个都可以完成，选择最合适的一个。
+"""
+
+
+    prompt = f"""
+你好，请你帮我选择一组api来完成用户任务。任务：{query}。
+
+备选的API：{neighbors}。
+
+当前已经执行的步骤和结果:{path}。
+
+# 指令
+你只能选择下一个工具，选择一个API作为action来输出。
+如果你认为已经完成任务，在action部分输出end即可。
+注意，请你选择尽可能少的工具来完成任务
+
+# 输出格式
+{{"thouhgt":"简单分析，10个字左右","action:"调用的api名称或者end"}}
 """
     
     print(prompt)
