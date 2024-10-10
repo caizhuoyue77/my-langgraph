@@ -14,6 +14,7 @@ from cot import COT
 from reflexion import Reflexion
 from dfsdt import DFSDT
 from task_decomposer import Decomposer
+from czynet import CzyNet
 
 
 def parse_args():
@@ -31,7 +32,7 @@ def parse_args():
     parser.add_argument(
         "--method",
         type=str,
-        choices=["vanilla", "cot", "react", "dfsdt", "reflexion"],
+        choices=["vanilla", "cot", "react", "dfsdt", "reflexion", "ours"],
         required=True,
         help="选择使用的任务编排方式",
     )
@@ -141,7 +142,8 @@ def process_data(data, model: str, method: str, temperature: float, output_path:
                     result = dfsdt_instance.run()
                 elif method == "ours":
                     # 使用我们自己的模型进行处理
-                    pass
+                    czynet_instance = CzyNet(max_api_count = 1)
+                    result = czynet_instance.run(query=sub_query, category=category)
                 
                 results.extend(result)
 
