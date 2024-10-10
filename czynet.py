@@ -18,10 +18,12 @@ class CzyNet:
     """
 
     def __init__(self, max_api_count, 
+                 max_api_pool_count = 5,
                  json_file_path='./data/instruction/G1_query.json', 
                  tool_info_path='./rapidapi_all_apis.json'):
         """初始化CzyNet类"""
         self.max_api_count = max_api_count
+        self.max_api_pool_count = max_api_pool_count
         self.json_file_path = json_file_path
         self.tool_info_path = tool_info_path
         self.api_dict = self._load_api_list()
@@ -121,7 +123,8 @@ class CzyNet:
         neighbor_string, neighbor_names = self._parse_neighbors(nodes)
 
         # 调用 LLM 选择初始节点
-        current_plan = self.choose_neighbor(query, neighbor_names)
+        current_plan = self.choose_neighbor(query, neighbor_string)
+        current_node, current_thought = None, None
         if current_plan:
             current_node = current_plan.get("action", None)
             current_thought = current_plan.get("thought", None)
@@ -142,7 +145,7 @@ class CzyNet:
         self.final_path.append(current_node)
         self.scratch_pad.append(current_plan)
         
-        visited_count = 0  # 已访问节点数
+        visited_count = 1  # 已访问节点数
 
         # 随机遍历节点直到到达'end'或访问节点数超过限制
         while current_node != "end" and visited_count < self.max_api_count:
@@ -182,7 +185,7 @@ class CzyNet:
             current_node = next_node
             visited_count += 1
 
-        return path
+        return self.final_path
     
     
     def _parse_neighbors(self, nodes: list) -> tuple:
@@ -213,34 +216,41 @@ class CzyNet:
 
 
     def _get_filtered_neighbors(self, current_node: str) -> tuple:
-        """过滤当前节点的邻居，排除无效节点（start和end）。"""
+        """过滤当前节点的邻居，排除无效节点（start和end），并返回格式化的邻居描述和邻居节点列表。"""
         # 查找所有邻居（权重大于1，排除 start 和 end）
         neighbors = [
             neighbor for neighbor in self.G.neighbors(current_node)
             if self.G[current_node][neighbor].get('weight', 0) >= 1 and neighbor not in ["start", "end"]
         ]
         
-        # 限制邻居数量最多为5
-        if len(neighbors) > 5:
-            # 这里不应该是random sample，而是应该寻找最大的邻居
-            neighbors = random.sample(neighbors, 5)
+        # 限制邻居数量最多为5，并选择权重最高的邻居节点
+        if len(neighbors) > self.max_api_pool_count:
+            # 获取所有邻居及其对应权重，并按照权重降序排序，选择前5个权重最高的邻居
+            sorted_neighbors = sorted(neighbors, key=lambda n: self.G[current_node][n].get('weight', 0), reverse=True)
+            neighbors = sorted_neighbors[:self.max_api_pool_count]
 
         # 补充邻居数量不足的情况（再从数据库检索新节点）
-        elif len(neighbors) < 5:
+        elif len(neighbors) < self.max_api_pool_count:
             new_neighbors = self.retriever.query_database(current_node, "api")
             
+            # 遍历新检索的节点，格式为 "tool_name-api_name"，加入到 neighbors 列表中
             for new_neighbor in new_neighbors:
                 neighbor_node = f'{new_neighbor["payload"]["tool_name"]}-{new_neighbor["payload"]["api_name"]}'
+                # 如果新节点不在现有邻居列表中，则添加
                 if neighbor_node not in neighbors:
                     neighbors.append(neighbor_node)
-                if len(neighbors) >= 5:
+                # 当邻居节点达到5个时停止添加
+                if len(neighbors) >= self.max_api_pool_count:
                     break
-                
+
         # 创建字符串格式的邻居信息
         # 将每个邻居对象的信息格式化为字符串
         formatted_neighbors = []
         for index, neighbor in enumerate(neighbors):
-            description = self._get_api_description(tool_name = neighbor.split('-')[0], api_name = neighbor.split('-')[1])
+            # 提取工具名称和 API 名称进行描述获取
+            tool_name, api_name = neighbor.split('-')
+            description = self._get_api_description(tool_name=tool_name, api_name=api_name)
+            
             # 构建格式化的字符串
             formatted_neighbor = f"[{index + 1}] {neighbor}\nDescription: {description}"
             formatted_neighbors.append(formatted_neighbor)
@@ -248,6 +258,7 @@ class CzyNet:
         # 将所有邻居的描述信息连接为一个字符串，并以换行符分隔
         formatted_string = "\n".join(formatted_neighbors)
         
+        # 返回格式化的字符串和邻居节点列表
         return formatted_string, neighbors
 
     def _load_api_list(self, file_path: str = "rapidapi_all_apis.json") -> dict:
