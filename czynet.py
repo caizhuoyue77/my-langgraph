@@ -205,11 +205,11 @@ class CzyNet:
             api_description = payload.get('api_description', 'No description')
 
             # 将格式化后的字符串加入到列表中
-            formatted_string_list.append(f"[{index + 1}]{tool_name}-{api_name}\ndescription: {api_description}")
+            formatted_string_list.append(f"[{index + 1}] tool_name:{tool_name} api_name:{api_name} api_description: {api_description}")
 
             # 将"tool_name-api_name"格式添加到neighbors
             tool_name = payload.get('tool_name', 'Unknown Tool')
-            neighbors.append(f"{tool_name}-{api_name}")
+            neighbors.append(f"{api_name}")
 
         # 将格式化字符串列表合并为单一字符串，并返回元组
         formatted_string = "\n".join(formatted_string_list)
@@ -298,10 +298,10 @@ class CzyNet:
         prompt = f"""
 Solve this task using the following tools.
 
-# Task description/ Query description
+# Task description
 {query}
 
-# Tools
+# Tools(Actions can be the following types)
 {neighbor_string}
 
 # Currently selected tools
@@ -311,8 +311,7 @@ Solve this task using the following tools.
 1. What OTHER tools should you use to do the task.
 2. If the current selected tools are enough to do this task, you should simply use "end" as the action to finish the task.
 3. For "thought", give brief reason. For "action", use a tool name or "end".
-4. You should use the tool's fullname, with the '-'.
-5. You should only use the tools provides above, and not make up anything.
+4. For "action", use the tool's fullname.
 
 # Output format
 {{"thought":"You reasons, less than 20 words","action":"some API's name"}}
