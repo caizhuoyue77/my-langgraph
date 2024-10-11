@@ -27,9 +27,10 @@ class CzyNet:
         self.json_file_path = json_file_path
         self.tool_info_path = tool_info_path
         self.api_dict = self._load_api_list()
+        self.all_seen_api = [] # 所有只要被接触到的，被llm知道的api都算在里面
         self.llm = get_qwen25_7b()
-        self.scratch_pad = []
-        self.final_path = []
+        self.scratch_pad = [] # 草稿本，可以给llm看的
+        self.final_path = [] # 最后返回的结果，包括每个api的名称
         self.retriever = APIRetriever()
         self.G = None
         self.build_graph_from_json()
@@ -223,6 +224,11 @@ class CzyNet:
             if self.G[current_node][neighbor].get('weight', 0) >= 1 and neighbor not in ["start", "end"]
         ]
         
+        print(f"\n[当前节点: {current_node}] 的邻居节点及其权重信息：")
+        for neighbor in neighbors:
+            weight = self.G[current_node][neighbor].get('weight', 0)
+            print(f"邻居节点: {neighbor} | 权重: {weight}")
+        
         # 限制邻居数量最多为5，并选择权重最高的邻居节点
         if len(neighbors) > self.max_api_pool_count:
             # 获取所有邻居及其对应权重，并按照权重降序排序，选择前5个权重最高的邻居
@@ -248,11 +254,11 @@ class CzyNet:
         formatted_neighbors = []
         for index, neighbor in enumerate(neighbors):
             # 提取工具名称和 API 名称进行描述获取
-            tool_name, api_name = neighbor.split('-')
+            tool_name, api_name = neighbor.split('-')[0], neighbor.split('-')[1]
             description = self._get_api_description(tool_name=tool_name, api_name=api_name)
             
             # 构建格式化的字符串
-            formatted_neighbor = f"[{index + 1}] {neighbor}\nDescription: {description}"
+            formatted_neighbor = f"[{index + 1}] API FULL NAME: {neighbor}\n  API DESCRIPTION: {description}"
             formatted_neighbors.append(formatted_neighbor)
 
         # 将所有邻居的描述信息连接为一个字符串，并以换行符分隔
@@ -306,6 +312,7 @@ Solve this task using the following tools.
 2. If the current selected tools are enough to do this task, you should simply use "end" as the action to finish the task.
 3. For "thought", give brief reason. For "action", use a tool name or "end".
 4. You should use the tool's fullname, with the '-'.
+5. You should only use the tools provides above, and not make up anything.
 
 # Output format
 {{"thought":"You reasons, less than 20 words","action":"some API's name"}}
