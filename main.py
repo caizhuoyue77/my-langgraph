@@ -15,6 +15,7 @@ from reflexion import Reflexion
 from dfsdt import DFSDT
 from task_decomposer import Decomposer
 from czynet import CzyNet
+from build_toolnet_2 import GraphSelector
 
 
 def parse_args():
@@ -97,55 +98,78 @@ def process_data(data, model: str, method: str, temperature: float, output_path:
     """根据选择的模型和编排方式逐条处理数据，并将结果逐条保存"""
     print(f"当前模型：{model}")
     print(f"当前编排方式：{method}")
-    print(f"温度参数：{temperature}")
-    print(f"当前模式：{method}")
+    # print(f"温度参数：{temperature}")
+    # print(f"当前模式：{method}")
 
     # 遍历数据集的每一条数据，并根据选择的模式进行处理
     for idx, item in enumerate(data):
         try:
-            decomposer = Decomposer(model_name=model, query=item["query"])
-            sub_tasks = decomposer.run()
             results = []
-
-            for sub_task in sub_tasks:
-                # 根据不同的模式选择对应的处理逻辑
-                sub_query = sub_task["description"]
-                category = sub_task["category"]
-
-                if method == "react":
-                    # 使用 ReAct 模式进行处理
-                    react_instance = ReAct(
-                        model_name=model, query=sub_query, category=category
-                    )
-                    result = react_instance.run()
-                    
-                elif method == "cot":
-                    print("main:开始CoT方法！")
-                    cot_instance = COT(
-                        model_name=model, query=sub_query, category=category
-                    )
-                    result = cot_instance.run()
-                elif method == "vanilla":
-                    vanilla_instance = Vanilla(
-                        model_name=model, query=sub_query, category=category
-                    )
-                    result = vanilla_instance.run()
-                elif method == "reflexion":
-                    reflexion_instance = Reflexion(
-                        model_name=model, query=sub_query, category=category
-                    )
-                    result = reflexion_instance.run()
-                elif method == "dfsdt":
-                    dfsdt_instance = DFSDT(
-                        model_name=model, query=sub_query, category=category
-                    )
-                    result = dfsdt_instance.run()
-                elif method == "ours":
-                    # 使用我们自己的模型进行处理
-                    czynet_instance = CzyNet(max_api_count = 1)
-                    result = czynet_instance.run(query=sub_query, category=category)
+            sub_query = item['query']
+            category = ""
+            if method == "react":
+                # 使用 ReAct 模式进行处理
+                react_instance = ReAct(
+                    model_name=model, query=sub_query
+                )
+                results = react_instance.run()
+                tools = react_instance.get_tools()
+            elif method == "cot":
+                print("main:开始CoT方法！")
+                cot_instance = COT(
+                    model_name=model, query=sub_query, category=category
+                )
+                results = cot_instance.run()
+                tools = cot_instance.get_tools()
+                print("跑完一条cot啦")
+            elif method == "vanilla":
+                vanilla_instance = Vanilla(
+                    model_name=model, query=sub_query, category=category
+                )
+                results = vanilla_instance.run()
+                tools = vanilla_instance.get_tools()
+            elif method == "reflexion":
+                reflexion_instance = Reflexion(
+                    model_name=model, query=sub_query, category=category
+                )
+                results = reflexion_instance.run()
+                tools = reflexion_instance.get_tools()
+            elif method == "dfsdt":
+                dfsdt_instance = DFSDT(
+                    model_name=model, query=sub_query, category=category
+                )
+                results = dfsdt_instance.run()
+                tools = dfsdt_instance.get_tools()      
+            elif method == "ours":
+                decomposer = Decomposer(model_name=model, query=item["query"])
+                sub_tasks = decomposer.run()
+                tools = []
                 
-                results.extend(result)
+                print(sub_tasks)
+                
+                for sub_task in sub_tasks:
+                    sub_query = sub_task["description"]
+                    category = sub_task["category"]
+
+                    # 使用我们自己的模型进行处理
+                    # czynet_instance = CzyNet(max_api_count = 2)
+                                        
+                    czynet_instance2 = GraphSelector(model_name=model, query=sub_query, category=category, max_iter = 3)
+                    
+                    try:
+                        # result = czynet_instance.run(query=sub_query, category=category)
+                        result = czynet_instance2.run()
+                    except Exception as exc:
+                        pass
+                        # result = czynet_instance.get_path()
+                        result = czynet_instance2.get_plan()
+                        
+                    # tool_list = czynet_instance.get_tools()
+                    
+                    print("main:czynet运行结果：" + str(result))
+                    results.extend(result)
+                    # tools.extend(tool_list)
+                    print(f"Finish sub query: {sub_query}")
 
             # result应该是一个字典，一个运行结果
             # 除了整体的计划，还包括：
@@ -153,21 +177,20 @@ def process_data(data, model: str, method: str, temperature: float, output_path:
             # 计算时间开销
             # 计算api个数
             # 是否需要实时计算pass rate呢
-
             # 每处理一条数据就立即保存到输出文件中
-            save_result(results, output_path)
+            print(results)
+            save_result(item['query'], tools, results, output_path)
             print(f"第 {idx + 1} 条数据处理成功")
             
-
         except Exception as exc:
             print(f"第 {idx + 1} 条数据处理失败，错误信息：{exc}")
 
 
-def save_result(result, output_path: str):
+def save_result(query, tools, plan, output_path: str):
     """逐条追加保存结果到指定文件"""
     try:
         with open(output_path, "a", encoding="utf-8") as f:
-            f.write(json.dumps(result, ensure_ascii=False) + "\n")
+            f.write(json.dumps({"query": query, "plan": plan, "tools": tools}, ensure_ascii=False) + "\n")
         print(f"已保存一条结果至：{output_path}")
     except Exception as exc:
         raise RuntimeError(f"保存结果时发生错误：{exc}") from exc

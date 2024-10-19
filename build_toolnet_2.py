@@ -26,18 +26,19 @@ class GraphSelector(BasePlanner):
         :return: 选择的邻居节点名称
         """
         ans = self.llm.invoke(self.build_prompt(neighbors))
-        print(ans)
-                
         plan = self._parse_plan_str(ans)
+        if plan is None:
+            return {"action": "Finish"}  # 或者其他默认值
         return plan
     
     def _parse_neighbor_tools(self, neighbors):
         """将工具列表格式化为字符串并填充临时工具字典。"""
         tool_strs = []
+        if not neighbors:
+            return "没有API了，请直接输出end结束"
         for item in neighbors.keys():
             tool_strs.append(f"{item} 权值：{neighbors[item]}")
         return "\n".join(tool_strs)
-            
             
     def build_prompt(self, neighbors):
         # 根据邻居的“call”边数量进行加权选择
@@ -52,12 +53,15 @@ class GraphSelector(BasePlanner):
 
 备选的API：
 {tools}。
-当前已经执行的步骤和结果:{self._parse_scratch_pad()}。
+
+当前已经执行的步骤和结果
+{self._parse_scratch_pad()}。
         
 你只能选择下一个工具作为action，请直接输出API名称。
 如果你认为已经完成任务，直接输出end即可。
 "thought"部分只需要用10个字简单介绍选择理由。
-"action"部分是选择的API的全名。
+"action"部分是选择的API的全名。或者是"end"。
+如果你觉得所有API都不能帮助解决问题，也请你输出"end"。
 
 请遵守这个输出格式:(必须有thought和action):
 {{"thought":"","action":""}}
@@ -78,26 +82,26 @@ class GraphSelector(BasePlanner):
 
         # 随机选择一个API节点
         # 第一个节点也是去让llm选择
-        initial_dict = {}
-        # for node in api_nodes:
-        #     initial_dict[node] = 1
             
-        plan = self.choose(initial_dict)
-        print(f"当前的计划:{plan}")
+        current_plan = self.choose(None)
         
-        if plan:
-            current_node = plan.get("action", None)
+        if current_plan:
+            current_node = current_plan.get("action", None)
         else:
             current_node = "Finish"
-        print(f"当前的计划:{plan}")
+        print(f"当前的计划:{current_plan}")
         
+        scratch_pad_plan = {"step": current_plan, "result":  f"成功调用{current_node}，获取到相关的信息"}
+        self.scratch_pad.append(scratch_pad_plan)
+        self.final_plan.append(current_node)
 
         # 开始选择路径
         while True and len(self.final_plan) < self.max_iter:
             neighbors = self.connector.find_neighbors(current_node)
             if not neighbors:
                 print(f"{current_node} 没有邻居节点，结束选择。")
-                break
+                # 用相似度搜索几个相似的api（根据当前的api和query）
+                # 
             
             # 根据邻居选择下一个节点
             next_plan = self.choose(neighbors)
@@ -106,11 +110,14 @@ class GraphSelector(BasePlanner):
             else:
                 next_node = "Finish"
                 
+            scratch_pad_next_plan = {"step": next_plan, "result":  f"成功调用{next_node}，获取到相关的信息"}
+            self.scratch_pad.append(scratch_pad_next_plan)
             self.final_plan.append(next_node)
-            # print(f"选择的下一个节点: {next_node}（'call'边数量: {neighbors[next_node]}）")
 
             # 更新当前节点
             current_node = next_node
+        print("芜湖～顺利结束啦～")
+        return self.final_plan
 
 # 使用示例
 if __name__ == "__main__":

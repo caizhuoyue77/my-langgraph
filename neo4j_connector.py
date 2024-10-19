@@ -40,6 +40,7 @@ class Neo4jConnector:
                 print(f"搜索邻居节点时发生错误: {exc}")
                 return {}
 
+    
     def calculate_edge_weight(self, from_node: str, to_node: str) -> float:
         """计算从一个节点到另一个节点的边的权重
         :param from_node: 起始节点名称

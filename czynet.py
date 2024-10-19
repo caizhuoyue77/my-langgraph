@@ -1,7 +1,6 @@
 """
 CzyNet 类用于解析JSON文件、构建工具图谱，并进行图遍历。
 """
-
 import json
 import networkx as nx
 import random
@@ -11,28 +10,25 @@ from api_retriever import APIRetriever
 from qwen25_7b import get_qwen25_7b
 from task_decomposer import Decomposer
 
-
 class CzyNet:
     """
     该类实现了工具调用顺序的解析、图结构的构建以及基于图的随机遍历。
     """
+    retriever = APIRetriever()
+    json_file_path = './data/instruction/G1_query.json'
+    tool_info_path = './rapidapi_all_apis.json'
+    llm = get_qwen25_7b()
+    G = None
 
     def __init__(self, max_api_count, 
-                 max_api_pool_count = 5,
-                 json_file_path='./data/instruction/G1_query.json', 
-                 tool_info_path='./rapidapi_all_apis.json'):
+                 max_api_pool_count = 5):
         """初始化CzyNet类"""
         self.max_api_count = max_api_count
         self.max_api_pool_count = max_api_pool_count
-        self.json_file_path = json_file_path
-        self.tool_info_path = tool_info_path
         self.api_dict = self._load_api_list()
         self.all_seen_api = [] # 所有只要被接触到的，被llm知道的api都算在里面
-        self.llm = get_qwen25_7b()
         self.scratch_pad = [] # 草稿本，可以给llm看的
         self.final_path = [] # 最后返回的结果，包括每个api的名称
-        self.retriever = APIRetriever()
-        self.G = None
         self.build_graph_from_json()
 
     def parse_toolbench_file(self) -> list:
@@ -40,7 +36,7 @@ class CzyNet:
         tool_sequences = []
 
         # 读取JSON文件
-        with open(self.json_file_path, 'r', encoding='utf-8') as file:
+        with open(CzyNet.json_file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
 
         # 遍历每个查询，提取relevant APIs
@@ -73,7 +69,7 @@ class CzyNet:
 
         # 如果未提供api_info_file，则使用类的默认路径
         if api_info_file is None:
-            api_info_file = self.tool_info_path
+            api_info_file = CzyNet.tool_info_path
 
         # 遍历整个rapidapi_all_apis.json文件，添加API节点
         with open(api_info_file, 'r', encoding='utf-8') as api_file:
@@ -99,7 +95,7 @@ class CzyNet:
         for node in nodes_list:
             G_copy.add_edge(node, end_node, weight=1)
 
-        self.G = G_copy
+        CzyNet.G = G_copy
         return G_copy
 
     
@@ -109,12 +105,12 @@ class CzyNet:
 
     def run(self, query: str, category: str) -> list:
         """随机遍历图中的节点，直到到达end节点或访问节点数超过20。"""
-        if self.G is None:
+        if CzyNet.G is None:
             print("Graph not built. Please run `build_graph_from_json` first.")
             return []
 
         # 通过检索器获取初始节点
-        nodes = self.retriever.query_database(query, "api", category)
+        nodes = CzyNet.retriever.query_database(query, "api", category)
         
         if not nodes:
             print("No nodes found for the given query.")
@@ -129,6 +125,7 @@ class CzyNet:
         while not is_valid and iter_cnt:
             # 调用 LLM 选择初始节点
             current_plan = self.choose_neighbor(query, neighbor_string)
+            print(f"current plan:{current_plan}")
             current_node, current_thought = None, None
             if current_plan:
                 current_node = current_plan.get("action", None)
@@ -139,37 +136,38 @@ class CzyNet:
                 print(f"The starting node:{current_node} is not valid.")
                 return []
             
-            for neighbor_name in neighbor_names:
-                if neighbor_name not in self.all_seen_api:
-                    self.all_seen_api.append(neighbor_name)
-                if neighbor_name['api_name'] == current_node:
+            if current_node == "end":
+                return self.final_path
+                    
+            if current_node != "end":
+                current_node = int(current_node) - 1
+                if current_node >= 0 and current_node < len(neighbor_names):
                     is_valid = True
+                    current_node = neighbor_names[current_node]
+                else:
+                    print(f"current_node's value:{current_node}")
+                    current_node = {"tool_name": None, "api_name": None}
+            else:
+                return self.final_path
             
+            print(f"current_node:{current_node}")
             iter_cnt -= 1
-
         
         # 调用api
-        current_plan['result'] = self.call_tool(current_node)
-        
-        current_plan['api_description'] = self._get_api_description(tool_name = current_node.split('-')[0], api_name = current_node.split('-')[1])
+        current_plan['result'] = self.call_tool(current_node['api_name'])
         self.final_path.append(current_node)
         self.scratch_pad.append(current_plan)
-        
+                
         visited_count = 1  # 已访问节点数
 
         # 随机遍历节点直到到达'end'或访问节点数超过限制
         while current_node != "end" and visited_count < self.max_api_count:
-            tool_name = current_node.split('-')[1] if '-' in current_node else current_node
-
-            if current_node in neighbor_names: # 不需要重复选择节点
-                neighbor_names.remove(current_node)
-                
-            # 查找邻居节点
-            # TODO： 修改为把weights等重要节点都加入进去
-            neighbor_string, neighbor_names = self._get_filtered_neighbors(current_node)
-            
+            neighbor_string, neighbor_names = self._get_filtered_neighbors(f"{current_node['tool_name']}-{current_node['api_name']}")
             
             is_valid = False
+            
+            print(neighbor_names)
+            
             for neighbor_name in neighbor_names:
                 if neighbor_name not in self.all_seen_api:
                     self.all_seen_api.append(neighbor_name)
@@ -179,29 +177,35 @@ class CzyNet:
             while not is_valid and iter_cnt:
                 # 选择下一个节点
                 next_plan = self.choose_neighbor(query, neighbor_string)
+                
+                print("next plan")
+                print(next_plan)
+                
                 if next_plan:
                     next_node = next_plan.get("action", None)
+                    
+                    if next_node == "end":
+                        print("任务完成，结束循环")
+                        return self.final_path
+                    else:
+                        next_node = int(next_node) - 1
+                        if next_node >= 0 and next_node < len(neighbor_names):
+                            is_valid = True
+                            next_node = neighbor_names[next_node]
+                            print(f"next_node:{next_node}")
+                        else:
+                            next_node = {"tool_name": None, "api_name": None}
+                        
                     next_thought = next_plan.get("thought", None)
-                                
-                if next_node == "end":
-                    print("任务完成，结束循环")
-                    break
 
-                if next_node is None:
-                    print(f"选择的下一个节点{next_node}无效，停止遍历。")
-                    break
-            
                 for neighbor_name in neighbor_names:
                     if neighbor_name not in self.all_seen_api:
                         self.all_seen_api.append(neighbor_name)
-                    if neighbor_name['api_name'] == next_node:
-                        is_valid = True
-                    
+         
                 iter_cnt -= 1
 
             # 更新路径和当前节点
-            next_plan['result'] = self.call_tool(next_node)
-            next_plan['api_description'] = self._get_api_description(tool_name = next_node.split('-')[0], api_name = next_node.split('-')[1])
+            next_plan['result'] = self.call_tool(next_node['api_name'])
             self.final_path.append(next_node)
             self.scratch_pad.append(next_plan)
             
@@ -210,10 +214,13 @@ class CzyNet:
 
         return self.final_path
     
+    def get_path(self):
+        return self.final_path
+    
     
     def _choose(self, choices):
         prompt = f"随便选一个:{choices},直接输出名字"
-        ans = self.llm.invoke(prompt)
+        ans = CzyNet.llm.invoke(prompt)
         if ans in choices:
             return ans
         return None
@@ -243,6 +250,8 @@ class CzyNet:
 
         # 将格式化字符串列表合并为单一字符串，并返回元组
         formatted_string = "\n".join(formatted_string_list)
+        
+        print(neighbors)
         return formatted_string, neighbors
 
 
@@ -250,25 +259,37 @@ class CzyNet:
         """过滤当前节点的邻居，排除无效节点（start和end），并返回格式化的邻居描述和邻居节点列表。"""
         # 查找所有邻居（权重大于1，排除 start 和 end）
         neighbors = [
-            neighbor for neighbor in self.G.neighbors(current_node)
-            if self.G[current_node][neighbor].get('weight', 0) >= 1 and neighbor not in ["start", "end"]
+            neighbor for neighbor in CzyNet.G.neighbors(current_node)
+            if CzyNet.G[current_node][neighbor].get('weight', 0) >= 1 and neighbor not in ["start", "end"]
         ]
         
         print(f"\n[当前节点: {current_node}] 的邻居节点及其权重信息：")
         
         for neighbor in neighbors:
-            weight = self.G[current_node][neighbor].get('weight', 0)
+            weight = CzyNet.G[current_node][neighbor].get('weight', 0)
             print(f"邻居节点: {neighbor} | 权重: {weight}")
+        
+        
+        neighbor_names = []
+        
         
         # 限制邻居数量最多为5，并选择权重最高的邻居节点
         if len(neighbors) > self.max_api_pool_count:
             # 获取所有邻居及其对应权重，并按照权重降序排序，选择前5个权重最高的邻居
-            sorted_neighbors = sorted(neighbors, key=lambda n: self.G[current_node][n].get('weight', 0), reverse=True)
+            sorted_neighbors = sorted(neighbors, key=lambda n: CzyNet.G[current_node][n].get('weight', 0), reverse=True)
             neighbors = sorted_neighbors[:self.max_api_pool_count]
+            
+            
+            for neightbor in neighbors:
+                tool_name = neightbor.split("-")[0]
+                api_name = neightbor.split("-")[1]
+                neighbor_names.append({"tool_name": tool_name, "api_name": api_name})
+                
+            print(f"_get_filtered_neighbors: original neighbors from graph {neighbor_names}")
 
         # 补充邻居数量不足的情况（再从数据库检索新节点）
         elif len(neighbors) < self.max_api_pool_count:
-            new_neighbors = self.retriever.query_database(current_node, "api")
+            new_neighbors = CzyNet.retriever.query_database(current_node, "api")
             
             # 遍历新检索的节点，格式为 "tool_name-api_name"，加入到 neighbors 列表中
             for new_neighbor in new_neighbors:
@@ -277,29 +298,28 @@ class CzyNet:
                 
                 neighbor_node = f'{new_neighbor["payload"]["tool_name"]}-{new_neighbor["payload"]["api_name"]}'
                 # 如果新节点不在现有邻居列表中，则添加
-                if neighbor_node not in neighbors:
-                    neighbors.append({"tool_name": tool_name, "api_name": api_name})
+                
+                neighbor_names.append({"tool_name": tool_name, "api_name": api_name})
                 # 当邻居节点达到5个时停止添加
                 if len(neighbors) >= self.max_api_pool_count:
                     break
+            print(f"_get_filtered_neighbors: new neighbors with qdrant {neighbor_names}")
 
         # 创建字符串格式的邻居信息
         # 将每个邻居对象的信息格式化为字符串
         formatted_neighbors = []
         for index, neighbor in enumerate(neighbors):
             # 提取工具名称和 API 名称进行描述获取
-            tool_name, api_name = neighbor.split('-')[0], neighbor.split('-')[1]
-            description = self._get_api_description(tool_name=tool_name, api_name=api_name)
             
             # 构建格式化的字符串
-            formatted_neighbor = f"[{index + 1}] API FULL NAME: {neighbor}\n  API DESCRIPTION: {description}"
+            formatted_neighbor = f"[{index + 1}] API FULL NAME: {neighbor}\n "
             formatted_neighbors.append(formatted_neighbor)
 
         # 将所有邻居的描述信息连接为一个字符串，并以换行符分隔
         formatted_string = "\n".join(formatted_neighbors)
         
         # 返回格式化的字符串和邻居节点列表
-        return formatted_string, neighbors
+        return formatted_string, neighbor_names
 
     def _load_api_list(self, file_path: str = "rapidapi_all_apis.json") -> dict:
         """读取并加载JSON文件内容，并将数据转换为字典格式以提高查找效率。"""
@@ -346,17 +366,21 @@ Solve this task using the following tools.
 1. What OTHER tools should you use to do the task.
 2. If the current selected tools are enough to do this task, you should simply use "end" as the action to finish the task.
 3. For "thought", give brief reason. For "action", use a tool name or "end".
-4. For "action", use the api_name.
+4. For "action", use the api number like "1", "2" or "3"..
 
 # Output format
 {{"thought":"You reasons, less than 20 words","action":"some API's name"}}
 """
-        print(prompt)
         max_attempts = 3  # 最大尝试次数
+        print("调用大模型...")
         for attempt in range(max_attempts):
             try:
-                ans = self.llm.invoke(prompt)  # 调用 LLM
+                ans = CzyNet.llm.invoke(prompt)  # 调用 LLM
+                if "end" in ans:
+                    return {"thought": "Finished the job", "action": "end"}
+                
                 import json
+                print(f"ANS:{ans}")
                 plan = json.loads(ans)  # 解析 JSON 字符串
                 return plan  # 返回解析后的计划
             except json.JSONDecodeError as e:
