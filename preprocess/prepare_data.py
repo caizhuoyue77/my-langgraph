@@ -154,7 +154,6 @@ def query():
 if __name__ == "__main__":
     # 加载工具列表
     tool_list = load_tool_list('/data/czy/Graduation/my-langgraph/rapidapi_all_tools.json')
-    # tool_list = load_tool_list('/data/czy/Graduation/my-langgraph/rapidapi_all_apis.json')
     
     # 计算并上传嵌入向量到 Qdrant 数据库
     compute_and_save_embeddings(tool_list)
