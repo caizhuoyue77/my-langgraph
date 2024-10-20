@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 from FlagEmbedding import FlagModel
+from sentence_transformers import SentenceTransformer
 from tqdm import tqdm
 import os
 import json
@@ -12,10 +13,14 @@ from qdrant_client.models import PointStruct
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 from qdrant_client import QdrantClient, models
 
-COLLECTION_NAME = "tool_collection_bge_small"
+# COLLECTION_NAME = "tool_collection_bge_small"
+COLLECTION_NAME = "embedding_toolbench_embedding_collection"
 
 # 定义模型实例（全局只初始化一次）
-model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
+# model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
+
+
+model = SentenceTransformer('/Users/caizhuoyue/Documents/code/ToolBench_IR_bert_based_uncased')
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,4,6,7"
 
@@ -23,10 +28,10 @@ os.environ["CUDA_VISIBLE_DEVICES"] = "2,4,6,7"
 client = QdrantClient(url="http://localhost:6333")
 
 # 创建一个新的集合（如果集合已经存在，则跳过创建）
-client.recreate_collection(
-    collection_name=COLLECTION_NAME,
-    vectors_config=VectorParams(size=384, distance=Distance.DOT),
-)
+# client.recreate_collection(
+#     collection_name=COLLECTION_NAME,
+#     vectors_config=VectorParams(size=384, distance=Distance.DOT),
+# )
 
 def load_tool_list(file_path: str) -> List[Dict[str, Any]]:
     """
@@ -144,7 +149,7 @@ def query():
     query=embedding_3,
      
     search_params=models.SearchParams(hnsw_ef=128, exact=False),
-    limit=3,
+    limit=10,
     with_payload=True
     ).points
 
@@ -153,13 +158,13 @@ def query():
 
 if __name__ == "__main__":
     # 加载工具列表
-    tool_list = load_tool_list('/data/czy/Graduation/my-langgraph/rapidapi_all_tools.json')
+    # tool_list = load_tool_list('/data/czy/Graduation/my-langgraph/rapidapi_all_tools.json')
     
     # 计算并上传嵌入向量到 Qdrant 数据库
-    compute_and_save_embeddings(tool_list)
+    # compute_and_save_embeddings(tool_list)
     
-    info = client.get_collection(collection_name=COLLECTION_NAME)
-    print(info)
+    # info = client.get_collection(collection_name=COLLECTION_NAME)
+    # print(info)
     
     query()
     

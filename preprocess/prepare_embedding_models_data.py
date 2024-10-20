@@ -7,10 +7,15 @@ from qdrant_client.models import Distance, VectorParams, PointStruct
 from typing import List, Dict, Any, Generator
 import json
 import os
+import requests
 
-MODEL_NAMES = ['m3e', 'bge-m3', 'bge-small-en', 'bge-small-en-v1.5', 'bce', 'toolbench']
-SIZES = {'m3e':768, 'bge-m3':1024, 'bge-small-en':384, 'bge-small-en-v1.5': 384, 'bce':768, 'toolbench':768}
+# MODEL_NAMES = ['bge-small-en-v1.5', 'bce', 'toolbench', 'm3e', 'bge']
 
+MODEL_NAMES = ['bge-small-en-v1.5']
+
+SIZES = {'m3e':768, 'bge':1024, 'bge-small-en':384, 'bge-small-en-v1.5': 384, 'bce':768, 'toolbench':768}
+MODEL = None
+MODEL_NAME = ''
 # 创建 Qdrant 客户端实例
 client = QdrantClient(url="http://localhost:6333")
 
@@ -23,35 +28,37 @@ def l2_normalize(embeddings):
 
 def get_embeddings(sentences: List[str], model_name: str) -> np.ndarray:
     """根据模型名称生成嵌入"""
-    print(f"正在为模型 {model_name} 加载嵌入模型...")
-    
-    if model_name == 'm3e':
-        model = SentenceTransformer('/data/czy/m3e-base')
-    elif model_name == 'toolbench':
-        model = SentenceTransformer('/data/czy/ToolBench_IR_bert_based_uncased')
-    elif model_name == 'bge-m3':
-        model = BGEM3FlagModel('/data/czy/bge-m3', use_fp16=True)
-    elif model_name == 'bce':
-        model = EmbeddingModel(model_name_or_path="/data/czy/bce-embedding-base_v1")
-    elif model_name == 'bge-small-en':
-        model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
-    elif model_name == 'bge-small-en-v1.5':
-        model = FlagModel('/data/czy/bge-small-en-v1.5', use_fp16=True)
-    else:
-        raise ValueError(f"Unsupported model name: {model_name}")
+    url = "http://vnznkz.natappfree.cc/embeddings"
+    headers = {"Content-Type": "application/json"}
+    data = {
+        "sentences": sentences,
+        "model_name": model_name
+    }
 
-    print(f"模型 {model_name} 加载成功，开始生成嵌入...")
-    embeddings = model.encode(sentences)
-    print(f"模型 {model_name} 生成嵌入完成，嵌入矩阵形状: {embeddings.shape}")
+    try:
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+
+        # 检查请求是否成功
+        response.raise_for_status()  # 如果返回状态码不是 200，将引发异常
+        
+        embeddings = response.json()
+        embeddings = embeddings.get("embeddings", []) 
+        # print(f"SIZE:{len(embeddings)}")
+        # print(f"SIZE:{len(embeddings[0])}")
+        embeddings = np.array(embeddings)
+        # print(f"EMBEDDING_SIZE:{embeddings.shape()}")
+        return embeddings  # 返回 JSON 格式的响应数据
+    except requests.exceptions.RequestException as e:
+        print(f"请求失败: {e}")
+        return None
     
-    return l2_normalize(embeddings)
 
 def create_collection_for_model(model_name: str, size: int):
     """根据模型名称创建或重建Qdrant集合"""
-    collection_name = f"{model_name}_embedding_collection"
+    collection_name = f"{model_name}_embedding_collection_1"
     print(f"正在为模型 {model_name} 创建/重建 Qdrant 集合: {collection_name}")
     
-    # 创建或重建模型对应的Qdrant集合
+   
     client.create_collection(
         collection_name=collection_name,
         vectors_config=VectorParams(size=size, distance=Distance.DOT),
@@ -92,8 +99,8 @@ def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], model_name: str
     
     index = 0
     for tool_batch in batch_tool_generator(tool_list, batch_size=batch_size):
-        queries = [f"{tool['tool_name']}:{tool['tool_description']}" for tool in tool_batch]
-        payloads = [{"tool_name": tool['tool_name'], "category": tool['category'], "tool_description": tool["tool_description"]} for tool in tool_batch]
+        queries = [f"{tool['full_name']}:{tool['api_description']}" for tool in tool_batch]
+        payloads = [{"full_name": tool['full_name'],"api_name": tool['api_name'], "tool_name": tool['tool_name'] ,"category": tool['category'], "api_description": tool["api_description"]} for tool in tool_batch]
         
         print(f"正在计算批次工具的嵌入（批次大小: {len(queries)}），从 ID {index} 开始...")
         embeddings = get_embeddings(queries, model_name)
@@ -123,7 +130,7 @@ def load_tool_list(file_path: str) -> List[Dict[str, Any]]:
 
 if __name__ == "__main__":
     # 加载工具列表
-    tool_list = load_tool_list('/data/czy/Graduation/my-langgraph/rapidapi_all_tools.json')
+    tool_list = load_tool_list('/Users/caizhuoyue/Desktop/my-langgraph/rapidapi_all_apis_fullname.json')
 
     if tool_list:
         # 使用不同模型生成并保存嵌入
