@@ -18,17 +18,54 @@ class PassRate:
         
     def run(self):
         # 构建提示
-        prompt = self._construct_prompt()
+        prompt = self._construct_simple_prompt()
+        
+        # print("PROMPT")
+        # print(prompt)
         
         # 调用模型进行评判
         try:
-            return 1
+            print("-----------------------")
+            print(self.query)
+            print("")
+            print(self.plan)
+            print("")
             ans = self.llm.invoke(prompt)
+            print(ans)
+            print("")
+            ans = json.loads(ans)
+            ans = ans.get("评判","失败")
             return self._interpret_result(ans)
         except Exception as exc:
             print(f"调用模型时发生错误: {exc}")
             return self.FAILURE  # 在发生错误时返回失败
             
+            
+    def _construct_simple_prompt(self):
+        """构建评判提示的函数。"""
+        return f"""
+你是一个严格的评价者，我希望你帮助我评判对于一条用户指令，我们的系提供提供的解决路径是否可用。
+
+# 前提
+假设所有的用户指令都是可解的。
+
+# 规则
+3个等级：通过、失败、不确定。
+
+- 如果提供的解决路径的API能够辅助完成任务，那么输出“通过”
+- 如果提供的解决路径的API不能够辅助完成任务，那么输出“失败”
+- 如果你不确定是否能完成任务，那么输出“不确定”
+
+下面请你认真给出你的评判。注意：你需要给出结果和20字内的理由,具体到哪些任务未完成。
+
+用户指令：{self.query}
+解决工具调用路径：{self.plan}
+
+# 格式（请你严格遵守下列格式)
+{{"评判":"","理由":""}}
+
+你的评判：
+"""
     def _construct_prompt(self):
         """构建评判提示的函数。"""
         return f"""
@@ -75,12 +112,58 @@ class PassRate:
 
 
 # 示例用法
-if __name__ == "__main__":
-    query = "请告诉我今天的天气。"
-    plan = "使用API获取天气信息。"
-    tools = "天气API"
-    final_answer = "天气晴朗，温度在20-25度之间。"
+# if __name__ == "__main__":
+#     query = "请告诉我今天的天气。"
+#     plan = "使用API获取天气信息。"
+#     tools = "天气API"
+#     final_answer = "天气晴朗，温度在20-25度之间。"
     
-    evaluator = PassRate(query, plan, tools, final_answer)
-    result = evaluator.run()
-    print(f"评判结果: {result}")  # 输出结果 1
+#     evaluator = PassRate(query, plan, tools, final_answer)
+#     result = evaluator.run()
+#     print(f"评判结果: {result}")  # 输出结果 1
+    
+import json
+
+# 定义 PassRate 类（你已经有的部分，不需要重复提供）
+
+def evaluate_and_save_pass_rate(input_jsonl_path: str, output_jsonl_path: str):
+    """
+    读取 JSONL 文件，对每条记录进行 PassRate 评价，并输出到新的 JSONL 文件中，附加 pass_rate 字段。
+    
+    :param input_jsonl_path: 输入 JSONL 文件路径
+    :param output_jsonl_path: 输出 JSONL 文件路径
+    """
+    with open(input_jsonl_path, 'r', encoding='utf-8') as infile, open(output_jsonl_path, 'w', encoding='utf-8') as outfile:
+        # 逐行读取 JSONL 数据
+        for line in infile:
+            # 解析 JSON 数据
+            json_obj = json.loads(line.strip())
+            
+            # 获取评价所需的字段
+            step = json_obj.get("step", {})
+            action = step.get("action", "")
+            result = json_obj.get("result", "")
+            
+            # 构造 query, plan, tools 和 final_answer (根据你的实际逻辑调整)
+            query = json_obj.get("query", "")
+            plan = json_obj.get("plan", "")
+            tools = []
+            final_answer = ""
+            
+            # 创建 PassRate 实例并计算 pass_rate
+            evaluator = PassRate(query, plan, tools, final_answer)
+            pass_rate = evaluator.run()
+            
+            # 将 pass_rate 添加到当前 JSON 对象
+            json_obj['pass_rate'] = pass_rate
+            
+            # 将处理后的结果写入新的 JSONL 文件
+            outfile.write(json.dumps(json_obj, ensure_ascii=False) + '\n')
+
+    print(f"处理完成，带有 pass_rate 的数据已保存到: {output_jsonl_path}")
+
+# 使用示例
+if __name__ == "__main__":
+    input_file = "ours@3_results_10.jsonl"  # 输入 JSONL 文件路径
+    output_file = "ours@3_results_10_with_pr"  # 输出 JSONL 文件路径
+    evaluate_and_save_pass_rate(input_file, output_file)

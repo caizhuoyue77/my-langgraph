@@ -10,8 +10,9 @@ class COT(BasePlanner):
         index = 0
         while True and index < self.max_iter:
             plan = self.choose()
+            
             if plan:
-                action = plan.get("Action", None)
+                action = plan.get("action", None)
             else:
                 action = None
             
@@ -28,7 +29,7 @@ class COT(BasePlanner):
                 print("添加一个工具")
                 if result:
                     self.final_plan.append(action)
-                    self.scratch_pad.append({"step":plan, "result": result})
+                    self.scratch_pad.append({"step":plan, "result": result, "description": self._get_api_description(action)})
         
         return self.scratch_pad
           
@@ -57,12 +58,12 @@ class COT(BasePlanner):
 
 当前已经执行的步骤和结果:{self._parse_scratch_pad()}。
 
-你只能选择下一个工具（每次选1个），直接输出API名称。如果你认为已经完成任务，直接输出end即可。
+你只能选择下一个工具（每次选1个），在action字段输出API名称。如果你认为已经完成任务，直接在action部分输出end即可。
 
 Let's think step by step. Give your reasoning process first, and then answer the question in a new line directly with no extra words.
 
 # 格式
-{{"Reasoning":"","Action":""}}  
+{{"reasoning":"","action":""}}  
 """
         print(prompt)
         print("")

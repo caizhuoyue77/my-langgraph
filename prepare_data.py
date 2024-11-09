@@ -137,7 +137,7 @@ def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], batch_size: int
 
 
 def query():
-    embedding_3 = model.encode("weather").tolist()
+    embedding_3 = model.encode("It is very code today and I wanna know how to make pumpkin spice lattle, could you help me?").tolist()
     
     search_result = client.query_points(
     collection_name=COLLECTION_NAME,

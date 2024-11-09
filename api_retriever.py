@@ -26,7 +26,7 @@ class APIRetriever():
     def __init__(self):
         self.model_name = "bge-small-en"
 
-    def query_database(self, query: str, mode : str = "api", category : str = "", top_k : int = 8):
+    def query_database(self, query: str, mode : str = "api", category : str = "", top_k : int = 5):
         query_embedding = model.encode(query).tolist()
         
         collection_name = f"{mode}_collection_bge_small"
@@ -34,8 +34,10 @@ class APIRetriever():
         search_result = client.query_points(
         collection_name = collection_name,
         query = query_embedding,
+        # 并没有添加
+        # 服了爸爸
+        # todo
         search_params=models.SearchParams(hnsw_ef=128, exact=False),
-        
         limit=top_k,
         with_payload=True
         ).points
