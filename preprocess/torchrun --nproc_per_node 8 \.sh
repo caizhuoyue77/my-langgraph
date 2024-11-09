@@ -1,0 +1,18 @@
+torchrun --nproc_per_node 6 \
+-m FlagEmbedding.baai_general_embedding.finetune.run \
+--output_dir /data/czy/ \
+--model_name_or_path /data/czy/bge-small-en-v1.5 \
+--train_data /data/czy/sft.jsonl \
+--learning_rate 3e-5 \
+--fp16 \
+--num_train_epochs 5 \
+--per_device_train_batch_size 32 \
+--dataloader_drop_last True \
+--normlized True \
+--temperature 0.02 \
+--query_max_len 300 \
+--passage_max_len 300 \
+--train_group_size 2 \
+--logging_steps 10 \
+--save_steps 1000 \
+--query_instruction_for_retrieval "" 

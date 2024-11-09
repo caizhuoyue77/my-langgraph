@@ -14,13 +14,14 @@ from qdrant_client.models import Filter, FieldCondition, MatchValue
 from qdrant_client import QdrantClient, models
 
 # COLLECTION_NAME = "tool_collection_bge_small"
-COLLECTION_NAME = "embedding_toolbench_embedding_collection"
+COLLECTION_NAME = "embedding_bge-small-en-v1.5_embedding_collection_1"
 
 # 定义模型实例（全局只初始化一次）
 # model = FlagModel('/data/czy/bge-small-en', use_fp16=True)
 
+# model = SentenceTransformer('/Users/caizhuoyue/Documents/code/ToolBench_IR_bert_based_uncased')
 
-model = SentenceTransformer('/Users/caizhuoyue/Documents/code/ToolBench_IR_bert_based_uncased')
+model = FlagModel("/Users/caizhuoyue/Documents/code/bge-small-en-v1.5", use_fp16=True)
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,4,6,7"
 
@@ -142,7 +143,9 @@ def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], batch_size: int
 
 
 def query():
-    embedding_3 = model.encode("weather").tolist()
+    query = """ twitter """
+    print(query)
+    embedding_3 = model.encode("query").tolist()
     
     search_result = client.query_points(
     collection_name=COLLECTION_NAME,
@@ -167,5 +170,9 @@ if __name__ == "__main__":
     # print(info)
     
     query()
+    # info = client.get_collection(collection_name="embedding_bge-small-en-v1.5_embedding_collection_1")
+    # print(info)
+
+
     
     

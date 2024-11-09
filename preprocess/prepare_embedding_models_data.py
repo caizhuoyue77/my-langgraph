@@ -16,6 +16,8 @@ MODEL_NAMES = ['bge-small-en-v1.5']
 SIZES = {'m3e':768, 'bge':1024, 'bge-small-en':384, 'bge-small-en-v1.5': 384, 'bce':768, 'toolbench':768}
 MODEL = None
 MODEL_NAME = ''
+
+
 # 创建 Qdrant 客户端实例
 client = QdrantClient(url="http://localhost:6333")
 
@@ -58,11 +60,10 @@ def create_collection_for_model(model_name: str, size: int):
     collection_name = f"{model_name}_embedding_collection_1"
     print(f"正在为模型 {model_name} 创建/重建 Qdrant 集合: {collection_name}")
     
-   
-    client.create_collection(
-        collection_name=collection_name,
-        vectors_config=VectorParams(size=size, distance=Distance.DOT),
-    )
+    # client.create_collection(
+    #     collection_name=collection_name,
+    #     vectors_config=VectorParams(size=size, distance=Distance.DOT),
+    # )
     
     print(f"Qdrant 集合 {collection_name} 创建/重建成功")
     return collection_name
@@ -84,13 +85,13 @@ def save_vectors_to_qdrant(vectors: np.ndarray, payloads: List[Dict[str, Any]], 
     
     print(f"成功上传 {len(points)} 个向量到 Qdrant 集合 {collection_name}: {operation_info}")
 
-def batch_tool_generator(tool_list: List[Dict[str, Any]], batch_size: int = 128) -> Generator[List[Dict[str, Any]], None, None]:
+def batch_tool_generator(tool_list: List[Dict[str, Any]], batch_size: int = 256) -> Generator[List[Dict[str, Any]], None, None]:
     """生成器：按批次生成工具列表以节省内存"""
     print(f"批量生成工具列表，每批次大小: {batch_size}")
     for i in range(0, len(tool_list), batch_size):
         yield tool_list[i:i + batch_size]
 
-def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], model_name: str, batch_size: int = 128):
+def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], model_name: str, batch_size: int = 256):
     """计算工具列表的嵌入，并按批次上传至 Qdrant"""
     print(f"开始为模型 {model_name} 计算工具嵌入，总共 {len(tool_list)} 个工具，批次大小: {batch_size}")
     
@@ -99,8 +100,8 @@ def compute_and_save_embeddings(tool_list: List[Dict[str, Any]], model_name: str
     
     index = 0
     for tool_batch in batch_tool_generator(tool_list, batch_size=batch_size):
-        queries = [f"{tool['full_name']}:{tool['api_description']}" for tool in tool_batch]
-        payloads = [{"full_name": tool['full_name'],"api_name": tool['api_name'], "tool_name": tool['tool_name'] ,"category": tool['category'], "api_description": tool["api_description"]} for tool in tool_batch]
+        queries = [f"{tool['category_name']} {tool['tool_name']}-{tool['api_name']}:{tool['api_description']}" for tool in tool_batch]
+        payloads = [{"api_name": tool['api_name'], "tool_name": tool['tool_name'] ,"category": tool['category_name'], "api_description": tool["api_description"]} for tool in tool_batch]
         
         print(f"正在计算批次工具的嵌入（批次大小: {len(queries)}），从 ID {index} 开始...")
         embeddings = get_embeddings(queries, model_name)
@@ -130,7 +131,7 @@ def load_tool_list(file_path: str) -> List[Dict[str, Any]]:
 
 if __name__ == "__main__":
     # 加载工具列表
-    tool_list = load_tool_list('/Users/caizhuoyue/Desktop/my-langgraph/rapidapi_all_apis_fullname.json')
+    tool_list = load_tool_list('/Users/caizhuoyue/Desktop/my-langgraph/data/retrieval/G1/unique_apis.json')
 
     if tool_list:
         # 使用不同模型生成并保存嵌入

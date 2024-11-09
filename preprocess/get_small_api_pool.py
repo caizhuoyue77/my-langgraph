@@ -40,7 +40,7 @@ def save_json_to_file(data, output_file_path):
 def main():
     json_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/retrieval/G1/train.json'   # 输入query.json文件路径
     txt_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/retrieval/G1/train.query.txt'  # 输入train.query.txt文件路径
-    output_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/retrieval/G1/unique_apis.json'   # 输出文件路径
+    output_file_path = '/Users/caizhuoyue/Desktop/my-langgraph/data/retrieval/G1/unique_1k_apis.json'   # 输出文件路径
 
     # 读取JSON数据
     json_data = load_json_from_file(json_file_path)
