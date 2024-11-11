@@ -9,7 +9,6 @@ app = FastAPI()
 
 CACHE_FILE = "cache.json"
 
-
 def read_cache():
     if not os.path.exists(CACHE_FILE):
         return {}
