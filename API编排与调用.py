@@ -13,16 +13,6 @@ st.set_page_config(layout="wide", initial_sidebar_state="expanded")
 
 import streamlit as st
 
-# 自定义 CSS 样式
-import streamlit as st
-
-# 自定义 CSS 样式
-import streamlit as st
-
-# 自定义 CSS 样式
-import streamlit as st
-
-
 # 初始化 session state
 default_values = {
     "button_clicked": False,
@@ -44,6 +34,65 @@ default_values = {
 for key, value in default_values.items():
     if key not in st.session_state:
         st.session_state[key] = value
+
+
+
+import streamlit as st
+from streamlit_modal import Modal
+
+# 初始化 session_state 中的登录状态
+if "logged_in" not in st.session_state:
+    st.session_state["logged_in"] = False
+    st.session_state["username"] = None
+
+# 定义用户名和密码（仅示例，实际应用中应使用安全认证机制）
+VALID_USERNAME = "user"
+VALID_PASSWORD = "pass123"
+
+# 创建登录弹窗
+login_modal = Modal(title="登录", key="login_modal_key", max_width=600)
+
+# 确保登录确认的状态在 session_state 中
+if "login_confirm" not in st.session_state:
+    st.session_state["login_confirm"] = False
+
+# 登录验证回调函数
+def login_btn_click():
+    st.session_state["login_confirm"] = True
+
+# 强制显示登录弹窗
+# 强制显示登录弹窗
+if not st.session_state["logged_in"]:
+    with login_modal.container():
+        # 应用黑色字体样式
+        st.markdown(
+            """
+            <style>
+            div[data-testid="stModal"] * {
+                color: black !important;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+        username = st.text_input("用户名", key="modal_username")
+        password = st.text_input("密码", type="password", key="modal_password")
+        st.button("确定", on_click=login_btn_click)
+
+# 检查登录状态和确认按钮的点击
+if st.session_state["login_confirm"]:
+    # 验证用户名和密码
+    if st.session_state["modal_username"] == VALID_USERNAME and st.session_state["modal_password"] == VALID_PASSWORD:
+        st.session_state["logged_in"] = True
+        st.session_state["username"] = VALID_USERNAME
+        st.success("登录成功！")
+    else:
+        st.error("用户名或密码错误")
+
+    # 重置确认状态
+    st.session_state["login_confirm"] = False
+    st.experimental_rerun()
+
 
 
 def check_yes():
@@ -171,8 +220,6 @@ if "title" in params and params["title"] != st.session_state.get("title", "默�
 # 侧边栏设置
 import streamlit as st
 
-import streamlit as st
-
 # 侧边栏设置
 st.sidebar.header("图谱设置")
 
@@ -202,142 +249,154 @@ st.session_state["top_p"] = st.sidebar.slider(
 # 创建列布局
 col = st.columns((7, 3), gap="small")
 
-with col[0]:
-    st.title("基于工具图谱的API编排与调用系统")
 
-    # 显示对话记录
-    for msg in st.session_state["messages"]:
-        st.chat_message(msg["role"]).write(msg["content"])
+# 登录后显示聊天内容
+if st.session_state["logged_in"]:
+    
+    
+    # 添加登出按钮
+    if st.sidebar.button("登出"):
+        st.session_state["logged_in"] = False
+        st.session_state["username"] = None
+        st.experimental_rerun()
+        
+        
+    with col[0]:
+        st.title("基于工具图谱的API编排与调用系统")
 
-    # 显示和管理步骤
-    if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
-        st.header("API 计划信息")
-        st.write("【改写后的任务】" + st.session_state["rewoo_state"]["task"])
-        steps = st.session_state["rewoo_state"]["steps"]
+        # 显示对话记录
+        for msg in st.session_state["messages"]:
+            st.chat_message(msg["role"]).write(msg["content"])
 
-        for i, step in enumerate(steps):
-            with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
-                if "api_recommendations" in st.session_state:
-                    api_recommendations = st.session_state["api_recommendations"]
-                    if api_recommendations and "nodes" in api_recommendations:
-                        tool_options = [
-                            tool["name"]
-                            for tool in api_recommendations["nodes"]
-                            if "name" in tool
-                        ]
+        # 显示和管理步骤
+        if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
+            st.header("API 计划信息")
+            st.write("【改写后的任务】" + st.session_state["rewoo_state"]["task"])
+            steps = st.session_state["rewoo_state"]["steps"]
+
+            for i, step in enumerate(steps):
+                with st.expander(f"步骤 {i + 1}: {step[0]}", expanded=True):
+                    if "api_recommendations" in st.session_state:
+                        api_recommendations = st.session_state["api_recommendations"]
+                        if api_recommendations and "nodes" in api_recommendations:
+                            tool_options = [
+                                tool["name"]
+                                for tool in api_recommendations["nodes"]
+                                if "name" in tool
+                            ]
+                        else:
+                            tool_options = []
                     else:
                         tool_options = []
-                else:
-                    tool_options = []
 
-                new_step_name = st.text_input(
-                    "步骤名称", value=step[0], key=f"step_name_{i}"
-                )
-                new_tool = st.selectbox(
-                    "工具",
-                    tool_options,
-                    index=tool_options.index(step[2]) if step[2] in tool_options else 0,
-                    key=f"tool_{i}",
-                )
-                new_parameter = st.text_input(
-                    "参数", value=step[3], key=f"parameter_{i}"
-                )
+                    new_step_name = st.text_input(
+                        "步骤名称", value=step[0], key=f"step_name_{i}"
+                    )
+                    new_tool = st.selectbox(
+                        "工具",
+                        tool_options,
+                        index=tool_options.index(step[2]) if step[2] in tool_options else 0,
+                        key=f"tool_{i}",
+                    )
+                    new_parameter = st.text_input(
+                        "参数", value=step[3], key=f"parameter_{i}"
+                    )
 
-                col1, col2 = st.columns(2)
-                with col1:
-                    if st.button("保存修改", key=f"save_{i}"):
-                        new_step = (new_step_name, step[1], new_tool, new_parameter)
-                        st.session_state["rewoo_state"]["steps"][i] = new_step
-                        st.session_state["messages"].append(
-                            {"role": "assistant", "content": "修改成功"}
-                        )
-                        st.experimental_rerun()
-                with col2:
-                    if st.button("删除步骤", key=f"delete_{i}"):
-                        del st.session_state["rewoo_state"]["steps"][i]
-                        st.experimental_rerun()
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        if st.button("保存修改", key=f"save_{i}"):
+                            new_step = (new_step_name, step[1], new_tool, new_parameter)
+                            st.session_state["rewoo_state"]["steps"][i] = new_step
+                            st.session_state["messages"].append(
+                                {"role": "assistant", "content": "修改成功"}
+                            )
+                            st.experimental_rerun()
+                    with col2:
+                        if st.button("删除步骤", key=f"delete_{i}"):
+                            del st.session_state["rewoo_state"]["steps"][i]
+                            st.experimental_rerun()
 
-        if st.button("添加步骤"):
-            st.session_state["add_step"] = True
+            if st.button("添加步骤"):
+                st.session_state["add_step"] = True
 
-        if st.session_state["add_step"]:
-            st.header("添加步骤")
+            if st.session_state["add_step"]:
+                st.header("添加步骤")
 
-            tool_options = st.session_state.get("api_recommendations", [])
+                tool_options = st.session_state.get("api_recommendations", [])
 
-            new_step_name = st.text_input("步骤名称", key="new_step_name")
-            new_tool = st.selectbox("工具", tool_options, key="new_tool")
-            new_parameter = st.text_input("参数", key="new_parameter")
-            insert_position = st.number_input(
-                "插入位置",
-                min_value=1,
-                max_value=len(steps) + 1,
-                value=len(steps) + 1,
-                key="insert_position",
-            )
-
-            if st.button("保存步骤"):
-                new_step = (new_step_name, "", new_tool, new_parameter)
-                st.session_state["rewoo_state"]["steps"].insert(
-                    insert_position - 1, new_step
-                )
-                st.session_state["messages"].append(
-                    {"role": "assistant", "content": "步骤添加成功"}
+                new_step_name = st.text_input("步骤名称", key="new_step_name")
+                new_tool = st.selectbox("工具", tool_options, key="new_tool")
+                new_parameter = st.text_input("参数", key="new_parameter")
+                insert_position = st.number_input(
+                    "插入位置",
+                    min_value=1,
+                    max_value=len(steps) + 1,
+                    value=len(steps) + 1,
+                    key="insert_position",
                 )
 
-                reset_edit_state()
-                st.experimental_rerun()
+                if st.button("保存步骤"):
+                    new_step = (new_step_name, "", new_tool, new_parameter)
+                    st.session_state["rewoo_state"]["steps"].insert(
+                        insert_position - 1, new_step
+                    )
+                    st.session_state["messages"].append(
+                        {"role": "assistant", "content": "步骤添加成功"}
+                    )
 
-            if st.button("取消"):
-                reset_edit_state()
+                    reset_edit_state()
+                    st.experimental_rerun()
 
-# 如果有未执行的计划，显示确认按钮
-if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
-    if st.button("确认执行计划", on_click=check_yes):
-        st.session_state["button_clicked"] = True
+                if st.button("取消"):
+                    reset_edit_state()
 
-# 检查是否点击了确认按钮
-if st.session_state["button_clicked"]:
-    check_yes()
+    # 如果有未执行的计划，显示确认按钮
+    if st.session_state["rewoo_state"] and st.session_state["developer_mode"]:
+        if st.button("确认执行计划", on_click=check_yes):
+            st.session_state["button_clicked"] = True
 
-with col[1]:
-    # 自定义CSS来更改左列的背景颜色
-    st.markdown(
-        """
-        <style>
-        .left-col {
-            background-color: pink;
-            padding: 20px;
-            border-radius: 10px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
+    # 检查是否点击了确认按钮
+    if st.session_state["button_clicked"]:
+        check_yes()
 
-    if st.session_state["show_graph"]:
-        # 配置图表
-        config = Config(
-            width=450,
-            height=800,
-            directed=True,
-            physics=True,
-            nodeHighlightBehavior=True,
-            highlightColor="#F7A7A6",
-            collapsible=True,
-            node={"labelProperty": "label"},
-            link={"labelProperty": "label", "renderLabel": True},
+    with col[1]:
+        # 自定义CSS来更改左列的背景颜色
+        st.markdown(
+            """
+            <style>
+            .left-col {
+                background-color: pink;
+                padding: 20px;
+                border-radius: 10px;
+            }
+            </style>
+            """,
+            unsafe_allow_html=True,
         )
 
-        nodes = st.session_state.get("nodes", [])
-        edges = st.session_state.get("edges", [])
+        if st.session_state["show_graph"]:
+            # 配置图表
+            config = Config(
+                width=450,
+                height=800,
+                directed=True,
+                physics=True,
+                nodeHighlightBehavior=True,
+                highlightColor="#F7A7A6",
+                collapsible=True,
+                node={"labelProperty": "label"},
+                link={"labelProperty": "label", "renderLabel": True},
+            )
 
-        logger.info(f"Nodes: {nodes}")
-        logger.info(f"Edges: {edges}")
+            nodes = st.session_state.get("nodes", [])
+            edges = st.session_state.get("edges", [])
 
-        if nodes:
-            # 在右侧列中显示图谱
-            return_value = agraph(nodes=nodes, edges=edges, config=config)
+            logger.info(f"Nodes: {nodes}")
+            logger.info(f"Edges: {edges}")
+
+            if nodes:
+                # 在右侧列中显示图谱
+                return_value = agraph(nodes=nodes, edges=edges, config=config)
 
 # 自定义 CSS 样式
 st.markdown("""
