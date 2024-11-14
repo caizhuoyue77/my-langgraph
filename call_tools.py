@@ -39,6 +39,11 @@ from imdb_top_100_series import top_100_series
 from imdb_upcoming_movies import upcoming_movies
 from imdb_week_top_10 import week_top_10
 from imdb_whats_streaming import whats_streaming
+from currency_exchange import currency_conversion
+from  temu_product_search import temu_product_search
+from taobao_product_search import taobao_product_search
+
+
 from logger import *
 
 # 导入新添加的工具API
@@ -76,6 +81,8 @@ def use_actual_tool(tool: str, tool_input: dict):
     # 通用API
     if tool == "Google":
         result = search.invoke(tool_input)
+    elif tool == "CurrencyConverter":
+        result = currency_conversion(tool_input)
     # 天气API
     elif tool == "WeatherForecast24H":
         result = weather_forecast_24h(tool_input)
@@ -149,6 +156,11 @@ def use_actual_tool(tool: str, tool_input: dict):
         result = amazon_product_search(tool_input)
     elif tool == "AmazonProductAsins":
         result = amazon_product_asins(tool_input)
+    elif tool == "TemuProductSearch":
+        result = temu_product_search(tool_input)
+    elif tool == "TaobaoProductSearch":
+        result = taobao_product_search(tool_input)
+        
     # elif tool == "GoogleNewsBusiness":
     #     result = google_news_business(tool_input)
     # elif tool == "GoogleNewsEntertainment":

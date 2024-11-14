@@ -1,6 +1,33 @@
 {
   "tools": [
     {
+      "id": "currency_conversion",
+      "name": "CurrencyConverter",
+      "label": "CurrencyConverter",
+      "input": "amount of USD in number",
+      "description": "Worker that converts currency amounts from one currency to another using the Currency Converter API.",
+      "type": "general",
+      "idempotency": "idempotent"
+    },
+    {
+      "id": "temu_product_search",
+      "name": "TemuProductSearch",
+      "label": "TemuProductSearch",
+      "input": "keyword",
+      "description": "Worker that searches for products on Temu by keyword and returns up to 5 products with name, store, and price information.",
+      "type": "shopping",
+      "idempotency": "idempotent"
+    },
+    {
+      "id": "taobao_product_search",
+      "name": "TaobaoProductSearch",
+      "label": "TaobaoProductSearch",
+      "input": "query",
+      "description": "Worker that searches for products on Taobao by query and returns filtered results including product name, store name, and pricing information.",
+      "type": "shopping",
+      "idempotency": "idempotent"
+    },
+    {
       "id": "google_search",
       "name": "Google",
       "label": "Google",

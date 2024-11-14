@@ -5,4 +5,4 @@ showErrorDetails = true
 "primaryColor" = "#FFFFFF"  # 深红色
 backgroundColor = "#EEEEEE"  # 白色背景
 secondaryBackgroundColor = "#C0392B"  # 灰色背景，用于侧边栏或部分组件
-textColor = "#FFFFFF"  # 深灰色字体
+textColor = "#11111"  # 深灰色字体
