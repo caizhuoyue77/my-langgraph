@@ -32,6 +32,7 @@ for api1 in filtered_apis:
     
     # 获取Tool的名称
     tool1_name = api1.get('name', '未知Tool')
+    tool1_id = api1.get('product_id', '未知Product_id')
 
     # 遍历Tool下的所有API（api_list）
     for api_item1 in api1.get('api_list', []):  # 使用.get()防止不存在key时抛出异常
@@ -46,6 +47,7 @@ for api1 in filtered_apis:
                 # 遍历其他API（api2）进行匹配
                 for api2 in filtered_apis:
                     tool2_name = api2.get('name', '未知Tool')  # 获取Tool2的名称
+                    tool2_id = api2.get('product_id', '未知Product_id')
                     for api_item2 in api2.get('api_list', []):  # 使用.get()防止不存在key时抛出异常
                         if check_key_exists(api_item2, 'required_parameters', 'API2'):
                             required_params = api_item2['required_parameters']
@@ -70,11 +72,13 @@ for api1 in filtered_apis:
                                         "api1": {
                                             "hashid": api_item1.get("hashid", ""),
                                             "name": api_item1.get('name', '未知'),
+                                            "product_id": tool1_id,
                                             "tool_name": tool1_name  # API1所属Tool的name
                                         },
                                         "api2": {
                                             "hashid": api_item2.get("hashid", ""),
                                             "name": api_item2.get('name', '未知'),
+                                            "product_id": tool2_id,
                                             "tool_name": tool2_name  # API2所属Tool的name
                                         },
                                         "matched_param": list(matched_params)
