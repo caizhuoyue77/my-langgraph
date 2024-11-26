@@ -1,7 +1,7 @@
 import json
 
 # 从文件中加载原始数据
-with open('data/filtered_tools.json', 'r', encoding='utf-8') as f:
+with open('data/combined_data_with_hashid.json', 'r', encoding='utf-8') as f:
     apis_data = json.load(f)
 
 # 筛选掉不符合条件的API对象

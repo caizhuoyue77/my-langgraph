@@ -68,10 +68,12 @@ for api1 in filtered_apis:
 
                                     dependency = {
                                         "api1": {
+                                            "hashid": api_item1.get("hashid", ""),
                                             "name": api_item1.get('name', '未知'),
                                             "tool_name": tool1_name  # API1所属Tool的name
                                         },
                                         "api2": {
+                                            "hashid": api_item2.get("hashid", ""),
                                             "name": api_item2.get('name', '未知'),
                                             "tool_name": tool2_name  # API2所属Tool的name
                                         },
