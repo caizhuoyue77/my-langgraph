@@ -1,68 +1,16 @@
 category,product_id,name,description
 Movies,api_f21e64d2-3fb6-4d55-8aa8-e98734551288,MoviesDatabase,"MoviesDatabase provides complete and updated data for over 9 million titles ( movies, series and episodes) and 11 million actors / crew and cast members"
 Music,api_b7cf9aca-e647-4ec1-b11e-ff4fbfc33d67,Spotify,"Spotify Data API for Millions of songs & podcasts, artists, albums, playlists and more."
-Weather,api_64a749d1-d047-42de-b132-5a81a067c6cd,Weather by API-Ninjas,Get the latest weather data for any region in the world. See more info at https://api-ninjas.com/api/weather.
-Weather,api_67a94d7b-c4c9-4b7f-ba0b-e4e474789a82,WeatherAPI.com,"WeatherAPI.com is a powerful fully managed free weather and geolocation API provider that provides extensive APIs that range from the weather forecast, historical weather, future weather, weather alerts, air quality data, IP lookup, and astronomy through to sports, time zone, and geolocation."
-Weather,api_a9051e40-fe79-4f52-9c44-1081a82ef929,Forecast,Get 16 days weather forecast data - worldwide - geographical coordinates...
-Food,api_0355286f-accf-4e06-8ef8-515d63198a70,Tasty,"API to query data about recipe, plan, ingredients, etc... as on official site"
-Music,api_f1533ee4-2d33-4edc-8244-1f7737f40596,Genius - Song Lyrics,"Genius - Song Lyrics, Artists, Albums, Knowledge & More API"
-Music,api_dcc69bc2-1230-416c-90e8-0f6854890167,MusicAPI,"Spotify, Apple Music, YouTube, Amazon, Tidal, and more. Over 19 services supported.
-
-Fetch metadata for the tracks, albums, playlists from multiple streaming services via URL.
-Use single search endpoints to find at once on all services and get sharable URLs to all of them. 
-
-MusicAPI.com"
-Music,api_99d01db9-bd9d-40c8-85fd-1df44a2bf622,SoundCloud Scraper,"An all-in-one SoundCloud scraper/downloader. Scrapes albums, playlists, profiles. Downloads uncut high-quality audios and lyrics."
-Food,api_eb522c22-33f2-400d-94b8-b3d16c71b5ce,Low Carb Recipes,Highly flexible search over thousands of low-carb/keto recipes with rich nutrients information.
-Food,api_055ca92e-1a9a-4195-9f7a-8903ce495038,Yummly,"API to query data about recipe, plan, ingredients, etc... as on official site"
-Food,54e4c908e4b0a1ea357b9b82,Recipe Search and Diet,"Since we understand the recipe _ ingredients, diets, allergies, nutrition, taste, techniques & more. We can connect your users with the best recipes available for their unique food preferences.
-
-
-Search over 2 million recipes
-
-- Search our large recipe database. We add new sites and recipes continuously.
-- You will also get access to over 5000 top web recipe sources
-- Our search algorithm returns the most relevant recipes from the most popular and best recipes sources on the web. We or..."
 Movies,api_051be1c6-b448-4ad0-85db-5fa209156eca,Anime DB,"Complete anime data. Ranking, synopsis, genre, search by title. Over 20k data updated everyday"
-Music,api_58701e88-71b1-45b9-b1e3-158cba33e9bd,Billboard-API,"Providing the Billboard chart rankings and information on titles, artists, lyrics, images, and more."
-Weather,api_d9c68883-39a2-4b10-b641-2edd4772b70c,Air Quality,"Retrieve current, forecasted, and historical air quality for any point in the world."
-Weather,api_6fff002f-c3e9-4b07-bb79-2ac6741e8d46,Sunrise Sunset Times,"Get sunrise and sunset times using date, latitude, and longitude."
-Food,api_6e522d7a-da7e-46cd-960d-a303ff38579b,The Fork The Spoon,This API helps to query the best restaurant and meal around the world to create a traveling site/application such as thefork.com
-Food,api_f356cf7e-a935-40d9-ba54-b80495a25213,The Mexican Food DB,"Mexican Food Recipes with high-quality images stored on AWS S3 for fast accessibility. Easy to use!
-Category: Food"
-Food,api_56646fe3-23a3-432f-9d82-7e38bae2ad47,The Birthday Cake DB,"Birthday cake recipes with high-quality images stored on AWS S3 for fast accessibility. Easy to use!
-Category: Food"
 Movies,api_34d9da68-22ba-4ad6-bb58-0b0f125ccdcd,Advanced Movie Search,"Search for movies via advanced queries like genre, name, etc. And get all their details"
 Weather,api_195a1540-7bd7-435a-8031-30d2d4fdb4cc,OpenWeather,Openweather
-Food,api_fe095726-8512-4c1d-86fc-46a1bfac3d78,Burgers Hub,"This api returns kinds of burgers with there name, image, price, ingeridients etc"
 Food,api_dcbd91ed-ada3-40df-9953-5cf7f635d2a2,Worldwide Recipes,"Over 2 MILLION recipes, nutrition, ingredients, users and reviews worldwide."
-Food,api_5a04dd5d-c443-4829-86a1-8c1923547c69,The Cocktail DB,"Cocktail recipes with high-quality images stored on AWS S3 for fast accessibility. Easy to use!
-Category: Food"
-Food,api_0d279c18-12b7-426b-a5af-7bf7063323de,KFC Chickens,Provides you KFC dishes
-Food,api_1cfc79ed-cbc3-4226-8b03-c4fe3d944e08,The Vegan Recipes DB,"Vegan Food Recipes with high-quality images stored on AWS S3 for fast accessibility. Easy to use!
-Category: Food"
 Food,api_c1bf7a48-44ed-42e7-9d19-938d970e53b5,Recipe Finder,"This recipe API allows users to search for recipes by ingredient. It returns a JSON response with the matching recipes, including the name, list of ingredients, and instructions."
-Music,api_c18573ce-1c4c-493c-8524-e61e8fca81eb,Spotify Web,"Spotify Data API for Millions of songs &amp; podcasts, artists, albums, playlists and more."
-Music,api_b078278a-d508-4f58-abb0-cfdbbe5fb847,L-yrics,Have you ever wished to read the words of a music you heard? Give us the name and let us handle the rest.
 Food,api_84250368-42fb-4a87-8018-c0212a547730,Food Nutrition Information,search and find foods with their nutritional information
-Travel,api_29a0760c-29e4-4505-819d-32f252d4bc3a,UKRail,"UKRail is an API for UK train times. Sourced from National Rail Enquiries live departure boards SOAP web service (OpenLDBWS) 
-
-Their webservice can be, to put it mildly, tricky to work with so UKRail aims to make things a little easier!
-
-Suited for small businesses who may want to leverage rail data on a website or phone app.
-
-Additionally, it is Ideal for train enthusiasts who may want to use data from the live departure boards for one of their projects - model railways (including mimic pane..."
 Food,api_83a9b0be-0a22-4b7d-bdfd-90213e363f30,Cocktails,The cocktail API with over 300 Cocktails! Get Cocktail and the ingredients. Get a random one or search!
-Food,api_68141346-d654-48cd-a891-34d30e3090da,Fast Food Restaurants USA - TOP 50 Chains,"
-Our Fast Food Restaurants API provides you with a comprehensive database of the most popular fast food chains, allowing you to access vital information about their locations, hours and web presence.
-
-Sign up now to get access!"
-Food,api_2cb0f062-6718-4b2d-bdb5-65b5524843a8,Food Nutrional Data,Access thousands of food ingredients and their nutritional information
-Weather,api_d7a17078-6847-4e16-993f-f925296465eb,climate data,climate data worldwide
 Weather,api_94ff48b0-9302-49b4-9aca-bfca3c567948,Easy Weather,"Detailed current conditions, hourly forecasts, daily forecasts, and weather alerts by latitude and longitude in JSON format."
 Movies,api_24a67518-f6b4-446c-b13e-3b6883b622af,Movie and TV shows Quotes,This API helps query for Famous Movies and TV shows quotes.
 Travel,api_1524ad50-92f6-4951-be37-a4770115028e,Booking.com_v2,"Real-time data, unofficial API Booking.com\nThis API helps to query rooms, price, facilities, policities.. from many hotels around the world to create a travel"
-Travel,api_31773249-6e49-4f65-8bc3-f33a1978f084,Booking com,"Find all hotels, view prices, photos of the hotels, reviews. Find car rental deals."
 Travel,api_5913502c-7e1c-462e-98f9-22aa09e0ebfa,Tripadvisor,"Tripadvisor API helps to query realtime Hotels search, Flights prices, Restaurants, Attracting locations, etc to create a travelling site."
 Shopping,,Taobao DataHub,Realtime product data from Taobao.
 Shopping,,temu.com shopping API(Realtime Api Scrapper From Temu.com,Product searching and details from Temu.
